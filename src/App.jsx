@@ -1,11 +1,13 @@
 import './App.css'
+import { Carousel } from './Carousel/Carousel'
+import React from 'react'
 
 function App() {
 
   return (
-    <>
-      Azad Opensoft2024-frontend
-    </>
+    <div className='App'>
+      <Carousel />
+    </div>
   )
 }
 
