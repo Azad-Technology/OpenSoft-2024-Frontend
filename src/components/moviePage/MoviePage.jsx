@@ -9,7 +9,7 @@ const MoviePage = ()=>{
         <div className={styles.heroContainer}>
             <div className={styles.content}>
                 <div className={styles.title}>Lorem ipsum dolor sit.</div>
-                <div className={styles.description}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate tempora aspernatur debitis! Beatae debitis laborum labore odio incidunt, unde eaque dolore adipisci est ab, voluptatibus illum, minus provident sapiente officia.</div>
+                <div className={styles.description}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis repellat soluta, amet inventore iure alias hic provident unde possimus cum culpa itaque voluptas minima! Incidunt quibusdam corrupti aliquid ipsum dolorum mollitia delectus voluptates odio voluptatum labore, ab, iusto magni. Laboriosam consequatur similique odio qui magnam minima in molestias quasi dolorem!</div>
                 <div className={styles.info}>
                     <span>
                     <span>IMDb 6.5</span>

@@ -1,9 +1,33 @@
 :root{
     --primary-font-color: #ffffff;
     --secondary-font-color: #c2b8b8;
+    --tertiary-font-color: #cf0a0a;
 }
 
 /* hero small screen */
+
+/* animations */
+@keyframes slideRight{
+    from{
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideLeft{
+    from{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .heroSmall{
     height: 50vh;
     background-image: url("https://source.unsplash.com/random");
@@ -29,7 +53,7 @@
 }
 .heroSmall .title{
     position: absolute;
-    bottom: 1.2rem;
+    bottom: 0rem;
     font-size: 2rem;
     padding: 0rem 1rem;
 }
@@ -54,12 +78,12 @@
     bottom: 0;
     height: 100%;
     width: 60%;
-    background: linear-gradient(to right, rgba(0,0,0,.8), transparent);
+    background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.6),transparent);
 }
 
 .heroContainer .content{
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     left: 2rem;
     display: flex;
     flex-direction: column;
@@ -69,6 +93,10 @@
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
+    padding-left: 1rem;
+    border-left: .2rem solid var(--tertiary-font-color);
+    animation: slideRight 1s ease forwards;
+
 }
 
 .heroContainer .info{
@@ -112,8 +140,11 @@
 
 
 .heroContainer .description{
-    width: 50%;
+    width: 55%;
     font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+    animation: slideLeft 1s ease forwards;
 }
 
 
@@ -125,13 +156,20 @@
 }
 .heroContainer .button button{
     /* padding: .5rem; */
-    color: var(--primary-font-color);
+    color: var(--tertiary-font-color);
     font-size: 1.5rem;
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
     border: none;
     background-color: rgba(78, 75, 75, 0.633);
+    transition: all .3s ease;
+}
+.heroContainer .button button:hover{
+    cursor: pointer;
+    background-color: rgb(78, 75, 75);
+    transform: translateY(-10px);
+
 }
 
 @media screen and (max-width:840px){
@@ -139,6 +177,7 @@
         width: 70%;
         font-size: 1.1rem;
     }
+    
 }
 
 @media screen and (max-width:550px){
@@ -146,6 +185,9 @@
         flex-direction: column;
         align-items: flex-start;
         gap: .5rem;
+    }
+    .heroSmall .title{
+        /* margin-bottom: 0; */
     }
     .heroSmall{
         display: flex;
@@ -165,6 +207,9 @@
     }
     .heroContainer .description{
         width: 100%;
+        max-width: 27rem;
+        text-align: center;
+        font-weight: 500;
     }
     .heroContainer .content{
         position: static;
