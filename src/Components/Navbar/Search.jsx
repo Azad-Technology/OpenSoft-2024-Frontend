@@ -20,7 +20,7 @@ export const Search = ({movies}) => {
         />
         {search && <i onClick={()=>setSearch('')} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
-      <SearchResults movies={movies}/>
+      {debouncedSearch && <SearchResults movies={movies}/>}
     </div>
   );
 };
