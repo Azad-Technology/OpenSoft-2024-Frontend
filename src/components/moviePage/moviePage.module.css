@@ -10,6 +10,7 @@
     font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  background-color: black;
 }
 /* hero small screen */
 
@@ -225,4 +226,57 @@
         text-align: center;
     }
 
+}
+/* movie-info */
+
+.movieInfo{
+    background-color: black;
+}
+
+.movieInfo .heading{
+    color: white;
+    margin: 1rem auto auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+.movieInfo .container{
+    /* margin: 1rem; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movieInfo .container .cell{
+    margin: 0.5rem;
+    width:17rem;
+    height: 5rem;
+}
+
+.movieInfo .cast{
+    margin: 0.5rem;
+    width: 74rem;
+    /* height: 6rem; */
+}
+
+.cast .content{
+    display: flex;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 0.1rem;
+}
+.cast .content div{
+    width: 12rem;
+}
+
+.movieInfo .subHeading{
+    margin-bottom: 0.5rem;
+    color: #625e5e;
+}
+
+.movieInfo .content{
+    color: white;
 }

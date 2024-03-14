@@ -12,8 +12,9 @@
     font-style: normal;
     font-family: "Poppins", sans-serif;
     color: var(--primary-font-color);
-    padding: auto 1rem;
-    
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
 }
 
 .container .title {

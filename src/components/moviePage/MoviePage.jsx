@@ -2,6 +2,19 @@ import styles from "./moviePage.module.css"
 
 
 const MoviePage = ()=>{
+    
+    const cast = [ "Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence"];
+    const Genre = ["Sci-Fi","Movies","Dramas","US","Movies"];
+    let genreString = "";
+    for(let i=0;i<Genre.length;i++){
+        if(i==Genre.length-1){
+            genreString += Genre[i];
+        }else{
+            genreString += Genre[i]+", ";
+        }
+    }
+  
+    
     return(
     <>
     <div className={styles.font}>
@@ -38,6 +51,39 @@ const MoviePage = ()=>{
                     <span><button>D</button></span>
                 </div>
             </div>
+        </div>
+        <div className={styles.movieInfo}>
+            <div className={styles.heading}>More Details</div> 
+            <div className={styles.container}>
+                <div className={styles.cell}>
+                    <div className={styles.subHeading}>Watch offline</div>
+                    <div className={styles.content}>Download and watch everywhere you go.</div>
+                </div>
+                <div className={styles.cell}>
+                    <div className={styles.subHeading}>Genres</div>
+                    <div className={styles.content}>
+                        
+                            <div className={styles.subContent}>{genreString}</div>
+                        
+                    </div>
+                </div>
+                <div className={styles.cell}>
+                    <div className={styles.subHeading}>This movie is...</div>
+                    <div className={styles.content}>Inmaginative</div>
+                </div>
+                <div className={styles.cell}>
+                    <div className={styles.subHeading}>Audio</div>
+                    <div className={styles.content}></div>
+                </div>
+                <div className={styles.cast}>
+                    <div className={styles.subHeading}>Cast</div>
+                    <div className={styles.content}>
+                       {cast.map((actor)=>(
+                         <div className={styles.subContent}>{actor}</div>
+                       ))}
+                    </div>
+                </div>
+            </div>   
         </div>
         </div>
         </>
