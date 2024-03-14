@@ -1,10 +1,43 @@
+import { useEffect, useState } from 'react'
 import './App.css'
+import axios from 'axios'
+import 'font-awesome/css/font-awesome.min.css';
+import { Movies } from './Components/Movies.jsx';
+import { Navbar } from './Components/Navbar/Navbar.jsx';
+import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 
 function App() {
 
+  const [movies,setMovies]=useState([]);
+
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/movie/popular',
+      params: {language: 'en-US', page: '3'},
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZTkwNjA5NGUyNTQxMzAwY2U2NTY5ZjZlYWI1YzI2MSIsInN1YiI6IjY1ZjBiY2I1MGRlYTZlMDE3Y2JjNGE1OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FOZqC7Jm3by-ObIzGOsc9x-oXcoHgFqXCJ3bFoByTro'
+      }
+    };
+    
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        setMovies(response.data.results);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  },[])
+
+
   return (
     <>
-      Azad Opensoft2024-frontend
+      <Navbar movies={movies}/>
+      {/* <MobileMenu /> */}
+      <Movies movies={movies} />
     </>
   )
 }
