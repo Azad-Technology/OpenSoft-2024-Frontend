@@ -1,10 +1,13 @@
 import './App.css'
+import MoreLikeThis from './components/MoreLikeThis/MoreLikeThis'
+import MoviePage from './components/moviePage/MoviePage'
 
 function App() {
 
   return (
     <>
-      Azad Opensoft2024-frontend
+      <MoviePage />
+      <MoreLikeThis />
     </>
   )
 }

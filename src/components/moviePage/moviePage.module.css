@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root{
     --primary-font-color: #ffffff;
     --secondary-font-color: #c2b8b8;
     --tertiary-font-color: #cf0a0a;
 }
-
+/* Font */
+.font{
+    font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 /* hero small screen */
 
 /* animations */
@@ -90,7 +97,7 @@
     gap: 1rem;
 }
 .heroContainer .title{
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
     padding-left: 1rem;
@@ -142,7 +149,7 @@
 .heroContainer .description{
     width: 55%;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
     text-align: left;
     animation: slideLeft 1s ease forwards;
 }
@@ -152,7 +159,7 @@
     display: flex;
     gap:1rem;
     margin-left: 0rem;
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
 }
 .heroContainer .button button{
     /* padding: .5rem; */

@@ -2,7 +2,9 @@ import styles from "./moviePage.module.css"
 
 
 const MoviePage = ()=>{
-    return(<>
+    return(
+    <>
+    <div className={styles.font}>
     <div className={styles.heroSmall}>
         <div className={styles.title}>Lorem, ipsum dolor.</div>
     </div>
@@ -36,6 +38,7 @@ const MoviePage = ()=>{
                     <span><button>D</button></span>
                 </div>
             </div>
+        </div>
         </div>
         </>
     )
