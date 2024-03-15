@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect,useRef } from "react";
 import styles from "./Search.module.css";
 import { useDebounce } from "use-debounce";
 import { SearchResults } from "./SearchResults.jsx";
@@ -22,25 +22,52 @@ export const Search = ({movies}) => {
     });
   },[])
 
+  const searchRef=useRef(null);
 
+  useEffect(()=>{
+    function handleClickOutside(event){
+      if(searchRef.current && !searchRef.current.contains(event.target)){
+        setAutoCompleteResult([]);
+      }
+    }
+    document.addEventListener("mousedown",handleClickOutside);
+    return ()=>{
+      document.removeEventListener("mousedown",handleClickOutside);
+    }
+  },[])
+  
+  const getData = async () => {
+    try{
+      const results=await user.functions.auto_dave(debouncedSearch);
+      setAutoCompleteResult(results);
+    }
+    catch(err){
+      setAutoCompleteResult([]);
+      console.error("Failed to log in",err);
+    }
+  }
+
+  useEffect(()=>{
+    function handleClickInside(event){
+      if(searchRef.current && searchRef.current.contains(event.target)){
+        if(debouncedSearch){
+          getData();
+        }
+      }
+    }
+    document.addEventListener("mousedown",handleClickInside);
+    return ()=>{
+      document.removeEventListener("mousedown",handleClickInside);
+    }
+  },[])
   
 
   useEffect(() => {
-    const getData = async () => {
-      try{
-        const results=await user.functions.auto_dave(debouncedSearch);
-        setAutoCompleteResult(results);
-      }
-      catch(err){
-        setAutoCompleteResult([]);
-        console.error("Failed to log in",err);
-      }
-    }
     getData();
   }, [debouncedSearch]);
 
   return (
-    <div className={styles.search}>
+    <div ref={searchRef} className={styles.search}>
       <div className={styles.searchBox}>
         <i className={`fa fa-search ${styles.search__icon}`}></i>
         <input
