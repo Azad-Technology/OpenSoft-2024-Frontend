@@ -31,7 +31,9 @@ export const Carousel = () => {
                 <h1 className='carousel__title'>{movie.title}</h1>
                 <div className='carousel__specifics'>
                     <p>{movie.date} &nbsp;</p>
-                    <p className=''>{movie.imdb}</p>
+                    <div className='carousel__rating'>
+                    <p>{movie.imdb}</p>
+                    </div>
                     <p>&nbsp; </p>
                     {movie.genre.map((g) => {
                       return (
@@ -40,6 +42,7 @@ export const Carousel = () => {
                     })}
                 </div>
                 <div className='carousel__description'>{movie.description}</div>
+                <button className='carousel__button'>Watch Now!</button>
             </div>
         </div>
           )
