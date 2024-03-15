@@ -45,6 +45,11 @@ export const Navbar = ({movies}) => {
                     <a className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
                 ))}
             </div>
+            {/* <div className={styles.navbar__mobileMenu}>
+                {menuoptions.map((menuoption,index)=>(
+                    <a className={styles.mobileMenu__link} key={index} href={menuoption.link}>{menuoption.name}</a>
+                ))}
+            </div> */}
         </div>
         <div className={styles.navbar__right}>
             <Search movies={movies}/>

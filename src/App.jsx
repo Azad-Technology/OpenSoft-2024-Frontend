@@ -36,7 +36,7 @@ function App() {
   return (
     <>
       <Navbar movies={movies}/>
-      {/* <MobileMenu /> */}
+      <MobileMenu />
       <Movies movies={movies} />
     </>
   )
