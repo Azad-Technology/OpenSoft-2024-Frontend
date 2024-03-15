@@ -101,8 +101,17 @@
     }
 }
 
-@media screen and (max-height:510px){
+ @media screen and (max-height:510px){
     .navbar{
         padding-top: 1rem;
     }
 }
+/*
+@media screen and (max-height:388px){
+    .navbar{
+        height:0%;
+    }
+    .navbar__logo{
+        height:0rem;
+    }
+} */

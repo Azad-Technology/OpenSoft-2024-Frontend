@@ -59,10 +59,26 @@
 @media screen and (max-width:600px){
     .search{
         position:fixed;
-        margin-top:12%;
-        width:100%;
+        margin-top:18%;
+        width:90%;
+        margin-left:5%;
     }
     .searchBox{
+        /* margin-top:-0.3%; */
         width:88%;
+    }
+}
+
+@media screen and (max-width:450px){
+    .search{
+        margin-top:22%;
+        width:90%;
+    }
+}
+
+@media screen and (max-width:359px){
+    .search{
+        margin-top:30%;
+        width:80%;
     }
 }
