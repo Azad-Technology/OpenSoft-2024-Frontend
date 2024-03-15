@@ -1,5 +1,6 @@
 .search{
     position:relative;
+    width:30%;
     min-width:18rem;
 }
 
@@ -7,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 30%;
     height: 100%;
     padding: 0.2rem 1.2rem;
     min-width:18rem;
@@ -31,4 +32,37 @@
 
 .search__icon{
     color:white;
+}
+
+@media screen and (max-width:900px){
+    .search{
+        /* width:20%; */
+        min-width:15rem;
+    }
+
+    .searchBox{
+        min-width:15rem;
+    }
+}
+
+@media screen and (max-width:650px){
+    .search{
+        /* width:20%; */
+        min-width:12rem;
+    }
+
+    .searchBox{
+        min-width:12rem;
+    }
+}
+
+@media screen and (max-width:600px){
+    .search{
+        position:fixed;
+        margin-top:12%;
+        width:100%;
+    }
+    .searchBox{
+        width:88%;
+    }
 }

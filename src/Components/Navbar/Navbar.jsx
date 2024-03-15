@@ -28,6 +28,7 @@ const menuoptions = [
 export const Navbar = ({movies}) => {
 
   const [show,setShow]=useState(false);
+  const [showSearchBar,setShowSearchBar]=useState(false);
 
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
@@ -35,20 +36,38 @@ export const Navbar = ({movies}) => {
         });
     },[])
 
-  return (
-    <div className={`${styles.navbar} ${show && styles.navBlack}`}>
-        <div className={styles.navbar__left}>
-            <i className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
-            <img className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
-            <div className={styles.navbar__links}>
-                {menuoptions.map((menuoption,index)=>(
-                    <a className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
-                ))}
+    if(window.innerWidth>600){
+        return (
+          <div className={`${styles.navbar} ${show && styles.navBlack}`}>
+              <div className={styles.navbar__left}>
+                  <i className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
+                  <img className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
+                  <div className={styles.navbar__links}>
+                      {menuoptions.map((menuoption,index)=>(
+                          <a className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
+                      ))}
+                  </div>
+              </div>
+              <div className={styles.navbar__right}>
+                  <Search movies={movies}/>
+              </div>
+          </div>
+        )
+    }
+    else{
+        return(
+            <div className={styles.navbar__mobile}>
+                <div className={`${styles.navbar} ${show && styles.navBlack}`}>
+                    <div className={styles.navbar__left}>
+                        <i className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
+                        <img className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
+                    </div>
+                    <div className={styles.navbar__right}>
+                        <i onClick={()=>setShowSearchBar(!showSearchBar)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
+                    </div>
+                </div>
+                {showSearchBar && <Search movies={movies}/>}
             </div>
-        </div>
-        <div className={styles.navbar__right}>
-            <Search movies={movies}/>
-        </div>
-    </div>
-  )
+        )
+    }
 }
