@@ -7,6 +7,9 @@ export const Carousel = () => {
   const slideRight = () => {
     setCurrIndex((currIndex + 1) % movies.length);
   }
+  const handleClick = (index) => {
+    setCurrIndex(index);
+  }
   useEffect(() => {
     const interval = setInterval(slideRight, 3000);
     return () => clearInterval(interval);
@@ -44,7 +47,7 @@ export const Carousel = () => {
         <div className='carousel__sideslide'> 
         {movies.map((movie, index) => {
           return (
-            <img className={`carousel__sideslide-image ${index === currIndex ? 'active' : ''}`} src={movie.poster} alt={movie.title} key={index} />
+            <img className={`carousel__sideslide-image ${index === currIndex ? 'active' : ''}`} src={movie.poster} alt={movie.title} key={index} onClick={() => (handleClick(index))} />
           )}
         )}
         </div>
