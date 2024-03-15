@@ -8,7 +8,9 @@ export const movies = [
       "Action",
       "Mystery",
       "Sci-Fi",
-    ],},
+    ],
+    poster:"https://image.tmdb.org/t/p/w185/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg"
+  },
     {title:"Edge of Tomorrow",
     backdrop:"http://image.tmdb.org/t/p/w1280/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
     description:"A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
@@ -18,7 +20,9 @@ export const movies = [
       "Action",
       "Adventure",
       "Sci-Fi",
-    ],},
+    ],
+    poster:"http://image.tmdb.org/t/p/w185/xjw5trHV7Mwo61P0kCTy8paEkgO.jpg"
+  },
     {title:"Kung Fu Panda",
     backdrop:"http://image.tmdb.org/t/p/w1280/d1RHScaZc7I8j0lDke1c4AxI435.jpg",
     description:"In the Valley of Peace, Po the Panda finds himself chosen as the Dragon Warrior despite the fact that he is obese and a complete novice at martial arts.",
@@ -28,7 +32,9 @@ export const movies = [
       "Animation",
       "Action",
       "Adventure",
-    ],},
+    ],
+    poster:"http://image.tmdb.org/t/p/w185/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg"
+  },
     {title:"Iron Man",
     backdrop:"http://image.tmdb.org/t/p/w1280/cyecB7godJ6kNHGONFjUyVN9OX5.jpg",
     description:"After being held captive in an Afghan cave, an industrialist creates a unique weaponized suit of armor to fight evil.",
@@ -38,7 +44,9 @@ export const movies = [
       "Action",
       "Adventure",
       "Sci-Fi",
-    ],},
+    ],
+    poster:"http://image.tmdb.org/t/p/w185/78lPtwv72eTNqFW9COBYI0dWDJa.jpg"
+    },
     {title:"The Dark Knight",
     backdrop:"http://image.tmdb.org/t/p/w1280/dqK9Hag1054tghRQSqLSfrkvQnA.jpg",
     description:"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
@@ -48,7 +56,9 @@ export const movies = [
       "Action",
       "Crime",
       "Drama",
-    ],},
+    ],
+    poster:"http://image.tmdb.org/t/p/w185/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+  },
     {title:"The Wolf of Wall Street",
     backdrop:"http://image.tmdb.org/t/p/w1280/2P0toWq3feNvFAzf28j7vNc1IuZ.jpg",
     description:"Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
@@ -58,7 +68,9 @@ export const movies = [
       "Biography",
       "Comedy",
       "Crime",
-    ],},
+    ],
+    poster:"http://image.tmdb.org/t/p/w185/34m2tygAYBGqA9MXKhRDtzYd4MR.jpg"
+  },
     {title:"Titanic",
     backdrop:"http://image.tmdb.org/t/p/w1280/sCzcYW9h55WcesOqA12cgEr9Exw.jpg",
     description:"The story of the 1912 sinking of the largest luxury liner ever built, the tragedy that befell over two thousand of the rich and famous as well as of the poor and unknown passengers aboard the doomed ship.",
@@ -68,5 +80,7 @@ export const movies = [
       "Action",
       "Drama",
       "History",
-    ],},
+    ],
+    poster:"http://image.tmdb.org/t/p/w185/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
+  },
   ];

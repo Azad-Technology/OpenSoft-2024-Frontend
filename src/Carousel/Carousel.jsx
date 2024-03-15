@@ -13,9 +13,7 @@ export const Carousel = () => {
   }, [currIndex]);
  
   return (
-    <div 
-    className='carousel'
-    >
+    <div className='carousel'>
       <div className='carousel__container'
        style={{"--index": currIndex}}
        >
@@ -39,13 +37,17 @@ export const Carousel = () => {
                 </div>
                 <div className='carousel__description'>{movie.description}</div>
             </div>
-                {/* <div className='carousel__sideslide'>
-                <img src='https://image.tmdb.org/t/p/w154/wShcJSKMFg1Dy1yq7kEZuay6pLS.jpg' alt='Movie' />
-                </div> */}
         </div>
           )
         })
         }
+        <div className='carousel__sideslide'> 
+        {movies.map((movie, index) => {
+          return (
+            <img className={`carousel__sideslide-image ${index === currIndex ? 'active' : ''}`} src={movie.poster} alt={movie.title} key={index} />
+          )}
+        )}
+        </div>
         </div>
     </div>
   )
