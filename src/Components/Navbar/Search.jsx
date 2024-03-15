@@ -15,8 +15,8 @@ export const Search = ({movies}) => {
       const credentials=Realm.Credentials.anonymous();
       try{
         const user=await app.logIn(credentials);
-        const results=await user.functions.auto_dave();
-        console.log(results);
+        const results=await user.functions.auto_dave(debouncedSearch);
+        setAutoCompleteResult(results);
       }
       catch(err){
         console.error("Failed to log in",err);
@@ -38,7 +38,7 @@ export const Search = ({movies}) => {
         />
         {search && <i onClick={()=>setSearch('')} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
-      {debouncedSearch && <SearchResults movies={movies}/>}
+      {autoCompleteResult && <SearchResults movies={autoCompleteResult}/>}
     </div>
   );
 };
