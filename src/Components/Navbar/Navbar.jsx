@@ -34,14 +34,14 @@ export const Navbar = ({movies}) => {
   const mobileMenuRef = useRef(null);
   const searchRef=useRef(null);
   useEffect(()=>{
-    function handleClickOutside(event){
+    function handleClickOutsideSearch(event){
       if(searchRef.current && !searchRef.current.contains(event.target)){
-        setAutoCompleteResult([]);
+        setShowSearchBar(false);
       }
     }
-    document.addEventListener("mousedown",handleClickOutside);
+    document.addEventListener("mousedown",handleClickOutsideSearch);
     return ()=>{
-      document.removeEventListener("mousedown",handleClickOutside);
+      document.removeEventListener("mousedown",handleClickOutsideSearch);
     }
   },[])
 
