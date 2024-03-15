@@ -19,6 +19,7 @@
     color:white;
     display:none;
     width:30px;
+    cursor: pointer;
 }
 
 .navBlack{

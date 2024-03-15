@@ -1,14 +1,16 @@
 .mobileMenu{
+    display: none;
     position:absolute;
     z-index: 100;
     top:10%;
     color:black;
     left:2%;
     width: 100%;
-    max-width: 30%;
+    max-width: 40%;
     border-radius: 0.5rem;
     padding: 1rem 2rem;
-    background: blueviolet;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
     color: white;
     /* background-color: #fff; */
     /* max-width: 400px; */
@@ -17,8 +19,9 @@
 .mobileMenu__links{
     display: flex;
     flex-direction: column;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     top: 10%;
+    padding: 0.7rem 0;
     /* gap: 1rem; */
 }
 
@@ -31,7 +34,13 @@
 }
 
 .mobileMenu__link:hover{
-    color: #f1356d;
+    color:red;
+}
+
+@media screen and (max-width: 1100px){
+    .mobileMenu{
+        display: block;
+    }    
 }
 
 /* .mobileMenu__close{
