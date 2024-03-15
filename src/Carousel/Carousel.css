@@ -21,34 +21,51 @@
 .carousel{
     width: 100%;
     height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.carousel__container{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    display: relative;
+    overflow:hidden;
 }
 
 .carousel__slide{
+    position: relative;
+    flex: 0 0 100%;    
     height: 100%;
     width: 100%;
-    position: relative;
-    /* background-image: url('https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_SX677_AL_.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; */
-    
+    /* transition: transform 0.5s ease; */
+    transition: transform 0.6s ease-in-out;
+    transform: translateX(calc(-100% * var(--index)));
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow-y: hidden;
 }
 
 .carousel__slide img{
+    object-fit: cover;
     width: 100%;
     max-height: 100%;
-    height: 100%;
-    margin-left:15%;
-    object-fit: cover;
+    height: 75%;
+    /* margin-left: 15%; */
+    display: block;
 }
 
 .carousel__title{
-    font-size: 4rem;
+    font-size: 2.25rem;
     margin-bottom: 3%;
+    /* background: -webkit-linear-gradient(90deg, #eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
 }
 
 .carousel__content{
     position : absolute;
-    width:60%;
+    width:70%;
     height: 50%;
     z-index: 10;
     top : 40%;
@@ -58,20 +75,59 @@
 .carousel__specifics{
     display: flex;
     margin-bottom: 3%;
-    font-size: 2rem;
-    /* justify-content:space-between; */
+    font-size: 1rem;
+}
+
+.carousel__ratings{
+    background-color: gray;
+    color: aquamarine;
 }
 
 .carousel__sideslide{
     position : absolute;
-    z-index: 0;
+    z-index: 15;
     bottom: 0;
-    right:0;
+    right: 0;
+    display: flex;
+    overflow:auto;
+    scroll-behavior: smooth;
+    width:100%;
+    padding-bottom: 1rem;
+    height:30%;
+}
+
+.carousel__sideslide::-webkit-scrollbar{
+    display: none;
+}
+.carousel__sideslide-image{
+    display: block;
+    object-fit:cover;
+    position: relative;
+    width: fit-content;
+    border-radius: 1rem;
+    margin: 0 0.5rem 0 0.5rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    z-index: 15;
+    filter: brightness(40%);
+    /* transition: transform 0.9s ease-in-out;
+    transform: translateX(calc(-100% * var(--index))); */
+}
+
+.carousel__sideslide-image:hover {
+    transition: 0.6s ease-in-out;
+    filter: brightness(100%);
+}
+
+.active {
+    transition: 0.6s ease-in-out;
+    filter: brightness(100%);
 }
 
 .carousel__description {
-    width: 60%;
-    font-size: 1.5rem;
+    width: 90%;
+    font-size: 1rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -83,29 +139,51 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(15, 15, 15, 1) 15%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(90deg, rgba(10, 10, 10, 1) 15%, rgba(0, 0, 0, 0) 100%);
+    z-index: 5;
+    display:none;
+}
+.overlay--down{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(10, 10, 10, 1) 35%, rgba(0, 0, 0, 0) 100%);
     z-index: 5;
 }
 
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 1440px) {
+    .overlay{
+        display: flex;
+    }
+    .overlay--down{
+        display: none;
+    }
     .carousel__content{
-        width: 80%;
+        width: 50%;
         height: 70%;
         top : 40%;
         left: 5%;
     }
+    .carousel__slide img{
+        height: 100%;
+    }
     .carousel__title{
-        font-size: 8rem;
+        font-size: 5rem;
     }
     .carousel__specifics{
-        font-size: 4rem;
+        font-size: 1.75rem;
     }
     .carousel__description {
-        width: 70%;
-        font-size: 3.5rem;
+        width: 50%;
+        font-size: 1.5rem;
+    }
+    .carousel__sideslide{
+        right: 1%;
+        width: 40%;
     }
 }
 
+/* 
 @media screen and (max-width: 1024px) {
     .carousel__content{
         width: 80%;
@@ -163,7 +241,7 @@
     }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (min-width: 320px){
     .carousel__content{
         width: 90%;
         height: 50%;
@@ -171,10 +249,17 @@
         left: 5%;
     }
     .carousel__title{
-        font-size: 1.2rem;
+        font-size: 4rem;
     }
     .carousel__specifics{
-        font-size: 0.75rem;
+        font-size: 1.5rem;
+    }
+    .carousel__description {
+        width: 80%;
+        font-size: 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 }
-
+ */
