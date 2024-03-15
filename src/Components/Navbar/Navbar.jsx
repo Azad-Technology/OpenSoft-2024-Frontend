@@ -32,6 +32,18 @@ export const Navbar = ({movies}) => {
   const [showSearchBar,setShowSearchBar]=useState(false);
   const [showHamburgerMenu,setShowHamburgerMenu]=useState(false);
   const mobileMenuRef = useRef(null);
+  const searchRef=useRef(null);
+  useEffect(()=>{
+    function handleClickOutside(event){
+      if(searchRef.current && !searchRef.current.contains(event.target)){
+        setAutoCompleteResult([]);
+      }
+    }
+    document.addEventListener("mousedown",handleClickOutside);
+    return ()=>{
+      document.removeEventListener("mousedown",handleClickOutside);
+    }
+  },[])
 
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
@@ -83,8 +95,8 @@ export const Navbar = ({movies}) => {
                         <i onClick={()=>setShowSearchBar(!showSearchBar)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
                     </div>
                 </div>
-                {showSearchBar && <Search movies={movies}/>}
-                {showHamburgerMenu && <MobileMenu />}
+                {showSearchBar && <div ref={searchRef}><Search movies={movies}/></div>}
+                {showHamburgerMenu && <div ref={mobileMenuRef}><MobileMenu /></div>}
             </div>
         )
     }
