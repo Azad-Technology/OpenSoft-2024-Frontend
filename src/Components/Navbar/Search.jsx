@@ -6,19 +6,31 @@ import * as Realm from "realm-web";
 
 export const Search = ({movies}) => {
   const [search, setSearch] = useState("");
-  const [debouncedSearch] = useDebounce(search, 500);
+  const [debouncedSearch] = useDebounce(search, 250);
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+  const [user,setUser]=useState(null);
+  const[app,setApp]=useState(null);
+
+  useEffect(()=>{
+    const currApp=new Realm.App({id:"application-0-gisfr"});
+    setApp(currApp);
+    const credentials=Realm.Credentials.anonymous();
+    currApp.logIn(credentials).then((user)=>{
+      setUser(user);
+    }).catch((err)=>{
+      console.error("Failed to log in",err);
+    });
+  },[])
+
 
   useEffect(() => {
     const getData = async () => {
-      const app=new Realm.App({id:"application-0-gisfr"});
-      const credentials=Realm.Credentials.anonymous();
       try{
-        const user=await app.logIn(credentials);
         const results=await user.functions.auto_dave(debouncedSearch);
         setAutoCompleteResult(results);
       }
       catch(err){
+        setAutoCompleteResult([]);
         console.error("Failed to log in",err);
       }
     }

@@ -7,20 +7,26 @@
     top:80%;
     /* border:1px solid rgb(171, 171, 171); */
     height:fit-content;
+    background-color:rgba(0, 0, 0, 0.701);
+    opacity:0.9;
     padding-right:2.4rem;
+    margin-top:8%;
+    border-radius: 0.7rem;
+    backdrop-filter: blur(5%);
+
 }
 
 .searchResult{
-    width:100%;
-    background-color:black;
+    width:90%;
+    /* background-color:black; */
     padding-right:2.4rem;
-    min-width: 100%;
+    /* min-width: 100%; */
     display:flex;
     align-items:center;
-    border:1px solid rgb(85, 84, 84);
-    border-radius:10px;
+    border-bottom:1px solid whitesmoke;
+    /* border-radius:10px; */
     opacity:0.8;
-    margin:1% 0
+    margin-left:5%;
 }
 
 .searchResult img{
