@@ -9,6 +9,7 @@ import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 function App() {
 
   const [movies,setMovies]=useState([]);
+  const [showhamurgerMenu,setShowHamburgerMenu]=useState(false);
 
   useEffect(() => {
     const options = {
@@ -36,8 +37,7 @@ function App() {
   return (
     <>
       <Navbar movies={movies}/>
-      <MobileMenu />
-      <Movies movies={movies} />
+      <Movies movies={movies} setShowHamburgerMenu={setShowHamburgerMenu} />
     </>
   )
 }

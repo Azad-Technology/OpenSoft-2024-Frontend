@@ -1,3 +1,11 @@
+.navbar__mobile{
+    position:relative;
+}
+
+.DesktopMenu{
+    position:relative;
+}
+
 .navbar{
     position:fixed;
     top:0;
@@ -87,9 +95,6 @@
 }
 
 @media screen and (max-width:600px){
-    .navbar__mobile{
-        position:relative;
-    }
     .searchIcon{
         color:white;
         cursor:pointer;
