@@ -9,14 +9,16 @@
     max-width: 40%;
     border-radius: 0.5rem;
     padding: 1rem 2rem;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
+    background:rgba(0,0,0,0.5 );
+    backdrop-filter: blur(10px);
     color: white;
     /* background-color: #fff; */
     /* max-width: 400px; */
     transition-timing-function: ease-in;
     transition: 0.5s;
 }
+
+
 
 .mobileMenu__links{
     display: flex;
@@ -31,8 +33,11 @@
     margin: 1rem 0;
     color: white;
     text-decoration: none;
-
+    border-bottom: 0.1rem solid rgb(86, 85, 85);
+    padding-bottom: 0.8rem;
+    /* margin-bottom: 0.5rem; */
 }
+
 
 .mobileMenu__link:hover{
     color:red;

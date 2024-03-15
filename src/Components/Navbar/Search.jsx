@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useRef } from "react";
 import styles from "./Search.module.css";
 import { useDebounce } from "use-debounce";
 import { SearchResults } from "./SearchResults.jsx";
@@ -8,6 +8,19 @@ export const Search = ({movies}) => {
   const [search, setSearch] = useState("");
   const [debouncedSearch] = useDebounce(search, 500);
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+
+  const searchRef=useRef(null);
+  useEffect(()=>{
+    function handleClickOutside(event){
+      if(searchRef.current && !searchRef.current.contains(event.target)){
+        setAutoCompleteResult([]);
+      }
+    }
+    document.addEventListener("mousedown",handleClickOutside);
+    return ()=>{
+      document.removeEventListener("mousedown",handleClickOutside);
+    }
+  },[])
 
   useEffect(() => {
     const getData = async () => {

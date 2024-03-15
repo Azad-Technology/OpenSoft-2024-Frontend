@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect, useRef } from 'react'
 import styles from './Navbar.module.css';
 import { Search } from './Search';
 import { MobileMenu } from './MobileMenu.jsx';
@@ -31,11 +31,23 @@ export const Navbar = ({movies}) => {
   const [show,setShow]=useState(false);
   const [showSearchBar,setShowSearchBar]=useState(false);
   const [showHamburgerMenu,setShowHamburgerMenu]=useState(false);
+  const mobileMenuRef = useRef(null);
 
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
             window.scrollY>75?setShow(true):setShow(false);
         });
+
+        function handleClickOutside(event){
+            if(mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)){
+                setShowHamburgerMenu(false);
+            }
+        }
+
+        document.addEventListener("mousedown",handleClickOutside);
+        return ()=>{
+            document.removeEventListener("mousedown",handleClickOutside);
+        }
     },[])
 
     if(window.innerWidth>600){
@@ -55,7 +67,7 @@ export const Navbar = ({movies}) => {
                         <Search movies={movies}/>
                     </div>
                 </div>
-                {showHamburgerMenu && <MobileMenu />}
+                {showHamburgerMenu && <div ref={mobileMenuRef}><MobileMenu /></div>}
             </div>
         )
     }
