@@ -6,10 +6,11 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
-    height:10%;
+    height:9%;
     padding:0% 0;
     transition-timing-function: ease-in;
     transition: all 0.5s;
+    font-family:'arial'
 }
 
 .hamburger{
@@ -25,7 +26,7 @@
 }
 
 .navbar__logo{
-    height:5vh;
+    height:2.5rem;
     object-fit:contain;
     /* margin:2%; */
     margin-left:10%;
@@ -49,10 +50,11 @@
 }
 
 .navbar__link{
-    margin:0 10%;
+    margin:0 8%;
     text-wrap:nowrap;
     color:white;
     text-decoration:none;
+    font-size:0.8rem;
 }
 
 .navbar__link:hover{
@@ -79,6 +81,22 @@
         margin-left:5%;
     }
     .navbar__right{
-        margin-right:2%;
+        margin-right:8%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .navbar__mobile{
+        position:relative;
+    }
+    .searchIcon{
+        color:white;
+        cursor:pointer;
+    }
+}
+
+@media screen and (max-height:510px){
+    .navbar{
+        padding-top: 1rem;
     }
 }

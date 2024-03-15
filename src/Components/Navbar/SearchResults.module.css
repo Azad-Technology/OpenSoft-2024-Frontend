@@ -57,3 +57,14 @@
     animation:growDown 500ms ease-in-out forwards;
     transform-origin: top center;
 }
+
+@media screen and (max-width:600px){
+    .searchResults{
+        width:88%;
+        min-width: none;
+    }
+
+    .searchResult{
+        height:fit-content;
+    }
+}
