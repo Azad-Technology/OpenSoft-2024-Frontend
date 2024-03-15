@@ -33,23 +33,8 @@ export const Navbar = ({movies}) => {
   const [showHamburgerMenu,setShowHamburgerMenu]=useState(false);
   const mobileMenuRef = useRef(null);
   const searchRef=useRef(null);
-  useEffect(()=>{
-    function handleClickOutsideSearch(event){
-      if(searchRef.current && !searchRef.current.contains(event.target)){
-        setShowSearchBar(false);
-      }
-    }
-    document.addEventListener("mousedown",handleClickOutsideSearch);
-    return ()=>{
-      document.removeEventListener("mousedown",handleClickOutsideSearch);
-    }
-  },[])
 
     useEffect(()=>{
-        window.addEventListener("scroll",()=>{
-            window.scrollY>75?setShow(true):setShow(false);
-        });
-
         function handleClickOutside(event){
             if(mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)){
                 setShowHamburgerMenu(false);
@@ -60,6 +45,24 @@ export const Navbar = ({movies}) => {
         return ()=>{
             document.removeEventListener("mousedown",handleClickOutside);
         }
+    },[])
+
+    useEffect(()=>{
+        function handleClickOutside2(event){
+        if(searchRef.current && !searchRef.current.contains(event.target)){
+            setShowSearchBar(false);
+        }
+        }
+        document.addEventListener("mousedown",handleClickOutside2);
+        return ()=>{
+        document.removeEventListener("mousedown",handleClickOutside2);
+        }
+    },[])
+
+        useEffect(()=>{
+            window.addEventListener("scroll",()=>{
+                window.scrollY>75?setShow(true):setShow(false);
+            });
     },[])
 
     if(window.innerWidth>600){
