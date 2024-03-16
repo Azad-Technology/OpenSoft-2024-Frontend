@@ -4,7 +4,7 @@ import { useDebounce } from "use-debounce";
 import { SearchResults } from "./SearchResults.jsx";
 import * as Realm from "realm-web";
 
-export const Search = ({movies}) => {
+export const Search = ({movies,searchBarRef}) => {
   const [search, setSearch] = useState("");
   const [debouncedSearch] = useDebounce(search, 250);
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
@@ -49,7 +49,6 @@ export const Search = ({movies}) => {
   }
 
   useEffect(()=>{
-    console.log("search",debouncedSearch);
     function handleClickInside(event){
       if(searchRef.current && searchRef.current.contains(event.target)){
         setClick(true);
@@ -71,11 +70,13 @@ export const Search = ({movies}) => {
       <div className={styles.searchBox}>
         <i className={`fa fa-search ${styles.search__icon}`}></i>
         <input
+          ref={searchBarRef}
           className={styles.search__input}
           type="text"
           placeholder="Titles, people, genres"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          onKeyPress={(e) => {handleKeyPress(e,debouncedSearch)}}
         />
         {search && <i onClick={()=>setSearch('')} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
