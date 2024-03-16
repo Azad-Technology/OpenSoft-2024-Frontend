@@ -57,5 +57,12 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
       gap:1rem;
     }
   }
+@media screen and (max-width: 426px) {
+    .container .gridcontainer {
+      grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+      gap:1rem;
+      margin: 1rem 1rem 0 1rem;
+    }
+  }
 
 
