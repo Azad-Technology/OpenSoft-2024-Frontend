@@ -1,0 +1,235 @@
+/* .container{
+    position: relative;
+    max-width: 20rem;   
+    width: 100%; 
+    margin: 5rem auto 1.875rem; 
+}
+.selectbtn{
+    display: flex;
+    height: 3.125rem;   
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;  
+    border-radius: 0.5rem;  
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.1); 
+}
+.selectbtn .btntext{
+    font-size: 1.0625rem; 
+    font-weight: 400;
+    color: #333;
+}
+.selectbtn .arrowdwn{
+    display: flex;
+    height: 1.3125rem;  
+    width: 1.3125rem;
+    color: #c3b8b8;
+    font-size: 0.875rem;  
+    border-radius: 50%;
+    background: #6e93f7;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.selectbtn.open .arrowdwn{
+    transform: rotate(-180deg);
+}
+.listItems{
+    position: relative;
+    margin-top: 0.9375rem;  
+    border-radius: 0.5rem; 
+    padding: 1rem;   
+    background-color: #fff;
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.selectbtn.open ~ .listItems{
+    display: block;
+}
+.listItems .item{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 3.125rem;  
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 0.9375rem;   
+    border-radius: 0.5rem; 
+}
+.listItems .item:hover{
+    background-color: #e7edfe;
+}
+.item .itemtext{
+    font-size: 1rem;        
+    font-weight: 400;
+    color: #333;
+}
+.item .checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1rem;         
+    width: 1rem;   
+    border-radius: 0.25rem;
+    margin-right: 0.75rem;  
+    border: 0.09375rem solid #c0c0c0; 
+    transition: all 0.3s ease-in-out;
+}
+.item.checked .checkbox{
+    background-color: #4070f4;
+    border-color: #4070f4;
+}
+.checkbox .checkicon{
+    color: #fff;
+    font-size: 0.6875rem;   
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+.item.checked .checkicon{
+    transform: scale(1);
+}  */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+body { /* Or your chosen element */
+    background-color: #00050d;/* Use the background color */
+}
+.dropdowncontainer {
+  position: relative; 
+  
+  /* width: 12.5rem; */
+  font-family: 'Poppins', sans-serif; 
+  margin-top: 4rem;
+    /* margin: 3.125rem auto 1.875rem; */
+}
+
+.dropdownbutton {
+  display: flex;
+  align-items: center;
+  color: #d2d0d0;
+  justify-content: space-between;
+  background-color: #33373d;
+  border: 0.0625rem solid #33373d; 
+  border-radius: 0.25rem; 
+  padding: 0.625rem 0.9375rem; 
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.dropdownbutton:hover {
+    border-color: #33373d; /* Example accent color */
+    box-shadow: 0 0 0.8rem rgba(120, 121, 123, 0.5); /* Soft border glow */
+}
+
+/* .open .dropdownbutton::after {
+    content: '\25B2'; 
+    font-size: 0.8em; 
+    transform: rotate(180deg);
+    transition: transform 0.2s ease-in-out; 
+} */
+
+.dropdownbutton::after { 
+  content: "\25BC";
+  font-size: 0.8em; 
+  margin-left: 0.3rem; 
+  transition: transform 0.2s ease-in-out;
+}
+
+.dropdownlist {
+  position: absolute;
+  color: #fff;
+  padding: 0;
+  margin-top: 0.3125rem;
+  width: max-content;
+  overflow-y: auto;
+  background-color: #191e25; /* A dark gray background */
+  box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.4); 
+  border: 0.0625rem solid #33373d; 
+  border-radius: 0.25rem;
+}
+
+.dropdownlist li {
+  list-style: none;
+  padding: 0.625rem 0.9375rem; 
+}
+
+.dropdownlist li:hover {
+  background-color: #f0f0f0;
+  color: #383838;
+}
+
+.dropdownlist label {
+  display: block;
+}
+
+.dropdownlist input[type="checkbox"] {
+  margin-right: 0.625rem; 
+}
+
+.dropdownbutton:focus { 
+  outline: none; 
+  box-shadow: 0 0 0 0.125rem 33373d; 
+}
+
+.container{
+    background: #00050d;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-font-color);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+.container .title {
+    font-size: 1.5rem;
+    margin:  auto auto auto 2rem;
+}
+
+.container .title span::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.1rem;
+    background: var(--tertiary-font-color);  
+    margin-bottom: 1rem;
+}
+
+.container .gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 2rem 0 2rem;
+  }
+
+  .container .gridcontainer .card {
+    background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1px );
+-webkit-backdrop-filter: blur( 1px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 3rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+
+@media screen and (max-width: 768px) {
+    .container .gridcontainer {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      gap:1rem;
+    }
+  }
+@media screen and (max-width: 426px) {
+    .container .gridcontainer {
+      grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+      gap:1rem;
+      margin: 1rem 1rem 0 1rem;
+    }
+  }
