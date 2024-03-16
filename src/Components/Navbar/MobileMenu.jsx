@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './MobileMenu.module.css';
 
 export const MobileMenu = () => {
+
+    const [showDropdown,setShowDropdown]=useState({
+        "Genre":false,
+        "Country":false,
+        "Movies":false,
+        "TV Shows":false,
+        "Top IMDB":false
+    });
 
   const menuoptions = [
     {
@@ -32,7 +40,29 @@ export const MobileMenu = () => {
     },
     {
         name:"Country",
-        link:"#"
+        link:"#",
+        dropdown:[
+            {
+                name:"India",
+                link:"#"
+            },
+            {
+                name:"USA",
+                link:"#"
+            },
+            {
+                name:"UK",
+                link:"#"
+            },
+            {
+                name:"Australia",
+                link:"#"
+            },
+            {
+                name:"China",
+                link:"#"
+            }
+        ]
     },
     {
         name:"Movies",
@@ -48,25 +78,42 @@ export const MobileMenu = () => {
     }
   ]
 
+  const handleToggleDropdown=(e)=>{
+    const name=e.target.innerText;
+    setShowDropdown(prevState=>({
+        ...prevState,
+        [name]:!prevState[name]
+    }))
+  }
+
   return (
     <div className={styles.mobileMenu}>
-        {/* <button className={styles.mobileMenu__close}>
-          <i className={`fa fa-times ${styles.mobileMenu__closeIcon}`}></i>
-          Close
-        </button> */}
-        {/* <div className={styles.mobileMenu__links}>
-            <a className={styles.mobileMenu__link} href="#">
-              Genre
-            </a>
-            <a className={styles.mobileMenu__link} href="#">Country</a>
-            <a className={styles.mobileMenu__link} href="#">Movies</a>
-            <a className={styles.mobileMenu__link} href="#">TV Shows</a>
-            <a className={styles.mobileMenu__link} href="#">Top IMDB</a>
-        </div> */}
         <div className={styles.mobileMenu__links}>
-            {menuoptions.map((menuoption,index)=>(
-                <a className={styles.mobileMenu__link} key={index} href={menuoption.link}>{menuoption.name}</a>
-            ))}
+            {menuoptions.map((menuoption,index)=>{
+                return(
+                    <>
+                        <a onClick={handleToggleDropdown} className={styles.mobileMenu__link} key={index} href={menuoption.link}>{menuoption.name}</a>
+                        <div className={styles.mobileMenu__dropdown}>
+                            <div className={styles.mobileMenu__dropdown_left}>
+                                {showDropdown[menuoption.name] && menuoption.dropdown?.map((dropdown,index)=>{
+                                    return(
+                                        index%2===0 && <a className={`${styles.mobileMenu__link} ${styles.dropdown}`} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                    )     
+                                }
+                                )}
+                            </div>
+                            <div className={styles.mobileMenu__dropdown_right}>
+                                {showDropdown[menuoption.name] && menuoption.dropdown?.map((dropdown,index)=>{
+                                    return(
+                                        index%2!==0 && <a className={`${styles.mobileMenu__link} ${styles.dropdown}`} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                    )     
+                                }
+                                )}
+                            </div>
+                        </div>
+                    </>
+                )
+        })}
           </div>
     </div>
   )
