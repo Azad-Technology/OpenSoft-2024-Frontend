@@ -2,8 +2,47 @@ import React, {useState, useEffect} from 'react'
 import CustomDropdown from './CustomDropdown'
 import axios from 'axios';
 import styles from './CustomDropdown.module.css'
+import { useParams } from 'react-router-dom';
+import * as Realm from "realm-web";
 
 const SearchPage = () => {
+  const { searchTerm } = useParams();
+
+  const [fuzzy, setFuzzy] = useState([]);
+
+  const [user,setUser]=useState(null);
+  const [app,setApp]=useState(null);
+
+  useEffect(()=>{
+    const currApp=new Realm.App({id:"application-0-gisfr"});
+    setApp(currApp);
+    const credentials=Realm.Credentials.anonymous();
+    currApp.logIn(credentials).then((user)=>{
+      setUser(user);
+    }).catch((err)=>{
+      console.error("Failed to log in",err);
+    });
+  },[])
+
+  const getData = async () => {
+    try{
+      const results=await user.functions.fuzzy_dave(searchTerm,'*');
+      console.log("results",results)
+      console.log(results);
+      setFuzzy(results);
+    }
+    catch(err){
+      setFuzzy([]);
+      console.error("Failed to get data",err);
+    }
+  }
+
+  useEffect(() => {
+    console.log(searchTerm)
+    getData();
+  }, [searchTerm,user]);
+  
+
     const [movies, setMovies] = useState([]);
     const [genreSelections, setGenreSelections] = useState([]); 
   const [yearSelections, setYearSelections] = useState([]); 
