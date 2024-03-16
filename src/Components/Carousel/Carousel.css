@@ -161,6 +161,7 @@
     }
 }
 
+
 @media screen and (min-width: 500px) {
     .overlay{
         display: flex;
@@ -191,7 +192,6 @@
         width: fit-content;
         height: 100%;
     }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -241,6 +241,39 @@
         background-color: rgba(255, 9, 9, 0.7);
     }
 }
+
+@media screen and (max-height: 600px) {
+    .overlay{
+        display: flex;
+    }
+    .overlay--down{
+        display: none;
+    }
+    .carousel__content{
+        width: 80%;
+        height: 70%;
+        top : 35%;
+        left: 5%;
+    }
+    .carousel__slide img{
+        height: 100%;
+    }
+    .carousel__title{
+        font-size: 2.5rem;
+    }
+    .carousel__specifics{
+        font-size: 1rem;
+    }
+    .carousel__description {
+        width: 50%;
+        font-size: 0.9rem;
+    }
+    .carousel__sideslide{
+        right: 1%;
+        width: 40%;
+    }
+}
+
 
 @media screen and (min-width: 2560px) {
     .carousel__content{
