@@ -7,7 +7,8 @@ import 'font-awesome/css/font-awesome.min.css';
 import { Movies } from './Components/Movies.jsx';
 import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
-
+import SearchPage from './Components/SearchPage/SearchPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
 
   const [movies,setMovies]=useState([]);
@@ -37,10 +38,19 @@ function App() {
 
 
   return (
-    <>
-      <Navbar movies={movies}/>
-      <Carousel />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index path="/" element={
+          <>
+            <Navbar/>
+            <Carousel />  
+          </>
+        } />
+        <Route path="/search/:searchTerm" element={
+          <SearchPage />
+        } />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
