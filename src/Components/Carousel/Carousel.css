@@ -155,6 +155,12 @@
     z-index: 5;
 }
 
+@media screen and (max-width: 600px) {
+    .carousel{
+        margin-top: 9%;
+    }
+}
+
 @media screen and (min-width: 500px) {
     .overlay{
         display: flex;
