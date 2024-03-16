@@ -233,8 +233,7 @@
     }
 }
 
-/* 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 2560px) {
     .carousel__content{
         width: 80%;
         height: 50%;
@@ -242,74 +241,13 @@
         left: 5%;
     }
     .carousel__title{
+        font-size: 8rem;
+    }
+    .carousel__specifics{
         font-size: 3rem;
     }
-    .carousel__specifics{
-        font-size: 1.5rem;
-    }
     .carousel__description {
-        width: 80%;
-        font-size: 1.25rem;
+        width: 60%;
+        font-size: 2.75rem;
     }
 }
-
-@media screen and (max-width: 768px) {
-    .carousel__content{
-        width: 80%;
-        height: 50%;
-        top : 40%;
-        left: 10%;
-    }
-    .carousel__title{
-        font-size: 2rem;
-    }
-    .carousel__specifics{
-        font-size: 1rem;
-    }
-    .carousel__description {
-        width: 70%;
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 480px){
-    .carousel__content{
-        width: 90%;
-        height: 50%;
-        top : 40%;
-        left: 5%;
-    }
-    .carousel__title{
-        font-size: 1.5rem;
-    }
-    .carousel__specifics{
-        font-size: 0.8rem;
-    }
-    .carousel__description {
-        width: 80%;
-        font-size: 0.8rem;
-    }
-}
-
-@media screen and (min-width: 320px){
-    .carousel__content{
-        width: 90%;
-        height: 50%;
-        top : 40%;
-        left: 5%;
-    }
-    .carousel__title{
-        font-size: 4rem;
-    }
-    .carousel__specifics{
-        font-size: 1.5rem;
-    }
-    .carousel__description {
-        width: 80%;
-        font-size: 1rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-    }
-}
- */
