@@ -87,7 +87,7 @@ export const Navbar = ({movies}) => {
             ...prevState,
             [name]:!prevState[name]
         }))
-      }
+    }
 
 
   const [show,setShow]=useState(false);
@@ -95,6 +95,7 @@ export const Navbar = ({movies}) => {
   const [showHamburgerMenu,setShowHamburgerMenu]=useState(false);
   const mobileMenuRef = useRef(null);
   const searchRef=useRef(null);
+  const dropdownRef=useRef(null);
 
     useEffect(()=>{
         function handleClickOutside(event){
@@ -127,6 +128,22 @@ export const Navbar = ({movies}) => {
         });
     },[])
 
+    useEffect(()=>{
+        function handleClickOutside3(event){
+            if(dropdownRef.current && !dropdownRef.current.contains(event.target)){
+                setShowDropdown(prevState=>({
+                    ...prevState,
+                    "Genre":false,
+                    "Country":false
+                }))
+            }
+        }
+        document.addEventListener("mousedown",handleClickOutside3);
+        return ()=>{
+            document.removeEventListener("mousedown",handleClickOutside3);
+        }
+    },[])
+
     if(window.innerWidth>600){
         return (
             <div className={styles.DesktopMenu}>
@@ -136,23 +153,16 @@ export const Navbar = ({movies}) => {
                         <img className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
                         <div className={styles.navbar__links}>
                             {menuoptions.map((menuoption,index)=>(
-                                <a className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
-                            ))}
-                        </div>
-                        {/* <div>
-                            {menuoptions.map((menuoption,index)=>(
-                                <div className={styles.dropdown} key={index}>
-                                    <button onClick={handleToggleDropdown} className={styles.dropbtn}>{menuoption.name}</button>
-                                    <div className={styles.dropdown__content}>
-                                        {showDropdown[menuoption.name] && menuoption.dropdown?.map((dropdown,index)=>{
-                                            return(
-                                                <a className={styles.navbar__link} key={index} href={dropdown.link}>{dropdown.name}</a>
-                                            )     
-                                        })}
-                                    </div>
+                                <div className={styles.desktopLinks} key={index}>
+                                    <a onClick={handleToggleDropdown} className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
+                                    {showDropdown[menuoption.name] && menuoption.dropdown && <div ref={dropdownRef} className={styles.dropdown}>
+                                        {menuoption.dropdown?.map((dropdown,index)=>(
+                                            <a className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                        ))}
+                                    </div>}
                                 </div>
                             ))}
-                        </div> */}
+                        </div>
                     </div>
                     <div className={styles.navbar__right}>
                         <Search movies={movies}/>
