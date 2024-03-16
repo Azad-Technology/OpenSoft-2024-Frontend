@@ -3,30 +3,92 @@ import styles from './Navbar.module.css';
 import { Search } from './Search';
 import { MobileMenu } from './MobileMenu.jsx';
 
-const menuoptions = [
-    {
-        name:"Genre",
-        link:"#"
-    },
-    {
-        name:"Country",
-        link:"#"
-    },
-    {
-        name:"Movies",
-        link:"#"
-    },
-    {
-        name:"TV Shows",
-        link:"#"
-    },
-    {
-        name:"Top IMDB",
-        link:"#"
-    }
-]
 
 export const Navbar = ({movies}) => {
+    
+    const [showDropdown,setShowDropdown]=useState({
+        "Genre":false,
+        "Country":false,
+        "Movies":false,
+        "TV Shows":false,
+        "Top IMDB":false
+    });
+    
+    const menuoptions = [
+        {
+            name:"Genre",
+            link:"#",
+            dropdown:[
+                {
+                    name:"Action",
+                    link:"#"
+                },
+                {
+                    name:"Comedy",
+                    link:"#"
+                },
+                {
+                    name:"Horror",
+                    link:"#"
+                },
+                {
+                    name:"Romance",
+                    link:"#"
+                },
+                {
+                    name:"Thriller",
+                    link:"#"
+                }
+            ]
+        },
+        {
+            name:"Country",
+            link:"#",
+            dropdown:[
+                {
+                    name:"India",
+                    link:"#"
+                },
+                {
+                    name:"USA",
+                    link:"#"
+                },
+                {
+                    name:"UK",
+                    link:"#"
+                },
+                {
+                    name:"Australia",
+                    link:"#"
+                },
+                {
+                    name:"China",
+                    link:"#"
+                }
+            ]
+        },
+        {
+            name:"Movies",
+            link:"#"
+        },
+        {
+            name:"TV Shows",
+            link:"#"
+        },
+        {
+            name:"Top IMDB",
+            link:"#"
+        }
+    ]
+
+    const handleToggleDropdown=(e)=>{
+        const name=e.target.innerText;
+        setShowDropdown(prevState=>({
+            ...prevState,
+            [name]:!prevState[name]
+        }))
+      }
+
 
   const [show,setShow]=useState(false);
   const [showSearchBar,setShowSearchBar]=useState(false);
@@ -77,6 +139,20 @@ export const Navbar = ({movies}) => {
                                 <a className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
                             ))}
                         </div>
+                        {/* <div>
+                            {menuoptions.map((menuoption,index)=>(
+                                <div className={styles.dropdown} key={index}>
+                                    <button onClick={handleToggleDropdown} className={styles.dropbtn}>{menuoption.name}</button>
+                                    <div className={styles.dropdown__content}>
+                                        {showDropdown[menuoption.name] && menuoption.dropdown?.map((dropdown,index)=>{
+                                            return(
+                                                <a className={styles.navbar__link} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                            )     
+                                        })}
+                                    </div>
+                                </div>
+                            ))}
+                        </div> */}
                     </div>
                     <div className={styles.navbar__right}>
                         <Search movies={movies}/>

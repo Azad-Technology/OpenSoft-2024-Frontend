@@ -65,6 +65,8 @@
     border-radius: 0.7rem;
     /* padding: 1rem 0.2rem; */
     font-size:0.9rem;
+    animation:growRight 500ms ease-in-out forwards;
+    transform-origin: top center;
 }
 
 .dropdown{
