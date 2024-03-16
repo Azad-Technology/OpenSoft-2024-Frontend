@@ -9,7 +9,7 @@ export const movies = [
       "Mystery",
       "Sci-Fi",
     ],
-    poster:"https://image.tmdb.org/t/p/w185/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg"
+    poster:"https://image.tmdb.org/t/p/w342/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg"
   },
     {title:"Edge of Tomorrow",
     backdrop:"http://image.tmdb.org/t/p/w1280/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
@@ -21,7 +21,7 @@ export const movies = [
       "Adventure",
       "Sci-Fi",
     ],
-    poster:"http://image.tmdb.org/t/p/w185/xjw5trHV7Mwo61P0kCTy8paEkgO.jpg"
+    poster:"http://image.tmdb.org/t/p/w342/xjw5trHV7Mwo61P0kCTy8paEkgO.jpg"
   },
     {title:"Kung Fu Panda",
     backdrop:"http://image.tmdb.org/t/p/w1280/d1RHScaZc7I8j0lDke1c4AxI435.jpg",
@@ -33,7 +33,7 @@ export const movies = [
       "Action",
       "Adventure",
     ],
-    poster:"http://image.tmdb.org/t/p/w185/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg"
+    poster:"http://image.tmdb.org/t/p/w342/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg"
   },
     {title:"Iron Man",
     backdrop:"http://image.tmdb.org/t/p/w1280/cyecB7godJ6kNHGONFjUyVN9OX5.jpg",
@@ -45,19 +45,19 @@ export const movies = [
       "Adventure",
       "Sci-Fi",
     ],
-    poster:"http://image.tmdb.org/t/p/w185/78lPtwv72eTNqFW9COBYI0dWDJa.jpg"
+    poster:"http://image.tmdb.org/t/p/w342/78lPtwv72eTNqFW9COBYI0dWDJa.jpg"
     },
     {title:"The Dark Knight",
     backdrop:"http://image.tmdb.org/t/p/w1280/dqK9Hag1054tghRQSqLSfrkvQnA.jpg",
     description:"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
     date:"2008",
-    imdb:"9",
+    imdb:"9.0",
     genre:[
       "Action",
       "Crime",
       "Drama",
     ],
-    poster:"http://image.tmdb.org/t/p/w185/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+    poster:"http://image.tmdb.org/t/p/w342/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
   },
     {title:"The Wolf of Wall Street",
     backdrop:"http://image.tmdb.org/t/p/w1280/2P0toWq3feNvFAzf28j7vNc1IuZ.jpg",
@@ -69,7 +69,7 @@ export const movies = [
       "Comedy",
       "Crime",
     ],
-    poster:"http://image.tmdb.org/t/p/w185/34m2tygAYBGqA9MXKhRDtzYd4MR.jpg"
+    poster:"http://image.tmdb.org/t/p/w342/34m2tygAYBGqA9MXKhRDtzYd4MR.jpg"
   },
     {title:"Titanic",
     backdrop:"http://image.tmdb.org/t/p/w1280/sCzcYW9h55WcesOqA12cgEr9Exw.jpg",
@@ -81,6 +81,6 @@ export const movies = [
       "Drama",
       "History",
     ],
-    poster:"http://image.tmdb.org/t/p/w185/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
+    poster:"http://image.tmdb.org/t/p/w342/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
   },
   ];
