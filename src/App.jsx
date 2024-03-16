@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import { Carousel } from './Components/Carousel/Carousel'
+import React from 'react'
 import axios from 'axios'
 import 'font-awesome/css/font-awesome.min.css';
 import { Movies } from './Components/Movies.jsx';
@@ -37,7 +39,7 @@ function App() {
   return (
     <>
       <Navbar movies={movies}/>
-      <Movies movies={movies} setShowHamburgerMenu={setShowHamburgerMenu} />
+      <Carousel />
     </>
   )
 }

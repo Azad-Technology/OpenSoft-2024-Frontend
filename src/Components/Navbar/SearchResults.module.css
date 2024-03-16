@@ -12,14 +12,14 @@
 
 .searchResults {
     position:absolute;
-    /* background-color: black; */
     width:100%;
+    /* height: 100%; */
     /* min-width: 18rem; */
     margin:2%;
     top:80%;
     /* border:1px solid rgb(171, 171, 171); */
     height:fit-content;
-    background-color:rgba(0, 0, 0, 0.701);
+    background-color:rgba(0, 0, 0, 0.7);
     opacity:0.9;
     padding-right:2.4rem;
     margin-top:8%;
@@ -27,6 +27,7 @@
     backdrop-filter: blur(5%);
     animation: growDown 500ms ease-in-out forwards;
     transform-origin: top center;
+    backdrop-filter: blur(10px);
 }
 
 .searchResult{
