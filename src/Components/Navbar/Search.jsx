@@ -10,6 +10,7 @@ export const Search = ({movies}) => {
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
   const [user,setUser]=useState(null);
   const[app,setApp]=useState(null);
+  const [click,setClick]=useState(true);
 
   useEffect(()=>{
     const currApp=new Realm.App({id:"application-0-gisfr"});
@@ -27,7 +28,7 @@ export const Search = ({movies}) => {
   useEffect(()=>{
     function handleClickOutside(event){
       if(searchRef.current && !searchRef.current.contains(event.target)){
-        setAutoCompleteResult([]);
+        setClick(false);
       }
     }
     document.addEventListener("mousedown",handleClickOutside);
@@ -51,9 +52,7 @@ export const Search = ({movies}) => {
     console.log("search",debouncedSearch);
     function handleClickInside(event){
       if(searchRef.current && searchRef.current.contains(event.target)){
-        if(debouncedSearch){
-          getData();
-        }
+        setClick(true);
       }
     }
     document.addEventListener("mousedown",handleClickInside);
@@ -80,7 +79,7 @@ export const Search = ({movies}) => {
         />
         {search && <i onClick={()=>setSearch('')} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
-      <SearchResults movies={autoCompleteResult} search={debouncedSearch}/>
+      {click && autoCompleteResult && <SearchResults movies={autoCompleteResult} search={debouncedSearch}/>}
     </div>
   );
 };

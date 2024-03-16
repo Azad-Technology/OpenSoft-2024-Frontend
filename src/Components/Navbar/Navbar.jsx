@@ -59,10 +59,10 @@ export const Navbar = ({movies}) => {
         }
     },[])
 
-        useEffect(()=>{
-            window.addEventListener("scroll",()=>{
-                window.scrollY>75?setShow(true):setShow(false);
-            });
+    useEffect(()=>{
+        window.addEventListener("scroll",()=>{
+            window.scrollY>75?setShow(true):setShow(false);
+        });
     },[])
 
     if(window.innerWidth>600){
@@ -90,7 +90,7 @@ export const Navbar = ({movies}) => {
     else{
         return(
             <div className={styles.navbar__mobile}>
-                <div className={`${styles.navbar} ${show && styles.navBlack}`}>
+                <div className={`${styles.navbar} ${styles.navBlack}`}>
                     <div className={styles.navbar__left}>
                         <i onClick={()=>setShowHamburgerMenu(!showHamburgerMenu)} className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
                         <img className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />

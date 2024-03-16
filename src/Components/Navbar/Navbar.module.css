@@ -108,8 +108,7 @@
 @media screen and (max-width:600px){
     .navbar{
         z-index:0;
-        
-        
+        background-color: blank;
     }
     .searchIcon{
         color:white;
