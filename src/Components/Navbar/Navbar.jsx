@@ -139,20 +139,6 @@ export const Navbar = ({movies}) => {
                                 <a className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
                             ))}
                         </div>
-                        {/* <div>
-                            {menuoptions.map((menuoption,index)=>(
-                                <div className={styles.dropdown} key={index}>
-                                    <button onClick={handleToggleDropdown} className={styles.dropbtn}>{menuoption.name}</button>
-                                    <div className={styles.dropdown__content}>
-                                        {showDropdown[menuoption.name] && menuoption.dropdown?.map((dropdown,index)=>{
-                                            return(
-                                                <a className={styles.navbar__link} key={index} href={dropdown.link}>{dropdown.name}</a>
-                                            )     
-                                        })}
-                                    </div>
-                                </div>
-                            ))}
-                        </div> */}
                     </div>
                     <div className={styles.navbar__right}>
                         <Search movies={movies}/>
