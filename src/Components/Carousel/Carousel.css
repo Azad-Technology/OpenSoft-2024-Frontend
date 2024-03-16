@@ -237,6 +237,9 @@
         z-index: 20;
         font-size: large;
     }
+    .carousel__button:hover{
+        background-color: rgba(255, 9, 9, 0.7);
+    }
 }
 
 @media screen and (min-width: 2560px) {
