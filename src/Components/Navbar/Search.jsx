@@ -48,6 +48,7 @@ export const Search = ({movies}) => {
   }
 
   useEffect(()=>{
+    console.log("search",debouncedSearch);
     function handleClickInside(event){
       if(searchRef.current && searchRef.current.contains(event.target)){
         if(debouncedSearch){
@@ -79,7 +80,7 @@ export const Search = ({movies}) => {
         />
         {search && <i onClick={()=>setSearch('')} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
-      {autoCompleteResult && <SearchResults movies={autoCompleteResult}/>}
+      <SearchResults movies={autoCompleteResult} search={debouncedSearch}/>
     </div>
   );
 };

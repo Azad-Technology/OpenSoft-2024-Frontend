@@ -82,6 +82,7 @@ export const Navbar = ({movies}) => {
                         <Search movies={movies}/>
                     </div>
                 </div>
+                {showHamburgerMenu && <div className={styles.backdrop}></div>}
                 {showHamburgerMenu && <div ref={mobileMenuRef}><MobileMenu /></div>}
             </div>
         )

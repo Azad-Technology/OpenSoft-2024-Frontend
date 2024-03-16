@@ -1,3 +1,15 @@
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
 .searchResults {
     position:absolute;
     /* background-color: black; */
@@ -13,7 +25,8 @@
     margin-top:8%;
     border-radius: 0.7rem;
     backdrop-filter: blur(5%);
-
+    animation: growDown 500ms ease-in-out forwards;
+    transform-origin: top center;
 }
 
 .searchResult{
@@ -47,21 +60,10 @@
     margin-bottom:4%;
 }
 
-@keyframes growDown {
-    0% {
-        transform: scaleY(0)
-    }
-    80% {
-        transform: scaleY(1.1)
-    }
-    100% {
-        transform: scaleY(1)
-    }
-}
-
-.searchResults{
-    animation:growDown 500ms ease-in-out forwards;
-    transform-origin: top center;
+.searchResults p{
+    color:white;
+    font-size:1rem;
+    margin:5%;
 }
 
 @media screen and (max-width:600px){
