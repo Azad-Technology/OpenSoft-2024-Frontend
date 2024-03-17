@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Card from './Components/Card/Card'
+import MoreLikeThis from './Components/MoreLikeThis/MoreLikeThis.jsx'
+import MoviePage from './Components/Carousel/moviePage/MoviePage.jsx'
+import SearchPage from './Components/SearchPage/SearchPage.jsx'
+// import Card from './Components/Card/Card.jsx'
 import MovieList from './Components/movieList/MovieList'
 
 import { Carousel } from './Components/Carousel/Carousel'
@@ -10,9 +13,10 @@ import 'font-awesome/css/font-awesome.min.css';
 import { Movies } from './Components/Movies.jsx';
 import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
-import SearchPage from './Components/SearchPage/SearchPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Pricing } from './Components/Pricing/Pricing.jsx'
+import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
+
 function App() {
 
   const [movies, setMovies] = useState([]);
@@ -40,6 +44,46 @@ function App() {
       });
   }, [])
 
+  let movieInfo = {
+    movieTitle: "Hello world",
+    movieDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce luctus id sapien vel dignissim. In convallis sit amet mauris et rutrum. Cras vitae leo erat. Nulla a varius quam, pretium finibus massa. Ut lacinia felis est, sed porta diam dapibus et. In hac habitasse platea dictumst. Duis laoreet nec est consectetur faucibus. Maecenas non blandit sapien. Nam quam tortor, finibus non aliquet sed, laoreet non diam. Donec condimentum felis lacus, interdum pharetra orci mollis vitae.",
+    imdb: "7.5",
+    duration: "2h 34min",
+    releaseYear: "2024",
+    rating: ["PG","HDR","UHD","U/A 13+"],
+    genre: ["Comedy","Drama","International","Romance"],
+    directors: ["Auguste Lumière", "Louis Lumière"],
+    languages: ["Hindi","English"],
+    awards: "Won 1 Golden Globe. Another 3 wins & 7 nominations.",
+    cast: ["Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence"],
+    writers:["George MacDonald Fraser (screenplay)", "Alexandre Dumas père (novel)"],
+    countries: ["Spain", "USA", "Panama", "UK"],
+    tomatometer: {
+      viewer: 78,
+      critic: 82
+    },
+    production: "Live Home Video",
+    comments: [
+      {
+        name: 'abc',
+        date: '12-3-24',
+        image: 'https://source.unsplash.com/random',
+        comment: "alskfjeiljafsefasdjf"
+      },
+      {
+        name: 'John Doe',
+        date: '13-3-24',
+        image: 'https://source.unsplash.com/random',
+        comment: "lorem ipsum"
+      },
+      {
+        name: 'asdf',
+        date: '13-3-24',
+        image: 'https://source.unsplash.com/random',
+        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus."
+      }
+    ]
+  }
 
   return (
     <>
@@ -50,13 +94,23 @@ function App() {
             <Navbar />
             <div className='home'>
               <Carousel />
-              <MovieList movie={[{ title: "Wanda Vision", _id: "012" }]} />
+              <HomeSliders />
             </div>
           </>
         } />
         <Route path="/search/:searchTerm" element={
+          <>
+          <Navbar />
           <SearchPage />
+          </>
         } />
+        <Route path="/movie/:id" element={
+              <>
+                <MoviePage info={movieInfo}/>
+                <MoreLikeThis />
+                {/* <SearchPage /> */}
+              </>
+        }/>
       </Routes>
     </BrowserRouter> */}
     <Pricing />
