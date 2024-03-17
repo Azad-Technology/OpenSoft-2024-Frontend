@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 function Pricing() {
   const [annually, setAnnually] = useState(false);
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.bgTopImage}>
         <img src={bgTop} alt="" />
       </div>
@@ -42,11 +42,9 @@ function Pricing() {
 
           <article className={`${styles.pricingCard} ${styles.featured}`}>
             <h2>Standard</h2>
-            
               <h3>
                 <span>$</span> 24.99
               </h3>
-            
             
             <ul>
               <li>
@@ -64,13 +62,11 @@ function Pricing() {
             </button>
           </article>
 
-          <article className={`${styles.pricingCard}`}>
+          <article className={`${styles.pricingCard} ${styles.lastCard}`}>
             <h2>Premium</h2>
-            
               <h3>
                 <span>$</span> 39.99
               </h3>
-
             <ul>
               <li>
                 500 GB Storage
@@ -94,7 +90,7 @@ function Pricing() {
       <div className={styles.bgBottomImage}>
         <img src={bgBottom} alt="" />
       </div>
-    </>
+    </div>
   );
 }
 export default Pricing;
