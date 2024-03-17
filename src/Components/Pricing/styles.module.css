@@ -1,4 +1,18 @@
-/* Background Images */
+.heading {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+  .bgTopImage {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -10;
+    width: 100%;
+    max-width: 100%;
+  }
+
 .bgBottomImage {
     position: absolute;
     left: 0;
@@ -8,16 +22,7 @@
     max-width: 100%;
   }
   
-  .bgTopImage {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -10;
-    width: 100%;
-    max-width: 100%;
-  }
   
-  /* Section */
   .section {
     padding: 1.25rem;
     display: flex;
@@ -31,7 +36,7 @@
   .toggle {
     display: flex;
     align-items: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 4rem;
   }
   
   .toggle .name {
@@ -49,6 +54,7 @@
     height: 1.5rem;
     background-color: #ccc;
     border-radius: 0.75rem;
+    transition: 0.4s;
     cursor: pointer;
   }
   
@@ -62,6 +68,11 @@
     border-radius: 50%;
     transition: transform 0.2s linear;
   }
+
+  .toggle .checkbox:checked + .label {
+    background-color: #F24236 ;
+    transition: 0.4s;
+  }
   
   .toggle .checkbox:checked + .label .ball {
     transform: translateX(1.5rem);
@@ -70,25 +81,31 @@
   /* Pricing Cards */
   .pricingCards {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
-    gap: 2rem;
-    max-width: 60rem;
+    /* gap: 2rem; */
+    /* max-width: 60rem; */
+    width: 80%;
     margin: 0 auto;
   }
   
   .pricingCard {
     padding: 2rem;
     border-radius: 0.5rem;
-    background-color: white;
+    background-color: rgb(255,255,255,0.1);
+    /* backdrop-filter: blur(20px); */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     text-align: center;
     flex-basis: 100%;
+    width: 30%;
+    /* z-index: -1; */
   }
   
   .pricingCard.featured {
-    background: linear-gradient(to right, #a5c3e8, #6b89bc);
+    background: linear-gradient(to right, #F24236, #C0180C);
     color: white;
+    margin: 0 1rem 0 1rem;
+    transform: scale(1.15);
   }
   
   .pricingCard h2 {
@@ -113,12 +130,13 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
+    list-style-type: none;
   }
   
   .pricingCard li {
     border-top: 1px solid #e2e8f0;
     padding: 0.75rem 0;
-    color: #475569;
+    color: white;
   }
   
   .pricingCard li:last-child {
@@ -137,6 +155,11 @@
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
+    background-color:#F24236;
+  }
+
+  .pricingCard button:hover{
+    background: linear-gradient(to right,  #F24236, #C0180C);
   }
   
   .pricingCard button.gradient {
@@ -146,7 +169,7 @@
   }
   
   .pricingCard button.gradient:hover {
-    border: 2px solid #6b89bc;
+    border: 2px solid #bc6b6b;
   }
   
   .pricingCard.featured button {
@@ -156,17 +179,16 @@
   }
   
   .pricingCard.featured button:hover {
-    background-color: transparent;
+    background-color: rgb(255,255,255,0.1);
     color: white;
   }
   
-  /* Attribution */
   .attribution {
     margin-top: 2rem;
     text-align: center;
   }
   
   .attribution a {
-    color: #6b89bc;
+    color:white;
     text-decoration: none;
   }
