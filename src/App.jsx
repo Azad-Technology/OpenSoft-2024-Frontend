@@ -101,7 +101,9 @@ const App = () => {
         <Route path="/search/:searchTerm" element={
           <>
           <Navbar />
+          <div className='home'>
           <SearchPage />
+          </div>
           </>
         } />
         <Route path='/pricing' element={
