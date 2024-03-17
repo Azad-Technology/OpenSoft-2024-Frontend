@@ -12,8 +12,8 @@ import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 import SearchPage from './Components/SearchPage/SearchPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Pricing } from './Components/Pricing/Pricing.jsx'
-function App() {
+import  Pricing  from './Components/Pricing/Pricing.jsx'
+const App = () => {
 
   const [movies, setMovies] = useState([]);
   const [showhamurgerMenu, setShowHamburgerMenu] = useState(false);
@@ -43,7 +43,7 @@ function App() {
 
   return (
     <>
-    {/* <BrowserRouter>
+      {/* <BrowserRouter>
       <Routes>
         <Route index path="/" element={
           <>
@@ -59,9 +59,9 @@ function App() {
         } />
       </Routes>
     </BrowserRouter> */}
-    <Pricing />
+      <Pricing/>
     </>
   )
 }
 
-export default App
+export default App;
