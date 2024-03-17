@@ -2,9 +2,12 @@ import React, { useState,useEffect, useRef } from 'react'
 import styles from './Navbar.module.css';
 import { Search } from './Search';
 import { MobileMenu } from './MobileMenu.jsx';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Navbar = ({movies}) => {
+
+    const navigate=useNavigate();
     
     const [showDropdown,setShowDropdown]=useState({
         "Genre":false,
@@ -161,7 +164,7 @@ export const Navbar = ({movies}) => {
                 <div className={`${styles.navbar} ${show && styles.navBlack}`}>
                     <div className={styles.navbar__left}>
                         <i onClick={()=>setShowHamburgerMenu(!showHamburgerMenu)} className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
-                        <img className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
+                        <img onClick={()=>navigate('/')} className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
                         <div className={styles.navbar__links}>
                             {menuoptions.map((menuoption,index)=>(
                                 <div className={styles.desktopLinks} key={index}>
@@ -190,7 +193,7 @@ export const Navbar = ({movies}) => {
                 <div className={`${styles.navbar} ${styles.navBlack}`}>
                     <div className={styles.navbar__left}>
                         <i onClick={()=>setShowHamburgerMenu(!showHamburgerMenu)} className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
-                        <img className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
+                        <img onClick={()=>navigate('/')} className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
                     </div>
                     <div className={styles.navbar__right}>
                         <i onClick={()=>setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
