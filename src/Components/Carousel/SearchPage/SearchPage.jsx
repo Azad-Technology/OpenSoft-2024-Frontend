@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import CustomDropdown from './CustomDropdown'
+import CustomDropdown from './CustomDropdown.js'
 import axios from 'axios';
 import styles from './CustomDropdown.module.css'
 import { useParams } from 'react-router-dom';
