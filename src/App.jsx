@@ -4,8 +4,10 @@ import MoreLikeThis from './Components/MoreLikeThis/MoreLikeThis.jsx'
 import MoviePage from './Components/Carousel/moviePage/MoviePage.jsx'
 import SearchPage from './Components/SearchPage/SearchPage.jsx'
 // import Card from './Components/Card/Card.jsx'
+// main.js or App.js
+import 'video.js/dist/video-js.css';
 import MovieList from './Components/movieList/MovieList'
-
+import MoviePlay from './Components/MoviePlayback/MoviePlay'
 import { Carousel } from './Components/Carousel/Carousel'
 import React from 'react'
 import axios from 'axios'
@@ -14,7 +16,7 @@ import { Movies } from './Components/Movies.jsx';
 import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import  Pricing  from './Components/Pricing/Pricing.jsx'
+import Pricing from './Components/Pricing/Pricing.jsx'
 import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
 
 const App = () => {
@@ -50,13 +52,13 @@ const App = () => {
     imdb: "7.5",
     duration: "2h 34min",
     releaseYear: "2024",
-    rating: ["PG","HDR","UHD","U/A 13+"],
-    genre: ["Comedy","Drama","International","Romance"],
+    rating: ["PG", "HDR", "UHD", "U/A 13+"],
+    genre: ["Comedy", "Drama", "International", "Romance"],
     directors: ["Auguste Lumière", "Louis Lumière"],
-    languages: ["Hindi","English"],
+    languages: ["Hindi", "English"],
     awards: "Won 1 Golden Globe. Another 3 wins & 7 nominations.",
-    cast: ["Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence","Jennifer Lawrence"],
-    writers:["George MacDonald Fraser (screenplay)", "Alexandre Dumas père (novel)"],
+    cast: ["Jennifer Lawrence", "Jennifer Lawrence", "Jennifer Lawrence", "Jennifer Lawrence"],
+    writers: ["George MacDonald Fraser (screenplay)", "Alexandre Dumas père (novel)"],
     countries: ["Spain", "USA", "Panama", "UK"],
     tomatometer: {
       viewer: 78,
@@ -88,40 +90,45 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-      <Routes>
-        <Route index path="/" element={
-          <>
-            <Navbar />
-            <div className='home'>
-              <Carousel />
-              <HomeSliders />
-            </div>
-          </>
-        } />
-        <Route path="/search/:searchTerm" element={
-          <>
-          <Navbar />
-          <SearchPage />
-          </>
-        } />
-        <Route path='/pricing' element={
-          <>
-          <Navbar />
-          <Pricing/>
-          </>
-           
-        } />
-        <Route path="/movie/:id" element={
-              <>
-                <MoviePage info={movieInfo}/>
-                <MoreLikeThis />
-                {/* <SearchPage /> */}
-              </>
-        }/>
-      </Routes>
-    </BrowserRouter>
-      
-      
+        <Routes>
+          <Route index path="/" element={
+            <>
+              <Navbar />
+              <div className='home'>
+                <Carousel />
+                <HomeSliders />
+              </div>
+            </>
+          } />
+          <Route path="/search/:searchTerm" element={
+            <>
+              <Navbar />
+              <SearchPage />
+            </>
+          } />
+          <Route path="/movieplay" element={
+            <>
+              <MoviePlay />
+            </>
+          } />
+          <Route path='/pricing' element={
+            <>
+              <Navbar />
+              <Pricing />
+            </>
+
+          } />
+          <Route path="/movie/:id" element={
+            <>
+              <MoviePage info={movieInfo} />
+              <MoreLikeThis />
+              {/* <SearchPage /> */}
+            </>
+          } />
+        </Routes>
+      </BrowserRouter>
+
+
     </>
   )
 }
