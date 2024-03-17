@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import MoreLikeThis from './Components/MoreLikeThis/MoreLikeThis.jsx'
-import MoviePage from './Components/Carousel/moviePage/MoviePage.jsx'
+import MoviePage from './Components/moviePage/MoviePage.jsx'
 import SearchPage from './Components/SearchPage/SearchPage.jsx'
 // import Card from './Components/Card/Card.jsx'
 import MovieList from './Components/movieList/MovieList'
