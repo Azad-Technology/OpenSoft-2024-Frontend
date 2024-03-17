@@ -1,0 +1,113 @@
+@keyframes growRight {
+    0% {
+        transform: translateY(-100%);
+    }
+    /* 80% {
+        transform: translateX(2%);
+    } */
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.mobileMenu{
+    /* display: none; */
+    position:fixed;
+    z-index: 1000;
+    top:12%;
+    color:black;
+    left:2%;
+    width: 100%;
+    max-width: 60%;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    background:rgba(0,0,0,0.5 );
+    backdrop-filter: blur(10px);
+    color: white;
+    /* background-color: #fff; */
+    /* max-width: 400px; */
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+}
+
+
+
+.mobileMenu__links{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    top: 10%;
+    padding: 0.7rem 0;
+    /* gap: 1rem; */
+}
+
+.mobileMenu__link{
+    margin: 1rem 0;
+    color: white;
+    text-decoration: none;
+    border-bottom: 0.1rem solid rgb(86, 85, 85);
+    padding-bottom: 0.8rem;
+    /* margin-bottom: 0.5rem; */
+}
+
+
+.mobileMenu__link:hover{
+    color:red;
+}
+
+.mobileMenu__dropdown{
+    display:flex;
+    justify-content: space-between;
+    width:80%;
+    z-index: 99;
+    background: rgba(255,255,255,0.19);
+    backdrop-filter: blur(10px);
+    border-radius: 0.7rem;
+    /* padding: 1rem 0.2rem; */
+    font-size:0.9rem;
+    animation:growRight 500ms ease-in-out forwards;
+    transform-origin: top center;
+}
+
+.dropdown{
+    border:none;
+}
+
+.mobileMenu__dropdown_left{
+    display: flex;
+    flex-direction: column;
+    margin-left:15%;
+}
+
+.mobileMenu__dropdown_right{
+    display: flex;
+    flex-direction: column;
+    /* padding-right: 2%; */
+    margin-right:15%;
+}
+
+@media screen and (max-width: 1100px){
+    .mobileMenu{
+        display: block;
+    }
+    
+}
+
+
+.mobileMenu{
+    animation:growRight 500ms ease-in-out forwards;
+    transform-origin: top center;
+}
+
+/* .mobileMenu__close{
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color:black;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+} */
+
