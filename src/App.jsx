@@ -12,6 +12,7 @@ import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 import SearchPage from './Components/SearchPage/SearchPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Pricing } from './Components/Pricing/Pricing.jsx'
 function App() {
 
   const [movies, setMovies] = useState([]);
@@ -41,7 +42,8 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <>
+    {/* <BrowserRouter>
       <Routes>
         <Route index path="/" element={
           <>
@@ -56,7 +58,9 @@ function App() {
           <SearchPage />
         } />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <Pricing />
+    </>
   )
 }
 
