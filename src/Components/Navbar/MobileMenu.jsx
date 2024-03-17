@@ -75,6 +75,10 @@ export const MobileMenu = () => {
     {
         name:"Top IMDB",
         link:"#"
+    }, 
+    {
+        name:"Pricing",
+        link:"/pricing"
     }
   ]
 

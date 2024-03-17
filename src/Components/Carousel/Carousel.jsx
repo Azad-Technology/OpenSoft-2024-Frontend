@@ -11,7 +11,7 @@ export const Carousel = () => {
     setCurrIndex(index);
   }
   useEffect(() => {
-    const interval = setInterval(slideRight, 30000);
+    const interval = setInterval(slideRight, 3000);
     return () => clearInterval(interval);
   }, [currIndex]);
 
