@@ -12,6 +12,8 @@ import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 import SearchPage from './Components/SearchPage/SearchPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
+
 function App() {
 
   const [movies, setMovies] = useState([]);
@@ -48,12 +50,15 @@ function App() {
             <Navbar />
             <div className='home'>
               <Carousel />
-              <MovieList movie={[{ title: "Wanda Vision", _id: "012" }]} />
+              <HomeSliders />
             </div>
           </>
         } />
         <Route path="/search/:searchTerm" element={
+          <>
+          <Navbar />
           <SearchPage />
+          </>
         } />
       </Routes>
     </BrowserRouter>

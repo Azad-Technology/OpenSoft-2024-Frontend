@@ -67,6 +67,7 @@
     object-fit:contain;
     /* margin:2%; */
     margin-left:10%;
+    cursor:pointer;
 }
 
 .navbar__left{
