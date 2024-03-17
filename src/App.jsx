@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Card from './Components/Card/Card'
+import MoreLikeThis from './Components/MoreLikeThis/MoreLikeThis.jsx'
+import MoviePage from './Components/Carousel/moviePage/MoviePage.jsx'
+import SearchPage from './Components/SearchPage/SearchPage.jsx'
+// import Card from './Components/Card/Card.jsx'
 import MovieList from './Components/movieList/MovieList'
 
 import { Carousel } from './Components/Carousel/Carousel'
@@ -10,7 +13,6 @@ import 'font-awesome/css/font-awesome.min.css';
 import { Movies } from './Components/Movies.jsx';
 import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
-import SearchPage from './Components/SearchPage/SearchPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import  Pricing  from './Components/Pricing/Pricing.jsx'
 const App = () => {
@@ -57,6 +59,13 @@ const App = () => {
         <Route path="/search/:searchTerm" element={
           <SearchPage />
         } />
+        <Route path="/movie/:id" element={
+              <>
+                <MoviePage />
+                <MoreLikeThis />
+                {/* <SearchPage /> */}
+              </>
+        }/>
       </Routes>
     </BrowserRouter> */}
       <Pricing/>
