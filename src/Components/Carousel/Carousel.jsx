@@ -23,7 +23,7 @@ export const Carousel = () => {
         {movies.map((movie, index) => {
           return (
             <div className='carousel__slide' key={index} 
-             >
+             >  
             <div className='overlay' ></div>
             <div className='overlay--down' ></div>
             <img src={movie.backdrop} alt='Movie' />
