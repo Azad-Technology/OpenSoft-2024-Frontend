@@ -166,7 +166,7 @@ function Comments(){
       }
   
       // Adjust height when textarea is focused
-      const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
+      const textareaLineHeight = 60; // Adjust this value according to your textarea's line-height
       const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
       const newTextareaHeight = `${currentRows * textareaLineHeight}px`;
       setTextareaHeight(newTextareaHeight);

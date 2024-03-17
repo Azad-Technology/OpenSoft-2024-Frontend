@@ -25,8 +25,8 @@
     box-sizing: border-box;
     /* border: 2px solid red; */
     display: flex;
-    flex-direction: row;
-    width: 90%;
+    flex-direction: column;
+    width: 100%;
     background-color: var(--primary-bg-color);
     justify-content: space-around;
     align-items: center;
@@ -71,18 +71,18 @@
     flex-direction: column;
     justify-content: center;
     /* background-color: #2b2929; */
-
 }
 
 .commentContainer .submitBtn{
     background-color: #333; /* Dark background color */
-        color: #ffffffb9;
-        /* border: .3px solid #ffffffb6; */
-        padding: .2rem .3rem; /* Padding */
-        font-size: .9rem; /* Font size */
-        cursor: pointer; /* Cursor style */
-        border-radius: 5px;
-        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+    color: #ffffffb9;
+    /* border: .3px solid #ffffffb6; */
+    padding: .2rem .3rem; /* Padding */
+    margin: 0.5rem;
+    font-size: .9rem; /* Font size */
+    cursor: pointer; /* Cursor style */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
 }
 
 .commentContainer .submitBtn:hover{
@@ -93,11 +93,12 @@
 .commentContainer .submitBtnContainer{
     display: flex;
     height: 100%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
+    align-items: end;
     background-color: var(--primary-bg-color);
-    margin-right: .2rem;
-
+    /* margin-right: 0.2rem; */
 }
 
 textarea{
@@ -119,6 +120,7 @@ textarea:focus{
     /* border-radius: 30px; */
     padding: 0.5rem;
     color: white;
+    /* height: 4rem; */
     background-color: var(--primary-bg-color);
     resize: none;
 }

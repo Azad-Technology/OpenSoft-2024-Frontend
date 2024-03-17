@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
-      {/* <MoviePage />
-      <MoreLikeThis /> */}
-      <SearchPage />
+      <MoviePage />
+      <MoreLikeThis />
+      {/* <SearchPage /> */}
     </>
   )
 }
