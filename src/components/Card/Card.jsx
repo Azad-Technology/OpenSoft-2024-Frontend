@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
 import styles from './Card.module.css';
 
-const Card = ({ f }) => {
+const Card = ({ movies }) => {
+
+  useEffect(() => {
+    console.log("movies", movies);
+  }, [movies])
+
   const currDate = new Date();
 
   const onMove = (e) => {
@@ -8,14 +14,14 @@ const Card = ({ f }) => {
   };
 
   const unHover = () => {
-    const particularCard = document.getElementById(`${f}`);
+    const particularCard = document.getElementById(`${movies._id}`);
     particularCard.style.setProperty('transform-origin', 'top');
   };
 
   const onHover = (onMove) => {
     let h = parseFloat(window.innerWidth);
     let val = (onMove.clientX / h) * 100;
-    const particularCard = document.getElementById(`${f}`);
+    const particularCard = document.getElementById(`${movies._id}`);
     const thatStyle = window.getComputedStyle(particularCard);
     let x = (parseFloat(thatStyle.width) / h) * 100;
     if (x + 8 >= val) {
@@ -30,9 +36,9 @@ const Card = ({ f }) => {
 
   return (
     <>
-      <div className={styles.cards} id={f} onMouseOver={onHover} onMouseOut={unHover} onMouseMove={onMove}>
+      <div className={styles.cards} id={movies._id} onMouseOver={onHover} onMouseOut={unHover} onMouseMove={onMove}>
         <div className={styles.cards__overlay}>
-          <div className={styles.card__title}>Title</div>
+          <div className={styles.card__title}>{movies.title}</div>
           <div className={styles.card__runtime}>
             {currDate.getFullYear()}-{currDate.getMonth() + 1}-{currDate.getDate()}
             <span className={styles.card__rating}>

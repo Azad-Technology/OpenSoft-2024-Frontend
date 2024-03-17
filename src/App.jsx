@@ -46,11 +46,11 @@ function App() {
         <Route index path="/" element={
           <>
             <Navbar />
-          <div className='home'>
-            <Carousel />
-            <MovieList />
+            <div className='home'>
+              <Carousel />
+              <MovieList movie={[{ title: "Wanda Vision", _id: "012" }]} />
             </div>
-            </>
+          </>
         } />
         <Route path="/search/:searchTerm" element={
           <SearchPage />
