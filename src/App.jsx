@@ -14,10 +14,10 @@ import { Movies } from './Components/Movies.jsx';
 import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Pricing } from './Components/Pricing/Pricing.jsx'
+import  Pricing  from './Components/Pricing/Pricing.jsx'
 import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
 
-function App() {
+const App = () => {
 
   const [movies, setMovies] = useState([]);
   const [showhamurgerMenu, setShowHamburgerMenu] = useState(false);
@@ -87,7 +87,7 @@ function App() {
 
   return (
     <>
-    {/* <BrowserRouter>
+      <BrowserRouter>
       <Routes>
         <Route index path="/" element={
           <>
@@ -104,6 +104,13 @@ function App() {
           <SearchPage />
           </>
         } />
+        <Route path='/pricing' element={
+          <>
+          <Navbar />
+          <Pricing/>
+          </>
+           
+        } />
         <Route path="/movie/:id" element={
               <>
                 <MoviePage info={movieInfo}/>
@@ -112,10 +119,11 @@ function App() {
               </>
         }/>
       </Routes>
-    </BrowserRouter> =
-    <Pricing />
+    </BrowserRouter>
+      
+      
     </>
   )
 }
 
-export default App
+export default App;

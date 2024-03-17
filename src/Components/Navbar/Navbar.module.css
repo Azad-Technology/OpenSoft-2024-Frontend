@@ -92,10 +92,10 @@
     justify-content: space-around;
     margin-left:1%;
     background-color:rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
     width: 20%;
     border-radius: 0.7rem;
     padding:0.5rem 0.8rem;
-    backdrop-filter: blur(10px);
     animation: growTop 0.3s ease-in;
 }
 
