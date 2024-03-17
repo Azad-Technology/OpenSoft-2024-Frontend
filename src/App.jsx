@@ -112,7 +112,7 @@ function App() {
               </>
         }/>
       </Routes>
-    </BrowserRouter> */}
+    </BrowserRouter> =
     <Pricing />
     </>
   )
