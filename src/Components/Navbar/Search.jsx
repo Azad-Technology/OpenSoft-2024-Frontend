@@ -3,8 +3,12 @@ import styles from "./Search.module.css";
 import { useDebounce } from "use-debounce";
 import { SearchResults } from "./SearchResults.jsx";
 import * as Realm from "realm-web";
+import { useNavigate } from "react-router-dom";
 
 export const Search = ({movies,searchBarRef}) => {
+
+  const navigate=useNavigate();
+
   const [search, setSearch] = useState("");
   const [debouncedSearch] = useDebounce(search, 250);
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
@@ -64,6 +68,14 @@ export const Search = ({movies,searchBarRef}) => {
   useEffect(() => {
     getData();
   }, [debouncedSearch]);
+
+  const handleKeyPress=(e,debouncedSearch)=>{
+    if(e.key==='Enter'){
+      if(debouncedSearch){
+        navigate(`/search/${debouncedSearch}`)
+      }
+    }
+  }
 
   return (
     <div ref={searchRef} className={styles.search}>

@@ -10,41 +10,24 @@ const SearchPage = () => {
 
   const [fuzzy, setFuzzy] = useState([]);
 
-  const [user,setUser]=useState(null);
-  const [app,setApp]=useState(null);
-
   useEffect(()=>{
-    const currApp=new Realm.App({id:"application-0-gisfr"});
-    setApp(currApp);
-    const credentials=Realm.Credentials.anonymous();
-    currApp.logIn(credentials).then((user)=>{
-      setUser(user);
-    }).catch((err)=>{
-      console.error("Failed to log in",err);
-    });
-  },[])
-
-  const getData = async () => {
-    try{
-      const results=await user.functions.fuzzy_dave(searchTerm,'*');
-      console.log("results",results)
-      console.log(results);
-      setFuzzy(results);
+    const getData=async()=>{
+      const app= new Realm.App({id:"application-0-gisfr"});
+      const credentials=Realm.Credentials.anonymous();
+      try{
+        const user=await app.logIn(credentials);
+        const results=await user.functions.fuzzy_dave(searchTerm,'*');
+        setFuzzy(results);
+      }
+      catch(err){
+        console.error("Failed to log in",err);
+      }
     }
-    catch(err){
-      setFuzzy([]);
-      console.error("Failed to get data",err);
-    }
-  }
-
-  useEffect(() => {
-    console.log(searchTerm)
     getData();
-  }, [searchTerm,user]);
+  },[searchTerm])
   
-
-    const [movies, setMovies] = useState([]);
-    const [genreSelections, setGenreSelections] = useState([]); 
+  const [movies, setMovies] = useState([]);
+  const [genreSelections, setGenreSelections] = useState([]); 
   const [yearSelections, setYearSelections] = useState([]); 
   const [languageSelections, setLanguageSelections] = useState([]);
     const genreOptions = [
@@ -118,7 +101,7 @@ const SearchPage = () => {
     <div className="moviescontainer"> 
     <section className={styles.container}>
         <div className={styles.title}>
-            <span>Search Results for ...</span>
+            <span>Search Results for {searchTerm}</span>
         </div>
         <div className={styles.gridcontainer}>
         {movies.map((movie) => (
