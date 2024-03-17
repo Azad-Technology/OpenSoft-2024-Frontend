@@ -1,8 +1,9 @@
+
 import { useState } from "react";
 import bgBottom from "../../assets/bg-bottom.svg";
 import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
-// import plans from './data';
+
 function Pricing() {
   const [annually, setAnnually] = useState(false);
   return (
