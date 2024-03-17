@@ -1,12 +1,14 @@
 import styles from "./Comments.module.css";
 import { useState, useRef, useEffect } from "react";
 
-let comments = ['Lorem ',
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus.',
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus.'];
-let name = ['abc','def','John Doe'];
-let date = ['10-12-23','11-12-23','01-02-24'];
-let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
+ 
+
+// let comments = ['Lorem ',
+// 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus.',
+// 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus.'];
+// let name = ['abc','def','John Doe'];
+// let date = ['10-12-23','11-12-23','01-02-24'];
+// let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
 function YourComment(){
   function ExpandingTextArea() {
@@ -109,7 +111,23 @@ function Comments(){
     );
   }
 
-  function NewComments() {
+  function NewComments(props) {
+    let comments = props.info.map((obj)=>{
+      return obj.comment;
+    });
+
+    let name = props.info.map((obj)=>{
+      return obj.name;
+    });
+
+    let date = props.info.map((obj)=>{
+      return obj.date;
+    });
+
+    let image = props.info.map((obj)=>{
+      return obj.image;
+    });
+
     const [clicked, setClicked] = useState(false);
     const [state, setState] = useState("See more");
     const [parentHeight, setParentHeight] = useState('auto');
