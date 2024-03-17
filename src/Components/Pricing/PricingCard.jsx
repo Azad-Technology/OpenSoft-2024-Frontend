@@ -1,20 +1,17 @@
 import React from 'react'
 import styles from './PricingCard.module.css'
 
-export const PricingCard = () => {
+export const PricingCard = ({plan}) => {
   return (
     <div className={`${styles.pricing__card}`}>
-        <div className={`${styles.pricing__card__header}`}>
-            <h3>Basic</h3>
-            <p>For beginners</p>
-        </div>
-        <div className={`${styles.pricing__card__body}`}>
-            <h2>$0</h2>
-            <p>per month</p>
-        </div>
-        <div className={`${styles.pricing__card__footer}`}>
-            <button>Get Started</button>
-        </div>
+        <h2>{plan.name}</h2>
+        <h3>${plan.price}</h3>
+        <ul>
+            {plan.features.map((feature, index) => {
+                return <li key={index}>{feature}</li>
+            })}
+        </ul>
+        <button className={`${styles.button}`}>Get Started</button>
     </div>
   )
 }
