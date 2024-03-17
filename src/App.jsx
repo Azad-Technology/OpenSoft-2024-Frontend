@@ -48,7 +48,11 @@ function App() {
             <Navbar />
             <div className='home'>
               <Carousel />
-              <MovieList movie={[{ title: "Wanda Vision", _id: "012" }]} />
+              {/* {
+                [...Array(10)]
+              } */}
+              <MovieList movie={[{ title: "Wanda Vision", _id: "1" },{ title: "Wanda Vision", _id: "2" },{ title: "Wanda Vision", _id: "3" },{ title: "Wanda Vision", _id: "4" },{ title: "Wanda Vision", _id: "5" },{ title: "Wanda Vision", _id: "6" }]} />
+              
             </div>
           </>
         } />
