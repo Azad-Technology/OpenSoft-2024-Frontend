@@ -96,6 +96,7 @@ export const Navbar = ({movies}) => {
   const mobileMenuRef = useRef(null);
   const searchRef=useRef(null);
   const dropdownRef=useRef(null);
+  const searchBarRef=useRef(null);
 
     useEffect(()=>{
         function handleClickOutside(event){
@@ -144,6 +145,12 @@ export const Navbar = ({movies}) => {
         }
     },[])
 
+    useEffect(()=>{
+        if(showSearchBar){
+            searchBarRef.current.focus();
+        }
+    },[showSearchBar])
+
     if(window.innerWidth>600){
         return (
             <div className={styles.DesktopMenu}>
@@ -182,10 +189,10 @@ export const Navbar = ({movies}) => {
                         <img className={styles.navbar__logo} src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo" />
                     </div>
                     <div className={styles.navbar__right}>
-                        <i onClick={()=>setShowSearchBar(!showSearchBar)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
+                        <i onClick={()=>setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
                     </div>
                 </div>
-                {showSearchBar && <div ref={searchRef}><Search movies={movies}/></div>}
+                {showSearchBar && <div ref={searchRef}><Search movies={movies} searchBarRef={searchBarRef}/></div>}
                 {showHamburgerMenu && <div className={styles.backdrop}></div>}
                 {showHamburgerMenu && <div ref={mobileMenuRef}><MobileMenu /></div>}
             </div>
