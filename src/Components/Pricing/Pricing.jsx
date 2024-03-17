@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import bgBottom from "../../assets/bg-bottom.svg";
 import bgTop from "../../assets/bg-top.svg";
@@ -13,34 +14,15 @@ function Pricing() {
         <h1 className={styles.heading}>
           Our Pricing
         </h1>
-        <div className={styles.toggle}>
-          <label className={styles.name}>Annually</label>
-          <input
-            type="checkbox"
-            className={styles.checkbox}
-            id="checkbox"
-            checked={annually}
-            onChange={() => setAnnually(!annually)}
-          />
-          <label htmlFor="checkbox" className={styles.label}>
-            <div className={styles.ball}></div>
-          </label>
-          <label className={styles.name}>Monthly</label>
-        </div>
-        {/* Pricing Cards */}
         <div className={styles.pricingCards}>
+
           <article className={styles.pricingCard}>
             <h2>Basic</h2>
-            {annually && (
+            
               <h3>
                 <span>$</span> 19.99
               </h3>
-            )}
-            {!annually && (
-              <h3>
-                <span>$</span> 199.99
-              </h3>
-            )}
+            
             <ul>
               <li>
                 500 Searches every Month
@@ -56,18 +38,15 @@ function Pricing() {
               Purchase
             </button>
           </article>
+
           <article className={`${styles.pricingCard} ${styles.featured}`}>
             <h2>Standard</h2>
-            {annually && (
+            
               <h3>
                 <span>$</span> 24.99
               </h3>
-            )}
-            {!annually && (
-              <h3>
-                <span>$</span> 249.99
-              </h3>
-            )}
+            
+            
             <ul>
               <li>
                 1 TB Storage
@@ -83,18 +62,14 @@ function Pricing() {
               Purchase
             </button>
           </article>
+
           <article className={`${styles.pricingCard}`}>
             <h2>Premium</h2>
-            {annually && (
+            
               <h3>
                 <span>$</span> 39.99
               </h3>
-            )}
-            {!annually && (
-              <h3>
-                <span>$</span> 399.99
-              </h3>
-            )}
+
             <ul>
               <li>
                 500 GB Storage
@@ -111,7 +86,10 @@ function Pricing() {
             </button>
           </article>
         </div>
+
       </section>
+
+
       <div className={styles.bgBottomImage}>
         <img src={bgBottom} alt="" />
       </div>

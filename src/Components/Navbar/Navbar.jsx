@@ -78,6 +78,10 @@ export const Navbar = ({movies}) => {
         {
             name:"Top IMDB",
             link:"#"
+        }, 
+        {
+            name:"Pricing",
+            link:"/pricing"
         }
     ]
 

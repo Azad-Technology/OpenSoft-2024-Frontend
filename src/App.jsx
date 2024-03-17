@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
       <Routes>
         <Route index path="/" element={
           <>
@@ -57,9 +57,16 @@ const App = () => {
         <Route path="/search/:searchTerm" element={
           <SearchPage />
         } />
+        <Route path='/pricing' element={
+          <>
+          <Navbar />
+          <Pricing/>
+          </>
+         } />
       </Routes>
-    </BrowserRouter> */}
-      <Pricing/>
+    </BrowserRouter>
+      
+      
     </>
   )
 }
