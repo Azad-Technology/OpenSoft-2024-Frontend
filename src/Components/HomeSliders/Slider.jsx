@@ -10,9 +10,13 @@ export const Slider = ({genre}) => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await instance.get(`/genre/${genre}`)
-      setMovies(response.data)
-      console.log(response.data)
+      if(genre==="Top IMDB"){
+        const response = await instance.get('/imdb?count=15')
+        setMovies(response.data);
+        return;
+      }
+      const response = await instance.get(`/genre/${genre}/`)
+      setMovies(response.data);
     }
     getData();
   },[genre])

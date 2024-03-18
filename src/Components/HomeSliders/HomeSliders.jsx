@@ -6,6 +6,7 @@ export const HomeSliders = () => {
 
   return (
     <div className={styles.sliders}>
+        <Slider genre="Top IMDB" />
         <>
         <div className={styles.slider__title}>Comedy</div>
         <Slider genre="Comedy"/>

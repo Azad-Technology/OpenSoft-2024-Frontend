@@ -90,6 +90,7 @@ export const Navbar = ({movies}) => {
 
     const handleToggleDropdown=(e)=>{
         const name=e.target.innerText;
+        setShowDropdown(false,false,false,false,false,false);
         setShowDropdown(prevState=>({
             ...prevState,
             [name]:!prevState[name]

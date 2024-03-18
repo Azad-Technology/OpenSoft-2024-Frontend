@@ -1,9 +1,9 @@
 @keyframes growTop{
     0%{
-        transform: translateY(-100%);
+        transform: scaleY(0);
     }
     100%{
-        transform: translateY(0%);
+        transform: scaleY(1);
     }
     
 }
@@ -96,7 +96,8 @@
     width: 20%;
     border-radius: 0.7rem;
     padding:0.5rem 0.8rem;
-    animation: growTop 0.3s ease-in;
+    transform-origin:top;
+    animation: growTop 0.25s ease-in;
 }
 
 a{

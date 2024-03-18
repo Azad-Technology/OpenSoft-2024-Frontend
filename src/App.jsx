@@ -112,9 +112,9 @@ const App = () => {
         <Route path="/search/:searchTerm" element={
           <>
           <Navbar />
-          <div className='home'>
+          {/* <div className='home'> */}
           <SearchPage />
-          </div>
+          {/* </div> */}
           </>
         } />
         <Route path='/pricing' element={
@@ -129,7 +129,6 @@ const App = () => {
                 <Navbar />
                 <MoviePage info={movieInfo}/>
                 <MoreLikeThis />
-                {/* <SearchPage /> */}
               </>
         }/>
       </Routes>

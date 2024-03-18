@@ -76,9 +76,9 @@ const SearchPage = () => {
   }, [genreSelections, yearSelections, languageSelections]);
 
   return (
-    <div className="maincontentwrapper">
+    <div className={styles.maincontentwrapper}>
 
-      <div className="dropdownscontainer" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginLeft: '2rem', width: 'max-content', alignSelf: 'start' }}>
+      <div className={styles.dropdownscontainer} style={{ display: 'flex', gap:"2rem",marginLeft:"2rem" }}>
         <CustomDropdown
           key="genre-dropdown"
           label="Genre"
