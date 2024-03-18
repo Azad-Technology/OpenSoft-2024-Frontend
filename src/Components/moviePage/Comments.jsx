@@ -10,41 +10,41 @@ import { useState, useRef, useEffect } from "react";
 // let date = ['10-12-23','11-12-23','01-02-24'];
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
-function YourComment(){
-  function ExpandingTextArea() {
-    const [text, setText] = useState('');
-    const [parentHeight, setParentHeight] = useState('auto');
+// function YourComment(){
+//   function ExpandingTextArea() {
+//     const [text, setText] = useState('');
+//     const [parentHeight, setParentHeight] = useState('auto');
   
-    const handleChange = (event) => {
-      const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
-      const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
-      setParentHeight(`${currentRows * textareaLineHeight}px`);
-      setText(event.target.value);
-    };
+//     const handleChange = (event) => {
+//       const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
+//       const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
+//       setParentHeight(`${currentRows * textareaLineHeight}px`);
+//       setText(event.target.value);
+//     };
   
-    return (
-      <div style={{ height: parentHeight, overflow: 'hidden' }}>
-        <textarea
-          value={text}
-          onChange={handleChange}
-          style={{ height: '100%', boxSizing: 'border-box', resize: 'none', overflowY: 'scroll', border: '1px solid #ccc' }}
-        />
-      </div>
-    );
-  }
-    return (
-        <>  
-            <div>
-                <form method="POST">
-                    { /* <textarea name="typeComment" placeholder="Type your comment here..." className={styles.typeComment}></textarea> */}
-                    <ExpandingTextArea />
-                    {/* <br></br> */}
-                    <input type="submit" value="Submit" className={styles.btn}></input>
-                </form>
-            </div>
-        </>
-    )
-}
+//     return (
+//       <div style={{ height: parentHeight, overflow: 'hidden' }}>
+//         <textarea
+//           value={text}
+//           onChange={handleChange}
+//           style={{ height: '100%', boxSizing: 'border-box', resize: 'none', overflowY: 'scroll', border: '1px solid #ccc' }}
+//         />
+//       </div>
+//     );
+//   }
+//     return (
+//         <>  
+//             <div>
+//                 <form method="POST">
+//                     { /* <textarea name="typeComment" placeholder="Type your comment here..." className={styles.typeComment}></textarea> */}
+//                     <ExpandingTextArea />
+//                     {/* <br></br> */}
+//                     <input type="submit" value="Submit" className={styles.btn}></input>
+//                 </form>
+//             </div>
+//         </>
+//     )
+// }
 
 // function Comments(){
 //     const [clicked,setClicked] = useState(false);
@@ -184,7 +184,7 @@ function YourComment(){
       }
   
       // Adjust height when textarea is focused
-      const textareaLineHeight = 60; // Adjust this value according to your textarea's line-height
+      const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
       const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
       const newTextareaHeight = `${currentRows * textareaLineHeight}px`;
       setTextareaHeight(newTextareaHeight);

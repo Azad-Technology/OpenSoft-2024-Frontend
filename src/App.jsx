@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import MoreLikeThis from './Components/MoreLikeThis/MoreLikeThis.jsx'
-import MoviePage from './Components/Carousel/moviePage/MoviePage.jsx'
+import MoviePage from './Components/moviePage/MoviePage.jsx'
 import SearchPage from './Components/SearchPage/SearchPage.jsx'
 // import Card from './Components/Card/Card.jsx'
 import MovieList from './Components/movieList/MovieList'
@@ -14,10 +14,10 @@ import { Movies } from './Components/Movies.jsx';
 import { Navbar } from './Components/Navbar/Navbar.jsx';
 import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Pricing } from './Components/Pricing/Pricing.jsx'
+import  Pricing  from './Components/Pricing/Pricing.jsx'
 import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
 
-function App() {
+const App = () => {
 
   const [movies, setMovies] = useState([]);
   const [showhamurgerMenu, setShowHamburgerMenu] = useState(false);
@@ -87,13 +87,18 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+      <BrowserRouter>
       <Routes>
         <Route index path="/" element={
           <>
             <Navbar />
             <div className='home'>
               <Carousel />
+              {/* {
+                [...Array(10)]
+              } */}
+              <MovieList movie={[{ title: "Wanda Vision", _id: "1" },{ title: "Wanda Vision", _id: "2" },{ title: "Wanda Vision", _id: "3" },{ title: "Wanda Vision", _id: "4" },{ title: "Wanda Vision", _id: "5" },{ title: "Wanda Vision", _id: "6" }]} />
+              
               <HomeSliders />
             </div>
           </>
@@ -101,8 +106,17 @@ function App() {
         <Route path="/search/:searchTerm" element={
           <>
           <Navbar />
+          <div className='home'>
           <SearchPage />
+          </div>
           </>
+        } />
+        <Route path='/pricing' element={
+          <>
+          <Navbar />
+          <Pricing/>
+          </>
+           
         } />
         <Route path="/movie/:id" element={
               <>
@@ -112,9 +126,10 @@ function App() {
         }/>
       </Routes>
     </BrowserRouter>
-    {/* <Pricing /> */}
+      
+      
     </>
   )
 }
 
-export default App
+export default App;

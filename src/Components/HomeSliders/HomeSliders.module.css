@@ -1,4 +1,4 @@
-/* .slider__movies{
+.slider__movies{
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -17,4 +17,4 @@
     margin: 0 20px;
     font-size: 1.5rem;
     font-weight: 500;
-} */
+}
