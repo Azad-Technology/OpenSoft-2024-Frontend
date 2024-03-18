@@ -150,47 +150,71 @@ import { useState, useRef, useEffect } from "react";
       }
     }
   
+    // function handleTextAreaChange(event) {
+    //   const textareaLineHeight = 12; // Adjust this value according to your textarea's line-height
+    //   const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
+    //   const newTextareaHeight = `${currentRows * textareaLineHeight+auto}px`;
+      
+    //   // setTextareaHeight(newTextareaHeight);
+    //   setParentHeight(newTextareaHeight); // Set parent height to match textarea height
+  
+    //   // Adjust textarea height to fit content if it exceeds initial height
+    //   const currentHeight = event.target.scrollHeight;
+    //   const initialHeight = initialTextareaHeight.current;
+    //   if (currentHeight > initialHeight) {
+    //     textareaRef.current.style.height = currentHeight + 'px';
+    //     // setTextareaHeight(currentHeight + 'px');
+    //     setParentHeight(currentHeight + 'px');
+    //   }
+
+    //   const textAreaElem = document.getElementById("myTextArea");
+    //   if(textAreaElem.value){
+    //     setDisableBtn(false);
+    //   }else{
+    //     setDisableBtn(true);
+    //   }
+
+
+    // }
     function handleTextAreaChange(event) {
-      const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
+      const textareaLineHeight = 12; // Adjust this value according to your textarea's line-height
       const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
       const newTextareaHeight = `${currentRows * textareaLineHeight}px`;
-      setTextareaHeight(newTextareaHeight);
-      setParentHeight(newTextareaHeight); // Set parent height to match textarea height
-  
-      // Adjust textarea height to fit content if it exceeds initial height
-      const currentHeight = event.target.scrollHeight;
-      const initialHeight = initialTextareaHeight.current;
-      if (currentHeight > initialHeight) {
-        textareaRef.current.style.height = currentHeight + 'px';
-        setParentHeight(currentHeight + 'px');
-      }
-
-      const textAreaElem = document.getElementById("myTextArea");
-      if(textAreaElem.value){
-        setDisableBtn(false);
-      }else{
-        setDisableBtn(true);
-      }
-
-
-    }
-  
-    function handleTextareaFocus(event) {
+    
+      // Adjust textarea height to fit content
+      event.target.style.height = newTextareaHeight;
+    
+      // Adjust parent height to match textarea height
+      const parentHeight = `${currentRows * textareaLineHeight + auto}px`; // Adjust 20 as per your styling
+      setParentHeight(parentHeight);
+    
+      // Enable/disable button based on textarea content
+      setDisableBtn(!event.target.value.trim());
+    
+      // Store initial heights if not already stored
       if (!initialParentHeight.current) {
-        initialParentHeight.current = textareaRef.current.parentElement.parentElement.offsetHeight;
+        initialParentHeight.current = parentHeight;
       }
       if (!initialTextareaHeight.current) {
-        initialTextareaHeight.current = event.target.scrollHeight;
+        initialTextareaHeight.current = newTextareaHeight;
       }
+    }
+    
   
-      // Adjust height when textarea is focused
-      const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
+
+    function handleTextareaFocus(event) {
+      // Calculate textarea height based on current content
+      const textareaLineHeight = 12; 
       const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
       const newTextareaHeight = `${currentRows * textareaLineHeight}px`;
-      setTextareaHeight(newTextareaHeight);
-      setParentHeight(newTextareaHeight);
+    
+      // Adjust textarea height to fit content
+      event.target.style.height = newTextareaHeight;
+    
+      // Adjust parent height to match textarea height
+      // const parentHeight = `${currentRows * textareaLineHeight + auto}px`;
     }
-  
+
     function handleTextareaBlur(event) {
       // Reset heights to their original values when the comment is removed
       setTextareaHeight(initialTextareaHeight.current + 'px');
@@ -213,7 +237,7 @@ import { useState, useRef, useEffect } from "react";
                     cols={190}
                     className={styles.typeComment}
                     style={{ height: '100%', overflow: 'hidden', whiteSpace: 'pre-wrap' }} // Ensure no scrollbar and wrap long lines
-                    onChange={handleTextAreaChange}
+                    onChange={handleTextAreaChange} 
                     onFocus={handleTextareaFocus}
                     onBlur={handleTextareaBlur}
                   ></textarea>
