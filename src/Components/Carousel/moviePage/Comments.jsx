@@ -46,70 +46,70 @@ function YourComment(){
     )
 }
 
-function Comments(){
-    const [clicked,setClicked] = useState(false);
-    const [state,setState] = useState("See more");
+// function Comments(){
+//     const [clicked,setClicked] = useState(false);
+//     const [state,setState] = useState("See more");
   
-    function SwitchState(){
-      setClicked(!clicked);
-      if(state==="See more"){
-        setState("See less");
-      }
-      else{
-        setState("See more");
-      }
-    }
+//     function SwitchState(){
+//       setClicked(!clicked);
+//       if(state==="See more"){
+//         setState("See less");
+//       }
+//       else{
+//         setState("See more");
+//       }
+//     }
   
-    console.log(clicked);
+//     console.log(clicked);
   
-    return (    
-      <>
-        <div className={styles.yourComment}>
-          <div className={styles.heading}>Your Comment</div> 
-          <YourComment />
-        </div>
+//     return (    
+//       <>
+//         <div className={styles.yourComment}>
+//           <div className={styles.heading}>Your Comment</div> 
+//           <YourComment />
+//         </div>
 
-        <div className={styles.commentContainerParent}>
-          <div className={styles.heading}>Comments</div>
-          <div className={styles.commentParent}>
-            <div className={styles.container}>
-              {clicked ? (
-                comments.map((comment, index) => (
-                  <div key={index} className={styles.commentContainer}>
-                    <div className={styles.imgContainer}>
-                      {/* <img src={image[index]} alt="userImage"></img> */}
-                    </div>
-                    <div className={styles.otherInfo}>
-                      <div className={styles.userName}>{name[index]}</div>
-                      <div className={styles.datePosted}>{date[index]}</div>
-                      <div className={styles.commentContent}>{comment}</div>
-                    </div>
-                   </div>
-            ))
-          ) : (
-            <div className={styles.commentContainer}>
-              <div className={styles.imgContainer}></div>
-              <div className={styles.otherInfo}>
-                  <div className={styles.userName}>{name[0]}</div>
-                  <div className={styles.datePosted}>{date[0]}</div>
-                  <div className={styles.commentContent}>{comments[0]}</div>
-              </div>
-            </div>
-          )}
+//         <div className={styles.commentContainerParent}>
+//           <div className={styles.heading}>Comments</div>
+//           <div className={styles.commentParent}>
+//             <div className={styles.container}>
+//               {clicked ? (
+//                 comments.map((comment, index) => (
+//                   <div key={index} className={styles.commentContainer}>
+//                     <div className={styles.imgContainer}>
+//                       {/* <img src={image[index]} alt="userImage"></img> */}
+//                     </div>
+//                     <div className={styles.otherInfo}>
+//                       <div className={styles.userName}>{name[index]}</div>
+//                       <div className={styles.datePosted}>{date[index]}</div>
+//                       <div className={styles.commentContent}>{comment}</div>
+//                     </div>
+//                    </div>
+//             ))
+//           ) : (
+//             <div className={styles.commentContainer}>
+//               <div className={styles.imgContainer}></div>
+//               <div className={styles.otherInfo}>
+//                   <div className={styles.userName}>{name[0]}</div>
+//                   <div className={styles.datePosted}>{date[0]}</div>
+//                   <div className={styles.commentContent}>{comments[0]}</div>
+//               </div>
+//             </div>
+//           )}
 
-          <button onClick = {SwitchState} className={styles.btn}>{state}</button>
+//           <button onClick = {SwitchState} className={styles.btn}>{state}</button>
 
 
-        </div>
-        </div>
-        </div>
+//         </div>
+//         </div>
+//         </div>
 
 
 
         
-      </>
-    );
-  }
+//       </>
+//     );
+//   }
 
   function NewComments(props) {
     let comments = props.info.map((obj)=>{

@@ -87,7 +87,7 @@ function App() {
 
   return (
     <>
-    {/* <BrowserRouter>
+    <BrowserRouter>
       <Routes>
         <Route index path="/" element={
           <>
@@ -108,12 +108,11 @@ function App() {
               <>
                 <MoviePage info={movieInfo}/>
                 <MoreLikeThis />
-                {/* <SearchPage /> */}
               </>
         }/>
       </Routes>
-    </BrowserRouter> */}
-    <Pricing />
+    </BrowserRouter>
+    {/* <Pricing /> */}
     </>
   )
 }
