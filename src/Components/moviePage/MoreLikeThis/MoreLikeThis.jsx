@@ -1,3 +1,4 @@
+import { Slider } from "../../HomeSliders/Slider";
 import styles from "./MoreLikeThis.module.css"
 
 import React from 'react'
@@ -13,8 +14,8 @@ const MoreLikeThis = () => {
         <div className={styles.title}>
             <span>More Like This</span>
         </div>
-        <div className={styles.gridcontainer}>
-            {cards}
+        <div>
+            <Slider genre={"Action"} />
         </div>
     </section>
   )

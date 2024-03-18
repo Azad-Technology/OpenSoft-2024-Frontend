@@ -6,24 +6,7 @@ import MovieList from '../movieList/MovieList.jsx'
 
 export const Slider = ({genre}) => {
 
-  const [movies,setMovies] = useState([
-    {
-      "_id": 1,
-      "title": "The Shawshank Redemption",
-    },
-    {
-      "_id": 2,
-      "title": "The Godfather",
-    },
-    {
-      "_id": 3,
-      "title": "The Dark Knight",
-    },
-    {
-      "_id": 4,
-      "title": "The Godfather: Part II",
-    }
-  ])
+  const [movies,setMovies] = useState(null)
 
   useEffect(() => {
     const getData = async () => {
@@ -32,35 +15,23 @@ export const Slider = ({genre}) => {
         setMovies(response.data);
         return;
       }
-      const response = await instance.get(`/genre/${genre}/`)
+      const response = await instance.get(`/genre_top/${genre}/?count=15`)
+      // movies.push(...movies);
       setMovies(response.data);
     }
     getData();
   },[genre])
-
+  
   return (
-    <div className={styles.slider}>
-      <div className={styles.slider__title}>{genre}</div>
-      <div className={styles.slider__movies}>
-        <Card movies={movies[0]}/>
-        <Card movies={movies[1]}/>
-        <Card movies={movies[2]}/>
-        <Card movies={movies[3]}/>
-        <Card movies={movies[0]}/>
-        <Card movies={movies[1]}/>
-        <Card movies={movies[2]}/>
-        <Card movies={movies[3]}/>
-        <Card movies={movies[3]}/>
-        <Card movies={movies[0]}/>
-        <Card movies={movies[1]}/>
-        <Card movies={movies[2]}/>
-        <Card movies={movies[3]}/>
-        {/* <Card movies={movies[4]}/>
-        <Card movies={movies[5]}/>
-        <Card movies={movies[6]}/>
-        <Card movies={movies[7]}/> */}
-
-      </div>
-    </div>
+    
+      <>
+       {movies ? <div className={styles.slider__movies}>
+      
+        <MovieList movie={movies} />
+      </div> : null
+      }
+      
+      </>
+   
   )
 }
