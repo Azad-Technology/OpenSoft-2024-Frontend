@@ -3,6 +3,7 @@
   /* max-width: 15%;  */
   width: 12%;
   height:20%;
+  min-width: 10rem;
   margin: 0.8rem;
   border-radius: 0.1rem;
   /* overflow: hidden; */

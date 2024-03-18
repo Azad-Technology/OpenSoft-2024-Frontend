@@ -1,5 +1,6 @@
 .slider__movies{
     display: flex;
+    /* flex-wrap: wrap; */
     overflow-x: scroll;
     /* overflow-y: hidden; */
     padding: 20px 0;
@@ -7,6 +8,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     z-index:10;
+    width: 100vw;
 }
 
 .slider__movies::-webkit-scrollbar{

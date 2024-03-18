@@ -42,7 +42,24 @@ export const Slider = ({genre}) => {
     <div className={styles.slider}>
       <div className={styles.slider__title}>{genre}</div>
       <div className={styles.slider__movies}>
-        <MovieList movie={movies} />
+        <Card movies={movies[0]}/>
+        <Card movies={movies[1]}/>
+        <Card movies={movies[2]}/>
+        <Card movies={movies[3]}/>
+        <Card movies={movies[0]}/>
+        <Card movies={movies[1]}/>
+        <Card movies={movies[2]}/>
+        <Card movies={movies[3]}/>
+        <Card movies={movies[3]}/>
+        <Card movies={movies[0]}/>
+        <Card movies={movies[1]}/>
+        <Card movies={movies[2]}/>
+        <Card movies={movies[3]}/>
+        {/* <Card movies={movies[4]}/>
+        <Card movies={movies[5]}/>
+        <Card movies={movies[6]}/>
+        <Card movies={movies[7]}/> */}
+
       </div>
     </div>
   )

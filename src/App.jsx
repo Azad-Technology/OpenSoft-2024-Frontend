@@ -129,7 +129,6 @@ const App = () => {
                 <Navbar />
                 <MoviePage info={movieInfo}/>
                 <MoreLikeThis />
-                {/* <SearchPage /> */}
               </>
         }/>
       </Routes>
