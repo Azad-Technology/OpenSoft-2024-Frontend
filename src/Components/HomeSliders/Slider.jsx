@@ -15,12 +15,13 @@ export const Slider = ({genre}) => {
         setMovies(response.data);
         return;
       }
-      const response = await instance.get(`/genre/${genre}/`)
+      const response = await instance.get(`/genre_top/${genre}/?count=15`)
+      // movies.push(...movies);
       setMovies(response.data);
     }
     getData();
   },[genre])
-
+  
   return (
     
       <>
@@ -29,6 +30,7 @@ export const Slider = ({genre}) => {
         <MovieList movie={movies} />
       </div> : null
       }
+      
       </>
    
   )
