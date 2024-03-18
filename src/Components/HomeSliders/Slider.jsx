@@ -1,57 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './HomeSliders.module.css'
 import Card from '../Card/Card.jsx'
+import instance from '../../axios.jsx'
+import MovieList from '../movieList/MovieList.jsx'
 
 export const Slider = ({genre}) => {
 
-  const movies=[
+  const [movies,setMovies] = useState([
     {
-      title:"The Tomorrow War",
-      poster_path:"https://image.tmdb.org/t/p/w500/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg"
+      "_id": 1,
+      "title": "The Shawshank Redemption",
     },
     {
-      title: "Inception",
-      poster_path: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+      "_id": 2,
+      "title": "The Godfather",
     },
     {
-      title: "The Tomorrow War",
-      poster_path: "https://image.tmdb.org/t/p/w500/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg"
+      "_id": 3,
+      "title": "The Dark Knight",
     },
     {
-      title: "Inception",
-      poster_path: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
-    },
-    {
-      title: "The Tomorrow War",
-      poster_path: "https://image.tmdb.org/t/p/w500/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg"
-    },
-    {
-      title: "Inception",
-      poster_path: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
-    },
-    {
-      title: "The Tomorrow War",
-      poster_path: "https://image.tmdb.org/t/p/w500/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg"
-    },
-    {
-      title: "Inception",
-      poster_path: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
-    },
-  ]
+      "_id": 4,
+      "title": "The Godfather: Part II",
+    }
+  ])
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await instance.get(`/genre/${genre}`)
+      setMovies(response.data)
+    }
+    getData();
+  },[genre])
 
   return (
     <div className={styles.slider}>
       <div className={styles.slider__title}>{genre}</div>
       <div className={styles.slider__movies}>
-        <Card movies={movies[0]}/>
-        <Card movies={movies[1]}/>
-        <Card movies={movies[2]}/>
-        <Card movies={movies[3]}/>
-        {/* <Card movies={movies[4]}/>
-        <Card movies={movies[5]}/>
-        <Card movies={movies[6]}/>
-        <Card movies={movies[7]}/> */}
-
+        <MovieList movie={movies} />
       </div>
     </div>
   )
