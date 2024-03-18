@@ -110,7 +110,7 @@ const SearchPage = () => {
         </section>
 
       </div>
-      <MovieList movie={fuzzy} />
+      {fuzzy ? <MovieList movie={fuzzy} /> : <div className={styles.not_found}>Not Found</div>}
     </div>
   );
 }

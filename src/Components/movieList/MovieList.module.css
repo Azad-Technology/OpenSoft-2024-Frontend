@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     padding: 0%;
     margin: 0%;
     height: 100%;

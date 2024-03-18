@@ -96,6 +96,7 @@
 
 
 body { /* Or your chosen element */
+  
     background-color: #00050d;/* Use the background color */
 }
 .dropdowncontainer {
@@ -184,7 +185,7 @@ body { /* Or your chosen element */
     color: var(--primary-font-color);
     padding-top: 2rem;
     padding-bottom: 2rem;
-
+    
 }
 
 .container .title {
@@ -220,6 +221,19 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     transition: transform 0.3s ease-in-out;
   }
 
+
+  .not_found{
+    position: relative;
+    top:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 2rem;
+    color: #fff;
+  
+  }
 
 @media screen and (max-width: 768px) {
     .container .gridcontainer {
