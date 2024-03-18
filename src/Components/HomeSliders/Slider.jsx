@@ -47,6 +47,15 @@ export const Slider = ({genre}) => {
         <Card movies={movies[1]}/>
         <Card movies={movies[2]}/>
         <Card movies={movies[3]}/>
+        <Card movies={movies[0]}/>
+        <Card movies={movies[1]}/>
+        <Card movies={movies[2]}/>
+        <Card movies={movies[3]}/>
+        <Card movies={movies[3]}/>
+        <Card movies={movies[0]}/>
+        <Card movies={movies[1]}/>
+        <Card movies={movies[2]}/>
+        <Card movies={movies[3]}/>
         {/* <Card movies={movies[4]}/>
         <Card movies={movies[5]}/>
         <Card movies={movies[6]}/>
