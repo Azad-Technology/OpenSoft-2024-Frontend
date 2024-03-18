@@ -97,7 +97,7 @@
     border-radius: 0.7rem;
     padding:0.5rem 0.8rem;
     transform-origin:top;
-    animation: growTop 0.25s ease-in;
+    animation: growTop 0.2s ease-in;
 }
 
 a{
