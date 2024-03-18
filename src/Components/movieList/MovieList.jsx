@@ -6,7 +6,7 @@ const MovieList = ({ movie }) => {
   return (
     <div className={styles.card_array}>
       {
-        movie.map((m, i) => (
+        movie?.map((m, i) => (
           <Card movies={m} />
         ))
       }

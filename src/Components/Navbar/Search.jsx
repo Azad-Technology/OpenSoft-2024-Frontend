@@ -69,10 +69,10 @@ export const Search = ({movies,searchBarRef}) => {
     getData();
   }, [debouncedSearch]);
 
-  const handleKeyPress=(e,debouncedSearch)=>{
+  const handleKeyPress=(e,search)=>{
     if(e.key==='Enter'){
       if(debouncedSearch){
-        navigate(`/search/${debouncedSearch}`)
+        navigate(`/search/${search}`)
       }
     }
   }
@@ -88,7 +88,7 @@ export const Search = ({movies,searchBarRef}) => {
           placeholder="Titles, people, genres"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          onKeyPress={(e) => {handleKeyPress(e,debouncedSearch)}}
+          onKeyPress={(e) => {handleKeyPress(e,search)}}
         />
         {search && <i onClick={()=>setSearch('')} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
