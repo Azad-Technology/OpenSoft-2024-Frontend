@@ -103,7 +103,7 @@ const App = () => {
               {/* {
                 [...Array(10)]
               } */}
-              <MovieList movie={[{ title: "Wanda Vision", _id: "1" },{ title: "Wanda Vision", _id: "2" },{ title: "Wanda Vision", _id: "3" },{ title: "Wanda Vision", _id: "4" },{ title: "Wanda Vision", _id: "5" },{ title: "Wanda Vision", _id: "6" }]} />
+              {/* <MovieList movie={[{ title: "Wanda Vision", _id: "1" },{ title: "Wanda Vision", _id: "2" },{ title: "Wanda Vision", _id: "3" },{ title: "Wanda Vision", _id: "4" },{ title: "Wanda Vision", _id: "5" },{ title: "Wanda Vision", _id: "6" }]} /> */}
               
               <HomeSliders />
             </div>
