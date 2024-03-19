@@ -144,10 +144,10 @@ const MoviePage = () => {
                             }
                         </div>
                         <div className={styles.button}>
-                            <span><button>A</button></span>
-                            <span><button>B</button></span>
+                            <span><button>Watch Now</button></span>
+                            {/* <span><button>B</button></span>
                             <span><button>C</button></span>
-                            <span><button>D</button></span>
+                            <span><button>D</button></span> */}
                         </div>
                     </div>
                 </div>
