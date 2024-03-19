@@ -3,7 +3,7 @@ import styles from "./MoreLikeThis.module.css"
 
 import React from 'react'
 
-const MoreLikeThis = () => {
+const MoreLikeThis = ({id}) => {
     const numberOfCards = 10;
     const cards = [];
     for (let i = 1; i <= numberOfCards; i++) {
@@ -15,7 +15,7 @@ const MoreLikeThis = () => {
             <span>More Like This</span>
         </div>
         <div>
-            <Slider genre={"More Like This"} />
+            <Slider genre={"More Like This"} id={id} />
         </div>
     </section>
   )

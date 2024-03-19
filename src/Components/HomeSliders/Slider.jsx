@@ -16,16 +16,11 @@ export const Slider = ({genre,id}) => {
         return;
       }
       if(genre==="More Like This"){
-        const response = await instance.get(`/movies/${id}/related_movies/?count=15`)
+        const response = await instance.get('/movies/'+id+'/related_movies/?count=15')
         setMovies(response.data);
         return;
       }
-      if(genre==="More Like This"){
-        const response = await instance.get(`/movies/${id}/related_movies/?count=15`)
-        setMovies(response.data);
-        return;
-      }
-      const response = await instance.get(`/genre/${genre}/`)
+      const response = await instance.get(`/genre_top/${genre}/?count=15`)
       // movies.push(...movies);
       console.log(response.data);
       setMovies(response.data);

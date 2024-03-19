@@ -3,12 +3,22 @@ import './LoginForm.css'
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from 'react';
+import instance from '../../axios';
+import { useStateValue } from '../../MyContexts/StateProvider';
+import { useNavigate } from 'react-router-dom';
 
-function LoginForm() {
+function LoginForm({register}) {
+
+  const [{token,premium},dispatch]=useStateValue();
+  const navigate=useNavigate();
+
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [err, setErrors] = useState("")
-
-    const handleChange = () => {
+    
+    const [email, setEmail] = useState("");
+    const [password,setPassword]=useState("");
+    const handleSubmit = async (e) => {
+      e.preventDefault();
       const newEmail = document.getElementById("email").value
       const newPass = document.getElementById("password").value
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,7 +37,53 @@ function LoginForm() {
         } else if (!/[!@#$%&*-]/.test(newPass)) {
           setErrors('Password must contain at least one special character.');
         }
-        else setErrors("")
+        else if(register!=="register"){
+          setErrors("");
+          try{
+            const response=await instance.post('/login',{
+              email:email,
+              password:password
+            },
+            {
+              headers:{
+                'Content-Type':'application/json'
+              }
+            });
+            dispatch({
+              type:'SET_TOKEN',
+              token:response.data.token,
+              premium:response.data.type
+            });
+            navigate('/');
+          }
+          catch(err){
+            console.log(err);
+          }
+        }
+        else{
+          setErrors("");
+          try{
+            const response=await instance.post('/signup',{
+              name:"Dummy",
+              email:email,
+              password:password
+            },
+            {
+              headers:{
+                'Content-Type':'application/json'
+              }
+            });
+            dispatch({
+              type:'SET_TOKEN',
+              token:response.data.token,
+              premium:"Basic"
+            });
+            navigate('/');
+          }
+          catch(err){
+            console.log(err);
+          }
+        }
       }
 
   };
@@ -35,6 +91,7 @@ function LoginForm() {
     const togglePasswordVisibility = () => {
       setIsPasswordVisible(!isPasswordVisible);
     };
+
   
   return (
     <div className='login'>
@@ -42,13 +99,16 @@ function LoginForm() {
       <form action="">
         <h1>Welcome Back.</h1>
         <div className='OAuth'>
-        <button type='submit' className='google'><FcGoogle className='google-icon'/>Login with Google</button>
+        <button type='submit' className='google'><FcGoogle className='google-icon'/>{register==="register"?"Sign Up":"Login"} with Google</button>
         </div>
-        <div className='Or'><div>Or, sign in with your email</div>
+        <div className='Or'><div>Or, sign {register==="register"?"up":"in"} with your email</div>
         </div>
 
         <div className="input-box">
-            <input type="email" placeholder='name@email.com' id='email'required />
+            <input type="email" placeholder='name@email.com' id='email'required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            />
             <FaUser className='icon'/>
         </div>
         
@@ -58,6 +118,8 @@ function LoginForm() {
         id="password"
         name="password"
         placeholder='Password'
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         required
       />
       
@@ -66,10 +128,11 @@ function LoginForm() {
         
         {err===""?<></>:<div id='error'>{err}</div>}
 
-        <button type={err===""?'submit':'button'} onClick={handleChange} id='loginButton'>Login</button>
-        <div className="register-link">
+        {register!=="register" && <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Login</button>}
+        {register==="register" && <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Register</button>}
+        {!register==="register" && <div className="register-link">
             <p>Don't have an account? <a href="#">Register</a></p>
-        </div>
+        </div>}
       </form>
     </div>
     </div>

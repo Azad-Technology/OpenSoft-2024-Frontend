@@ -209,7 +209,7 @@ const MoviePage = () => {
                 </div>
                 {/* <Comments info={props.info.comments}/> */}
 
-                <MoreLikeThis />
+                <MoreLikeThis id={id} />
             </div>
         </>
     )
