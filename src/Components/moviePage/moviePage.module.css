@@ -187,8 +187,8 @@
     color: var(--tertiary-font-color);
     font-size: 1.5rem;
     height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 50%;
+    /* width: 2.5rem; */
+    /* border-radius: 50%; */
     border: none;
     background-color: rgba(78, 75, 75, 0.633);
     transition: all .3s ease;
