@@ -1,5 +1,5 @@
 import React from 'react'
-import './LoginForm.css'
+import styles from './LoginForm.module.css'
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from 'react';
@@ -29,7 +29,6 @@ function LoginForm() {
         }
         else setErrors("")
       }
-
   };
 
     const togglePasswordVisibility = () => {
@@ -37,22 +36,22 @@ function LoginForm() {
     };
   
   return (
-    <div className='login'>
-      <div className='wrapper'>
+    <div className={styles.login}>
+      <div className={styles.wrapper}>
       <form action="">
         <h1>Welcome Back.</h1>
-        <div className='OAuth'>
-        <button type='submit' className='google'><FcGoogle className='google-icon'/>Login with Google</button>
+        <div className={styles.OAuth}>
+        <button type='submit' className={styles.google}><FcGoogle className='google-icon'/>Login with Google</button>
         </div>
-        <div className='Or'><div>Or, sign in with your email</div>
+        <div className={styles.Or}><div>Or, sign in with your email</div>
         </div>
 
-        <div className="input-box">
+        <div className={styles.input_box}>
             <input type="email" placeholder='name@email.com' id='email'required />
-            <FaUser className='icon'/>
+            <FaUser className={styles.icon}/>
         </div>
         
-        <div className="input-box">
+        <div className={styles.input_box}>
         <input
         type={isPasswordVisible ? 'text' : 'password'}
         id="password"
@@ -61,13 +60,13 @@ function LoginForm() {
         required
       />
       
-        <div onClick={togglePasswordVisibility} style={{cursor: 'pointer'}}>{isPasswordVisible ? <FaEye className='icon' />:<FaEyeSlash className='icon'/>}</div>
+        <div onClick={togglePasswordVisibility} style={{cursor: 'pointer'}}>{isPasswordVisible ? <FaEye className={styles.icon} />:<FaEyeSlash className={styles.icon}/>}</div>
         </div>
         
         {err===""?<></>:<div id='error'>{err}</div>}
 
         <button type={err===""?'submit':'button'} onClick={handleChange} id='loginButton'>Login</button>
-        <div className="register-link">
+        <div className={styles.register_link}>
             <p>Don't have an account? <a href="#">Register</a></p>
         </div>
       </form>

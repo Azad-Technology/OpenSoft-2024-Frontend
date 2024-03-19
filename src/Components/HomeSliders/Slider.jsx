@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styles from './HomeSliders.module.css'
 import Card from '../Card/Card.jsx'
 import instance from '../../axios.jsx'
@@ -15,23 +15,25 @@ export const Slider = ({genre}) => {
         setMovies(response.data);
         return;
       }
-      const response = await instance.get(`/genre/${genre}/`)
+      const response = await instance.get(`/genre/${genre}/?count=15`)
       // movies.push(...movies);
       setMovies(response.data);
     }
     getData();
   },[genre])
+
+
+
   
   return (
+      
+    <>
+    {movies ? <div className={styles.slider}>
+      
+      <MovieList movie={movies} />
+    </div> : null
+    }
+    </>
     
-      <>
-       {movies ? <div className={styles.slider__movies}>
-      
-        <MovieList movie={movies} />
-      </div> : null
-      }
-      
-      </>
-   
   )
 }

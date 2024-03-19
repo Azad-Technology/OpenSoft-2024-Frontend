@@ -18,6 +18,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Pricing from './Components/Pricing/Pricing.jsx'
 import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
 import instance from './axios.jsx'
+import NotFound from './Components/NotFound/NotFound.jsx'
 import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Profile from './Components/profile/Profile.jsx'
 
@@ -139,6 +140,9 @@ const App = () => {
               <Navbar />
               <LoginForm />
             </>
+        }/>
+        <Route path="*" element={
+          <NotFound/>
         }/>
         </Routes>
       </BrowserRouter>
