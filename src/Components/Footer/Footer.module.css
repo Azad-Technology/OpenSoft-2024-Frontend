@@ -1,7 +1,9 @@
 
 .wrapper {
- 
+  background-color: black;
   margin: 0;
+  bottom: 0;
+  margin-top: 10%;
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-size: 1rem;

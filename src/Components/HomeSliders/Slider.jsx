@@ -25,7 +25,7 @@ export const Slider = ({genre,id}) => {
         setMovies(response.data);
         return;
       }
-      const response = await instance.get(`/genre/${genre}/?count=15`)
+      const response = await instance.get(`/genre_top/${genre}/?count=18`)
       // movies.push(...movies);
       console.log(response.data);
       setMovies(response.data);

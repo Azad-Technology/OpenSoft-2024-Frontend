@@ -56,7 +56,7 @@
     background-color: 101010;
     outline: none;
     border: none;
-    text-align: right;
+    /* text-align: right; */
  
   }
   .row {

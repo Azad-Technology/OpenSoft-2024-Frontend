@@ -13,7 +13,7 @@
 }
 
 .cards:hover {
-  /* z-index: 10; */
+  z-index: 2;
   transform: scale(1.4, 1.32);
   /* box-shadow: 0.5rem 0.5rem 0.5rem 0.25rem rgba(0, 0, 0, 0.5) ; */
 }
