@@ -1,14 +1,11 @@
 import { useEffect } from 'react';
 import styles from './Card.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ movies }) => {
-
-  useEffect(() => {
-    console.log("movies", movies);
-  }, [movies])
-
+  
   const currDate = new Date();
-
+  // if(movies != null) console.log(movies.imdb.rating);
   const onMove = (e) => {
     return e;
   };
@@ -34,20 +31,21 @@ const Card = ({ movies }) => {
     console.log(thatStyle.width, x, h, val);
   };
 
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className={styles.cards} id={movies._id} onMouseOver={onHover} onMouseOut={unHover} onMouseMove={onMove}>
+      <div onClick={()=>navigate(`/movie/${movies._id}`)} className={styles.cards} id={movies._id} onMouseOver={onHover} onMouseOut={unHover} onMouseMove={onMove}>
         <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies.title}</div>
           <div className={styles.card__runtime}>
-            {currDate.getFullYear()}-{currDate.getMonth() + 1}-{currDate.getDate()}
-            <span className={styles.card__rating}>
-              <i className="fab fa-imdb"></i>:9.5<i className="fas fa-star" />
+            {movies.year}
+            <span className={styles.card__rating}>{movies.imdb.rating}
             </span>
           </div>
-          <div className={styles.card__description}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo nihil aliquam maxime!</div>
+          <div className={styles.card__description}>{movies.plot}</div>
         </div>
-        <img src="https://i.etsystatic.com/18242346/r/il/fd61f8/2933715225/il_570xN.2933715225_a913.jpg" className={styles.cards_img} alt="" />
+        <img src={movies.poster} className={styles.cards_img} alt="Image Not Found" />
       </div>
     </>
   );

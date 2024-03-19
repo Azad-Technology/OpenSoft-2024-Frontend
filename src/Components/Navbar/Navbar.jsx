@@ -90,6 +90,7 @@ export const Navbar = ({movies}) => {
 
     const handleToggleDropdown=(e)=>{
         const name=e.target.innerText;
+        setShowDropdown(false,false,false,false,false,false);
         setShowDropdown(prevState=>({
             ...prevState,
             [name]:!prevState[name]
@@ -168,7 +169,7 @@ export const Navbar = ({movies}) => {
                         <div className={styles.navbar__links}>
                             {menuoptions.map((menuoption,index)=>(
                                 <div className={styles.desktopLinks} key={index}>
-                                    <a onClick={handleToggleDropdown} className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
+                                    <a onMouseOver={handleToggleDropdown} className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
                                     {showDropdown[menuoption.name] && menuoption.dropdown && <div ref={dropdownRef} className={styles.dropdown}>
                                         {menuoption.dropdown?.map((dropdown,index)=>(
                                             <a className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
