@@ -6,7 +6,6 @@ import SearchPage from './Components/SearchPage/SearchPage.jsx'
 // import Card from './Components/Card/Card.jsx'
 // main.js or App.js
 import MovieList from './Components/movieList/MovieList'
-// import Player from './Components/MoviePlayback/Player'
 import { Carousel } from './Components/Carousel/Carousel'
 import React from 'react'
 import axios from 'axios'
@@ -21,14 +20,14 @@ import instance from './axios.jsx'
 import NotFound from './Components/NotFound/NotFound.jsx'
 import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Profile from './Components/profile/Profile.jsx'
-import { useStateValue} from './MyContexts/StateProvider.jsx';
+import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
 
 const App = () => {
 
   const [movies, setMovies] = useState([]);
 
-  const [{token},dispatch]=useStateValue();
+  const [{ token }, dispatch] = useStateValue();
 
   useEffect(() => {
     dispatch({
@@ -71,7 +70,7 @@ const App = () => {
                 <HomeSliders />
                 <Footer />
               </div>
-              
+
             </>
           } />
           <Route path="/search/:searchTerm" element={
@@ -81,12 +80,7 @@ const App = () => {
               <Footer />
             </>
           } />
-          <Route path="/profile" element={<Profile/>}/>
-          {/* <Route path="/movieplay" element={
-            <>
-              <Player />
-            </>
-          } /> */}
+          <Route path="/profile" element={<Profile />} />
           <Route path='/pricing' element={
             <>
               <Navbar />
@@ -97,7 +91,7 @@ const App = () => {
             </>
 
           } />
-          
+
           <Route path="/movie/:id" element={
             <>
               <Navbar />
@@ -111,17 +105,17 @@ const App = () => {
               <Navbar />
               <LoginForm />
             </>
-          }/>
+          } />
           <Route path='/register' element={
             <>
               <Navbar />
-              <LoginForm register="register"/>
+              <LoginForm register="register" />
             </>
-          }/>
+          } />
 
-        <Route path="*" element={
-          <NotFound/>
-        }/>
+          <Route path="*" element={
+            <NotFound />
+          } />
         </Routes>
       </BrowserRouter>
 
