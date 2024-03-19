@@ -218,6 +218,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     z-index: 10;
+    /* margin-top: 6%; */
   }
   
   /* Modal Container */
@@ -230,6 +231,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    /* margin-top: 6%; */
   }
   
   /* Video Container */
@@ -238,7 +240,8 @@
     margin-right: auto;
     position: relative;
     height: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/3;
+    margin-top: 9%;
   }
   
   .video {
