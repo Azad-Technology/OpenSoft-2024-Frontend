@@ -4,11 +4,37 @@ import { useState } from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
 import { useParams } from "react-router-dom";
+import '@vidstack/react/player/styles/default/theme.css';
+import '@vidstack/react/player/styles/default/layouts/video.css';
+import { MediaPlayer, MediaProvider } from '@vidstack/react';
+import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
+import './styles.css';
+
+function Modal({ onClose }) {
+  return (
+    <div className="modal-overlay">
+      <div className="modal">
+        {/* Video container */}
+        <div className="video-container">
+          <div className='video'>
+            <MediaPlayer title="Dune" src="/manifests/dune_master.m3u8">
+              <MediaProvider />
+              <DefaultVideoLayout icons={defaultLayoutIcons} />
+            </MediaPlayer>
+          </div>
+        </div>
+        {/* Close button */}
+        <button className="close-button" onClick={onClose}>X</button>
+      </div>
+    </div>
+  );
+}
 
 const MoviePage = () => {
 
     const { id } = useParams();
     const [movie,setMovie]=useState(null);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         console.log(id);
@@ -144,7 +170,12 @@ const MoviePage = () => {
                             }
                         </div>
                         <div className={styles.button}>
-                            <span><button>Watch Now</button></span>
+                            <span>
+                                <button onClick={()=>setShowModal(true)}>
+                                    Watch Now
+                                </button>
+                                {showModal && <Modal onClose={() => setShowModal(false)} />}
+                            </span>
                             {/* <span><button>B</button></span>
                             <span><button>C</button></span>
                             <span><button>D</button></span> */}

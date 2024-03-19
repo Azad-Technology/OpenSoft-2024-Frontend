@@ -6,7 +6,7 @@ import SearchPage from './Components/SearchPage/SearchPage.jsx'
 // import Card from './Components/Card/Card.jsx'
 // main.js or App.js
 import MovieList from './Components/movieList/MovieList'
-import Player from './Components/MoviePlayback/Player'
+// import Player from './Components/MoviePlayback/Player'
 import { Carousel } from './Components/Carousel/Carousel'
 import React from 'react'
 import axios from 'axios'
@@ -114,11 +114,11 @@ const App = () => {
             </>
           } />
           <Route path="/profile" element={<Profile/>}/>
-          <Route path="/movieplay" element={
+          {/* <Route path="/movieplay" element={
             <>
               <Player />
             </>
-          } />
+          } /> */}
           <Route path='/pricing' element={
             <>
               <Navbar />
