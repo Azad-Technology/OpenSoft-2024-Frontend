@@ -171,7 +171,7 @@ const MoviePage = () => {
                         </div>
                         <div className={styles.button}>
                             <span>
-                                <button onClick={()=>setShowModal(true)}>
+                                <button className={styles.modalbutton} onClick={()=>setShowModal(true)}>
                                     Watch Now
                                 </button>
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}

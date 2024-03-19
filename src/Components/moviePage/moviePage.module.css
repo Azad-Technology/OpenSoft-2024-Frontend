@@ -182,22 +182,23 @@
     margin-left: 0rem;
     /* margin-top: 1.5rem; */
 }
-.heroContainer .button button{
+.modalbutton{
     /* padding: .5rem; */
     color: var(--tertiary-font-color);
     font-size: 1.5rem;
     height: 2.5rem;
+    padding: 0.5rem 0.7rem;
     /* width: 2.5rem; */
     /* border-radius: 50%; */
+    /* border-radius: 0.8rem; */
     border: none;
     background-color: rgba(78, 75, 75, 0.633);
     transition: all .3s ease;
 }
-.heroContainer .button button:hover{
+.modalbutton:hover{
     cursor: pointer;
     background-color: rgb(78, 75, 75);
-    transform: translateY(-10px);
-
+    transform: translateY(-8px);
 }
 .readMore{
     background-color: transparent;

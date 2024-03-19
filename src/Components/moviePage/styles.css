@@ -35,7 +35,7 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    height: 100%;
+    width: 100%;
     aspect-ratio: 16/9;
   }
   
@@ -59,3 +59,18 @@
     cursor: pointer;
   }
   
+  .vds-radio-hint{
+    margin-left: auto;
+  }
+  .vds-menu-button-hint{
+    margin-left: auto;
+  }
+  .vds-settings-menu-items{
+    margin: auto;
+  } 
+  .vds-menu-items{
+    margin: auto;
+  }
+  .vds-slider-chapter{
+    margin-top: 2%;
+  }
