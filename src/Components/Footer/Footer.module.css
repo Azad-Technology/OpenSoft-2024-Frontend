@@ -39,18 +39,20 @@
 
 .footer__addr h2 {
   margin-top: 1.3em;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
 .nav__title {
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .footer address {
   font-style: normal;
   color: #999;
+  font-size: 0.9rem;
 }
 
 .footer__btn {
@@ -60,7 +62,7 @@
   height: 36px;
   max-width: max-content;
   background-color: rgba(176, 174, 174, 0.07);
-  border-radius: 100px;
+  border-radius: 0.7rem;
   color: #fffdfd;
   line-height: 0;
   margin: 0.6em 0;
@@ -93,6 +95,7 @@
 
 .nav__ul a {
   color: #999;
+  font-size: 0.9rem;
 }
 
 .nav__ul--extra {
