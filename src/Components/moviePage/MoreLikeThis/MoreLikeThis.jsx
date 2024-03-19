@@ -15,7 +15,7 @@ const MoreLikeThis = () => {
             <span>More Like This</span>
         </div>
         <div>
-            <Slider genre={"Action"} />
+            <Slider genre={"More Like This"} />
         </div>
     </section>
   )

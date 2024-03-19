@@ -4,6 +4,7 @@ import { useState } from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
 import { useParams } from "react-router-dom";
+import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
 const MoviePage = () => {
 
@@ -207,6 +208,8 @@ const MoviePage = () => {
                     </div>
                 </div>
                 {/* <Comments info={props.info.comments}/> */}
+
+                <MoreLikeThis />
             </div>
         </>
     )
