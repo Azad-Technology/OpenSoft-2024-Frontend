@@ -20,7 +20,6 @@ export const Slider = ({genre,id}) => {
         setMovies(response.data);
         return;
       }
-      const response = await instance.get(`/genre/${genre}/`)
       if(genre==="More Like This"){
         const response = await instance.get(`/movies/${id}/related_movies/?count=15`)
         setMovies(response.data);
