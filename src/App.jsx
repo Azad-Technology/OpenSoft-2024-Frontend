@@ -5,9 +5,8 @@ import MoviePage from './Components/Carousel/moviePage/MoviePage.jsx'
 import SearchPage from './Components/SearchPage/SearchPage.jsx'
 // import Card from './Components/Card/Card.jsx'
 // main.js or App.js
-// import 'video.js/dist/video-js.css';
 import MovieList from './Components/movieList/MovieList'
-import {MoviePlay} from './Components/MoviePlayback/MoviePlay'
+import Player from './Components/MoviePlayback/Player'
 import { Carousel } from './Components/Carousel/Carousel'
 import React from 'react'
 import axios from 'axios'
@@ -108,7 +107,7 @@ const App = () => {
           } />
           <Route path="/movieplay" element={
             <>
-              <MoviePlay />
+              <Player />
             </>
           } />
           <Route path='/pricing' element={
