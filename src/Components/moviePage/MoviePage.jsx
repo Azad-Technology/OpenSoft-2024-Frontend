@@ -30,6 +30,7 @@ function Modal({ onClose }) {
     </div>
   );
 }
+import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
 const MoviePage = () => {
 
@@ -239,6 +240,8 @@ const MoviePage = () => {
                     </div>
                 </div>
                 {/* <Comments info={props.info.comments}/> */}
+
+                <MoreLikeThis id={id} />
             </div>
         </>
     )
