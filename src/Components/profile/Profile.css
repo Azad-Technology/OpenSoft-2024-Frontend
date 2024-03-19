@@ -13,7 +13,8 @@
     margin-bottom: 1rem;
     border-radius: 0.25rem;
     width: 20%;
-    height: 25rem;
+    padding-bottom: 3rem;
+    height: fit-content;
     background-color: #101010;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     box-shadow: 1rem 1rem 5rem 0.01rem #000000;
@@ -48,6 +49,7 @@
    text-align: center;
    padding: 2%;
    color: #6c757d;
+   overflow: hidden;
   }
   .details, .head {
     margin-bottom: 0.25rem;
@@ -93,10 +95,11 @@
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     color: black;
+    text-align: left;
   }
   .col-sm-9{
     padding-right: 5%;
-    text-align: right;
+    text-align: left;
   }
   .col-sm-3{
     padding-left: 5%;
@@ -156,6 +159,12 @@
     top: 5%;
     left: 3%;
   }
+  #topRow{
+    padding-top: 5%;
+  }
+  #changePasswordcol{
+    text-align: right;
+  }
   @media screen and (max-width: 800px) {
     .maincontainer{
       flex-direction: column;
@@ -166,5 +175,26 @@
     }
     .card_desc{
       width: 100%;
+    }
+
+  }
+
+  @media screen and (max-width: 525px){
+    .col-sm-3, .head{
+      width: 100%;
+      text-align: left;
+    }
+    .details{
+      text-align: left;
+    }
+    .col-sm-9, .col_plan{
+      padding-left: 5%;
+    }
+    ._btn{
+      width: max-content;
+    }
+    #changePasswordcol{
+      text-align: left;
+      padding-left: 0%;
     }
   }

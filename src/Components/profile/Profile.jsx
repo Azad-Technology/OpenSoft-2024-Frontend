@@ -66,7 +66,7 @@ const Profile = () => {
           </div>
           <div className="card_desc">
             <div className="cardBody_desc">
-              <div className="row">
+              <div className="row" id="topRow">
                 <div className="col-sm-3">
                   <p className="head"> Full Name</p>
                 </div>
@@ -110,7 +110,7 @@ const Profile = () => {
                   />
 
                   {isEditPasswordDisabled ? (
-                    <div className="col-sm-3">
+                    <div className="col-sm-3" id="changePasswordcol">
                       <button
                         className="_btn"
                         onClick={handlecChangePasswordClick}
