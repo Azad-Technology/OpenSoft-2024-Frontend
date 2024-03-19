@@ -83,6 +83,7 @@
     border-color: black;
 }
 
+
 .wrapper .register-link{
     font-size: 0.90625rem;
     text-align: center;
@@ -112,6 +113,8 @@
 .Or{
     margin-top: 1.25rem;
     margin-bottom: 0.625rem;
+    display: flex;
+    justify-content: center;
 }
 
 .google{
@@ -147,5 +150,13 @@
         margin-top: 0.722rem;
         margin-bottom: 0;
     }
+    #error {
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
+    }
+}
 
+#error{
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }

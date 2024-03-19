@@ -1,10 +1,11 @@
 import './App.css'
+import LoginForm from './Components/LoginForm/LoginForm'
 
 function App() {
 
   return (
     <>
-      Azad Opensoft2024-frontend
+      <LoginForm></LoginForm>
     </>
   )
 }
