@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+package-lock.json
 *.local
 /public/manifests
 
@@ -23,4 +24,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
 /public/manifests
+

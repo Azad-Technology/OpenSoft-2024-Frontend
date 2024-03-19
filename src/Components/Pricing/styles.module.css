@@ -1,3 +1,7 @@
+.container{
+  margin-top: 9%;
+  z-index: -1;
+}
 .heading {
     text-align: center;
     color: #FFFFFF;
@@ -23,16 +27,14 @@
     width: 80%;
     height: auto;
   }
-  /* Section */
   .section {
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
   }
-  /* Toggle */
   .toggle {
     display: flex;
     align-items: center;
@@ -74,28 +76,24 @@
   /* Pricing Cards */
   .pricingCards {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: center;
-    /* gap: 2rem; */
-    /* max-width: 60rem; */
     width: 80%;
+    height: 100%;
     margin: 0 auto;
   }
   .pricingCard {
     padding: 2rem;
     border-radius: 0.5rem;
     background-color: rgb(255, 255, 255, 0.1);
-    /* backdrop-filter: blur(20px); */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     text-align: center;
     flex-basis: 100%;
     width: 30%;
     backdrop-filter: blur(10px);
-    /* z-index: -1; */
   }
   .pricingCard.featured {
     background: linear-gradient(to right, #F24236, #C0180C);
-    /* opacity: 0.8; */
+    
     margin: 0 1rem 0 1rem;
     color: white;
     transform: scale(1.15);
@@ -182,3 +180,55 @@
     color: #6B89BC;
     text-decoration: none;
   }
+
+@media screen and (max-width: 768px) {
+  .container{
+    padding-top: 20%;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+
+  .pricingCards {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .pricingCard {
+    width: 70%;
+    margin-bottom: 2rem;
+  }
+
+  .pricingCard.featured {
+    margin: 2rem 0;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container{
+    margin-top: 10%;
+  }
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .pricingCard {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .pricingCard.featured {
+    transform: scale(1.05);
+  }
+
+  .pricingCard h3 {
+    font-size: 3rem;
+  }
+
+  .pricingCard h3 span {
+    font-size: 2.5rem;
+  }
+}

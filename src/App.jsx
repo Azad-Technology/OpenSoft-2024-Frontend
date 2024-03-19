@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import MoreLikeThis from './Components/MoreLikeThis/MoreLikeThis.jsx'
-import MoviePage from './Components/Carousel/moviePage/MoviePage.jsx'
+import MoreLikeThis from './Components/moviePage/MoreLikeThis/MoreLikeThis.jsx'
+import MoviePage from './Components/moviePage/MoviePage.jsx'
 import SearchPage from './Components/SearchPage/SearchPage.jsx'
 // import Card from './Components/Card/Card.jsx'
 // main.js or App.js
@@ -17,11 +17,18 @@ import { MobileMenu } from './Components/Navbar/MobileMenu.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Pricing from './Components/Pricing/Pricing.jsx'
 import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
+import instance from './axios.jsx'
+import LoginForm from './Components/LoginForm/LoginForm.jsx'
+import Profile from './Components/profile/Profile.jsx'
 
 const App = () => {
 
   const [movies, setMovies] = useState([]);
   const [showhamurgerMenu, setShowHamburgerMenu] = useState(false);
+
+  useEffect(() => {
+
+  }, [])
 
   useEffect(() => {
     const options = {
@@ -33,6 +40,7 @@ const App = () => {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZTkwNjA5NGUyNTQxMzAwY2U2NTY5ZjZlYWI1YzI2MSIsInN1YiI6IjY1ZjBiY2I1MGRlYTZlMDE3Y2JjNGE1OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FOZqC7Jm3by-ObIzGOsc9x-oXcoHgFqXCJ3bFoByTro'
       }
     };
+
 
     axios
       .request(options)
@@ -105,6 +113,7 @@ const App = () => {
               <SearchPage />
             </>
           } />
+          <Route path="/profile" element={<Profile/>}/>
           <Route path="/movieplay" element={
             <>
               <Player />
@@ -117,6 +126,7 @@ const App = () => {
             </>
 
           } />
+          
           <Route path="/movie/:id" element={
             <>
               <MoviePage info={movieInfo} />
@@ -124,12 +134,18 @@ const App = () => {
               {/* <SearchPage /> */}
             </>
           } />
+          <Route path='/login' element={
+            <>
+              <Navbar />
+              <LoginForm />
+            </>
+        }/>
         </Routes>
       </BrowserRouter>
 
 
     </>
-  )
+  );
 }
 
 export default App;
