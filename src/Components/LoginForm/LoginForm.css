@@ -1,14 +1,8 @@
-.login{
-    font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: url(../../assets/unnamed.jpg);  
-}
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 .wrapper{
     width: 40rem;
@@ -95,6 +89,7 @@
     border-color: black;
 }
 
+
 .wrapper .register-link{
     font-size: 0.90625rem;
     text-align: center;
@@ -124,6 +119,8 @@
 .Or{
     margin-top: 1.25rem;
     margin-bottom: 0.625rem;
+    display: flex;
+    justify-content: center;
 }
 
 .google{
@@ -159,5 +156,13 @@
         margin-top: 0.722rem;
         margin-bottom: 0;
     }
+    #error {
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
+    }
+}
 
+#error{
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
