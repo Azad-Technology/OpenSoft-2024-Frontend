@@ -17,6 +17,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import  Pricing  from './Components/Pricing/Pricing.jsx'
 import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
 import instance from './axios.jsx'
+import NotFound from './Components/NotFound/NotFound.jsx'
 
 const App = () => {
 
@@ -130,6 +131,9 @@ const App = () => {
                 <MoviePage info={movieInfo}/>
                 <MoreLikeThis />
               </>
+        }/>
+        <Route path="*" element={
+          <NotFound/>
         }/>
       </Routes>
     </BrowserRouter>
