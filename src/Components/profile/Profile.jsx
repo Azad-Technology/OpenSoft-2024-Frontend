@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./Profile.css";
 import Card from "../Card/Card";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("example@example.com");
   const [currentPlan, setCurrentPlan] = useState("Basic");
   const [isEditProfileActive, setIsProfileActive] = useState(false);
@@ -44,9 +46,12 @@ const Profile = () => {
     }
     setIsEditPasswordDisabled(true);
   };
+  const handleNavigateBackward = () => {
+    navigate("/")
+  };
   return (
     <div style={{ backgroundColor: "#101010", display: "block" }}>
-      <i class="fa fa-angle-double-left" id="homeIcon"></i>
+      <i class="fa fa-angle-double-left" id="homeIcon" onClick={handleNavigateBackward}></i>
         <div className="maincontainer">
           <div className="card">
             <div className="cardBody">
