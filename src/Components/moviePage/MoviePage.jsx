@@ -4,11 +4,12 @@ import { useState } from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
 import { useParams } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const MoviePage = () => {
 
     const { id } = useParams();
-    const [movie,setMovie]=useState(null);
+    const [movie, setMovie] = useState(null);
 
     useEffect(() => {
         console.log(id);
@@ -49,7 +50,7 @@ const MoviePage = () => {
     // functions
 
     function makeString(list) {
-        if(!list) return "";
+        if (!list) return "";
         let string = "";
         for (let i = 0; i < list.length; i++) {
             if (i == list.length - 1) {
@@ -83,42 +84,42 @@ const MoviePage = () => {
         setIsExpanded(true);
         setShowLess(true);
     }
-    function handleShowLess(){
+    function handleShowLess() {
         screenSizeChanged();
     }
-    function handleShowMoreInfoBtn(){
+    function handleShowMoreInfoBtn() {
         const elem = document.getElementById("showMoreInfo");
-        if(showMoreInfo){
+        if (showMoreInfo) {
             setShowMoreInfo(false);
-            
+
             elem.style.transform = 'rotate(180deg)';
-        }else{
+        } else {
             setShowMoreInfo(true);
             elem.style.transform = 'rotate(0deg)';
         }
     }
 
 
-//     // event listeners
+    //     // event listeners
 
-//     window.addEventListener("resize", screenSizeChanged);
-//     window.addEventListener("load", screenSizeChanged);
+    //     window.addEventListener("resize", screenSizeChanged);
+    //     window.addEventListener("load", screenSizeChanged);
 
-    window.addEventListener("resize", ()=>{
-        setSmallScreen(window.innerWidth<=550);
+    window.addEventListener("resize", () => {
+        setSmallScreen(window.innerWidth <= 550);
     })
-    window.addEventListener('load', ()=>{
-        setSmallScreen(window.innerWidth<=550);
+    window.addEventListener('load', () => {
+        setSmallScreen(window.innerWidth <= 550);
     })
 
-   
+
     return (
         <>
             <div className={styles.font}>
-                <div className={styles.heroSmall} style={{"backgroundImage":`url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})`}}>
+                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})` }}>
                     <div className={styles.title}>{movie?.title}</div>
                 </div>
-                <div className={styles.heroContainer} style={(!smallScreen)?{"backgroundImage":`url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})`}:{"backgroundImage":"none"}}>
+                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
                     <div className={styles.content}>
                         <div className={styles.title}>{movie?.title}</div>
                         <div className={styles.description} id="description">{movie?.plot}{!isExpanded && (<button className={styles.readMore} onClick={handleReadMore}>  ...Show more</button>)}{isExpanded && showLess && (<button className={styles.readMore} onClick={handleShowLess}>&nbsp;Show less</button>)}</div>
@@ -126,7 +127,7 @@ const MoviePage = () => {
                             <span>
                                 <span className={styles.imdbContainer}><span className={styles.imdb}>IMDb</span><span className={styles.imdbRating}>{movie?.imdb.rating}</span></span>
                                 {/* <span>{props.info.duration}</span> */}
-                                <span>{String(movie?.released).substring(0,4)}</span>
+                                <span>{String(movie?.released).substring(0, 4)}</span>
                             </span>
                             {/* <span className={styles.stamps}>
                                 {
@@ -138,7 +139,7 @@ const MoviePage = () => {
                         </div>
                         <div className={styles.genreList}>
                             {
-                                movie?.genres.map((ele)=>(
+                                movie?.genres.map((ele) => (
                                     <span>{ele}</span>
                                 ))
                             }
@@ -174,8 +175,8 @@ const MoviePage = () => {
                             <div className={styles.subHeading}>Awards</div>
                             <div className={styles.content}>{movie?.awards.text}</div>
                         </div>
-                        
-                        
+
+
                         {showMoreInfo && (<div className={styles.cast}>
                             <div className={styles.subHeading}>Cast</div>
                             <div className={styles.content}>
@@ -208,6 +209,7 @@ const MoviePage = () => {
                 </div>
                 {/* <Comments info={props.info.comments}/> */}
             </div>
+            <Footer />
         </>
     )
 }
