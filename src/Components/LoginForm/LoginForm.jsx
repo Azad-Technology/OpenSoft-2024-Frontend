@@ -10,26 +10,12 @@ function LoginForm() {
 
     const handleChange = () => {
       const newEmail = document.getElementById("email").value
-      const newPass = document.getElementById("password").value
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(newEmail)){
         setErrors("Please enter a valid email address.")
       }
-      else {
-        if (newPass.length < 8) {
-          setErrors('Password must be at least 8 characters long.');
-        } else if (!/[A-Z]/.test(newPass)) {
-          setErrors('Password must contain at least one uppercase letter.');
-        } else if (!/[a-z]/.test(newPass)) {
-          setErrors('Password must contain at least one lowercase letter.');
-        } else if (!/\d/.test(newPass)) {
-          setErrors('Password must contain at least one digit.');
-        } else if (!/[!@#$%&*-]/.test(newPass)) {
-          setErrors('Password must contain at least one special character.');
-        }
-        else setErrors("")
-      }
-
+      
+      else setErrors("")
   };
 
     const togglePasswordVisibility = () => {
