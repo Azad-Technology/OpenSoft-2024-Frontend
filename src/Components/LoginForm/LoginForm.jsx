@@ -19,7 +19,8 @@ function LoginForm() {
   };
 
   return (
-    <div className='wrapper'>
+    <div className='login'>
+      <div className='wrapper'>
       <form action="">
         <h1>Welcome Back.</h1>
         <div className='OAuth'>
@@ -42,6 +43,7 @@ function LoginForm() {
             <p>Don't have an account? <a href="#">Register</a></p>
         </div>
       </form>
+    </div>
     </div>
   )
 }

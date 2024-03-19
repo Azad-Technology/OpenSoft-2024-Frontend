@@ -1,3 +1,15 @@
+.login{
+    font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(../../assets/unnamed.jpg);  
+}
+
+
 .wrapper{
     width: 40rem;
     background: rgba(255, 255, 255, 0.9);
