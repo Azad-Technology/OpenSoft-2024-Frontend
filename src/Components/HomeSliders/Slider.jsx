@@ -6,39 +6,32 @@ import MovieList from '../movieList/MovieList.jsx'
 
 export const Slider = ({genre}) => {
 
-  const [movies,setMovies] = useState([
-    {
-      "_id": 1,
-      "title": "The Shawshank Redemption",
-    },
-    {
-      "_id": 2,
-      "title": "The Godfather",
-    },
-    {
-      "_id": 3,
-      "title": "The Dark Knight",
-    },
-    {
-      "_id": 4,
-      "title": "The Godfather: Part II",
-    }
-  ])
+  const [movies,setMovies] = useState(null)
 
   useEffect(() => {
     const getData = async () => {
-      const response = await instance.get(`/genre/${genre}`)
-      setMovies(response.data)
+      if(genre==="Top IMDB"){
+        const response = await instance.get('/imdb')
+        setMovies(response.data);
+        return;
+      }
+      const response = await instance.get(`/genre_top/${genre}/?count=15`)
+      // movies.push(...movies);
+      setMovies(response.data);
     }
     getData();
   },[genre])
-
+  
   return (
-    <div className={styles.slider}>
-      <div className={styles.slider__title}>{genre}</div>
-      <div className={styles.slider__movies}>
+    
+      <>
+       {movies ? <div className={styles.slider__movies}>
+      
         <MovieList movie={movies} />
-      </div>
-    </div>
+      </div> : null
+      }
+      
+      </>
+   
   )
 }

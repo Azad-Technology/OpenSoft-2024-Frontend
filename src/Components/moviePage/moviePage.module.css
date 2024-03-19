@@ -38,7 +38,7 @@
 
 .heroSmall{
     height: 50vh;
-    background-image: url("https://source.unsplash.com/random");
+    /* background-image: url("https://source.unsplash.com/random"); */
     background-size: cover;
     /* background-repeat: no-repeat; */
     background-position: center;
@@ -70,7 +70,7 @@
 .heroContainer{
     /* display: none; */
     height: 100vh;
-    background-image: var(--image);
+    /* background-image: var(--image); */
     /* background-color: black; */
     background-size: cover;
     /* background-repeat: no-repeat; */

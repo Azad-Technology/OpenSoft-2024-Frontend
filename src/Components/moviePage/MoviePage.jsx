@@ -31,6 +31,7 @@ const MoviePage = () => {
     const [showLess, setShowLess] = useState(false);
     // const [descriptionUpdated, setDescriptionUpdated] = useState(description);
     const [showMoreInfo, setShowMoreInfo] = useState(false);
+    const [smallScreen, setSmallScreen] = useState(false);
     // const cast = props.info.cast;
     // const language = props.info.languages;
     // let languageString = makeString(language);
@@ -103,14 +104,21 @@ const MoviePage = () => {
 //     window.addEventListener("resize", screenSizeChanged);
 //     window.addEventListener("load", screenSizeChanged);
 
+    window.addEventListener("resize", ()=>{
+        setSmallScreen(window.innerWidth<=550);
+    })
+    window.addEventListener('load', ()=>{
+        setSmallScreen(window.innerWidth<=550);
+    })
 
+   
     return (
         <>
-            <div className={styles.font} style={{"--image":movie?.poster}}>
-                <div className={styles.heroSmall}>
+            <div className={styles.font}>
+                <div className={styles.heroSmall} style={{"backgroundImage":`url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})`}}>
                     <div className={styles.title}>{movie?.title}</div>
                 </div>
-                <div className={styles.heroContainer}>
+                <div className={styles.heroContainer} style={(!smallScreen)?{"backgroundImage":`url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})`}:{"backgroundImage":"none"}}>
                     <div className={styles.content}>
                         <div className={styles.title}>{movie?.title}</div>
                         <div className={styles.description} id="description">{movie?.plot}{!isExpanded && (<button className={styles.readMore} onClick={handleReadMore}>  ...Show more</button>)}{isExpanded && showLess && (<button className={styles.readMore} onClick={handleShowLess}>&nbsp;Show less</button>)}</div>
@@ -162,10 +170,10 @@ const MoviePage = () => {
                             <div className={styles.subHeading}>Audio Language(s)</div>
                             <div className={styles.content}>{makeString(movie?.languages)}</div>
                         </div>
-                        {/* <div className={styles.cell}>
+                        <div className={styles.cell}>
                             <div className={styles.subHeading}>Awards</div>
-                            <div className={styles.content}>{props.info.awards}</div>
-                        </div> */}
+                            <div className={styles.content}>{movie?.awards.text}</div>
+                        </div>
                         
                         
                         {showMoreInfo && (<div className={styles.cast}>
@@ -188,10 +196,10 @@ const MoviePage = () => {
                             <div className={styles.subHeading}>Tomatometer</div>
                             <div className={styles.content}><div>Viewer: {movie.tomatoes.viewer.rating}</div>{/*<div>Critic: {props.info.tomatometer.critic}</div>*/}</div>
                         </div>)}
-                        {/* {showMoreInfo && (<div className={styles.cell}>
+                        {showMoreInfo && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Production</div>
-                            <div className={styles.content}>{props.info.production}</div>
-                        </div>)} */}
+                            <div className={styles.content}>{movie?.tomatoes.production}</div>
+                        </div>)}
 
                     </div>
                     <div className={styles.showMoreInfoBtnCont}>

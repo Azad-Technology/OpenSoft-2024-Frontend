@@ -10,106 +10,106 @@ import { useState, useRef, useEffect } from "react";
 // let date = ['10-12-23','11-12-23','01-02-24'];
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
-function YourComment(){
-  function ExpandingTextArea() {
-    const [text, setText] = useState('');
-    const [parentHeight, setParentHeight] = useState('auto');
+// function YourComment(){
+//   function ExpandingTextArea() {
+//     const [text, setText] = useState('');
+//     const [parentHeight, setParentHeight] = useState('auto');
   
-    const handleChange = (event) => {
-      const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
-      const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
-      setParentHeight(`${currentRows * textareaLineHeight}px`);
-      setText(event.target.value);
-    };
+//     const handleChange = (event) => {
+//       const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
+//       const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
+//       setParentHeight(`${currentRows * textareaLineHeight}px`);
+//       setText(event.target.value);
+//     };
   
-    return (
-      <div style={{ height: parentHeight, overflow: 'hidden' }}>
-        <textarea
-          value={text}
-          onChange={handleChange}
-          style={{ height: '100%', boxSizing: 'border-box', resize: 'none', overflowY: 'scroll', border: '1px solid #ccc' }}
-        />
-      </div>
-    );
-  }
-    return (
-        <>  
-            <div>
-                <form method="POST">
-                    { /* <textarea name="typeComment" placeholder="Type your comment here..." className={styles.typeComment}></textarea> */}
-                    <ExpandingTextArea />
-                    {/* <br></br> */}
-                    <input type="submit" value="Submit" className={styles.btn}></input>
-                </form>
-            </div>
-        </>
-    )
-}
+//     return (
+//       <div style={{ height: parentHeight, overflow: 'hidden' }}>
+//         <textarea
+//           value={text}
+//           onChange={handleChange}
+//           style={{ height: '100%', boxSizing: 'border-box', resize: 'none', overflowY: 'scroll', border: '1px solid #ccc' }}
+//         />
+//       </div>
+//     );
+//   }
+//     return (
+//         <>  
+//             <div>
+//                 <form method="POST">
+//                     { /* <textarea name="typeComment" placeholder="Type your comment here..." className={styles.typeComment}></textarea> */}
+//                     <ExpandingTextArea />
+//                     {/* <br></br> */}
+//                     <input type="submit" value="Submit" className={styles.btn}></input>
+//                 </form>
+//             </div>
+//         </>
+//     )
+// }
 
-function Comments(){
-    const [clicked,setClicked] = useState(false);
-    const [state,setState] = useState("See more");
+// function Comments(){
+//     const [clicked,setClicked] = useState(false);
+//     const [state,setState] = useState("See more");
   
-    function SwitchState(){
-      setClicked(!clicked);
-      if(state==="See more"){
-        setState("See less");
-      }
-      else{
-        setState("See more");
-      }
-    }
+//     function SwitchState(){
+//       setClicked(!clicked);
+//       if(state==="See more"){
+//         setState("See less");
+//       }
+//       else{
+//         setState("See more");
+//       }
+//     }
   
-    console.log(clicked);
+//     console.log(clicked);
   
-    return (    
-      <>
-        <div className={styles.yourComment}>
-          <div className={styles.heading}>Your Comment</div> 
-          <YourComment />
-        </div>
+//     return (    
+//       <>
+//         <div className={styles.yourComment}>
+//           <div className={styles.heading}>Your Comment</div> 
+//           <YourComment />
+//         </div>
 
-        <div className={styles.commentContainerParent}>
-          <div className={styles.heading}>Comments</div>
-          <div className={styles.commentParent}>
-            <div className={styles.container}>
-              {clicked ? (
-                comments.map((comment, index) => (
-                  <div key={index} className={styles.commentContainer}>
-                    <div className={styles.imgContainer}>
-                      {/* <img src={image[index]} alt="userImage"></img> */}
-                    </div>
-                    <div className={styles.otherInfo}>
-                      <div className={styles.userName}>{name[index]}</div>
-                      <div className={styles.datePosted}>{date[index]}</div>
-                      <div className={styles.commentContent}>{comment}</div>
-                    </div>
-                   </div>
-            ))
-          ) : (
-            <div className={styles.commentContainer}>
-              <div className={styles.imgContainer}></div>
-              <div className={styles.otherInfo}>
-                  <div className={styles.userName}>{name[0]}</div>
-                  <div className={styles.datePosted}>{date[0]}</div>
-                  <div className={styles.commentContent}>{comments[0]}</div>
-              </div>
-            </div>
-          )}
+//         <div className={styles.commentContainerParent}>
+//           <div className={styles.heading}>Comments</div>
+//           <div className={styles.commentParent}>
+//             <div className={styles.container}>
+//               {clicked ? (
+//                 comments.map((comment, index) => (
+//                   <div key={index} className={styles.commentContainer}>
+//                     <div className={styles.imgContainer}>
+//                       {/* <img src={image[index]} alt="userImage"></img> */}
+//                     </div>
+//                     <div className={styles.otherInfo}>
+//                       <div className={styles.userName}>{name[index]}</div>
+//                       <div className={styles.datePosted}>{date[index]}</div>
+//                       <div className={styles.commentContent}>{comment}</div>
+//                     </div>
+//                    </div>
+//             ))
+//           ) : (
+//             <div className={styles.commentContainer}>
+//               <div className={styles.imgContainer}></div>
+//               <div className={styles.otherInfo}>
+//                   <div className={styles.userName}>{name[0]}</div>
+//                   <div className={styles.datePosted}>{date[0]}</div>
+//                   <div className={styles.commentContent}>{comments[0]}</div>
+//               </div>
+//             </div>
+//           )}
 
-          <button onClick = {SwitchState} className={styles.btn}>{state}</button>
+//           <button onClick = {SwitchState} className={styles.btn}>{state}</button>
 
 
-        </div>
-        </div>
-        </div>
+//         </div>
+//         </div>
+//         </div>
 
 
 
         
-      </>
-    );
-  }
+//       </>
+//     );
+//   }
 
   function NewComments(props) {
     let comments = props.info.map((obj)=>{
@@ -150,47 +150,71 @@ function Comments(){
       }
     }
   
+    // function handleTextAreaChange(event) {
+    //   const textareaLineHeight = 12; // Adjust this value according to your textarea's line-height
+    //   const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
+    //   const newTextareaHeight = `${currentRows * textareaLineHeight+auto}px`;
+      
+    //   // setTextareaHeight(newTextareaHeight);
+    //   setParentHeight(newTextareaHeight); // Set parent height to match textarea height
+  
+    //   // Adjust textarea height to fit content if it exceeds initial height
+    //   const currentHeight = event.target.scrollHeight;
+    //   const initialHeight = initialTextareaHeight.current;
+    //   if (currentHeight > initialHeight) {
+    //     textareaRef.current.style.height = currentHeight + 'px';
+    //     // setTextareaHeight(currentHeight + 'px');
+    //     setParentHeight(currentHeight + 'px');
+    //   }
+
+    //   const textAreaElem = document.getElementById("myTextArea");
+    //   if(textAreaElem.value){
+    //     setDisableBtn(false);
+    //   }else{
+    //     setDisableBtn(true);
+    //   }
+
+
+    // }
     function handleTextAreaChange(event) {
-      const textareaLineHeight = 24; // Adjust this value according to your textarea's line-height
+      const textareaLineHeight = 12; // Adjust this value according to your textarea's line-height
       const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
       const newTextareaHeight = `${currentRows * textareaLineHeight}px`;
-      setTextareaHeight(newTextareaHeight);
-      setParentHeight(newTextareaHeight); // Set parent height to match textarea height
-  
-      // Adjust textarea height to fit content if it exceeds initial height
-      const currentHeight = event.target.scrollHeight;
-      const initialHeight = initialTextareaHeight.current;
-      if (currentHeight > initialHeight) {
-        textareaRef.current.style.height = currentHeight + 'px';
-        setParentHeight(currentHeight + 'px');
-      }
-
-      const textAreaElem = document.getElementById("myTextArea");
-      if(textAreaElem.value){
-        setDisableBtn(false);
-      }else{
-        setDisableBtn(true);
-      }
-
-
-    }
-  
-    function handleTextareaFocus(event) {
+    
+      // Adjust textarea height to fit content
+      event.target.style.height = newTextareaHeight;
+    
+      // Adjust parent height to match textarea height
+      const parentHeight = `${currentRows * textareaLineHeight + auto}px`; // Adjust 20 as per your styling
+      setParentHeight(parentHeight);
+    
+      // Enable/disable button based on textarea content
+      setDisableBtn(!event.target.value.trim());
+    
+      // Store initial heights if not already stored
       if (!initialParentHeight.current) {
-        initialParentHeight.current = textareaRef.current.parentElement.parentElement.offsetHeight;
+        initialParentHeight.current = parentHeight;
       }
       if (!initialTextareaHeight.current) {
-        initialTextareaHeight.current = event.target.scrollHeight;
+        initialTextareaHeight.current = newTextareaHeight;
       }
+    }
+    
   
-      // Adjust height when textarea is focused
-      const textareaLineHeight = 60; // Adjust this value according to your textarea's line-height
+
+    function handleTextareaFocus(event) {
+      // Calculate textarea height based on current content
+      const textareaLineHeight = 12; 
       const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
       const newTextareaHeight = `${currentRows * textareaLineHeight}px`;
-      setTextareaHeight(newTextareaHeight);
-      setParentHeight(newTextareaHeight);
+    
+      // Adjust textarea height to fit content
+      event.target.style.height = newTextareaHeight;
+    
+      // Adjust parent height to match textarea height
+      // const parentHeight = `${currentRows * textareaLineHeight + auto}px`;
     }
-  
+
     function handleTextareaBlur(event) {
       // Reset heights to their original values when the comment is removed
       setTextareaHeight(initialTextareaHeight.current + 'px');
@@ -213,7 +237,7 @@ function Comments(){
                     cols={190}
                     className={styles.typeComment}
                     style={{ height: '100%', overflow: 'hidden', whiteSpace: 'pre-wrap' }} // Ensure no scrollbar and wrap long lines
-                    onChange={handleTextAreaChange}
+                    onChange={handleTextAreaChange} 
                     onFocus={handleTextareaFocus}
                     onBlur={handleTextareaBlur}
                   ></textarea>
