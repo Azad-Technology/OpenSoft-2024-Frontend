@@ -52,6 +52,7 @@
   .details, .head {
     margin-bottom: 0.25rem;
     color: #6c757d;
+    width: 100%;
     /* padding-top: 5%; */
     font-size: large;
     text-align: right;
@@ -96,7 +97,9 @@
   .col-sm-9{
     padding-right: 5%;
     text-align: right;
- 
+  }
+  .col-sm-3{
+    padding-left: 5%;
   }
   .col_plan{
     flex: 0 0 25%;
@@ -145,6 +148,13 @@
     width: 100%;
     max-width: 100%;
     /* justify-content: space-between; */
+  }
+  #homeIcon{
+    color: red;
+    font-size: 3rem;
+    position: absolute;
+    top: 5%;
+    left: 3%;
   }
   @media screen and (max-width: 800px) {
     .maincontainer{

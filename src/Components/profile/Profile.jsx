@@ -46,6 +46,7 @@ const Profile = () => {
   };
   return (
     <div style={{ backgroundColor: "#101010", display: "block" }}>
+      <i class="fa fa-angle-double-left" id="homeIcon"></i>
         <div className="maincontainer">
           <div className="card">
             <div className="cardBody">
@@ -214,56 +215,7 @@ const Profile = () => {
               plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
             }}
           />
-          <Card
-            movies={{
-              _id: 1,
-              year: 2222,
-              imdb: { rating: 8.8 },
-              poster:
-                "https://image.tmdb.org/t/p/w342/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
-              plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
-            }}
-          />
-          <Card
-            movies={{
-              _id: 1,
-              year: 2222,
-              imdb: { rating: 8.8 },
-              poster:
-                "https://image.tmdb.org/t/p/w342/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
-              plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
-            }}
-          />
-          <Card
-            movies={{
-              _id: 1,
-              year: 2222,
-              imdb: { rating: 8.8 },
-              poster:
-                "https://image.tmdb.org/t/p/w342/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
-              plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
-            }}
-          />
-          <Card
-            movies={{
-              _id: 1,
-              year: 2222,
-              imdb: { rating: 8.8 },
-              poster:
-                "https://image.tmdb.org/t/p/w342/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
-              plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
-            }}
-          />
-          <Card
-            movies={{
-              _id: 1,
-              year: 2222,
-              imdb: { rating: 8.8 },
-              poster:
-                "https://image.tmdb.org/t/p/w342/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
-              plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
-            }}
-          />
+          
           
           </div>
         </div>
