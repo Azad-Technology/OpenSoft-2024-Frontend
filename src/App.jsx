@@ -128,7 +128,6 @@ const App = () => {
               <>
                 <Navbar />
                 <MoviePage info={movieInfo}/>
-                <MoreLikeThis />
               </>
         }/>
       </Routes>

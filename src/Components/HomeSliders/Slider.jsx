@@ -4,7 +4,7 @@ import Card from '../Card/Card.jsx'
 import instance from '../../axios.jsx'
 import MovieList from '../movieList/MovieList.jsx'
 
-export const Slider = ({genre}) => {
+export const Slider = ({genre,id}) => {
 
   const [movies,setMovies] = useState(null)
 
@@ -15,8 +15,14 @@ export const Slider = ({genre}) => {
         setMovies(response.data);
         return;
       }
-      const response = await instance.get(`/genre_top/${genre}/?count=15`)
+      if(genre==="More Like This"){
+        const response = await instance.get(`/movies/${id}/related_movies/?count=15`)
+        setMovies(response.data);
+        return;
+      }
+      const response = await instance.get(`/genre/${genre}/`)
       // movies.push(...movies);
+      console.log(response.data);
       setMovies(response.data);
     }
     getData();
