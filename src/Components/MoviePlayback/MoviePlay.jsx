@@ -1,27 +1,15 @@
-import React from 'react';
-// import videojs from 'video.js';
-
-// This imports the functional component from the previous sample.
-import VideoJS from '../VideoJS/Video'
+import '@vidstack/react/player/styles/default/theme.css';
+import '@vidstack/react/player/styles/default/layouts/video.css';
+import { MediaPlayer, MediaProvider } from '@vidstack/react';
+import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 
 export const MoviePlay = () => {
-  const playerRef = React.useRef(null);
-  const videoJsOptions = {
-    autoplay: true,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    sources: [{
-        src: "/manifests/example_854x480.m3u8",
-        type: "application/x-mpegURL"
-    }]
-  };
-
   return (
-    <>
-      <VideoJS options={videoJsOptions}  />
-    </>
-  );
+    <div >
+        <MediaPlayer title="Sprite Fight" src="/mainifests/dune_master.m3u8">
+        <MediaProvider />
+        <DefaultVideoLayout icons={defaultLayoutIcons} />
+        </MediaPlayer>
+    </div>
+  )
 }
-
-export default MoviePlay;
