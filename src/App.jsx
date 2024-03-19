@@ -93,9 +93,6 @@ const App = () => {
       }
     ]
   }
-import LoginForm from './Components/LoginForm/LoginForm'
-
-function App() {
 
   return (
     <>
@@ -148,7 +145,7 @@ function App() {
 
 
     </>
-  )
+  );
 }
 
 export default App;
