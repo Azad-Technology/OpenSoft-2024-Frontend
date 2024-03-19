@@ -108,6 +108,7 @@
   flex-wrap: wrap;
   color: #999;
   justify-content: center;
+  font-size: 0.9rem;
 }
   
 .legal__links {
