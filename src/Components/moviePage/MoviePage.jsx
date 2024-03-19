@@ -8,15 +8,16 @@ import '@vidstack/react/player/styles/default/theme.css';
 import '@vidstack/react/player/styles/default/layouts/video.css';
 import { MediaPlayer, MediaProvider } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
-import './styles.css';
+import './../../index.css';
+// import './styles.css';
 
 function Modal({ onClose }) {
   return (
-    <div className="modal-overlay">
-      <div className="modal">
+    <div className={styles.modal_overlay}>
+      <div className={styles.modal}>
         {/* Video container */}
-        <div className="video-container">
-          <div className='video'>
+        <div className={styles.video_container}>
+          <div className={styles.video}>
             <MediaPlayer title="Dune" src="/manifests/dune_master.m3u8">
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
@@ -24,7 +25,7 @@ function Modal({ onClose }) {
           </div>
         </div>
         {/* Close button */}
-        <button className="close-button" onClick={onClose}>X</button>
+        <button className={styles.close_button} onClick={onClose}>X</button>
       </div>
     </div>
   );

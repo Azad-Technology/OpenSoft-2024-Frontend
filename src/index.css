@@ -12,3 +12,19 @@ body{
   background-color: rgb(21, 15, 15);
   /* box-sizing: border-box; */
 }
+
+.vds-radio-hint{
+  margin-left: auto;
+}
+.vds-menu-button-hint{
+  margin-left: auto;
+}
+.vds-settings-menu-items{
+  margin: auto;
+} 
+.vds-menu-items{
+  margin: auto;
+}
+.vds-slider-chapter{
+  margin-top: 2%;
+}
