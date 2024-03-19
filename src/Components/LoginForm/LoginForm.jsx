@@ -29,6 +29,7 @@ function LoginForm() {
         }
         else setErrors("")
       }
+
   };
 
     const togglePasswordVisibility = () => {
@@ -64,7 +65,7 @@ function LoginForm() {
         
         {err===""?<></>:<div id='error'>{err}</div>}
 
-        <button type='button' onClick={handleChange} id='loginButton'>Login</button>
+        <button type={err===""?'submit':'button'} onClick={handleChange} id='loginButton'>Login</button>
         <div className="register-link">
             <p>Don't have an account? <a href="#">Register</a></p>
         </div>
