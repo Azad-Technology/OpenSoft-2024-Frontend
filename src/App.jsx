@@ -19,6 +19,7 @@ import Pricing from './Components/Pricing/Pricing.jsx'
 import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
 import instance from './axios.jsx'
 import LoginForm from './Components/LoginForm/LoginForm.jsx'
+import Profile from './Components/profile/Profile.jsx'
 
 const App = () => {
 
@@ -124,6 +125,7 @@ const App = () => {
             </>
 
           } />
+          <Route path="/profile" element={<Profile/>}/>
           <Route path="/movie/:id" element={
             <>
               <MoviePage info={movieInfo} />
