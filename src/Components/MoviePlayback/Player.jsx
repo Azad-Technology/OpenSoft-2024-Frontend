@@ -7,7 +7,7 @@ function Player() {
 
     return (
       <>
-        <MediaPlayer title="Sprite Fight" src="/manifests/dune_master.m3u8">
+        <MediaPlayer title="Dune" src="/manifests/dune_master.m3u8">
           <MediaProvider />
           <DefaultVideoLayout  icons={defaultLayoutIcons} />
         </MediaPlayer>
