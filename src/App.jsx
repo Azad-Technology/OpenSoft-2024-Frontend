@@ -113,6 +113,7 @@ const App = () => {
               <SearchPage />
             </>
           } />
+          <Route path="/profile" element={<Profile/>}/>
           <Route path="/movieplay" element={
             <>
               <Player />
@@ -125,7 +126,7 @@ const App = () => {
             </>
 
           } />
-          <Route path="/profile" element={<Profile/>}/>
+          
           <Route path="/movie/:id" element={
             <>
               <MoviePage info={movieInfo} />
