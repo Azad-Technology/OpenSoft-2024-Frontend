@@ -88,7 +88,7 @@ export const Search = ({movies,searchBarRef}) => {
           placeholder="Titles, people, genres"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          onKeyPress={(e) => {handleKeyPress(e,search)}}
+          onKeyPress ={(e) => {handleKeyPress(e,search)}}
         />
         {search && <i onClick={()=>setSearch('')} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
