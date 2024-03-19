@@ -7,8 +7,8 @@ export const HomeSliders = () => {
   return (
     <div className={styles.sliders}>
         <>
-        <div className={styles.slider__title}>Top IMDB</div>
-        <Slider genre="Top IMDB" />
+        <div className={styles.slider__title}>Romance</div>
+        <Slider genre="Romance"/>
         </>
         <>
         <div className={styles.slider__title}>Comedy</div>
@@ -17,10 +17,6 @@ export const HomeSliders = () => {
         <>
         <div className={styles.slider__title}>Action</div>
         <Slider genre="Action"/>
-        </>
-        <>
-        <div className={styles.slider__title}>Romance</div>
-        <Slider genre="Romance"/>
         </>
         <>
         <div className={styles.slider__title}>Horror</div>

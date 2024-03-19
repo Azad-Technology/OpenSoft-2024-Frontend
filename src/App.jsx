@@ -18,9 +18,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Pricing from './Components/Pricing/Pricing.jsx'
 import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
 import instance from './axios.jsx'
+import NotFound from './Components/NotFound/NotFound.jsx'
 import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Profile from './Components/profile/Profile.jsx'
 import { useStateValue} from './MyContexts/StateProvider.jsx';
+import Footer from './Components/Footer/Footer.jsx'
 
 const App = () => {
 
@@ -67,13 +69,16 @@ const App = () => {
               <div className='home'>
                 <Carousel />
                 <HomeSliders />
+                <Footer />
               </div>
+              
             </>
           } />
           <Route path="/search/:searchTerm" element={
             <>
               <Navbar />
               <SearchPage />
+              <Footer />
             </>
           } />
           <Route path="/profile" element={<Profile/>}/>
@@ -85,13 +90,17 @@ const App = () => {
           <Route path='/pricing' element={
             <>
               <Navbar />
-              <Pricing />
+              <div className='home'>
+                <Pricing />
+                <Footer />
+              </div>
             </>
 
           } />
           
           <Route path="/movie/:id" element={
             <>
+              <Navbar />
               <MoviePage />
               {/* <MoreLikeThis /> */}
               {/* <SearchPage /> */}
@@ -109,6 +118,10 @@ const App = () => {
               <LoginForm register="register"/>
             </>
           }/>
+
+        <Route path="*" element={
+          <NotFound/>
+        }/>
         </Routes>
       </BrowserRouter>
 
