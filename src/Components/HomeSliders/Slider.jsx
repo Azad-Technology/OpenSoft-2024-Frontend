@@ -21,7 +21,7 @@ export const Slider = ({genre,id}) => {
       setMovies(response.data);
     }
     getData();
-  }, [genre])
+  },[genre])
 
 
   const [showLeftBtn, setShowLeftBtn] = useState(false);

@@ -1,11 +1,14 @@
 import React from 'react'
 import styles from './LoginForm.module.css'
+import { FaBeer } from 'react-icons/fa';
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from 'react';
 import instance from '../../axios';
 import { useStateValue } from '../../MyContexts/StateProvider';
 import { useNavigate } from 'react-router-dom';
+// import { IconName } from "react-icons/vsc";
+// import { VscAccount } from "react-icons/vsc";
 
 function LoginForm({register}) {
 
@@ -98,20 +101,19 @@ function LoginForm({register}) {
       <form action="">
         <h1>Welcome Back.</h1>
         <div className='OAuth'>
-        <button type='submit' className='google'><FcGoogle className='google-icon'/>{register==="register"?"Sign Up":"Login"} with Google</button>
+        <button type='submit' className={styles.google}><FcGoogle className={styles.google_icon}/>{register==="register"?"Sign Up":"Login"} with Google</button>
         </div>
-        <div className='Or'><div>Or, sign {register==="register"?"up":"in"} with your email</div>
+        <div >
+          <div className={styles.Oth}>Sign {register==="register"?"up":"in"} with your email</div>
         </div>
 
-        <div className="input-box">
+        <div className={styles.signup}>
             <input type="email" placeholder='name@email.com' id='email'required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
-            <FaUser className='icon'/>
-
+            
         </div>
-        
         <div className={styles.input_box}>
         <input
         type={isPasswordVisible ? 'text' : 'password'}
