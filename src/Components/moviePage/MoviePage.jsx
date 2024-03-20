@@ -4,12 +4,39 @@ import { useState } from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
 import { useParams } from "react-router-dom";
+import '@vidstack/react/player/styles/default/theme.css';
+import '@vidstack/react/player/styles/default/layouts/video.css';
+import { MediaPlayer, MediaProvider } from '@vidstack/react';
+import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
+import './../../index.css';
+// import './styles.css';
+
+function Modal({ onClose }) {
+  return (
+    <div className={styles.modal_overlay}>
+      <div className={styles.modal}>
+        {/* Video container */}
+        <div className={styles.video_container}>
+          <div className={styles.video}>
+            <MediaPlayer title="Dune" src="/manifests/dune_master.m3u8">
+              <MediaProvider />
+              <DefaultVideoLayout icons={defaultLayoutIcons} />
+            </MediaPlayer>
+          </div>
+        </div>
+        {/* Close button */}
+        <button className={styles.close_button} onClick={onClose}>X</button>
+      </div>
+    </div>
+  );
+}
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
 const MoviePage = () => {
 
     const { id } = useParams();
     const [movie,setMovie]=useState(null);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         window.scroll(0,0);
@@ -149,10 +176,15 @@ const MoviePage = () => {
                             }
                         </div>
                         <div className={styles.button}>
-                            <span><button>A</button></span>
-                            <span><button>B</button></span>
+                            <span>
+                                <button className={styles.modalbutton} onClick={()=>setShowModal(true)}>
+                                    Watch Now
+                                </button>
+                                {showModal && <Modal onClose={() => setShowModal(false)} />}
+                            </span>
+                            {/* <span><button>B</button></span>
                             <span><button>C</button></span>
-                            <span><button>D</button></span>
+                            <span><button>D</button></span> */}
                         </div>
                     </div>
                 </div>
