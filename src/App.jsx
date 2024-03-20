@@ -23,6 +23,7 @@ import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Profile from './Components/profile/Profile.jsx'
 import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
+import  SignUp from "./Components/SignUp/SignUp.jsx"
 
 const App = () => {
 
@@ -70,7 +71,7 @@ const App = () => {
           <Route index path="/" element={
             <>
               <Navbar />
-              <div className='home'>
+              <div className='homepage'>
                 <Carousel />
                 <HomeSliders />
                 <Footer />
@@ -112,6 +113,12 @@ const App = () => {
               <LoginForm />
             </>
         }/>
+          <Route path='/signup' element={
+            <>
+              <Navbar />
+              <SignUp />
+            </>
+          }/>
 
         <Route path="*" element={
           <NotFound/>

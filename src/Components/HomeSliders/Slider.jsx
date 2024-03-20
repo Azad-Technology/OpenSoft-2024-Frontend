@@ -21,8 +21,37 @@ export const Slider = ({genre,id}) => {
       setMovies(response.data);
     }
     getData();
-  },[genre])
+  }, [genre])
 
+
+  const [showLeftBtn, setShowLeftBtn] = useState(false);
+  const [showRightBtn, setShowRightBtn] = useState(true);
+
+
+
+  const scrollableDivRef = useRef(null);
+
+  useEffect(()=>{
+
+    setShowRightBtn((scrollableDivRef.current.scrollWidth-scrollableDivRef.current.scrollLeft-scrollableDivRef.current.clientWidth)>40  && scrollableDivRef.current.clientWidth<scrollableDivRef.current.scrollWidth);
+
+
+    scrollableDivRef.current.addEventListener("scroll", ()=>{
+      setShowLeftBtn(scrollableDivRef.current.scrollLeft>40);
+      setShowRightBtn((scrollableDivRef.current.scrollWidth-scrollableDivRef.current.scrollLeft-scrollableDivRef.current.clientWidth)>40  && scrollableDivRef.current.clientWidth<scrollableDivRef.current.scrollWidth);
+    })
+  }, []);
+
+  
+
+  function handleLeftScroll() {
+
+
+    scrollableDivRef.current.scrollLeft -= 80 * window.innerWidth / 100;
+  }
+  function handleRightScroll() {
+    scrollableDivRef.current.scrollLeft += 80 * window.innerWidth / 100;
+  }
 
 
   
