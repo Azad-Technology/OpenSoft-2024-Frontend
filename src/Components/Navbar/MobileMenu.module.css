@@ -18,7 +18,7 @@
     color:black;
     left:2%;
     width: 100%;
-    max-width: 60%;
+    max-width: 80%;
     border-radius: 0.5rem;
     padding: 1rem 2rem;
     background:rgba(0,0,0,0.5 );
@@ -42,11 +42,12 @@
 }
 
 .mobileMenu__link{
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
     color: white;
     text-decoration: none;
     border-bottom: 0.1rem solid rgb(86, 85, 85);
     padding-bottom: 0.8rem;
+    /* margin:auto; */
     /* margin-bottom: 0.5rem; */
 }
 
@@ -56,6 +57,11 @@
 }
 
 .mobileMenu__dropdown{
+    /* position:fixed ; */
+    /* touch-action: none;
+    overflow: scroll; */
+    /* overflow: hidden; */
+    overflow-y: auto;
     display:flex;
     justify-content: space-between;
     width:80%;
@@ -76,7 +82,12 @@
 .mobileMenu__dropdown_left{
     display: flex;
     flex-direction: column;
-    margin-left:15%;
+    /* justify-content: center;
+    align-items: center; */
+    /* margin-left:15%;
+    margin-right: 15%; */
+    align-items: center;
+    gap: 1rem;
 }
 
 .mobileMenu__dropdown_right{

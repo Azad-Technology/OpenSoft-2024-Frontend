@@ -10,6 +10,7 @@ body{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(21, 15, 15);
+  /* overflow-y: hidden; */
 }
 
 .vds-radio-hint{
