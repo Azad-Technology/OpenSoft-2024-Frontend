@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Profile.css";
+import styles from "./Profile.module.css";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
 
@@ -18,6 +18,14 @@ const Profile = () => {
   const [verificationcurrentPassword, setVerificationCurrentPassword] =
     useState("");
   const [newPassword, setNewPassword] = useState("");
+
+  const [isChangePasswordModalOpen, setChangePasswordModalOpen] = useState(false);
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
+  const handlecChangePasswordClick = () => {
+    setChangePasswordModalOpen(true);
+  };
+  
+
   const handleEditProfileClick = () => {
     setIsProfileActive(true);
   };
@@ -35,15 +43,18 @@ const Profile = () => {
   const handleAddressChange = () => {
     setIsAddressDisabled(false);
   };
-  const handlecChangePasswordClick = () => {
-    // verify if the current password is same or not
-    setIsEditPasswordDisabled(false);
-  };
+  //const handlecChangePasswordClick = () => {
+  //   // verify if the current password is same or not
+  //   setIsEditPasswordDisabled(false);
+  // };
 
   const handleUpdatePassword = () => {
     if (verificationcurrentPassword === password) {
-      setPassword(newPassword);
+      if(newPassword === confirmNewPassword){
+        setPassword(newPassword);
+      }
     }
+    setChangePasswordModalOpen(false)
     setIsEditPasswordDisabled(true);
   };
   const handleNavigateBackward = () => {
@@ -51,34 +62,36 @@ const Profile = () => {
   };
   return (
     <div style={{ backgroundColor: "#101010", display: "block" }}>
-      <i class="fa fa-angle-double-left" id="homeIcon" onClick={handleNavigateBackward}></i>
-        <div className="maincontainer">
-          <div className="card">
-            <div className="cardBody">
+      <i class="fa fa-angle_double_left" id={styles.homeIcon} onClick={handleNavigateBackward}></i>
+        <div className={styles.maincontainer}>
+          <div className={styles.card}>
+            <div className={styles.cardBody}>
               <img
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                 alt="avatar"
-                className="avatar"
+                className={styles.avatar}
               />
-              <p className="details_f">{fullname}</p>
-              <p className="details_f">{currentPlan}</p>
+              <p className={styles.details_f}>{fullname}</p>
+              <p className={styles.details_f}>{currentPlan}</p>
             </div>
           </div>
-          <div className="card_desc">
-            <div className="cardBody_desc">
-              <div className="row" id="topRow">
-                <div className="col-sm-3">
-                  <p className="head"> Full Name</p>
+          <div className={styles.card_desc}>
+            <div className={styles.cardBody_desc}>
+              <div className={styles.row} id={styles.topRow}>
+                <div className={styles.col_sm_3}>
+                  <p className={styles.head}> Full Name</p>
                 </div>
-                <div className="col-sm-9">
+                <div className={styles.col_sm_9}>
                   <input
-                    className="details"
+                    id="input"
+                    className={styles.details}
                     value={fullname}
                     disabled={isEditNameDisabled}
                     onChange={(e) => setFullname(e.target.value)}
                   />
                   {isEditProfileActive ? (
                     <i
+                    
                       class="fa fa-edit editbtn"
                       onClick={handleNameChange}
                     ></i>
@@ -88,31 +101,31 @@ const Profile = () => {
                 </div>
               </div>
 
-              <div className="row">
-                <div className="col-sm-3">
-                  <p className="head"> Email</p>
+              <div className={styles.row}>
+                <div className={styles.col_sm_3}>
+                  <p className={styles.head}> Email</p>
                 </div>
-                <div className="col-sm-9">
-                  <input className="details" disabled value={email} />
+                <div className={styles.col_sm_9}>
+                  <input id="input" className={styles.details} disabled value={email} />
                 </div>
               </div>
 
-              <div className="row">
-                <div className="col-sm-3">
-                  <p className="head"> Password</p>
+              <div className={styles.row}>
+                <div className={styles.col_sm_3}>
+                  <p className={styles.head}> Password</p>
                 </div>
-                <div className="col-sm-9">
-                  <input
-                    className="details"
+                <div className={styles.col_sm_9}>
+                  <input id="input"
+                    className={styles.details}
                     type="password"
                     disabled={isEditPasswordDisabled}
                     value={password}
                   />
 
                   {isEditPasswordDisabled ? (
-                    <div className="col-sm-3" id="changePasswordcol">
+                    <div className={styles.col_sm_3} id={styles.changePasswordcol}>
                       <button
-                        className="_btn"
+                        className={styles._btn}
                         onClick={handlecChangePasswordClick}
                       >
                         Change Password
@@ -120,11 +133,11 @@ const Profile = () => {
                     </div>
                   ) : (
                     <>
-                      <div className="col-sm-3">
-                        <label className="head" htmlFor="password">
+                      <div className={styles.col_sm_3}>
+                        <label className={styles.head} htmlFor="password">
                           Current Password
                         </label>
-                        <input
+                        <input id={styles.Conpass}
                           type="password"
                           name="password"
                           onChange={(e) =>
@@ -133,17 +146,17 @@ const Profile = () => {
                         ></input>
                       </div>
 
-                      <div className="col-sm-3">
-                        <label className="head" htmlFor="password">
-                          New Password
+                      <div className={styles.col_sm_3}>
+                        <label className={styles.head} htmlFor="password">
+                          Current Password
                         </label>
-                        <input
+                        <input id={styles.Conpass}
                           type="password"
                           name="password"
                           onChange={(e) => setNewPassword(e.target.value)}
                         ></input>
                       </div>
-                      <button onClick={handleUpdatePassword}>
+                      <button className={styles.Confpass} onClick={handleUpdatePassword}>
                         confirm changes
                       </button>
                     </>
@@ -154,35 +167,66 @@ const Profile = () => {
               {isBasic ? (
                 <div></div>
               ) : (
-                <div className="row">
-                  <div className="col-sm-3">
-                    <p className="head"> Account details</p>
+                <div className={styles.row}>
+                  <div className={styles.col_sm_3}>
+                    <p className={styles.head}> Account details</p>
                   </div>
-                  <div className="col-sm-9">
-                    <p className="details">UPI hai bhai</p>
+                  <div className={styles.col_sm_9}>
+                    <p className={styles.details}>UPI hai bhai</p>
                   </div>
                 </div>
               )}
 
-              <div className="row">
-                <div className="col-sm-3">
-                  <p className="head"> Plan</p>
+              <div className={styles.row}>
+                <div className={styles.col_sm_3}>
+                  <p className={styles.head}> Plan</p>
                 </div>
-                <div className="col_plan">
-                  <input className="details" disabled value={currentPlan} />
-                  <button className="_btn" onClick={handlePremiumClick}>
+                <div className={styles.col_plan}>
+                  <input id="input" className={styles.details} disabled value={currentPlan} />
+                  <button className={styles._btn} onClick={handlePremiumClick}>
                     Convert to Premium
                   </button>
                 </div>
               </div>
+              {isChangePasswordModalOpen && (
+  <div className={styles.modal}>
+    <div className={styles.modal_content}>
+      <span className={styles.close} onClick={() => setChangePasswordModalOpen(false)}>
+        &times;
+      </span>
+      <h2 className={styles.changepass}>Change Password</h2>
+      <input id="input"
+        type="password" className={styles.currpass}
+        placeholder="Current Password"
+        value={verificationcurrentPassword}
+        onChange={(e) => setVerificationCurrentPassword(e.target.value)}
+      />
+      <input id="input"
+        type="password" className={styles.currpass}
+        placeholder="New Password"
+        value={newPassword}
+        onChange={(e) => setNewPassword(e.target.value)}
+      />
+      <input id="input"
+        type="password" className={styles.currpass}
+        placeholder="Confirm New Password"
+        value={confirmNewPassword}
+        onChange={(e) => setConfirmNewPassword(e.target.value)}
+      />
+      <div className={styles.edit_button} id="modal_button">
+      <button  onClick={handleUpdatePassword}>Confirm Changes</button>
+      </div>
+    </div>
+  </div>
+)}
 
-              <div className="row">
-                <div className="col-sm-3">
-                  <p className="head"> Address</p>
+              <div className={styles.row}>
+                <div className={styles.col_sm_3}>
+                  <p className={styles.head}> Address</p>
                 </div>
-                <div className="col-sm-9">
-                  <input
-                    className="details"
+                <div className={styles.col_sm_9}>
+                  <input id="input"
+                    className={styles.details}
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     disabled={isAddressDisabled}
@@ -200,16 +244,16 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="edit_button">
+        <div className={styles.edit_button}>
           {isEditProfileActive ? (
             <button onClick={handleConfirmChanges}>save changes</button>
           ) : (
             <button onClick={handleEditProfileClick}>Edit Profile</button>
           )}
         </div>
-        <div className="favorites">
+        <div className={styles.favorites}>
           <h1>Favorites</h1>
-          <div className="favorites_card">
+          <div className={styles.favorites_card}>
           <Card
             movies={{
               _id: 1,
