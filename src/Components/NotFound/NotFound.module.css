@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .6rem;
+    padding: .2rem;
+    box-sizing: border-box;
+}
+
+.heading{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.subheading{
+    max-width: 25rem;
+    font-size: .8rem;
+    color: rgb(199, 198, 198);
+    text-align: center;
+}
+.fourOfour{
+    font-size: 6rem;
+    color: rgb(100, 100, 100);
+    font-weight: 900;
+}
+.homeNotFound{
+    margin-top: 1rem;
+    background-color: rgb(209, 32, 32);
+    padding: .5rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+@media screen and (max-width:500px){
+    .fourOfour{
+        font-size: 4rem;
+    }
+    .heading{
+        font-size: 1rem;
+    }
+}

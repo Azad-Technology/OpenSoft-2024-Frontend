@@ -80,7 +80,7 @@
 }
 
 .heroContainer::before{
-    content: "";
+    /* content: ""; */
     position: absolute;
     top: 0;
     bottom: 0;
@@ -171,33 +171,21 @@
     font-weight: 400;
     text-align: left;
     animation: slideLeft 1s ease forwards;
-    
 }
 
-
-
-.heroContainer .button{
-    display: flex;
-    gap:1rem;
-    margin-left: 0rem;
-    /* margin-top: 1.5rem; */
-}
-.heroContainer .button button{
-    /* padding: .5rem; */
+.modalbutton{
     color: var(--tertiary-font-color);
     font-size: 1.5rem;
     height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 50%;
+    padding: 0.5rem 0.7rem;
     border: none;
     background-color: rgba(78, 75, 75, 0.633);
     transition: all .3s ease;
 }
-.heroContainer .button button:hover{
+.modalbutton:hover{
     cursor: pointer;
     background-color: rgb(78, 75, 75);
-    transform: translateY(-10px);
-
+    transform: translateY(-8px);
 }
 .readMore{
     background-color: transparent;
@@ -205,6 +193,69 @@
     color: rgb(54, 6, 174);
     font-size: 1rem;
     margin-left: .3rem;
+}
+
+/* Modal Overlay */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 200;
+}
+  
+  /* Modal Container */
+  .modal {
+    /* background-color: rgb(10, 10, 10); */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Video Container */
+  .video_container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: 100%;
+    aspect-ratio: 4/3;
+  }
+  
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Close Button */
+  .close_button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+@media screen and (max-width: 710px){
+    .video_container{
+        width: 100%;
+        aspect-ratio: 4/3;
+    }
 }
 
 @media screen and (max-width:840px){

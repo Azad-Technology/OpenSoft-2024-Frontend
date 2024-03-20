@@ -37,6 +37,7 @@
     /* border-radius:10px; */
     opacity:0.8;
     margin-left:5%;
+    cursor:pointer;
 }
 
 .searchResult img{

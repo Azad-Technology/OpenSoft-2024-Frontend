@@ -2,22 +2,26 @@ import React, { useState } from "react";
 import styles from "./Profile.module.css";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../../MyContexts/StateProvider";
 
 const Profile = () => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("example@example.com");
-  const [currentPlan, setCurrentPlan] = useState("Basic");
-  const [isEditProfileActive, setIsProfileActive] = useState(false);
-  const [isBasic, setIsBasic] = useState(false);
-  const [fullname, setFullname] = useState("Moganbo");
-  const [isEditNameDisabled, setIsEditNameDisabled] = useState(true);
-  const [isAddressDisabled, setIsAddressDisabled] = useState(true);
-  const [address, setAddress] = useState("Bay Area, San Francisco, CA");
-  const [password, setPassword] = useState("currentPassword");
-  const [isEditPasswordDisabled, setIsEditPasswordDisabled] = useState(true);
-  const [verificationcurrentPassword, setVerificationCurrentPassword] =
-    useState("");
-  const [newPassword, setNewPassword] = useState("");
+
+  const [{ token }, dispatch] = useStateValue();
+
+ const navigate = useNavigate();
+ const [email, setEmail] = useState("example@example.com");
+ const [currentPlan, setCurrentPlan] = useState("Basic");
+ const [isEditProfileActive, setIsProfileActive] = useState(false);
+ const [isBasic, setIsBasic] = useState(false);
+ const [fullname, setFullname] = useState("Moganbo");
+ const [isEditNameDisabled, setIsEditNameDisabled] = useState(true);
+ const [isAddressDisabled, setIsAddressDisabled] = useState(true);
+ const [address, setAddress] = useState("Bay Area, San Francisco, CA");
+ const [password, setPassword] = useState("currentPassword");
+ const [isEditPasswordDisabled, setIsEditPasswordDisabled] = useState(true);
+ const [verificationcurrentPassword, setVerificationCurrentPassword] =
+ useState("");
+ const [newPassword, setNewPassword] = useState("");
 
   const [isChangePasswordModalOpen, setChangePasswordModalOpen] =
     useState(false);
@@ -48,59 +52,66 @@ const Profile = () => {
   // setIsEditPasswordDisabled(false);
   // };
 
-  const handleUpdatePassword = () => {
-    if (verificationcurrentPassword === password) {
-      if (newPassword === confirmNewPassword) {
-        setPassword(newPassword);
-      }
-    }
-    setChangePasswordModalOpen(false);
-    setIsEditPasswordDisabled(true);
-  };
-  const handleNavigateBackward = () => {
-    navigate("/");
-  };
-  return (
-    <div style={{ backgroundColor: "#101010", display: "block" }}>
-      <i
-        class="fa fa-angle-double-left"
-        aria-hidden="true"
-        id={styles.homeIcon}
-        onClick={handleNavigateBackward}
-      ></i>
-      <div className={styles.maincontainer}>
-        <div className={styles.card}>
-          <div className={styles.cardBody}>
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-              alt="avatar"
-              className={styles.avatar}
-            />
-            <p className={styles.details_f}>{fullname}</p>
-            <p className={styles.details_f}>{currentPlan}</p>
-          </div>
-        </div>
-        <div className={styles.card_desc}>
-          <div className={styles.cardBody_desc}>
-            <div className={styles.row} id={styles.topRow}>
-              <div className={styles.col_sm_3}>
-                <p className={styles.head}> Full Name</p>
-              </div>
-              <div className={styles.col_sm_9}>
-                <input
-                  id="input"
-                  className={styles.details}
-                  value={fullname}
-                  disabled={isEditNameDisabled}
-                  onChange={(e) => setFullname(e.target.value)}
-                />
-                {isEditProfileActive ? (
-                  <i class="fa fa-edit editbtn" onClick={handleNameChange}></i>
-                ) : (
-                  <p></p>
-                )}
-              </div>
-            </div>
+ const handleUpdatePassword = () => {
+ if (verificationcurrentPassword === password) {
+ if(newPassword === confirmNewPassword){
+ setPassword(newPassword);
+ }
+ }
+ setChangePasswordModalOpen(false)
+ setIsEditPasswordDisabled(true);
+ };
+ const handleNavigateBackward = () => {
+ navigate("/")
+ };
+
+  const handleSignout=()=>{
+    dispatch({
+      type:'REMOVE_TOKEN'
+    })
+    navigate("/")
+  }
+
+ return (
+ <div style={{ backgroundColor: "#101010", display: "block" }}>
+ <i class="fa fa-angle-double-left" aria-hidden="true" id={styles.homeIcon} onClick={handleNavigateBackward}></i>
+ <div className={styles.maincontainer}>
+ <div className={styles.card}>
+ <div className={styles.cardBody}>
+ <img
+ src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+ alt="avatar"
+ className={styles.avatar}
+ />
+ <p className={styles.details_f}>{fullname}</p>
+ <p className={styles.details_f}>{currentPlan}</p>
+ </div>
+ </div>
+ <div className={styles.card_desc}>
+ <div className={styles.cardBody_desc}>
+ <div className={styles.row} id={styles.topRow}>
+ <div className={styles.col_sm_3}>
+ <p className={styles.head}> Full Name</p>
+ </div>
+ <div className={styles.col_sm_9}>
+ <input
+ id="input"
+ className={styles.details}
+ value={fullname}
+ disabled={isEditNameDisabled}
+ onChange={(e) => setFullname(e.target.value)}
+ />
+ {isEditProfileActive ? (
+ <i
+ 
+ class="fa fa-edit editbtn"
+ onClick={handleNameChange}
+ ></i>
+ ) : (
+ <p></p>
+ )}
+ </div>
+ </div>
 
             <div className={styles.row}>
               <div className={styles.col_sm_3}>

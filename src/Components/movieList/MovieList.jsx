@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styles from './MovieList.module.css'
 import Card from '../../Components/Card/Card.jsx'
 
 const MovieList = ({ movie }) => {
+  
+  
+  
   return (
-    <div className={styles.card_array}>
-      {
-        movie?.map((m, i) => (
+    <>
+
+        {movie?.map((m, i) => (
+          
           <Card movies={m} />
-        ))
-      }
-    </div>
+        ))}
+        {/* <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} />
+        <Card movies={movie[0]} /> */}
+      </>
   )
 }
 
