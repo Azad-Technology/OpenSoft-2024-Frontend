@@ -4,6 +4,19 @@
     box-sizing: border-box;
   }
 
+.container{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: black;
+}
+
+.text{
+    color: black;
+}
+
 .wrapper{
     width: 30rem;
     background: rgba(255, 255, 255, 0.9);
@@ -19,7 +32,7 @@
     padding: 1.25rem;
 }
 
-.wrapper .input-box{
+.wrapper .inputBox{
     position: relative;
     width: 100%;
     height: 3.12rem;
@@ -27,7 +40,7 @@
     margin-bottom: 1.875rem;
 }
 
-.input-box input{
+.inputBox input{
     width: 100%;
     height: 100%;
     background: transparent;
@@ -36,21 +49,24 @@
     border-radius: .3125rem;
     font-size: 1rem;
     color: black;
-    padding: 0rem 2.8125rem 1.25rem 1.25rem;
+    padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
     border-color: black;
     
 }
 
-.input-box input::placeholder{
+.inputBox input::placeholder{
     color: black;
 }
 
-.input-box .icon{
+.inputBox .icon{
     position: absolute;
     right: 1.25rem;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1rem;
+    background-color: black;
+    border-radius: 50%;
+    padding: .2rem;
 }
 
 
@@ -93,9 +109,9 @@
 
 .OAuth{
     display: flex;
-    accent-color: white;
+    color: black    ;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .OAuth button{
@@ -108,24 +124,37 @@
     justify-content: center;
 }
 
-.google-icon{
+.googleIcon{
     margin-right: 0.625rem;
 }
 
-.wrapper .register-link{
+.wrapper .registerLink{
     font-size: 0.90625rem;
     text-align: center;
     margin: 1.25rem 0 0.9375rem;
 }
 
-.register-link p a {
+.registerLink p a {
+    font-size: 0.90625rem;
     color: black;
     text-decoration: none;
     font-weight: 600;
 }
 
-.register-link p a:hover{
+.registerLink p{
+    color: black;
+}
+
+.registerLink p a:hover{
     text-decoration: underline;
+}
+
+h1{
+    color: black;
+}
+
+.star{
+    color: red;
 }
 
 @media only screen and (max-width: 45rem){
@@ -140,17 +169,22 @@
     .wrapper button{
         font-size: 0.rem;
     }
-    .input-box input{
+    .inputBox input{
         font-size: 0.9rem;
     }
     .Or{
         font-size: 0.8rem;
     }
-    .wrapper .register-link{
+    .wrapper .registerLink{
         font-size: 0.7rem;
         margin-top: 0.722rem;
         margin-bottom: 0;
     }
+
+    .registerLink p a{
+        font-size: 0.7rem;
+    }
+
     #error {
         font-size: 0.8rem;
         margin-bottom: 0.6rem;
