@@ -1,7 +1,7 @@
 .App{
     width: 100%;
 }
-.home{
+.homepage{
     display: flex;
     flex-direction: column;
     position: absolute;
