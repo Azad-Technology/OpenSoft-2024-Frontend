@@ -23,6 +23,8 @@ import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Profile from './Components/profile/Profile.jsx'
 import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
+import  SignUp from "./Components/SignUp/SignUp.jsx"
+import { R } from '@vidstack/react/dist/types/vidstack.js'
 
 const App = () => {
 
@@ -112,6 +114,12 @@ const App = () => {
               <LoginForm />
             </>
         }/>
+          <Route path='/signup' element={
+            <>
+              <Navbar />
+              <SignUp />
+            </>
+          }/>
 
         <Route path="*" element={
           <NotFound/>

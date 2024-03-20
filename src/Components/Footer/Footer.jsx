@@ -15,7 +15,7 @@ function Footer() {
                     <h2>Contact</h2>
 
                     <address>
-                        5534 Somewhere In. The World 22193-10212
+                        Azad Hall of Residence
 
                         <a className={styles.footer__btn} href="mailto:example@gmail.com">Email Us</a>
                     </address>
@@ -80,10 +80,6 @@ function Footer() {
 
                             <li>
                                 <Link href="#">Terms of Use</Link>
-                            </li>
-
-                            <li>
-                                <Link href="#">Sitemap</Link>
                             </li>
                         </ul>
                     </li>
