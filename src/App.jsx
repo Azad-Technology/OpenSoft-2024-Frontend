@@ -19,6 +19,7 @@ import { HomeSliders } from './Components/HomeSliders/HomeSliders.jsx';
 import instance from './axios.jsx'
 import NotFound from './Components/NotFound/NotFound.jsx'
 import Footer from './Components/Footer/Footer.jsx'
+import  SignUp from "./Components/SignUp/SignUp.jsx"
 
 const App = () => {
 
@@ -134,6 +135,11 @@ const App = () => {
               <Footer />
             </>
           } />
+          <Route path="/signup" element={
+            <>
+              <SignUp></SignUp>
+            </>
+          } />        
           <Route path="*" element={
             <NotFound />
           } />
