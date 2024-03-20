@@ -3,11 +3,13 @@ import styles from './Navbar.module.css';
 import { Search } from './Search';
 import { MobileMenu } from './MobileMenu.jsx';
 import { useNavigate } from 'react-router-dom';
+import { useStateValue } from '../../MyContexts/StateProvider.jsx';
 
 
 export const Navbar = ({movies}) => {
 
     const navigate=useNavigate();
+    const [{token},dispatch]=useStateValue();
     
     const [showDropdown,setShowDropdown]=useState({
         "Genre":false,
@@ -201,7 +203,11 @@ export const Navbar = ({movies}) => {
                     </div>
                     <div className={styles.navbar__right}>
                         <Search movies={movies}/>
-                        <i className={`fa fa-2x fa-user ${styles.desktop_login}`}></i>
+                        {token && token !==undefined && token!=='null' && token !=='undefined' && token!==null && token!==''?
+                            <i onClick={()=>navigate('/profile')} className={`fa fa-2x fa-user ${styles.desktop_login}`}></i>
+                        :
+                            <div onClick={()=>navigate('/login')} className={styles.desktop_login}>Login</div>
+                        }
                     </div>
                 </div>
                 {showHamburgerMenu && <div className={styles.backdrop}></div>}
@@ -219,7 +225,7 @@ export const Navbar = ({movies}) => {
                     </div>
                     <div className={styles.navbar__right}>
                         <i onClick={()=>setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
-                        <i className={`fa fa-2x fa-user`}></i>
+                        <i className={`fa fa-2x fa-user`} style={{cursor:"pointer"}}></i>
                     </div>
                 </div>
                 {showSearchBar && <div ref={searchRef}><Search movies={movies} searchBarRef={searchBarRef}/></div>}

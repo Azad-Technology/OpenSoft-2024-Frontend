@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import styles from "./Profile.module.css";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../../MyContexts/StateProvider";
 
 const Profile = () => {
+
+  const [{ token }, dispatch] = useStateValue();
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("example@example.com");
   const [currentPlan, setCurrentPlan] = useState("Basic");
@@ -60,6 +64,14 @@ const Profile = () => {
   const handleNavigateBackward = () => {
     navigate("/")
   };
+
+  const handleSignout=()=>{
+    dispatch({
+      type:'REMOVE_TOKEN'
+    })
+    navigate("/")
+  }
+
   return (
     <div style={{ backgroundColor: "#101010", display: "block" }}>
       <i class="fa fa-angle_double_left" id={styles.homeIcon} onClick={handleNavigateBackward}></i>
@@ -246,9 +258,15 @@ const Profile = () => {
         </div>
         <div className={styles.edit_button}>
           {isEditProfileActive ? (
+            <>
             <button onClick={handleConfirmChanges}>save changes</button>
+            <button onClick={handleSignout}>Sign Out</button>
+            </>
           ) : (
+            <>
             <button onClick={handleEditProfileClick}>Edit Profile</button>
+            <button onClick={handleSignout}>Sign Out</button>
+            </>
           )}
         </div>
         <div className={styles.favorites}>

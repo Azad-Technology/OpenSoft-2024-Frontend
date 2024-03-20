@@ -54,7 +54,7 @@ function LoginForm({register}) {
               token:response.data.token,
               premium:response.data.type
             });
-            navigate('/');
+            navigate(-1);
           }
           catch(err){
             console.log(err);

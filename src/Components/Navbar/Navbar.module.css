@@ -84,6 +84,10 @@
     gap:25%;
 }
 
+.desktop_login{
+    cursor:pointer;
+}
+
 .dropdown{
     position:absolute;
     margin-top: 0.5%;
