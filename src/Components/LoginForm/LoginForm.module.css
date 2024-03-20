@@ -1,18 +1,20 @@
 .login{
     height: 100%;
     width: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 6%;
+    margin-top: 9%;
 }
 
 .wrapper{
-    width: 40rem;
+    width: 35rem;
     background: rgba(255, 255, 255, 0.9);
     color: black;
     border-radius: 2rem;
     padding: 3rem 3rem;
+    
     box-shadow: -5px -5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -26,10 +28,26 @@
     position: relative;
     width: 100%;
     height: 3.12rem;
-    margin: 1.875rem 0;
+    margin: 2rem 0;
 }
 
-.input_box input{
+.Oth{
+    display: flex;
+    justify-content: center;
+    height : 100%;
+    margin-top: 3%;
+}
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 4%;
+}
+
+.signup input{
+    display : flex;
+    justify-content: left;
     width: 100%;
     height: 100%;
     background: transparent;
@@ -40,6 +58,27 @@
     color: black;
     padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
     border-color: black;
+}
+
+.icon_box{
+    height : 100%;
+    /* width : 100% */
+}
+
+.input_box input{
+    display : flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 0.125rem solid rgb(255, 255, 255, 0.2);
+    border-radius: .3125rem;
+    font-size: 1rem;
+    color: black;
+    padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
+    border-color: black;
+    margin-bottom: 10%;
 }
 
 .input_box input::placeholder{
@@ -132,7 +171,7 @@
     justify-content: center;
 }
 
-.google-icon{
+.google_icon{
     margin-right: 0.625rem;
 }
 
