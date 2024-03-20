@@ -75,7 +75,7 @@ function SignUp() {
         <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye className={styles.icon} />:<FaEyeSlash className={styles.icon}/>}</div>
         </div>
         
-        {err===""?<></>:<div id='error'>{err}</div>}
+        {err===""?<></>:<div className={styles.error}>{err}</div>}
 
         <button type={err===""?'submit':'button'} onClick={handleChange} id='loginButton'>Register</button>
         <div className={styles.registerLink}>
