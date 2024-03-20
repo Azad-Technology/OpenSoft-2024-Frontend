@@ -3,8 +3,10 @@ import { useState } from "react";
 import bgBottom from "../../assets/bg-bottom.svg";
 import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
+import { Link } from 'react-router-dom';
 function Pricing() {
   const [annually, setAnnually] = useState(false);
+  const [isHovered, setIsHovered] = useState(null);
   return (
     <div className={styles.container}>
       <div className={styles.bgTopImage}>
@@ -16,13 +18,15 @@ function Pricing() {
         </h1>
         <div className={styles.pricingCards}>
 
-          <article className={styles.pricingCard}>
+          <article className={`${styles.pricingCard} ${isHovered === 0 ? styles.featured : ''}`}
+            onMouseEnter={() => setIsHovered(0)}
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Basic</h2>
-            
-              <h3>
-                <span>$</span> 19.99
-              </h3>
-            
+
+            <h3>
+              <span>$</span> 19.99
+            </h3>
+
             <ul>
               <li>
                 500 Searches every Month
@@ -34,17 +38,17 @@ function Pricing() {
                 Send up to 3 GB
               </li>
             </ul>
-            <button className={styles.pricingCard_button}>
-              Purchase
-            </button>
+            <Link target="_blank" to="paisawala.lemonsqueezy.com"><button className={styles.pricingCard_button}>Purchase</button></Link>
           </article>
 
-          <article className={`${styles.pricingCard} ${styles.featured}`}>
+          <article className={`${styles.pricingCard} ${isHovered === 1 ? styles.featured : ''}`}
+            onMouseEnter={() => setIsHovered(1)}
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Standard</h2>
-              <h3>
-                <span>$</span> 24.99
-              </h3>
-            
+            <h3>
+              <span>$</span> 24.99
+            </h3>
+
             <ul>
               <li>
                 1 TB Storage
@@ -56,16 +60,18 @@ function Pricing() {
                 Send up to 10 GB
               </li>
             </ul>
-            <button>
-              Purchase
-            </button>
+
+            <Link target="_blank" to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"><button className={styles.pricingCard_button}>Purchase</button></Link>
+
           </article>
 
-          <article className={`${styles.pricingCard} ${styles.lastCard}`}>
+          <article className={`${styles.pricingCard} ${isHovered === 2 ? styles.featured : ''}`}
+            onMouseEnter={() => setIsHovered(2)}
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Premium</h2>
-              <h3>
-                <span>$</span> 39.99
-              </h3>
+            <h3>
+              <span>$</span> 39.99
+            </h3>
             <ul>
               <li>
                 500 GB Storage
@@ -77,9 +83,11 @@ function Pricing() {
                 Send up to 3 GB
               </li>
             </ul>
-            <button>
-              Purchase
-            </button>
+
+            <Link target="_blank" to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1">
+              <button className={styles.pricingCard_button}>Purchase</button>
+            </Link>
+
           </article>
         </div>
 
