@@ -131,12 +131,10 @@ function LoginForm({register}) {
         {err===""?<></>:<div id='error'>{err}</div>}
 
 
-        {register!=="register" && <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Login</button>}
-        {register==="register" && <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Register</button>}
-        {!register==="register" && <div className="register-link">
-
+        <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Login</button> 
+        <div className="register-link">
             <p>Don't have an account? <a href="#">Register</a></p>
-        </div>}
+        </div>
       </form>
     </div>
     </div>

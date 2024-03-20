@@ -44,8 +44,10 @@ export const Search = ({movies,searchBarRef}) => {
   const getData = async () => {
     try{
       const results=await user.functions.auto_dave(debouncedSearch);
+      
       setAutoCompleteResult(results);
     }
+    
     catch(err){
       setAutoCompleteResult([]);
       console.error("Failed to log in",err);

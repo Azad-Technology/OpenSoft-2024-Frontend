@@ -79,7 +79,7 @@ function SignUp() {
 
         <button type={err===""?'submit':'button'} onClick={handleChange} id='loginButton'>Register</button>
         <div className={styles.registerLink}>
-            <p>Already have an account? <a href="#">Sign in</a></p>
+            <p>Already have an account? <a href="/login">Sign in</a></p>
         </div>
       </form>
     </div>

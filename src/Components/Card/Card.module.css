@@ -86,8 +86,8 @@
 
 }
 .cards_img {
-  width: 100%;
-  height: 100%;
+  width: 10rem;
+  height: 15rem;
   max-height: 100%;
   border-radius: 0; 
   transition: 0.4s ease-in-out;
