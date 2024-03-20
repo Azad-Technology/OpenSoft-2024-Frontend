@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 import { Link } from 'react-router-dom';
 function Pricing() {
   const [annually, setAnnually] = useState(false);
+  const [isHovered, setIsHovered] = useState(null);
   return (
     <div className={styles.container}>
       <div className={styles.bgTopImage}>
@@ -17,7 +18,9 @@ function Pricing() {
         </h1>
         <div className={styles.pricingCards}>
 
-          <article className={styles.pricingCard}>
+          <article className={`${styles.pricingCard} ${isHovered === 0 ? styles.featured : ''}`}
+            onMouseEnter={() => setIsHovered(0)}
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Basic</h2>
 
             <h3>
@@ -38,7 +41,9 @@ function Pricing() {
             <Link target="_blank" to="paisawala.lemonsqueezy.com"><button className={styles.pricingCard_button}>Purchase</button></Link>
           </article>
 
-          <article className={`${styles.pricingCard} ${styles.featured}`}>
+          <article className={`${styles.pricingCard} ${isHovered === 1 ? styles.featured : ''}`}
+            onMouseEnter={() => setIsHovered(1)}
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Standard</h2>
             <h3>
               <span>$</span> 24.99
@@ -60,7 +65,9 @@ function Pricing() {
 
           </article>
 
-          <article className={`${styles.pricingCard} ${styles.lastCard}`}>
+          <article className={`${styles.pricingCard} ${isHovered === 2 ? styles.featured : ''}`}
+            onMouseEnter={() => setIsHovered(2)}
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Premium</h2>
             <h3>
               <span>$</span> 39.99
