@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import styles from './MobileMenu.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export const MobileMenu = () => {
+
+    const navigate=useNavigate();
 
     const [showDropdown,setShowDropdown]=useState({
         "Genre":false,
@@ -40,6 +43,102 @@ export const MobileMenu = () => {
                     name:"Thriller",
                     link:"#",
                     genreID:"thriller"
+                },
+                {
+                    name:"Sci-Fi",
+                    link:"#",
+                    genreID:"scifi"
+                }
+                ,
+                {
+                    name:"Drama",
+                    link:"#",
+                    genreID:"drama"
+                },
+                {
+                    name:"Mystery",
+                    link:"#",
+                    genreID:"mystery"
+                },
+                {
+                    name:"Crime",
+                    link:"#",
+                    genreID:"crime"
+                },
+                {
+                    name:"Animation",
+                    link:"#",
+                    genreID:"animation"
+                },
+                {
+                    name:"Adventure",
+                    link:"#",
+                    genreID:"adventure"
+                },
+                {
+                    name:"Fantasy",
+                    link:"#",
+                    genreID:"fantasy"
+                },
+                {
+                    name:"Family",
+                    link:"#",
+                    genreID:"family"
+                },
+                {
+                    name:"Biography",
+                    link:"#",
+                    genreID:"biography"
+                },
+                {
+                    name:"History",
+                    link:"#",
+                    genreID:"history"
+                },
+                {
+                    name:"War",
+                    link:"#",
+                    genreID:"war"
+                },
+                {
+                    name:"Documentary",
+                    link:"#",
+                    genreID:"documentary"
+                },
+                {
+                    name:"Music",
+                    link:"#",
+                    genreID:"music"
+                },
+                {
+                    name:"Sport",
+                    link:"#",
+                    genreID:"sport"
+                },
+                {
+                    name:"Western",
+                    link:"#",
+                    genreID:"western"
+                },
+                {
+                    name:"Short",
+                    link:"#",
+                    genreID:"short"
+                },
+                {
+                    name:"Film-Noir",
+                    link:"#",
+                    genreID:"filmnoir"
+                },
+                {
+                    name:"Talk-Show",
+                    link:"#",
+                    genreID:"talkshow"
+                },
+                {
+                    name:"News",
+                    link:"#",
+                    genreID:"news"
                 }
             ]
         },
@@ -66,20 +165,18 @@ export const MobileMenu = () => {
                 {
                     name:"China",
                     link:"#"
-                }
+                },
             ]
         },
         {
-            name:"Movies",
-            link:"#"
-        },
-        {
             name:"TV Shows",
-            link:"#"
+            link:"#",
+            genreID:"tvshows"
         },
         {
             name:"Top IMDB",
-            link:"#"
+            link:"#",
+            genreID:"topimdb"
         }, 
         {
             name:"Pricing",
@@ -97,6 +194,7 @@ export const MobileMenu = () => {
 
   const handleGenreClick=(e,genreID)=>{
     e.preventDefault();
+    navigate('/');
     const genreSection=document.getElementById(genreID);
     if(genreSection){
         const windowHeight = window.innerHeight;

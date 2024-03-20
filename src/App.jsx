@@ -3,6 +3,7 @@ import './App.css'
 import MoreLikeThis from './Components/moviePage/MoreLikeThis/MoreLikeThis.jsx'
 import MoviePage from './Components/moviePage/MoviePage.jsx'
 import SearchPage from './Components/SearchPage/SearchPage.jsx'
+import CommentCards from './Components/CommentCard/CommentCards.jsx';
 // import Card from './Components/Card/Card.jsx'
 // main.js or App.js
 import MovieList from './Components/movieList/MovieList'
@@ -22,6 +23,7 @@ import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Profile from './Components/profile/Profile.jsx'
 import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
+import  SignUp from "./Components/SignUp/SignUp.jsx"
 
 const App = () => {
 
@@ -69,7 +71,7 @@ const App = () => {
           <Route index path="/" element={
             <>
               <Navbar />
-              <div className='home'>
+              <div className='homepage'>
                 <Carousel />
                 <HomeSliders />
                 <Footer />
@@ -100,6 +102,7 @@ const App = () => {
             <>
               <Navbar />
               <MoviePage />
+              <Footer />
               {/* <MoreLikeThis /> */}
               {/* <SearchPage /> */}
             </>
@@ -109,17 +112,18 @@ const App = () => {
               <Navbar />
               <LoginForm />
             </>
-          } />
-          <Route path='/register' element={
+        }/>
+          <Route path='/signup' element={
             <>
               <Navbar />
-              <LoginForm register="register" />
+              <SignUp />
             </>
-          } />
+          }/>
 
-          <Route path="*" element={
-            <NotFound />
-          } />
+        <Route path="*" element={
+          <NotFound/>
+        }/>
+        
         </Routes>
       </BrowserRouter>
     </>
