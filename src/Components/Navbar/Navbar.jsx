@@ -24,23 +24,28 @@ export const Navbar = ({movies}) => {
             dropdown:[
                 {
                     name:"Action",
-                    link:"#"
+                    link:"#",
+                    genreID:"action"
                 },
                 {
                     name:"Comedy",
-                    link:"#"
+                    link:"#",
+                    genreID:"comedy"
                 },
                 {
                     name:"Horror",
-                    link:"#"
+                    link:"#",
+                    genreID:"horror"
                 },
                 {
                     name:"Romance",
-                    link:"#"
+                    link:"#",
+                    genreID:"romance"
                 },
                 {
                     name:"Thriller",
-                    link:"#"
+                    link:"#",
+                    genreID:"thriller"
                 }
             ]
         },
@@ -159,6 +164,21 @@ export const Navbar = ({movies}) => {
         }
     },[showSearchBar])
 
+    const handleGenreClick=(e,genreID)=>{
+        e.preventDefault();
+        const genreSection=document.getElementById(genreID);
+        if(genreSection){
+            const windowHeight = window.innerHeight;
+            const genreSectionHeight = genreSection.offsetHeight;
+            const offsetTop = genreSection.offsetTop;
+            const middleOfViewport = offsetTop - (windowHeight / 2) + (genreSectionHeight / 2);
+            window.scrollTo({
+                top: middleOfViewport,
+                behavior: "smooth"
+            });
+        }
+    }
+
     if(window.innerWidth>600){
         return (
             <div className={styles.DesktopMenu}>
@@ -172,7 +192,7 @@ export const Navbar = ({movies}) => {
                                     <a onMouseOver={handleToggleDropdown} className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
                                     {showDropdown[menuoption.name] && menuoption.dropdown && <div ref={dropdownRef} className={styles.dropdown}>
                                         {menuoption.dropdown?.map((dropdown,index)=>(
-                                            <a className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                            <a onClick={(e)=>handleGenreClick(e,dropdown?.genreID)} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                         ))}
                                     </div>}
                                 </div>
@@ -181,6 +201,7 @@ export const Navbar = ({movies}) => {
                     </div>
                     <div className={styles.navbar__right}>
                         <Search movies={movies}/>
+                        <i className={`fa fa-2x fa-user ${styles.desktop_login}`}></i>
                     </div>
                 </div>
                 {showHamburgerMenu && <div className={styles.backdrop}></div>}
@@ -198,6 +219,7 @@ export const Navbar = ({movies}) => {
                     </div>
                     <div className={styles.navbar__right}>
                         <i onClick={()=>setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
+                        <i className={`fa fa-2x fa-user`}></i>
                     </div>
                 </div>
                 {showSearchBar && <div ref={searchRef}><Search movies={movies} searchBarRef={searchBarRef}/></div>}

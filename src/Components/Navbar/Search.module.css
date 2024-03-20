@@ -2,6 +2,7 @@
     position:relative;
     width:30%;
     min-width:18rem;
+    z-index:5000;
 }
 
 .searchBox{
@@ -48,11 +49,11 @@
 @media screen and (max-width:650px){
     .search{
         /* width:20%; */
-        min-width:12rem;
+        min-width:15rem;
     }
 
     .searchBox{
-        min-width:12rem;
+        min-width:15rem;
     }
 }
 
@@ -61,11 +62,17 @@
         position:fixed;
         margin-top:18%;
         width:90%;
-        margin-left:5%;
+        margin-left:8%;
+    }
+    .desktop_login{
+        display:none;
     }
     .searchBox{
         /* margin-top:-0.3%; */
         width:88%;
+    }
+    .navbar__right{
+        gap:15%;
     }
 }
 

@@ -12,6 +12,10 @@ const MoviePage = () => {
     const [movie,setMovie]=useState(null);
 
     useEffect(() => {
+        window.scroll(0,0);
+    },[id]);
+
+    useEffect(() => {
         console.log(id);
         const getData = async () => {
             const response = await instance.get(`/movies/${id}`);

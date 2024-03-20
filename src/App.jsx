@@ -26,6 +26,10 @@ import Footer from './Components/Footer/Footer.jsx'
 
 const App = () => {
 
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [])
+
   const [movies, setMovies] = useState([]);
 
   const [{token},dispatch]=useStateValue();
