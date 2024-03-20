@@ -1,21 +1,24 @@
 .cards {
-  /* box-sizing: border-box; */
   position: relative;
   width: 12%;
   height:20%;
   max-height: 20%;
   min-width: 10rem;
-  /* padding: 1rem; */
-  margin: 1rem;;
+  margin: 0.8rem;
+  border-radius: 0.1rem;
+  flex-shrink: 0;
+  flex-grow: 0;
   cursor: pointer;
   box-shadow: 0 0.25rem 0.3rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .cards:hover {
-  z-index: 2;
+  
+  border-radius: 1rem;
+  z-index: 10;
   transform: scale(1.4, 1.32);
-  /* box-shadow: 0.5rem 0.5rem 0.5rem 0.25rem rgba(0, 0, 0, 0.5) ; */
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.25rem rgba(0, 0, 0, 0.5) ;
 }
 .cards__overlay {
   margin:0;
@@ -92,7 +95,13 @@
   border-radius: 0; 
   transition: 0.4s ease-in-out;
 }
-
+.icon{
+  position: absolute;
+  top: 2%;
+  left:5%;
+  z-index: 3;
+  float: right;
+}
 @media screen and (max-width: 1024px) {
   .cards{
     flex-basis: 15%;
