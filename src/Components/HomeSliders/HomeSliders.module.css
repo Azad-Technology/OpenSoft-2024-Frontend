@@ -4,8 +4,8 @@
     overflow-x: scroll;
     overflow-y: hidden;
     /* padding: 20px 20px; */
-    padding: 1rem 1rem;
-    margin: 0 -20px 0px 0;
+    padding: 1rem 3rem 1rem 2rem;
+    margin: 0 -20px 0px 0px;
     -ms-overflow-style: none;
     scrollbar-width: none;
     width: 100vw;
@@ -28,6 +28,7 @@
     
 }
 .RightbtnContainer{
+    /* display: flex; */
     position: absolute;
     right: .5rem;
     z-index: 3;
@@ -48,7 +49,8 @@
 }
 
 .LeftbtnContainer button, .RightbtnContainer button{
-    background-color: rgba(130, 118, 118, 0.445);
+    /* background-color: rgba(130, 118, 118, 0.445); */
+    background-color: transparent;
     height: 2.3rem;
     width: 2.3rem;
     z-index: 3;
