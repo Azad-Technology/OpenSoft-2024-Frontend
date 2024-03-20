@@ -91,10 +91,9 @@
 .dropdown{
     position:absolute;
     margin-top: 0.5%;
-    height: 40vh;
+    height: auto;
     top:100%;
     display:flex;
-    flex-direction: column;
     justify-content: space-around;
     margin-left:1%;
     background-color:rgba(0, 0, 0, 0.5);
@@ -104,6 +103,14 @@
     padding:0.5rem 0.8rem;
     transform-origin:top;
     animation: growTop 0.2s ease-in;
+}
+
+.dropdown__column{
+    display:flex;
+    flex-direction:column;
+    /* justify-content:space-around; */
+    align-items:center;
+    gap:1rem;
 }
 
 a{

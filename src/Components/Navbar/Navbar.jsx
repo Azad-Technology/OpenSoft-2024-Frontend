@@ -289,9 +289,27 @@ export const Navbar = ({movies}) => {
                                 <div className={styles.desktopLinks} key={index}>
                                     <a onMouseOver={handleToggleDropdown} className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
                                     {showDropdown[menuoption.name] && menuoption.dropdown && <div ref={dropdownRef} className={styles.dropdown}>
-                                        {menuoption.dropdown?.map((dropdown,index)=>(
-                                            <a onClick={(e)=>handleGenreClick(e,dropdown?.genreID)} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
-                                        ))}
+                                            <div className={styles.dropdown__column}>
+                                                {menuoption.dropdown.slice(0,9).map((dropdown,index)=>{
+                                                    return(
+                                                        <a onClick={handleGenreClick} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    )
+                                                })}
+                                            </div>
+                                            <div className={styles.dropdown__column}>
+                                                {menuoption.dropdown?.slice(9,18).map((dropdown,index)=>{
+                                                    return(
+                                                        <a onClick={handleGenreClick} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    )
+                                                })}
+                                            </div>
+                                            <div className={styles.dropdown__column}>
+                                                {menuoption.dropdown?.slice(18).map((dropdown,index)=>{
+                                                    return(
+                                                        <a onClick={handleGenreClick} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    )
+                                                })}
+                                            </div>
                                     </div>}
                                 </div>
                             ))}
