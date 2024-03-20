@@ -28,3 +28,6 @@ body{
 .vds-slider-chapter{
   margin-top: 2%;
 }
+.vds-slider-thumb{
+  display: none;
+}

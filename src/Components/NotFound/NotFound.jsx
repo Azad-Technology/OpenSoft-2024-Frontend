@@ -10,7 +10,7 @@ const NotFound = ()=>{
             <div className={styles.fourOfour}>404</div>
             <div className={styles.heading}>Oops! This page could not be found</div>
             <div className={styles.subheading}>Sorry but the page you are looking for does not exist, have been removed, had its name changed or is temporary unavailable</div>
-            <div className={styles.home} onClick={()=>{navigate('/')}}>Home Page</div>
+            <div className={styles.homeNotFound} onClick={()=>{navigate('/')}}>Home Page</div>
         </div>
         </>
     )
