@@ -3,6 +3,7 @@ import './App.css'
 import MoreLikeThis from './Components/moviePage/MoreLikeThis/MoreLikeThis.jsx'
 import MoviePage from './Components/moviePage/MoviePage.jsx'
 import SearchPage from './Components/SearchPage/SearchPage.jsx'
+import CommentCards from './Components/CommentCard/CommentCards.jsx';
 // import Card from './Components/Card/Card.jsx'
 // main.js or App.js
 import MovieList from './Components/movieList/MovieList'
@@ -112,7 +113,12 @@ const App = () => {
               <LoginForm register="register" />
             </>
           } />
-
+          <Route path='/commentCard' element={
+            <>
+              <Navbar/>
+              <CommentCards />
+            </>
+          }/>
           <Route path="*" element={
             <NotFound />
           } />
