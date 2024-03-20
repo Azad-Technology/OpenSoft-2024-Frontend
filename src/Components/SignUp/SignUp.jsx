@@ -39,20 +39,29 @@ function SignUp() {
     <div className={styles.container}><div className={styles.wrapper}>
       <form action="">
         <h1>Sign Up</h1>
+
         <div className={styles.OAuth}>
-        <button type='submit' className={styles.google}><FcGoogle className={styles.googleIcon}/>Sign up with Google</button>
+        <button type='submit' className={styles.google}><FcGoogle style={{width: '1.25rem', height: '1.25rem'}} className={styles.googleIcon}/>Sign up with Google</button>
         </div>
+
+        <hr className={styles.Or}/>
+
         <div className={styles.text}>Full Name</div>
+
         <div className={styles.inputBox}>
             <input type="text" id='name'required />
-            <FaUser className={styles.icon}/>
+            <FaUser style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>
         </div>
+
         <div className={styles.text}>Email<div className={styles.star}>*</div></div>
+
         <div className={styles.inputBox}>
             <input type="email" id='email'required />
-            <MdEmail className={styles.icon}></MdEmail>
+            <MdEmail style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}></MdEmail>
         </div>
-        <div className={styles.text}>Password<div className={styles.star}>*</div></div>  
+
+        <div className={styles.text}>Password<div className={styles.star}>*</div></div> 
+
         <div className={styles.inputBox}>
         <input
         type={isPasswordVisible1 ? 'text' : 'password'}
@@ -61,7 +70,7 @@ function SignUp() {
         required
       />
       
-        <div onClick={togglePasswordVisibility1} style={{cursor: 'pointer'}}>{isPasswordVisible1 ? <FaEye className={styles.icon} />:<FaEyeSlash className={styles.icon}/>}</div>
+        <div onClick={togglePasswordVisibility1} style={{cursor: 'pointer'}}>{isPasswordVisible1 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         <div className={styles.text}>Confirm Password<div className={styles.star}>*</div></div>
         <div className={styles.inputBox}>
@@ -72,10 +81,10 @@ function SignUp() {
         required
       />
       
-        <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye className={styles.icon} />:<FaEyeSlash className={styles.icon}/>}</div>
+        <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         
-        {err===""?<></>:<div id='error'>{err}</div>}
+        {err===""?<></>:<div className={styles.error}>{err}</div>}
 
         <button type={err===""?'submit':'button'} onClick={handleChange} id='loginButton'>Register</button>
         <div className={styles.registerLink}>
