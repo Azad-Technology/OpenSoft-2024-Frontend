@@ -78,8 +78,14 @@
 
 .navbar__right{
     display:flex;
+    justify-content: flex-end;
     align-items: center;
     margin-right:5%;
+    gap:25%;
+}
+
+.desktop_login{
+    cursor:pointer;
 }
 
 .dropdown{
@@ -153,6 +159,12 @@ a{
     }
 }
 
+@media screen and (max-width:680px){
+    .navbar__right{
+        gap:50%;
+    }
+}
+
 @media screen and (max-width:600px){
     .navbar{
         /* z-index:0; */
@@ -162,11 +174,20 @@ a{
         color:white;
         cursor:pointer;
     }
+    .desktop_login{
+        display:none;
+    }
 }
 
  @media screen and (max-height:510px){
     .navbar{
         padding-top: 1rem;
+    }
+}
+
+@media screen and (max-width:359px){
+    .navbar__logo{
+        width:60%;
     }
 }
 

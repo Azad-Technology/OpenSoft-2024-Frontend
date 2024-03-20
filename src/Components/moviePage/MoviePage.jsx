@@ -9,6 +9,8 @@ import '@vidstack/react/player/styles/default/layouts/video.css';
 import { MediaPlayer, MediaProvider } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import './../../index.css';
+import { useStateValue } from "../../MyContexts/StateProvider";
+import { useNavigate } from "react-router-dom";
 // import './styles.css';
 
 function Modal({ onClose }) {
@@ -34,11 +36,18 @@ import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
 const MoviePage = () => {
 
+    const [{token},dispatch]=useStateValue();
+    const navigate=useNavigate();
+
     const { id } = useParams();
     // const {com} = useParams();
     const [comments,setComments] = useState(null);
     const [movie,setMovie]=useState(null);
     const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        window.scroll(0,0);
+    },[id]);
 
     useEffect(() => {
         console.log(id);
@@ -151,6 +160,15 @@ const MoviePage = () => {
         setSmallScreen(window.innerWidth<=550);
     })
 
+    const handleClick=()=>{
+        if(token && token!='null' && token!==undefined && token!='undefined' && token!=''){
+            setShowModal(true);
+        }
+        else{
+            navigate('/login');
+        }
+    }
+
    
     return (
         <>
@@ -185,7 +203,7 @@ const MoviePage = () => {
                         </div>
                         <div className={styles.button}>
                             <span>
-                                <button className={styles.modalbutton} onClick={()=>setShowModal(true)}>
+                                <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}

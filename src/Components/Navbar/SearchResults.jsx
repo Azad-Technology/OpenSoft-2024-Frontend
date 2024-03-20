@@ -1,6 +1,6 @@
 import React from 'react'
 import { SearchResult } from './SearchResult.jsx'
-import styles from "./SearchResults.module.css";
+import styles from "./SearchResults.module.css"
 
 export const SearchResults = ({movies,search}) => {
   return (
