@@ -167,6 +167,9 @@
  .favorites{
   padding-left: 5rem;
  }
+ .favorites h1{
+  color:white;
+ }
  .favorites_card{
   display: flex;
   width: 100%;
