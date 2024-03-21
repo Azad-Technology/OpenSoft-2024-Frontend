@@ -1,16 +1,23 @@
-import React from 'react'
-import styles from './SignUp.module.css'
+import React from 'react';
+import instance from '../../axios';
+import styles from './SignUp.module.css';
+import { useStateValue } from '../../MyContexts/StateProvider';
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 import { useState } from 'react';
 
 function SignUp() {
+    const [{token,premium},dispatch]=useStateValue();
+    const navigate=useNavigate();
     const [isPasswordVisible1, setisPasswordVisible1] = useState(false);
     const [isPasswordVisible2, setisPasswordVisible2] = useState(false);
     const [err, setErrors] = useState("")
-
-    const handleChange = () => {
+    const [email, setEmail] = useState("");
+    const [password,setPassword]=useState("");
+    
+    const handleChange = async(e) => {
+      e.preventDefault();
       const newEmail = document.getElementById("email").value
       const newPass = document.getElementById("password").value
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,6 +32,29 @@ function SignUp() {
           else setErrors("Password does not match")
         }
       }
+
+          try{
+            const response=await instance.post('/signup/',{
+              name:"Dummy",
+              email:email,
+              password:password
+            },
+            {
+              headers:{
+                'Content-Type':'application/json'
+              }
+            });
+            // console.log(response.data);
+            dispatch({
+              type:'SET_TOKEN',
+              token:response.data.token,
+              premium:"Basic"
+            });
+            navigate('/');
+          }
+          catch(err){
+            console.log(err);
+          }
   };
 
     const togglePasswordVisibility1 = () => {
@@ -46,17 +76,19 @@ function SignUp() {
 
         <hr className={styles.Or}/>
 
-        <div className={styles.text}>Full Name</div>
+        {/* <div className={styles.text}>Full Name</div>
 
         <div className={styles.inputBox}>
             <input type="text" id='name'required />
             <FaUser style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>
-        </div>
+        </div> */}
 
         <div className={styles.text}>Email<div className={styles.star}>*</div></div>
 
         <div className={styles.inputBox}>
-            <input type="email" id='email'required />
+            <input type="email" id='email'required 
+            onChange={(e) => setEmail(e.target.value)}
+            />
             <MdEmail style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}></MdEmail>
         </div>
 
@@ -68,6 +100,7 @@ function SignUp() {
         id="password"
         name="password"
         required
+        onChange={(e) => setPassword(e.target.value)}
       />
       
         <div onClick={togglePasswordVisibility1} style={{cursor: 'pointer'}}>{isPasswordVisible1 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
@@ -86,7 +119,7 @@ function SignUp() {
         
         {err===""?<></>:<div className={styles.error}>{err}</div>}
 
-        <button type={err===""?'submit':'button'} onClick={handleChange} id='loginButton'>Register</button>
+        <button type={err===""?'submit':'button'} onClick={(e) => (handleChange(e))} id='loginButton'>Register</button>
         <div className={styles.registerLink}>
             <p>Already have an account? <a href="/login">Sign in</a></p>
         </div>

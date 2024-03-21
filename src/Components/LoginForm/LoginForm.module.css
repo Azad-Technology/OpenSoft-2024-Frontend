@@ -129,13 +129,15 @@
     color: #333;
     font-weight: 700;
     border-color: black;
+    margin-bottom: 2rem;
 }
 
 
 .wrapper .register_link{
-    font-size: 0.90625rem;
+    font-size: 1rem;
     text-align: center;
     margin: 1.25rem 0 0.9375rem;
+
 }
 
 .register_link p a {
@@ -177,7 +179,12 @@
 
 @media only screen and (max-width: 45rem){
     .wrapper{
+        margin-top: 50%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         width: 20rem;
+        height: 30rem;
         padding: 1.73rem 1.73rem;
     }
     .wrapper h1{

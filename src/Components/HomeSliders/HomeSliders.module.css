@@ -1,8 +1,8 @@
 .slider__movies{
     box-sizing: border-box;
     display: flex;
+    overflow-y: auto;
     overflow-x: scroll;
-    overflow-y: hidden;
     /* padding: 20px 20px; */
     padding: 1rem 3rem 1rem 2rem;
     margin: 0 -20px 0px 0px;

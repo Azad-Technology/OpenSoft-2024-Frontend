@@ -6,7 +6,7 @@ import { useStateValue } from "../../MyContexts/StateProvider";
 
 const Profile = () => {
 
-  const [{ token }, dispatch] = useStateValue();
+  const [{ token, premium }, dispatch] = useStateValue();
 
   const navigate = useNavigate();
   const [email, setEmail] = useState("example@example.com");
