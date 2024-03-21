@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styles from "./moviePage.module.css"
-import { useState } from "react";
+import { useState,useMemo } from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
 import { useParams } from "react-router-dom";
@@ -11,16 +11,44 @@ import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/l
 import './../../index.css';
 import { useStateValue } from "../../MyContexts/StateProvider";
 import { useNavigate } from "react-router-dom";
+// import DatabaseStorage from './Devicestore'; 
+
 // import './styles.css';
+// class DatabaseStorage {
+//     async getVolume() {}
+//     async setVolume(volume) {}
+  
+//     async getMuted() {}
+//     async setMuted(isMuted) {}
+  
+//     async getTime() {}
+//     async setTime(time) {}
+  
+//     async getLang() {}
+//     async setLang(lang) {}
+  
+//     async getCaptions() {}
+//     async setCaptions(isOn) {}
+  
+//     onChange(src, mediaId, playerId) {}
+  
+//     onDestroy() {}
+//   }
+
+
 
 function Modal({ onClose }) {
+    
+    // const storage = useMemo(() => new DatabaseStorage(), []);
+    // console.log(storage);
+
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal}>
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer title="Dune" src="/manifests/dune_master.m3u8">
+            <MediaPlayer  title="Dune" src="/manifests/dune_master.m3u8">
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
             </MediaPlayer>
