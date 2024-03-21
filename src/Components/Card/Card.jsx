@@ -19,7 +19,7 @@ const Card = ({ movies }) => {
 
   return (
     <>
-      <div onClick={()=>navigate(`/movie/${movies._id}`)} className={`${styles.cards} ${index === 0 ? 'styles.first' : ''}`} id={movies._id}>
+      <div onClick={()=>navigate(`/movie/${movies._id}`)} className={styles.cards} id={movies._id}>
         <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies.title}</div>
           <div className={styles.card__runtime}>
@@ -37,7 +37,7 @@ const Card = ({ movies }) => {
             ></i>
           </div>
           <img
-            src={`https://image.tmdb.org/t/p/w500${`https://image.tmdb.org/t/p/w500${movies.poster_path}`_path}`}
+            src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
             className={styles.cards_img}
             alt="Image Not Found"
           />

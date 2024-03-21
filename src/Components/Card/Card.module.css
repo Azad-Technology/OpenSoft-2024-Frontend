@@ -15,11 +15,11 @@
 
 .cards:hover {
   /* position: absolute; */
-  z-index: 1000;
+  z-index: 10;
   transform: scale(1.4, 1.32);
 }
 .cards .first:hover{
-  z-index: 1000;
+  z-index: 10;
   transform: scale(1.4, 1.32);
 }
 .cards__overlay {
