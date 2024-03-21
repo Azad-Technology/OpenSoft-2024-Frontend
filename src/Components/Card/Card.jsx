@@ -19,7 +19,8 @@ const Card = ({ movies }) => {
 
   return (
     <>
-      <div onClick={()=>navigate(`/movie/${movies._id}`)} className={styles.cards} id={movies._id}>
+      {/* <h2>{key}</h2> */}
+      <div onClick={()=>navigate(`/movie/${movies._id}`)} className={styles.cards} id={movies._id} >
         <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies.title}</div>
           <div className={styles.card__runtime}>
