@@ -11,11 +11,10 @@ const MovieList = ({ movie }) => {
 
         {movie?.map((m, i) => {
           if(m.poster_path === null || m.poster_path === "" || m.poster_path === undefined) return;
-          return <Card key={i} movies={m} />
-        
+          return <Card movies={m} />
         })}
         
-      </>
+    </>
   )
 }
 
