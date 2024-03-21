@@ -6,9 +6,10 @@ import stockIcon from '../../assets/stock_movie_icon.jpg';
 const Watchlist = ({ movies }) => {
   return (
     <div className={styles.watchlist_container}>
+    <div className={styles.background_grad}></div>
       <div className={styles.watchlist_titlecontainer}>
+        <img src={stockIcon} alt="stock icon" className={styles.watchlist_icon} />
         <div className={styles.titles}>
-            <img src={stockIcon} alt="stock icon" className={styles.watchlist_icon} />
             <div className={styles.watchlist_details}>
                 <p>Watchlist</p>
                 <h2>My Watchlist #1</h2>

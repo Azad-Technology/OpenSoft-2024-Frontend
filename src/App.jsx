@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './App.css'
 import MoreLikeThis from './Components/moviePage/MoreLikeThis/MoreLikeThis.jsx'
 import MoviePage from './Components/moviePage/MoviePage.jsx'
@@ -25,6 +25,7 @@ import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
 import  SignUp from "./Components/SignUp/SignUp.jsx"
 import { Watchlists } from './Components/Watchlists/Watchlists.jsx'
+import useAlan from './Components/Alan'
 
 const App = () => {
 
@@ -32,6 +33,8 @@ const App = () => {
     window.scroll(0, 0);
   }, [])
 
+  useAlan();
+  const alanBtnContainer = useRef();
   const [movies, setMovies] = useState([]);
 
   const [{ token }, dispatch] = useStateValue();
@@ -148,6 +151,7 @@ const App = () => {
         
         </Routes>
       </BrowserRouter>
+      <div ref={alanBtnContainer} />
     </>
   );
 }

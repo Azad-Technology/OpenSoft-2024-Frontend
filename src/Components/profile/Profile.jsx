@@ -3,6 +3,7 @@ import styles from "./Profile.module.css";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../MyContexts/StateProvider";
+import { AllWatchlists } from "../Watchlists/AllWatchlists";
 
 const Profile = () => {
   const [{ token, user }, dispatch] = useStateValue();
@@ -315,6 +316,12 @@ const Profile = () => {
           />
         </div>
       </div>
+
+      <div className={styles.favorites}>
+        <h1>Watchlists</h1>
+        <AllWatchlists />
+      </div>
+
     </div>
   );
 };

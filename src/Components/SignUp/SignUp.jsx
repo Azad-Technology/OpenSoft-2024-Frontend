@@ -56,6 +56,9 @@ function SignUp() {
             console.log(err);
           }
   };
+
+  
+
   const handleGoogleClick = async () => {
     try{
       const response=await instance.get('/login/google');
