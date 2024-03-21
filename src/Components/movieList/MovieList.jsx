@@ -4,30 +4,14 @@ import Card from '../../Components/Card/Card.jsx'
 
 const MovieList = ({ movie }) => {
   
-  
-  
+  const length=movie.length;
   return (
     <>
 
-        {movie?.map((m, i) => (
-          
-          <Card movies={m} />
+      {
+        movie?.map((m,i) => (
+          <Card movies={ m } value={i} length={length} />
         ))}
-        {/* <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} /> */}
       </>
   )
 }
