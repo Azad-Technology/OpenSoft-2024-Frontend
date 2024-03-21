@@ -63,7 +63,9 @@
     background-color: rgba(130, 118, 118, 0.599);
 }
 
-
+.slider{
+    padding-right: 2rem;
+}
 .slider__movies::-webkit-scrollbar{
     display: none;
 }
@@ -74,5 +76,5 @@
     font-weight: 500;
 }
 .sliders{
-    padding: 0 0rem 0 2rem;
+    margin-right: 3rem;
 }

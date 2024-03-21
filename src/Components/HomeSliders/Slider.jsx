@@ -63,7 +63,7 @@ export const Slider = ({genre,id}) => {
   return (
       
     <>
-    {movies ? <div className={styles.slider}>
+    {movies ? 
     <div className={styles.slider}>
       <div className={styles.container}>
         <div className={styles.slider__movies} ref={scrollableDivRef}>
@@ -73,7 +73,7 @@ export const Slider = ({genre,id}) => {
         </div>
       </div>
     </div>
-    </div> : null
+     : null
     }
     </>
     
