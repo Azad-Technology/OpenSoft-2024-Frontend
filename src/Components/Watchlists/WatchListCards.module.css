@@ -1,5 +1,25 @@
+.card{
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 10rem;
+    width: 15rem;
+    border-radius: 1rem;
+    background-color: #FF340A;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1rem, 0px);
+}
+
 .slider__movies{
     box-sizing: border-box;
+    gap:2rem;
     display: flex;
     overflow-y: auto;
     overflow-x: scroll;
@@ -67,13 +87,6 @@
 }
 .slider__movies::-webkit-scrollbar{
     display: none;
-}
-
-.slider__title{
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-left: 3rem;
 }
 .sliders{
     margin-right: 3rem;

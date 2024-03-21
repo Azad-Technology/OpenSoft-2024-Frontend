@@ -1,15 +1,24 @@
 import React from 'react';
-import Card from '../Card/Card.jsx';
 import styles from './Watchlist.module.css';
+import MovieList from '../movieList/MovieList.jsx';
+import stockIcon from '../../assets/stock_movie_icon.jpg';
 
 const Watchlist = ({ movies }) => {
   return (
-    <div className={styles.watchlist_ontainer}>
-      <h2>My Watchlist</h2>
+    <div className={styles.watchlist_container}>
+    <div className={styles.background_grad}></div>
+      <div className={styles.watchlist_titlecontainer}>
+        <img src={stockIcon} alt="stock icon" className={styles.watchlist_icon} />
+        <div className={styles.titles}>
+            <div className={styles.watchlist_details}>
+                <p>Watchlist</p>
+                <h2>My Watchlist #1</h2>
+                <span><strong>UserName</strong> {movies.length} Movies </span>
+            </div>
+        </div>
+      </div>
       <div className={styles.movie_grid}>
-        {movies.map((movie) => (
-          <Card key={movie.id} movies={movie} />
-        ))}
+        <MovieList movie={movies} />
       </div>
     </div>
   );

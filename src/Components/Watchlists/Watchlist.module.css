@@ -2,22 +2,60 @@
 .watchlist_container {
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: row;
+}
+.background_grad{
+    background: linear-gradient(180deg , #F24236, rgb(21, 15, 15));
+    height: 80vh;
+    width: 100vw;
+    position:relative;
+    
+}
+
+  .movie_grid {
+    position: absolute;
+    padding-left: 1rem;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    z-index: 100;
+    top: 50%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(10,10,10,0.2);
+}
+
+.watchlist_titlecontainer{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top:0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    z-index: 10;
+}
+
+.watchlist_titlecontainer h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+    
+  .watchlist_details{
+    display: flex;
     flex-direction: column;
   }
-  
-  .watchlist_container h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+
+  .watchlist_icon{
+    height: 15rem;
+    width: 15rem;
+    box-shadow: 2rem;
   }
   
-  .movie_grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-  }
-  
-  @media (max-width: 768px) {
-    .movie_grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-  }

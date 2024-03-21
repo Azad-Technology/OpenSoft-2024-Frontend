@@ -183,6 +183,30 @@
     text-decoration: none;
   }
 
+  @media screen and (max-width: 1300px) {
+    .container{
+      padding-top: 10%;
+    }
+    .heading {
+      font-size: 3rem;
+    }
+  
+    .pricingCards {
+      width: 100%;
+      z-index: -1;
+    }
+    
+    .pricingCard {
+      width: 70%;
+      margin-bottom: 2rem;
+    }
+  
+    .pricingCard.featured {
+      margin: 2rem 0;
+      transform: scale(1);
+    }
+  }
+
 @media screen and (max-width: 768px) {
   .container{
     padding-top: 20%;

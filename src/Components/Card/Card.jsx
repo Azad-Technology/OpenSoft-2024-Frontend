@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
 
 const Card = ({ movies }) => {
-  // for dummy purpose we take movies.like=false;
+  // for dummy purpose we take movies?.like=false;
   const [like,setlike] = useState(false);
   const [value, setvalue] = useState("-o");
   const openHeart = (event) => {
@@ -20,28 +20,28 @@ const Card = ({ movies }) => {
 
   return (
     <>
-      <div onClick={()=>navigate(`/movie/${movies._id}`)} className={styles.cards} id={movies._id}>
+      {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
+      <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''}>
         <div className={styles.cards__overlay}>
-          <div className={styles.card__title}>{movies.title}</div>
+          <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
-            {movies.year}
-            <span className={styles.card__rating}>{movies.imdb.rating}</span>
+            {movies?.year}
+            <span className={styles.card__rating}>{movies?.imdb.rating}</span>
           </div>
-          <div className={styles.card__description}>{movies.plot}</div>
+          <div className={styles.card__description}>{movies?.plot}</div>
         </div>
         <div>
           <div className={styles.icon}>
-            <i
+            {movies && <i
               class={`fa fa-heart${value}`}
               aria-hidden="true"
               onClick={openHeart}
-            ></i>
+            ></i>}
           </div>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+          {movies && <img
+            src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
             className={styles.cards_img}
-            alt="Image Not Found"
-          />
+          />}
         </div>
       </div>
     </>
