@@ -9,7 +9,7 @@ export const SearchResult = ({movie}) => {
   }, [movie])
   return (
     <div onClick={()=>navigate(`/movie/${movie?._id}`)} className={styles.searchResult}> 
-        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="search result" />
+        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} style={{height:"4rem", width:"3rem"}} alt="search result" />
         <div className={styles.searchResult__details}>
             <h5>{movie.title}</h5>
             <small>Year</small>

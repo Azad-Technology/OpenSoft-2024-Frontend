@@ -6,8 +6,6 @@ const Card = ({ movies }) => {
   // for dummy purpose we take movies.like=false;
   const [like,setlike] = useState(false);
   const [value, setvalue] = useState("-o");
-  const currDate = new Date();
-  // if(movies != null) console.log(movies.imdb.rating);
   const openHeart = (event) => {
     event.stopPropagation();
     if (value === "" && like) {
@@ -16,42 +14,12 @@ const Card = ({ movies }) => {
       setvalue("");setlike(true);
     }
   };
-  const onMove = (e) => {
-    return e;
-  };
-  const unHover = () => {
-    const particularCard = document.getElementById(`${movies._id}`);
-    particularCard.style.setProperty("transform-origin", "top");
-  };
-
-  const onHover = (onMove) => {
-    let h = parseFloat(window.innerWidth);
-    let val = (onMove.clientX / h) * 100;
-    const particularCard = document.getElementById(`${movies._id}`);
-    const thatStyle = window.getComputedStyle(particularCard);
-    let x = (parseFloat(thatStyle.width) / h) * 100;
-    if (x + 8 >= val) {
-      particularCard.style.setProperty("transform-origin", "top left");
-    } else if (100 - val <= x + 8.9) {
-      particularCard.style.setProperty("transform-origin", "top right");
-    } else {
-      particularCard.style.setProperty("transform-origin", "top");
-    }
-    console.log(thatStyle.width, x, h, val);
-  };
 
   const navigate = useNavigate();
 
   return (
     <>
-      <div
-        onClick={() => navigate(`/movie/${movies._id}`)}
-        className={styles.cards}
-        id={movies._id}
-        onMouseOver={onHover}
-        onMouseOut={unHover}
-        onMouseMove={onMove}
-      >
+      <div onClick={()=>navigate(`/movie/${movies._id}`)} className={`${styles.cards} ${index === 0 ? 'styles.first' : ''}`} id={movies._id}>
         <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies.title}</div>
           <div className={styles.card__runtime}>
@@ -69,7 +37,7 @@ const Card = ({ movies }) => {
             ></i>
           </div>
           <img
-            src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${`https://image.tmdb.org/t/p/w500${movies.poster_path}`_path}`}
             className={styles.cards_img}
             alt="Image Not Found"
           />
