@@ -1,12 +1,8 @@
-
-/* * {
- background-color: #101010;
-} */
 .maincontainer {
-  padding-top: 2.5rem;
+  padding-top: 5rem;
   padding-bottom: 0rem;
   display: flex;
-  margin: 5rem 5rem 0rem 5rem;
+  margin: 0rem 5rem 0rem 5rem;
   justify-content: space-between;
  }
  
@@ -92,6 +88,8 @@
   border: none;
   outline: none;
   color: #6c757d;
+  cursor: pointer;
+ 
  }
  ._btn{
   color: rgb(26, 86, 141);
@@ -113,7 +111,7 @@
  }
  .col_sm_9{
   padding-right: 5%;
-  text-align: left;
+  text-align: right;
  }
  .col_sm_3{
   padding-left: 5%;
@@ -157,6 +155,8 @@
   height: 3rem;
   border-color: #000000;
   margin-right:5rem;
+  cursor: pointer;
+ 
  }
  .editbtn{
   background-color: #101010;
@@ -165,11 +165,7 @@
  
  }
  .favorites{
-  margin-top: 2rem;
-  margin-bottom: 5rem;
-  width: 100%;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  padding-left: 5rem;
  }
  .favorites_card{
   display: flex;
@@ -184,6 +180,7 @@
   position: absolute;
   top: 5%;
   left: 3%;
+  cursor: pointer;
  }
  #topRow{
   padding-top: 5%;
@@ -204,6 +201,7 @@
   width: 100%;
   }
  
+ 
  }
  
  @media screen and (max-width: 525px){
@@ -216,6 +214,7 @@
   }
   .col_sm_9, .col_plan{
   padding-left: 5%;
+  text-align: left;
   }
   ._btn{
   width: max-content;
@@ -227,6 +226,9 @@
   .editbtn{
   margin-left: 0;
   }
+  .modal{
+  width:40% ;
+  }
  }
  
  .modal {
@@ -236,9 +238,11 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
  }
  
  .modal-content {
@@ -259,11 +263,32 @@
  
  .currpass{
   padding: 5% 10% 5% 10%;
-  width: 100%;
-  height: 3rem;
+  width: 80%;
+  height:3rem;
   font-size: larger;
   color: #6c757d;
   text-align: left;
   background-color: #101010;
+  border: none;
+  outline: none;
  }
+ .edit_button_modal{
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+ }
+ .edit_button_modal button{
+  color:white;
+  background-color:red;
+  width: 10rem;
+  height: 3rem;
+  border-color: #000000;
+  margin-right:0rem;
+  cursor: pointer;
  
+ }
+  .edit_button_modal button:hover{
+    background-color: #e42b2b;
+    transition: 0.2s;
+  } 
