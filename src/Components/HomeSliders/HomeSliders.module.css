@@ -1,8 +1,8 @@
 .slider__movies{
     box-sizing: border-box;
     display: flex;
+    overflow-y: auto;
     overflow-x: scroll;
-    overflow-y: hidden;
     /* padding: 20px 20px; */
     padding: 1rem 3rem 1rem 2rem;
     margin: 0 -20px 0px 0px;
@@ -23,7 +23,7 @@
 .LeftbtnContainer{
     position: absolute;
     left: .5rem;
-    z-index: 3;
+    z-index: 30;
     transform: rotate(-90deg);
     
 }
@@ -31,11 +31,12 @@
     /* display: flex; */
     position: absolute;
     right: .5rem;
-    z-index: 3;
+    z-index: 30;
     transform: rotate(90deg);
 }
 
 .LeftbtnContainer, .RightbtnContainer{
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,7 +64,9 @@
     background-color: rgba(130, 118, 118, 0.599);
 }
 
-
+.slider{
+    padding-right: 2rem;
+}
 .slider__movies::-webkit-scrollbar{
     display: none;
 }
@@ -74,5 +77,5 @@
     font-weight: 500;
 }
 .sliders{
-    padding: 0 0rem 0 2rem;
+    margin-right: 3rem;
 }

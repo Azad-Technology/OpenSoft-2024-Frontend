@@ -11,7 +11,7 @@ const MovieList = ({ movie }) => {
 
         {movie?.map((m, i) => (
           
-          <Card movies={m} />
+          <Card movies={m} index={i} />
         ))}
         {/* <Card movies={movie[0]} />
         <Card movies={movie[0]} />
