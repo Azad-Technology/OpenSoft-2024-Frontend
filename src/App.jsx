@@ -40,6 +40,25 @@ const App = () => {
     dispatch({
       type: 'INITIALIZE_TOKEN'
     })
+    if(token && token !== 'null' && token !== 'undefined'){
+      const getUser=async()=>{
+        try{
+          const user=await instance.get('/user',{
+            headers:{
+              Authorization: `Bearer ${token}`
+            }
+          })
+          console.log(user.data);
+          dispatch({
+            type: 'SET_USER',
+            user: user.data
+          })
+        }catch(err){
+          console.log(err)
+        }
+      }
+      getUser();
+    }
   }, [token])
 
   useEffect(() => {
