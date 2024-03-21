@@ -26,7 +26,7 @@
     color: rgb(100, 100, 100);
     font-weight: 900;
 }
-.homeNotFound{
+.LoginExpired{
     margin-top: 1rem;
     background-color: rgb(209, 32, 32);
     padding: .5rem;
@@ -34,7 +34,7 @@
     border-radius: 1rem;
 }
 
-.homeNotFound{
+.LoginExpired{
     display: block;
     margin-top: 2rem;
     background-color: rgba(255, 9, 9, 0.925);

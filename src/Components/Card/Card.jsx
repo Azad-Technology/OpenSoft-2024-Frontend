@@ -1,20 +1,20 @@
-import { useEffect } from 'react';
-import styles from './Card.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import styles from "./Card.module.css";
+import { useNavigate } from "react-router-dom";
 
-const Card = (props) => {
-  const { movies, value, length } = props;
-  const currDate = new Date();
-  
-  const handlehover = (e) => {
-    const particularCard = document.getElementById(`${movies._id}`); 
-    if (value === 0) {
-      particularCard.style.setProperty('transform-origin', 'top left');
+const Card = ({ movies }) => {
+  // for dummy purpose we take movies.like=false;
+  const [like,setlike] = useState(false);
+  const [value, setvalue] = useState("-o");
+  const openHeart = (event) => {
+    event.stopPropagation();
+    if (value === "" && like) {
+      setvalue("-o");setlike(false);
+    } else {
+      setvalue("");setlike(true);
     }
-    if(value === length-1){
-      particularCard.style.setProperty('transform-origin', 'top right');
-    }
-  }
+  };
+
   const navigate = useNavigate();
 
   return (
@@ -25,16 +25,27 @@ const Card = (props) => {
           <div className={styles.card__title}>{movies.title}</div>
           <div className={styles.card__runtime}>
             {movies.year}
-            <span className={styles.card__rating}>{movies.imdb.rating}
-            </span>
+            <span className={styles.card__rating}>{movies.imdb.rating}</span>
           </div>
           <div className={styles.card__description}>{movies.plot}</div>
         </div>
-        <img src={movies.poster} className={styles.cards_img} alt="Image Not Found" />
+        <div>
+          <div className={styles.icon}>
+            <i
+              class={`fa fa-heart${value}`}
+              aria-hidden="true"
+              onClick={openHeart}
+            ></i>
+          </div>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+            className={styles.cards_img}
+            alt="Image Not Found"
+          />
+        </div>
       </div>
     </>
   );
 };
 
 export default Card;
-

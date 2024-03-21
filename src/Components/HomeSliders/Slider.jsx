@@ -13,6 +13,7 @@ export const Slider = ({genre,id}) => {
       if(genre==="More Like This"){
         const response = await instance.get('/movies/'+id+'/related_movies/?count=18')
         setMovies(response.data);
+        console.log(response.data);
         return;
       }
       const response = await instance.get(`/genre_top/${genre}/?count=18`)
@@ -62,7 +63,7 @@ export const Slider = ({genre,id}) => {
   return (
       
     <>
-    {movies ? <div className={styles.slider}>
+    {movies ? 
     <div className={styles.slider}>
       <div className={styles.container}>
         <div className={styles.slider__movies} ref={scrollableDivRef}>
@@ -72,7 +73,7 @@ export const Slider = ({genre,id}) => {
         </div>
       </div>
     </div>
-    </div> : null
+     : null
     }
     </>
     

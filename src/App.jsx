@@ -24,6 +24,7 @@ import Profile from './Components/profile/Profile.jsx'
 import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
 import  SignUp from "./Components/SignUp/SignUp.jsx"
+import { Watchlists } from './Components/Watchlists/Watchlists.jsx'
 
 const App = () => {
 
@@ -39,6 +40,25 @@ const App = () => {
     dispatch({
       type: 'INITIALIZE_TOKEN'
     })
+    if(token && token !== 'null' && token !== 'undefined'){
+      const getUser=async()=>{
+        try{
+          const user=await instance.get('/user',{
+            headers:{
+              Authorization: `Bearer ${token}`
+            }
+          })
+          console.log(user.data);
+          dispatch({
+            type: 'SET_USER',
+            user: user.data
+          })
+        }catch(err){
+          console.log(err)
+        }
+      }
+      getUser();
+    }
   }, [token])
 
   useEffect(() => {
@@ -119,7 +139,9 @@ const App = () => {
               <SignUp />
             </>
           }/>
-
+        <Route path='/watchlist' element={
+          <Watchlists />
+        }/>
         <Route path="*" element={
           <NotFound/>
         }/>

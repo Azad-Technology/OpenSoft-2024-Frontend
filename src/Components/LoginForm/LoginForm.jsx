@@ -20,6 +20,7 @@ function LoginForm({register}) {
     
     const [email, setEmail] = useState("");
     const [password,setPassword]=useState("");
+    
     const handleSubmit = async (e) => {
       e.preventDefault();
       const newEmail = document.getElementById("email").value
@@ -29,18 +30,7 @@ function LoginForm({register}) {
         setErrors("Please enter a valid email address.")
       }
       else {
-        if (newPass.length < 8) {
-          setErrors('Password must be at least 8 characters long.');
-        } else if (!/[A-Z]/.test(newPass)) {
-          setErrors('Password must contain at least one uppercase letter.');
-        } else if (!/[a-z]/.test(newPass)) {
-          setErrors('Password must contain at least one lowercase letter.');
-        } else if (!/\d/.test(newPass)) {
-          setErrors('Password must contain at least one digit.');
-        } else if (!/[!@#$%&*-]/.test(newPass)) {
-          setErrors('Password must contain at least one special character.');
-        }
-        else if(register!=="register"){
+        if(register!=="register"){
           setErrors("");
           try{
             const response=await instance.post('/login',{
@@ -55,7 +45,6 @@ function LoginForm({register}) {
             dispatch({
               type:'SET_TOKEN',
               token:response.data.token,
-              premium:response.data.type
             });
             navigate(-1);
           }
@@ -93,7 +82,17 @@ function LoginForm({register}) {
     const togglePasswordVisibility = () => {
       setIsPasswordVisible(!isPasswordVisible);
     };
-
+  
+  const handleGoogleClick = async () => {
+    try{
+      const response=await instance.get('/login/google');
+      console.log(response);
+      window.location.href = response.data.url;
+    }
+    catch(err){
+      console.log(err);
+    }
+  };
   
   return (
     <div className={styles.login}>
@@ -101,7 +100,7 @@ function LoginForm({register}) {
       <form action="">
         <h1>Welcome Back.</h1>
         <div className='OAuth'>
-        <button type='submit' className={styles.google}><FcGoogle className={styles.google_icon}/>{register==="register"?"Sign Up":"Login"} with Google</button>
+        <button type='submit' className={styles.google} onClick={handleGoogleClick}><FcGoogle className={styles.google_icon}/>{register==="register"?"Sign Up":"Login"} with Google</button>
         </div>
         <div >
           <div className={styles.Oth}>Sign {register==="register"?"up":"in"} with your email</div>
@@ -131,12 +130,10 @@ function LoginForm({register}) {
         {err===""?<></>:<div id='error'>{err}</div>}
 
 
-        {register!=="register" && <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Login</button>}
-        {register==="register" && <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Register</button>}
-        {!register==="register" && <div className="register-link">
-
-            <p>Don't have an account? <a href="#">Register</a></p>
-        </div>}
+        <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Login</button> 
+        <div className={styles.register_link}>
+            <p>Don't have an account? <a href="/signup">Register</a></p>
+        </div>
       </form>
     </div>
     </div>
