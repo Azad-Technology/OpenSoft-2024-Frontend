@@ -23,7 +23,7 @@
 .LeftbtnContainer{
     position: absolute;
     left: .5rem;
-    z-index: 3;
+    z-index: 30;
     transform: rotate(-90deg);
     
 }
@@ -31,12 +31,12 @@
     /* display: flex; */
     position: absolute;
     right: .5rem;
-    z-index: 3;
+    z-index: 30;
     transform: rotate(90deg);
 }
 
 .LeftbtnContainer, .RightbtnContainer{
-    z-index:20;
+
     display: flex;
     align-items: center;
     justify-content: center;
