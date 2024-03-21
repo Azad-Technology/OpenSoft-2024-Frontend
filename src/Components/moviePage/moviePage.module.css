@@ -173,6 +173,10 @@
     animation: slideLeft 1s ease forwards;
 }
 
+.button span{
+    display: flex;
+}
+
 .modalbutton{
     color: var(--tertiary-font-color);
     font-size: 1.5rem;
@@ -186,6 +190,11 @@
     cursor: pointer;
     background-color: rgb(78, 75, 75);
     transform: translateY(-8px);
+}
+
+.watchlisticon{
+    height: 2.5rem;
+    cursor: pointer;
 }
 .readMore{
     background-color: transparent;

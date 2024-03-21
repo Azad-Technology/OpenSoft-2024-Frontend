@@ -11,6 +11,8 @@ import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/l
 import './../../index.css';
 import { useStateValue } from "../../MyContexts/StateProvider";
 import { useNavigate } from "react-router-dom";
+import watchlistoff from './../../assets/watchlistoff.svg';
+import watchliston from './../../assets/watchliston.svg';
 // import './styles.css';
 
 function Modal({ onClose }) {
@@ -51,6 +53,8 @@ const MoviePage = () => {
     const [{ token }, dispatch] = useStateValue();
     const navigate = useNavigate();
 
+    const [isWatchList, setIsWatchList] = useState(false);
+
     const { id } = useParams();
     // const {com} = useParams();
     const [comments, setComments] = useState(null);
@@ -80,10 +84,10 @@ const MoviePage = () => {
         getCommentData();
     }, [id]);
 
-    useEffect(() => {
-        console.log(movie);
-        console.log(comments);
-    }, [movie]);
+    // useEffect(() => {
+    //     console.log(movie);
+    //     console.log(comments);
+    // }, [movie]);
 
 
 
@@ -218,6 +222,7 @@ const MoviePage = () => {
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
+                                {isWatchList ? <img src={watchliston}  className={styles.watchlisticon} /> : <img src={watchlistoff}  className={styles.watchlisticon} />}
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
                             </span>
                             {/* <span><button>B</button></span>
@@ -267,11 +272,11 @@ const MoviePage = () => {
                             <div className={styles.subHeading}>Countrie(s)</div>
                             <div className={styles.content}>{makeString(movie.countries)}</div>
                         </div>)}
-                        {showMoreInfo && (<div className={styles.cell}>
+                        {showMoreInfo && movie.tomatoes && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Tomatometer</div>
                             <div className={styles.content}><div>Viewer: {movie.tomatoes.viewer.rating}</div>{/*<div>Critic: {props.info.tomatometer.critic}</div>*/}</div>
                         </div>)}
-                        {showMoreInfo && (<div className={styles.cell}>
+                        {showMoreInfo && movie.production && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Production</div>
                             <div className={styles.content}>{movie?.tomatoes.production}</div>
                         </div>)}
