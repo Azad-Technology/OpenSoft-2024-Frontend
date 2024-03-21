@@ -4,9 +4,9 @@ import styles from './Watchlist.module.css';
 
 const Watchlist = ({ movies }) => {
   return (
-    <div className={styles.watchlistContainer}>
+    <div className={styles.watchlist_ontainer}>
       <h2>My Watchlist</h2>
-      <div className={styles.movieGrid}>
+      <div className={styles.movie_grid}>
         {movies.map((movie) => (
           <Card key={movie.id} movies={movie} />
         ))}
