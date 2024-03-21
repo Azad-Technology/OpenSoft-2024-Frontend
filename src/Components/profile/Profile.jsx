@@ -291,9 +291,15 @@ const Profile = () => {
       </div>
       <div className={styles.edit_button}>
         {isEditProfileActive ? (
+          <>
           <button onClick={handleConfirmChanges}>save changes</button>
+          <button onClick={handleSignout}>Signout</button>
+          </>
         ) : (
+          <>
           <button onClick={handleEditProfileClick}>Edit Profile</button>
+          <button onClick={handleSignout}>Signout</button>
+          </>
         )}
       </div>
       <div className={styles.favorites}>

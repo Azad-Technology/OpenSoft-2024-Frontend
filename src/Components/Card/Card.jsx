@@ -69,7 +69,7 @@ const Card = ({ movies }) => {
             ></i>
           </div>
           <img
-            src={movies.poster}
+            src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
             className={styles.cards_img}
             alt="Image Not Found"
           />
