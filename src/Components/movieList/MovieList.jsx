@@ -8,12 +8,9 @@ const MovieList = ({ movie }) => {
   
   return (
     <>
-
-        {movie?.map((m, i) => {
-          if(m.poster_path === null || m.poster_path === "" || m.poster_path === undefined) return;
-          return <Card movies={m} />
-        })}
-        
+      {movie.map((m, i) => {
+        return <Card movies={m} />
+      })}
     </>
   )
 }
