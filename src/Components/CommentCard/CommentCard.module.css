@@ -1,0 +1,101 @@
+
+@keyframes slide {
+  0% { transform: translateX(0); } 
+  100% { transform: translateX(-100%); } 
+}
+
+
+.commentCard {
+  /* display: flex; */
+  margin-top: 1.1rem;
+  flex: 0 0 auto;
+  scroll-snap-align: start; /* Snap to the start of each card */
+  align-items: center;
+  background: linear-gradient(to top,#1a1a1a,#000000);
+  /* background-color: rgba(0, 0, 0, 0.9); */
+  padding: 0.9375rem; /* Add padding */
+  border-radius: 0.5rem; /* Add border radius */
+  margin-right: 1.25rem; /* Add right margin to create space between cards */
+  margin-bottom: 1.25rem;
+  /* margin-left: 10rex; */
+  height: 10rem;
+  margin-left: 1.25rem;
+  min-width: 15rem;
+  width: 15rem;
+  
+}
+
+.commentCards::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for WebKit-based browsers */
+}
+
+.profilePic {
+  width: 2.8rem;
+  height: 2.8rem;
+  display:flex;
+  border-radius: 50%; 
+  margin-right: 0.625rem;
+  /* background-color: black; */
+}
+.cardTime{
+  font-size: 0.8rem;
+}
+
+.commentCards {
+  margin-top: 15rem;
+  display: flex;
+  width: 1000%;
+  background-color: #292929;
+  animation: slide 800s linear infinite;
+  animation-fill-mode: forwards; /* Keep final state after animation */
+
+  
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+}
+.commentCards::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers */
+}
+
+.commentCard:hover {
+  transform: scale(1.05); /* Apply scale transformation on hover */
+}
+.title{
+  display:flex;
+}
+
+.commentDetails {
+  margin-top: 2rex;
+  margin-left: 1.25rex;
+  flex: 1;
+}
+
+.username {
+  margin: 0;
+  margin-top: 1rex;
+  margin-left: 1rex;
+  font-size: 1.125rem;
+}
+
+.cardComment {
+  margin: 0.3125rem 0;
+}
+
+.cardMovie {
+  color: rgb(44, 233, 117); /* Initial color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.5s ease; /* Smooth transition for color change */
+  margin-top: 5rem;
+  /* Optionally, add some styling to make it look beautiful */
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cardMovie:hover {
+  color: rgb(255, 87, 34); /* Change color on hover */
+}
+
+.commentCards:not(:last-child) {
+  margin-top: 0; /* Adjust spacing between cards */
+}
