@@ -5,11 +5,11 @@ import { useStateValue } from '../../MyContexts/StateProvider';
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
-import { useState } from 'react';
+import { useState, useNavigate } from 'react';
 
 function SignUp() {
     const [{token,premium},dispatch]=useStateValue();
-    const navigate=useNavigate();
+    const navigate=useNavigate;
     const [isPasswordVisible1, setisPasswordVisible1] = useState(false);
     const [isPasswordVisible2, setisPasswordVisible2] = useState(false);
     const [err, setErrors] = useState("")
@@ -56,6 +56,16 @@ function SignUp() {
             console.log(err);
           }
   };
+  const handleGoogleClick = async () => {
+    try{
+      const response=await instance.get('/login/google');
+      console.log(response);
+      window.location.href = response.data.url;
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
 
     const togglePasswordVisibility1 = () => {
       setisPasswordVisible1(!isPasswordVisible1);
@@ -71,7 +81,7 @@ function SignUp() {
         <h1>Sign Up</h1>
 
         <div className={styles.OAuth}>
-        <button type='submit' className={styles.google}><FcGoogle style={{width: '1.25rem', height: '1.25rem'}} className={styles.googleIcon}/>Sign up with Google</button>
+        <button type='submit' className={styles.google} onClick={handleGoogleClick}><FcGoogle style={{width: '1.25rem', height: '1.25rem'}} className={styles.googleIcon}/>Sign up with Google</button>
         </div>
 
         <hr className={styles.Or}/>
