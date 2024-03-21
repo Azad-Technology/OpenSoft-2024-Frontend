@@ -45,7 +45,6 @@ function LoginForm({register}) {
             dispatch({
               type:'SET_TOKEN',
               token:response.data.token,
-              premium:response.data.type
             });
             navigate(-1);
           }
