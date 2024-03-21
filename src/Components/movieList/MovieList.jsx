@@ -9,25 +9,12 @@ const MovieList = ({ movie }) => {
   return (
     <>
 
-        {movie?.map((m, i) => (
-          
-          <Card movies={m} index={i} />
-        ))}
-        {/* <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} />
-        <Card movies={movie[0]} /> */}
+        {movie?.map((m, i) => {
+          if(m.poster_path === null || m.poster_path === "" || m.poster_path === undefined) return;
+          return <Card key={i} movies={m} />
+        
+        })}
+        
       </>
   )
 }
