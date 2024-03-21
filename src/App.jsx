@@ -24,6 +24,7 @@ import Profile from './Components/profile/Profile.jsx'
 import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
 import  SignUp from "./Components/SignUp/SignUp.jsx"
+import { Watchlists } from './Components/Watchlists/Watchlists.jsx'
 
 const App = () => {
 
@@ -138,7 +139,9 @@ const App = () => {
               <SignUp />
             </>
           }/>
-
+        <Route path='/watchlist' element={
+          <Watchlists />
+        }/>
         <Route path="*" element={
           <NotFound/>
         }/>
