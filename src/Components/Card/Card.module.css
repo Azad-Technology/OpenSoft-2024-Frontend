@@ -1,5 +1,4 @@
 .cards {
-  /* box-sizing: border-box; */
   position: relative;
   width: 12%;
   height:20%;
@@ -16,11 +15,11 @@
 
 .cards:hover {
   /* position: absolute; */
-  z-index: 1000;
+  z-index: 10;
   transform: scale(1.4, 1.32);
 }
 .cards .first:hover{
-  z-index: 1000;
+  z-index: 10;
   transform: scale(1.4, 1.32);
 }
 .cards__overlay {
@@ -91,7 +90,13 @@
   border-radius: 0; 
   transition: 0.4s ease-in-out;
 }
-
+.icon{
+  position: absolute;
+  top: 2%;
+  left:5%;
+  z-index: 3;
+  float: right;
+}
 @media screen and (max-width: 1024px) {
   .cards{
     flex-basis: 15%;
