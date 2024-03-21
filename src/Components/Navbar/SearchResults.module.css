@@ -64,6 +64,12 @@
     margin:5%;
 }
 
+.searchRes_detail{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
 @media screen and (max-width:600px){
     .searchResults{
         width:88%;
