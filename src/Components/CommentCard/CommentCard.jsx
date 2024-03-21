@@ -42,12 +42,7 @@ function timeSince(date) {
 function CommentCard({ username, profilePic, comment, movie, link, timestamp }) {
   const commentTime = new Date(timestamp);
   const timeAgo = timeSince(commentTime);
-  
-  // const isValidProfilePic = profilePic && typeof profilePic === 'string' && profilePic.trim() !== '';
-  // const defaultProfilePic = 'https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg';
 
-  // const updatedProfilePic = isValidProfilePic ? profilePic : (defaultProfilePic && typeof defaultProfilePic === 'string' && defaultProfilePic.trim() !== '') ? defaultProfilePic : 'fallback.jpg';
-  
 
   return (
     <div className={styles.commentCard}>

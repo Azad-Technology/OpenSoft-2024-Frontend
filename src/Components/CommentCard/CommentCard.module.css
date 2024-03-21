@@ -83,12 +83,12 @@
 
 .cardMovie {
   color: rgb(44, 233, 117); /* Initial color */
-  text-decoration: none; /* Remove underline */
+   text-decoration: underline;
   transition: color 0.5s ease; /* Smooth transition for color change */
   margin-top: 5rem;
   /* Optionally, add some styling to make it look beautiful */
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
