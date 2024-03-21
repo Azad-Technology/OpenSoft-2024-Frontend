@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Card.module.css";
+import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 
 const Card = ({ movies }) => {
