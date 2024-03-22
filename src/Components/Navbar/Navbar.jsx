@@ -4,6 +4,7 @@ import { Search } from './Search';
 import { MobileMenu } from './MobileMenu.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useStateValue } from '../../MyContexts/StateProvider.jsx';
+import menuoptions from './Menuoptions.jsx';
 
 
 export const Navbar = ({movies}) => {
@@ -18,178 +19,6 @@ export const Navbar = ({movies}) => {
         "TV Shows":false,
         "Top IMDB":false
     });
-    
-    const menuoptions = [
-        {
-            name:"Genre",
-            link:"#",
-            dropdown:[
-                {
-                    name:"Action",
-                    link:"#",
-                    genreID:"action"
-                },
-                {
-                    name:"Comedy",
-                    link:"#",
-                    genreID:"comedy"
-                },
-                {
-                    name:"Horror",
-                    link:"#",
-                    genreID:"horror"
-                },
-                {
-                    name:"Romance",
-                    link:"#",
-                    genreID:"romance"
-                },
-                {
-                    name:"Thriller",
-                    link:"#",
-                    genreID:"thriller"
-                },
-                {
-                    name:"Sci-Fi",
-                    link:"#",
-                    genreID:"scifi"
-                }
-                ,
-                {
-                    name:"Drama",
-                    link:"#",
-                    genreID:"drama"
-                },
-                {
-                    name:"Mystery",
-                    link:"#",
-                    genreID:"mystery"
-                },
-                {
-                    name:"Crime",
-                    link:"#",
-                    genreID:"crime"
-                },
-                {
-                    name:"Animation",
-                    link:"#",
-                    genreID:"animation"
-                },
-                {
-                    name:"Adventure",
-                    link:"#",
-                    genreID:"adventure"
-                },
-                {
-                    name:"Fantasy",
-                    link:"#",
-                    genreID:"fantasy"
-                },
-                {
-                    name:"Family",
-                    link:"#",
-                    genreID:"family"
-                },
-                {
-                    name:"Biography",
-                    link:"#",
-                    genreID:"biography"
-                },
-                {
-                    name:"History",
-                    link:"#",
-                    genreID:"history"
-                },
-                {
-                    name:"War",
-                    link:"#",
-                    genreID:"war"
-                },
-                {
-                    name:"Documentary",
-                    link:"#",
-                    genreID:"documentary"
-                },
-                {
-                    name:"Music",
-                    link:"#",
-                    genreID:"music"
-                },
-                {
-                    name:"Sport",
-                    link:"#",
-                    genreID:"sport"
-                },
-                {
-                    name:"Western",
-                    link:"#",
-                    genreID:"western"
-                },
-                {
-                    name:"Short",
-                    link:"#",
-                    genreID:"short"
-                },
-                {
-                    name:"Film-Noir",
-                    link:"#",
-                    genreID:"filmnoir"
-                },
-                {
-                    name:"Talk-Show",
-                    link:"#",
-                    genreID:"talkshow"
-                },
-                {
-                    name:"News",
-                    link:"#",
-                    genreID:"news"
-                }
-            ]
-        },
-        {
-            name:"Country",
-            link:"#",
-            dropdown:[
-                {
-                    name:"India",
-                    link:"#"
-                },
-                {
-                    name:"USA",
-                    link:"#"
-                },
-                {
-                    name:"UK",
-                    link:"#"
-                },
-                {
-                    name:"Australia",
-                    link:"#"
-                },
-                {
-                    name:"China",
-                    link:"#"
-                },
-            ]
-        },
-        {
-            name:"Movies",
-            link:"#"
-        },
-        {
-            name:"TV Shows",
-            link:"#"
-        },
-        {
-            name:"Top IMDB",
-            link:"#"
-        }, 
-        {
-            name:"Pricing",
-            link:"/pricing"
-        }
-    ]
 
     const handleToggleDropdown=(e)=>{
         const name=e.target.innerText;
@@ -264,6 +93,7 @@ export const Navbar = ({movies}) => {
 
     const handleGenreClick=(e,genreID)=>{
         e.preventDefault();
+        console.log(genreID);
         const genreSection=document.getElementById(genreID);
         if(genreSection){
             const windowHeight = window.innerHeight;
@@ -289,9 +119,27 @@ export const Navbar = ({movies}) => {
                                 <div className={styles.desktopLinks} key={index}>
                                     <a onMouseOver={handleToggleDropdown} className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
                                     {showDropdown[menuoption.name] && menuoption.dropdown && <div ref={dropdownRef} className={styles.dropdown}>
-                                        {menuoption.dropdown?.map((dropdown,index)=>(
-                                            <a onClick={(e)=>handleGenreClick(e,dropdown?.genreID)} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
-                                        ))}
+                                            <div className={styles.dropdown__column}>
+                                                {menuoption.dropdown.slice(0,9).map((dropdown,index)=>{
+                                                    return(
+                                                        <a onClick={(e)=>handleGenreClick(e,dropdown.genreID)} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    )
+                                                })}
+                                            </div>
+                                            <div className={styles.dropdown__column}>
+                                                {menuoption.dropdown?.slice(9,18).map((dropdown,index)=>{
+                                                    return(
+                                                        <a onClick={(e)=>handleGenreClick(e,dropdown.genreID)} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    )
+                                                })}
+                                            </div>
+                                            <div className={styles.dropdown__column}>
+                                                {menuoption.dropdown?.slice(18).map((dropdown,index)=>{
+                                                    return(
+                                                        <a onClick={(e)=>handleGenreClick(e,dropdown.genreID)} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    )
+                                                })}
+                                            </div>
                                     </div>}
                                 </div>
                             ))}

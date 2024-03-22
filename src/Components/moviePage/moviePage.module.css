@@ -15,6 +15,12 @@
 /* hero small screen */
 
 /* animations */
+
+.loaderIcon{
+    height: 5vh;
+    aspect-ratio: 1/1;
+}
+
 @keyframes slideRight{
     from{
         opacity: 0;
@@ -80,7 +86,7 @@
 }
 
 .heroContainer::before{
-    content: "";
+    /* content: ""; */
     position: absolute;
     top: 0;
     bottom: 0;
@@ -171,28 +177,19 @@
     font-weight: 400;
     text-align: left;
     animation: slideLeft 1s ease forwards;
-    
 }
 
-
-
-.heroContainer .button{
+.button span{
     display: flex;
-    gap:1rem;
-    margin-left: 0rem;
-    /* margin-top: 1.5rem; */
 }
 
 .modalbutton{
-    /* padding: .5rem; */
     color: var(--tertiary-font-color);
     font-size: 1.5rem;
     height: 2.5rem;
     padding: 0.5rem 0.7rem;
-    /* width: 2.5rem; */
-    /* border-radius: 50%; */
-    border-radius: 10rem;
-    /* border: none; */
+    border: none;
+    border-radius: 5rem;
     background-color: rgba(78, 75, 75, 0.633);
     transition: all .3s ease;
 }
@@ -200,6 +197,12 @@
     cursor: pointer;
     background-color: rgb(78, 75, 75);
     transform: translateY(-8px);
+}
+
+.watchlisticon{
+    height: 2.5rem;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
 }
 .readMore{
     background-color: transparent;
@@ -209,18 +212,134 @@
     margin-left: .3rem;
 }
 
+/* Watchlist Modal Styles */
+.watchlist_modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .watchlist_modal {
+    background-color: rgb(21, 15, 15);
+    border-radius: 0.3rem;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.3);
+    max-width: 31.25rem;
+    width: 90%;
+    position: relative;
+  }
+  
+  .watchlist_modal_content {
+    padding: 1.25rem;
+  }
+  
+  .watchlist_modal_heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+  }
+  
+  .watchlist_modal_section {
+    border-bottom: 2rem;
+    border-color: black;
+    margin-bottom: 1.25rem;
+  }
+
+  .watchlist_error{
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .watchlist_create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .watchlist_divider{
+    height: 0;
+    width: 100%;
+    border: 1px solid #93E1D8;
+    margin-bottom: 2rem;
+  }
+  
+  .watchlist_modal_section_heading {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 0.625rem;
+  }
+  
+  .watchlist_modal_input {
+    width: 100%;
+    padding: 0.625rem;
+    border: 0.0625rem solid #C0180C;
+    background-color: rgb(50, 1, 1);
+    color: white;
+    border-radius: 0.25rem;
+  }
+  
+  .watchlist_modal_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5rem;
+    max-height: 15rem;
+    overflow-y: scroll;
+  }
+  .watchlist_modal_buttons::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .watchlist_modal_button {
+    background-color: #F24236;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.625rem 1.25rem;
+    margin: 0.3125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .watchlist_modal_button:hover {
+    background-color: #C0180C;
+  }
+  
+  .watchlist_close_button {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    background-color: transparent;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .watchlist_close_button:hover {
+    color: #333;
+  }
+
 /* Modal Overlay */
 .modal_overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     z-index: 200;
-    /* margin-top: 6%; */
-  }
+}
   
   /* Modal Container */
   .modal {
@@ -228,12 +347,12 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: relative;
-    width: 99%;
+    width: 100%;
     height: 100%;
     display: flex;
     /* justify-content: center; */
     align-items: center;
-    /* margin-top: 6%; */
+    justify-content: center;
   }
   
   /* Video Container */
@@ -243,7 +362,6 @@
     position: relative;
     height: 100%;
     aspect-ratio: 4/3;
-    margin-top: 9%;
   }
   
   .video {
@@ -252,8 +370,10 @@
     left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
   }
-  
+
   /* Close Button */
   .close_button {
     position: absolute;
@@ -266,21 +386,12 @@
     cursor: pointer;
   }
   
-    /* .vds-radio-hint{
-        margin-left: auto;
+@media screen and (max-width: 710px){
+    .video_container{
+        width: 100%;
+        aspect-ratio: 4/3;
     }
-    .vds-menu-button-hint{
-        margin-left: auto;
-    }
-    .vds-settings-menu-items{
-        margin: auto;
-    } 
-    .vds-menu-items{
-        margin: auto;
-    }
-    .vds-slider-chapter{
-        margin-top: 2%;
-    } */
+}
 
 @media screen and (max-width:840px){
     .heroContainer .description{

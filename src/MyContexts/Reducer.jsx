@@ -1,39 +1,50 @@
 export const initialState={
     token:null,
-    premium:false
+    user:{
+        name:'',
+        email:'',
+        role:'',
+        subtype:'', 
+        fav:[],
+        watchlist:[]
+    }
 }
 
 const reducer = (state,action) => {
     switch(action.type){
         case 'INITIALIZE_TOKEN':
             const tokenFromStorage=localStorage.getItem('token');
-            const premiumFromStorage=localStorage.getItem('premium');
             return {
                 token:tokenFromStorage,
-                premium:premiumFromStorage
             }
-        case 'SET_TOKEN':
-            if(localStorage.getItem('token')==null || localStorage.getItem('token')===undefined || localStorage.getItem('token')==='undefined' || localStorage.getItem('token')==='null'){
-                localStorage.setItem('token',action.token);
-                localStorage.setItem('premium',action.premium);
-            }
+        case 'SET_USER':
             return {
-                token:action.token,
-                premium:action.premium
+                ...state,
+                user:action.user
             }
         case 'REMOVE_TOKEN':
             localStorage.removeItem('token');
-            localStorage.removeItem('premium');
             return {
                 token:null,
-                premium:false
+                user:{
+                    name:'',
+                    email:'',
+                    role:'',
+                    subtype:''
+                }
             }
-        case 'SET_PREMIUM':
-            localStorage.setItem('premium',action.premium);
+        case 'SET_TOKEN':
+            localStorage.setItem('token',action.token);
             return {
-                ...state,
-                premium:action.premium
+                token:action.token,
+                user:{
+                    name:'',
+                    email:'',
+                    role:'',
+                    subtype:''
+                }
             }
+
         default:
             return state;
     }

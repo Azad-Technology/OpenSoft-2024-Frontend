@@ -1,0 +1,93 @@
+.card{
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 10rem;
+    width: 15rem;
+    border-radius: 1rem;
+    background-color: #FF340A;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1rem, 0px);
+}
+
+.slider__movies{
+    box-sizing: border-box;
+    gap:2rem;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: scroll;
+    padding: 1rem 10rem 1rem 2rem;
+    margin: 0 -20px 0px 0px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 100vw;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+.container{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.LeftbtnContainer{
+    position: absolute;
+    left: .5rem;
+    z-index: 30;
+    transform: rotate(-90deg);
+    
+}
+.RightbtnContainer{
+    /* display: flex; */
+    position: absolute;
+    right: .5rem;
+    z-index: 30;
+    transform: rotate(90deg);
+}
+
+.LeftbtnContainer, .RightbtnContainer{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+.LeftbtnContainer:hover{
+    transform: scale(1.2) rotate(-90deg) translateY(5px);
+}
+.RightbtnContainer:hover{
+    transform: scale(1.2) rotate(90deg) translateY(5px);
+}
+
+.LeftbtnContainer button, .RightbtnContainer button{
+    /* background-color: rgba(130, 118, 118, 0.445); */
+    background-color: transparent;
+    height: 2.3rem;
+    width: 2.3rem;
+    z-index: 3;
+    border-radius: 50%;
+    border: none;
+    transition: all .3 ease;
+}
+
+.LeftbtnContainer button:hover, .RightbtnContainer button:hover{
+    background-color: rgba(130, 118, 118, 0.599);
+}
+
+.slider{
+    padding-right: 2rem;
+}
+.slider__movies::-webkit-scrollbar{
+    display: none;
+}
+.sliders{
+    margin-right: 3rem;
+}

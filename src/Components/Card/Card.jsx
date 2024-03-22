@@ -1,55 +1,55 @@
-import { useEffect } from 'react';
-import styles from './Card.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import styles from "./Card.module.css";
+import imdbIcon from '../../assets/imdb-icon.svg';
+import { useNavigate } from "react-router-dom";
+import Loader from '../Loader/Loader.jsx'
 
 const Card = ({ movies }) => {
-  
-  const currDate = new Date();
-  // if(movies != null) console.log(movies.imdb.rating);
-  const onMove = (e) => {
-    return e;
-  };
-
-  const unHover = () => {
-    const particularCard = document.getElementById(`${movies._id}`);
-    particularCard.style.setProperty('transform-origin', 'top');
-  };
-
-  const onHover = (onMove) => {
-    let h = parseFloat(window.innerWidth);
-    let val = (onMove.clientX / h) * 100;
-    const particularCard = document.getElementById(`${movies._id}`);
-    const thatStyle = window.getComputedStyle(particularCard);
-    let x = (parseFloat(thatStyle.width) / h) * 100;
-    if (x + 8 >= val) {
-      particularCard.style.setProperty('transform-origin', 'top left');
-    } else if (100 - val <= x + 8.9) {
-      particularCard.style.setProperty('transform-origin', 'top right');
+  // for dummy purpose we take movies?.like=false;
+  const [like,setlike] = useState(false);
+  const [value, setvalue] = useState("-o");
+  const openHeart = (event) => {
+    event.stopPropagation();
+    const heart = document.getElementById("heartIcon");
+    if (value === "" && like) {
+      setvalue("-o");setlike(false);
+      heart.style.color = "white";
     } else {
-      particularCard.style.setProperty('transform-origin', 'top');
+      heart.style.color = "red";
+      setvalue("");setlike(true);
     }
-    console.log(thatStyle.width, x, h, val);
   };
 
   const navigate = useNavigate();
 
   return (
     <>
-      <div onClick={()=>navigate(`/movie/${movies._id}`)} className={styles.cards} id={movies._id} onMouseOver={onHover} onMouseOut={unHover} onMouseMove={onMove}>
+      {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
+      <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''}>
         <div className={styles.cards__overlay}>
-          <div className={styles.card__title}>{movies.title}</div>
+          <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
-            {movies.year}
-            <span className={styles.card__rating}>{movies.imdb.rating}
-            </span>
+            {movies?.year}
+            <span className={styles.card__rating}>{movies?.imdb.rating}</span>
           </div>
-          <div className={styles.card__description}>{movies.plot}</div>
+          <div className={styles.card__description}>{movies?.plot}</div>
         </div>
-        <img src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`} className={styles.cards_img} alt="Image Not Found" />
+        <div className={styles.icons}>
+          <div className={styles.icon} id="heartIcon">
+            <i
+              class={`fa fa-heart${value}`}
+              aria-hidden="true"
+              onClick={openHeart}
+            ></i>
+          </div>
+          {movies && <img
+            src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
+            className={styles.cards_img}
+          />}
+        </div>
       </div>
     </>
   );
 };
 
 export default Card;
-

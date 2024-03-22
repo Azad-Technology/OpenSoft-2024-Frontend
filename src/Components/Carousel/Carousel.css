@@ -1,6 +1,7 @@
 .carousel{
     width: 100%;
     height: 100vh;
+    margin-bottom: 3rem;
     position: relative;
     z-index: 0;
 }
@@ -36,6 +37,7 @@
 .carousel__title{
     font-size: 2.25rem;
     margin-bottom: 3%;
+    color: white;
 }
 
 .carousel__content{
@@ -87,7 +89,7 @@
     display: block;
     margin: 0 0.5rem 0 0.5rem;
     object-fit:cover;
-    position: relative;
+    position: relative; 
     width: 33%;
     height: 72%;
     border-radius: 1rem;

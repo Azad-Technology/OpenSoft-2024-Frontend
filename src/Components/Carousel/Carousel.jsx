@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Carousel.css'
 import { movies } from './data'
+import { useNavigate } from 'react-router';
 
 export const Carousel = () => {
   const [currIndex, setCurrIndex] = useState(0);
+  const navigate = useNavigate();
   const slideRight = () => {
     setCurrIndex((currIndex + 1) % movies.length);
   }
@@ -42,7 +44,7 @@ export const Carousel = () => {
                   })}
                 </div>
                 <div className='carousel__description'>{movie.description}</div>
-                <button className='carousel__button'>Watch Now!</button>
+                <button className='carousel__button' onClick={() => (navigate("movie/" + movie.id))}>Watch Now!</button>
               </div>
             </div>
           )
