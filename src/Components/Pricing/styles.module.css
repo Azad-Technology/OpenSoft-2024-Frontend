@@ -1,5 +1,5 @@
 .container{
-  margin-top: 6%;
+  /* margin-top: 0; */
   z-index: -1;
 }
 .heading {
@@ -185,7 +185,7 @@
 
   @media screen and (max-width: 1300px) {
     .container{
-      padding-top: 10%;
+      padding-top: 4rem;
     }
     .heading {
       font-size: 3rem;
@@ -209,7 +209,7 @@
 
 @media screen and (max-width: 768px) {
   .container{
-    padding-top: 20%;
+    padding-top: 6rem;
   }
   .heading {
     font-size: 3rem;
@@ -235,7 +235,7 @@
 
 @media screen and (max-width: 450px) {
   .container{
-    margin-top: 10%;
+    margin-top: 0rem;
   }
   .heading {
     font-size: 2.5rem;

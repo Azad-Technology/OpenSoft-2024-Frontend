@@ -18,6 +18,7 @@
   height:15rem;
   max-height: 20%;
   min-width: 10rem;
+  
   /* padding: 1rem; */
   margin: 1rem;;
   margin-top: 2rem;
@@ -111,6 +112,15 @@
   left:5%;
   z-index: 3;
 }
+.premium{
+  position: absolute;
+  top: 2%;
+  right:5%;
+  z-index: 3;
+  float: right;
+  color: gold;
+}
+
 .numberIcons {
   position: absolute;
   top: 10%;

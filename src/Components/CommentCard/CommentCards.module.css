@@ -1,3 +1,24 @@
+.skeleton__cards{
+  opacity:0.7;
+  animation: skeletonLoader 1.5s ease-in-out infinite alternate;
+  margin-top: 1.1rem;
+  border-radius: 0.5rem; 
+  margin-right: 1.25rem; 
+  margin-bottom: 1.25rem; 
+  height: 10rem;
+  margin-left: 1.25rem;
+  min-width: 15rem;
+  width: 15rem;
+}
+
+@keyframes skeletonLoader {
+  0% {
+    background-color:hsl(0, 0%, 30%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
 
 @keyframes slide {
   0% { transform: translateX(0); } 
@@ -40,9 +61,14 @@
 .cardTime{
   font-size: 0.8rem;
 }
+.sliderwrapper{
+  overflow-x: clip;
+  background-color: #292929;
+  margin:1rem 1rem 1rem 3rem ;
+}
 
 .commentCards {
-  margin-top: 15rem;
+
   display: flex;
   width: 1000%;
   background-color: #292929;
@@ -50,8 +76,7 @@
   animation-fill-mode: forwards; /* Keep final state after animation */
 
   
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  /* Enable snap scrolling */
 }
 .commentCards::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Webkit browsers */
@@ -98,4 +123,19 @@
 
 .commentCards:not(:last-child) {
   margin-top: 0; /* Adjust spacing between cards */
+}
+
+
+
+
+/* Smaller Phones */
+@media (max-width: 480px) {
+  .commentCard { 
+      height: auto; /* Allow height to adjust to content */
+      padding: 0.75rem; /* Reduce padding */
+  }
+
+  .username {
+      font-size: 1rem; /* Reduce username font size */
+  }
 }

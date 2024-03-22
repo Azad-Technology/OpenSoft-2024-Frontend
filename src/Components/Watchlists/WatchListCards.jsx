@@ -4,7 +4,7 @@ import instance from '../../axios';
 import { useStateValue } from '../../MyContexts/StateProvider';
 import { useNavigate } from 'react-router';
 
-export const WatchListCards = ({id}) => {
+export const WatchListCards = ({name, id}) => {
     const [token, dispatch] = useStateValue();
     const navigate = useNavigate();
     let x=Math.round(0xffffff * Math.random()).toString(16);
@@ -13,24 +13,12 @@ export const WatchListCards = ({id}) => {
     let z1 = z.substring(0,y);
     let rcolor= '#' + z1 + x;
 
-    const [watchlist, setWatchlist] = useState(null);
-    useEffect(()=>{
-        const getWatchlist = async () => {
-            const res = await instance.get('/watchlist/'+id, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-            console.log(res.data);
-            setWatchlist(res.data);
-        }
-        getWatchlist();
-    }, [])
+
     // console.log(rcolor);
   return (
-    <div className={styles.card} style={{ backgroundColor: rcolor }} onClick={() => (navigate('/watchlist/' + watchlist?._id))}>
+    <div className={styles.card} style={{ backgroundColor: rcolor }} onClick={() => (navigate('/watchlist/' + id))}>
         <span>
-            {watchlist?.name}
+            {name}
         </span>
     </div>
   )

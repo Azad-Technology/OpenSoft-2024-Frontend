@@ -69,6 +69,10 @@
     justify-content: flex-start;
     gap: 0.5rem;
 }
+.premium{
+    color: gold;
+    margin-left:.2rem;
+}
 
 @media screen and (max-width:600px){
     .searchResults{

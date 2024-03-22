@@ -8,6 +8,10 @@ const Card = ({ movies }) => {
   // for dummy purpose we take movies?.like=false;
   const [like,setlike] = useState(false);
   const [value, setvalue] = useState("-o");
+
+  //manually marking movie premium
+  const [premium, setPremium] = useState(movies?.imdb.rating>=8);
+
   const openHeart = (event) => {
     event.stopPropagation();
     const heart = document.getElementById("heartIcon");
@@ -41,6 +45,14 @@ const Card = ({ movies }) => {
               aria-hidden="true"
               onClick={openHeart}
             ></i>
+          </div>
+          
+          <div className={styles.premium}>
+            {movies && premium && <i
+              class={`fa fa-star`}
+              aria-hidden="true"
+              onClick={openHeart}
+            ></i>}
           </div>
           {movies && <img
             src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
