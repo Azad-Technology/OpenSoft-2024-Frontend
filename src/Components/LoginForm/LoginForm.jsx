@@ -114,17 +114,18 @@ function LoginForm({register}) {
             
         </div>
         <div className={styles.input_box}>
-        <input
-        type={isPasswordVisible ? 'text' : 'password'}
-        id="password"
-        name="password"
-        placeholder='Password'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
+          <input
+          type={isPasswordVisible ? 'text' : 'password'}
+          id="password"
+          name="password"
+          placeholder='Password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+          <div onClick={togglePasswordVisibility} style={{cursor: 'pointer'}} className={styles.eyeIcon}>{isPasswordVisible ? <FaEye className={styles.icon} />:<FaEyeSlash className={styles.icon}/>}</div>
+        
       
-        <div onClick={togglePasswordVisibility} style={{cursor: 'pointer'}}>{isPasswordVisible ? <FaEye className={styles.icon} />:<FaEyeSlash className={styles.icon}/>}</div>
         </div>
         
         {err===""?<></>:<div id='error'>{err}</div>}
