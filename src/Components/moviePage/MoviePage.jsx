@@ -39,7 +39,7 @@ function Modal({ onClose }) {
 }
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
-function WatchListModal({ onClose, movieID, token }) {
+const WatchListModal = ({ onClose, movieID, token }) => {
     const [watchlistName, setWatchListName] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const createWatchList = async () => {

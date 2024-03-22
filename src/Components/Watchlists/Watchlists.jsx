@@ -6,13 +6,14 @@ import { useStateValue } from '../../MyContexts/StateProvider';
 
 export const Watchlists = () => {
     const [movies, setMovies] = useState(null);
-    const [token, dispatch] = useStateValue();
+    const [{token, user}, dispatch] = useStateValue();
     const {id} = useParams();
     useEffect(() => {
         try {
             const getWatchlist = async () => {
-                const res = await instance.get('/watchlist/'+id, {
-                    headers: {
+                console.log(token);
+                const res = await instance.get('/watchlist/' + id, {
+                    headers:{
                         Authorization: `Bearer ${token}`
                     }
                 });
@@ -26,7 +27,7 @@ export const Watchlists = () => {
     }, []);
   return (
     <>
-        {movies ? <Watchlist movies={movies.movies} id={movies._id} name={movies.name} /> : <h1>Loading...</h1>}
+        {movies ? <Watchlist movies={movies.movies} id={movies._id} name="My WatchList #1" /> : <h1>Loading...</h1>}
     </>
   )
 }

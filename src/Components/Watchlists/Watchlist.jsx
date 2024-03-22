@@ -4,10 +4,12 @@ import MovieList from '../movieList/MovieList.jsx';
 import stockIcon from '../../assets/stock_movie_icon.jpg';
 import { useStateValue } from '../../MyContexts/StateProvider.jsx';
 import { useNavigate } from 'react-router';
+import MovieModalList from '../GenreModal/MovieModalList.jsx';
 
 const Watchlist = ({ movies, name, id }) => {
     const [{token, user}, dispatch] = useStateValue();
     // console.log(user);
+    // console.log(movies);
     const navigate = useNavigate();
 
   return (
@@ -25,13 +27,13 @@ const Watchlist = ({ movies, name, id }) => {
         <p>Watchlist</p>
         <h2>{name}</h2>
         <span>
-          <strong>{user?.name}</strong> {movies.length} Movies{" "}
+          <strong>{user?.name}</strong> {movies?.length} Movies{" "}
         </span>
       </div>
     </div>
   </div>
   <div className={styles.movie_grid}>
-    <MovieList movie={movies} />
+    <MovieModalList movie={movies} />
   </div>
 </div>
   );
