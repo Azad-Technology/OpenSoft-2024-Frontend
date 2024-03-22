@@ -39,12 +39,76 @@ function Modal({ onClose }) {
 }
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
+function WatchListModal({ onClose, movieID, token }) {
+    const [watchlistName, setWatchListName] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+    const createWatchList = async () => {
+        console.log(watchlistName)
+        if(watchlistName === ''){
+            setErrorMsg('Please enter a name');
+            return;
+        }
+        setErrorMsg('');
+        try{
+            const response = await instance.post(`/add_watchlist/${watchlistName}`, {
+                headers:{
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            console.log(response);
+
+        } catch(err){
+            console.log(err);
+        }
+    }
+
+    return (
+    <div className={styles.watchlist_modal_overlay}>
+        <div className={styles.watchlist_modal}>
+            <div className={styles.watchlist_modal_content}>
+            <div className={styles.watchlist_modal_heading}>Add to Watchlist</div>
+
+            <div className={styles.watchlist_modal_section}>
+                <div className={styles.watchlist_modal_section_heading}>Create New Watchlist</div>
+                <div className={styles.watchlist_create}>
+                <input
+                type="text"
+                placeholder="Enter watchlist name"
+                className={styles.watchlist_modal_input}
+                value={watchlistName}
+                onChange={(e) => setWatchListName(e.target.value)}
+                />
+                <button className={styles.watchlist_modal_button} onClick={createWatchList}>Create</button>
+                </div>
+                {errorMsg && <div className={styles.watchlist_error}>{errorMsg}</div>}
+            </div>
+            <div className={styles.watchlist_divider}></div>
+            <div className={styles.watchlist_modal_section}>
+                <div className={styles.watchlist_modal_section_heading}>Add to Existing</div>
+                <div className={styles.watchlist_modal_buttons}>
+                <button className={styles.watchlist_modal_button} >Watchlist 1</button>
+                <button className={styles.watchlist_modal_button}>Watchlist 2</button>
+                <button className={styles.watchlist_modal_button}>Watchlist 3</button>
+                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
+                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
+                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
+                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
+                </div>
+            </div>
+            </div>
+            <button className={styles.watchlist_close_button} onClick={onClose}>X</button>
+        </div>
+    </div>
+    );
+}
+
 const MoviePage = () => {
 
     const [{ token }, dispatch] = useStateValue();
     const navigate = useNavigate();
 
     const [isWatchList, setIsWatchList] = useState(false);
+    const [showWatchListModal, setShowWatchListModal] = useState(false);
 
     const { id } = useParams();
     // const {com} = useParams();
@@ -145,30 +209,42 @@ const MoviePage = () => {
         const elem = document.getElementById("showMoreInfo");
         if (showMoreInfo) {
             setShowMoreInfo(false);
-
+            
             elem.style.transform = 'rotate(180deg)';
         } else {
             setShowMoreInfo(true);
             elem.style.transform = 'rotate(0deg)';
         }
     }
-
-
+    
+    
     //     // event listeners
-
+    
     //     window.addEventListener("resize", screenSizeChanged);
     //     window.addEventListener("load", screenSizeChanged);
-
+    
     window.addEventListener("resize", () => {
         setSmallScreen(window.innerWidth <= 550);
     })
     window.addEventListener('load', () => {
         setSmallScreen(window.innerWidth <= 550);
     })
-
+    
     const handleClick = () => {
         if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
             setShowModal(true);
+        }
+        else {
+            navigate('/login');
+        }
+    }
+    const toggleWatchlist = async () => {
+        if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
+            if (isWatchList) {
+                setIsWatchList(false);
+            } else{
+                setIsWatchList(true);
+            }
         }
         else {
             navigate('/login');
@@ -179,10 +255,10 @@ const MoviePage = () => {
     return (
         <>
             <div className={styles.font}>
-                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})` }}>
+                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` }}>
                     <div className={styles.title}>{movie?.title}</div>
                 </div>
-                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
+                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
                     <div className={styles.content}>
                         <div className={styles.title}>{movie?.title}</div>
                         <div className={styles.description} id="description">{movie?.plot}{!isExpanded && (<button className={styles.readMore} onClick={handleReadMore}>  ...Show more</button>)}{isExpanded && showLess && (<button className={styles.readMore} onClick={handleShowLess}>&nbsp;Show less</button>)}</div>
@@ -212,8 +288,9 @@ const MoviePage = () => {
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
-                                {isWatchList ? <img src={watchliston}  className={styles.watchlisticon} /> : <img src={watchlistoff}  className={styles.watchlisticon} />}
+                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff}  className={styles.watchlisticon} onClick={() => {setShowWatchListModal(true)}} />}
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
+                                {showWatchListModal && <WatchListModal movieID={id} token={token} onClose={() => setShowWatchListModal(false)} />}
                             </span>
                             {/* <span><button>B</button></span>
                             <span><button>C</button></span>

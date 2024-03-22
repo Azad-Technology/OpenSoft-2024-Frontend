@@ -6,6 +6,16 @@ import CommentCards from "../CommentCard/CommentCards.jsx";
 export const HomeSliders = () => {
   const genres = [
     {
+      name: "Top Series",
+      link: "#",
+      genreID: "topseries",
+    },
+    {
+      name:"Romance",
+      link: "#",
+      genreID: "romance",
+    },
+    {
       name: "Action",
       link: "#",
       genreID: "action",
@@ -124,9 +134,13 @@ export const HomeSliders = () => {
 
   return (
     <div className={styles.sliders}>
-      <div id="romance" className={styles.slider_container}>
-        <div className={styles.slider__title}>Romance</div>
-        <Slider genre="Romance" />
+      <div id="popular" className={styles.slider_container}>
+        <div className={styles.slider__title}>Top Movies</div>
+        <Slider genre="Top Movies" />
+      </div>
+      <div id="recent" className={styles.slider_container}>
+        <div className={styles.slider__title}>Latest</div>
+        <Slider genre="Recent" />
       </div>
       <>
         <div className={styles.slider__title}>Comments</div>

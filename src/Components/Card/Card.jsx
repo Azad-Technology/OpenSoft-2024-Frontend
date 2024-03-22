@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Card.module.css";
+import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
 
@@ -39,7 +40,7 @@ const Card = ({ movies }) => {
             ></i>}
           </div>
           {movies && <img
-            src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
             className={styles.cards_img}
           />}
         </div>
