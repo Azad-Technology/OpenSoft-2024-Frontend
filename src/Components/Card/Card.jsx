@@ -45,7 +45,7 @@ const Card = ({ movies }) => {
           </div>
           <div className={styles.card__description}>{movies.plot}</div>
         </div>
-        <img src={movies.poster} className={styles.cards_img} alt="Image Not Found" />
+        <img src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`} className={styles.cards_img} alt="Image Not Found" />
       </div>
     </>
   );

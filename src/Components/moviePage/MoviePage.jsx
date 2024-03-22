@@ -201,7 +201,7 @@ const MoviePage = () => {
                                 ))
                             }
                         </div>
-                        <div className={styles.button}>
+                        <div className={styles.Mbutton}>
                             <span>
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
