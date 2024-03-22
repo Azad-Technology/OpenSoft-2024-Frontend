@@ -251,14 +251,14 @@ const MoviePage = () => {
                                 ))
                             }
                         </div>
-                        <div className={styles.button}>
+                        <div className={styles.Mbutton}>
                             <span>
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
                                 {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />}
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
-                                {showWatchListModal && <WatchListModal movieID={id} token={token} onClose={() => setShowWatchListModal(false)} />}
+                                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
                             </span>
                             {/* <span><button>B</button></span>
                             <span><button>C</button></span>
