@@ -58,13 +58,24 @@ const WatchListModal = ({ onClose, movieID }) => {
             <div className={styles.watchlist_modal_section}>
                 <div className={styles.watchlist_modal_section_heading}>Add to Existing</div>
                 <div className={styles.watchlist_modal_buttons}>
-                <button className={styles.watchlist_modal_button} >Watchlist 1</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 2</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 3</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
+                <label>
+                                <input
+                                    type="checkbox"
+                                    value="Watchlist 1"
+                                    // checked={selectedWatchlists.includes("Watchlist 1")}
+                                    // onChange={handleCheckboxChange}
+                                />
+                                Watchlist 1
+                            </label>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    value="Watchlist 2"
+                                    // checked={selectedWatchlists.includes("Watchlist 2")}
+                                    // onChange={handleCheckboxChange}
+                                />
+                                Watchlist 2
+                </label>
                 </div>
             </div>
             </div>

@@ -30,51 +30,25 @@ function LoginForm({register}) {
         setErrors("Please enter a valid email address.")
       }
       else {
-        if(register!=="register"){
-          setErrors("");
-          try{
-            const response=await instance.post('/login',{
-              email:email,
-              password:password
-            },
-            {
-              headers:{
-                'Content-Type':'application/json'
-              }
-            });
-            dispatch({
-              type:'SET_TOKEN',
-              token:response.data.token,
-            });
-            navigate(-1);
-          }
-          catch(err){
-            console.log(err);
-          }
+        setErrors("");
+        try{
+          const response=await instance.post('/login',{
+            email:email,
+            password:password
+          },
+          {
+            headers:{
+              'Content-Type':'application/json'
+            }
+          });
+          dispatch({
+            type:'SET_TOKEN',
+            token:response.data.token,
+          });
+          navigate(-1);
         }
-        else{
-          setErrors("");
-          try{
-            const response=await instance.post('/signup',{
-              name:"Dummy",
-              email:email,
-              password:password
-            },
-            {
-              headers:{
-                'Content-Type':'application/json'
-              }
-            });
-            dispatch({
-              type:'SET_TOKEN',
-              token:response.data.token,
-              premium:"Basic"
-            });
-            navigate('/');
-          }
-          catch(err){
-            console.log(err);
-          }
+        catch(err){
+          console.log(err);
         }
       }
   };
