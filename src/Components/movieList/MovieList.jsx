@@ -8,7 +8,7 @@ const MovieList = ({ movie }) => {
   return (
     <>
       {movie.map((m, i) => {
-        if(m?.poster_path===undefined) return;
+        // if(m?.poster_path===undefined) return;
         return <Card movies={m} />
       })}
     </>

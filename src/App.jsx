@@ -51,7 +51,7 @@ const App = () => {
               Authorization: `Bearer ${token}`
             }
           })
-          console.log(user.data);
+          // console.log(user.data);
           dispatch({
             type: 'SET_USER',
             user: user.data
@@ -74,12 +74,10 @@ const App = () => {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZTkwNjA5NGUyNTQxMzAwY2U2NTY5ZjZlYWI1YzI2MSIsInN1YiI6IjY1ZjBiY2I1MGRlYTZlMDE3Y2JjNGE1OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FOZqC7Jm3by-ObIzGOsc9x-oXcoHgFqXCJ3bFoByTro'
       }
     };
-
-
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         setMovies(response.data.results);
       })
       .catch(function (error) {
@@ -142,7 +140,7 @@ const App = () => {
               <SignUp />
             </>
           }/>
-        <Route path='/watchlist' element={
+        <Route path='/watchlist/:id' element={
           <Watchlists />
         }/>
         <Route path="*" element={
