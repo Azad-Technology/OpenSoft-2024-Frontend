@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CommentCard.module.css';
+import styles from './CommentCards.module.css';
 
 function truncateComment(comment, maxLength) {
   if (comment.length <= maxLength) {

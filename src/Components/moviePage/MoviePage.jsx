@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import watchlistoff from './../../assets/watchlistoff.svg';
 import watchliston from './../../assets/watchliston.svg';
 import Loader from './../Loader/Loader.jsx';
-
+import WatchListModal from "./WatchListModal.jsx";
 // import './styles.css';
 // import { Time } from "@vidstack/react";
 
@@ -40,6 +40,7 @@ function Modal({ onClose }) {
 }
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
+
 const MoviePage = () => {
     const [premium, setPremium] = useState(true);
 
@@ -47,6 +48,7 @@ const MoviePage = () => {
     const navigate = useNavigate();
 
     const [isWatchList, setIsWatchList] = useState(false);
+    const [showWatchListModal, setShowWatchListModal] = useState(false);
 
     const { id } = useParams();
     // const {com} = useParams();
@@ -154,27 +156,27 @@ const MoviePage = () => {
         const elem = document.getElementById("showMoreInfo");
         if (showMoreInfo) {
             setShowMoreInfo(false);
-
+            
             elem.style.transform = 'rotate(180deg)';
         } else {
             setShowMoreInfo(true);
             elem.style.transform = 'rotate(0deg)';
         }
     }
-
-
+    
+    
     //     // event listeners
-
+    
     //     window.addEventListener("resize", screenSizeChanged);
     //     window.addEventListener("load", screenSizeChanged);
-
+    
     window.addEventListener("resize", () => {
         setSmallScreen(window.innerWidth <= 550);
     })
     window.addEventListener('load', () => {
         setSmallScreen(window.innerWidth <= 550);
     })
-
+    
     const handleClick = () => {
         if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
             if (!premium) {
@@ -192,15 +194,27 @@ const MoviePage = () => {
             navigate('/login');
         }
     }
+    const toggleWatchlist = async () => {
+        if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
+            if (isWatchList) {
+                setIsWatchList(false);
+            } else{
+                setIsWatchList(true);
+            }
+        }
+        else {
+            navigate('/login');
+        }
+    }
 
 
     return (
         <>
             <div className={styles.font}>
-                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})` }}>
+                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` }}>
                     <div className={styles.title}>{movie?.title}</div>
                 </div>
-                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
+                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
                     <div className={styles.content}>
                         {premium && (<div className={styles.premium}>Included with premium</div>)}
 
@@ -234,8 +248,9 @@ const MoviePage = () => {
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
-                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} /> : <img src={watchlistoff} className={styles.watchlisticon} />}
+                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff}  className={styles.watchlisticon} onClick={() => {setShowWatchListModal(true)}} />}
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
+                                {showWatchListModal && <WatchListModal movieID={id} token={token} onClose={() => setShowWatchListModal(false)} />}
                             </span>
                             {/* <span><button>B</button></span>
                             <span><button>C</button></span>

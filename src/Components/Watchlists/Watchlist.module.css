@@ -23,7 +23,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:flex-start;
-    z-index: 100;
+    z-index: 10;
     top: 50%;
     backdrop-filter: blur(10px);
     background-color: rgba(10,10,10,0.2);
@@ -57,5 +57,27 @@
     height: 15rem;
     width: 15rem;
     box-shadow: 2rem;
+  }
+
+  .back_button_container {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+  }
+  
+  .back_button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding:1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .back_button:hover {
+    color: red;
   }
   

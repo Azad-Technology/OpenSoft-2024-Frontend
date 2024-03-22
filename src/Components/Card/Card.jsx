@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Card.module.css";
+import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
 
@@ -13,9 +14,12 @@ const Card = ({ movies }) => {
 
   const openHeart = (event) => {
     event.stopPropagation();
+    const heart = document.getElementById("heartIcon");
     if (value === "" && like) {
       setvalue("-o");setlike(false);
+      heart.style.color = "white";
     } else {
+      heart.style.color = "red";
       setvalue("");setlike(true);
     }
   };
@@ -34,13 +38,13 @@ const Card = ({ movies }) => {
           </div>
           <div className={styles.card__description}>{movies?.plot}</div>
         </div>
-        <div>
-          <div className={styles.icon}>
-            {movies && <i
+        <div className={styles.icons}>
+          <div className={styles.icon} id="heartIcon">
+            <i
               class={`fa fa-heart${value}`}
               aria-hidden="true"
               onClick={openHeart}
-            ></i>}
+            ></i>
           </div>
           
           <div className={styles.premium}>
@@ -51,7 +55,7 @@ const Card = ({ movies }) => {
             ></i>}
           </div>
           {movies && <img
-            src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
             className={styles.cards_img}
           />}
         </div>
