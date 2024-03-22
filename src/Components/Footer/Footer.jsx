@@ -15,7 +15,7 @@ function Footer() {
                     <h2>Contact</h2>
 
                     <address>
-                        Azad Hall of Residence
+                        NETFLIX
 
                         <a className={styles.footer__btn} href="mailto:example@gmail.com">Email Us</a>
                     </address>
