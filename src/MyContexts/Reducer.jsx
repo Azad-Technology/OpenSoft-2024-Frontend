@@ -4,7 +4,9 @@ export const initialState={
         name:'',
         email:'',
         role:'',
-        subtype:''
+        subtype:'', 
+        fav:[],
+        watchlist:[]
     }
 }
 

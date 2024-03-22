@@ -193,6 +193,9 @@
   padding-left: 5rem;
   color: white;
  }
+ .favorites h1{
+  color:white;
+ }
  .favorites_card{
   display: flex;
   width: 100%;

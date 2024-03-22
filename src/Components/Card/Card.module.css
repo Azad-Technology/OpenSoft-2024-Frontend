@@ -1,3 +1,17 @@
+.skeleton__cards{
+  opacity:0.7;
+  animation: skeletonLoader 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes skeletonLoader {
+  0% {
+    background-color:hsl(0, 0%, 30%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
 .cards {
   position: relative;
   width: 10rem;

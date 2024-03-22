@@ -1,29 +1,29 @@
-.slider__header{
+.card{
     display: flex;
-    justify-content: space-between;
-}
-
-.view__more{
-    color: var(--tertiary-font-color);
-    font-size: 1.5rem;
-    height: 2.5rem;
-    padding: 0.5rem 0.7rem;
-    border: none;
-    background-color: rgba(78, 75, 75, 0.633);
-    transition: all .3s ease;
-}
-
-.view__more:hover{
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 10rem;
+    width: 15rem;
+    border-radius: 1rem;
+    background-color: #FF340A;
+    padding: 1rem;
     cursor: pointer;
-    background-color: rgb(78, 75, 75);
-    transform: translateY(-8px);
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
 }
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1rem, 0px);
+}
+
 .slider__movies{
     box-sizing: border-box;
+    gap:2rem;
     display: flex;
     overflow-y: auto;
     overflow-x: scroll;
-    padding: 1rem 3rem 1rem 2rem;
+    padding: 1rem 10rem 1rem 2rem;
     margin: 0 -20px 0px 0px;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -87,13 +87,6 @@
 }
 .slider__movies::-webkit-scrollbar{
     display: none;
-}
-
-.slider__title{
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-left: 3rem;
 }
 .sliders{
     margin-right: 3rem;

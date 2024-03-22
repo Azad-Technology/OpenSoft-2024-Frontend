@@ -56,6 +56,9 @@ function SignUp() {
             console.log(err);
           }
   };
+
+  
+
   const handleGoogleClick = async () => {
     try{
       const response=await instance.get('/login/google');
@@ -76,7 +79,8 @@ function SignUp() {
     };
   
   return (
-    <div className={styles.container}><div className={styles.wrapper}>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
       <form action="">
         <h1>Sign Up</h1>
 
@@ -99,32 +103,32 @@ function SignUp() {
             <input type="email" id='email'required 
             onChange={(e) => setEmail(e.target.value)}
             />
-            <MdEmail style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}></MdEmail>
+            {/* <MdEmail style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}></MdEmail> */}
         </div>
 
         <div className={styles.text}>Password<div className={styles.star}>*</div></div> 
 
         <div className={styles.inputBox}>
-        <input
-        type={isPasswordVisible1 ? 'text' : 'password'}
-        id="password"
-        name="password"
-        required
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      
-        <div onClick={togglePasswordVisibility1} style={{cursor: 'pointer'}}>{isPasswordVisible1 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
+          <input
+          type={isPasswordVisible1 ? 'text' : 'password'}
+          id="password"
+          name="password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        
+          <div onClick={togglePasswordVisibility1} style={{cursor: 'pointer'}}>{isPasswordVisible1 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         <div className={styles.text}>Confirm Password<div className={styles.star}>*</div></div>
         <div className={styles.inputBox}>
-        <input
-        type={isPasswordVisible2 ? 'text' : 'password'}
-        id="confirm"
-        name="confirm"
-        required
-      />
-      
-        <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
+          <input
+          type={isPasswordVisible2 ? 'text' : 'password'}
+          id="confirm"
+          name="confirm"
+          required
+        />
+        
+          <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         
         {err===""?<></>:<div className={styles.error}>{err}</div>}
