@@ -1,22 +1,33 @@
 import { useState } from "react";
 import styles from "./WatchListModal.module.css";
-const WatchListModal = ({ onClose, movieID, token }) => {
+import instance from "../../axios"
+import axios from "axios";
+import { useStateValue } from "../../MyContexts/StateProvider";
+const WatchListModal = ({ onClose, movieID }) => {
+    const [{token, user}, dispatch] = useStateValue();
     const [watchlistName, setWatchListName] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-    const createWatchList = async () => {
-        console.log(watchlistName)
+    const createWatchList = async (e) => {
+        e.preventDefault();
+        console.log(watchlistName);
         if(watchlistName === ''){
             setErrorMsg('Please enter a name');
             return;
         }
         setErrorMsg('');
         try{
-            const response = await instance.post(`/add_watchlist/${watchlistName}`, {
-                headers:{
-                    Authorization: `Bearer ${token}`
+            let config = {
+                method : 'post',
+                headers: { 
+                  'Authorization': `Bearer ${token}` 
                 }
-            });
-            console.log(response);
+              };
+             const response = await instance.request(`/add_watchlist/${watchlistName}`,config)
+            // let response = instance.post('/add_watchlist/' + watchlistName, {
+            //     headers:{Authorization: `Bearer ${token}`},
+            //   });
+            //   console.log(response);
+            // response = await response;
 
         } catch(err){
             console.log(err);
@@ -39,7 +50,7 @@ const WatchListModal = ({ onClose, movieID, token }) => {
                 value={watchlistName}
                 onChange={(e) => setWatchListName(e.target.value)}
                 />
-                <button className={styles.watchlist_modal_button} onClick={createWatchList}>Create</button>
+                <button type="submit" className={styles.watchlist_modal_button} onClick={(e)=>createWatchList(e)}>Create</button>
                 </div>
                 {errorMsg && <div className={styles.watchlist_error}>{errorMsg}</div>}
             </div>
@@ -47,13 +58,24 @@ const WatchListModal = ({ onClose, movieID, token }) => {
             <div className={styles.watchlist_modal_section}>
                 <div className={styles.watchlist_modal_section_heading}>Add to Existing</div>
                 <div className={styles.watchlist_modal_buttons}>
-                <button className={styles.watchlist_modal_button} >Watchlist 1</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 2</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 3</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
-                <button className={styles.watchlist_modal_button}>Watchlist 4</button>
+                <label>
+                                <input
+                                    type="checkbox"
+                                    value="Watchlist 1"
+                                    // checked={selectedWatchlists.includes("Watchlist 1")}
+                                    // onChange={handleCheckboxChange}
+                                />
+                                Watchlist 1
+                            </label>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    value="Watchlist 2"
+                                    // checked={selectedWatchlists.includes("Watchlist 2")}
+                                    // onChange={handleCheckboxChange}
+                                />
+                                Watchlist 2
+                </label>
                 </div>
             </div>
             </div>
