@@ -1,9 +1,7 @@
 
 .wrapper {
-  background-color: black;
+ 
   margin: 0;
-  bottom: 0;
-  margin-top: 10%;
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-size: 1rem;
@@ -40,10 +38,10 @@
 }
 
 .footer__addr h2 {
-  margin-top: 1.3em;
+  /* margin-top: 1.3em; */
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .nav__title {
@@ -77,7 +75,7 @@
   padding-left: 0;
 }
 
-.footer li {
+.footer div {
   line-height: 2em;
 }
 
@@ -111,7 +109,6 @@
   color: #999;
   justify-content: center;
   font-size: 0.9rem;
-  margin-top: 3rem;
 }
   
 .legal__links {
@@ -122,6 +119,8 @@
 .heart {
   color: #2f2f2f;
 }
+
+
 
 @media screen and (min-width: 24.375em) {
   .legal .legal__links {
@@ -140,9 +139,26 @@
   
   .footer__addr {
     flex: 1 0px;
+    
   }
+  
   
   .footer__nav {
     flex: 2 0px;
+  }
+}
+@media screen and (max-width: 768px){
+  .footer__addr{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .footer__btn{
+    margin: 1rem auto 0 auto;
+  }
+  .footer__nav{
+    text-align: center;
+  }
+  .legal{
+    margin-top: 1rem;
   }
 }

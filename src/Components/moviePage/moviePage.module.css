@@ -86,13 +86,14 @@
 }
 
 .heroContainer::before{
-    /* content: ""; */
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     height: 100%;
     width: 75%;
     background: linear-gradient(to right, rgba(0,0,0,1),transparent);
+    z-index: 0;
 }
 
 .heroContainer .content{
@@ -120,6 +121,25 @@
     /* justify-content: center; */
     color: var(--secondary-font-color);
 }
+
+/* .heroContainer .button{
+    z-index: 2;
+} */
+
+.premium{
+    display: flex;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    animation: slideRight 1s ease forwards;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(152, 115, 20), transparent);
+    width: fit-content;
+    padding: .2rem;
+    color: rgb(202, 202, 205);
+}
+
+
 .info span{
     display: flex;
     gap: 1rem;
@@ -192,6 +212,7 @@
     border-radius: 5rem;
     background-color: rgba(78, 75, 75, 0.633);
     transition: all .3s ease;
+    z-index: 2;
 }
 .modalbutton:hover{
     cursor: pointer;
@@ -211,123 +232,6 @@
     font-size: 1rem;
     margin-left: .3rem;
 }
-
-/* Watchlist Modal Styles */
-.watchlist_modal_overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  .watchlist_modal {
-    background-color: rgb(21, 15, 15);
-    border-radius: 0.3rem;
-    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.3);
-    max-width: 31.25rem;
-    width: 90%;
-    position: relative;
-  }
-  
-  .watchlist_modal_content {
-    padding: 1.25rem;
-  }
-  
-  .watchlist_modal_heading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1.25rem;
-  }
-  
-  .watchlist_modal_section {
-    border-bottom: 2rem;
-    border-color: black;
-    margin-bottom: 1.25rem;
-  }
-
-  .watchlist_error{
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-  }
-
-  .watchlist_create{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-
-  .watchlist_divider{
-    height: 0;
-    width: 100%;
-    border: 1px solid #93E1D8;
-    margin-bottom: 2rem;
-  }
-  
-  .watchlist_modal_section_heading {
-    font-size: 1.125rem;
-    font-weight: bold;
-    margin-bottom: 0.625rem;
-  }
-  
-  .watchlist_modal_input {
-    width: 100%;
-    padding: 0.625rem;
-    border: 0.0625rem solid #C0180C;
-    background-color: rgb(50, 1, 1);
-    color: white;
-    border-radius: 0.25rem;
-  }
-  
-  .watchlist_modal_buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 5rem;
-    max-height: 15rem;
-    overflow-y: scroll;
-  }
-  .watchlist_modal_buttons::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .watchlist_modal_button {
-    background-color: #F24236;
-    color: #fff;
-    border: none;
-    border-radius: 0.25rem;
-    padding: 0.625rem 1.25rem;
-    margin: 0.3125rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .watchlist_modal_button:hover {
-    background-color: #C0180C;
-  }
-  
-  .watchlist_close_button {
-    position: absolute;
-    top: 0.625rem;
-    right: 0.625rem;
-    background-color: transparent;
-    border: none;
-    font-size: 1.125rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: #999;
-  }
-  
-  .watchlist_close_button:hover {
-    color: #333;
-  }
 
 /* Modal Overlay */
 .modal_overlay {
