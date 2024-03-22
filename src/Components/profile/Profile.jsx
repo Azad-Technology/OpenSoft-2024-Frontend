@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.css";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../MyContexts/StateProvider";
 import GenreCard from "../Card/GenreCard";
 import { AllWatchlists } from "../Watchlists/AllWatchlists";
+import instance from "../../axios";
 
 const Profile = () => {
   const [{ token, user }, dispatch] = useStateValue();
-
   const navigate = useNavigate();
+  const [fullname, setFullname] = useState("name");
   const [currentPlan, setCurrentPlan] = useState("Basic");
   const [isEditProfileActive, setIsProfileActive] = useState(false);
   const [isBasic, setIsBasic] = useState(false);
@@ -29,16 +30,44 @@ const Profile = () => {
     setChangePasswordModalOpen(true);
   };
 
+  const sendChangeRequest = async(e) =>{
+    
+    try{
+      const response=await instance.patch('/update_user/',{
+        new_name:fullname,
+        new_email:user.email
+      },
+      {
+        headers:{
+          'Content-Type':'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      });
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
   const handleEditProfileClick = () => {
-    setIsProfileActive(true);
+    if(user.subtype!="Basic"){
+      setIsProfileActive(true);
+      setIsEditNameDisabled(false);
+    }else{
+      navigate("/pricing");
+    }
+
+    
   };
   const handleConfirmChanges = () => {
+
     setIsProfileActive(false);
     setIsEditNameDisabled(true);
     setIsAddressDisabled(true);
+    sendChangeRequest();
   };
   const handlePremiumClick = () => {
-    // do something
+    navigate("/pricing");
   };
   const handleNameChange = () => {
     setIsEditNameDisabled(false);
@@ -51,14 +80,14 @@ const Profile = () => {
   // setIsEditPasswordDisabled(false);
   // };
 
-  const handleUpdatePassword = () => {
-    if (verificationcurrentPassword === password) {
-      if (newPassword === confirmNewPassword) {
-        setPassword(newPassword);
-      }
-    }
+  const handleUpdatePasswordRequest = async(e)=>{
+    
+  }
+
+  const handleUpdatePassword = () => {    
     setChangePasswordModalOpen(false);
     setIsEditPasswordDisabled(true);
+    handleUpdatePasswordRequest();
   };
   const handleNavigateBackward = () => {
     navigate("/");
@@ -70,6 +99,10 @@ const Profile = () => {
     });
     navigate("/");
   };
+
+  useEffect(()=>{
+    setFullname(user?.name);
+  }, [user]);
 
   return (
     <div style={{ backgroundColor: "#101010", display: "block" }}>
@@ -101,7 +134,7 @@ const Profile = () => {
                 <input
                   id="input"
                   className={styles.details}
-                  value={user?.name}
+                  value={fullname}
                   disabled={isEditNameDisabled}
                   onChange={(e) => setFullname(e.target.value)}
                 />
@@ -214,9 +247,10 @@ const Profile = () => {
                   disabled
                   value={user?.subtype}
                 />
-                <button className={styles._btn} onClick={handlePremiumClick}>
+                {user?.subtype!="Gold" && <button className={styles._btn} onClick={handlePremiumClick}>
                   Convert to Premium
-                </button>
+                </button>}
+                
               </div>
             </div>
             {isChangePasswordModalOpen && (
@@ -292,7 +326,7 @@ const Profile = () => {
       <div className={styles.edit_button}>
         {isEditProfileActive ? (
           <>
-            <button onClick={handleConfirmChanges}>save Changes</button>
+            <button onClick={handleConfirmChanges}>Save Changes</button>
             <button onClick={handleSignout}>Signout</button>
           </>
         ) : (
