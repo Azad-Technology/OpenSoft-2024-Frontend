@@ -1,22 +1,33 @@
 import { useState } from "react";
 import styles from "./WatchListModal.module.css";
-const WatchListModal = ({ onClose, movieID, token }) => {
+import instance from "../../axios"
+import axios from "axios";
+import { useStateValue } from "../../MyContexts/StateProvider";
+const WatchListModal = ({ onClose, movieID }) => {
+    const [{token, user}, dispatch] = useStateValue();
     const [watchlistName, setWatchListName] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-    const createWatchList = async () => {
-        console.log(watchlistName)
+    const createWatchList = async (e) => {
+        e.preventDefault();
+        console.log(watchlistName);
         if(watchlistName === ''){
             setErrorMsg('Please enter a name');
             return;
         }
         setErrorMsg('');
         try{
-            const response = await instance.post(`/add_watchlist/${watchlistName}`, {
-                headers:{
-                    Authorization: `Bearer ${token}`
+            let config = {
+                method : 'post',
+                headers: { 
+                  'Authorization': `Bearer ${token}` 
                 }
-            });
-            console.log(response);
+              };
+             const response = await instance.request(`/add_watchlist/${watchlistName}`,config)
+            // let response = instance.post('/add_watchlist/' + watchlistName, {
+            //     headers:{Authorization: `Bearer ${token}`},
+            //   });
+            //   console.log(response);
+            // response = await response;
 
         } catch(err){
             console.log(err);
@@ -39,7 +50,7 @@ const WatchListModal = ({ onClose, movieID, token }) => {
                 value={watchlistName}
                 onChange={(e) => setWatchListName(e.target.value)}
                 />
-                <button className={styles.watchlist_modal_button} onClick={createWatchList}>Create</button>
+                <button type="submit" className={styles.watchlist_modal_button} onClick={(e)=>createWatchList(e)}>Create</button>
                 </div>
                 {errorMsg && <div className={styles.watchlist_error}>{errorMsg}</div>}
             </div>

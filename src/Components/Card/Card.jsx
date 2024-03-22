@@ -4,7 +4,7 @@ import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
 
-const Card = ({ movies }) => {
+const Card = ({ movies,val,length }) => {
   // for dummy purpose we take movies?.like=false;
   const [like,setlike] = useState(false);
   const [value, setvalue] = useState("-o");
@@ -23,13 +23,25 @@ const Card = ({ movies }) => {
       setvalue("");setlike(true);
     }
   };
-
+  const handlehover = (event) => {
+    // console.log(movies)
+    const particularCard = document.getElementById(`${movies._id}`);
+    if (val === length - 1) {
+        particularCard.style.transformOrigin = "right";
+    }
+    else if(val===0) {
+        particularCard.style.transformOrigin = "left";
+    }
+    else {
+      particularCard.style.transformOrigin = "center";
+    }
+}
   const navigate = useNavigate();
 
   return (
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
-      <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''}>
+      <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
         <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
