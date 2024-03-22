@@ -40,18 +40,21 @@
 .cardTime{
   font-size: 0.8rem;
 }
+.sliderwrapper{
+  overflow-x: clip;
+  background-color: #292929;
+  margin:1rem 1rem 1rem 3rem ;
+}
 
 .commentCards {
-  margin-top: 15rem;
+
   display: flex;
-  width: 1000%;
-  background-color: #292929;
-  animation: slide 800s linear infinite;
+  width: 100%;
+  animation: slide 50s linear infinite;
   animation-fill-mode: forwards; /* Keep final state after animation */
 
   
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  /* Enable snap scrolling */
 }
 .commentCards::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Webkit browsers */
@@ -98,4 +101,19 @@
 
 .commentCards:not(:last-child) {
   margin-top: 0; /* Adjust spacing between cards */
+}
+
+
+
+
+/* Smaller Phones */
+@media (max-width: 480px) {
+  .commentCard { 
+      height: auto; /* Allow height to adjust to content */
+      padding: 0.75rem; /* Reduce padding */
+  }
+
+  .username {
+      font-size: 1rem; /* Reduce username font size */
+  }
 }
