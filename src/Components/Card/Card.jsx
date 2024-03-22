@@ -34,7 +34,7 @@ const Card = ({ movies }) => {
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
             {movies?.year}
-            <span className={styles.card__rating}>{movies?.imdb.rating}</span>
+            <span className={styles.card__rating}>IMDB: {movies?.imdb.rating}</span>
           </div>
           <div className={styles.card__description}>{movies?.plot}</div>
         </div>

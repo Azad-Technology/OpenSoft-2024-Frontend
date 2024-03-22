@@ -70,8 +70,9 @@
 .commentCards {
 
   display: flex;
-  width: 100%;
-  animation: slide 50s linear infinite;
+  width: 1000%;
+  background-color: #292929;
+  animation: slide 500s linear infinite;
   animation-fill-mode: forwards; /* Keep final state after animation */
 
   
