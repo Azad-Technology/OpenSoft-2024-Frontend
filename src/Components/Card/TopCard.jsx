@@ -15,7 +15,6 @@ const TopCard = ({ movies, val, lenght }) => {
         }
     };
     const handlehover = (event) => {
-        console.log(movies)
         const particularCard = document.getElementById(`${movies._id}`);
         if (val === length - 1) {
             particularCard.style.transformOrigin = "right";
