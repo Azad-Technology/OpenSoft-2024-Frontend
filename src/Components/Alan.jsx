@@ -1,16 +1,22 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import alanBtn from '@alan-ai/alan-sdk-web';
 
 const useAlan = () => {
     useEffect(() => {
         alanBtn({
-            key: '89d9952effdf8d7eb04fd4d7ae24ae7d2e956eca572e1d8b807a3e2338fdd0dc/stage',
-            onCommand: ({ command }) => {
+            key: 'a2e30ce08222ef4aac4b4ef40bbcd5ca2e956eca572e1d8b807a3e2338fdd0dc/stage',
+            onCommand: ({ command, genres, genreOrCategory }) => {
                 if (command === 'logout') {
                     localStorage.clear();
                     window.location.href = '/';
                     window.location.reload();
+                }
+                else if (command === 'chooseGenre') {
+                    const foundGenre = genres.find((g) => g.name.toLowerCase() === genreOrCategory.toLowerCase());
+                    console.log(foundGenre);
+                    // if (foundGenre) {
+                    //     handleFoundGenre(foundGenre);
+                    // }
                 }
             }
         });
