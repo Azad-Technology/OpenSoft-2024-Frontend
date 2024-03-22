@@ -46,7 +46,7 @@
   display: flex;
   width: 1000%;
   background-color: #292929;
-  animation: slide 800s linear infinite;
+  animation: slide 500s linear infinite;
   animation-fill-mode: forwards; /* Keep final state after animation */
 
   

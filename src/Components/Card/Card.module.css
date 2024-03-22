@@ -129,6 +129,15 @@
   background: linear-gradient(to bottom, rgba(59, 147, 247, 0.853), rgb(9, 51, 189));
   opacity: 0.77;
 }
+.contain{
+  display: flex;
+}
+.number{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-size: xxx-large;
+}
 /* .Genrediv:hover{
   transition: scale(1.1, 1.1);
 } */
