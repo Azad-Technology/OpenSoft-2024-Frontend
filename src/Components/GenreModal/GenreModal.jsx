@@ -5,7 +5,7 @@ import MovieModalList from './MovieModalList';
 
 function Modal({ onClose, genre, id }) {
     const [movies, setMovies] = useState(null)
-
+    console.log("kalidas4");
     useEffect(() => {
         const getData = async () => {
             if (genre === "More Like This") {
@@ -50,6 +50,8 @@ function Modal({ onClose, genre, id }) {
 }
 
 const GenreModal = ({ genre, onClose }) => {
+    console.log(genre);
+    console.log("kalidas3");
     return (
         <>
             <Modal onClose={onClose} genre={genre} />
