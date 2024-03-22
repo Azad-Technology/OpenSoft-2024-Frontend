@@ -1,3 +1,23 @@
+.slider__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.view__more{
+    color: var(--tertiary-font-color);
+    font-size: 1.5rem;
+    height: 2.5rem;
+    padding: 0.5rem 0.7rem;
+    border: none;
+    background-color: rgba(78, 75, 75, 0.633);
+    transition: all .3s ease;
+}
+
+.view__more:hover{
+    cursor: pointer;
+    background-color: rgb(78, 75, 75);
+    transform: translateY(-8px);
+}
 .slider__movies{
     box-sizing: border-box;
     display: flex;

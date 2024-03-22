@@ -43,13 +43,14 @@ const WatchListModal = ({ onClose, movieID, token }) => {
     const [watchlistName, setWatchListName] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const createWatchList = async () => {
+        console.log(watchlistName)
         if(watchlistName === ''){
             setErrorMsg('Please enter a name');
             return;
         }
         setErrorMsg('');
         try{
-            const response = await instance.post('/add_watchlist/' + watchlistName, {
+            const response = await instance.post(`/add_watchlist/${watchlistName}`, {
                 headers:{
                     Authorization: `Bearer ${token}`
                 }
@@ -74,6 +75,7 @@ const WatchListModal = ({ onClose, movieID, token }) => {
                 type="text"
                 placeholder="Enter watchlist name"
                 className={styles.watchlist_modal_input}
+                value={watchlistName}
                 onChange={(e) => setWatchListName(e.target.value)}
                 />
                 <button className={styles.watchlist_modal_button} onClick={createWatchList}>Create</button>

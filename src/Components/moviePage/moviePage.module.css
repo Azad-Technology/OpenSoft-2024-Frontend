@@ -189,6 +189,7 @@
     height: 2.5rem;
     padding: 0.5rem 0.7rem;
     border: none;
+    border-radius: 5rem;
     background-color: rgba(78, 75, 75, 0.633);
     transition: all .3s ease;
 }

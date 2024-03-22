@@ -1,5 +1,5 @@
 .maincontainer {
-  padding-top: 5rem;
+  padding-top: 7rem;
   padding-bottom: 0rem;
   display: flex;
   margin: 0rem 5rem 0rem 5rem;
@@ -137,6 +137,7 @@
   width: 100%;
   display: flex;
   justify-content: end;
+  
   /* margin-right: 5%; */
   /* float: right; */
   /* padding: 1rem 5rem 0 0; */
@@ -144,19 +145,43 @@
  #modal_button{
   justify-content: center;
   padding-bottom: 5%;
+  
  }
  #modal_button button{
   margin-right: 0;
+  display: block;
+        position: absolute;
+        margin-top: 2rem;
+        background-color: rgba(255, 9, 9, 0.925);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        cursor: pointer;
+        z-index: 20;
+        font-size: large;
  }
  .edit_button button{
-  color:white;
-  background-color:red;
-  width: 10rem;
-  height: 3rem;
-  border-color: #000000;
+  /* color:white; */
+  /* background-color:red; */
+  /* width: 10rem;
+  height: 3rem; */
+  /* border-color: #000000; */
   margin-right:5rem;
+  display: block;
+  /* position: absolute; */
+  margin-top: 2rem;
+  background-color: rgba(255, 9, 9, 0.925);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.2rem;
   cursor: pointer;
- 
+  z-index: 20;
+  font-size: large;
+ }
+ .edit_button button:hover{
+  background-color: rgba(255, 9, 9, 0.7);
  }
  .editbtn{
   background-color: #101010;
@@ -166,6 +191,7 @@
  }
  .favorites{
   padding-left: 5rem;
+  color: white;
  }
  .favorites h1{
   color:white;
