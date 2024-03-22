@@ -115,3 +115,24 @@
   .watchlist_close_button:hover {
     color: #333;
   }
+
+  .watchlist_dropdown {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .watchlist_dropdown option {
+    padding: 4px;
+  }
+  .watchlist_checkbox_label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  .watchlist_checkbox_label input[type="checkbox"] {
+    margin-right: 8px;
+  }
