@@ -13,6 +13,8 @@ import { useStateValue } from "../../MyContexts/StateProvider";
 import { useNavigate } from "react-router-dom";
 import watchlistoff from './../../assets/watchlistoff.svg';
 import watchliston from './../../assets/watchliston.svg';
+import Loader from './../Loader/Loader.jsx';
+// import './styles.css';
 // import { Time } from "@vidstack/react";
 
 
@@ -77,7 +79,6 @@ const MoviePage = () => {
     //     console.log(movie);
     //     console.log(comments);
     // }, [movie]);
-
 
 
     // const [description, setDescription] = useState(props.info.movieDesc);
@@ -280,6 +281,9 @@ const MoviePage = () => {
 
 
                 <MoreLikeThis id={id} />
+                <div className={styles.loaderIcon}>
+                    <Loader />
+                </div>
             </div>
             {/* <Footer /> */}
         </>

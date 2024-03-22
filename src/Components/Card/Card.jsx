@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Card.module.css";
 import { useNavigate } from "react-router-dom";
+import Loader from '../Loader/Loader.jsx'
 
 const Card = ({ movies }) => {
   // for dummy purpose we take movies?.like=false;

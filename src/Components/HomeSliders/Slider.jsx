@@ -3,6 +3,7 @@ import styles from './HomeSliders.module.css'
 import Card from '../Card/Card.jsx'
 import instance from '../../axios.jsx'
 import MovieList from '../movieList/MovieList.jsx'
+import Loader from './../Loader/Loader.jsx'
 
 export const Slider = ({genre,id}) => {
 

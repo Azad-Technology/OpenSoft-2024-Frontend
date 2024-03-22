@@ -1,0 +1,25 @@
+.loaderContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* border: 2px solid red; */
+}
+
+.loader{
+    width: 80%;
+    height: 80%;
+    border-radius: 500px;
+    border-top: 2px solid green;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
