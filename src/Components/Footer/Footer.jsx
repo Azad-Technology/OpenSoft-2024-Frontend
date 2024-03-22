@@ -9,12 +9,18 @@ function Footer() {
         <div className={styles.wrapper}>
             <footer className={styles.footer}>
                 <div className={styles.footer__addr}>
+                    {/* <h1 className={styles.footer__log}>Something</h1> */}
                     <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="" />
 
+                    <h2>Contact</h2>
+
+                    <address>
+                        <a className={styles.footer__btn} href="mailto:example@gmail.com">Email Us</a>
+                    </address>
                 </div>
 
                 <ul className={styles.footer__nav}>
-                    <li className={styles.nav__item}>
+                    <div className={styles.nav__item}>
                         <h2 className={styles.nav__title}>Navigation</h2>
 
                         <ul className={styles.nav__ul}>
@@ -30,9 +36,9 @@ function Footer() {
                                 <a href="#">Pricing</a>
                             </li>
                         </ul>
-                    </li>
+                    </div>
 
-                    <li className={`${styles.nav__item} ${styles['nav__item--extra']}`}>
+                    <div className={`${styles.nav__item} ${styles['nav__item--extra']}`}>
                         <h2 className={styles.nav__title}>Top</h2>
 
                         <ul className={`${styles.nav__ul} ${styles['nav__ul--extra']}`}>
@@ -60,9 +66,9 @@ function Footer() {
                                 <a href="#">IoT</a>
                             </li> */}
                         </ul>
-                    </li>
+                    </div>
 
-                    <li className={styles.nav__item}>
+                    <div className={styles.nav__item}>
                         <h2 className={styles.nav__title}>Legal</h2>
 
                         <ul className={styles.nav__ul}>
@@ -74,7 +80,7 @@ function Footer() {
                                 <Link href="#">Terms of Use</Link>
                             </li>
                         </ul>
-                    </li>
+                    </div>
                 </ul>
 
                 <div className={styles.legal}>

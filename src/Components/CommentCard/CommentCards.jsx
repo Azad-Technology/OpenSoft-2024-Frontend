@@ -55,6 +55,7 @@ function CommentCards() {
 
   const repeatedCommentsData = Array.from({ length: 10 }, () => commentsData).flat();
   return (
+    <div className={styles.sliderwrapper}>
     <div className={styles.commentCards}>
       {repeatedCommentsData.map((comment, index) => (
         <CommentCard
@@ -62,11 +63,12 @@ function CommentCards() {
           username={comment.name}
           profilePic={profilePics[index%5]} //"https://source.unsplash.com/random"
           comment={comment.text}
-          //movie={fetchMovieName(comment.movie_id)}
+          movie="Movie"//{fetchMovieName(comment.movie_id)}
           link={`/movie/${comment.movie_id}`}
           timestamp={comment.date}
         />
       ))}
+    </div>
     </div>
   );
 }

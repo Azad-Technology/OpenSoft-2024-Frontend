@@ -1,0 +1,76 @@
+.heading{
+    font-size: 50px;
+    margin-top: 2%;
+}
+.movieList{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+/* Modal Overlay */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Container */
+.modal {
+    overflow-y: scroll;
+    background-color: rgb(21, 15, 15);
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+    top: 6%;
+    height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+
+/* Close Button */
+.close_button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modalbutton {
+    color: var(--tertiary-font-color);
+    font-size: 1.5rem;
+    height: 2.5rem;
+    padding: 0.5rem 0.7rem;
+    border: none;
+    background-color: rgba(78, 75, 75, 0.633);
+    transition: all .3s ease;
+}
+
+.modalbutton:hover {
+    cursor: pointer;
+    background-color: rgb(78, 75, 75);
+    transform: translateY(-8px);
+}
+
+/* @media screen and (max-width: 710px) {
+    .video_container {
+        width: 100%;
+        aspect-ratio: 4/3;
+    }
+} */

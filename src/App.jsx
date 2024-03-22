@@ -26,6 +26,7 @@ import Footer from './Components/Footer/Footer.jsx'
 import  SignUp from "./Components/SignUp/SignUp.jsx"
 import { Watchlists } from './Components/Watchlists/Watchlists.jsx'
 import useAlan from './Components/Alan'
+import BuyPremiumToWatch from './Components/moviePage/BuyPremiumToWatch.jsx'
 
 const App = () => {
 
@@ -51,7 +52,8 @@ const App = () => {
               Authorization: `Bearer ${token}`
             }
           })
-          // console.log(user.data);
+
+          console.log(user.data);
           dispatch({
             type: 'SET_USER',
             user: user.data
@@ -65,25 +67,18 @@ const App = () => {
   }, [token])
 
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/popular',
-      params: { language: 'en-US', page: '3' },
-      headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZTkwNjA5NGUyNTQxMzAwY2U2NTY5ZjZlYWI1YzI2MSIsInN1YiI6IjY1ZjBiY2I1MGRlYTZlMDE3Y2JjNGE1OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FOZqC7Jm3by-ObIzGOsc9x-oXcoHgFqXCJ3bFoByTro'
+    const getIP=async()=>{
+      try{
+        const ip=await axios.get('http://ipinfo.io/json');
+        console.log("IP",ip.data);
       }
-    };
-    axios
-      .request(options)
-      .then(function (response) {
-        // console.log(response.data);
-        setMovies(response.data.results);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+      catch(err){
+        console.log("IP",err);
+      }
+    }
+    getIP();
   }, [])
+    
 
   return (
     <>
@@ -123,6 +118,15 @@ const App = () => {
             <>
               <Navbar />
               <MoviePage />
+              <Footer />
+              {/* <MoreLikeThis /> */}
+              {/* <SearchPage /> */}
+            </>
+          } />
+          <Route path="/buyPremium" element={
+            <>
+              <Navbar />
+              <BuyPremiumToWatch />
               <Footer />
               {/* <MoreLikeThis /> */}
               {/* <SearchPage /> */}

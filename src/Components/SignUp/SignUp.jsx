@@ -5,11 +5,12 @@ import { useStateValue } from '../../MyContexts/StateProvider';
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
-import { useState, useNavigate } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 function SignUp() {
     const [{token,premium},dispatch]=useStateValue();
-    const navigate=useNavigate;
+    const navigate=useNavigate();
     const [isPasswordVisible1, setisPasswordVisible1] = useState(false);
     const [isPasswordVisible2, setisPasswordVisible2] = useState(false);
     const [err, setErrors] = useState("")
@@ -28,34 +29,33 @@ function SignUp() {
       else {
         if(newPass.length<8) setErrors('Password must be at least 8 characters long.');
         else{
-          if(confPass === newPass) setErrors("")
+          if(confPass === newPass){
+            setErrors("");
+            try{
+              const response=await instance.post('/signup',{
+                name:"Dummy",
+                email:email,
+                password:password
+              },
+              {
+                headers:{
+                  'Content-Type':'application/json'
+                }
+              });
+              dispatch({
+                type:'SET_TOKEN',
+                token:response.data.token,
+              });
+              navigate('/');
+            }
+            catch(err){
+              console.log(err);
+            }
+          }
           else setErrors("Password does not match")
         }
       }
-
-          try{
-            const response=await instance.post('/signup/',{
-              name:"Dummy",
-              email:email,
-              password:password
-            },
-            {
-              headers:{
-                'Content-Type':'application/json'
-              }
-            });
-            // console.log(response.data);
-            dispatch({
-              type:'SET_TOKEN',
-              token:response.data.token,
-              premium:"Basic"
-            });
-            navigate('/');
-          }
-          catch(err){
-            console.log(err);
-          }
-  };
+    };
 
   
 
@@ -79,7 +79,8 @@ function SignUp() {
     };
   
   return (
-    <div className={styles.container}><div className={styles.wrapper}>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
       <form action="">
         <h1>Sign Up</h1>
 
@@ -102,32 +103,32 @@ function SignUp() {
             <input type="email" id='email'required 
             onChange={(e) => setEmail(e.target.value)}
             />
-            <MdEmail style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}></MdEmail>
+            {/* <MdEmail style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}></MdEmail> */}
         </div>
 
         <div className={styles.text}>Password<div className={styles.star}>*</div></div> 
 
         <div className={styles.inputBox}>
-        <input
-        type={isPasswordVisible1 ? 'text' : 'password'}
-        id="password"
-        name="password"
-        required
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      
-        <div onClick={togglePasswordVisibility1} style={{cursor: 'pointer'}}>{isPasswordVisible1 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
+          <input
+          type={isPasswordVisible1 ? 'text' : 'password'}
+          id="password"
+          name="password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        
+          <div onClick={togglePasswordVisibility1} style={{cursor: 'pointer'}}>{isPasswordVisible1 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         <div className={styles.text}>Confirm Password<div className={styles.star}>*</div></div>
         <div className={styles.inputBox}>
-        <input
-        type={isPasswordVisible2 ? 'text' : 'password'}
-        id="confirm"
-        name="confirm"
-        required
-      />
-      
-        <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
+          <input
+          type={isPasswordVisible2 ? 'text' : 'password'}
+          id="confirm"
+          name="confirm"
+          required
+        />
+        
+          <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         
         {err===""?<></>:<div className={styles.error}>{err}</div>}

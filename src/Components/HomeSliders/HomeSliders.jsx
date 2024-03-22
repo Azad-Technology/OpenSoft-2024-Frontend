@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { useStateValue } from "../../MyContexts/StateProvider";
 import styles from "./HomeSliders.module.css";
 import { Slider } from "./Slider.jsx";
 import CommentCards from "../CommentCard/CommentCards.jsx";
+import GenreModal from "../GenreModal/GenreModal";
 
 export const HomeSliders = () => {
+  const [{ token }, dispatch] = useStateValue();
+  const [selectedGenre, setSelectedGenre] = useState(null);
+
+  const openModal = (genre) => {
+      setSelectedGenre(genre);
+  }
+
   const genres = [
+    {
+      name: "Top Series",
+      link: "#",
+      genreID: "topseries",
+    },
+    {
+      name: "Romance",
+      link: "#",
+      genreID: "romance",
+    },
     {
       name: "Action",
       link: "#",
@@ -124,9 +143,19 @@ export const HomeSliders = () => {
 
   return (
     <div className={styles.sliders}>
-      <div id="romance" className={styles.slider_container}>
-        <div className={styles.slider__title}>Romance</div>
-        <Slider genre="Romance" />
+      <div id="popular" className={styles.slider_container}>
+        <div className={styles.slider__header}>
+          <div className={styles.slider__title}>Top Movies</div>
+          <button className={styles.view__more} onClick={() => openModal("Top Movies")}> View More </button>
+        </div>
+        <Slider genre="Top Movies" />
+      </div>
+      <div id="recent" className={styles.slider_container}>
+        <div className={styles.slider__header}>
+          <div className={styles.slider__title}>Latest</div>
+          <button className={styles.view__more} onClick={() => openModal("Recent")}> View More </button>
+        </div>
+        <Slider genre="Recent" />
       </div>
       <>
         <div className={styles.slider__title}>Comments</div>
@@ -135,11 +164,17 @@ export const HomeSliders = () => {
       {genres.map((genre) => {
         return (
           <div id={genre.genreID} className={styles.slider_container}>
-            <div className={styles.slider__title}>{genre.name}</div>
+            <div className={styles.slider__header}>
+              <div className={styles.slider__title}>{genre.name}</div>
+              <button className={styles.view__more} onClick={() => openModal(genre.name)}> View More </button>
+            </div>
             <Slider genre={genre.name} />
           </div>
         )
       })}
+      {selectedGenre &&
+        <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />
+      }
     </div>
   );
 };
