@@ -1,18 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import { useStateValue } from "../../MyContexts/StateProvider";
-import instance from '../../axios';
+import React, { useEffect, useState } from 'react';
 import styles from './GenreModal.module.css';
-import Watchlist from '../Watchlists/Watchlist';
-import MovieList from '../movieList/MovieList';
+import instance from '../../axios';
+import MovieModalList from './MovieModalList';
 
+function Modal({ onClose, genre, id }) {
+    const [movies, setMovies] = useState(null)
 
-function Modal({ onClose, movies }) {
+    useEffect(() => {
+        const getData = async () => {
+            if (genre === "More Like This") {
+                const response = await instance.get('/movies/' + id + '/related_movies/?count=18')
+                setMovies(response.data);
+                return;
+            }
+            if (genre === "Top Movies") {
+                const response = await instance.get('/top_movies/?count=18');
+                console.log(response.data);
+                setMovies(response.data);
+                return;
+            }
+            if (genre === "Top Series") {
+                const response = await instance.get('/top_series/?count=18');
+                setMovies(response.data);
+                return;
+            }
+            if (genre === "Recent") {
+                const response = await instance.get('/recent_movies/?count=18');
+                setMovies(response.data);
+                return;
+            }
+            const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+            setMovies(response.data);
+        }
+        getData();
+    }, [genre, id])
+
     return (
         <div className={styles.modal_overlay}>
-            <div className={styles.heading}> Action </div>
+            <div className={styles.heading}>{genre}</div>
             <div className={styles.modal}>
-                <div>        
-                    {movies ? <MovieList movie={movies} /> : <h1>Loading...</h1>}
+                <div className={styles.movieList}>
+                    {movies ? <MovieModalList movie={movies} /> : <h1>Loading...</h1>}
+                    {/* {!movies && <MovieList movie={Array(18).fill(null)} />} */}
                 </div>
             </div>
             <button className={styles.close_button} onClick={onClose}>X</button>
@@ -20,38 +49,10 @@ function Modal({ onClose, movies }) {
     );
 }
 
-const GenreModal = () => {
-    const [{ token }, dispatch] = useStateValue();
-    const [showModal, setShowModal] = useState(false);
-    const [movies, setMovies] = useState(null);
-    const handleClick = () => {
-        if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
-            setShowModal(true);
-        }
-        else {
-            navigate('/login');
-        }
-    }
-    useEffect(() => {
-        try {
-            const getWatchlist = async () => {
-                const res = await instance.get('/genre/Action');
-                console.log(res.data);
-                setMovies(res.data);
-            }
-            getWatchlist();
-        } catch (error) {
-            console.log(error);
-        }
-    }, []);
+const GenreModal = ({ genre, onClose }) => {
     return (
         <>
-            <div>
-                <button className={styles.modalbutton} onClick={handleClick}>
-                    Watch Now
-                </button>
-                {showModal && <Modal onClose={() => setShowModal(false)} movies={movies} />}
-            </div>
+            <Modal onClose={onClose} genre={genre} />
         </>
     )
 }
