@@ -25,8 +25,8 @@ import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
 import  SignUp from "./Components/SignUp/SignUp.jsx"
 import { Watchlists } from './Components/Watchlists/Watchlists.jsx'
-import  GenreModal  from './Components/GenreModal/GenreModal';
 import useAlan from './Components/Alan'
+import BuyPremiumToWatch from './Components/moviePage/BuyPremiumToWatch.jsx'
 
 const App = () => {
 
@@ -129,6 +129,15 @@ const App = () => {
               {/* <SearchPage /> */}
             </>
           } />
+          <Route path="/buyPremium" element={
+            <>
+              <Navbar />
+              <BuyPremiumToWatch />
+              <Footer />
+              {/* <MoreLikeThis /> */}
+              {/* <SearchPage /> */}
+            </>
+          } />
           <Route path='/login' element={
             <>
               <Navbar />
@@ -143,9 +152,6 @@ const App = () => {
           }/>
         <Route path='/watchlist/:id' element={
           <Watchlists />
-        }/>
-        <Route path='/modal' element={
-          <GenreModal />
         }/>
         <Route path="*" element={
           <NotFound/>
