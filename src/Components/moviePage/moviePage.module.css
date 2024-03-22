@@ -1,48 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
+:root {
     --primary-font-color: #ffffff;
     --secondary-font-color: #c2b8b8;
     --tertiary-font-color: #cf0a0a;
 }
+
 /* Font */
-.font{
+.font {
     /* font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal; */
-  background-color: black;
+    background-color: black;
 }
+
 /* hero small screen */
 
 /* animations */
 
-.loaderIcon{
+.loaderIcon {
     height: 5vh;
     aspect-ratio: 1/1;
 }
 
-@keyframes slideRight{
-    from{
+@keyframes slideRight {
+    from {
         opacity: 0;
         transform: translateX(-20px);
     }
-    to{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-@keyframes slideLeft{
-    from{
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to{
+
+    to {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-.heroSmall{
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.genreButtons {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.heroSmall {
     height: 50vh;
     /* background-image: url("https://source.unsplash.com/random"); */
     background-size: cover;
@@ -56,16 +69,18 @@
     text-align: center;
     /* background: linear-gradient(to top, rgba(0,0,0,.8), transparent); */
 }
-.heroSmall::before{
+
+.heroSmall::before {
     content: "";
     position: absolute;
     /* top: 0; */
     bottom: 0;
     height: 50%;
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,1), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
 }
-.heroSmall .title{
+
+.heroSmall .title {
     position: absolute;
     bottom: 0rem;
     font-size: 1.5rem;
@@ -73,7 +88,7 @@
 }
 
 /* hero */
-.heroContainer{
+.heroContainer {
     /* display: none; */
     height: 100vh;
     /* background-image: var(--image); */
@@ -85,18 +100,17 @@
     color: var(--primary-font-color);
 }
 
-.heroContainer::before{
-    content: "";
+.heroContainer::before {
+    /* content: ""; */
     position: absolute;
     top: 0;
     bottom: 0;
     height: 100%;
     width: 75%;
-    background: linear-gradient(to right, rgba(0,0,0,1),transparent);
-    z-index: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
 }
 
-.heroContainer .content{
+.heroContainer .content {
     position: absolute;
     bottom: 2rem;
     left: 2rem;
@@ -104,7 +118,8 @@
     flex-direction: column;
     gap: 1rem;
 }
-.heroContainer .title{
+
+.heroContainer .title {
     font-size: 3.2rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
@@ -114,13 +129,14 @@
 
 }
 
-.heroContainer .info{
+.heroContainer .info {
     display: flex;
     gap: 1rem;
     align-items: center;
     /* justify-content: center; */
     color: var(--secondary-font-color);
 }
+
 
 /* .heroContainer .button{
     z-index: 2;
@@ -140,58 +156,52 @@
 }
 
 
-.info span{
+.info span {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
-.heroContainer .stamps{
-    gap: .5rem;  
+
+.heroContainer .stamps {
+    gap: .5rem;
     font-size: .8rem;
     color: var(--primary-font-color);
 }
 
-.heroContainer .imdb{
+.heroContainer .imdb {
     background-color: rgb(207, 207, 26);
     color: black;
-    font-weight:900;
+    font-weight: 900;
     padding: .25rem .25rem;
     border-radius: .3rem;
 }
-.heroContainer .imdbContainer{
+
+.heroContainer .imdbContainer {
     display: flex;
     gap: .4rem;
     /* font-size: 1.2rem; */
 }
-.imdbRating{
+
+.imdbRating {
     font-size: 1.2rem;
 }
 
 
 
-.heroContainer .stamps span{
+.heroContainer .stamps span {
     background-color: rgba(78, 75, 75, 0.818);
     padding: .2rem;
     border-radius: .2rem;
     font-weight: 600;
 }
-.heroContainer .genreList{
+
+.heroContainer .genreList {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
-.heroContainer .genreList span{
-    text-decoration: underline;
-    padding-right: 1rem;
-}
 
-.heroContainer .genreList>:not(:last-child){
-    /* text-decoration: underline; */
-    border-right: .15rem rgb(144, 143, 143) solid;
-}
-
-
-.heroContainer .description{
+.heroContainer .description {
     width: 55%;
     font-size: 1.2rem;
     font-weight: 400;
@@ -199,11 +209,11 @@
     animation: slideLeft 1s ease forwards;
 }
 
-.button span{
+.button span {
     display: flex;
 }
 
-.modalbutton{
+.modalbutton {
     color: var(--tertiary-font-color);
     font-size: 1.5rem;
     height: 2.5rem;
@@ -214,18 +224,20 @@
     transition: all .3s ease;
     z-index: 2;
 }
-.modalbutton:hover{
+
+.modalbutton:hover {
     cursor: pointer;
     background-color: rgb(78, 75, 75);
     transform: translateY(-8px);
 }
 
-.watchlisticon{
+.watchlisticon {
     height: 2.5rem;
     cursor: pointer;
     transition: all 1s ease-in-out;
 }
-.readMore{
+
+.readMore {
     background-color: transparent;
     border: none;
     color: rgb(54, 6, 174);
@@ -244,9 +256,9 @@
     backdrop-filter: blur(10px);
     z-index: 200;
 }
-  
-  /* Modal Container */
-  .modal {
+
+/* Modal Container */
+.modal {
     /* background-color: rgb(10, 10, 10); */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -254,20 +266,21 @@
     width: 100%;
     height: 100%;
     display: flex;
+    /* justify-content: center; */
     align-items: center;
     justify-content: center;
-  }
-  
-  /* Video Container */
-  .video_container {
+}
+
+/* Video Container */
+.video_container {
     margin-left: auto;
     margin-right: auto;
     position: relative;
     height: 100%;
     aspect-ratio: 4/3;
-  }
-  
-  .video {
+}
+
+.video {
     position: absolute;
     top: 0;
     left: 0;
@@ -275,10 +288,10 @@
     height: 100%;
     display: flex;
     align-items: center;
-  }
+}
 
-  /* Close Button */
-  .close_button {
+/* Close Button */
+.close_button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -287,90 +300,105 @@
     color: #fff;
     font-size: 20px;
     cursor: pointer;
-  }
-  
-@media screen and (max-width: 710px){
-    .video_container{
+}
+
+@media screen and (max-width: 710px) {
+    .video_container {
         width: 100%;
         aspect-ratio: 4/3;
     }
 }
 
-@media screen and (max-width:840px){
-    .heroContainer .description{
+@media screen and (max-width:840px) {
+    .heroContainer .description {
         width: 70%;
         font-size: 1.1rem;
     }
-    
+
 }
 
-@media screen and (max-width:550px){
-    .heroContainer .info{
+@media screen and (max-width:550px) {
+    .heroContainer .info {
         flex-direction: column;
         align-items: flex-start;
         gap: .5rem;
     }
-    .heroSmall{
+
+    .heroSmall {
         display: flex;
         /* font-size: 1.2rem; */
     }
-    .heroContainer{
+
+    .heroContainer {
         background-color: black;
         background-image: none;
         /* height: 80vh; */
         height: auto;
         padding: .5rem;
     }
-    .heroContainer::before{
-        background:none;
+
+    .heroContainer::before {
+        background: none;
     }
-    .heroContainer .title{
+
+    .heroContainer .title {
         display: none;
     }
-    .heroContainer .description{
+
+    .heroContainer .description {
         width: 100%;
         max-width: 27rem;
         text-align: center;
         font-weight: 500;
         font-size: .9rem;
     }
-    .heroContainer .content{
+
+    .heroContainer .content {
         position: static;
         align-items: center;
         justify-content: center;
         text-align: center;
     }
-    .imdb{
+
+    .imdb {
         font-size: .8rem;
     }
-    .imdbRating{
+
+    .imdbRating {
         font-size: 1rem;
     }
-    .heroContainer .genreList{
+
+    .heroContainer .genreList {
         font-size: 1rem;
         gap: .5rem;
     }
-    .heroContainer .genreList span{
-        padding-right: .5rem;
+
+
+    .genreButtons {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        text-decoration: underline;
     }
 
-
-    
-
 }
+
+
+
 /* movie-info */
 
-.movieInfo{
+.movieInfo {
     background-color: black;
 }
 
-.movieInfo .heading{
+.movieInfo .heading {
     color: white;
     margin: 1rem auto auto 1rem;
     font-size: 1.5rem;
 }
 
-.movieInfo .container{
+.movieInfo .container {
     /* margin: 1rem; */
     padding: 1rem;
     display: flex;
@@ -386,7 +414,7 @@
 
 
 
-.movieInfo .container .cell{
+.movieInfo .container .cell {
     /* margin: 0.5rem; */
     /* width:17rem; */
     /* height: 5rem; */
@@ -395,17 +423,18 @@
     /* transition: height 0.5s ease; */
 }
 
-.movieInfo .cast{
+.movieInfo .cast {
     /* margin: 0.5rem; */
     /* width: 74rem; */
     /* height: 6rem; */
 }
-.cast{
+
+.cast {
     /* display: block; */
     width: 100%;
 }
 
-.cast .content{
+.cast .content {
     display: flex;
     /* max-width: 100%; */
     flex-direction: row;
@@ -413,43 +442,46 @@
     align-content: space-between;
     margin: 0.1rem;
 }
-.cast .content div{
+
+.cast .content div {
     width: 12rem;
 }
 
-.movieInfo .subHeading{
+.movieInfo .subHeading {
     margin-bottom: 0.5rem;
     color: #625e5e;
 }
 
-.movieInfo .content{
+.movieInfo .content {
     color: white;
 }
 
-.showMoreInfoBtn{
-   height: 2.6rem;
-   width: 2.6rem;
-   border-radius: 50%;
-   border: none;
-   background-color: transparent;
-   background-color: rgba(202, 196, 196, 0.203);
-   transform: rotate(180deg);
+.showMoreInfoBtn {
+    height: 2.6rem;
+    width: 2.6rem;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    background-color: rgba(202, 196, 196, 0.203);
+    transform: rotate(180deg);
     transition: all .3s ease-out;
 }
 
-.showMoreInfoBtnCont{
-   text-align: center;
+.showMoreInfoBtnCont {
+    text-align: center;
 }
 
 
-@media screen and (max-width:550px){
-    .movieInfo .container{
+@media screen and (max-width:550px) {
+    .movieInfo .container {
         flex-direction: column;
         gap: .8rem;
     }
-    .movieInfo .heading{
+
+    .movieInfo .heading {
         font-size: 1.3rem;
     }
+
     /* .cast .content{
         flex-direction: row;
     } */
