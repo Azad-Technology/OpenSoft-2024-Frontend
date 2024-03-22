@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from "./Card.module.css";
 import { useNavigate } from "react-router-dom";
 
-const TopCard = ({ movies, val, lenght }) => {
+const TopCard = ({ movies, val, length }) => {
 
     const [like, setlike] = useState(false);
     const [value, setvalue] = useState("-o");
@@ -17,7 +17,12 @@ const TopCard = ({ movies, val, lenght }) => {
     const handlehover = (event) => {
         console.log(movies)
         const particularCard = document.getElementById(`${movies._id}`);
-        particularCard.style.transformOrigin = "left";
+        if (val === length - 1) {
+            particularCard.style.transformOrigin = "right";
+        }
+        else {
+            particularCard.style.transformOrigin = "left";
+        }
     }
     const navigate = useNavigate();
     return (
@@ -25,7 +30,7 @@ const TopCard = ({ movies, val, lenght }) => {
             <div className={styles.number}>
                 <h2>{val + 1}</h2>
             </div>
-            <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={`${movies?._id}`} onMouseOver = {handlehover}>
+            <div onClick={() => navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={`${movies?._id}`} onMouseOver={handlehover}>
                 <div className={styles.cards__overlay}>
                     <div className={styles.card__title}>{movies?.title}</div>
                     <div className={styles.card__runtime}>
