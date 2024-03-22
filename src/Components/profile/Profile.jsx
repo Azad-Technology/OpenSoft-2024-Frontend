@@ -81,7 +81,22 @@ const Profile = () => {
   // };
 
   const handleUpdatePasswordRequest = async(e)=>{
-    
+    try{
+      const response=await instance.patch('/update_password/',{
+        old_password:verificationcurrentPassword,
+        new_password:newPassword,
+        repeat_password:confirmNewPassword
+      },
+      {
+        headers:{
+          'Content-Type':'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      });
+    }
+    catch(err){
+      console.log(err);
+    }
   }
 
   const handleUpdatePassword = () => {    
@@ -120,7 +135,7 @@ const Profile = () => {
               alt="avatar"
               className={styles.avatar}
             />
-            <p className={styles.details_f}>{user?.name}</p>
+            <p className={styles.details_f}>{fullname}</p>
             <p className={styles.details_f}>{user?.subtype}</p>
           </div>
         </div>
@@ -131,13 +146,20 @@ const Profile = () => {
                 <p className={styles.head}> Full Name</p>
               </div>
               <div className={styles.col_sm_9}>
-                <input
+                {isEditNameDisabled?<input
                   id="input"
                   className={styles.details}
                   value={fullname}
                   disabled={isEditNameDisabled}
                   onChange={(e) => setFullname(e.target.value)}
-                />
+                />:<input
+                id="input"
+                className={styles.edittableDetails}
+                value={fullname}
+                disabled={isEditNameDisabled}
+                onChange={(e) => setFullname(e.target.value)}
+              />}
+                
                 {isEditProfileActive ? (
                   <i class="fa fa-edit editbtn" onClick={handleNameChange}></i>
                 ) : (
