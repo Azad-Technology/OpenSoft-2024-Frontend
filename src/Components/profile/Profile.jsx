@@ -3,6 +3,7 @@ import styles from "./Profile.module.css";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../MyContexts/StateProvider";
+import GenreCard from "../Card/GenreCard";
 
 const Profile = () => {
   const [{ token, user }, dispatch] = useStateValue();
@@ -86,7 +87,7 @@ const Profile = () => {
               className={styles.avatar}
             />
             <p className={styles.details_f}>{user?.name}</p>
-            <p className={styles.details_f}>{currentPlan}</p>
+            <p className={styles.details_f}>{user?.subtype}</p>
           </div>
         </div>
         <div className={styles.card_desc}>
@@ -188,7 +189,7 @@ const Profile = () => {
               </div>
             </div>
 
-            {isBasic ? (
+            {!user?.subtype==="Basic" ? (
               <div></div>
             ) : (
               <div className={styles.row}>
@@ -290,7 +291,7 @@ const Profile = () => {
       <div className={styles.edit_button}>
         {isEditProfileActive ? (
           <>
-            <button onClick={handleConfirmChanges}>save changes</button>
+            <button onClick={handleConfirmChanges}>save Changes</button>
             <button onClick={handleSignout}>Signout</button>
           </>
         ) : (
@@ -308,11 +309,20 @@ const Profile = () => {
               _id: 1,
               year: 2222,
               imdb: { rating: 8.8 },
-              poster:
-                "https://image.tmdb.org/t/p/w342/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
+              poster_path:
+                "http://image.tmdb.org/t/p/w1280/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
               plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
             }}
           />
+          <GenreCard movies={{
+              _id: 1,
+              year: 2222,
+              imdb: { rating: 8.8 },
+              genre: "Romance",
+              poster_path:
+                "http://image.tmdb.org/t/p/w1280/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
+              plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
+            }}/>
         </div>
       </div>
     </div>
