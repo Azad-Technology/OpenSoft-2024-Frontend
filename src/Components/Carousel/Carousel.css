@@ -89,7 +89,7 @@
     display: block;
     margin: 0 0.5rem 0 0.5rem;
     object-fit:cover;
-    position: relative;
+    position: relative; 
     width: 33%;
     height: 72%;
     border-radius: 1rem;
