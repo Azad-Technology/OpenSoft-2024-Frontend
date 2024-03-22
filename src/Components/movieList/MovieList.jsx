@@ -4,14 +4,20 @@ import Card from '../../Components/Card/Card.jsx'
 
 const MovieList = ({ movie }) => {
   
-  const length=movie.length;
+  useEffect(()=>{
+    console.log("movie",movie);
+  },[movie])
+  
   return (
-    <>
-      {movie.map((m, i) => {
-        // if(m?.poster_path===undefined) return;
-        return <Card movies={m} />
-      })}
-    </>
+    <div className={styles.movieList}>
+
+        {movie.map((m, i) => {
+          console.log("m",m);
+          // if(m && m.poster_path === undefined) return;
+          return <Card movies={m} />
+        })}
+        
+    </div>
   )
 }
 

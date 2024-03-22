@@ -15,6 +15,12 @@
 /* hero small screen */
 
 /* animations */
+
+.loaderIcon{
+    height: 5vh;
+    aspect-ratio: 1/1;
+}
+
 @keyframes slideRight{
     from{
         opacity: 0;
