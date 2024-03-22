@@ -63,6 +63,20 @@
   text-align: right;
  
  }
+
+ .edittableDetails{
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+  width: 100%;
+  /* padding-top: 5%; */
+  font-size: large;
+  text-align: center;
+  background-color: #101010;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+ }
+
  ._btn{
   background-color: #101010;
  
