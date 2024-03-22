@@ -11,11 +11,7 @@ export const Watchlists = () => {
     useEffect(() => {
         try {
             const getWatchlist = async () => {
-                const res = await instance.get('/watchlist/'+id, {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
+                const res = await instance.get('/recent_movies');
                 console.log(res.data);
                 setMovies(res.data);
             }
@@ -26,7 +22,7 @@ export const Watchlists = () => {
     }, []);
   return (
     <>
-        {movies ? <Watchlist movies={movies.movies} id={movies._id} name={movies.name} /> : <h1>Loading...</h1>}
+        {movies ? <Watchlist movies={movies} id={movies._id} name="My WatchList #1" /> : <h1>Loading...</h1>}
     </>
   )
 }

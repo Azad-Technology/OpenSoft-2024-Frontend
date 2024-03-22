@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router';
 const Watchlist = ({ movies, name, id }) => {
     const [{token, user}, dispatch] = useStateValue();
     // console.log(user);
+    // console.log(movies);
     const navigate = useNavigate();
 
   return (
@@ -25,7 +26,7 @@ const Watchlist = ({ movies, name, id }) => {
         <p>Watchlist</p>
         <h2>{name}</h2>
         <span>
-          <strong>{user?.name}</strong> {movies.length} Movies{" "}
+          <strong>{user?.name}</strong> {movies?.length} Movies{" "}
         </span>
       </div>
     </div>
