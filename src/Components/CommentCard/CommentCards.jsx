@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentCard from './CommentCard';
-import styles from './CommentCard.module.css';
+import styles from './CommentCards.module.css';
 
 
 

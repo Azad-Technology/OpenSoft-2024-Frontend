@@ -3,13 +3,16 @@ import { useStateValue } from "../../MyContexts/StateProvider";
 import instance from '../../axios';
 import styles from './GenreModal.module.css';
 import Watchlist from '../Watchlists/Watchlist';
+import MovieList from '../movieList/MovieList';
+
+
 function Modal({ onClose, movies }) {
     return (
         <div className={styles.modal_overlay}>
             <div className={styles.heading}> Action </div>
             <div className={styles.modal}>
                 <div>        
-                    {movies ? <Watchlist movies={movies.movies} id={movies._id} name={movies.name} /> : <h1>Loading...</h1>}
+                    {movies ? <MovieList movie={movies} /> : <h1>Loading...</h1>}
                 </div>
             </div>
             <button className={styles.close_button} onClick={onClose}>X</button>
@@ -32,7 +35,7 @@ const GenreModal = () => {
     useEffect(() => {
         try {
             const getWatchlist = async () => {
-                const res = await instance.get('/recent_movies');
+                const res = await instance.get('/genre/Action');
                 console.log(res.data);
                 setMovies(res.data);
             }

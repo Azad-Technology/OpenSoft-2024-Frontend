@@ -14,12 +14,25 @@ export const Slider = ({genre,id}) => {
       if(genre==="More Like This"){
         const response = await instance.get('/movies/'+id+'/related_movies/?count=18')
         setMovies(response.data);
-        console.log(response.data);
         return;
       }
-      const response = await instance.get(`/genre_top_movies/${genre}/?count=18`)
-      // movies.push(...movies);
-      console.log(response.data);
+      if(genre==="Top Movies"){
+        const response=await instance.get('/top_movies/?count=18');
+        console.log(response.data);
+        setMovies(response.data);
+        return;
+      }
+      if(genre==="Top Series"){
+        const response=await instance.get('/top_series/?count=18');
+        setMovies(response.data);
+        return;
+      }
+      if(genre==="Recent"){
+        const response=await instance.get('/recent_movies/?count=18');
+        setMovies(response.data);
+        return;
+      }
+      const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
       setMovies(response.data);
     }
     getData();
@@ -35,7 +48,6 @@ export const Slider = ({genre,id}) => {
 
   useEffect(()=>{
     if(movies){
-      console.log(scrollableDivRef)
       setShowRightBtn((scrollableDivRef.current.scrollWidth-scrollableDivRef.current.scrollLeft-scrollableDivRef.current.clientWidth)>40  && scrollableDivRef.current.clientWidth<scrollableDivRef.current.scrollWidth);
   
   
