@@ -228,6 +228,10 @@ function NewComments(props) {
       console.log(newComment);
     }
 
+    useEffect(()=>{
+      console.log(newComment);
+    },[newComment])
+
   
     return (
       <>

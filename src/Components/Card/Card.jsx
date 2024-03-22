@@ -40,7 +40,7 @@ const Card = ({ movies }) => {
               class={`fa fa-heart${value}`}
               aria-hidden="true"
               onClick={openHeart}
-            ></i>}
+            ></i>
           </div>
           {movies && <img
             src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
