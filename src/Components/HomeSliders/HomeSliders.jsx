@@ -10,11 +10,7 @@ export const HomeSliders = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
 
   const openModal = (genre) => {
-    if (token && token !== 'null' && token !== undefined && token !== 'undefined' && token !== '') {
       setSelectedGenre(genre);
-    } else {
-      navigate('/login');
-    }
   }
 
   const genres = [

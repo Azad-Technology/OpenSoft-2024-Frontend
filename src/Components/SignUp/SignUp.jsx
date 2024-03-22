@@ -5,11 +5,12 @@ import { useStateValue } from '../../MyContexts/StateProvider';
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
-import { useState, useNavigate } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 function SignUp() {
     const [{token,premium},dispatch]=useStateValue();
-    const navigate=useNavigate;
+    const navigate=useNavigate();
     const [isPasswordVisible1, setisPasswordVisible1] = useState(false);
     const [isPasswordVisible2, setisPasswordVisible2] = useState(false);
     const [err, setErrors] = useState("")
@@ -28,34 +29,33 @@ function SignUp() {
       else {
         if(newPass.length<8) setErrors('Password must be at least 8 characters long.');
         else{
-          if(confPass === newPass) setErrors("")
+          if(confPass === newPass){
+            setErrors("");
+            try{
+              const response=await instance.post('/signup',{
+                name:"Dummy",
+                email:email,
+                password:password
+              },
+              {
+                headers:{
+                  'Content-Type':'application/json'
+                }
+              });
+              dispatch({
+                type:'SET_TOKEN',
+                token:response.data.token,
+              });
+              navigate('/');
+            }
+            catch(err){
+              console.log(err);
+            }
+          }
           else setErrors("Password does not match")
         }
       }
-
-          try{
-            const response=await instance.post('/signup/',{
-              name:"Dummy",
-              email:email,
-              password:password
-            },
-            {
-              headers:{
-                'Content-Type':'application/json'
-              }
-            });
-            // console.log(response.data);
-            dispatch({
-              type:'SET_TOKEN',
-              token:response.data.token,
-              premium:"Basic"
-            });
-            navigate('/');
-          }
-          catch(err){
-            console.log(err);
-          }
-  };
+    };
 
   
 

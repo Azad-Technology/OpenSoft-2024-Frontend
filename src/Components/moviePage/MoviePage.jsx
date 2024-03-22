@@ -48,12 +48,9 @@ const MoviePage = () => {
     //Genre Modals 
     const [selectedGenre, setSelectedGenre] = useState(null);
 
-    const openModal = (genre) => {
-        if (token && token !== 'null' && token !== undefined && token !== 'undefined' && token !== '') {
-            setSelectedGenre(genre);
-        } else {
-            navigate('/login');
-        }
+    const openModal = (genre) => 
+    {
+        setSelectedGenre(genre);
     }
     //Genre Modals end
 
@@ -222,10 +219,10 @@ const MoviePage = () => {
     return (
         <>
             <div className={styles.font}>
-                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` }}>
+                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` }}>
                     <div className={styles.title}>{movie?.title}</div>
                 </div>
-                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
+                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
                     <div className={styles.content}>
                         {premium && (<div className={styles.premium}>Included with premium</div>)}
 
@@ -329,9 +326,9 @@ const MoviePage = () => {
 
 
                 <MoreLikeThis id={id} />
-                <div className={styles.loaderIcon}>
+                {/* <div className={styles.loaderIcon}>
                     <Loader />
-                </div>
+                </div> */}
                 {selectedGenre &&
                     <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />
                 }
