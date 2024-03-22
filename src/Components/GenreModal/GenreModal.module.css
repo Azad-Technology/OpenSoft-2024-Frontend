@@ -1,7 +1,12 @@
 .heading{
     font-size: 50px;
-    text-decoration: underline;
     margin-top: 2%;
+}
+.movieList{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 5%;
 }
 /* Modal Overlay */
 .modal_overlay {
@@ -23,15 +28,15 @@
 /* Modal Container */
 .modal {
     overflow-y: scroll;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(21, 15, 15);
     border-radius: 8px;
     position: relative;
     width: 80%;
     top: 6%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 

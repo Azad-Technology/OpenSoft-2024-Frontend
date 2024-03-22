@@ -1,0 +1,10 @@
+.cardcontainer {
+    z-index: 10;
+}
+
+.movieList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
