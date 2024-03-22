@@ -489,12 +489,6 @@
     min-width: 10rem;
     /* transition: height 0.5s ease; */
 }
-
-.movieInfo .cast{
-    /* margin: 0.5rem; */
-    /* width: 74rem; */
-    /* height: 6rem; */
-}
 .cast{
     /* display: block; */
     width: 100%;

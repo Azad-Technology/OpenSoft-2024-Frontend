@@ -111,23 +111,23 @@ import { useState, useRef, useEffect } from "react";
 //     );
 //   }
 
-  function NewComments(props) {
-    let comments = props.info.map((obj)=>{
-      return obj.text;
-    });
-
-    let name = props.info.map((obj)=>{
-      return obj.name;
-    });
-
-    let date = props.info.map((obj)=>{
-      return obj.date;
-    });
-
-    // let image = props.info.map((obj)=>{
+function NewComments(props) {
+  let comments = props.info.map((obj)=>{
+    return obj.text;
+  });
+  
+  let name = props.info.map((obj)=>{
+    return obj.name;
+  });
+  
+  let date = props.info.map((obj)=>{
+    return obj.date;
+  });
+  
+  // let image = props.info.map((obj)=>{
     //   return obj.image;
     // });
-
+    
     const [clicked, setClicked] = useState(false);
     const [state, setState] = useState("See more");
     const [parentHeight, setParentHeight] = useState('auto');
@@ -136,11 +136,11 @@ import { useState, useRef, useEffect } from "react";
     const textareaRef = useRef(null);
     const initialParentHeight = useRef(null);
     const initialTextareaHeight = useRef(null);
-  
+    
     function SwitchState() {
       setClicked(!clicked);
       const elem = document.getElementById("showMoreBtn");
-
+      
       if (state === "See more") {
         setState("See less");
         elem.style.transform = 'rotate(0deg)';
@@ -149,49 +149,51 @@ import { useState, useRef, useEffect } from "react";
         elem.style.transform = 'rotate(180deg)';
       }
     }
-  
+    
     // function handleTextAreaChange(event) {
-    //   const textareaLineHeight = 12; // Adjust this value according to your textarea's line-height
-    //   const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
-    //   const newTextareaHeight = `${currentRows * textareaLineHeight+auto}px`;
+      //   const textareaLineHeight = 12; // Adjust this value according to your textarea's line-height
+      //   const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
+      //   const newTextareaHeight = `${currentRows * textareaLineHeight+auto}px`;
       
-    //   // setTextareaHeight(newTextareaHeight);
-    //   setParentHeight(newTextareaHeight); // Set parent height to match textarea height
-  
-    //   // Adjust textarea height to fit content if it exceeds initial height
-    //   const currentHeight = event.target.scrollHeight;
-    //   const initialHeight = initialTextareaHeight.current;
-    //   if (currentHeight > initialHeight) {
-    //     textareaRef.current.style.height = currentHeight + 'px';
-    //     // setTextareaHeight(currentHeight + 'px');
-    //     setParentHeight(currentHeight + 'px');
-    //   }
-
-    //   const textAreaElem = document.getElementById("myTextArea");
-    //   if(textAreaElem.value){
-    //     setDisableBtn(false);
-    //   }else{
-    //     setDisableBtn(true);
-    //   }
-
-
-    // }
-    function handleTextAreaChange(event) {
-      const textareaLineHeight = 12;
-      const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
-      const newTextareaHeight = `${currentRows * textareaLineHeight}px`;
-    
-      // Adjust textarea height to fit content
-      event.target.style.height = newTextareaHeight;
-    
-      // Adjust parent height to match textarea height
-      const parentHeight = `${currentRows * textareaLineHeight + auto}px`;
-      setParentHeight(parentHeight);
-    
-      // Enable/disable button based on textarea content
-      setDisableBtn(!event.target.value.trim());
-    
-      // Store initial heights if not already stored
+      //   // setTextareaHeight(newTextareaHeight);
+      //   setParentHeight(newTextareaHeight); // Set parent height to match textarea height
+      
+      //   // Adjust textarea height to fit content if it exceeds initial height
+      //   const currentHeight = event.target.scrollHeight;
+      //   const initialHeight = initialTextareaHeight.current;
+      //   if (currentHeight > initialHeight) {
+        //     textareaRef.current.style.height = currentHeight + 'px';
+        //     // setTextareaHeight(currentHeight + 'px');
+        //     setParentHeight(currentHeight + 'px');
+        //   }
+        
+        //   const textAreaElem = document.getElementById("myTextArea");
+        //   if(textAreaElem.value){
+          //     setDisableBtn(false);
+          //   }else{
+            //     setDisableBtn(true);
+            //   }
+            
+            
+            // }
+            const [newComment,setNewComment] = useState('');
+            function handleTextAreaChange(event) {
+              setNewComment(event.target.value);
+              const textareaLineHeight = 12;
+              const currentRows = Math.ceil(event.target.scrollHeight / textareaLineHeight);
+              const newTextareaHeight = `${currentRows * textareaLineHeight}px`;
+              
+              // Adjust textarea height to fit content
+              event.target.style.height = newTextareaHeight;
+              
+              // Adjust parent height to match textarea height
+              const parentHeight = `${currentRows * textareaLineHeight + auto}px`;
+              setParentHeight(parentHeight);
+              
+              // Enable/disable button based on textarea content
+              setDisableBtn(!event.target.value.trim());
+              
+              // Store initial heights if not already stored
       if (!initialParentHeight.current) {
         initialParentHeight.current = parentHeight;
       }
@@ -220,6 +222,12 @@ import { useState, useRef, useEffect } from "react";
       setTextareaHeight(initialTextareaHeight.current + 'px');
       setParentHeight(initialParentHeight.current + 'px');
     }
+
+    const handleSubmit=(e)=>{
+      e.preventDefault();
+      console.log(newComment);
+    }
+
   
     return (
       <>
@@ -237,14 +245,15 @@ import { useState, useRef, useEffect } from "react";
                     cols={190}
                     className={styles.typeComment}
                     style={{ height: '100%', overflow: 'hidden', whiteSpace: 'pre-wrap' }} // Ensure no scrollbar and wrap long lines
-                    onChange={handleTextAreaChange} 
+                    onChange={(event)=>handleTextAreaChange(event)} 
                     onFocus={handleTextareaFocus}
                     onBlur={handleTextareaBlur}
+                    value={newComment}
                   ></textarea>
                 </div>
                 <div className={styles.submitBtnContainer}>
                   {disableBtn && (<button type="submit" className={styles.submitBtn} disabled>Submit</button>)}
-                  {!disableBtn && (<button type="submit" className={styles.submitBtn} >Submit</button>)}
+                  {!disableBtn && (<button onClick={(e)=>handleSubmit(e)} type="submit" className={styles.submitBtn} >Submit</button>)}
                   
                 </div>
               </div>
