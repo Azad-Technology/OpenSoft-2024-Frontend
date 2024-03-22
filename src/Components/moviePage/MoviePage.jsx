@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import styles from "./moviePage.module.css"
-import { useState,useMemo } from "react";
+import { useState, useMemo } from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
 import { useParams } from "react-router-dom";
@@ -14,34 +14,36 @@ import { useNavigate } from "react-router-dom";
 import watchlistoff from './../../assets/watchlistoff.svg';
 import watchliston from './../../assets/watchliston.svg';
 import Loader from './../Loader/Loader.jsx';
+
 // import './styles.css';
 // import { Time } from "@vidstack/react";
 
 
 function Modal({ onClose }) {
-  return (
-    <div className={styles.modal_overlay}>
-      <div className={styles.modal}>
-        {/* Video container */}
-        <div className={styles.video_container}>
-          <div className={styles.video}>
-            <MediaPlayer storage="storage-key" title="Dune" src="/manifests/dune_master.m3u8">
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
-          </div>
+    return (
+        <div className={styles.modal_overlay}>
+            <div className={styles.modal}>
+                {/* Video container */}
+                <div className={styles.video_container}>
+                    <div className={styles.video}>
+                        <MediaPlayer storage="storage-key" title="Dune" src="/manifests/dune_master.m3u8">
+                            <MediaProvider />
+                            <DefaultVideoLayout icons={defaultLayoutIcons} />
+                        </MediaPlayer>
+                    </div>
+                </div>
+                {/* Close button */}
+                <button className={styles.close_button} onClick={onClose}>X</button>
+            </div>
         </div>
-        {/* Close button */}
-        <button className={styles.close_button} onClick={onClose}>X</button>
-      </div>
-    </div>
-  );
+    );
 }
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
 const MoviePage = () => {
+    const [premium, setPremium] = useState(true);
 
-    const [{ token }, dispatch] = useStateValue();
+    const [{ token, user }, dispatch] = useStateValue();
     const navigate = useNavigate();
 
     const [isWatchList, setIsWatchList] = useState(false);
@@ -65,6 +67,9 @@ const MoviePage = () => {
         }
         getData();
     }, [id]);
+    useEffect(() => {
+        setPremium(movie?.imdb.rating >= 8);
+    }, [movie])
 
     useEffect(() => {
         const getCommentData = async () => {
@@ -74,6 +79,10 @@ const MoviePage = () => {
         }
         getCommentData();
     }, [id]);
+
+    // useEffect(()=>{
+    //     console.log(user.subtype);
+    // }, [user])
 
     // useEffect(() => {
     //     console.log(movie);
@@ -168,7 +177,16 @@ const MoviePage = () => {
 
     const handleClick = () => {
         if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
-            setShowModal(true);
+            if (!premium) {
+                setShowModal(true);
+            } else {
+                if (user && user.subtype != "Basic") {
+                    setShowModal(true);
+                } else {
+                    navigate("/buyPremium");
+                }
+            }
+
         }
         else {
             navigate('/login');
@@ -184,6 +202,10 @@ const MoviePage = () => {
                 </div>
                 <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w500${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
                     <div className={styles.content}>
+                        {premium && (<div className={styles.premium}>Included with premium</div>)}
+
+
+
                         <div className={styles.title}>{movie?.title}</div>
                         <div className={styles.description} id="description">{movie?.plot}{!isExpanded && (<button className={styles.readMore} onClick={handleReadMore}>  ...Show more</button>)}{isExpanded && showLess && (<button className={styles.readMore} onClick={handleShowLess}>&nbsp;Show less</button>)}</div>
                         <div className={styles.info}>
@@ -212,7 +234,7 @@ const MoviePage = () => {
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
-                                {isWatchList ? <img src={watchliston}  className={styles.watchlisticon} /> : <img src={watchlistoff}  className={styles.watchlisticon} />}
+                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} /> : <img src={watchlistoff} className={styles.watchlisticon} />}
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
                             </span>
                             {/* <span><button>B</button></span>

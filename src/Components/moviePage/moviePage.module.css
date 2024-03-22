@@ -86,13 +86,14 @@
 }
 
 .heroContainer::before{
-    /* content: ""; */
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     height: 100%;
     width: 75%;
     background: linear-gradient(to right, rgba(0,0,0,1),transparent);
+    z-index: 0;
 }
 
 .heroContainer .content{
@@ -120,6 +121,25 @@
     /* justify-content: center; */
     color: var(--secondary-font-color);
 }
+
+/* .heroContainer .button{
+    z-index: 2;
+} */
+
+.premium{
+    display: flex;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    animation: slideRight 1s ease forwards;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(152, 115, 20), transparent);
+    width: fit-content;
+    padding: .2rem;
+    color: rgb(202, 202, 205);
+}
+
+
 .info span{
     display: flex;
     gap: 1rem;
@@ -191,6 +211,7 @@
     border: none;
     background-color: rgba(78, 75, 75, 0.633);
     transition: all .3s ease;
+    z-index: 2;
 }
 .modalbutton:hover{
     cursor: pointer;
