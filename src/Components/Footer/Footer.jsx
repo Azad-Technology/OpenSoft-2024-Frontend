@@ -11,14 +11,6 @@ function Footer() {
                 <div className={styles.footer__addr}>
                     {/* <h1 className={styles.footer__log}>Something</h1> */}
                     <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="" />
-
-                    <h2>Contact</h2>
-
-                    <address>
-                        Azad Hall of Residence
-
-                        <a className={styles.footer__btn} href="mailto:example@gmail.com">Email Us</a>
-                    </address>
                 </div>
 
                 <ul className={styles.footer__nav}>
