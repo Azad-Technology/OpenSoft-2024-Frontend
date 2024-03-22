@@ -39,7 +39,7 @@
 .comment-card{
   display: inline-block; /* Change to inline-block to ensure gaps */
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.9); 
+  background-color: rgba(155, 152, 152, 0.9); 
   padding: 15px; /* Add padding */
   border-radius: 8px; /* Add border radius */
   margin-right: 20px; /* Add right margin to create space between cards */

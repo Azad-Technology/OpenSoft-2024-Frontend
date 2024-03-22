@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import styles from "./moviePage.module.css"
-import { useState,useMemo } from "react";
+import { useState } from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
 import { useParams } from "react-router-dom";
@@ -14,110 +14,47 @@ import { useNavigate } from "react-router-dom";
 import watchlistoff from './../../assets/watchlistoff.svg';
 import watchliston from './../../assets/watchliston.svg';
 import Loader from './../Loader/Loader.jsx';
-// import './styles.css';
-// import { Time } from "@vidstack/react";
+import WatchListModal from "./WatchListModal.jsx";
+import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
+import GenreModal from "../GenreModal/GenreModal";
 
 
 function Modal({ onClose }) {
-  return (
-    <div className={styles.modal_overlay}>
-      <div className={styles.modal}>
-        {/* Video container */}
-        <div className={styles.video_container}>
-          <div className={styles.video}>
-            <MediaPlayer storage="storage-key" title="Dune" src="/manifests/dune_master.m3u8">
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
-          </div>
-        </div>
-        {/* Close button */}
-        <button className={styles.close_button} onClick={onClose}>X</button>
-      </div>
-    </div>
-  );
+      return (
+            <div className={styles.modal_overlay}>
+                  <div className={styles.modal}>
+                        {/* Video container */}
+                        <div className={styles.video_container}>
+                              <div className={styles.video}>
+                                    <MediaPlayer storage="storage-key" title="Dune" src="/manifests/dune_master.m3u8">
+                                          <MediaProvider />
+                                          <DefaultVideoLayout icons={defaultLayoutIcons} />
+                                    </MediaPlayer>
+                              </div>
+                        </div>
+                        {/* Close button */}
+                        <button className={styles.close_button} onClick={onClose}>X</button>
+                  </div>
+            </div>
+      );
 }
-import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 
-const WatchListModal = ({ onClose, movieID, token }) => {
-    const [watchlistName, setWatchListName] = useState('');
-    const [errorMsg, setErrorMsg] = useState('');
-    const createWatchList = async () => {
-        console.log(watchlistName)
-        if(watchlistName === ''){
-            setErrorMsg('Please enter a name');
-            return;
-        }
-        setErrorMsg('');
-        try{
-            const response = await instance.post(`/add_watchlist/${watchlistName}`, {
-                headers:{
-                    Authorization: `Bearer ${token}`
-                }
-            });
-            console.log(response);
-
-        } catch(err){
-            console.log(err);
-        }
-    }
-
-    return (
-    <div className={styles.watchlist_modal_overlay}>
-        <div className={styles.watchlist_modal}>
-            <div className={styles.watchlist_modal_content}>
-            <div className={styles.watchlist_modal_heading}>Add to Watchlist</div>
-
-            <div className={styles.watchlist_modal_section}>
-                <div className={styles.watchlist_modal_section_heading}>Create New Watchlist</div>
-                <div className={styles.watchlist_create}>
-                <input
-                type="text"
-                placeholder="Enter watchlist name"
-                className={styles.watchlist_modal_input}
-                value={watchlistName}
-                onChange={(e) => setWatchListName(e.target.value)}
-                />
-                <button className={styles.watchlist_modal_button} onClick={createWatchList}>Create</button>
-                </div>
-                {errorMsg && <div className={styles.watchlist_error}>{errorMsg}</div>}
-            </div>
-            <div className={styles.watchlist_divider}></div>
-            <div className={styles.watchlist_modal_section}>
-                <div className={styles.watchlist_modal_section_heading}>Add to Existing</div>
-                <div className={styles.watchlist_modal_buttons}>
-                 <label>
-                                <input
-                                    type="checkbox"
-                                    value="Watchlist 1"
-                                    // checked={selectedWatchlists.includes("Watchlist 1")}
-                                    // onChange={handleCheckboxChange}
-                                />
-                                Watchlist 1
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="Watchlist 2"
-                                    // checked={selectedWatchlists.includes("Watchlist 2")}
-                                    // onChange={handleCheckboxChange}
-                                />
-                                Watchlist 2
-                </label>
-                </div>
-            </div>
-            </div>
-            <button className={styles.watchlist_close_button} onClick={onClose}>X</button>
-        </div>
-    </div>
-    );
-}
 
 const MoviePage = () => {
+    const [premium, setPremium] = useState(true);
 
     const [{ token }, dispatch] = useStateValue();
-    const navigate = useNavigate();
 
+    //Genre Modals 
+    const [selectedGenre, setSelectedGenre] = useState(null);
+
+    const openModal = (genre) => 
+    {
+        setSelectedGenre(genre);
+    }
+    //Genre Modals end
+
+    const navigate = useNavigate();
     const [isWatchList, setIsWatchList] = useState(false);
     const [showWatchListModal, setShowWatchListModal] = useState(false);
 
@@ -140,6 +77,9 @@ const MoviePage = () => {
         }
         getData();
     }, [id]);
+    useEffect(() => {
+        setPremium(movie?.imdb.rating >= 8);
+    }, [movie])
 
     useEffect(() => {
         const getCommentData = async () => {
@@ -149,6 +89,10 @@ const MoviePage = () => {
         }
         getCommentData();
     }, [id]);
+
+    // useEffect(()=>{
+    //     console.log(user.subtype);
+    // }, [user])
 
     // useEffect(() => {
     //     console.log(movie);
@@ -220,30 +164,39 @@ const MoviePage = () => {
         const elem = document.getElementById("showMoreInfo");
         if (showMoreInfo) {
             setShowMoreInfo(false);
-            
+
             elem.style.transform = 'rotate(180deg)';
         } else {
             setShowMoreInfo(true);
             elem.style.transform = 'rotate(0deg)';
         }
     }
-    
-    
+
+
     //     // event listeners
-    
+
     //     window.addEventListener("resize", screenSizeChanged);
     //     window.addEventListener("load", screenSizeChanged);
-    
+
     window.addEventListener("resize", () => {
         setSmallScreen(window.innerWidth <= 550);
     })
     window.addEventListener('load', () => {
         setSmallScreen(window.innerWidth <= 550);
     })
-    
+
     const handleClick = () => {
         if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
-            setShowModal(true);
+            if (!premium) {
+                setShowModal(true);
+            } else {
+                if (user && user.subtype != "Basic") {
+                    setShowModal(true);
+                } else {
+                    navigate("/buyPremium");
+                }
+            }
+
         }
         else {
             navigate('/login');
@@ -253,7 +206,7 @@ const MoviePage = () => {
         if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
             if (isWatchList) {
                 setIsWatchList(false);
-            } else{
+            } else {
                 setIsWatchList(true);
             }
         }
@@ -266,11 +219,15 @@ const MoviePage = () => {
     return (
         <>
             <div className={styles.font}>
-                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` }}>
+                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` }}>
                     <div className={styles.title}>{movie?.title}</div>
                 </div>
-                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
+                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
                     <div className={styles.content}>
+                        {premium && (<div className={styles.premium}>Included with premium</div>)}
+
+
+
                         <div className={styles.title}>{movie?.title}</div>
                         <div className={styles.description} id="description">{movie?.plot}{!isExpanded && (<button className={styles.readMore} onClick={handleReadMore}>  ...Show more</button>)}{isExpanded && showLess && (<button className={styles.readMore} onClick={handleShowLess}>&nbsp;Show less</button>)}</div>
                         <div className={styles.info}>
@@ -290,7 +247,7 @@ const MoviePage = () => {
                         <div className={styles.genreList}>
                             {
                                 movie?.genres.map((ele) => (
-                                    <span>{ele}</span>
+                                    <button className={styles.genreButtons} onClick={() => openModal(ele)}>{ele}</button>
                                 ))
                             }
                         </div>
@@ -299,7 +256,7 @@ const MoviePage = () => {
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
-                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff}  className={styles.watchlisticon} onClick={() => {setShowWatchListModal(true)}} />}
+                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />}
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
                                 {showWatchListModal && <WatchListModal movieID={id} token={token} onClose={() => setShowWatchListModal(false)} />}
                             </span>
@@ -369,9 +326,12 @@ const MoviePage = () => {
 
 
                 <MoreLikeThis id={id} />
-                <div className={styles.loaderIcon}>
+                {/* <div className={styles.loaderIcon}>
                     <Loader />
-                </div>
+                </div> */}
+                {selectedGenre &&
+                    <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />
+                }
             </div>
             {/* <Footer /> */}
         </>
