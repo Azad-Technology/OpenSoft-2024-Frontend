@@ -42,11 +42,12 @@ function SignUp() {
                   'Content-Type':'application/json'
                 }
               });
+              console.log("Signup",response.data);
               dispatch({
                 type:'SET_TOKEN',
                 token:response.data.token,
               });
-              navigate('/');
+              navigate(-2);
             }
             catch(err){
               console.log(err);
