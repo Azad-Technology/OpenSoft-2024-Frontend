@@ -54,8 +54,8 @@ const Card = ({ movies }) => {
               onClick={openHeart}
             ></i>}
           </div>
-          {movies && <img
-            src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
+          {movies && <img loading="lazy"
+            src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
             className={styles.cards_img}
           />}
         </div>
