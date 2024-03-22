@@ -19,7 +19,6 @@ const SearchPage = () => {
         const user = await app.logIn(credentials);
         const results = await user.functions.fuzzy_dave(searchTerm, '*');
         setFuzzy(results);
-        console.log("fuzzy", results);
       }
       catch (err) {
         console.error("Failed to log in", err);
@@ -61,11 +60,9 @@ const SearchPage = () => {
       language: languageSelections.join(',')
     };
 
-    console.log('Filters:', filters); // Log the constructed filters
 
     try {
       const response = await axios.get('/api/movies', { params: filters });
-      console.log('API Response:', response); // Log the complete response
       // setMovies(response.data);
     } catch (error) {
       console.error("Error fetching movies:", error);
@@ -110,7 +107,8 @@ const SearchPage = () => {
         </section>
 
       </div>
-      {fuzzy ? <MovieList movie={fuzzy} /> : <div className={styles.not_found}>Not Found</div>}
+      {fuzzy && <MovieList movie={fuzzy} />}
+      {!fuzzy && <MovieList movie={Array(18).fill(null)} />}
     </div>
   );
 }
