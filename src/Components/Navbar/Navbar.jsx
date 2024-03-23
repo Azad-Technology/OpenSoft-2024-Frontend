@@ -145,7 +145,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
-                                                        setSelectedID(menuoption.genreID);
+                                                        setSelectedID(dropdown.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
@@ -157,7 +157,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
-                                                        setSelectedID(menuoption.genreID);
+                                                        setSelectedID(dropdown.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
@@ -169,7 +169,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
-                                                        setSelectedID(menuoption.genreID);
+                                                        setSelectedID(dropdown.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )

@@ -108,7 +108,7 @@ const alanBtnContainer = useRef();
               <div className='homepage'>
                 <Carousel />
                 <HomeSliders />
-                <Footer />
+                <Footer setSelectedGenre={setSelectedGenre}/>
               </div>
 
             </>
