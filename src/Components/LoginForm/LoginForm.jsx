@@ -50,7 +50,7 @@ function LoginForm({register, setShowPopup}) {
             setShowPopup(true)
             setTimeout(()=>{
               setShowPopup(false)
-            },2500)
+            },3000)
           }
           navigate(-1);
         }

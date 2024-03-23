@@ -2,8 +2,8 @@
   position: fixed;
   top: 4rem;
   right: 1.25rem;
-  background-color: rgb(0, 0, 0);
-  color: rgb(121, 109, 109);
+  background-color: rgba(49, 44, 44, 0.493);;
+  color: rgb(255, 255, 255);
   padding: 0.625rem;
   border-radius: 0.3125rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
@@ -16,8 +16,8 @@
   position: fixed;
   top: 4rem;
   right: 1.25rem;
-  background-color: rgb(0, 0, 0);
-  color: rgb(113, 105, 105);
+  background-color: rgba(49, 44, 44, 0.493);
+  color: rgb(255, 249, 249);
   padding: 0.625rem;
   border-radius: 0.3125rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
@@ -29,20 +29,50 @@
 
 @keyframes fadeInfadeOutBorderReject {
   from {
-    border-color: transparent; /* Start transparent */
+    border-color: transparent;
   }
   to {
-    border-color: rgb(150, 14, 14); /* End with red */
+    border-color: rgb(150, 14, 14); 
   }
 }
 
 
 @keyframes fadeInfadeOutBorderSuccess {
   from {
-    border-color: transparent; /* Start transparent */
+    border-color: transparent; 
   }
   to {
-    border-color: rgb(33, 162, 35); /* End with red */
+    border-color: rgb(33, 162, 35);
   }
 }
 
+.rejectedPopup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.493); 
+  animation: fadeInfadeOut 0.9s ease-in-out alternate infinite;
+}
+
+.successPopup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.493); 
+  animation: fadeInfadeOut 0.9s ease-in-out alternate infinite;
+}
+
+@keyframes fadeInfadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
