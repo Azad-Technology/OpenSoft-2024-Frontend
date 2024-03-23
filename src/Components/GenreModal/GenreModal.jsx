@@ -5,7 +5,6 @@ import MovieModalList from './MovieModalList';
 
 function Modal({ onClose, genre, id }) {
     const [movies, setMovies] = useState(null)
-    console.log("kalidas4");
     useEffect(() => {
         const getData = async () => {
             if (genre === "More Like This") {
@@ -34,6 +33,12 @@ function Modal({ onClose, genre, id }) {
                 setMovies(response.data);
                 return;
             }
+            if(id==="country"){
+                const response = await instance.get(`/countries_top/${genre}/count=18`)
+                console.log(response.data);
+                setMovies(response.data);
+                return;
+            }
             const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
             setMovies(response.data);
         }
@@ -56,7 +61,6 @@ function Modal({ onClose, genre, id }) {
 
 const GenreModal = ({ genre, onClose }) => {
     console.log(genre);
-    console.log("kalidas3");
     return (
         <>
             <Modal onClose={onClose} genre={genre} />

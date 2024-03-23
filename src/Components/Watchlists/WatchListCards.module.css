@@ -1,5 +1,6 @@
 .card{
     display: flex;
+    position: relative;
     flex-grow: 0;
     flex-shrink: 0;
     height: 10rem;
@@ -8,11 +9,21 @@
     background-color: #FF340A;
     padding: 1rem;
     cursor: pointer;
+    z-index: 1;
+}
+
+.cardcontainer{
+    display: flex;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 10rem;
+    width: 15rem;
     transition: all 0.5s ease;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
 }
 
-.card:hover{
+.cardcontainer:hover{
     box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
     transform: translate3d(0px, -1rem, 0px);
 }
@@ -90,4 +101,22 @@
 }
 .sliders{
     margin-right: 3rem;
+}
+
+.delete_icon{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    z-index: 100;
+}
+.delete_icon:hover{
+    transform: scale(1.2);
+}
+.delete_icon img{
+    height: 1.5rem;
 }
