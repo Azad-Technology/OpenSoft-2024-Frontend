@@ -14,7 +14,7 @@ function CommentCards() {
         console.log(response.data);
         setCommentsData(response.data);
       } catch (error) {
-        setIsError(true);
+          setIsError(true);
       }
     };
     getCommentsData();

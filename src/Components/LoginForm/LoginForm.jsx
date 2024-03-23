@@ -114,9 +114,6 @@ function LoginForm({register, setShowPopup}) {
       
         </div>
         
-        {err===""?<></>:<div id='error'>{err}</div>}
-
-
         <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Login</button> 
         <div className={styles.register_link}>
             <p>Don't have an account? <a href="/signup">Register</a></p>

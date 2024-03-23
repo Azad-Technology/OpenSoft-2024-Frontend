@@ -43,7 +43,7 @@ function Modal({ onClose }) {
 const MoviePage = () => {
     const [premium, setPremium] = useState(true);
 
-    const [{ token }, dispatch] = useStateValue();
+    const [{ token, user}, dispatch] = useStateValue();
 
     //Genre Modals 
     const [selectedGenre, setSelectedGenre] = useState(null);
@@ -62,7 +62,7 @@ const MoviePage = () => {
     const [comments, setComments] = useState(null);
     const [movie, setMovie] = useState(null);
     const [showModal, setShowModal] = useState(false);
-
+    const [like,setlike] = useState(false);
     useEffect(() => {
         window.scroll(0, 0);
     }, [id]);
@@ -170,7 +170,38 @@ const MoviePage = () => {
             elem.style.transform = 'rotate(0deg)';
         }
     }
+    const openHeart = (event) => {
+        if(like){
+          setlike(false);
+        }else{
+          setlike(true);
+        }
+        event.stopPropagation();
+        addFavouriteRequest();
+      };
+      const addFavouriteRequest = async(e)=>{
+        try{
+          const response=await instance.patch(`/add_favourite/${movie?._id}`,null, 
+          {
+            headers:{
+              'Content-Type':'application/json',
+              Authorization: `Bearer ${token}`
+            }
+          });
+          if(!like){
+            dispatch({type:"ADD_FAV", movie:movie});
+          }else{
+            dispatch({type:"REM_FAV", movie:movie});
+          }
+        }
+        catch(err){
+          console.log(err);
+        }
+      }
 
+      useEffect(()=>{
+        setlike(user?.fav.some(movies=>movies?._id===movie?._id));
+      }, [movie, user])
 
     //     // event listeners
 
@@ -251,7 +282,19 @@ const MoviePage = () => {
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
-                                <img src={watchlistoff} className={styles.watchlisticon} onClick={() => (toggleWatchlist())} />
+                                <span><span className={styles.icon} id="heartIcon">
+            {like?<i
+              class={`fa fa-heart fa-lg`}
+              aria-hidden="true"
+              onClick={openHeart}
+            ></i>:<i
+            class={`fa fa-heart-o fa-lg`}
+            aria-hidden="true"
+            onClick={openHeart}
+          ></i>}
+            
+          </span></span>
+                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />}
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
                                 {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
                             </span>

@@ -101,7 +101,7 @@
 }
 
 .heroContainer::before {
-    /* content: ""; */
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -305,6 +305,14 @@
     border: none;
     color: #fff;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.icon{
+    margin: 0 .3rem 0 .5rem;
+
+}
+.icon:hover{
     cursor: pointer;
 }
 
