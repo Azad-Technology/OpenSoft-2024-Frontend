@@ -20,7 +20,7 @@ function CommentCards() {
     getCommentsData();
   }, []);
 
-  const profilePics=["https://source.unsplash.com/random","https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp","https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp","https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png","https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"];
+  const profilePics=["https://lh3.googleusercontent.com/proxy/srMu6qMsNRRtta-1Y1tc68DuUxuukV32G2owKsoE2aJ3LeXGUp3rhNK9NsB-sZFxeARQn4CRGUvtSCfSZ1so6xZw7kBtv5e8bsQ0RCe_zvWMKGDXh69j1We0324","https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg","https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp","https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp","https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png"];
 
   const repeatedCommentsData = Array.from({ length: 10 }, () => commentsData).flat();
 
