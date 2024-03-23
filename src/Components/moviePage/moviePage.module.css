@@ -214,21 +214,20 @@
 }
 
 .modalbutton {
-    color: var(--tertiary-font-color);
-    font-size: 1.5rem;
-    height: 2.5rem;
-    padding: 0.5rem 0.7rem;
+    display: block;
+    position: relative;
+    background-color: rgba(255, 9, 9, 0.925);
+    color: white;
     border: none;
-    border-radius: 5rem;
-    background-color: rgba(78, 75, 75, 0.633);
-    transition: all .3s ease;
-    z-index: 2;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: large;
 }
 
 .modalbutton:hover {
     cursor: pointer;
-    background-color: rgb(78, 75, 75);
-    transform: translateY(-8px);
+    background-color: rgb(157, 5, 5);
 }
 
 .watchlisticon {
@@ -287,6 +286,12 @@
     width: 100%;
     height: 100%;
     display: flex;
+    align-items: center;
+}
+
+.Mbutton span{
+    display: flex;
+    gap: .5rem;
     align-items: center;
 }
 

@@ -145,7 +145,8 @@ const App = () => {
             </>
           }/>
         <Route path='/watchlist/:id' element={
-          <Watchlists />
+          token ?
+          <Watchlists /> : <LoginForm/>
         }/>
         <Route path="*" element={
           <NotFound/>

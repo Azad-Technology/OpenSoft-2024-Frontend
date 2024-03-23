@@ -55,10 +55,36 @@ const WatchListModal = ({ onClose, movieID }) => {
 
     const addWatchList = async (e) => {
         e.preventDefault();
-
+        if(selectedWatchlists.length === 0){
+            setErrorMsg('Please select a watchlist');
+            return;
+        }
+        setErrorMsg('');
+        selectedWatchlists.forEach(async (watchlistID) => {
+            try{
+                let config = {
+                    method: 'patch',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
+                const response = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config);
+            } catch(err){
+                console.log(err);
+            }
+        });
+        setSelectedWatchlists([]);
+        onClose();
     }
     const [selectedWatchlists, setSelectedWatchlists] = useState([]);
-    
+    const handleCheckboxChange = (id, checked) => {
+        setSelectedWatchlists((prev) => {
+            if(checked){
+                return [...prev, id];
+            }
+            return prev.filter((watchlist) => watchlist !== id);
+        });
+    }
     
     return (
         <div className={styles.watchlist_modal_overlay}>
@@ -89,7 +115,7 @@ const WatchListModal = ({ onClose, movieID }) => {
                         <input
                             type="checkbox"
                             value={watchlist._id}
-                            
+                            onChange={(e) => (handleCheckboxChange(e.target.value, e.target.checked))}
                         />
                         {watchlist.name}
                     </label>

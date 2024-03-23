@@ -24,18 +24,21 @@ function Pricing() {
             <h2>Basic</h2>
 
             <h3>
-              <span>$</span> 19.99
+              Free
             </h3>
 
             <ul>
               <li>
-                500 Searches every Month
+                Quality 480p
               </li>
               <li>
-                2 Users Allowed
+                Add up to 10 favorites
               </li>
               <li>
-                Send up to 3 GB
+                Make up to 1 watchlist
+              </li>
+              <li>
+                Customizable user profile
               </li>
             </ul>
             <Link target="_blank" to="paisawala.lemonsqueezy.com"><button className={styles.pricingCard_button}>Purchase</button></Link>
@@ -44,20 +47,26 @@ function Pricing() {
           <article className={`${styles.pricingCard} ${isHovered === 1 ? styles.featured : ''}`}
             onMouseEnter={() => setIsHovered(1)}
             onMouseLeave={() => setIsHovered(null)}>
-            <h2>Standard</h2>
+            <h2>Silver</h2>
             <h3>
-              <span>$</span> 24.99
+              <span>$</span> 49.99
             </h3>
 
             <ul>
               <li>
-                1 TB Storage
+                Get access to Premium Movies
               </li>
               <li>
-                5 Users Allowed
+                Quality upto 720p
               </li>
               <li>
-                Send up to 10 GB
+                Make up to 5 watchlists
+              </li>
+              <li>
+                Unlimited favorites
+              </li>
+              <li>
+                Make up to 5 watchlists
               </li>
             </ul>
 
