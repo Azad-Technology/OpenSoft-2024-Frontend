@@ -26,7 +26,7 @@ function Modal({ onClose }) {
                         {/* Video container */}
                         <div className={styles.video_container}>
                               <div className={styles.video}>
-                                    <MediaPlayer storage="storage-key" title="Dune" src="/manifests/dune_master.m3u8">
+                                    <MediaPlayer storage="storage-key" title="Dune" src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8">
                                           <MediaProvider />
                                           <DefaultVideoLayout icons={defaultLayoutIcons} />
                                     </MediaPlayer>
