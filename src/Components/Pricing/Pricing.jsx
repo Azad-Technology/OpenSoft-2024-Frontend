@@ -105,7 +105,6 @@ function Pricing() {
               </li>
             </ul>
 
-
           </article>
         </div>
 

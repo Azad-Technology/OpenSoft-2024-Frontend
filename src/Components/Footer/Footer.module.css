@@ -1,12 +1,15 @@
 
 .wrapper {
   margin: 0;
+  
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-size: 1rem;
   align-items: start;
   background-color: black;
   width: 100%;
+  position:unset;
+  bottom: 0;
 }
 
 .footer {
