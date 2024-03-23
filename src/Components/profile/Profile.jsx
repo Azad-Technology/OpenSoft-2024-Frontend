@@ -6,6 +6,9 @@ import { useStateValue } from "../../MyContexts/StateProvider";
 import GenreCard from "../Card/GenreCard";
 import { AllWatchlists } from "../Watchlists/AllWatchlists";
 import instance from "../../axios";
+import { Slider } from "@vidstack/react";
+import MovieList from "../movieList/MovieList";
+import GeneralSlider from "../HomeSliders/GeneralSlider"
 
 const Profile = () => {
   const [{ token, user }, dispatch] = useStateValue();
@@ -26,6 +29,7 @@ const Profile = () => {
   const [isChangePasswordModalOpen, setChangePasswordModalOpen] =
     useState(false);
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
+  const [favMovie, setFavMovie] = useState([]);
   const handlecChangePasswordClick = () => {
     setChangePasswordModalOpen(true);
   };
@@ -117,8 +121,9 @@ const Profile = () => {
 
   useEffect(()=>{
     setFullname(user?.name);
+    setFavMovie(user?.fav);
   }, [user]);
-
+  
   return (
     <div style={{ backgroundColor: "#101010", display: "block" }}>
       <i
@@ -361,25 +366,8 @@ const Profile = () => {
       <div className={styles.favorites}>
         <h1>Favorites</h1>
         <div className={styles.favorites_card}>
-          <Card
-            movies={{
-              _id: 1,
-              year: 2222,
-              imdb: { rating: 8.8 },
-              poster_path:
-                "http://image.tmdb.org/t/p/w1280/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
-              plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
-            }}
-          />
-          <GenreCard movies={{
-              _id: 1,
-              year: 2222,
-              imdb: { rating: 8.8 },
-              genre: "Romance",
-              poster_path:
-                "http://image.tmdb.org/t/p/w1280/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
-              plot: "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
-            }}/>
+          {(favMovie) && (<GeneralSlider movie={favMovie}/>)}
+         
         </div>
       </div>
 

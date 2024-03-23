@@ -15,7 +15,7 @@
 .cards {
   position: relative;
   width: 10rem;
-  height:15rem;
+  height: 15rem;
   max-height: 20%;
   min-width: 10rem;
   opacity: 1;
@@ -53,7 +53,7 @@
   font-weight: bold;
   margin: 0.4rem;  
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 0.2rem;

@@ -175,7 +175,7 @@ a{
 
 @media screen and (max-width:680px){
     .navbar__right{
-        gap:50%;
+        gap:20%;
     }
 }
 

@@ -26,7 +26,7 @@ function Modal({ onClose }) {
                         {/* Video container */}
                         <div className={styles.video_container}>
                               <div className={styles.video}>
-                                    <MediaPlayer storage="storage-key" title="Dune" src="/manifests/dune_master.m3u8">
+                                    <MediaPlayer storage="storage-key" title="Dune" src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8">
                                           <MediaProvider />
                                           <DefaultVideoLayout icons={defaultLayoutIcons} />
                                     </MediaPlayer>
@@ -43,7 +43,7 @@ function Modal({ onClose }) {
 const MoviePage = () => {
     const [premium, setPremium] = useState(true);
 
-    const [{ token }, dispatch] = useStateValue();
+    const [{ token, user}, dispatch] = useStateValue();
 
     //Genre Modals 
     const [selectedGenre, setSelectedGenre] = useState(null);
@@ -55,7 +55,6 @@ const MoviePage = () => {
     //Genre Modals end
 
     const navigate = useNavigate();
-    const [isWatchList, setIsWatchList] = useState(false);
     const [showWatchListModal, setShowWatchListModal] = useState(false);
 
     const { id } = useParams();
@@ -63,7 +62,7 @@ const MoviePage = () => {
     const [comments, setComments] = useState(null);
     const [movie, setMovie] = useState(null);
     const [showModal, setShowModal] = useState(false);
-
+    const [like,setlike] = useState(false);
     useEffect(() => {
         window.scroll(0, 0);
     }, [id]);
@@ -171,7 +170,38 @@ const MoviePage = () => {
             elem.style.transform = 'rotate(0deg)';
         }
     }
+    const openHeart = (event) => {
+        if(like){
+          setlike(false);
+        }else{
+          setlike(true);
+        }
+        event.stopPropagation();
+        addFavouriteRequest();
+      };
+      const addFavouriteRequest = async(e)=>{
+        try{
+          const response=await instance.patch(`/add_favourite/${movie?._id}`,null, 
+          {
+            headers:{
+              'Content-Type':'application/json',
+              Authorization: `Bearer ${token}`
+            }
+          });
+          if(!like){
+            dispatch({type:"ADD_FAV", movie:movie});
+          }else{
+            dispatch({type:"REM_FAV", movie:movie});
+          }
+        }
+        catch(err){
+          console.log(err);
+        }
+      }
 
+      useEffect(()=>{
+        setlike(user?.fav.some(movies=>movies?._id===movie?._id));
+      }, [movie, user])
 
     //     // event listeners
 
@@ -202,13 +232,9 @@ const MoviePage = () => {
             navigate('/login');
         }
     }
-    const toggleWatchlist = async () => {
+    const toggleWatchlist = () => {
         if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
-            if (isWatchList) {
-                setIsWatchList(false);
-            } else {
-                setIsWatchList(true);
-            }
+            setShowWatchListModal(true);
         }
         else {
             navigate('/login');
@@ -256,7 +282,19 @@ const MoviePage = () => {
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
-                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />}
+                                <span><span className={styles.icon} id="heartIcon">
+            {like?<i
+              class={`fa fa-heart fa-lg`}
+              aria-hidden="true"
+              onClick={openHeart}
+            ></i>:<i
+            class={`fa fa-heart-o fa-lg`}
+            aria-hidden="true"
+            onClick={openHeart}
+          ></i>}
+            
+          </span></span>
+                                <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
                                 {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
                             </span>
@@ -282,7 +320,7 @@ const MoviePage = () => {
                             </div>
                         </div> */}
                         <div className={styles.cell}>
-                            <div className={styles.subHeading}>Audio Language(s)</div>
+                            <div className={styles.subHeading}>Audio Languages</div>
                             <div className={styles.content}>{makeString(movie?.languages)}</div>
                         </div>
                         <div className={styles.cell}>
@@ -294,26 +332,26 @@ const MoviePage = () => {
                         {showMoreInfo && (<div className={styles.cast}>
                             <div className={styles.subHeading}>Cast</div>
                             <div className={styles.content}>
-                                {movie.cast.map((actor) => (
+                                {movie?.cast?.map((actor) => (
                                     <div className={styles.subContent}>{actor}</div>
                                 ))}
                             </div>
                         </div>)}
                         {showMoreInfo && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Writers</div>
-                            <div className={styles.content}>{makeString(movie.writers)}</div>
+                            <div className={styles.content}>{makeString(movie?.writers)}</div>
                         </div>)}
                         {showMoreInfo && (<div className={styles.cell}>
-                            <div className={styles.subHeading}>Countrie(s)</div>
-                            <div className={styles.content}>{makeString(movie.countries)}</div>
+                            <div className={styles.subHeading}>Countrie</div>
+                            <div className={styles.content}>{makeString(movie?.countries)}</div>
                         </div>)}
-                        {showMoreInfo && movie.tomatoes && (<div className={styles.cell}>
+                        {showMoreInfo && movie?.tomatoes && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Tomatometer</div>
-                            <div className={styles.content}><div>Viewer: {movie.tomatoes.viewer.rating}</div>{/*<div>Critic: {props.info.tomatometer.critic}</div>*/}</div>
+                            <div className={styles.content}><div>Viewer: {movie?.tomatoes?.viewer.rating}</div>{/*<div>Critic: {props.info.tomatometer.critic}</div>*/}</div>
                         </div>)}
-                        {showMoreInfo && movie.production && (<div className={styles.cell}>
+                        {showMoreInfo && movie?.production && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Production</div>
-                            <div className={styles.content}>{movie?.tomatoes.production}</div>
+                            <div className={styles.content}>{movie?.tomatoes?.production}</div>
                         </div>)}
 
                     </div>

@@ -30,7 +30,8 @@ const reducer = (state,action) => {
                     name:'',
                     email:'',
                     role:'',
-                    subtype:''
+                    subtype:'',
+                    fav:[],
                 }
             }
         case 'SET_TOKEN':
@@ -41,9 +42,27 @@ const reducer = (state,action) => {
                     name:'',
                     email:'',
                     role:'',
-                    subtype:''
+                    subtype:'',
+                    fav:[],
                 }
             }
+        case 'ADD_FAV':
+            return{
+                ...state,
+                user:{
+                    ...state.user, 
+                    fav:[...state.user.fav, action.movie]
+                }
+            }
+        case 'REM_FAV':
+            return{
+                ...state,
+                user:{
+                    ...state.user,
+                    fav:state.user.fav.filter(item=>item._id!==action.movie._id)
+                }
+            }
+
 
         default:
             return state;

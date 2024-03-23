@@ -7,6 +7,7 @@ const WatchListModal = ({ onClose, movieID }) => {
     const [{token, user}, dispatch] = useStateValue();
     const [watchlistName, setWatchListName] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
+    
     const watchlists = user?.watchlist;
     const createWatchList = async (e) => {
         e.preventDefault();
@@ -50,15 +51,42 @@ const WatchListModal = ({ onClose, movieID }) => {
             } catch(err){
                 console.log(err);
             }
+        window.location.reload();
         onClose();
     }
 
     const addWatchList = async (e) => {
         e.preventDefault();
-
+        if(selectedWatchlists.length === 0){
+            setErrorMsg('Please select a watchlist');
+            return;
+        }
+        setErrorMsg('');
+        selectedWatchlists.forEach(async (watchlistID) => {
+            try{
+                let config = {
+                    method: 'patch',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
+                const response = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config);
+            } catch(err){
+                console.log(err);
+            }
+        });
+        setSelectedWatchlists([]);
+        onClose();
     }
     const [selectedWatchlists, setSelectedWatchlists] = useState([]);
-    
+    const handleCheckboxChange = (id, checked) => {
+        setSelectedWatchlists((prev) => {
+            if(checked){
+                return [...prev, id];
+            }
+            return prev.filter((watchlist) => watchlist !== id);
+        });
+    }
     
     return (
         <div className={styles.watchlist_modal_overlay}>
@@ -85,14 +113,13 @@ const WatchListModal = ({ onClose, movieID }) => {
                 <div className={styles.watchlist_modal_section_heading}>Add to Existing</div>
                 <div className={styles.watchlist_modal_buttons}>
                     {watchlists?.map((watchlist) => (
-                        <label>
-                        <input
-                            type="checkbox"
-                            value={watchlist._id}
-                            
-                        />
-                        {watchlist.name}
-                    </label>
+                        <div className={styles.checkbox_wrapper} >
+                        <label className={styles.checkbox} >
+                          <input type="checkbox" className={styles.checkbox__input} />  
+                          <span className={styles.checkbox__label}></span>
+                          {watchlist.name}
+                        </label>
+                      </div>
                     ))}
                 </div>
                 <button type="submit" className={styles.watchlist_modal_button} onClick={(e)=>addWatchList(e)}> Add </button>
