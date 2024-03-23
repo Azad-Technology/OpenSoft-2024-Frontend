@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Footer.module.css'; // Import the CSS file
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import GenreModal from '../GenreModal/GenreModal.jsx';
 import { faMapMarkerAlt, faPhone, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Footer() {
+    const [showModal, setShowModal] = useState(false);
+    const [selectedGenre, setSelectedGenre] = useState('');
+    const handleClick = (genre) => {
+        setSelectedGenre(genre);
+        console.log(selectedGenre);
+        setShowModal(true);
+    };
+    const navigate = useNavigate();
     return (
         <div className={styles.wrapper}>
             <footer className={styles.footer}>
@@ -19,15 +28,15 @@ function Footer() {
 
                         <ul className={styles.nav__ul}>
                             <li>
-                                <a href="#">Movies</a>
+                                <a onClick={()=>handleClick("Recent")}>Movies</a>
                             </li>
 
                             <li>
-                                <a href="#">TV Shows</a>
+                                <a onClick={() => (handleClick("TV Shows"))}>TV Shows</a>
                             </li>
 
                             <li>
-                                <a href="#">Pricing</a>
+                                <a onClick={() => navigate("/pricing")}>Pricing</a>
                             </li>
                         </ul>
                     </div>
@@ -37,19 +46,19 @@ function Footer() {
 
                         <ul className={`${styles.nav__ul} ${styles['nav__ul--extra']}`}>
                             <li>
-                                <Link href="#">IMDB</Link>
+                                <a onClick={() => (handleClick("Top IMDB"))}>IMDB</a>
                             </li>
 
                             <li>
-                                <Link href="#">10 Movies</Link>
+                                <a onClick={() => (handleClick("Top Movies"))}>10 Movies</a>
                             </li>
 
                             <li>
-                                <Link href="#">10 TV Shows</Link>
+                                <a onClick={() => (handleClick("Top Series"))}>10 TV Shows</a>
                             </li>
                             {/* 
                             <li>
-                                <Link href="#">Automation</Link>
+                                <a onClick={handleClick("Top IMDB")}>Automation</a>
                             </li>
 
                             <li>
@@ -69,6 +78,7 @@ function Footer() {
 
                 </div> */}
             </footer>
+            {showModal && <GenreModal genre={selectedGenre} id={"1"} onClose={() => setShowModal(false)} />}
         </div>
     );
 }
