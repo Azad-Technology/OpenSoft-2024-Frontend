@@ -12,8 +12,19 @@ const useAlan = (handleFoundGenre) => {
                 }
                 else if (command === 'logout') {
                     localStorage.clear();
-                    window.location.href = '/';
                     window.location.reload();
+                }
+                else if(command === 'home'){
+                    window.location.replace('http://localhost:5173');
+                }
+                else if(command === 'pricing'){
+                    window.location.replace('http://localhost:5173/pricing');
+                }
+                else if(command === 'profile'){
+                    window.location.replace('http://localhost:5173/profile');
+                }
+                else if(command === 'buypremium'){
+                    window.location.replace('http://localhost:5173/buyPremium');
                 }
             }
         });

@@ -15,7 +15,6 @@ const Card = ({ movies,val,length }) => {
   const [like,setlike] = useState(false);
 
   const [premium, setPremium] = useState(movies?.imdb.rating>=8);
-
   const openHeart = (event) => {
     if(like){
       setlike(false);
@@ -92,7 +91,6 @@ const addFavouriteRequest = async(e)=>{
           ></i>}
             
           </div>
-          
           <div className={styles.premium}>
             {movies && premium && <i
               class={`fa fa-star`}
@@ -108,5 +106,4 @@ const addFavouriteRequest = async(e)=>{
     </>
   );
 };
-
 export default Card;
