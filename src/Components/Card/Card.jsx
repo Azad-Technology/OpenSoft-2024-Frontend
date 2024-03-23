@@ -4,7 +4,7 @@ import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
 
-const Card = ({ movies }) => {
+const Card = ({ movies,val,length }) => {
   // for dummy purpose we take movies?.like=false;
   const [like,setlike] = useState(false);
   const [value, setvalue] = useState("-o");
@@ -17,24 +17,34 @@ const Card = ({ movies }) => {
     const heart = document.getElementById("heartIcon");
     if (value === "" && like) {
       setvalue("-o");setlike(false);
-      heart.style.color = "white";
     } else {
-      heart.style.color = "red";
       setvalue("");setlike(true);
     }
   };
-
+  const handlehover = (event) => {
+    // console.log(movies)
+    const particularCard = document.getElementById(`${movies._id}`);
+    if (val === length - 1) {
+        particularCard.style.transformOrigin = "right";
+    }
+    else if(val===0) {
+        particularCard.style.transformOrigin = "left";
+    }
+    else {
+      particularCard.style.transformOrigin = "center";
+    }
+}
   const navigate = useNavigate();
 
   return (
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
-      <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''}>
+      <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
         <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
             {movies?.year}
-            <span className={styles.card__rating}>{movies?.imdb.rating}</span>
+            <span className={styles.card__rating}>IMDB: {movies?.imdb.rating}</span>
           </div>
           <div className={styles.card__description}>{movies?.plot}</div>
         </div>
@@ -44,6 +54,7 @@ const Card = ({ movies }) => {
               class={`fa fa-heart${value}`}
               aria-hidden="true"
               onClick={openHeart}
+              style={{ color: like ? "red" : "white" }}
             ></i>
           </div>
           
@@ -54,8 +65,8 @@ const Card = ({ movies }) => {
               onClick={openHeart}
             ></i>}
           </div>
-          {movies && <img
-            src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
+          {movies && <img loading="lazy"
+            src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
             className={styles.cards_img}
           />}
         </div>

@@ -4,17 +4,23 @@ import styles from "./HomeSliders.module.css";
 import { Slider } from "./Slider.jsx";
 import CommentCards from "../CommentCard/CommentCards.jsx";
 import GenreModal from "../GenreModal/GenreModal";
+import useAlan from '../Alan';
 
 export const HomeSliders = () => {
   const [{ token }, dispatch] = useStateValue();
   const [selectedGenre, setSelectedGenre] = useState(null);
 
+  const handleFoundGenre = (foundGenre) => {
+    console.log("kalidas1");
+    // window.location.href = '/';
+    openModal(foundGenre); // Trigger the openModal function with the foundGenre.name
+  };
+
+  useAlan(handleFoundGenre);
+
   const openModal = (genre) => {
-    if (token && token !== 'null' && token !== undefined && token !== 'undefined' && token !== '') {
+      console.log("kalidas2");
       setSelectedGenre(genre);
-    } else {
-      navigate('/login');
-    }
   }
 
   const genres = [

@@ -48,12 +48,9 @@ const MoviePage = () => {
     //Genre Modals 
     const [selectedGenre, setSelectedGenre] = useState(null);
 
-    const openModal = (genre) => {
-        if (token && token !== 'null' && token !== undefined && token !== 'undefined' && token !== '') {
-            setSelectedGenre(genre);
-        } else {
-            navigate('/login');
-        }
+    const openModal = (genre) => 
+    {
+        setSelectedGenre(genre);
     }
     //Genre Modals end
 
@@ -222,10 +219,10 @@ const MoviePage = () => {
     return (
         <>
             <div className={styles.font}>
-                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` }}>
+                <div className={styles.heroSmall} style={{ "backgroundImage": `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` }}>
                     <div className={styles.title}>{movie?.title}</div>
                 </div>
-                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w1280${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
+                <div className={styles.heroContainer} style={(!smallScreen) ? { "backgroundImage": `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` } : { "backgroundImage": "none" }}>
                     <div className={styles.content}>
                         {premium && (<div className={styles.premium}>Included with premium</div>)}
 
@@ -254,14 +251,14 @@ const MoviePage = () => {
                                 ))
                             }
                         </div>
-                        <div className={styles.button}>
+                        <div className={styles.Mbutton}>
                             <span>
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
                                 {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />}
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
-                                {showWatchListModal && <WatchListModal movieID={id} token={token} onClose={() => setShowWatchListModal(false)} />}
+                                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
                             </span>
                             {/* <span><button>B</button></span>
                             <span><button>C</button></span>
@@ -329,9 +326,9 @@ const MoviePage = () => {
 
 
                 <MoreLikeThis id={id} />
-                <div className={styles.loaderIcon}>
+                {/* <div className={styles.loaderIcon}>
                     <Loader />
-                </div>
+                </div> */}
                 {selectedGenre &&
                     <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />
                 }

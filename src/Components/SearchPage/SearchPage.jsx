@@ -3,7 +3,7 @@ import CustomDropdown from './CustomDropdown.jsx'
 import axios from 'axios';
 import styles from './CustomDropdown.module.css'
 import { useParams } from 'react-router-dom';
-import MovieList from '../movieList/MovieList.jsx';
+import MovieModalList from '../GenreModal/MovieModalList.jsx'
 import * as Realm from "realm-web";
 
 const SearchPage = () => {
@@ -107,8 +107,8 @@ const SearchPage = () => {
         </section>
 
       </div>
-      {fuzzy && <MovieList movie={fuzzy} />}
-      {!fuzzy && <MovieList movie={Array(18).fill(null)} />}
+      {fuzzy && <MovieModalList movie={fuzzy} />}
+      {!fuzzy && <MovieModalList movie={Array(18).fill(null)} />}
     </div>
   );
 }

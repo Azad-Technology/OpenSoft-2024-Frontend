@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CommentCards.module.css';
+import styles from './CommentCard.module.css';
 
 function truncateComment(comment, maxLength) {
   if (comment.length <= maxLength) {
@@ -54,7 +54,7 @@ function CommentCard({ username, profilePic, comment, movie, link, timestamp }) 
       <div className={styles.commentDetails}>
         <p className={styles.cardComment}>{truncateComment(comment, 10)}</p>
         <div className={styles.cardTime}>{timeAgo}</div>
-        <a href={link} className={styles.cardMovie}>{movie}</a>
+        <a href={link} className={styles.cardMovie}>{movie?movie:''}</a>
       </div>
     </div>
   );
