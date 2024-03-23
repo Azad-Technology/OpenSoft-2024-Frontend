@@ -46,7 +46,7 @@ function SignUp() {
                 type:'SET_TOKEN',
                 token:response.data.token,
               });
-              navigate('/');
+              navigate(-2);
             }
             catch(err){
               console.log(err);

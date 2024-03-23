@@ -27,6 +27,7 @@ import  SignUp from "./Components/SignUp/SignUp.jsx"
 import { Watchlists } from './Components/Watchlists/Watchlists.jsx'
 import useAlan from './Components/Alan'
 import BuyPremiumToWatch from './Components/moviePage/BuyPremiumToWatch.jsx'
+import SuccessPopup from './Components/LoginAcceptedRejected/successfulLogin.jsx'
 
 const App = () => {
 
@@ -37,7 +38,7 @@ const App = () => {
   useAlan();
   const alanBtnContainer = useRef();
   const [movies, setMovies] = useState([]);
-
+  const [showPopup, setShowPopup] = useState(false)
   const [{ token }, dispatch] = useStateValue();
 
   useEffect(() => {
@@ -86,6 +87,7 @@ const App = () => {
         <Routes>
           <Route index path="/" element={
             <>
+            {showPopup && <SuccessPopup message="Logged in successfully"/>}
               <Navbar />
               <div className='homepage'>
                 <Carousel />
@@ -135,7 +137,7 @@ const App = () => {
           <Route path='/login' element={
             <>
               <Navbar />
-              <LoginForm />
+              <LoginForm setShowPopup={setShowPopup}/>
             </>
         }/>
           <Route path='/signup' element={

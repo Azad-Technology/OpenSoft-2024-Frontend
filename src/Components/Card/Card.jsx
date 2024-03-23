@@ -17,9 +17,7 @@ const Card = ({ movies,val,length }) => {
     const heart = document.getElementById("heartIcon");
     if (value === "" && like) {
       setvalue("-o");setlike(false);
-      heart.style.color = "white";
     } else {
-      heart.style.color = "red";
       setvalue("");setlike(true);
     }
   };
@@ -56,6 +54,7 @@ const Card = ({ movies,val,length }) => {
               class={`fa fa-heart${value}`}
               aria-hidden="true"
               onClick={openHeart}
+              style={{ color: like ? "red" : "white" }}
             ></i>
           </div>
           

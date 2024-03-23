@@ -1,286 +1,286 @@
 const menuoptions = [
     {
-        name:"Genre",
-        link:"#",
-        dropdown:[
+        name: "Genre",
+        link: "#",
+        dropdown: [
             {
-                name:"Action",
-                link:"#",
-                genreID:"action"
+                name: "Action",
+                link: "#",
+                genreID: "action"
             },
             {
-                name:"Comedy",
-                link:"#",
-                genreID:"comedy"
+                name: "Comedy",
+                link: "#",
+                genreID: "comedy"
             },
             {
-                name:"Horror",
-                link:"#",
-                genreID:"horror"
+                name: "Horror",
+                link: "#",
+                genreID: "horror"
             },
             {
-                name:"Romance",
-                link:"#",
-                genreID:"romance"
+                name: "Romance",
+                link: "#",
+                genreID: "romance"
             },
             {
-                name:"Thriller",
-                link:"#",
-                genreID:"thriller"
+                name: "Thriller",
+                link: "#",
+                genreID: "thriller"
             },
             {
-                name:"Sci-Fi",
-                link:"#",
-                genreID:"scifi"
+                name: "Sci-Fi",
+                link: "#",
+                genreID: "scifi"
             },
             {
-                name:"Drama",
-                link:"#",
-                genreID:"drama"
+                name: "Drama",
+                link: "#",
+                genreID: "drama"
             },
             {
-                name:"Mystery",
-                link:"#",
-                genreID:"mystery"
+                name: "Mystery",
+                link: "#",
+                genreID: "mystery"
             },
             {
-                name:"Crime",
-                link:"#",
-                genreID:"crime"
+                name: "Crime",
+                link: "#",
+                genreID: "crime"
             },
             {
-                name:"Animation",
-                link:"#",
-                genreID:"animation"
+                name: "Animation",
+                link: "#",
+                genreID: "animation"
             },
             {
-                name:"Adventure",
-                link:"#",
-                genreID:"adventure"
+                name: "Adventure",
+                link: "#",
+                genreID: "adventure"
             },
             {
-                name:"Fantasy",
-                link:"#",
-                genreID:"fantasy"
+                name: "Fantasy",
+                link: "#",
+                genreID: "fantasy"
             },
             {
-                name:"Family",
-                link:"#",
-                genreID:"family"
+                name: "Family",
+                link: "#",
+                genreID: "family"
             },
             {
-                name:"Biography",
-                link:"#",
-                genreID:"biography"
+                name: "Biography",
+                link: "#",
+                genreID: "biography"
             },
             {
-                name:"History",
-                link:"#",
-                genreID:"history"
+                name: "History",
+                link: "#",
+                genreID: "history"
             },
             {
-                name:"War",
-                link:"#",
-                genreID:"war"
+                name: "War",
+                link: "#",
+                genreID: "war"
             },
             {
-                name:"Documentary",
-                link:"#",
-                genreID:"documentary"
+                name: "Documentary",
+                link: "#",
+                genreID: "documentary"
             },
             {
-                name:"Music",
-                link:"#",
-                genreID:"music"
+                name: "Music",
+                link: "#",
+                genreID: "music"
             },
             {
-                name:"Sport",
-                link:"#",
-                genreID:"sport"
+                name: "Sport",
+                link: "#",
+                genreID: "sport"
             },
             {
-                name:"Western",
-                link:"#",
-                genreID:"western"
+                name: "Western",
+                link: "#",
+                genreID: "western"
             },
             {
-                name:"Short",
-                link:"#",
-                genreID:"short"
+                name: "Short",
+                link: "#",
+                genreID: "short"
             },
             {
-                name:"Film-Noir",
-                link:"#",
-                genreID:"filmnoir"
+                name: "Film-Noir",
+                link: "#",
+                genreID: "filmnoir"
             },
             {
-                name:"Talk-Show",
-                link:"#",
-                genreID:"talkshow"
+                name: "Talk-Show",
+                link: "#",
+                genreID: "talkshow"
             },
             {
-                name:"News",
-                link:"#",
-                genreID:"news"
+                name: "News",
+                link: "#",
+                genreID: "news"
             }
         ]
     },
     {
-        name:"Country",
-        link:"#",
-        dropdown:[
+        name: "Country",
+        link: "#",
+        dropdown: [
             {
-                name:"India",
-                link:"#",
-                genreID:"india"
+                name: "India",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"USA",
-                link:"#",
-                genreID:"usa"
+                name: "USA",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"UK",
-                link:"#",
-                genreID:"uk"
+                name: "UK",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Australia",
-                link:"#",
-                genreID:"australia"
+                name: "Australia",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"China",
-                link:"#",
-                genreID:"china"
+                name: "China",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"France",
-                link:"#",
-                genreID:"france"
+                name: "France",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Germany",
-                link:"#",
-                genreID:"germany"
+                name: "Germany",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Italy",
-                link:"#",
-                genreID:"italy"
+                name: "Italy",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Japan",
-                link:"#",
-                genreID:"japan"
+                name: "Japan",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"South Korea",
-                link:"#",
-                genreID:"southkorea"
+                name: "South Korea",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Spain",
-                link:"#",
-                genreID:"spain"
+                name: "Spain",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Canada",
-                link:"#",
-                genreID:"canada"
+                name: "Canada",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Mexico",
-                link:"#",
-                genreID:"mexico"
+                name: "Mexico",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Brazil",
-                link:"#",
-                genreID:"brazil"
+                name: "Brazil",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Russia",
-                link:"#",
-                genreID:"russia"
+                name: "Russia",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Nigeria",
-                link:"#",
-                genreID:"nigeria"
+                name: "Nigeria",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Argentina",
-                link:"#",
-                genreID:"argentina"
+                name: "Argentina",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Sweden",
-                link:"#",
-                genreID:"sweden"
+                name: "Sweden",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Netherlands",
-                link:"#",
-                genreID:"netherlands"
+                name: "Netherlands",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Poland",
-                link:"#",
-                genreID:"poland"
+                name: "Poland",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Belgium",
-                link:"#",
-                genreID:"belgium"
+                name: "Belgium",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Denmark",
-                link:"#",
-                genreID:"denmark"
+                name: "Denmark",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Norway",
-                link:"#",
-                genreID:"norway"
+                name: "Norway",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Finland",
-                link:"#",
-                genreID:"finland"
+                name: "Finland",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Greece",
-                link:"#",
-                genreID:"greece"
+                name: "Greece",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Turkey",
-                link:"#",
-                genreID:"turkey"
+                name: "Turkey",
+                link: "#",
+                genreID: "country"
             },
             {
-                name:"Egypt",
-                link:"#",
-                genreID:"egypt"
+                name: "Egypt",
+                link: "#",
+                genreID: "country"
             },
         ]
     },
     {
-        name:"Movies",
-        link:"#"
+        name: "Movies",
+        link: "#"
     },
     {
-        name:"TV Shows",
-        link:"#"
+        name: "TV Shows",
+        link: "/tvshows"
     },
     {
-        name:"Top IMDB",
-        link:"#"
-    }, 
+        name: "Top IMDB",
+        link: "/topimdb"
+    },
     {
-        name:"Pricing",
-        link:"/pricing"
+        name: "Pricing",
+        link: "/pricing"
     }
 ]
 
