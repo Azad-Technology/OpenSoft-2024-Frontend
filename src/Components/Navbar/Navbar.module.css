@@ -88,6 +88,10 @@
     cursor:pointer;
 }
 
+.mobile_login{
+    cursor:pointer;
+}
+
 .dropdown{
     position:absolute;
     margin-top: 0.5%;

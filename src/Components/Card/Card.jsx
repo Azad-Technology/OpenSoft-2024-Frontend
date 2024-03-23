@@ -71,16 +71,16 @@ const addFavouriteRequest = async(e)=>{
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
       <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
-        <div className={styles.cards__overlay}>
+        {movies && <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
             {movies?.year}
             <span className={styles.card__rating}>IMDB: {movies?.imdb.rating}</span>
           </div>
           <div className={styles.card__description}>{movies?.plot}</div>
-        </div>
+        </div>}
         <div className={styles.icons}>
-          <div className={styles.icon} id="heartIcon">
+          {movies && <div className={styles.icon} id="heartIcon">
             {like?<i
               class={`fa fa-heart`}
               aria-hidden="true"
@@ -91,7 +91,7 @@ const addFavouriteRequest = async(e)=>{
             onClick={openHeart}
           ></i>}
             
-          </div>
+          </div>}
           
           <div className={styles.premium}>
             {movies && premium && <i

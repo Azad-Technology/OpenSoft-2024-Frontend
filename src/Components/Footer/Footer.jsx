@@ -11,12 +11,6 @@ function Footer() {
                 <div className={styles.footer__addr}>
                     {/* <h1 className={styles.footer__log}>Something</h1> */}
                     <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="" />
-
-                    <h2>Contact</h2>
-
-                    <address>
-                        <a className={styles.footer__btn} href="mailto:example@gmail.com">Email Us</a>
-                    </address>
                 </div>
 
                 <ul className={styles.footer__nav}>
@@ -67,27 +61,13 @@ function Footer() {
                             </li> */}
                         </ul>
                     </div>
-
-                    <div className={styles.nav__item}>
-                        <h2 className={styles.nav__title}>Legal</h2>
-
-                        <ul className={styles.nav__ul}>
-                            <li>
-                                <Link href="#">Privacy Policy</Link>
-                            </li>
-
-                            <li>
-                                <Link href="#">Terms of Use</Link>
-                            </li>
-                        </ul>
-                    </div>
                 </ul>
 
-                <div className={styles.legal}>
+                {/* <div className={styles.legal}>
                     <p>&copy; 2019 Something. All rights reserved.</p>
 
 
-                </div>
+                </div> */}
             </footer>
         </div>
     );

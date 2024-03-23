@@ -21,6 +21,7 @@ const SearchPage = () => {
         setFuzzy(results);
       }
       catch (err) {
+        setFuzzy(null);
         console.error("Failed to log in", err);
       }
     }
@@ -108,7 +109,8 @@ const SearchPage = () => {
 
       </div>
       {fuzzy && <MovieModalList movie={fuzzy} />}
-      {!fuzzy && <MovieModalList movie={Array(18).fill(null)} />}
+      {fuzzy===null && <MovieModalList movie={Array(18).fill(null)} />}
+      {fuzzy.length === 0 && <p>No Movie Found</p>}
     </div>
   );
 }
