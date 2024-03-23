@@ -21,8 +21,8 @@ export const SearchResult = ({movie}) => {
             ></i></span>)} 
               </h5>
             <div className={styles.searchRes_detail}>
-            <small>{movie.year} </small>
-            <small>{movie.imdb.rating} </small>
+            {movie.year && <small>{movie.year} </small>}
+            {movie.imdb.rating && <small>{movie.imdb.rating} </small>}
             <small>Ln</small>
             </div>
         </div>

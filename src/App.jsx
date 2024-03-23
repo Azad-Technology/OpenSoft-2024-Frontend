@@ -23,10 +23,12 @@ import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Profile from './Components/profile/Profile.jsx'
 import { useStateValue } from './MyContexts/StateProvider.jsx';
 import Footer from './Components/Footer/Footer.jsx'
-import  SignUp from "./Components/SignUp/SignUp.jsx"
+import SignUp from "./Components/SignUp/SignUp.jsx"
 import { Watchlists } from './Components/Watchlists/Watchlists.jsx'
 import useAlan from './Components/Alan'
 import BuyPremiumToWatch from './Components/moviePage/BuyPremiumToWatch.jsx'
+import SuccessPopup from './Components/LoginAcceptedRejected/successfulLogin.jsx'
+import GenreModal from './Components/GenreModal/GenreModal';
 
 const App = () => {
 
@@ -34,21 +36,36 @@ const App = () => {
     window.scroll(0, 0);
   }, [])
 
-  useAlan();
-  const alanBtnContainer = useRef();
-  const [movies, setMovies] = useState([]);
+//Alan AI
+  const [selectedGenre, setSelectedGenre] = useState(null);
 
+  const handleFoundGenre = (foundGenre) => {
+    openModal(foundGenre); 
+  };
+
+  useAlan(handleFoundGenre);
+
+  const openModal = (genre) => {
+    setSelectedGenre(genre);
+}
+
+const alanBtnContainer = useRef();
+
+//Alan AI end
+
+  const [movies, setMovies] = useState([]);
+  const [showPopup, setShowPopup] = useState(false)
   const [{ token }, dispatch] = useStateValue();
 
   useEffect(() => {
     dispatch({
       type: 'INITIALIZE_TOKEN'
     })
-    if(token && token !== 'null' && token !== 'undefined'){
-      const getUser=async()=>{
-        try{
-          const user=await instance.get('/user',{
-            headers:{
+    if (token && token !== 'null' && token !== 'undefined') {
+      const getUser = async () => {
+        try {
+          const user = await instance.get('/user', {
+            headers: {
               Authorization: `Bearer ${token}`
             }
           })
@@ -58,7 +75,7 @@ const App = () => {
             type: 'SET_USER',
             user: user.data
           })
-        }catch(err){
+        } catch (err) {
           console.log(err)
         }
       }
@@ -67,18 +84,18 @@ const App = () => {
   }, [token])
 
   useEffect(() => {
-    const getIP=async()=>{
-      try{
-        const ip=await axios.get('http://ipinfo.io/json');
-        console.log("IP",ip.data);
+    const getIP = async () => {
+      try {
+        const ip = await axios.get('http://ipinfo.io/json');
+        console.log("IP", ip.data);
       }
-      catch(err){
-        console.log("IP",err);
+      catch (err) {
+        console.log("IP", err);
       }
     }
     getIP();
   }, [])
-    
+
 
   return (
     <>
@@ -86,6 +103,7 @@ const App = () => {
         <Routes>
           <Route index path="/" element={
             <>
+              {showPopup && <SuccessPopup message="Logged in successfully" />}
               <Navbar />
               <div className='homepage'>
                 <Carousel />
@@ -135,23 +153,26 @@ const App = () => {
           <Route path='/login' element={
             <>
               <Navbar />
-              <LoginForm />
+              <LoginForm setShowPopup={setShowPopup} />
             </>
-        }/>
+          } />
           <Route path='/signup' element={
             <>
               <Navbar />
               <SignUp />
             </>
-          }/>
-        <Route path='/watchlist/:id' element={
-          <Watchlists />
-        }/>
-        <Route path="*" element={
-          <NotFound/>
-        }/>
-        
+          } />
+          <Route path='/watchlist/:id' element={
+            <Watchlists />
+          } />
+          <Route path="*" element={
+            <NotFound />
+          } />
+
         </Routes>
+        {selectedGenre &&
+          <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />
+        }
       </BrowserRouter>
       <div ref={alanBtnContainer} />
     </>

@@ -7,17 +7,18 @@ import { useState } from 'react';
 import instance from '../../axios';
 import { useStateValue } from '../../MyContexts/StateProvider';
 import { useNavigate } from 'react-router-dom';
+import RejectedPopup from '../LoginAcceptedRejected/rejectedLogin';
 // import { IconName } from "react-icons/vsc";
 // import { VscAccount } from "react-icons/vsc";
 
-function LoginForm({register}) {
+function LoginForm({register, setShowPopup}) {
 
   const [{token,premium},dispatch]=useStateValue();
   const navigate=useNavigate();
 
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [err, setErrors] = useState("")
-    
+    const [showPopup2, setShowPopup2] = useState(false)
     const [email, setEmail] = useState("");
     const [password,setPassword]=useState("");
     
@@ -45,9 +46,19 @@ function LoginForm({register}) {
             type:'SET_TOKEN',
             token:response.data.token,
           });
+          {
+            setShowPopup(true)
+            setTimeout(()=>{
+              setShowPopup(false)
+            },4000)
+          }
           navigate(-1);
         }
         catch(err){
+          setShowPopup2(true)
+          setTimeout(()=>{
+            setShowPopup2(false)
+          },3000)
           console.log(err);
         }
       }
@@ -70,6 +81,7 @@ function LoginForm({register}) {
   
   return (
     <div className={styles.login}>
+      {showPopup2 && <RejectedPopup message="Please try again"/>}
       <div className={styles.wrapper}>
       <form action="">
         <h1>Welcome Back.</h1>
