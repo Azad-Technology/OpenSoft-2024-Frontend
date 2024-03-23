@@ -7,6 +7,9 @@ import { useStateValue } from '../../MyContexts/StateProvider';
 export const Watchlists = () => {
     const [movies, setMovies] = useState(null);
     const [{token, user}, dispatch] = useStateValue();
+    if(token === null || token === 'null' || token === 'undefined' || token === ''){
+        window.location.href = '/login';
+    }
     const {id} = useParams();
     useEffect(() => {
         try {

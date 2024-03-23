@@ -8,8 +8,6 @@ import instance from '../../axios';
 import { useStateValue } from '../../MyContexts/StateProvider';
 import { useNavigate } from 'react-router-dom';
 import RejectedPopup from '../LoginAcceptedRejected/rejectedLogin';
-// import { IconName } from "react-icons/vsc";
-// import { VscAccount } from "react-icons/vsc";
 
 function LoginForm({register, setShowPopup}) {
 
@@ -54,12 +52,13 @@ function LoginForm({register, setShowPopup}) {
           }
           navigate(-1);
         }
-        catch(err){
+        catch(error){
+          console.log(error);
+          setErrors(error.response.data.detail);
           setShowPopup2(true)
           setTimeout(()=>{
             setShowPopup2(false)
           },3000)
-          console.log(err);
         }
       }
   };
@@ -74,14 +73,15 @@ function LoginForm({register, setShowPopup}) {
       console.log(response);
       window.location.href = response.data.url;
     }
-    catch(err){
-      console.log(err);
+    catch(error){
+      console.log(error);
+      setErrors(error.response.data.detail);
     }
   };
   
   return (
     <div className={styles.login}>
-      {showPopup2 && <RejectedPopup message="Please try again"/>}
+      {showPopup2 && <RejectedPopup message={err}/>}
       <div className={styles.wrapper}>
       <form action="">
         <h1>Welcome Back.</h1>
@@ -114,9 +114,6 @@ function LoginForm({register, setShowPopup}) {
       
         </div>
         
-        {err===""?<></>:<div id='error'>{err}</div>}
-
-
         <button type={err===""?'submit':'button'} onClick={(e)=>handleSubmit(e)} id='loginButton'>Login</button> 
         <div className={styles.register_link}>
             <p>Don't have an account? <a href="/signup">Register</a></p>
