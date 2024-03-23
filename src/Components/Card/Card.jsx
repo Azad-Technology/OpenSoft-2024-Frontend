@@ -3,50 +3,24 @@ import styles from "./Card.module.css";
 import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
-import { useStateValue } from "../../MyContexts/StateProvider.jsx";
-import instance from "../../axios.jsx";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ movies,val,length }) => {
-
-  const [{user, token},dispatch]=useStateValue();
-
   // for dummy purpose we take movies?.like=false;
   const [like,setlike] = useState(false);
+  const [value, setvalue] = useState("-o");
 
+  //manually marking movie premium
   const [premium, setPremium] = useState(movies?.imdb.rating>=8);
+
   const openHeart = (event) => {
-    if(like){
-      setlike(false);
-    }else{
-      setlike(true);
-    }
     event.stopPropagation();
-    addFavouriteRequest();
-  };
-
-
-const addFavouriteRequest = async(e)=>{
-  try{
-    const response=await instance.patch(`/add_favourite/${movies?._id}`,null, 
-    {
-      headers:{
-        'Content-Type':'application/json',
-        Authorization: `Bearer ${token}`
-      }
-    });
-    if(!like){
-      dispatch({type:"ADD_FAV", movie:movies});
-    }else{
-      dispatch({type:"REM_FAV", movie:movies});
+    const heart = document.getElementById("heartIcon");
+    if (value === "" && like) {
+      setvalue("-o");setlike(false);
+    } else {
+      setvalue("");setlike(true);
     }
-  }
-  catch(err){
-    console.log(err);
-  }
-}
-
-
+  };
   const handlehover = (event) => {
     // console.log(movies)
     const particularCard = document.getElementById(`${movies._id}`);
@@ -62,39 +36,38 @@ const addFavouriteRequest = async(e)=>{
 }
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    setlike(user?.fav.some(movie=>movie?._id===movies?._id));
-  }, [movies, user])
-
   return (
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
       <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
-        <div className={styles.cards__overlay}>
+        {movies && <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
             {movies?.year}
-            <span className={styles.card__rating}>IMDB: {movies?.imdb.rating}</span>
-          </div>
-          <div className={styles.card__description}>{movies?.plot}</div>
-        </div>
-        <div className={styles.icons}>
-          <div className={styles.icon} id="heartIcon">
-            {like?<i
-              class={`fa fa-heart`}
+            <span className={styles.card__rating}><i
+              class={`fa fa-imdb`}
               aria-hidden="true"
               onClick={openHeart}
-            ></i>:<i
-            class={`fa fa-heart-o`}
-            aria-hidden="true"
-            onClick={openHeart}
-          ></i>}
-            
+              style={{backgroundColor: "gold",color:"black", fontSize: "15px"}}
+            ></i>{movies?.imdb.rating}</span>
           </div>
+          <div className={styles.card__description}>{movies?.plot}</div>
+        </div>}
+        <div className={styles.icons}>
+          <div className={styles.icon} id="heartIcon">
+            <i
+              class={`fa fa-heart${value}`}
+              aria-hidden="true"
+              onClick={openHeart}
+              style={{ color: like ? "red" : "white"}}
+            ></i>
+          </div>
+          
           <div className={styles.premium}>
             {movies && premium && <i
               class={`fa fa-star`}
               aria-hidden="true"
+              onClick={openHeart}
             ></i>}
           </div>
           {movies && <img loading="lazy"
@@ -106,4 +79,5 @@ const addFavouriteRequest = async(e)=>{
     </>
   );
 };
+
 export default Card;
