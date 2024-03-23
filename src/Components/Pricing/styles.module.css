@@ -1,5 +1,5 @@
 .container{
-  /* margin-top: 0; */
+  margin-top: 7%;
   z-index: -1;
 }
 .heading {
@@ -102,6 +102,14 @@
     backdrop-filter: blur(10px);
     z-index: 2;
   }
+  .pricingCard.featured_free{
+    background: linear-gradient(to right, #F24236, #C0180C);
+    margin: 0 1.5rem 0 1.5rem;
+    color: white;
+    transform: scale(1.1);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+  }
   .pricingCard h2 {
     font-size: 1.25rem;
     margin-bottom: 1.25rem;
@@ -138,9 +146,21 @@
     border-color: white;
     color: white;
   }
-  .pricingCard button {
+  .pricingCard_button_free {
     padding: 0.75rem 0;
     width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:black;
+    background-color: #F24236;
+    border: 0.1rem solid rgba(255, 255, 255, 0.1);
+  }
+  .pricingCard_button {
+    padding: 0.75rem 0;
+    width: 100%;
+    margin-bottom: 2rem;
     border-radius: 0.5rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -148,12 +168,9 @@
     background-color: #F24236;
     border: 0.1rem solid rgba(255, 255, 255, 0.1);
   }
-  .pricingCard button.gradient {
-    background: linear-gradient(to right, #A5C3E8, #6B89BC);
-    color: white;
-    border: 2px solid transparent;
-  }
-  .pricingCard button.gradient:hover {
+  
+
+  .pricingCard_button.gradient:hover {
     border: 2px solid #6B89BC;
   }
   .pricingCard.featured h3 {
@@ -166,11 +183,16 @@
     color: #475569;
     border: 2px solid white;
   }
+  .pricingCard.featured_free button {
+    background-color: white;
+    color: #475569;
+    border: 2px solid white;
+  }
   .pricingCard.featured button:hover {
     background-color: rgba(255, 255, 255, 0.855);
     color: black;
   }
-  .pricingCard button:hover{
+  .pricingCard_button:hover{
     cursor: pointer;
     background-color: #f24336d0;
   }
