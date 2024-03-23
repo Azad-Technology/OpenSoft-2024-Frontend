@@ -34,7 +34,8 @@ function Modal({ onClose, genre, id }) {
                 return;
             }
             if(id==="country"){
-                const response = await instance.get(`/countries_top/${genre}/count=18`)
+                console.log(id);
+                const response = await instance.get(`/countries_top/${genre}/?count=18`)
                 console.log(response.data);
                 setMovies(response.data);
                 return;

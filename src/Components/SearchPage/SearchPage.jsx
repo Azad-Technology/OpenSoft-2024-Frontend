@@ -22,6 +22,7 @@ const SearchPage = () => {
         setFuzzy(results);
       }
       catch (err) {
+        setFuzzy(null);
         console.error("Failed to log in", err);
       }
     }
@@ -108,18 +109,9 @@ const SearchPage = () => {
         </section>
 
       </div>
-      {fuzzy && <div className={styles.results_container}>
-        {fuzzy.map((movie, index) => (
-          <Card key={index} movie={movie} />
-        )
-        )}
-      </div> }
-      {!fuzzy && <div className={styles.results_container}>
-        {Array(18).fill(null).map((movie, index) => (
-          <Card key={index} movie={movie} />
-        )
-        )}
-      </div>}
+      {fuzzy && <MovieModalList movie={fuzzy} />}
+      {fuzzy===null && <MovieModalList movie={Array(18).fill(null)} />}
+      {fuzzy.length === 0 && <p>No Movie Found</p>}
     </div>
   );
 }
