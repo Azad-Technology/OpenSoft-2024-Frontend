@@ -234,6 +234,7 @@
     height: 2.5rem;
     cursor: pointer;
     transition: all 1s ease-in-out;
+    z-index: 10;
 }
 
 .readMore {

@@ -143,7 +143,7 @@ const App = () => {
           <Route path='/signup' element={
             <>
               <Navbar />
-              <SignUp />
+              <SignUp setShowPopup={setShowPopup} />
             </>
           }/>
         <Route path='/watchlist/:id' element={

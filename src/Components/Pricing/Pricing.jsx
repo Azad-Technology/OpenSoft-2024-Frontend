@@ -18,7 +18,7 @@ function Pricing() {
         </h1>
         <div className={styles.pricingCards}>
 
-          <article className={`${styles.pricingCard} ${isHovered === 0 ? styles.featured : ''}`}
+          <article className={`${styles.pricingCard} ${isHovered === 0 ? styles.featured_free : ''}`}
             onMouseEnter={() => setIsHovered(0)}
             onMouseLeave={() => setIsHovered(null)}>
             <h2>Basic</h2>
@@ -27,9 +27,10 @@ function Pricing() {
               Free
             </h3>
 
+          <button disabled className={styles.pricingCard_button_free}>Owned</button>
             <ul>
               <li>
-                Quality 480p
+                Quality upto 480p
               </li>
               <li>
                 Add up to 10 favorites
@@ -41,7 +42,6 @@ function Pricing() {
                 Customizable user profile
               </li>
             </ul>
-            <Link target="_blank" to="paisawala.lemonsqueezy.com"><button className={styles.pricingCard_button}>Purchase</button></Link>
           </article>
 
           <article className={`${styles.pricingCard} ${isHovered === 1 ? styles.featured : ''}`}
@@ -51,6 +51,7 @@ function Pricing() {
             <h3>
               <span>$</span> 49.99
             </h3>
+            <Link target="_blank" to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"><button className={styles.pricingCard_button}>Purchase</button></Link>
 
             <ul>
               <li>
@@ -66,36 +67,44 @@ function Pricing() {
                 Unlimited favorites
               </li>
               <li>
-                Make up to 5 watchlists
+                Continue Watching where you left off
+              </li>
+              <li>
+                Picture in Picture mode
               </li>
             </ul>
 
-            <Link target="_blank" to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"><button className={styles.pricingCard_button}>Purchase</button></Link>
 
           </article>
 
           <article className={`${styles.pricingCard} ${isHovered === 2 ? styles.featured : ''}`}
             onMouseEnter={() => setIsHovered(2)}
             onMouseLeave={() => setIsHovered(null)}>
-            <h2>Premium</h2>
+            <h2>Gold</h2>
             <h3>
-              <span>$</span> 39.99
+              <span>$</span> 99.99
             </h3>
-            <ul>
-              <li>
-                500 GB Storage
-              </li>
-              <li>
-                2 Users Allowed
-              </li>
-              <li>
-                Send up to 3 GB
-              </li>
-            </ul>
-
             <Link target="_blank" to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1">
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>
+            <ul>
+              <li>
+                Everything in the Silver tier
+              </li>
+              <li>
+                Quality upto 1080p
+              </li>
+              <li>
+                Voice Commands with Alan AI
+              </li>
+              <li>
+                Unlimited watchlists
+              </li>
+              <li>
+                Recommendation system
+              </li>
+            </ul>
+
 
           </article>
         </div>

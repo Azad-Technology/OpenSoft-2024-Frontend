@@ -7,6 +7,7 @@ const WatchListModal = ({ onClose, movieID }) => {
     const [{token, user}, dispatch] = useStateValue();
     const [watchlistName, setWatchListName] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
+    
     const watchlists = user?.watchlist;
     const createWatchList = async (e) => {
         e.preventDefault();
@@ -50,6 +51,7 @@ const WatchListModal = ({ onClose, movieID }) => {
             } catch(err){
                 console.log(err);
             }
+        window.location.reload();
         onClose();
     }
 

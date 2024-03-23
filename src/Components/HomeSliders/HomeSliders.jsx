@@ -11,7 +11,6 @@ export const HomeSliders = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
 
   const handleFoundGenre = (foundGenre) => {
-    console.log("kalidas1");
     // window.location.href = '/';
     openModal(foundGenre); // Trigger the openModal function with the foundGenre.name
   };
@@ -19,7 +18,6 @@ export const HomeSliders = () => {
   useAlan(handleFoundGenre);
 
   const openModal = (genre) => {
-      console.log("kalidas2");
       setSelectedGenre(genre);
   }
 
