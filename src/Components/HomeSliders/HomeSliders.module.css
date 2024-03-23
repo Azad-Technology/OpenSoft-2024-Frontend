@@ -83,7 +83,7 @@
 }
 
 .slider{
-    padding-right: 2rem;
+    padding-right: 0rem;
 }
 .slider__movies::-webkit-scrollbar{
     display: none;
