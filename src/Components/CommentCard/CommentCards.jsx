@@ -23,14 +23,14 @@ function CommentCards() {
   const fetchMovieName = async (movieId) => {
     try {
       const response = await instance.get(`/movies/${movieId}`);
-      console.log(response.data);
+      // console.log(response.data);
       // console.log("adityaxx");
       // console.log(response.data);
       
       return response.data[0].title; 
     } catch (error) {
       console.error("Error fetching movie name:", error);
-      console.log("aditya");
+      // console.log("aditya");
       return "Movi"; 
       
      }

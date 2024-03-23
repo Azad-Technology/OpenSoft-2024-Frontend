@@ -11,7 +11,6 @@ const Card = ({ movies,val,length }) => {
 
   //manually marking movie premium
   const [premium, setPremium] = useState(movies?.imdb.rating>=8);
-
   const openHeart = (event) => {
     event.stopPropagation();
     const heart = document.getElementById("heartIcon");
@@ -35,7 +34,6 @@ const Card = ({ movies,val,length }) => {
     }
 }
   const navigate = useNavigate();
-
   return (
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
@@ -57,7 +55,6 @@ const Card = ({ movies,val,length }) => {
               style={{ color: like ? "red" : "white" }}
             ></i>
           </div>
-          
           <div className={styles.premium}>
             {movies && premium && <i
               class={`fa fa-star`}
@@ -74,5 +71,4 @@ const Card = ({ movies,val,length }) => {
     </>
   );
 };
-
 export default Card;
