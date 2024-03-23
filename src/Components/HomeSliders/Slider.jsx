@@ -24,7 +24,7 @@ export const Slider = ({ genre, id }) => {
         return;
       }
       if (genre === "Top Series") {
-        const response = await instance.get('/top_series/?count=18');
+        const response = await instance.get('/top_series/?count=10');
         setMovies(response.data);
         return;
       }

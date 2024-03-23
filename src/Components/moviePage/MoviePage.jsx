@@ -294,7 +294,7 @@ const MoviePage = () => {
           ></i>}
             
           </span></span>
-                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />}
+                                <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
                                 {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
                             </span>
@@ -320,7 +320,7 @@ const MoviePage = () => {
                             </div>
                         </div> */}
                         <div className={styles.cell}>
-                            <div className={styles.subHeading}>Audio Language(s)</div>
+                            <div className={styles.subHeading}>Audio Languages</div>
                             <div className={styles.content}>{makeString(movie?.languages)}</div>
                         </div>
                         <div className={styles.cell}>
@@ -332,26 +332,26 @@ const MoviePage = () => {
                         {showMoreInfo && (<div className={styles.cast}>
                             <div className={styles.subHeading}>Cast</div>
                             <div className={styles.content}>
-                                {movie.cast.map((actor) => (
+                                {movie?.cast?.map((actor) => (
                                     <div className={styles.subContent}>{actor}</div>
                                 ))}
                             </div>
                         </div>)}
                         {showMoreInfo && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Writers</div>
-                            <div className={styles.content}>{makeString(movie.writers)}</div>
+                            <div className={styles.content}>{makeString(movie?.writers)}</div>
                         </div>)}
                         {showMoreInfo && (<div className={styles.cell}>
-                            <div className={styles.subHeading}>Countrie(s)</div>
-                            <div className={styles.content}>{makeString(movie.countries)}</div>
+                            <div className={styles.subHeading}>Countrie</div>
+                            <div className={styles.content}>{makeString(movie?.countries)}</div>
                         </div>)}
-                        {showMoreInfo && movie.tomatoes && (<div className={styles.cell}>
+                        {showMoreInfo && movie?.tomatoes && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Tomatometer</div>
-                            <div className={styles.content}><div>Viewer: {movie.tomatoes.viewer.rating}</div>{/*<div>Critic: {props.info.tomatometer.critic}</div>*/}</div>
+                            <div className={styles.content}><div>Viewer: {movie?.tomatoes?.viewer.rating}</div>{/*<div>Critic: {props.info.tomatometer.critic}</div>*/}</div>
                         </div>)}
-                        {showMoreInfo && movie.production && (<div className={styles.cell}>
+                        {showMoreInfo && movie?.production && (<div className={styles.cell}>
                             <div className={styles.subHeading}>Production</div>
-                            <div className={styles.content}>{movie?.tomatoes.production}</div>
+                            <div className={styles.content}>{movie?.tomatoes?.production}</div>
                         </div>)}
 
                     </div>
