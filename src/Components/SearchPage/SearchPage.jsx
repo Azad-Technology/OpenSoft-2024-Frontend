@@ -10,7 +10,7 @@ import Card from '../Card/Card.jsx';
 const SearchPage = () => {
   const { searchTerm } = useParams();
 
-  const [fuzzy, setFuzzy] = useState([]);
+  const [fuzzy, setFuzzy] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -22,6 +22,7 @@ const SearchPage = () => {
         setFuzzy(results);
       }
       catch (err) {
+        setFuzzy(null);
         console.error("Failed to log in", err);
       }
     }
@@ -120,6 +121,7 @@ const SearchPage = () => {
         )
         )}
       </div>}
+      {fuzzy.length === 0 && <p>No Movie Found</p>}
     </div>
   );
 }
