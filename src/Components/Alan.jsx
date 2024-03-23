@@ -8,11 +8,7 @@ const useAlan = (handleFoundGenre) => {
             onCommand: ({ command, genres, genreOrCategory }) => {
                 if (command === 'chooseGenre') {
                     const foundGenre = genres.find((g) => g.name.toLowerCase() === genreOrCategory.toLowerCase());
-                    console.log(foundGenre);
-                    if (foundGenre) {
-                        // window.location.href = '/';
-                        handleFoundGenre(foundGenre.name);
-                    }
+                    handleFoundGenre(foundGenre.name);
                 }
                 else if (command === 'logout') {
                     localStorage.clear();
