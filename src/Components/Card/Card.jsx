@@ -44,7 +44,12 @@ const Card = ({ movies,val,length }) => {
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
             {movies?.year}
-            <span className={styles.card__rating}>IMDB: {movies?.imdb.rating}</span>
+            <span className={styles.card__rating}><i
+              class={`fa fa-imdb`}
+              aria-hidden="true"
+              onClick={openHeart}
+              style={{backgroundColor: "gold",color:"black", fontSize: "15px"}}
+            ></i>{movies?.imdb.rating}</span>
           </div>
           <div className={styles.card__description}>{movies?.plot}</div>
         </div>
@@ -54,7 +59,7 @@ const Card = ({ movies,val,length }) => {
               class={`fa fa-heart${value}`}
               aria-hidden="true"
               onClick={openHeart}
-              style={{ color: like ? "red" : "white" }}
+              style={{ color: like ? "red" : "white"}}
             ></i>
           </div>
           

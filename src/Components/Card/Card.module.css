@@ -18,7 +18,7 @@
   height:15rem;
   max-height: 20%;
   min-width: 10rem;
-  
+  opacity: 1;
   /* padding: 1rem; */
   margin: 1rem;;
   margin-top: 2rem;
@@ -111,6 +111,13 @@
   top: 2%;
   left:5%;
   z-index: 3;
+  height: 9%;
+  width: 14%;
+  background-color: rgba(0,0,0,0.5);
+  padding-top: 0.2rem;
+  padding-left: 0.18rem;
+  border-radius: 5rem;
+  
 }
 .premium{
   position: absolute;
@@ -119,6 +126,10 @@
   z-index: 3;
   float: right;
   color: gold;
+}
+
+#heartIcon{  
+  box-shadow: 200px;
 }
 
 .numberIcons {
