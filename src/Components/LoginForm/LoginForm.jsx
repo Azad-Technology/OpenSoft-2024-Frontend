@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styles from './LoginForm.module.css'
 import { FaBeer } from 'react-icons/fa';
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
@@ -12,8 +12,14 @@ import RejectedPopup from '../LoginAcceptedRejected/rejectedLogin';
 function LoginForm({register, setShowPopup}) {
 
   const [{token,premium},dispatch]=useStateValue();
+  
   const navigate=useNavigate();
-
+    useEffect(() => {
+      if(token && token !== 'null' && token !== 'undefined'){
+        navigate('/');
+      }
+    }, [token])
+    
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [err, setErrors] = useState("")
     const [showPopup2, setShowPopup2] = useState(false)
