@@ -70,7 +70,7 @@ const alanBtnContainer = useRef();
             }
           })
 
-          console.log(user.data);
+          console.log("user",user.data);
           dispatch({
             type: 'SET_USER',
             user: user.data
@@ -159,16 +159,17 @@ const alanBtnContainer = useRef();
           <Route path='/signup' element={
             <>
               <Navbar />
-              <SignUp />
+              <SignUp setShowPopup={setShowPopup} />
             </>
-          } />
-          <Route path='/watchlist/:id' element={
-            <Watchlists />
-          } />
-          <Route path="*" element={
-            <NotFound />
-          } />
-
+          }/>
+        <Route path='/watchlist/:id' element={
+          token ?
+          <Watchlists /> : <LoginForm/>
+        }/>
+        <Route path="*" element={
+          <NotFound/>
+        }/>
+        
         </Routes>
         {selectedGenre &&
           <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />

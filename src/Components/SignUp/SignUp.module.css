@@ -157,6 +157,9 @@
 }
 
 @media only screen and (max-width: 45rem){
+    .container{
+        top: 8rem;
+    }
     .wrapper{
         width: 20rem;
         padding: 1.73rem 1.73rem;
