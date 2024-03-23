@@ -35,44 +35,8 @@
     justify-content: center;
     height: 100%;
   }
-  .toggle {
-    display: flex;
-    align-items: center;
-    margin-bottom: 4rem;
-  }
-  .toggle .name {
-    margin: 0 0.5rem;
-  }
-  .toggle .checkbox {
-    display: none;
-  }
-  .toggle .label {
-    position: relative;
-    display: inline-block;
-    width: 3rem;
-    height: 1.5rem;
-    background-color: #ccc;
-    border-radius: 0.75rem;
-    transition: 0.4s;
-    cursor: pointer;
-  }
-  .toggle .label .ball {
-    position: absolute;
-    top: 0.25rem;
-    left: 0.25rem;
-    width: 1rem;
-    height: 1rem;
-    background-color: white;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-  }
-  .toggle .checkbox:checked+.label {
-    background-color: #F24236;
-    transition: 0.4s;
-  }
-  .toggle .checkbox:checked+.label .ball {
-    transform: translateX(1.5rem);
-  }
+
+  
   /* Pricing Cards */
   .pricingCards {
     display: flex;
@@ -91,7 +55,7 @@
     width: 30%;
     backdrop-filter: blur(10px);
     margin: 0 1.1rem;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   .pricingCard.featured {
     background: linear-gradient(to right, #F24236, #C0180C);
@@ -225,7 +189,6 @@
   
     .pricingCard.featured {
       margin: 2rem 0;
-      transform: scale(1);
     }
   }
 

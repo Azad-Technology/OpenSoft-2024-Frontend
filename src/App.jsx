@@ -115,10 +115,8 @@ const alanBtnContainer = useRef();
           <Route path="/search/:searchTerm" element={
             <>
               <Navbar />
-              <div className='searchpage'>
               <SearchPage />
               <Footer />
-              </div>
             </>
           } />
           <Route path="/profile" element={<Profile />} />
