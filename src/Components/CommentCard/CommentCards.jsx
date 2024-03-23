@@ -14,7 +14,7 @@ function CommentCards() {
         console.log(response.data);
         setCommentsData(response.data);
       } catch (error) {
-        setIsError(true);
+          setIsError(true);
       }
     };
     getCommentsData();
@@ -31,7 +31,7 @@ function CommentCards() {
     } catch (error) {
       console.error("Error fetching movie name:", error);
       console.log("aditya");
-      return "Movi"; 
+      return "Movie"; 
       
      }
   };
