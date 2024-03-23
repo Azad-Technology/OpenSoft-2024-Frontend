@@ -132,137 +132,137 @@ const menuoptions = [
             {
                 name: "India",
                 link: "#",
-                genreID: "india"
+                genreID: "country"
             },
             {
                 name: "USA",
                 link: "#",
-                genreID: "usa"
+                genreID: "country"
             },
             {
                 name: "UK",
                 link: "#",
-                genreID: "uk"
+                genreID: "country"
             },
             {
                 name: "Australia",
                 link: "#",
-                genreID: "australia"
+                genreID: "country"
             },
             {
                 name: "China",
                 link: "#",
-                genreID: "china"
+                genreID: "country"
             },
             {
                 name: "France",
                 link: "#",
-                genreID: "france"
+                genreID: "country"
             },
             {
                 name: "Germany",
                 link: "#",
-                genreID: "germany"
+                genreID: "country"
             },
             {
                 name: "Italy",
                 link: "#",
-                genreID: "italy"
+                genreID: "country"
             },
             {
                 name: "Japan",
                 link: "#",
-                genreID: "japan"
+                genreID: "country"
             },
             {
                 name: "South Korea",
                 link: "#",
-                genreID: "southkorea"
+                genreID: "country"
             },
             {
                 name: "Spain",
                 link: "#",
-                genreID: "spain"
+                genreID: "country"
             },
             {
                 name: "Canada",
                 link: "#",
-                genreID: "canada"
+                genreID: "country"
             },
             {
                 name: "Mexico",
                 link: "#",
-                genreID: "mexico"
+                genreID: "country"
             },
             {
                 name: "Brazil",
                 link: "#",
-                genreID: "brazil"
+                genreID: "country"
             },
             {
                 name: "Russia",
                 link: "#",
-                genreID: "russia"
+                genreID: "country"
             },
             {
                 name: "Nigeria",
                 link: "#",
-                genreID: "nigeria"
+                genreID: "country"
             },
             {
                 name: "Argentina",
                 link: "#",
-                genreID: "argentina"
+                genreID: "country"
             },
             {
                 name: "Sweden",
                 link: "#",
-                genreID: "sweden"
+                genreID: "country"
             },
             {
                 name: "Netherlands",
                 link: "#",
-                genreID: "netherlands"
+                genreID: "country"
             },
             {
                 name: "Poland",
                 link: "#",
-                genreID: "poland"
+                genreID: "country"
             },
             {
                 name: "Belgium",
                 link: "#",
-                genreID: "belgium"
+                genreID: "country"
             },
             {
                 name: "Denmark",
                 link: "#",
-                genreID: "denmark"
+                genreID: "country"
             },
             {
                 name: "Norway",
                 link: "#",
-                genreID: "norway"
+                genreID: "country"
             },
             {
                 name: "Finland",
                 link: "#",
-                genreID: "finland"
+                genreID: "country"
             },
             {
                 name: "Greece",
                 link: "#",
-                genreID: "greece"
+                genreID: "country"
             },
             {
                 name: "Turkey",
                 link: "#",
-                genreID: "turkey"
+                genreID: "country"
             },
             {
                 name: "Egypt",
                 link: "#",
-                genreID: "egypt"
+                genreID: "country"
             },
         ]
     },

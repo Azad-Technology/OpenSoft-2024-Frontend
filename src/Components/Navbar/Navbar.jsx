@@ -41,6 +41,7 @@ export const Navbar = ({ movies }) => {
     const searchBarRef = useRef(null);
     const [showModal, setShowModal] = useState(false);
     const [selectedGenre, setSelectedGenre] = useState(null);
+    const [selectedID,setSelectedID]=useState(null);
     const genres = [
         {
             name: "Top Series",
@@ -132,6 +133,7 @@ export const Navbar = ({ movies }) => {
                                         if (menuoption.link === '/topimdb' || menuoption.link === '/tvshows') {
                                             event.preventDefault();
                                             setSelectedGenre(menuoption.name);
+                                            setSelectedID(menuoption.genreID);
                                             setShowModal(true);
                                         }
 
@@ -143,6 +145,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
+                                                        setSelectedID(menuoption.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
@@ -154,6 +157,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
+                                                        setSelectedID(menuoption.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
@@ -165,6 +169,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
+                                                        setSelectedID(menuoption.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
@@ -175,6 +180,7 @@ export const Navbar = ({ movies }) => {
                                     {showModal && (
                                         <GenreModal
                                             genre={selectedGenre}
+                                            id={selectedID}
                                             onClose={() => setShowModal(false)}
                                         />
                                     )}
@@ -192,7 +198,14 @@ export const Navbar = ({ movies }) => {
                     </div>
                 </div>
                 {showHamburgerMenu && <div className={styles.backdrop}></div>}
-                {showHamburgerMenu && <div ref={mobileMenuRef}><MobileMenu /></div>}
+                {showHamburgerMenu && <div ref={mobileMenuRef}><MobileMenu setSelectedGenre={setSelectedGenre} setSelectedID={setSelectedID} setShowModal={setShowModal} setShowHamburgerMenu={setShowHamburgerMenu}/></div>}
+                {showModal && 
+                    <GenreModal
+                        genre={selectedGenre}
+                        id={selectedID}
+                        onClose={()=>setShowModal(false)}
+                    />
+                }
             </div>
         )
     }
@@ -211,7 +224,14 @@ export const Navbar = ({ movies }) => {
                 </div>
                 {showSearchBar && <div ref={searchRef}><Search movies={movies} searchBarRef={searchBarRef} /></div>}
                 {showHamburgerMenu && <div className={styles.backdrop}></div>}
-                {showHamburgerMenu && <div ref={mobileMenuRef}><MobileMenu /></div>}
+                {showHamburgerMenu && <div ref={mobileMenuRef}><MobileMenu setSelectedGenre={setSelectedGenre} setSelectedID={setSelectedID} setShowModal={setShowModal} setShowHamburgerMenu={setShowHamburgerMenu} /></div>}
+                {showModal && 
+                    <GenreModal
+                        genre={selectedGenre}
+                        id={selectedID}
+                        onClose={()=>setShowModal(false)}
+                    />
+                }
             </div>
         )
     }

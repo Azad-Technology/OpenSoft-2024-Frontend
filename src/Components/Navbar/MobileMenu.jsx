@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import styles from './MobileMenu.module.css';
 import { useNavigate } from 'react-router-dom';
 import menuoptions from './Menuoptions.jsx';
+import GenreModal from '../GenreModal/GenreModal.jsx';
 
-export const MobileMenu = () => {
+export const MobileMenu = ({setSelectedGenre,setSelectedID,setShowModal,setShowHamburgerMenu}) => {
 
     const navigate=useNavigate();
 
@@ -23,21 +24,13 @@ export const MobileMenu = () => {
     }))
   }
 
-  const handleGenreClick=(e,genreID)=>{
-    e.preventDefault();
-    navigate('/');
-    const genreSection=document.getElementById(genreID);
-    if(genreSection){
-        const windowHeight = window.innerHeight;
-        const genreSectionHeight = genreSection.offsetHeight;
-        const offsetTop = genreSection.offsetTop;
-        const middleOfViewport = offsetTop - (windowHeight / 2) + (genreSectionHeight / 2);
-        window.scrollTo({
-            top: middleOfViewport,
-            behavior: "smooth"
-        });
+    const handleGenreClick=(e,genreID)=>{
+        e.preventDefault();
+        setSelectedGenre(e.target.innerText);
+        setSelectedID(genreID);
+        setShowModal(true);
+        setShowHamburgerMenu(false);
     }
-}
 
   return (
     <div className={styles.mobileMenu}>
