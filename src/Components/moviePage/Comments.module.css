@@ -1,6 +1,3 @@
-
-/* comment section  */
-
 /* @import url('https://fonts.googleapis.com/css2?family=Slackside+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Slackside+One&display=swap'); */
 
@@ -19,6 +16,11 @@
 .commentContainer .heading{
     font-size: 1.5rem;
     margin: 0 1rem 1rem 0;
+}
+
+.yourComment{
+    display: flex;
+    justify-content: center;
 }
 
 .commentContainer .textBtnCont{
@@ -47,7 +49,7 @@
     flex-direction: row;
     background-color: var(--primary-bg-color);
     border-radius: 10px;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .commentContainer .userImg{
@@ -68,6 +70,7 @@
 
 .commentContainer .textArea{
     display:flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     /* background-color: #2b2929; */
@@ -102,7 +105,7 @@
 }
 
 textarea{
-    width: 90%;
+    width: 100%;
     /* border-radius: 30px; */
     padding: 0.5rem;  
     color: white; 
@@ -185,8 +188,12 @@ textarea:focus{
 .commentContent{
     padding: 0rem 1rem;
 }
+
 @media screen and (max-width:550px){
-    .commentContent{
+    .imgTextBtnContainer{
+        width: 100%;
+    }
+    /* .commentContent{
         font-size: .8rem;
         padding-left: .5rem;
     }
@@ -197,8 +204,21 @@ textarea:focus{
         padding: 0;
 
         margin-left: .2rem;
+    } */
+}
+
+/* @media screen and (max-width:1000px){
+    .imgTextBtnContainer{
+        width: 75%;
     }
 }
+
+@media screen and (min-width:1001px){
+    .imgTextBtnContainer{
+        width: 50%;
+    }
+} */
+
 
 
 /* .allCommentsContainer .userName{
