@@ -1,0 +1,48 @@
+.successPopup {
+  position: fixed;
+  top: 4rem;
+  right: 1.25rem;
+  background-color: rgb(0, 0, 0);
+  color: rgb(121, 109, 109);
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
+  z-index: 1000;
+  border: 2px solid;
+  animation: fadeInfadeOutBorderSuccess 0.75s ease-in-out alternate infinite;
+}
+
+.rejectedPopup {
+  position: fixed;
+  top: 4rem;
+  right: 1.25rem;
+  background-color: rgb(0, 0, 0);
+  color: rgb(113, 105, 105);
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
+  z-index: 1000;
+  border: 2px solid;
+  animation: fadeInfadeOutBorderReject 0.9s ease-in-out alternate infinite;
+}
+
+
+@keyframes fadeInfadeOutBorderReject {
+  from {
+    border-color: transparent; /* Start transparent */
+  }
+  to {
+    border-color: rgb(150, 14, 14); /* End with red */
+  }
+}
+
+
+@keyframes fadeInfadeOutBorderSuccess {
+  from {
+    border-color: transparent; /* Start transparent */
+  }
+  to {
+    border-color: rgb(33, 162, 35); /* End with red */
+  }
+}
+
