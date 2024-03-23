@@ -4,6 +4,7 @@ import { useDebounce } from "use-debounce";
 import { SearchResults } from "./SearchResults.jsx";
 import * as Realm from "realm-web";
 import { useNavigate } from "react-router-dom";
+import instance from "../../axios.jsx";
 
 export const Search = ({movies,searchBarRef}) => {
 
@@ -12,20 +13,7 @@ export const Search = ({movies,searchBarRef}) => {
   const [search, setSearch] = useState("");
   const [debouncedSearch] = useDebounce(search, 250);
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-  const [user,setUser]=useState(null);
-  const[app,setApp]=useState(null);
   const [click,setClick]=useState(true);
-
-  useEffect(()=>{
-    const currApp=new Realm.App({id:"application-0-gisfr"});
-    setApp(currApp);
-    const credentials=Realm.Credentials.anonymous();
-    currApp.logIn(credentials).then((user)=>{
-      setUser(user);
-    }).catch((err)=>{
-      console.error("Failed to log in",err);
-    });
-  },[])
 
   const searchRef=useRef(null);
 
@@ -43,14 +31,12 @@ export const Search = ({movies,searchBarRef}) => {
   
   const getData = async () => {
     try{
-      const results=await user.functions.auto_dave(debouncedSearch);
-      
-      setAutoCompleteResult(results);
+      const response=await instance.get(`/autosearch/${debouncedSearch}`);
+      console.log(response.data);
+      setAutoCompleteResult(response.data);
     }
-    
     catch(err){
       setAutoCompleteResult([]);
-      console.error("Failed to log in",err);
     }
   }
 
