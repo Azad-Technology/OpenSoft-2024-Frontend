@@ -109,6 +109,14 @@
     /* margin: 3.125rem auto 1.875rem; */
 }
 
+.results_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 .dropdownbutton {
   display: flex;
   align-items: center;

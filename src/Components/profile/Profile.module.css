@@ -164,16 +164,16 @@
  #modal_button button{
   margin-right: 0;
   display: block;
-        position: absolute;
-        margin-top: 2rem;
-        background-color: rgba(255, 9, 9, 0.925);
-        color: white;
-        border: none;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        cursor: pointer;
-        z-index: 20;
-        font-size: large;
+  position: absolute;
+  margin-top: 2rem;
+  background-color: rgba(255, 9, 9, 0.925);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  font-size: large;
  }
  .edit_button button{
   /* color:white; */
@@ -191,7 +191,7 @@
   border-radius: 0.5rem;
   padding: 1.2rem;
   cursor: pointer;
-  z-index: 20;
+  z-index: 2;
   font-size: large;
  }
  .edit_button button:hover{
@@ -285,7 +285,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 4;
+  z-index: 10;
  }
  
  .modal-content {
@@ -322,13 +322,16 @@
   justify-content: center;
  }
  .edit_button_modal button{
-  color:white;
-  background-color:red;
-  width: 10rem;
-  height: 3rem;
-  border-color: #000000;
-  margin-right:0rem;
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 9, 9, 0.925);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
   cursor: pointer;
+  z-index: 20;
+  font-size: large;
  
  }
   .edit_button_modal button:hover{

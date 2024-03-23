@@ -113,14 +113,13 @@ const WatchListModal = ({ onClose, movieID }) => {
                 <div className={styles.watchlist_modal_section_heading}>Add to Existing</div>
                 <div className={styles.watchlist_modal_buttons}>
                     {watchlists?.map((watchlist) => (
-                        <label>
-                        <input
-                            type="checkbox"
-                            value={watchlist._id}
-                            onChange={(e) => (handleCheckboxChange(e.target.value, e.target.checked))}
-                        />
-                        {watchlist.name}
-                    </label>
+                        <div className={styles.checkbox_wrapper} >
+                        <label className={styles.checkbox} >
+                          <input type="checkbox" className={styles.checkbox__input} />  
+                          <span className={styles.checkbox__label}></span>
+                          {watchlist.name}
+                        </label>
+                      </div>
                     ))}
                 </div>
                 <button type="submit" className={styles.watchlist_modal_button} onClick={(e)=>addWatchList(e)}> Add </button>

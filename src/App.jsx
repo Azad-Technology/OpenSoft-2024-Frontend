@@ -50,7 +50,6 @@ const App = () => {
 }
 
 const alanBtnContainer = useRef();
-
 //Alan AI end
 
   const [movies, setMovies] = useState([]);
