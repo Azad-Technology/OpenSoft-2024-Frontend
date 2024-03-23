@@ -70,7 +70,7 @@ const alanBtnContainer = useRef();
             }
           })
 
-          console.log(user.data);
+          console.log("user",user.data);
           dispatch({
             type: 'SET_USER',
             user: user.data

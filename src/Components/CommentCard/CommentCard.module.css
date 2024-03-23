@@ -1,5 +1,8 @@
 .skeleton__cards{
   opacity:0.7;
+  /* background: transparent !important; */
+
+  background: transparent;
   animation: skeletonLoader 1.5s ease-in-out infinite alternate;
   margin-top: 1.1rem;
   border-radius: 0.5rem; 
@@ -9,6 +12,10 @@
   margin-left: 1.25rem;
   min-width: 15rem;
   width: 15rem;
+}
+
+.skeleton__cards:hover{
+  transform: scale(1.05);
 }
 
 @keyframes skeletonLoader {
@@ -133,6 +140,11 @@
   .commentCard { 
       height: auto; /* Allow height to adjust to content */
       padding: 0.75rem; /* Reduce padding */
+  }
+
+  .skeleton__cards{
+    height: auto;
+    padding: 0.75rem;
   }
 
   .username {
