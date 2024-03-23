@@ -145,7 +145,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
-                                                        setSelectedID(menuoption.genreID);
+                                                        setSelectedID(dropdown.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
@@ -157,7 +157,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
-                                                        setSelectedID(menuoption.genreID);
+                                                        setSelectedID(dropdown.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
@@ -169,7 +169,7 @@ export const Navbar = ({ movies }) => {
                                                     <a onClick={(event) => {
                                                         event.preventDefault();
                                                         setSelectedGenre(dropdown.name);
-                                                        setSelectedID(menuoption.genreID);
+                                                        setSelectedID(dropdown.genreID);
                                                         setShowModal(true);
                                                     }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
@@ -219,7 +219,11 @@ export const Navbar = ({ movies }) => {
                     </div>
                     <div className={styles.navbar__right}>
                         <i onClick={() => setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
-                        <i className={`fa fa-2x fa-user`} style={{ cursor: "pointer" }}></i>
+                        {token && token !== undefined && token !== 'null' && token !== 'undefined' && token !== null && token !== '' ?
+                            <i onClick={() => navigate('/profile')} className={`fa fa-2x fa-user ${styles.mobile_login}`}></i>
+                            :
+                            <div onClick={() => navigate('/login')} className={styles.mobile_login}>Login</div>
+                        }
                     </div>
                 </div>
                 {showSearchBar && <div ref={searchRef}><Search movies={movies} searchBarRef={searchBarRef} /></div>}

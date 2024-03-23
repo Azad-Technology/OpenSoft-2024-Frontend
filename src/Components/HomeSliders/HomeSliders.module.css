@@ -1,6 +1,7 @@
 .slider__header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .view__more{
@@ -11,7 +12,7 @@
     color: white;
     border: none;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 0.75rem;
     cursor: pointer;
     font-size: large;
 }

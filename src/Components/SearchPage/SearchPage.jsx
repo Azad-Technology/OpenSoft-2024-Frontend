@@ -5,6 +5,7 @@ import styles from './CustomDropdown.module.css'
 import { useParams } from 'react-router-dom';
 import MovieModalList from '../GenreModal/MovieModalList.jsx'
 import * as Realm from "realm-web";
+import Card from '../Card/Card.jsx';
 
 const SearchPage = () => {
   const { searchTerm } = useParams();
@@ -21,6 +22,7 @@ const SearchPage = () => {
         setFuzzy(results);
       }
       catch (err) {
+        setFuzzy(null);
         console.error("Failed to log in", err);
       }
     }
@@ -107,12 +109,25 @@ const SearchPage = () => {
         </section>
 
       </div>
+<<<<<<< HEAD
       {fuzzy && <MovieModalList movie={fuzzy} />}
-      {!fuzzy && <MovieModalList movie={Array(18).fill(null)} />}
+      {fuzzy===null && <MovieModalList movie={Array(18).fill(null)} />}
+      {fuzzy.length === 0 && <p>No Movie Found</p>}
+=======
+      {fuzzy && <div className={styles.results_container}>
+        {fuzzy.map((movie, index) => (
+          <Card key={index} movie={movie} />
+        )
+        )}
+      </div> }
+      {!fuzzy && <div className={styles.results_container}>
+        {Array(18).fill(null).map((movie, index) => (
+          <Card key={index} movie={movie} />
+        )
+        )}
+      </div>}
+>>>>>>> d683555c26fa5288450600c31f052410fa53bbe1
     </div>
   );
 }
-export default SearchPage
-
-
-
+export default SearchPage;

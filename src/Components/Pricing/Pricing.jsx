@@ -49,7 +49,7 @@ function Pricing() {
             onMouseLeave={() => setIsHovered(null)}>
             <h2>Silver</h2>
             <h3>
-              <span>$</span> 49.99
+              <span>₹</span> 50
             </h3>
             <Link target="_blank" to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"><button className={styles.pricingCard_button}>Purchase</button></Link>
 
@@ -82,29 +82,37 @@ function Pricing() {
             onMouseLeave={() => setIsHovered(null)}>
             <h2>Gold</h2>
             <h3>
-              <span>$</span> 99.99
+              <span>₹</span> 100
             </h3>
             <Link target="_blank" to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1">
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>
             <ul>
               <li>
-                Everything in the Silver tier
+                Get access to Premium Movies
               </li>
               <li>
                 Quality upto 1080p
               </li>
               <li>
-                Voice Commands with Alan AI
-              </li>
-              <li>
                 Unlimited watchlists
               </li>
               <li>
-                Recommendation system
+                Unlimited favorites
+              </li>
+              <li>
+                Continue Watching where you left off
+              </li>
+              <li>
+                Picture in Picture mode
+              </li>
+              <li>
+                Voice Commands with Alan AI
+              </li>
+              <li>
+                Personalized recommendation system
               </li>
             </ul>
-
 
           </article>
         </div>
