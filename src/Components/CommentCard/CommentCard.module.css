@@ -1,5 +1,5 @@
 .skeleton__cards{
-  opacity:0.2;
+  opacity:0.;
   animation: skeletonLoader 1.5s ease-in-out infinite alternate;
   /* margin-top: 1.1rem;
   border-radius: 0.5rem; 
