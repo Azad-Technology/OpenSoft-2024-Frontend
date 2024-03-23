@@ -13,7 +13,7 @@ function Modal({ onClose, genre, id }) {
                 setMovies(response.data);
                 return;
             }
-            if (genre === "Top Movies") {
+            if (genre === "Top Movies" || genre === "Top IMDB") {
                 const response = await instance.get('/top_movies/?count=18');
                 console.log(response.data);
                 setMovies(response.data);
@@ -26,6 +26,11 @@ function Modal({ onClose, genre, id }) {
             }
             if (genre === "Recent") {
                 const response = await instance.get('/recent_movies/?count=18');
+                setMovies(response.data);
+                return;
+            }
+            if (genre === "TV Shows") {
+                const response = await instance.get('/top_series/?count=18');
                 setMovies(response.data);
                 return;
             }
