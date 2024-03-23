@@ -6,9 +6,10 @@ import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import RejectedPopup from '../LoginAcceptedRejected/rejectedLogin';
 
-function SignUp() {
+function SignUp({setShowPopup}) {
     const [{token,premium},dispatch]=useStateValue();
     const navigate=useNavigate();
     const [isPasswordVisible1, setisPasswordVisible1] = useState(false);
@@ -16,6 +17,7 @@ function SignUp() {
     const [err, setErrors] = useState("")
     const [email, setEmail] = useState("");
     const [password,setPassword]=useState("");
+    const [showPopup2, setShowPopup2] = useState(false);
     
     const handleChange = async(e) => {
       e.preventDefault();
@@ -46,10 +48,19 @@ function SignUp() {
                 type:'SET_TOKEN',
                 token:response.data.token,
               });
-              navigate(-2);
+              setShowPopup(true)
+              setTimeout(()=>{
+                setShowPopup(false)
+              },3000)
+              navigate(-1);
             }
-            catch(err){
-              console.log(err);
+            catch(error){
+              console.log(error);
+              setErrors(error.response.data.detail);
+              setShowPopup2(true);
+              setTimeout(()=>{
+                setShowPopup2(false)
+              },3000);
             }
           }
           else setErrors("Password does not match")
@@ -65,8 +76,9 @@ function SignUp() {
       console.log(response);
       window.location.href = response.data.url;
     }
-    catch(err){
-      console.log(err);
+    catch(error){
+      console.log(error);
+      setErrors(error.response.data.detail);
     }
   }
 
@@ -80,6 +92,7 @@ function SignUp() {
   
   return (
     <div className={styles.container}>
+      {showPopup2 && <RejectedPopup message={err}/>}
       <div className={styles.wrapper}>
       <form action="">
         <h1>Sign Up</h1>
@@ -131,7 +144,7 @@ function SignUp() {
           <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         
-        {err===""?<></>:<div className={styles.error}>{err}</div>}
+        {/* {err===""?<></>:<div className={styles.error}>{err}</div>} */}
 
         <button type={err===""?'submit':'button'} onClick={(e) => (handleChange(e))} id='loginButton'>Register</button>
         <div className={styles.registerLink}>

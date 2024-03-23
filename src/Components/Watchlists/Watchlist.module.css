@@ -76,6 +76,31 @@
     cursor: pointer;
     transition: color 0.2s ease;
   }
+
+  .delete_button_container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+  }
+  .delete_button_container img{
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+  .delete_button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding:1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
   
   .back_button:hover {
     color: red;

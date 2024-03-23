@@ -5,12 +5,30 @@ import stockIcon from '../../assets/stock_movie_icon.jpg';
 import { useStateValue } from '../../MyContexts/StateProvider.jsx';
 import { useNavigate } from 'react-router';
 import MovieModalList from '../GenreModal/MovieModalList.jsx';
+import deleteIcon from '../../assets/Delete_Icon.svg';
+import instance from '../../axios.jsx';
 
 const Watchlist = ({ movies, name, id }) => {
     const [{token, user}, dispatch] = useStateValue();
     // console.log(user);
     // console.log(movies);
     const navigate = useNavigate();
+    const handleDelete = async () => {
+        try{
+            let config = {
+                method : 'delete',
+                headers: {
+                  "Authorization": `Bearer ${token}`
+                }
+              };
+              const response = await instance.request(`/remove_watchlist/${id}`, config);
+              console.log(response);
+              navigate('/profile');
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
 
   return (
     <div className={styles.watchlist_container}>
@@ -31,6 +49,12 @@ const Watchlist = ({ movies, name, id }) => {
         </span>
       </div>
     </div>
+  </div>
+  <div className={styles.delete_button_container}>
+    <button className={styles.delete_button} onClick={handleDelete}>
+      <img src={deleteIcon} alt="delete icon" />
+       Delete
+    </button>
   </div>
   <div className={styles.movie_grid}>
     <MovieModalList movie={movies} />

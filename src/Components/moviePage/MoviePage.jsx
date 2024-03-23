@@ -26,7 +26,7 @@ function Modal({ onClose }) {
                         {/* Video container */}
                         <div className={styles.video_container}>
                               <div className={styles.video}>
-                                    <MediaPlayer storage="storage-key" title="Dune" src="/manifests/dune_master.m3u8">
+                                    <MediaPlayer storage="storage-key" title="Dune" src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8">
                                           <MediaProvider />
                                           <DefaultVideoLayout icons={defaultLayoutIcons} />
                                     </MediaPlayer>
@@ -55,7 +55,6 @@ const MoviePage = () => {
     //Genre Modals end
 
     const navigate = useNavigate();
-    const [isWatchList, setIsWatchList] = useState(false);
     const [showWatchListModal, setShowWatchListModal] = useState(false);
 
     const { id } = useParams();
@@ -202,13 +201,9 @@ const MoviePage = () => {
             navigate('/login');
         }
     }
-    const toggleWatchlist = async () => {
+    const toggleWatchlist = () => {
         if (token && token != 'null' && token !== undefined && token != 'undefined' && token != '') {
-            if (isWatchList) {
-                setIsWatchList(false);
-            } else {
-                setIsWatchList(true);
-            }
+            setShowWatchListModal(true);
         }
         else {
             navigate('/login');
@@ -256,7 +251,7 @@ const MoviePage = () => {
                                 <button className={styles.modalbutton} onClick={handleClick}>
                                     Watch Now
                                 </button>
-                                {isWatchList ? <img src={watchliston} className={styles.watchlisticon} onClick={toggleWatchlist} /> : <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />}
+                                <img src={watchlistoff} className={styles.watchlisticon} onClick={() => (toggleWatchlist())} />
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
                                 {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
                             </span>

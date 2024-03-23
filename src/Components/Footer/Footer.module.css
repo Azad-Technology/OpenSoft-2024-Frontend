@@ -1,12 +1,12 @@
 
 .wrapper {
- 
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-size: 1rem;
   align-items: start;
-
+  background-color: black;
+  width: 100%;
 }
 
 .footer {
@@ -14,8 +14,6 @@
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
   color: #2f2f2f;
-
-
 }
 
 .footer > * {
