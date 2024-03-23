@@ -45,18 +45,20 @@ function CommentCard({ username, profilePic, comment, movie, link, timestamp }) 
 
 
   return (
+    <>
     <div className={`${styles.commentCard} ${styles.skeleton__cards}`}>
       <div className={styles.title}>
-        <img src={profilePic} alt="" className={styles.profilePic} />
+        {profilePic!="" && <img src={profilePic} alt="" className={styles.profilePic} />}
         <h3 className={styles.username}>{username}</h3>
       </div>
       
       <div className={styles.commentDetails}>
         <p className={styles.cardComment}>{truncateComment(comment, 10)}</p>
-        <div className={styles.cardTime}>{timeAgo}</div>
+        <div className={styles.cardTime}>{timestamp!="" && timeAgo}</div>
         <a href={link} className={styles.cardMovie}>{movie?movie:''}</a>
       </div>
     </div>
+    </>
   );
 }
 
