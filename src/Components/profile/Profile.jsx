@@ -123,8 +123,7 @@ const Profile = () => {
     setFullname(user?.name);
     setFavMovie(user?.fav);
   }, [user]);
-
-
+  
   return (
     <div style={{ backgroundColor: "#101010", display: "block" }}>
       <i
