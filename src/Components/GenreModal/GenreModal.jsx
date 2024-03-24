@@ -7,7 +7,6 @@ function Modal({ onClose, genre, id }) {
     const [movies, setMovies] = useState(null)
     useEffect(() => {
         const getData = async () => {
-            console.log(id);
             if (genre === "More Like This") {
                 const response = await instance.get('/movies/' + id + '/related_movies/?count=18')
                 setMovies(response.data);
@@ -15,7 +14,6 @@ function Modal({ onClose, genre, id }) {
             }
             if (genre === "Top Movies" || genre === "Top IMDB") {
                 const response = await instance.get('/top_movies/?count=18');
-                console.log(response.data);
                 setMovies(response.data);
                 return;
             }
@@ -35,9 +33,7 @@ function Modal({ onClose, genre, id }) {
                 return;
             }
             if(id==="country"){
-                console.log(id);
                 const response = await instance.get(`/countries_top/${genre}/?count=18`)
-                console.log(response.data);
                 setMovies(response.data);
                 return;
             }

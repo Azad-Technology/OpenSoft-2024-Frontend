@@ -10,7 +10,6 @@ function Footer() {
     const [selectedGenre, setSelectedGenre] = useState('');
     const handleClick = (genre) => {
         setSelectedGenre(genre);
-        console.log(selectedGenre);
         setShowModal(true);
     };
     const navigate = useNavigate();
