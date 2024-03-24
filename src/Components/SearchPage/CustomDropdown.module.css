@@ -345,5 +345,12 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
   }
   
+.NoMoviesFound{
+  display: flex;
+  justify-content: center;
   
+}  
+.NoMoviesFound p{
+  font-size: 4rem;
+}
   
