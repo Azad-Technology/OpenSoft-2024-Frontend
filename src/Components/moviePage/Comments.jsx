@@ -57,7 +57,6 @@ function NewComments(props) {
           }
         }
       }
-      // console.log(count);
       return count;
     }
     
@@ -80,13 +79,12 @@ function NewComments(props) {
     }
     
  
-    const [newComment,setNewComment] = useState('abc');
+    const [newComment,setNewComment] = useState('');
     
     function handleTextareaFocus(event) {
       const newTextareaHeight = no_of_lines()+2+'rem';
       const parentHeight = no_of_lines()+4+'rem';
 
-      // event.target.style.height =  newTextareaHeight;
       const typeComment = document.getElementById('myTextArea');
       typeComment.style.height = newTextareaHeight;
 

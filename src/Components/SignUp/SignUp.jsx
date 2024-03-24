@@ -66,6 +66,7 @@ function SignUp({setShowPopup}) {
           else setErrors("Password does not match")
         }
       }
+      console.log(err);
     };
 
   
