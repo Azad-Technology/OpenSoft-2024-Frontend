@@ -57,7 +57,6 @@ function NewComments(props) {
           }
         }
       }
-      // console.log(count);
       return count;
     }
     
@@ -97,11 +96,6 @@ function NewComments(props) {
     function handleTextareaBlur(event) {
       setTextareaHeight(no_of_lines()+2 + 'rem');
       setParentHeight(no_of_lines()+ 4 + 'rem');
-    }
-
-    const handleSubmit=(e)=>{
-      e.preventDefault();
-      console.log(newComment);
     }
   
     return (
