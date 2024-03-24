@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import alanBtn from '@alan-ai/alan-sdk-web';
-import { useStateValue } from '../MyContexts/StateProvider';
 const useAlan = (handleFoundGenre) => {
     useEffect(() => {
         alanBtn({
@@ -14,38 +13,33 @@ const useAlan = (handleFoundGenre) => {
                     localStorage.clear();
                     window.location.reload();
                 }
-                else if(command === 'home'){
+                else if (command === 'home') {
                     window.location.replace('http://localhost:5173');
                 }
-                else if(command === 'pricing'){
+                else if (command === 'pricing') {
                     window.location.replace('http://localhost:5173/pricing');
                 }
-                else if(command === 'profile'){
+                else if (command === 'profile') {
                     window.location.replace('http://localhost:5173/profile');
                 }
-                else if(command === 'buypremium'){
+                else if (command === 'buypremium') {
                     window.location.replace('http://localhost:5173/buyPremium');
                 }
-                else if(command === 'search'){
+                else if (command === 'search') {
                     window.location.replace(`http://localhost:5173/search/${query}`);
                 }
-                else if(command === 'scrolltop'){
+                else if (command === 'scrolltop') {
                     window.scrollTo(0, 0);
                 }
-                else if(command === 'goback'){
+                else if (command === 'goback') {
                     window.history.back();
                 }
-                else if(command === 'login'){
-                    if (token && token !== 'null' && token !== 'undefined') {
-                        window.location.replace('http://localhost:5173/');
-                    }
-                    else{
-                        window.location.replace('http://localhost:5173/login');
-                    }
+                else if (command === 'login') {
+                    window.location.replace('http://localhost:5173/login');
                 }
             }
         });
-    }, []);
+    });
 };
 
 export default useAlan;
