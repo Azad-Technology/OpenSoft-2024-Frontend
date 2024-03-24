@@ -184,15 +184,15 @@
   margin-right:5rem;
   display: block;
   /* position: absolute; */
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   background-color: rgba(255, 9, 9, 0.925);
   color: white;
   border: none;
   border-radius: 0.5rem;
-  padding: 1.2rem;
+  padding: .7rem;
   cursor: pointer;
   z-index: 2;
-  font-size: large;
+  font-size: 1.1rem;
  }
  .edit_button button:hover{
   background-color: rgba(255, 9, 9, 0.7);

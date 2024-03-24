@@ -12,6 +12,10 @@ const TopCard = ({ movies, val, length }) => {
     const [like, setlike] = useState(false);
     const [value, setvalue] = useState("-o");
     const openHeart = (event) => {
+      if(!token){
+        navigate("/login");
+      }
+  
         if(like){
             setlike(false);
           }else{
@@ -21,7 +25,7 @@ const TopCard = ({ movies, val, length }) => {
           addFavouriteRequest();
     };
     const handlehover = (event) => {
-        const particularCard = document.getElementById(`${movies._id}`);
+        const particularCard = document.getElementById(`${movies?._id}`);
         if (val === length - 1) {
             particularCard.style.transformOrigin = "right";
         }
