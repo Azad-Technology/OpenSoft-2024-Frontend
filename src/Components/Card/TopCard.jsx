@@ -65,7 +65,7 @@ const TopCard = ({ movies, val, length }) => {
                 <h2>{val + 1}</h2>
             </div>
             <div onClick={() => navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={`${movies?._id}`} onMouseOver={handlehover}>
-                <div className={styles.cards__overlay}>
+                {movies && <div className={styles.cards__overlay}>
                     <div className={styles.card__title}>{movies?.title}</div>
                     <div className={styles.card__runtime}>
                         {movies?.year}
@@ -74,7 +74,7 @@ const TopCard = ({ movies, val, length }) => {
 </svg>{movies?.imdb.rating}</span>
                     </div>
                     <div className={styles.card__description}>{movies?.plot}</div>
-                </div>
+                </div>}
                 <div>
                     <div className={styles.icon}>
                     {like?<i
