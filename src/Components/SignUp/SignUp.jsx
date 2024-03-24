@@ -73,7 +73,6 @@ function SignUp({setShowPopup}) {
   const handleGoogleClick = async () => {
     try{
       const response=await instance.get('/login/google');
-      console.log(response);
       window.location.href = response.data.url;
     }
     catch(error){

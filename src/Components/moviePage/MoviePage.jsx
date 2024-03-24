@@ -68,10 +68,8 @@ const MoviePage = () => {
     }, [id]);
 
     useEffect(() => {
-        console.log(id);
         const getData = async () => {
             const response = await instance.get(`/movies/${id}`);
-            console.log(response.data)
             setMovie(response.data[0]);
         }
         getData();
@@ -83,21 +81,10 @@ const MoviePage = () => {
     useEffect(() => {
         const getCommentData = async () => {
             const response = await instance.get(`/movies/${id}/comments`);
-            console.log(response.data)
             setComments(response.data);
         }
         getCommentData();
     }, [id]);
-
-    // useEffect(()=>{
-    //     console.log(user.subtype);
-    // }, [user])
-
-    // useEffect(() => {
-    //     console.log(movie);
-    //     console.log(comments);
-    // }, [movie]);
-
 
     // const [description, setDescription] = useState(props.info.movieDesc);
     const [isExpanded, setIsExpanded] = useState(true);
@@ -171,6 +158,10 @@ const MoviePage = () => {
         }
     }
     const openHeart = (event) => {
+        if(!token){
+            navigate("/login");
+          }
+      
         if(like){
           setlike(false);
         }else{
