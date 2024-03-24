@@ -5,6 +5,7 @@
 .movieList{
     display: flex;
     width: 100%;
+    margin-top: 2.25rem;   /* To prevent the card touching top margin on hover */
     justify-content: center;
     padding-bottom: 5%;
 }
