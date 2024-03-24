@@ -32,7 +32,7 @@
 
 .footer__addr {
   margin-right: 1.25em;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
   display:flex;
   height:100%;
   justify-content: center;
@@ -160,10 +160,13 @@
     flex: 2 0px;
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1020px){
   .footer__addr{
     text-align: center;
     margin-bottom: 1rem;
+  }
+  .footer__addr img{
+    min-width: 8rem;
   }
   .footer__btn{
     margin: 1rem auto 0 auto;
