@@ -8,6 +8,7 @@ import instance from '../../axios';
 import { useStateValue } from '../../MyContexts/StateProvider';
 import { useNavigate } from 'react-router-dom';
 import RejectedPopup from '../LoginAcceptedRejected/rejectedLogin';
+import { GoogleCallback } from './GoogleCallback';
 
 function LoginForm({register, setShowPopup}) {
 
@@ -19,7 +20,7 @@ function LoginForm({register, setShowPopup}) {
     const [showPopup2, setShowPopup2] = useState(false)
     const [email, setEmail] = useState("");
     const [password,setPassword]=useState("");
-    const [isGoogle, setIsGoogle] = useState(false);
+    const [isGoogle, setIsGoogle] = useState(true);
     
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -90,6 +91,8 @@ function LoginForm({register, setShowPopup}) {
   return (
     <div className={styles.login}>
       {showPopup2 && <RejectedPopup message={err}/>}
+      {isGoogle && <GoogleCallback setIsGoogle={setIsGoogle} />}
+      {!isGoogle &&
       <div className={styles.wrapper}>
       <form action="">
         <h1>Welcome Back.</h1>
@@ -128,6 +131,7 @@ function LoginForm({register, setShowPopup}) {
         </div>
       </form>
     </div>
+    }
     </div>
   )
 }
