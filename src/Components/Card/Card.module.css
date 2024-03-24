@@ -169,13 +169,12 @@
     flex-basis: 15%;
   }
 }
+
 @media screen and (max-width: 768px) {
   .cards{
     /* min-width: 10rem; */
     flex-basis: 20%;
   }
-}
-@media screen and (max-width: 768px) {
   .cards:hover{
     transform: none;
   }
@@ -196,11 +195,8 @@
   .cards__overlay{
     height: 6rem;
   }
-  .cards:hover{
-    transform: none;
-  }
-  .card__description{
-    display: none;
+  .first__card{
+    margin-left: 1.3rem;
   }
 }
 @media screen and (max-width: 250px) {
