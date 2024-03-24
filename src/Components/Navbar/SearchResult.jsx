@@ -6,11 +6,12 @@ export const SearchResult = ({movie}) => {
   const navigate = useNavigate();
   const [premium, setPremium] = useState(false);
   useEffect(() => {
+    console.log(movie);
     setPremium(movie.imdb.rating>=8)
   }, [movie])
   return (
     <div onClick={()=>navigate(`/movie/${movie?._id}`)} className={styles.searchResult}> 
-        <img src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`} style={{height:"4rem", width:"3rem"}} alt="search result" />
+        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} style={{height:"4rem", width:"3rem"}} alt="search result" />
         <div className={styles.searchResult__details}>
             <h5>{movie.title} 
               {premium && (<span className={styles.premium}>
