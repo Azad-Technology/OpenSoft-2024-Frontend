@@ -62,7 +62,7 @@ const TopCard = ({ movies, val, length }) => {
     return (
         <div className={styles.contain}>
             <div className={styles.number}>
-                <h2>{val + 1}</h2>
+                <h2 className={styles.number__gradient}>{val + 1}</h2>
             </div>
             <div onClick={() => navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={`${movies?._id}`} onMouseOver={handlehover}>
                 {movies && <div className={styles.cards__overlay}>

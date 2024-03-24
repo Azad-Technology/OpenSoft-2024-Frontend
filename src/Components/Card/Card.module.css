@@ -160,6 +160,12 @@
   justify-content: end;
   font-size: xxx-large;
 }
+
+.number__gradient{
+  background: linear-gradient(0deg, #ffffff, #7d7d7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /* .Genrediv:hover{
   transition: scale(1.1, 1.1);
 } */
