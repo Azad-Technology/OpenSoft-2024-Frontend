@@ -145,7 +145,7 @@ function SignUp({setShowPopup}) {
           <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         
-        {/* {err===""?<></>:<div className={styles.error}>{err}</div>} */}
+        {err===""?<></>:<div className={styles.error}>{err}</div>}
 
         <button type={err===""?'submit':'button'} onClick={(e) => (handleChange(e))} id='loginButton'>Register</button>
         <div className={styles.registerLink}>

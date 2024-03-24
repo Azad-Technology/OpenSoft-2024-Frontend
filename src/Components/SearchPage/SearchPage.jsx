@@ -10,7 +10,7 @@ import Card from '../Card/Card.jsx';
 const SearchPage = () => {
   const { searchTerm } = useParams();
 
-  const [fuzzy, setFuzzy] = useState([]);
+  const [fuzzy, setFuzzy] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -65,7 +65,7 @@ const SearchPage = () => {
 
     try {
       const response = await axios.get('/api/movies', { params: filters });
-      // setMovies(response.data);
+      setMovies(response.data);
     } catch (error) {
       console.error("Error fetching movies:", error);
     }
@@ -109,9 +109,19 @@ const SearchPage = () => {
         </section>
 
       </div>
-      {fuzzy && <MovieModalList movie={fuzzy} />}
-      {fuzzy===null && <MovieModalList movie={Array(18).fill(null)} />}
-      {fuzzy.length === 0 && <p>No Movie Found</p>}
+      {fuzzy && <div className={styles.results_container}>
+        {fuzzy.map((movie, index) => (
+          <Card key={index} movies={movie} />
+        )
+        )}
+      </div> }
+      {!fuzzy && <div className={styles.results_container}>
+        {Array(18).fill(null).map((movie, index) => (
+          <Card key={index} movies={movie} />
+        )
+        )}
+      </div>}
+      {fuzzy?.length === 0 && <p>No Movie Found</p>}
     </div>
   );
 }

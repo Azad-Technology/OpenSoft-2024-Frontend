@@ -86,6 +86,7 @@
 
 .footer a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .footer__nav {
