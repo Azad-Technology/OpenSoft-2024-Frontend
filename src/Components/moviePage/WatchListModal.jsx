@@ -108,7 +108,7 @@ const WatchListModal = ({ onClose, movieID }) => {
                     {watchlists?.map((watchlist) => (
                         <div className={styles.checkbox_wrapper} >
                         <label className={styles.checkbox} >
-                          <input type="checkbox" className={styles.checkbox__input} />  
+                          <input type="checkbox" className={styles.checkbox__input} onChange={(e) => (handleCheckboxChange(watchlist._id, e.target.checked))} />  
                           <span className={styles.checkbox__label}></span>
                           {watchlist.name}
                         </label>
