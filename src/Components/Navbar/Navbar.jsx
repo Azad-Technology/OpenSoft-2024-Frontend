@@ -105,18 +105,9 @@ export const Navbar = ({ movies }) => {
 
     const handleGenreClick = (e, genreID) => {
         e.preventDefault();
-        console.log(genreID);
-        const genreSection = document.getElementById(genreID);
-        if (genreSection) {
-            const windowHeight = window.innerHeight;
-            const genreSectionHeight = genreSection.offsetHeight;
-            const offsetTop = genreSection.offsetTop;
-            const middleOfViewport = offsetTop - (windowHeight / 2) + (genreSectionHeight / 2);
-            window.scrollTo({
-                top: middleOfViewport,
-                behavior: "smooth"
-            });
-        }
+        setSelectedGenre(e.target.innerText);
+        setSelectedID(genreID);
+        setShowModal(true);
     }
 
     if (window.innerWidth > 600) {
@@ -142,36 +133,21 @@ export const Navbar = ({ movies }) => {
                                         <div className={styles.dropdown__column}>
                                             {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
                                                 return (
-                                                    <a onClick={(event) => {
-                                                        event.preventDefault();
-                                                        setSelectedGenre(dropdown.name);
-                                                        setSelectedID(dropdown.genreID);
-                                                        setShowModal(true);
-                                                    }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    <a onClick={(event) => {handleGenreClick(event,dropdown.genreID)}} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
                                             })}
                                         </div>
                                         <div className={styles.dropdown__column}>
                                             {menuoption.dropdown?.slice(9, 18).map((dropdown, index) => {
                                                 return (
-                                                    <a onClick={(event) => {
-                                                        event.preventDefault();
-                                                        setSelectedGenre(dropdown.name);
-                                                        setSelectedID(dropdown.genreID);
-                                                        setShowModal(true);
-                                                    }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    <a onClick={(event) => {handleGenreClick(event,dropdown.genreID)}} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
                                             })}
                                         </div>
                                         <div className={styles.dropdown__column}>
                                             {menuoption.dropdown?.slice(18).map((dropdown, index) => {
                                                 return (
-                                                    <a onClick={(event) => {
-                                                        event.preventDefault();
-                                                        setSelectedGenre(dropdown.name);
-                                                        setSelectedID(dropdown.genreID);
-                                                        setShowModal(true);
-                                                    }} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
+                                                    <a onClick={(event) => {handleGenreClick(event,dropdown.genreID)}} className={styles.navbar__link_dropdown} key={index} href={dropdown.link}>{dropdown.name}</a>
                                                 )
                                             })}
                                         </div>

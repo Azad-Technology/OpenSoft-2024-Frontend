@@ -14,7 +14,6 @@ function Modal({ onClose, genre, id }) {
             }
             if (genre === "Top Movies" || genre === "Top IMDB") {
                 const response = await instance.get('/top_movies/?count=18');
-                console.log(response.data);
                 setMovies(response.data);
                 return;
             }
@@ -34,9 +33,7 @@ function Modal({ onClose, genre, id }) {
                 return;
             }
             if(id==="country"){
-                console.log(id);
                 const response = await instance.get(`/countries_top/${genre}/?count=18`)
-                console.log(response.data);
                 setMovies(response.data);
                 return;
             }
@@ -60,11 +57,10 @@ function Modal({ onClose, genre, id }) {
     );
 }
 
-const GenreModal = ({ genre, onClose }) => {
-    console.log(genre);
+const GenreModal = ({ genre,id, onClose }) => {
     return (
         <>
-            <Modal onClose={onClose} genre={genre} />
+            <Modal onClose={onClose} genre={genre} id={id} />
         </>
     )
 }

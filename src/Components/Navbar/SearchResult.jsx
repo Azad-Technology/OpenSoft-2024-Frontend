@@ -6,7 +6,6 @@ export const SearchResult = ({movie}) => {
   const navigate = useNavigate();
   const [premium, setPremium] = useState(false);
   useEffect(() => {
-    console.log(movie);
     setPremium(movie.imdb.rating>=8)
   }, [movie])
   return (

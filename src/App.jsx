@@ -68,8 +68,6 @@ const alanBtnContainer = useRef();
               Authorization: `Bearer ${token}`
             }
           })
-
-          console.log("user",user.data);
           dispatch({
             type: 'SET_USER',
             user: user.data
@@ -81,20 +79,6 @@ const alanBtnContainer = useRef();
       getUser();
     }
   }, [token])
-
-  useEffect(() => {
-    const getIP = async () => {
-      try {
-        const ip = await axios.get('http://ipinfo.io/json');
-        console.log("IP", ip.data);
-      }
-      catch (err) {
-        console.log("IP", err);
-      }
-    }
-    getIP();
-  }, [])
-
 
   return (
     <>

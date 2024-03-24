@@ -18,7 +18,7 @@
   height: 15rem;
   max-height: 20%;
   min-width: 10rem;
-  
+  opacity: 1;
   margin: 1rem;;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -30,6 +30,7 @@
   /* position: absolute; */
   z-index: 10;
   transform: scale(1.4, 1.32);
+  transform-origin: var(--val);
 }
 
 .cards__overlay {
@@ -61,15 +62,20 @@
   font-size: 0.8rem;
   display: flex;
   justify-content: space-between;
-  margin:0rem;
   vertical-align: bottom;
   justify-content: space-between;
+  align-items: center;
   font-size:x-small;
-}
-.card__rating {
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
-  margin-right: 0rem;
+  margin-right: 0.5rem;
+}
+.card__rating {
+  display: flex;
+  align-items: center;
+}
+.card__rating svg{
+  margin-right: 0.3rem;
 }
 .card__description {
   font-size: 0.7rem;

@@ -6,9 +6,7 @@ import { useStateValue } from '../../MyContexts/StateProvider'
 
 export const AllWatchlists = () => {
     const [{token, user}, dispatch] = useStateValue();
-    // console.log(token);
     const watchlists = user?.watchlist;
-    console.log(watchlists);
     const [showLeftBtn, setShowLeftBtn] = useState(false);
     const [showRightBtn, setShowRightBtn] = useState(true);
     const scrollableDivRef = useRef(null);
@@ -25,14 +23,6 @@ export const AllWatchlists = () => {
     <div className={styles.slider}>
       <div className={styles.container}>
         <div className={styles.slider__movies} ref={scrollableDivRef}>
-          {/* <WatchListCards title={"My WatchList #1"} />
-          <WatchListCards title={"My WatchList #1"} />
-          <WatchListCards title={"My WatchList #1"} />
-          <WatchListCards title={"My WatchList #1"} />
-          <WatchListCards title={"My WatchList #1"} />
-          <WatchListCards title={"My WatchList #1"} />
-          <WatchListCards title={"My WatchList #1"} />
-          <WatchListCards title={"My WatchList #1"} /> */}
           {watchlists?.map((watchlist, index) => (
             <WatchListCards key={index} name={watchlist.name} id={watchlist._id} />
           ))}
