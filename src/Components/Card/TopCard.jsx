@@ -21,7 +21,7 @@ const TopCard = ({ movies, val, length }) => {
           addFavouriteRequest();
     };
     const handlehover = (event) => {
-        const particularCard = document.getElementById(`${movies._id}`);
+        const particularCard = document.getElementById(`${movies?._id}`);
         if (val === length - 1) {
             particularCard.style.transformOrigin = "right";
         }
