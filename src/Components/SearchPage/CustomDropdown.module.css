@@ -207,7 +207,6 @@
     display: block;
     width: 100%;
     height: 0.1rem;
-    background: var(--tertiary-font-color);  
     margin-bottom: 1rem;
 }
 
@@ -345,5 +344,12 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
   }
   
+.NoMoviesFound{
+  display: flex;
+  justify-content: center;
   
+}  
+.NoMoviesFound p{
+  font-size: 4rem;
+}
   

@@ -1,17 +1,22 @@
 import styles from "./Loader.module.css";
 
-function loader(){
+function Loader(){
 
     return (
         <>
-            <div className={styles.loaderContainer}>
-                <div className={styles.loader}>
-                    
-                </div>
-            </div>
+            <div className={styles.loaderContainer}>           <div className={styles.container}>
+  <div className={styles.dot}></div>
+  <div className={styles.dot}></div>
+  <div className={styles.dot}></div>
+  <div className={styles.dot}></div>
+  <div className={styles.dot}></div>
+  <div className={styles.dot}></div>
+</div>
+</div>
+ 
         </>
     )
 
 }
 
-export default loader;
+export default Loader;
