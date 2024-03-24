@@ -76,7 +76,7 @@ function LoginForm({register, setShowPopup}) {
   const handleGoogleClick = async () => {
     try{
       const response=await instance.get('/login/google');
-      // window.location.href = response.data.url;
+      window.location.href = response.data.url;
     }
     catch(error){
       console.log(error);
