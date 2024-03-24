@@ -51,7 +51,7 @@ function Modal({ onClose, genre, id}) {
             <div className={styles.heading}>{genre}</div>
             <div className={styles.modal}>
                 <div className={styles.movieList}>
-                    {movies ? <MovieModalList movie={movies} /> : <h1>Loading...</h1>}
+                    {movies ? <MovieModalList movie={movies} onClose={onClose}/> : <h1>Loading...</h1>}
                     {/* {!movies && <MovieList movie={Array(18).fill(null)} />} */}
                 </div>
             </div>
@@ -60,11 +60,11 @@ function Modal({ onClose, genre, id}) {
     );
 }
 
-const GenreModal = ({ genre, onClose, overlayHeight }) => {
+const GenreModal = ({ genre, onClose}) => {
     console.log(genre);
     return (
         <>
-            <Modal onClose={onClose} genre={genre} overlayHeight={overlayHeight}/>
+            <Modal onClose={onClose}  genre={genre}/>
         </>
     )
 }

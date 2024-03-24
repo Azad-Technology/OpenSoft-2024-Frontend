@@ -5,7 +5,7 @@ import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
 import imdb from '../../assets/imdb-icon.svg';
-const Card = ({ movies,val,length }) => {
+const Card = ({ movies,val,length,onClose}) => {
   // for dummy purpose we take movies?.like=false;
   const [like,setlike] = useState(false);
   const [value, setvalue] = useState("-o");
@@ -40,9 +40,10 @@ const Card = ({ movies,val,length }) => {
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
       <div onClick={()=>{
+        onClose();
         navigate(`/movie/${movies?._id}`);
-        const class_name = genreModalStyles.modal_overlay;
-        console.log(genreModalStyles.modal_overlay);
+        // const class_name = genreModalStyles.modal_overlay;
+        // console.log(genreModalStyles.modal_overlay);
     }} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
         {movies && <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies?.title}</div>
