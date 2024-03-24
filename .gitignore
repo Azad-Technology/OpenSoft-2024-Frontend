@@ -27,3 +27,5 @@ package-lock.json
 
 /public/manifests
 
+/src/axios.jsx
+

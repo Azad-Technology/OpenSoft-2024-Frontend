@@ -11,7 +11,6 @@ const WatchListModal = ({ onClose, movieID }) => {
     const watchlists = user?.watchlist;
     const createWatchList = async (e) => {
         e.preventDefault();
-        console.log(watchlistName);
         if(watchlistName === ''){
             setErrorMsg('Please enter a name');
             return;
@@ -41,12 +40,6 @@ const WatchListModal = ({ onClose, movieID }) => {
             } catch (err){
                 console.log(err);
             }
-            
-            // let response = instance.post('/add_watchlist/' + watchlistName, {
-                //     headers:{Authorization: `Bearer ${token}`},
-                //   });
-                //   console.log(response);
-                // response = await response;
                 
             } catch(err){
                 console.log(err);

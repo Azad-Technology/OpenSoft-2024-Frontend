@@ -10,8 +10,6 @@ import instance from '../../axios.jsx';
 
 const Watchlist = ({ movies, name, id }) => {
     const [{token, user}, dispatch] = useStateValue();
-    // console.log(user);
-    // console.log(movies);
     const navigate = useNavigate();
     const handleDelete = async () => {
         try{
@@ -22,7 +20,6 @@ const Watchlist = ({ movies, name, id }) => {
                 }
               };
               const response = await instance.request(`/remove_watchlist/${id}`, config);
-              console.log(response);
               navigate('/profile');
         }
         catch(err){

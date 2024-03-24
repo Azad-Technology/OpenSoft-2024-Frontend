@@ -19,6 +19,11 @@ export const HomeSliders = () => {
       link: "#",
       genreID: "topseries",
     },
+    // {
+    //   name: "Popular in your region",
+    //   link: "#",
+    //   genreID: "my_country"
+    // },
     {
       name: "Romance",
       link: "#",

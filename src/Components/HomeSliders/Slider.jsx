@@ -12,6 +12,11 @@ export const Slider = ({ genre, id }) => {
 
   useEffect(() => {
     const getData = async () => {
+      if(genre==="Popular in your region"){
+        const response = await instance.get(`my_country/?count=18`)
+        setMovies(response.data);
+        return;
+      }
       if (genre === "More Like This") {
         const response = await instance.get('/movies/' + id + '/related_movies/?count=18')
         setMovies(response.data);
@@ -19,7 +24,6 @@ export const Slider = ({ genre, id }) => {
       }
       if (genre === "Top Movies") {
         const response = await instance.get('/top_movies/?count=10');
-        console.log(response.data);
         setMovies(response.data);
         return;
       }
