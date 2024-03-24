@@ -12,7 +12,6 @@ import './../../index.css';
 import { useStateValue } from "../../MyContexts/StateProvider";
 import { useNavigate } from "react-router-dom";
 import watchlistoff from './../../assets/watchlistoff.svg';
-import watchliston from './../../assets/watchliston.svg';
 import Loader from './../Loader/Loader.jsx';
 import WatchListModal from "./WatchListModal.jsx";
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
@@ -86,24 +85,10 @@ const MoviePage = () => {
         getCommentData();
     }, [id]);
 
-    // const [description, setDescription] = useState(props.info.movieDesc);
     const [isExpanded, setIsExpanded] = useState(true);
     const [showLess, setShowLess] = useState(false);
-    // const [descriptionUpdated, setDescriptionUpdated] = useState(description);
     const [showMoreInfo, setShowMoreInfo] = useState(false);
     const [smallScreen, setSmallScreen] = useState(false);
-    // const cast = props.info.cast;
-    // const language = props.info.languages;
-    // let languageString = makeString(language);
-    // const genre = ["Sci-Fi", "Movies", "Dramas", "US", "Movies", ""];
-    // let genreString = makeString(genre);
-    // const directors = props.info.directors
-    // const directorString = makeString(directors);
-    // const writers = props.info.writers
-    // const writersString = makeString(writers);
-    // const countries = props.info.countries;
-    // const countriesString = makeString(countries);
-    // const rated = "PG";
 
 
     // functions
@@ -124,7 +109,6 @@ const MoviePage = () => {
         const width = window.screen.width;
         setShowLess(false);
         if (width <= 550) {
-            // const descDiv = document.getElementById("description");
             const maxLength = 200;
             if (description.length > maxLength) {
                 setDescriptionUpdated(description.slice(0, maxLength));
@@ -210,7 +194,7 @@ const MoviePage = () => {
                 if (user && user.subtype != "Basic") {
                     setShowModal(true);
                 } else {
-                    navigate("/buyPremium");
+                    navigate("/pricing");
                 }
             }
 
@@ -249,13 +233,7 @@ const MoviePage = () => {
                                 {/* <span>{props.info.duration}</span> */}
                                 <span>{String(movie?.released).substring(0, 4)}</span>
                             </span>
-                            {/* <span className={styles.stamps}>
-                                {
-                                    props.info.rating.map((ele)=>(
-                                        <span>{ele}</span>
-                                    ))
-                                }
-                            </span> */}
+                            
                         </div>
                         <div className={styles.genreList}>
                             {
@@ -281,13 +259,10 @@ const MoviePage = () => {
           ></i>}
             
           </span></span>
-                                <img src={watchlistoff} className={styles.watchlisticon} onClick={() => { setShowWatchListModal(true) }} />
+                                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
                                 {showModal && <Modal onClose={() => setShowModal(false)} />}
                                 {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
                             </span>
-                            {/* <span><button>B</button></span>
-                            <span><button>C</button></span>
-                            <span><button>D</button></span> */}
                         </div>
                     </div>
                 </div>
@@ -298,14 +273,7 @@ const MoviePage = () => {
                             <div className={styles.subHeading}>Directors</div>
                             <div className={styles.content}>{makeString(movie?.directors)}</div>
                         </div>
-                        {/* <div className={styles.cell}>
-                            <div className={styles.subHeading}>Genres</div>
-                            <div className={styles.content}>
-
-                                <div className={styles.subContent}>{genreString}</div>
-
-                            </div>
-                        </div> */}
+                        
                         <div className={styles.cell}>
                             <div className={styles.subHeading}>Audio Languages</div>
                             <div className={styles.content}>{makeString(movie?.languages)}</div>
@@ -358,7 +326,6 @@ const MoviePage = () => {
                     <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />
                 }
             </div>
-            {/* <Footer /> */}
         </>
     )
 }
