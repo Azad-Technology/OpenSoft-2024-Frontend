@@ -99,15 +99,24 @@
     margin-left: 3rem;
 }
 
-@media screen and (max-width: 768px) {
-    .LeftbtnContainer, .RightbtnContainer{
-        display: none;
-    }
-}
 @media screen and (min-width: 250px) {
     .sliders{
         margin-right: 0rem;
         margin-left: 0rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .slider__title{
+        margin-left: 1rem;
+    }
+    .LeftbtnContainer, .RightbtnContainer{
+        display: none;
+    }
+    .view__more{
+        padding: 0.5rem;
+        font-size: medium;
+        margin-right: 1rem;
     }
 }
 

@@ -24,7 +24,6 @@ export const Slider = ({ genre, id }) => {
       }
       if (genre === "Top Movies") {
         const response = await instance.get('/top_movies/?count=10');
-        console.log(response.data);
         setMovies(response.data);
         return;
       }

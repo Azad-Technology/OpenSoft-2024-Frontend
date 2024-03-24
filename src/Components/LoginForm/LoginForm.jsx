@@ -14,6 +14,7 @@ function LoginForm({register, setShowPopup}) {
   const [{token,premium},dispatch]=useStateValue();
   
   const navigate=useNavigate();
+  
     useEffect(() => {
       if(token && token !== 'null' && token !== 'undefined'){
         navigate('/');
@@ -76,8 +77,8 @@ function LoginForm({register, setShowPopup}) {
   const handleGoogleClick = async () => {
     try{
       const response=await instance.get('/login/google');
-      console.log(response);
-      window.location.href = response.data.url;
+      console.log(response.data);
+      window.open(response.data.url, '_blank');
     }
     catch(error){
       console.log(error);

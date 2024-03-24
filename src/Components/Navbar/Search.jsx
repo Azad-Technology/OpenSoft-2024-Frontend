@@ -32,7 +32,6 @@ export const Search = ({movies,searchBarRef}) => {
   const getData = async () => {
     try{
       const response=await instance.get(`/autosearch/${debouncedSearch}`);
-      console.log(response.data);
       setAutoCompleteResult(response.data);
     }
     catch(err){
