@@ -47,6 +47,7 @@ const MoviePage = () => {
 
     //Genre Modals 
     const [selectedGenre, setSelectedGenre] = useState(null);
+    // const [overlayHeight, setOverlayHeight] = useState('100%');
 
     const openModal = (genre) => 
     {

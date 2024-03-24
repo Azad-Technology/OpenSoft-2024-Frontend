@@ -3,7 +3,7 @@ import styles from './GenreModal.module.css';
 import instance from '../../axios';
 import MovieModalList from './MovieModalList';
 
-function Modal({ onClose, genre, id }) {
+function Modal({ onClose, genre, id}) {
     const [movies, setMovies] = useState(null)
     useEffect(() => {
         const getData = async () => {
@@ -60,11 +60,11 @@ function Modal({ onClose, genre, id }) {
     );
 }
 
-const GenreModal = ({ genre, onClose }) => {
+const GenreModal = ({ genre, onClose, overlayHeight }) => {
     console.log(genre);
     return (
         <>
-            <Modal onClose={onClose} genre={genre} />
+            <Modal onClose={onClose} genre={genre} overlayHeight={overlayHeight}/>
         </>
     )
 }

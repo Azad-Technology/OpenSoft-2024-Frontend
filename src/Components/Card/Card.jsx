@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Card.module.css";
+import genreModalStyles from "./../GenreModal/GenreModal.module.css";
 import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
@@ -39,7 +40,11 @@ const Card = ({ movies,val,length }) => {
   return (
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
-      <div onClick={()=>navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
+      <div onClick={()=>{
+        navigate(`/movie/${movies?._id}`);
+        const class_name = genreModalStyles.modal_overlay;
+        console.log(genreModalStyles.modal_overlay);
+    }} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
         {movies && <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>

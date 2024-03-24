@@ -29,7 +29,7 @@ function SignUp({setShowPopup}) {
         setErrors("Please enter a valid email address.")
       }
       else {
-        if(newPass.length<8) setErrors('Password must be at least 8 characters long.');
+        if(newPass.length<8) setErrors([...err,'Password must be at least 8 characters long.']);
         else{
           if(confPass === newPass){
             setErrors("");
@@ -145,7 +145,7 @@ function SignUp({setShowPopup}) {
           <div onClick={togglePasswordVisibility2} style={{cursor: 'pointer'}}>{isPasswordVisible2 ? <FaEye style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon} />:<FaEyeSlash style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>}</div>
         </div>
         
-        {err===""?<></>:<div className={styles.error}>{err}</div>}
+        {err===""?<></>:<div className={styles.error}><ul><li>{err}</li></ul></div>}
 
         <button type={err===""?'submit':'button'} onClick={(e) => (handleChange(e))} id='loginButton'>Register</button>
         <div className={styles.registerLink}>
