@@ -1,7 +1,6 @@
 .skeleton__cards{
   opacity:0.7;
   /* background: transparent !important; */
-
   background: transparent;
   animation: skeletonLoader 1.5s ease-in-out infinite alternate;
   margin-top: 1.1rem;
@@ -29,9 +28,18 @@
 
 @keyframes slide {
   0% { transform: translateX(0); } 
-  100% { transform: translateX(-100%); } 
+   50% {transform: translateX(-50%);} 
+  /* 100% { transform: translateX(0%); }  */
 }
 
+.commentCards {
+  display: flex;
+  width: 500%;
+  background-color: #292929;
+  animation: slide 180s linear infinite;
+  /* animation-fill-mode: backwards; Keep final state after animation */
+
+}
 
 .commentCard {
   /* display: flex; */
@@ -51,6 +59,43 @@
   min-width: 15rem;
   width: 15rem;
   
+}
+
+
+/* Smaller Phones */
+@media (max-width: 480px) {
+  .commentCard { 
+      height: 11rem; /* Allow height to adjust to content */
+      padding: 0.75rem; /* Reduce padding */
+      width: 8rem;
+  }
+  .commentCards{
+    width: 2000%;
+  }
+  .skeleton__cards{
+    height: auto;
+    padding: 0.75rem;
+  }
+  .username{
+    font-size: .6rem; 
+  }
+  .commentDetails{
+    font-size: .8rem;
+  }
+  .cardMovie{
+    font-size: 0.4rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  .commentCards {
+    width: 1000%; 
+  }
+  .commentCard {
+    min-width: 10rem; /* Adjust minimum width for smaller screens */
+    height: 11rem; /* Adjust height for smaller screens */
+    width: 10rem; /* Adjust width for smaller screens */
+  }
 }
 
 .commentCards::-webkit-scrollbar {
@@ -74,17 +119,7 @@
   margin:1rem 1rem 1rem 3rem ;
 }
 
-.commentCards {
 
-  display: flex;
-  width: 1000%;
-  background-color: #292929;
-  animation: slide 500s linear infinite;
-  animation-fill-mode: forwards; /* Keep final state after animation */
-
-  
-  /* Enable snap scrolling */
-}
 .commentCards::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Webkit browsers */
 }
@@ -135,19 +170,3 @@
 
 
 
-/* Smaller Phones */
-@media (max-width: 480px) {
-  .commentCard { 
-      height: auto; /* Allow height to adjust to content */
-      padding: 0.75rem; /* Reduce padding */
-  }
-
-  .skeleton__cards{
-    height: auto;
-    padding: 0.75rem;
-  }
-
-  .username {
-      font-size: 1rem; /* Reduce username font size */
-  }
-}
