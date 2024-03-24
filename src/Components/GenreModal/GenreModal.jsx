@@ -7,6 +7,7 @@ function Modal({ onClose, genre, id }) {
     const [movies, setMovies] = useState(null)
     useEffect(() => {
         const getData = async () => {
+            console.log(id);
             if (genre === "More Like This") {
                 const response = await instance.get('/movies/' + id + '/related_movies/?count=18')
                 setMovies(response.data);
@@ -60,11 +61,10 @@ function Modal({ onClose, genre, id }) {
     );
 }
 
-const GenreModal = ({ genre, onClose }) => {
-    console.log(genre);
+const GenreModal = ({ genre,id, onClose }) => {
     return (
         <>
-            <Modal onClose={onClose} genre={genre} />
+            <Modal onClose={onClose} genre={genre} id={id} />
         </>
     )
 }
