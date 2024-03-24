@@ -102,3 +102,23 @@
 .sliders{
     margin-right: 3rem;
 }
+@media screen and (max-width: 768px){
+    .sliders{
+        margin-right: 0;
+    }
+    .slider__movies{
+        padding: 1rem 1rem 1rem 1rem;
+    }
+    .slider__title{
+        margin-left: 1rem;
+    }
+    .LeftbtnContainer, .RightbtnContainer{
+        display: none;
+    }
+    .view__more{
+        padding: 0.5rem;
+        font-size: medium;
+        margin-right: 1rem;
+    }
+    
+}
