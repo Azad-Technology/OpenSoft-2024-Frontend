@@ -232,6 +232,15 @@
  #changePasswordcol{
   text-align: right;
  }
+
+ .nothingToShow{
+  margin: .5rem 0 .8rem 1.8rem;
+  color: #6c757d;
+  font-size: 1.3rem;
+  margin-top: .5rem;
+  margin-left:1.8rem;
+ }
+
  @media screen and (max-width: 800px) {
   .maincontainer{
   flex-direction: column;
