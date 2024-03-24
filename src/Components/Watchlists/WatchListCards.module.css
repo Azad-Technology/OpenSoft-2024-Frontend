@@ -23,6 +23,14 @@
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
 }
 
+.nothingToShow{
+    margin: .5rem 0 .8rem 1.8rem;
+    color: #6c757d;
+    font-size: 1.3rem;
+    margin-top: .5rem;
+    margin-left:1.8rem;
+   }
+
 .cardcontainer:hover{
     box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
     transform: translate3d(0px, -1rem, 0px);
