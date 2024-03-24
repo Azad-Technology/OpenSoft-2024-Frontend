@@ -14,13 +14,11 @@ export const Watchlists = () => {
     useEffect(() => {
         try {
             const getWatchlist = async () => {
-                console.log(token);
                 const res = await instance.get('/watchlist/' + id, {
                     headers:{
                         Authorization: `Bearer ${token}`
                     }
                 });
-                console.log(res.data);
                 setMovies(res.data);
             }
             getWatchlist();

@@ -27,7 +27,6 @@ export const WatchListCards = ({name, id}) => {
             //         Authorization: `Bearer ${token}`
             //     }
             // });
-            console.log(response);
             window.location.reload();
         }
         catch(err){
@@ -35,7 +34,6 @@ export const WatchListCards = ({name, id}) => {
         }
     }
 
-    // console.log(rcolor);
   return (
     <div className={styles.cardcontainer}>
     <div className={styles.card} style={{ backgroundColor: rcolor }} onClick={() => (navigate('/watchlist/' + id))}>

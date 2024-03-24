@@ -10,11 +10,10 @@ function Footer() {
     const [selectedGenre, setSelectedGenre] = useState('');
     const handleClick = (genre) => {
         setSelectedGenre(genre);
-        console.log(selectedGenre);
         setShowModal(true);
     };
     const navigate = useNavigate();
-    return (
+    return (<div className={styles.wrapperWrapper}>
         <div className={styles.wrapper}>
             <footer className={styles.footer}>
                 <div className={styles.footer__addr}>
@@ -79,7 +78,7 @@ function Footer() {
                 </div> */}
             </footer>
             {showModal && <GenreModal genre={selectedGenre} id={"1"} onClose={() => setShowModal(false)} />}
-        </div>
+        </div></div>
     );
 }
 export default Footer;

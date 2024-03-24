@@ -11,7 +11,6 @@ function CommentCards() {
     const getCommentsData = async () => {
       try {
         const response = await instance.get("/recent_comments/?count=5");
-        console.log(response.data);
         setCommentsData(response.data);
       } catch (error) {
           setIsError(true);
