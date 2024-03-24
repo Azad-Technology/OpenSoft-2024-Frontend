@@ -6,6 +6,7 @@ import Loader from '../Loader/Loader.jsx'
 import { useStateValue } from "../../MyContexts/StateProvider.jsx";
 import instance from "../../axios.jsx";
 import { faL } from "@fortawesome/free-solid-svg-icons";
+import LoginForm from "../LoginForm/LoginForm.jsx";
 
 import imdb from '../../assets/imdb-icon.svg';
 const Card = ({ movies,val,length }) => {
@@ -14,9 +15,14 @@ const Card = ({ movies,val,length }) => {
 
   // for dummy purpose we take movies?.like=false;
   const [like,setlike] = useState(false);
-
+  const navigate = useNavigate();
   const [premium, setPremium] = useState(movies?.imdb.rating>=8);
+  
   const openHeart = (event) => {
+    if(!token){
+      navigate("/login");
+    }
+
     if(like){
       setlike(false);
     }else{
@@ -61,7 +67,7 @@ const addFavouriteRequest = async(e)=>{
       document.documentElement.style.setProperty('--val', 'center')
     }
 }
-  const navigate = useNavigate();
+
 
   useEffect(()=>{
     setlike(user?.fav.some(movie=>movie?._id===movies?._id));
