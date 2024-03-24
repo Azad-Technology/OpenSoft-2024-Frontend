@@ -12,6 +12,10 @@ const TopCard = ({ movies, val, length }) => {
     const [like, setlike] = useState(false);
     const [value, setvalue] = useState("-o");
     const openHeart = (event) => {
+      if(!token){
+        navigate("/login");
+      }
+  
         if(like){
             setlike(false);
           }else{
