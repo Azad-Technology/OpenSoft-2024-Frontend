@@ -20,6 +20,10 @@ export const AllWatchlists = () => {
     }
     
   return (
+    <>
+    <h1>Watchlists</h1>
+    {watchlists?.length==0 && <div className={styles.nothingToShow}>Nothing to show here</div>}
+    
     <div className={styles.slider}>
       <div className={styles.container}>
         <div className={styles.slider__movies} ref={scrollableDivRef}>
@@ -29,5 +33,6 @@ export const AllWatchlists = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
