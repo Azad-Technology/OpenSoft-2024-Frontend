@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './GenreModal.module.css';
 import instance from '../../axios';
 import MovieModalList from './MovieModalList';
+import Loader from '../Loader/Loader';
 
 function Modal({ onClose, genre, id }) {
     const [movies, setMovies] = useState(null)
@@ -51,7 +52,7 @@ function Modal({ onClose, genre, id }) {
             <div className={styles.heading}>{genre}</div>
             <div className={styles.modal}>
                 <div className={styles.movieList}>
-                    {movies ? <MovieModalList movie={movies} /> : <h1>Loading...</h1>}
+                    {movies ? <MovieModalList movie={movies} /> : <Loader />}
                     {/* {!movies && <MovieList movie={Array(18).fill(null)} />} */}
                 </div>
             </div>
