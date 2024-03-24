@@ -158,6 +158,10 @@ const MoviePage = () => {
         }
     }
     const openHeart = (event) => {
+        if(!token){
+            navigate("/login");
+          }
+      
         if(like){
           setlike(false);
         }else{
