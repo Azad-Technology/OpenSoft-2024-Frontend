@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
 
-export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setShowHamburgerMenu}) => {
+export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMenu}) => {
   const navigate = useNavigate();
 
   const [showDropdown, setShowDropdown] = useState({
@@ -29,7 +29,6 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
 
   const handleGenreClick = (e, genreID) => {
     e.preventDefault();
-    setShowModal(true);
     setSelectedGenre(e.target.innerText);
     setSelectedID(genreID);
     setShowHamburgerMenu(false);
