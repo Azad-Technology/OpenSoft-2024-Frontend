@@ -12,7 +12,9 @@ import LoginForm from "../LoginForm/LoginForm.jsx";
 import imdb from "../../assets/imdb-icon.svg";
 const Card = ({movies, val, length, onClose}) => {
   const [{user, token}, dispatch] = useStateValue();
-
+  if(onClose === undefined || onClose === null){
+    onClose = () => {};
+  }
   // for dummy purpose we take movies?.like=false;
   const [like, setlike] = useState(false);
   const navigate = useNavigate();
@@ -71,7 +73,7 @@ const Card = ({movies, val, length, onClose}) => {
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
       <div
         onClick={() => {
-          onClose();
+          // onClose();
           navigate(`/movie/${movies?._id}`);
           // const class_name = genreModalStyles.modal_overlay;
           // console.log(genreModalStyles.modal_overlay);
@@ -102,7 +104,7 @@ const Card = ({movies, val, length, onClose}) => {
           {movies && (
             <div className={styles.icon} id="heartIcon">
               {like ? (
-                <i class={`fa fa-heart`} aria-hidden="true" onClick={openHeart}></i>
+                <i class={`fa fa-heart`} aria-hidden="true" onClick={openHeart} style={{color: "red"}}></i>
               ) : (
                 <i class={`fa fa-heart-o`} aria-hidden="true" onClick={openHeart}></i>
               )}

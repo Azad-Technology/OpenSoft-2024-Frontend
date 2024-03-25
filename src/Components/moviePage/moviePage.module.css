@@ -326,7 +326,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 945px) {
   .video_container {
     width: 100%;
     aspect-ratio: 4/3;

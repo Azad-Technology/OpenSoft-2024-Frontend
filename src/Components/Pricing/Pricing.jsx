@@ -5,7 +5,6 @@ import bgBottom from "../../assets/bg-bottom.svg";
 import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
 import {Link} from "react-router-dom";
-
 function Pricing() {
   const [annually, setAnnually] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
@@ -43,9 +42,6 @@ function Pricing() {
       getUser();
     }
   }, [token]);
-
-
-
   return (
     <div className={styles.container}>
       <div className={styles.bgTopImage}>
@@ -131,7 +127,6 @@ function Pricing() {
                 </button>
               </Link>
             )}
-
             <ul>
               <li>Get access to Premium Movies</li>
               <li>Quality upto 1080p</li>

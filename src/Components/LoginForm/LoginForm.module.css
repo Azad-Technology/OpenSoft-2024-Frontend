@@ -196,6 +196,28 @@
     margin-top: 2rem;
     padding: 1.73rem 1.73rem;
   }
+  .wrapper h1{
+    font-size: 1.4rem;
+    padding: 0.722rem;
+  }
+  .wrapper button{
+      font-size: 0.rem;
+  }
+  .input-box input{
+      font-size: 0.9rem;
+  }
+  .Or{
+      font-size: 0.8rem;
+  }
+  .wrapper .register-link{
+      font-size: 0.7rem;
+      margin-top: 0.722rem;
+      margin-bottom: 0;
+  }
+  #error {
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+  }
   /* .wrapper{
         margin-top: 50%;
         display: flex;
@@ -234,28 +256,35 @@
     width: 90vw;
     min-width: 300px;
     margin-top: 2rem;
-    padding: 1.73rem 1.73rem;
+    padding: 1rem;
+    border-radius: 1rem;
   }
   .wrapper h1 {
     font-size: 1.2rem;
     text-align: center;
-    padding: 1.25rem;
+    padding-top: 0rem;
+    padding-bottom: 1.25rem;
   }
 
   .wrapper button {
-    font-size: 0rem;
+    font-size: 0.8rem;
     margin-bottom: 0rem;
+    height: 2rem;
   }
   .input-box input {
     font-size: 0.9rem;
   }
   .Or {
     font-size: 0.8rem;
+    margin: 0.5rem;
   }
-  .wrapper .register-link {
-    font-size: 0.7rem;
-    margin-top: 0.722rem;
-    margin-bottom: 0;
+  .Oth{
+    font-size: 0.8rem;
+  }
+  .wrapper .register_link {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1.25rem 0 0 0;
   }
   #error {
     font-size: 0.8rem;
@@ -263,13 +292,20 @@
   }
   .signup input {
     padding: 0.2rem;
+    border: 1px solid black;
   }
   .input_box input {
     padding: 0.2rem;
   }
-  .google {
-    margin-bottom: 0.5rem;
-    border: 2px solid red;
+  .input_box{
+    border: 1px solid black;
+    height: 2rem;
+  }
+  .eyeIcon{
+    padding: 0 0.2rem 0 0;
+  }
+  input::placeholder{
+    font-size: 0.7rem;
   }
 }
 

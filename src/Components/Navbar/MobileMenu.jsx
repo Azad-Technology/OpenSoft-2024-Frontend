@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
 
-export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setShowHamburgerMenu}) => {
+export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMenu}) => {
   const navigate = useNavigate();
 
   const [showDropdown, setShowDropdown] = useState({
@@ -29,7 +29,6 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
 
   const handleGenreClick = (e, genreID) => {
     e.preventDefault();
-    setShowModal(true);
     setSelectedGenre(e.target.innerText);
     setSelectedID(genreID);
     setShowHamburgerMenu(false);
@@ -45,8 +44,7 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
                 onClick={e => handleToggleDropdown(e, menuoption.name, menuoption.genreID)}
                 className={styles.mobileMenu__link}
                 key={index}
-                href="#"
-              >
+                href={menuoption.link}>
                 {menuoption.name}
               </a>
               <div className={styles.mobileMenu__dropdown}>
@@ -58,8 +56,7 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}
-                        >
+                          href={dropdown.link}>
                           {dropdown.name}
                         </a>
                       );
@@ -73,8 +70,7 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}
-                        >
+                          href={dropdown.link}>
                           {dropdown.name}
                         </a>
                       );
@@ -82,19 +78,50 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
                 </div>
                 <div className={styles.mobileMenu__dropdown_column}>
                   {showDropdown[menuoption.name] &&
-                    menuoption.dropdown?.slice(18).map((dropdown, index) => {
+                    menuoption.dropdown?.slice(18, 27).map((dropdown, index) => {
                       return (
                         <a
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}
-                        >
+                          href={dropdown.link}>
                           {dropdown.name}
                         </a>
                       );
                     })}
                 </div>
+                {menuoption.name === "Country" && (
+                  <div className={styles.mobileMenu__dropdown_column}>
+                    {showDropdown[menuoption.name] &&
+                      menuoption.dropdown?.slice(27, 36).map((dropdown, index) => {
+                        return (
+                          <a
+                            onClick={e => handleGenreClick(e, dropdown?.genreID)}
+                            className={`${styles.mobileMenu__link} ${styles.dropdown}`}
+                            key={index}
+                            href={dropdown.link}>
+                            {dropdown.name}
+                          </a>
+                        );
+                      })}
+                  </div>
+                )}
+                {menuoption.name === "Country" && (
+                  <div className={styles.mobileMenu__dropdown_column}>
+                    {showDropdown[menuoption.name] &&
+                      menuoption.dropdown?.slice(36, 45).map((dropdown, index) => {
+                        return (
+                          <a
+                            onClick={e => handleGenreClick(e, dropdown?.genreID)}
+                            className={`${styles.mobileMenu__link} ${styles.dropdown}`}
+                            key={index}
+                            href={dropdown.link}>
+                            {dropdown.name}
+                          </a>
+                        );
+                      })}
+                  </div>
+                )}
                 {/* <div className={styles.mobileMenu__dropdown_left}>
                                 {showDropdown[menuoption.name] && menuoption.dropdown?.slice(12,16).map((dropdown,index)=>{
                                     return(

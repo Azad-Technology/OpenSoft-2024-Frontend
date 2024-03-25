@@ -1,5 +1,6 @@
 .container {
   margin-top: 7%;
+  margin-bottom: 5%;
   z-index: -1;
 }
 .heading {
@@ -147,6 +148,11 @@
   border: 2px solid #6b89bc;
 }
 .pricingCard.featured h3 {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.pricingCard.featured_free h3 {
   background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
