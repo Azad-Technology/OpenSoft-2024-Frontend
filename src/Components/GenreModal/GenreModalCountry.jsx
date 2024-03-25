@@ -8,28 +8,7 @@ function Modal({onClose, genre, id}) {
   const [movies, setMovies] = useState(null);
   useEffect(() => {
     const getData = async () => {
-      if (id === "country") return;
-      if (genre === "Top Movies" || genre === "Top IMDB") {
-        const response = await instance.get("/top_movies/?count=18");
-        setMovies(response.data);
-        return;
-      }
-      if (genre === "Top Series") {
-        const response = await instance.get("/top_series/?count=18");
-        setMovies(response.data);
-        return;
-      }
-      if (genre === "Recent") {
-        const response = await instance.get("/recent_movies/?count=18");
-        setMovies(response.data);
-        return;
-      }
-      if (genre === "TV Shows") {
-        const response = await instance.get("/top_series/?count=18");
-        setMovies(response.data);
-        return;
-      }
-      const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+      const response = await instance.get(`/countries_top/${genre}/?count=18`);
       setMovies(response.data);
     };
     getData();
@@ -51,7 +30,7 @@ function Modal({onClose, genre, id}) {
   );
 }
 
-const GenreModal = ({genre, id, onClose}) => {
+const GenreModalCountry = ({genre, id, onClose}) => {
   return (
     <>
       <Modal onClose={onClose} genre={genre} id={id} />
@@ -59,4 +38,4 @@ const GenreModal = ({genre, id, onClose}) => {
   );
 };
 
-export default GenreModal;
+export default GenreModalCountry;

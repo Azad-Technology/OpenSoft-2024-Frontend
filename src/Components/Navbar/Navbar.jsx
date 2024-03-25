@@ -35,16 +35,8 @@ export const Navbar = ({movies}) => {
   const searchRef = useRef(null);
   const dropdownRef = useRef(null);
   const searchBarRef = useRef(null);
-  const [showModal, setShowModal] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [selectedID, setSelectedID] = useState(null);
-  const genres = [
-    {
-      name: "Top Series",
-      link: "#",
-      genreID: "topseries",
-    },
-  ];
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -103,7 +95,6 @@ export const Navbar = ({movies}) => {
     e.preventDefault();
     setSelectedGenre(e.target.innerText);
     setSelectedID(genreID);
-    setShowModal(true);
   };
 
   if (window.innerWidth > 600) {
@@ -113,8 +104,7 @@ export const Navbar = ({movies}) => {
           <div className={styles.navbar__left}>
             <i
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}
-            ></i>
+              className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
             <img
               onClick={() => navigate("/")}
               className={styles.navbar__logo}
@@ -127,32 +117,29 @@ export const Navbar = ({movies}) => {
                   <a
                     onMouseOver={handleToggleDropdown}
                     onClick={event => {
-                      if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
+                        if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
                         event.preventDefault();
                         setSelectedGenre(menuoption.name);
-                        setSelectedID(menuoption.genreID);
-                        setShowModal(true);
                       }
                     }}
                     className={styles.navbar__link}
                     key={index}
-                    href="#"
-                  >
+                    href={menuoption.link}>
                     {menuoption.name}
                   </a>
                   {showDropdown[menuoption.name] && menuoption.dropdown && (
-                    <div ref={dropdownRef} className={styles.dropdown}>
+                    <div
+                      ref={dropdownRef}
+                      className={styles.dropdown}
+                      style={{width: menuoption.name === "Country" ? "50%" : "30%"}}>
                       <div className={styles.dropdown__column}>
                         {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
                           return (
                             <a
-                              onClick={event => {
-                                handleGenreClick(event, dropdown.genreID);
-                              }}
+                              onClick={event => setSelectedGenre(dropdown.name)}
                               className={styles.navbar__link_dropdown}
                               key={index}
-                              href={dropdown.link}
-                            >
+                              href={dropdown.link}>
                               {dropdown.name}
                             </a>
                           );
@@ -162,39 +149,65 @@ export const Navbar = ({movies}) => {
                         {menuoption.dropdown?.slice(9, 18).map((dropdown, index) => {
                           return (
                             <a
-                              onClick={event => {
-                                handleGenreClick(event, dropdown.genreID);
-                              }}
+                              onClick={event => setSelectedGenre(dropdown.name)}
                               className={styles.navbar__link_dropdown}
                               key={index}
-                              href={dropdown.link}
-                            >
+                              href={dropdown.link}>
                               {dropdown.name}
                             </a>
                           );
                         })}
                       </div>
                       <div className={styles.dropdown__column}>
-                        {menuoption.dropdown?.slice(18).map((dropdown, index) => {
+                        {menuoption.dropdown?.slice(18, 27).map((dropdown, index) => {
                           return (
                             <a
-                              onClick={event => {
-                                handleGenreClick(event, dropdown.genreID);
-                              }}
+                              onClick={event => setSelectedGenre(dropdown.name)}
                               className={styles.navbar__link_dropdown}
                               key={index}
-                              href={dropdown.link}
-                            >
+                              href={dropdown.link}>
                               {dropdown.name}
                             </a>
                           );
                         })}
                       </div>
+                      {menuoption.name === "Country" && ( // Inside the Country dropdown rendering
+                        <div className={styles.dropdown__column}>
+                          {menuoption.dropdown?.slice(27, 36).map((dropdown, index) => {
+                            return (
+                              <a
+                                onClick={event => {
+                                  handleGenreClick(event, dropdown.genreID);
+                                }}
+                                className={styles.navbar__link_dropdown}
+                                key={index}
+                                href={dropdown.link}>
+                                {dropdown.name}
+                              </a>
+                            );
+                          })}
+                        </div>
+                      )}
+                      {menuoption.name === "Country" && ( // Inside the Country dropdown rendering
+                        <div className={styles.dropdown__column}>
+                          {menuoption.dropdown?.slice(36, 45).map((dropdown, index) => {
+                            return (
+                              <a
+                                onClick={event => {
+                                  handleGenreClick(event, dropdown.genreID);
+                                }}
+                                className={styles.navbar__link_dropdown}
+                                key={index}
+                                href={dropdown.link}>
+                                {dropdown.name}
+                              </a>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                   )}
-                  {showModal && (
-                    <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setShowModal(false)} />
-                  )}
+                  {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
                 </div>
               ))}
             </div>
@@ -221,12 +234,11 @@ export const Navbar = ({movies}) => {
             <MobileMenu
               setSelectedGenre={setSelectedGenre}
               setSelectedID={setSelectedID}
-              setShowModal={setShowModal}
               setShowHamburgerMenu={setShowHamburgerMenu}
             />
           </div>
         )}
-        {showModal && <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setShowModal(false)} />}
+        {selectedGenre && <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />}
       </div>
     );
   } else {
@@ -236,8 +248,7 @@ export const Navbar = ({movies}) => {
           <div className={styles.navbar__left}>
             <i
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}
-            ></i>
+              className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
             <img
               onClick={() => navigate("/")}
               className={styles.navbar__logo}
@@ -272,12 +283,13 @@ export const Navbar = ({movies}) => {
             <MobileMenu
               setSelectedGenre={setSelectedGenre}
               setSelectedID={setSelectedID}
-              setShowModal={setShowModal}
               setShowHamburgerMenu={setShowHamburgerMenu}
             />
           </div>
         )}
-        {showModal && <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setShowModal(false)} />}
+        {selectedGenre && selectedID && (
+          <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />
+        )}
       </div>
     );
   }

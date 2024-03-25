@@ -3,7 +3,12 @@ import bgBottom from "../../assets/bg-bottom.svg";
 import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
 import {Link} from "react-router-dom";
+import { useStateValue } from "../../MyContexts/StateProvider";
 function Pricing() {
+  const [{token, user}, dispatch] = useStateValue();
+  // if(user){
+  //   user.subtype = "Silver";
+  // }
   const [annually, setAnnually] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
   return (
@@ -35,7 +40,7 @@ function Pricing() {
           </article>
 
           <article
-            className={`${styles.pricingCard} ${isHovered === 1 ? styles.featured : ""}`}
+            className={`${styles.pricingCard} ${isHovered === 1 ? (user?.subtype === "Basic" ? styles.featured : styles.featured_free) : ""}`}
             onMouseEnter={() => setIsHovered(1)}
             onMouseLeave={() => setIsHovered(null)}
           >
@@ -47,7 +52,10 @@ function Pricing() {
               target="_blank"
               to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"
             >
-              <button className={styles.pricingCard_button}>Purchase</button>
+              {user?.subtype === "Basic" ? <button className={styles.pricingCard_button}>Purchase</button> : <button disabled className={styles.pricingCard_button_free}>
+              Owned
+            </button>}
+
             </Link>
 
             <ul>
@@ -61,7 +69,7 @@ function Pricing() {
           </article>
 
           <article
-            className={`${styles.pricingCard} ${isHovered === 2 ? styles.featured : ""}`}
+            className={`${styles.pricingCard} ${isHovered === 2 ? (user?.subtype !== "Gold" ? styles.featured : styles.featured_free) : ""}`}
             onMouseEnter={() => setIsHovered(2)}
             onMouseLeave={() => setIsHovered(null)}
           >
@@ -73,7 +81,9 @@ function Pricing() {
               target="_blank"
               to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1"
             >
-              <button className={styles.pricingCard_button}>Purchase</button>
+              {user?.subtype === "Gold" ? <button disabled className={styles.pricingCard_button_free}>
+              Owned
+            </button> : <button className={styles.pricingCard_button}>Purchase</button>}
             </Link>
             <ul>
               <li>Get access to Premium Movies</li>
