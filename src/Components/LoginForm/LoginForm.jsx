@@ -101,6 +101,7 @@ function LoginForm({register, setShowPopup}) {
                 {register === "register" ? "Sign Up" : "Login"} with Google
               </button>
             </div>
+            <hr className={styles.Or} />
             <div>
               <div className={styles.Oth}>Sign {register === "register" ? "up" : "in"} with your email</div>
             </div>
