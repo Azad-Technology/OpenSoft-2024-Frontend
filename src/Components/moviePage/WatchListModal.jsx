@@ -7,7 +7,7 @@ const WatchListModal = ({ onClose, movieID }) => {
     const [{token, user}, dispatch] = useStateValue();
     const [watchlistName, setWatchListName] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-    
+    console.log(user);
     const watchlists = user?.watchlist;
     const createWatchList = async (e) => {
         e.preventDefault();

@@ -13,6 +13,12 @@ export const Carousel = () => {
     setCurrIndex(index);
   }
 
+  const handleImageClick = (index) => {
+    if(window.innerWidth < 1024){
+    navigate("movie/" + movies[currIndex].id);
+    }
+  }
+
   useEffect(() => {
     const interval = setInterval(slideRight, 3000);
     return () => clearInterval(interval);
@@ -26,7 +32,7 @@ export const Carousel = () => {
         {movies.map((movie, index) => {
           return (
             <div className='carousel__slide' key={index} 
-             >
+             onClick={handleImageClick}>
             <div className='overlay' ></div>
             <div className='overlay--down' ></div>
             <img src={movie.backdrop} alt='Movie' />
@@ -34,6 +40,7 @@ export const Carousel = () => {
                 <h1 className='carousel__title'>{movie.title}</h1>
                 <div className='carousel__specifics'>
                   <p>{movie.date} &nbsp;</p>
+                  <p>&nbsp; </p>
                   <div className='carousel__rating'>
                     <p>{movie.imdb}</p>
                   </div>
