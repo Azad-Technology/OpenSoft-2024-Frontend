@@ -121,14 +121,14 @@ export const Navbar = ({ movies }) => {
                             {menuoptions.map((menuoption, index) => (
                                 <div className={styles.desktopLinks} key={index}>
                                     <a onMouseOver={handleToggleDropdown} onClick={(event) => {
-                                        if (menuoption.link === '/topimdb' || menuoption.link === '/tvshows') {
+                                        if (menuoption.name === "Top IMDB" || menuoption.name==="TV Shows") {
                                             event.preventDefault();
                                             setSelectedGenre(menuoption.name);
                                             setSelectedID(menuoption.genreID);
                                             setShowModal(true);
                                         }
 
-                                    }} className={styles.navbar__link} key={index} href={menuoption.link}>{menuoption.name}</a>
+                                    }} className={styles.navbar__link} key={index} href="#">{menuoption.name}</a>
                                     {showDropdown[menuoption.name] && menuoption.dropdown && <div ref={dropdownRef} className={styles.dropdown}>
                                         <div className={styles.dropdown__column}>
                                             {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {

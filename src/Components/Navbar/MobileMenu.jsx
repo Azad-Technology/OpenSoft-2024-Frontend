@@ -18,6 +18,10 @@ export const MobileMenu = ({setSelectedGenre,setSelectedID,setShowModal,setShowH
 
   const handleToggleDropdown=(e)=>{
     const name=e.target.innerText;
+    if(name==="Top IMDB" || name==="TV Shows"){
+        handleGenreClick(e,name);
+        return;
+    }
     setShowDropdown(prevState=>({
         ...prevState,
         [name]:!prevState[name]
@@ -26,9 +30,9 @@ export const MobileMenu = ({setSelectedGenre,setSelectedID,setShowModal,setShowH
 
     const handleGenreClick=(e,genreID)=>{
         e.preventDefault();
+        setShowModal(true);
         setSelectedGenre(e.target.innerText);
         setSelectedID(genreID);
-        setShowModal(true);
         setShowHamburgerMenu(false);
     }
 
@@ -38,7 +42,7 @@ export const MobileMenu = ({setSelectedGenre,setSelectedID,setShowModal,setShowH
             {menuoptions.map((menuoption,index)=>{
                 return(
                     <>
-                        <a onClick={handleToggleDropdown} className={styles.mobileMenu__link} key={index} href={menuoption.link}>{menuoption.name}</a>
+                        <a onClick={(e)=>handleToggleDropdown(e,menuoption.name,menuoption.genreID)} className={styles.mobileMenu__link} key={index} href="#">{menuoption.name}</a>
                         <div className={styles.mobileMenu__dropdown}>
                             <div className={styles.mobileMenu__dropdown_column}>
                                 {showDropdown[menuoption.name] && menuoption.dropdown?.slice(0,9).map((dropdown,index)=>{
