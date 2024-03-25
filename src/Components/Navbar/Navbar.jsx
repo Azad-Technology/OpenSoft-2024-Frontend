@@ -117,7 +117,7 @@ export const Navbar = ({movies}) => {
                   <a
                     onMouseOver={handleToggleDropdown}
                     onClick={event => {
-                        if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
+                      if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
                         event.preventDefault();
                         setSelectedGenre(menuoption.name);
                       }
@@ -131,7 +131,7 @@ export const Navbar = ({movies}) => {
                     <div
                       ref={dropdownRef}
                       className={styles.dropdown}
-                      style={{width: menuoption.name === "Country" ? "50%" : "30%"}}>
+                      style={{width: menuoption.name === "Country" ? "45%" : "30%"}}>
                       <div className={styles.dropdown__column}>
                         {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
                           return (
