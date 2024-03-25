@@ -135,7 +135,7 @@ export const Navbar = ({movies}) => {
                     }}
                     className={styles.navbar__link}
                     key={index}
-                    href="#">
+                    href={menuoption.link}>
                     {menuoption.name}
                   </a>
                   {showDropdown[menuoption.name] && menuoption.dropdown && (
