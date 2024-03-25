@@ -97,7 +97,7 @@
   height: auto;
   top: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-left: 1%;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
@@ -110,12 +110,14 @@
 
 .dropdown__column {
   display: flex;
+
   flex-direction: column;
   /* justify-content:space-around; */
   align-items: center;
   gap: 1rem;
-  border-right: 0.5px solid white;
-  padding-right: 10%;
+  padding: 1rem;
+  /* border-right: 0.5px solid white; */
+  /* padding-right: 10%; */
   border-color: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
