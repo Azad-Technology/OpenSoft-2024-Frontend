@@ -128,3 +128,14 @@
     padding: 0.5rem 1rem;
     border: none;
 } */
+
+@media (max-width: 630px) {
+  .mobileMenu__dropdown {
+    flex-direction: column;
+    /* padding-top: 0rem;
+        padding-bottom: 0rem; */
+  }
+  .mobileMenu__dropdown_column {
+    padding-bottom: 0.067rem;
+  }
+}

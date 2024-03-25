@@ -7,8 +7,8 @@ const WatchListModal = ({onClose, movieID}) => {
   const [{token, user}, dispatch] = useStateValue();
   const [watchlistName, setWatchListName] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
-  console.log(user);
   const watchlists = user?.watchlist;
+//   console.log(user); 
   const createWatchList = async e => {
     e.preventDefault();
     if (watchlistName === "") {
@@ -37,13 +37,24 @@ const WatchListModal = ({onClose, movieID}) => {
           },
         };
         const response2 = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config2);
-      } catch (err) {
+    } catch (err) {
         console.log(err);
-      }
+    }
+    config.method = 'get';
+    setWatchListName("");
+     try{
+        const res = await instance.request(`/watchlist/${watchlistID}`, config);
+        dispatch({
+            type: "ADD_MOVIE_TO_WATCHLIST",
+            watchlist: res.data,
+        });
+     }
+     catch(err){
+        console.log(err);
+     }
     } catch (err) {
       console.log(err);
     }
-    window.location.reload();
     onClose();
   };
 
