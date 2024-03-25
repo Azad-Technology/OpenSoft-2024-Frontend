@@ -27,11 +27,10 @@
     display: flex;
     overflow-y: auto;
     overflow-x: scroll;
-    padding: 1rem 3rem 1rem 2rem;
-    margin: 0 -20px 0px 0px;
+    padding: 1rem 0rem 1rem 0rem;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    width: 100vw;
+    width: inherit;
     align-items: center;
     scroll-behavior: smooth;
 }
@@ -99,16 +98,15 @@
     font-weight: 500;
     margin-left: 3rem;
 }
-.sliders{
-    margin-right: 3rem;
-}
-@media screen and (max-width: 768px){
+
+@media screen and (min-width: 250px) {
     .sliders{
-        margin-right: 0;
+        margin-right: 0rem;
+        margin-left: 0rem;
     }
-    .slider__movies{
-        padding: 1rem 1rem 1rem 1rem;
-    }
+}
+
+@media screen and (max-width: 768px){
     .slider__title{
         margin-left: 1rem;
     }
@@ -120,5 +118,11 @@
         font-size: medium;
         margin-right: 1rem;
     }
-    
+}
+
+@media screen and (min-width: 426px) {
+    .sliders{
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
 }

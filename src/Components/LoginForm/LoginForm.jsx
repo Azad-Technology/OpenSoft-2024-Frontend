@@ -8,24 +8,19 @@ import instance from '../../axios';
 import { useStateValue } from '../../MyContexts/StateProvider';
 import { useNavigate } from 'react-router-dom';
 import RejectedPopup from '../LoginAcceptedRejected/rejectedLogin';
+import { GoogleCallback } from './GoogleCallback';
 
 function LoginForm({register, setShowPopup}) {
 
   const [{token,premium},dispatch]=useStateValue();
-  
   const navigate=useNavigate();
-  
-    useEffect(() => {
-      if(token && token !== 'null' && token !== 'undefined'){
-        navigate('/');
-      }
-    }, [token])
-    
+     
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [err, setErrors] = useState("")
     const [showPopup2, setShowPopup2] = useState(false)
     const [email, setEmail] = useState("");
     const [password,setPassword]=useState("");
+    const [isGoogle, setIsGoogle] = useState(true);
     
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -77,7 +72,8 @@ function LoginForm({register, setShowPopup}) {
   const handleGoogleClick = async () => {
     try{
       const response=await instance.get('/login/google');
-      console.log(response.data);
+      // console.log(response.data);
+      setIsGoogle(true);
       window.open(response.data.url, '_blank');
     }
     catch(error){
@@ -85,10 +81,18 @@ function LoginForm({register, setShowPopup}) {
       setErrors(error.response.data.detail);
     }
   };
+
+  useEffect(() => {
+    if(token && token !== 'null' && token !== 'undefined'){
+      navigate('/');
+    }
+  }, [token])
   
   return (
     <div className={styles.login}>
       {showPopup2 && <RejectedPopup message={err}/>}
+      {isGoogle && <GoogleCallback setIsGoogle={setIsGoogle} />}
+      {!isGoogle &&
       <div className={styles.wrapper}>
       <form action="">
         <h1>Welcome Back.</h1>
@@ -127,6 +131,7 @@ function LoginForm({register, setShowPopup}) {
         </div>
       </form>
     </div>
+    }
     </div>
   )
 }

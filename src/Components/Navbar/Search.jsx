@@ -9,7 +9,7 @@ import instance from "../../axios.jsx";
 export const Search = ({movies,searchBarRef}) => {
 
   const navigate=useNavigate();
-
+  
   const [search, setSearch] = useState("");
   const [debouncedSearch] = useDebounce(search, 250);
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
