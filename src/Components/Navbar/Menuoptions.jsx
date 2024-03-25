@@ -927,11 +927,11 @@ const menuoptions = [
   },
   {
     name: "TV Shows",
-    link: "/tvshows",
+    link: "#",
   },
   {
     name: "Top IMDB",
-    link: "/topimdb",
+    link: "#",
   },
   {
     name: "Pricing",
