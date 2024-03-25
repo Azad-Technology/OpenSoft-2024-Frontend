@@ -332,7 +332,7 @@ const Profile = () => {
       </div>
       <div className={styles.favorites}>
         <h1>Favorites</h1>
-        {favMovie?.length == 0 && <div className={styles.nothingToShow}>Nothing to show here</div>}
+        {!favMovie && <div className={styles.nothingToShow}>Nothing to show here</div>}
         <div className={styles.favorites_card}>{favMovie && <GeneralSlider movie={[...favMovie].reverse()} />}</div>
       </div>
 
