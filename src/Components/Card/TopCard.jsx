@@ -87,7 +87,7 @@ const TopCard = ({movies, val, length}) => {
         <div>
           <div className={styles.icon}>
             {like ? (
-              <i className={`fa fa-heart`} aria-hidden="true" onClick={openHeart}></i>
+              <i className={`fa fa-heart`} aria-hidden="true" onClick={openHeart} style={{color: "red"}}></i>
             ) : (
               <i className={`fa fa-heart-o`} aria-hidden="true" onClick={openHeart}></i>
             )}

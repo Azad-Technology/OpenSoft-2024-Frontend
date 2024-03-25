@@ -102,7 +102,7 @@ const Card = ({movies, val, length, onClose}) => {
           {movies && (
             <div className={styles.icon} id="heartIcon">
               {like ? (
-                <i class={`fa fa-heart`} aria-hidden="true" onClick={openHeart}></i>
+                <i class={`fa fa-heart`} aria-hidden="true" onClick={openHeart} style={{color: "red"}}></i>
               ) : (
                 <i class={`fa fa-heart-o`} aria-hidden="true" onClick={openHeart}></i>
               )}
