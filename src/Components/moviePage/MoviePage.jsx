@@ -46,6 +46,7 @@ const MoviePage = () => {
 
     //Genre Modals 
     const [selectedGenre, setSelectedGenre] = useState(null);
+    // const [overlayHeight, setOverlayHeight] = useState('100%');
 
     const openModal = (genre) => 
     {
@@ -228,9 +229,10 @@ const MoviePage = () => {
                         {premium && (<div className={styles.premium}>Included with premium</div>)}
 
 
-
+                        <div className="shadowBox">
                         <div className={styles.title}>{movie?.title}</div>
                         <div className={styles.description} id="description">{movie?.plot}{!isExpanded && (<button className={styles.readMore} onClick={handleReadMore}>  ...Show more</button>)}{isExpanded && showLess && (<button className={styles.readMore} onClick={handleShowLess}>&nbsp;Show less</button>)}</div>
+                        </div>
                         <div className={styles.info}>
                             <span>
                                 <span className={styles.imdbContainer}><span className={styles.imdb}>IMDb</span><span className={styles.imdbRating}>{movie?.imdb.rating}</span></span>

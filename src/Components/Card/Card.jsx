@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Card.module.css";
+import genreModalStyles from "./../GenreModal/GenreModal.module.css";
 import imdbIcon from '../../assets/imdb-icon.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader.jsx'
@@ -9,7 +10,7 @@ import { faL } from "@fortawesome/free-solid-svg-icons";
 import LoginForm from "../LoginForm/LoginForm.jsx";
 
 import imdb from '../../assets/imdb-icon.svg';
-const Card = ({ movies,val,length }) => {
+const Card = ({ movies,val,length,onClose }) => {
 
   const [{user, token},dispatch]=useStateValue();
 
@@ -76,8 +77,13 @@ const addFavouriteRequest = async(e)=>{
   return (
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
-      <div onClick={() => navigate(`/movie/${movies?._id}`)} className={`${styles.cards} ${styles.skeleton__cards}  ${val === 0 ? `${styles.first__card}` : ''}`} id={movies ? movies._id : ''} onMouseOver={handlehover}>
-      {movies && <div className={`${styles.cards__overlay}`}> 
+      <div onClick={()=>{
+        onClose();
+        navigate(`/movie/${movies?._id}`);
+        // const class_name = genreModalStyles.modal_overlay;
+        // console.log(genreModalStyles.modal_overlay);
+    }} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
+        {movies && <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
             {movies?.year}
