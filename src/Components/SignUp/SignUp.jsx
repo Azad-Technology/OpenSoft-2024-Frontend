@@ -165,7 +165,7 @@ function SignUp({setShowPopup}) {
             </div>
           )}
 
-          <button type={err === "" ? "submit" : "button"} onClick={e => handleChange(e)} id="loginButton">
+          <button type={err === "" ? "submit" : "button"} onClick={e => handleChange(e)} id={styles.loginButton}>
             Register
           </button>
           <div className={styles.registerLink}>

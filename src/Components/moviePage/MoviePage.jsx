@@ -220,14 +220,13 @@ const MoviePage = () => {
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
-          style={{backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}}
         >
           <div className={styles.title}>{movie?.title}</div>
         </div>
         <div
           className={styles.heroContainer}
           style={
-            !smallScreen
+            (!smallScreen && movie)
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -259,7 +258,7 @@ const MoviePage = () => {
                   <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
                 </span>
                 {/* <span>{props.info.duration}</span> */}
-                <span>{String(movie?.released).substring(0, 4)}</span>
+                <span>{movie?.year}</span>
               </span>
             </div>
             <div className={styles.genreList}>

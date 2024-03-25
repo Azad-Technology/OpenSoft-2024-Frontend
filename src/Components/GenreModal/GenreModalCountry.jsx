@@ -4,7 +4,7 @@ import instance from "../../axios";
 import MovieModalList from "./MovieModalList";
 import Loader from "../Loader/Loader";
 
-function Modal({onClose, genre, id}) {
+function Modal({onClose, genre}) {
   const [movies, setMovies] = useState(null);
   useEffect(() => {
     const getData = async () => {
@@ -33,7 +33,7 @@ function Modal({onClose, genre, id}) {
 const GenreModalCountry = ({genre, id, onClose}) => {
   return (
     <>
-      <Modal onClose={onClose} genre={genre} id={id} />
+      <Modal onClose={onClose} genre={genre} />
     </>
   );
 };

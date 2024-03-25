@@ -159,6 +159,33 @@
     width: 20rem;
     padding: 1.73rem 1.73rem;
   }
+  .wrapper h1{
+    font-size: 1.4rem;
+    padding: 0.722rem;
+  }
+  .wrapper button{
+      font-size: 0.rem;
+  }
+  .inputBox input{
+      font-size: 0.9rem;
+  }
+  .Or{
+      font-size: 0.8rem;
+  }
+  .wrapper .registerLink{
+      font-size: 0.7rem;
+      margin-top: 0.722rem;
+      margin-bottom: 0;
+  }
+
+  .registerLink p a{
+      font-size: 0.7rem;
+  }
+
+  #error {
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+  }
   /* .container{
         top: 8rem;
     }
@@ -190,6 +217,79 @@
         font-size: 0.8rem;
         margin-bottom: 0.6rem;
     } */
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: 90vw;
+    min-width: 300px;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .wrapper h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 0rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .wrapper button {
+    font-size: 0.8rem;
+    margin-bottom: 0rem;
+    height: 2rem;
+  }
+
+  .wrapper .OAuth{
+    margin-bottom: 0;
+  }
+  .text{
+    font-size: 0.8rem;
+  }
+  .inputBox input {
+    font-size: 0.9rem;
+    padding: 0.2rem;
+    border: 1px solid black;
+  }
+  .inputBox .icon{
+    padding: 0 0.2rem 0 0;
+    right: 0.25rem;
+  }
+  .Or {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+  }
+  .Oth{
+    font-size: 0.8rem;
+  }
+  .wrapper .register_link {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1.25rem 0 0 0;
+  }
+  #error {
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+  .signup input {
+    padding: 0.2rem;
+    border: 1px solid black;
+  }
+
+  .wrapper .inputBox{
+    /* border: 1px solid black; */
+    height: 2rem;
+    margin-bottom: 0.5rem;  
+  }
+  .eyeIcon{
+    padding: 0 0.2rem 0 0;
+  }
+  input::placeholder{
+    font-size: 0.7rem;
+  }
+  #loginButton{
+    margin-top: 0.5rem;
+  }
 }
 
 .error {
