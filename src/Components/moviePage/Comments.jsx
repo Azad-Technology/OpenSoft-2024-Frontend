@@ -96,11 +96,6 @@ function NewComments(props) {
       setTextareaHeight(no_of_lines()+2 + 'rem');
       setParentHeight(no_of_lines()+ 4 + 'rem');
     }
-
-    const handleSubmit=(e)=>{
-      e.preventDefault();
-      console.log(newComment);
-    }
   
     return (
       <>

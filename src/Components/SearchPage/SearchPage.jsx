@@ -121,7 +121,7 @@ const SearchPage = () => {
         )
         )}
       </div>}
-      {fuzzy?.length === 0 && <p>No Movie Found</p>}
+      {fuzzy?.length === 0 && <div className={styles.NoMoviesFound}><p>No Movie Found</p></div>}
     </div>
   );
 }

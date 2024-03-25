@@ -122,6 +122,7 @@ const Profile = () => {
   useEffect(()=>{
     setFullname(user?.name);
     setFavMovie(user?.fav);
+    console.log(favMovie);
   }, [user]);
   
   return (
@@ -365,14 +366,15 @@ const Profile = () => {
       </div>
       <div className={styles.favorites}>
         <h1>Favorites</h1>
+        {(favMovie?.length==0) && <div className={styles.nothingToShow}>Nothing to show here</div>}
         <div className={styles.favorites_card}>
-          {(favMovie) && (<GeneralSlider movie={favMovie}/>)}
+          {(favMovie) && (<GeneralSlider movie={[...favMovie].reverse()}/>)}
          
         </div>
       </div>
 
       <div className={styles.favorites}>
-        <h1>Watchlists</h1>
+       
         <AllWatchlists />
       </div>
 
