@@ -47,3 +47,30 @@ body {
 .vds-menu-button-label{
   margin-left: 0.5rem;
 }
+
+
+@media screen and (max-width: 676px) {
+  .vds-time-group{
+    margin-bottom: -3%;
+  }
+  .vds-fullscreen-button{
+    margin-bottom: -3%;
+  }
+}
+@media screen and (max-width: 490px) {
+  .vds-time-group{
+    margin-bottom: -7%;
+  }
+  .vds-fullscreen-button{
+    margin-bottom: -6%;
+  }
+}
+@media screen and (max-width: 376px) {
+  .vds-time-group{
+    margin-bottom: -8%;
+  }
+  .vds-fullscreen-button{
+    margin-bottom: -7%;
+  }
+}
+
