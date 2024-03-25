@@ -4,7 +4,7 @@ import instance from '../../axios';
 import MovieModalList from './MovieModalList';
 import Loader from '../Loader/Loader';
 
-function Modal({ onClose, genre, id }) {
+function Modal({ onClose, genre, id}) {
     const [movies, setMovies] = useState(null)
     useEffect(() => {
         const getData = async () => {
@@ -49,7 +49,7 @@ function Modal({ onClose, genre, id }) {
             <div className={styles.heading}>{genre}</div>
             <div className={styles.modal}>
                 <div className={styles.movieList}>
-                    {movies ? <MovieModalList movie={movies} /> : <Loader />}
+                    {movies ? <MovieModalList movie={movies} onClose={onClose}/> : <h1>Loading...</h1>}
                     {/* {!movies && <MovieList movie={Array(18).fill(null)} />} */}
                 </div>
             </div>
