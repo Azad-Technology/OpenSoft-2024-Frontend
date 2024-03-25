@@ -229,6 +229,50 @@
     } */
 }
 
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: 90vw;
+    min-width: 300px;
+    margin-top: 2rem;
+    padding: 1.73rem 1.73rem;
+  }
+  .wrapper h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  .wrapper button {
+    font-size: 0rem;
+    margin-bottom: 0rem;
+  }
+  .input-box input {
+    font-size: 0.9rem;
+  }
+  .Or {
+    font-size: 0.8rem;
+  }
+  .wrapper .register-link {
+    font-size: 0.7rem;
+    margin-top: 0.722rem;
+    margin-bottom: 0;
+  }
+  #error {
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+  .signup input {
+    padding: 0.2rem;
+  }
+  .input_box input {
+    padding: 0.2rem;
+  }
+  .google {
+    margin-bottom: 0.5rem;
+    border: 2px solid red;
+  }
+}
+
 #error {
   font-size: 1rem;
   margin-bottom: 1rem;
