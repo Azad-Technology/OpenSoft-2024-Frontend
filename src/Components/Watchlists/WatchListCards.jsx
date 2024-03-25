@@ -13,26 +13,7 @@ export const WatchListCards = ({name, id}) => {
     let z="000000";
     let z1 = z.substring(0,y);
     let rcolor= '#' + z1 + x;
-    const deleteWatchlist = async () => {
-        try{
-            let config = {
-                method : 'delete',
-                headers: {
-                    'Authorization':`Bearer ${token}`
-                }
-            };
-            const response = await instance.request(`/remove_watchlist/${id}`, config);
-            // const response = await instance.delete(`/remove_watchlist/${id}`, {
-            //     headers: {
-            //         Authorization: `Bearer ${token}`
-            //     }
-            // });
-            window.location.reload();
-        }
-        catch(err){
-            console.log(err);
-        }
-    }
+    
 
   return (
     <div className={styles.cardcontainer}>

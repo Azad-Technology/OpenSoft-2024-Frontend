@@ -78,18 +78,18 @@ const TopCard = ({ movies, val, length }) => {
                 <div>
                     <div className={styles.icon}>
                     {like?<i
-              class={`fa fa-heart`}
+              className={`fa fa-heart`}
               aria-hidden="true"
               onClick={openHeart}
             ></i>:<i
-            class={`fa fa-heart-o`}
+            className={`fa fa-heart-o`}
             aria-hidden="true"
             onClick={openHeart}
           ></i>}
                     </div>
                     <div className={styles.premium}>
             {movies && premium && <i
-              class={`fa fa-star`}
+              className={`fa fa-star`}
               aria-hidden="true"
             ></i>}
           </div>

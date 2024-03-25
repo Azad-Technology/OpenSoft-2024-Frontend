@@ -20,7 +20,7 @@ function LoginForm({register, setShowPopup}) {
     const [showPopup2, setShowPopup2] = useState(false)
     const [email, setEmail] = useState("");
     const [password,setPassword]=useState("");
-    const [isGoogle, setIsGoogle] = useState(true);
+    const [isGoogle, setIsGoogle] = useState(false);
     
     const handleSubmit = async (e) => {
       e.preventDefault();

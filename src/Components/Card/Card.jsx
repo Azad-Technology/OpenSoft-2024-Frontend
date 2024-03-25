@@ -10,23 +10,23 @@ import { faL } from "@fortawesome/free-solid-svg-icons";
 import LoginForm from "../LoginForm/LoginForm.jsx";
 
 import imdb from '../../assets/imdb-icon.svg';
-const Card = ({ movies,val,length,onClose }) => {
+const Card = ({ movies, val, length, onClose }) => {
 
-  const [{user, token},dispatch]=useStateValue();
+  const [{ user, token }, dispatch] = useStateValue();
 
   // for dummy purpose we take movies?.like=false;
   const [like, setlike] = useState(false);
   const navigate = useNavigate();
   const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
-  
+
   const openHeart = (event) => {
-    if(!token){
+    if (!token) {
       navigate("/login");
     }
 
-    if(like){
+    if (like) {
       setlike(false);
-    }else{
+    } else {
       setlike(true);
     }
     event.stopPropagation();
@@ -34,25 +34,25 @@ const Card = ({ movies,val,length,onClose }) => {
   };
 
 
-const addFavouriteRequest = async(e)=>{
-  try{
-    const response=await instance.patch(`/add_favourite/${movies?._id}`,null, 
-    {
-      headers:{
-        'Content-Type':'application/json',
-        Authorization: `Bearer ${token}`
+  const addFavouriteRequest = async (e) => {
+    try {
+      const response = await instance.patch(`/add_favourite/${movies?._id}`, null,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          }
+        });
+      if (!like) {
+        dispatch({ type: "ADD_FAV", movie: movies });
+      } else {
+        dispatch({ type: "REM_FAV", movie: movies });
       }
-    });
-    if(!like){
-      dispatch({type:"ADD_FAV", movie:movies});
-    }else{
-      dispatch({type:"REM_FAV", movie:movies});
+    }
+    catch (err) {
+      console.log(err);
     }
   }
-  catch(err){
-    console.log(err);
-  }
-}
 
 
   const handlehover = (event) => {
@@ -67,22 +67,22 @@ const addFavouriteRequest = async(e)=>{
     else {
       document.documentElement.style.setProperty('--val', 'center')
     }
-}
+  }
 
 
-  useEffect(()=>{
-    setlike(user?.fav.some(movie=>movie?._id===movies?._id));
+  useEffect(() => {
+    setlike(user?.fav.some(movie => movie?._id === movies?._id));
   }, [movies, user])
 
   return (
     <>
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
-      <div onClick={()=>{
+      <div onClick={() => {
         onClose();
         navigate(`/movie/${movies?._id}`);
         // const class_name = genreModalStyles.modal_overlay;
         // console.log(genreModalStyles.modal_overlay);
-    }} className={`${styles.cards} ${styles.skeleton__cards}`} id={movies?movies._id:''} onMouseOver={handlehover}>
+      }} className={`${styles.cards} ${styles.skeleton__cards} ${val === 0 ? `${styles.first__card}` : ''}`} id={movies ? movies._id : ''} onMouseOver={handlehover}>
         {movies && <div className={styles.cards__overlay}>
           <div className={styles.card__title}>{movies?.title}</div>
           <div className={styles.card__runtime}>
@@ -95,18 +95,18 @@ const addFavouriteRequest = async(e)=>{
         </div>}
         <div className={styles.icons}>
           {movies && <div className={styles.icon} id="heartIcon">
-            {like?<i
+            {like ? <i
               class={`fa fa-heart`}
               aria-hidden="true"
               onClick={openHeart}
-            ></i>:<i
-            class={`fa fa-heart-o`}
-            aria-hidden="true"
-            onClick={openHeart}
-          ></i>}
-            
+            ></i> : <i
+              class={`fa fa-heart-o`}
+              aria-hidden="true"
+              onClick={openHeart}
+            ></i>}
+
           </div>}
-          
+
           <div className={styles.premium}>
             {movies && premium && <i
               class={`fa fa-star`}
