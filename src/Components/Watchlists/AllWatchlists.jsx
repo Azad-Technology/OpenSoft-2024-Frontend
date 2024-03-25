@@ -21,18 +21,25 @@ export const AllWatchlists = () => {
 
   return (
     <>
-      <h1>Watchlists</h1>
-      {watchlists?.length == 0 && <div className={styles.nothingToShow}>Nothing to show here</div>}
-
-      <div className={styles.slider}>
-        <div className={styles.container}>
-          <div className={styles.slider__movies} ref={scrollableDivRef}>
-            {watchlists?.map((watchlist, index) => (
-              <WatchListCards key={index} name={watchlist.name} id={watchlist._id} />
-            ))}
+      {watchlists && watchlists.length > 0 && (
+        <>
+          <h1>Watchlists</h1>
+          <div className={styles.slider}>
+            <div className={styles.container}>
+              <div className={styles.slider__movies} ref={scrollableDivRef}>
+                {watchlists.map((watchlist, index) => (
+                  <WatchListCards key={index} name={watchlist.name} id={watchlist._id} />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
+
+      {(!watchlists || watchlists.length === 0) && (
+        <div className={styles.nothingToShow}>Nothing to show here</div>
+      )}
     </>
   );
 };
+
