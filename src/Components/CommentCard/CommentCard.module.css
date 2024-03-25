@@ -94,7 +94,7 @@
   }
   .commentCard {
     min-width: 10rem; /* Adjust minimum width for smaller screens */
-    height: 11rem; /* Adjust height for smaller screens */
+    height: 12rem; /* Adjust height for smaller screens */
     width: 10rem; /* Adjust width for smaller screens */
   }
 }

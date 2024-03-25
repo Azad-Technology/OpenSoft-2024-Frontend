@@ -20,7 +20,7 @@ function CommentCards() {
   }, []);
 
   const profilePics = [
-    "https://lh3.googleusercontent.com/proxy/srMu6qMsNRRtta-1Y1tc68DuUxuukV32G2owKsoE2aJ3LeXGUp3rhNK9NsB-sZFxeARQn4CRGUvtSCfSZ1so6xZw7kBtv5e8bsQ0RCe_zvWMKGDXh69j1We0324",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
     "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
     "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
     "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",

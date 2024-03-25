@@ -120,6 +120,17 @@
   background-color: #f24236;
   border: 0.1rem solid rgba(255, 255, 255, 0.1);
 }
+.pricingCard_button_purchased {
+  padding: 0.75rem 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  background-color: #c59789;
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
 .pricingCard_button {
   padding: 0.75rem 0;
   width: 100%;
