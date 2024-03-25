@@ -2,11 +2,11 @@
   position: fixed;
   top: 4rem;
   right: 1.25rem;
-  background-color: rgba(49, 44, 44, 0.493);;
+  background-color: rgba(49, 44, 44, 0.493);
   color: rgb(255, 255, 255);
   padding: 0.625rem;
   border-radius: 0.3125rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
   z-index: 1000;
   border: 2px solid;
   animation: fadeInfadeOutBorderSuccess 0.75s ease-in-out alternate infinite;
@@ -20,26 +20,24 @@
   color: rgb(255, 249, 249);
   padding: 0.625rem;
   border-radius: 0.3125rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
   z-index: 1000;
   border: 2px solid;
   animation: fadeInfadeOutBorderReject 0.9s ease-in-out alternate infinite;
 }
-
 
 @keyframes fadeInfadeOutBorderReject {
   from {
     border-color: transparent;
   }
   to {
-    border-color: rgb(150, 14, 14); 
+    border-color: rgb(150, 14, 14);
   }
 }
 
-
 @keyframes fadeInfadeOutBorderSuccess {
   from {
-    border-color: transparent; 
+    border-color: transparent;
   }
   to {
     border-color: rgb(33, 162, 35);
@@ -53,7 +51,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.493); 
+  background-color: rgba(0, 0, 0, 0.493);
   animation: fadeInfadeOut 0.9s ease-in-out alternate infinite;
 }
 
@@ -64,7 +62,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.493); 
+  background-color: rgba(0, 0, 0, 0.493);
   animation: fadeInfadeOut 0.9s ease-in-out alternate infinite;
 }
 
@@ -77,11 +75,11 @@
   }
 }
 
-@media only screen and (max-width: 45rem){
-  .rejectedPopup{
+@media only screen and (max-width: 45rem) {
+  .rejectedPopup {
     top: 6rem;
   }
-  .successPopup{
+  .successPopup {
     top: 6rem;
   }
 }

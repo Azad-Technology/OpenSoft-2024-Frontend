@@ -4,9 +4,9 @@
   display: flex;
   margin: 0rem 5rem 0rem 5rem;
   justify-content: space-between;
- }
- 
- .card {
+}
+
+.card {
   margin-bottom: 1rem;
   border-radius: 0.25rem;
   width: 20%;
@@ -15,56 +15,55 @@
   background-color: #101010;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   box-shadow: 1rem 1rem 5rem 0.01rem #000000;
- 
- }
- .card_desc {
+}
+.card_desc {
   margin-bottom: 1rem;
   border-radius: 0.25rem;
   background-color: #101010;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  width:75%;
+  width: 75%;
   /* height: 25rem; */
   margin-top: 0%;
   box-shadow: 1rem 1rem 5rem 0.01rem #000000;
- }
- #firstrow{
+}
+#firstrow {
   margin-top: 5%;
- }
- .cardBody {
+}
+.cardBody {
   text-align: center;
   padding-top: 25%;
- }
- .cardBody_desc {
+}
+.cardBody_desc {
   text-align: center;
- }
- .avatar {
+}
+.avatar {
   border-radius: 50%;
   width: 9.375rem;
   margin-bottom: 5%;
- }
- .details_f{
+}
+.details_f {
   text-align: center;
   padding: 2%;
   color: #6c757d;
   overflow: hidden;
- }
- .details, .head {
+}
+.details,
+.head {
   margin-bottom: 0.25rem;
   color: #6c757d;
   width: 100%;
   /* padding-top: 5%; */
   font-size: large;
   text-align: right;
- }
- .details {
+}
+.details {
   background-color: #101010;
   outline: none;
   border: none;
   text-align: right;
- 
- }
+}
 
- .edittableDetails{
+.edittableDetails {
   margin-bottom: 0.25rem;
   color: #ffffff;
   width: 100%;
@@ -75,13 +74,12 @@
   outline: none;
   border: none;
   border-bottom: 1px solid white;
- }
+}
 
- ._btn{
+._btn {
   background-color: #101010;
- 
- }
- .row {
+}
+.row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -0.5rem;
@@ -89,23 +87,22 @@
   padding-top: 0.9rem;
   width: 100%;
   /* height: 5rem; */
- 
+
   min-height: 5rem;
   color: black;
   justify-content: space-between;
- }
- #Conpass{
+}
+#Conpass {
   font-size: x-large;
   color: #6c757d;
- }
- .Confpass{
+}
+.Confpass {
   border: none;
   outline: none;
   color: #6c757d;
   cursor: pointer;
- 
- }
- ._btn{
+}
+._btn {
   color: rgb(26, 86, 141);
   text-decoration: underline;
   background-color: #101010;
@@ -113,24 +110,24 @@
   outline: none;
   text-align: right;
   cursor: pointer;
- }
- .col_sm_3,
- .col_sm_9 {
+}
+.col_sm_3,
+.col_sm_9 {
   /* flex: 0 0 25%; */
   /* max-width: 25%; */
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   color: black;
   text-align: left;
- }
- .col_sm_9{
+}
+.col_sm_9 {
   padding-right: 5%;
   text-align: right;
- }
- .col_sm_3{
+}
+.col_sm_3 {
   padding-left: 5%;
- }
- .col_plan{
+}
+.col_plan {
   flex: 0 0 25%;
   max-width: 25%;
   padding-right: 5%;
@@ -138,30 +135,28 @@
   text-align: right;
   color: black;
   display: flex;
-  flex-direction:column;
- 
- }
- .edit{
+  flex-direction: column;
+}
+.edit {
   color: blanchedalmond;
   border: none;
   outline: none;
- }
- .edit_button{
+}
+.edit_button {
   margin-top: 2rem;
   width: 100%;
   display: flex;
   justify-content: end;
-  
+
   /* margin-right: 5%; */
   /* float: right; */
   /* padding: 1rem 5rem 0 0; */
- }
- #modal_button{
+}
+#modal_button {
   justify-content: center;
   padding-bottom: 5%;
-  
- }
- #modal_button button{
+}
+#modal_button button {
   margin-right: 0;
   display: block;
   position: absolute;
@@ -174,14 +169,14 @@
   cursor: pointer;
   z-index: 10;
   font-size: large;
- }
- .edit_button button{
+}
+.edit_button button {
   /* color:white; */
   /* background-color:red; */
   /* width: 10rem;
   height: 3rem; */
   /* border-color: #000000; */
-  margin-right:5rem;
+  margin-right: 5rem;
   display: block;
   /* position: absolute; */
   /* margin-top: 2rem; */
@@ -189,101 +184,100 @@
   color: white;
   border: none;
   border-radius: 0.5rem;
-  padding: .7rem;
+  padding: 0.7rem;
   cursor: pointer;
   z-index: 2;
   font-size: 1.1rem;
- }
- .edit_button button:hover{
+}
+.edit_button button:hover {
   background-color: rgba(255, 9, 9, 0.7);
- }
- .editbtn{
+}
+.editbtn {
   background-color: #101010;
   color: aliceblue;
   margin-left: 90%;
- 
- }
- .favorites{
+}
+.favorites {
   padding-left: 5rem;
   color: white;
- }
- .favorites h1{
-  color:white;
- }
- .favorites_card{
+}
+.favorites h1 {
+  color: white;
+}
+.favorites_card {
   display: flex;
   width: 100%;
   max-width: 100%;
-  margin-left: -0.8rem ;
+  margin-left: -0.8rem;
   /* justify-content: space-between; */
- }
- #homeIcon{
+}
+#homeIcon {
   color: red;
   font-size: 3rem;
   position: absolute;
   top: 5%;
   left: 3%;
   cursor: pointer;
- }
- #topRow{
+}
+#topRow {
   padding-top: 5%;
   padding-bottom: 3%;
- }
- #changePasswordcol{
+}
+#changePasswordcol {
   text-align: right;
- }
+}
 
- .nothingToShow{
-  margin: .5rem 0 .8rem 1.8rem;
+.nothingToShow {
+  margin: 0.5rem 0 0.8rem 1.8rem;
   color: #6c757d;
   font-size: 1.3rem;
-  margin-top: .5rem;
-  margin-left:1.8rem;
- }
+  margin-top: 0.5rem;
+  margin-left: 1.8rem;
+}
 
- @media screen and (max-width: 800px) {
-  .maincontainer{
-  flex-direction: column;
+@media screen and (max-width: 800px) {
+  .maincontainer {
+    flex-direction: column;
   }
-  .card{
-  width: 100%;
-  margin-bottom: 1rem;
+  .card {
+    width: 100%;
+    margin-bottom: 1rem;
   }
-  .card_desc{
-  width: 100%;
+  .card_desc {
+    width: 100%;
   }
- 
- 
- }
- 
- @media screen and (max-width: 525px){
-  .col_sm_3, .head{
-  width: 100%;
-  text-align: left;
+}
+
+@media screen and (max-width: 525px) {
+  .col_sm_3,
+  .head {
+    width: 100%;
+    text-align: left;
   }
-  .details{
-  text-align: left;
+  .details {
+    text-align: left;
   }
-  .col_sm_9, .col_plan{
-  padding-left: 5%;
-  text-align: left;
+  .col_sm_9,
+  .col_plan {
+    padding-left: 5%;
+    text-align: left;
   }
-  ._btn{
-  width: max-content;
+  ._btn {
+    width: max-content;
   }
-  #changePasswordcol{
-  text-align: left;
-  padding-left: 0%;
+  #changePasswordcol {
+    text-align: left;
+    padding-left: 0%;
   }
-  .editbtn{
-  margin-left: 0;
+  .editbtn {
+    margin-left: 0;
   }
-  .modal{
-  width:40% ;
+  .modal {
+    width: 40%;
   }
- }
- 
- .modal {
+}
+
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -295,42 +289,42 @@
   justify-content: center;
   align-items: center;
   z-index: 10;
- }
- 
- .modal-content {
-  background-color:#101010;
+}
+
+.modal-content {
+  background-color: #101010;
   padding: 0px;
   border-radius: 8px;
- }
- .changepass{
+}
+.changepass {
   padding: 5%;
- }
- .close {
+}
+.close {
   position: absolute;
   top: 2%;
   right: 2%;
   cursor: pointer;
   font-size: 300%;
- }
- 
- .currpass{
+}
+
+.currpass {
   padding: 5% 10% 5% 10%;
   width: 80%;
-  height:3rem;
+  height: 3rem;
   font-size: larger;
   color: #6c757d;
   text-align: left;
   background-color: #101010;
   border: none;
   outline: none;
- }
- .edit_button_modal{
+}
+.edit_button_modal {
   margin-top: 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
- }
- .edit_button_modal button{
+}
+.edit_button_modal button {
   display: block;
   position: absolute;
   background-color: rgba(255, 9, 9, 0.925);
@@ -341,9 +335,8 @@
   cursor: pointer;
   z-index: 20;
   font-size: large;
- 
- }
-  .edit_button_modal button:hover{
-    background-color: #e42b2b;
-    transition: 0.2s;
-  } 
+}
+.edit_button_modal button:hover {
+  background-color: #e42b2b;
+  transition: 0.2s;
+}

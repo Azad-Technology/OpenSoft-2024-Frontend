@@ -1,110 +1,106 @@
-
 .watchlist_container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: row;
 }
-.background_grad{
-    background: linear-gradient(180deg , #F24236, rgb(21, 15, 15));
-    height: 80vh;
-    width: 100vw;
-    position:relative;
-    
-}
-
-  .movie_grid {
-    position: absolute;
-    padding-left: 1rem;
-    width:100%;
-    min-height: 70%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:flex-start;
-    z-index: 10;
-    top: 50%;
-    backdrop-filter: blur(10px);
-    background-color: rgba(10,10,10,0.2);
+.background_grad {
+  background: linear-gradient(180deg, #f24236, rgb(21, 15, 15));
+  height: 80vh;
+  width: 100vw;
+  position: relative;
 }
 
-.watchlist_titlecontainer{
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    top:0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-    z-index: 10;
+.movie_grid {
+  position: absolute;
+  padding-left: 1rem;
+  width: 100%;
+  min-height: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  z-index: 10;
+  top: 50%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(10, 10, 10, 0.2);
+}
+
+.watchlist_titlecontainer {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  z-index: 10;
 }
 
 .watchlist_titlecontainer h2 {
-    font-size: 5rem;
-    margin-bottom: 1rem;
+  font-size: 5rem;
+  margin-bottom: 1rem;
 }
-    
-  .watchlist_details{
-    display: flex;
-    flex-direction: column;
-  }
 
-  .watchlist_icon{
-    height: 15rem;
-    width: 15rem;
-    box-shadow: 2rem;
-  }
+.watchlist_details {
+  display: flex;
+  flex-direction: column;
+}
 
-  .back_button_container {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 100;
-  }
-  
-  .back_button {
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 0.25rem;
-    padding:1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
+.watchlist_icon {
+  height: 15rem;
+  width: 15rem;
+  box-shadow: 2rem;
+}
 
-  .delete_button_container {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 1rem;
-    right: 1rem;
-    z-index: 100;
-  }
-  .delete_button_container img{
-    height: 1rem;
-    width: 1rem;
-    margin-right: 0.5rem;
-  }
-  .delete_button {
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 0.25rem;
-    padding:1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
-  
-  .back_button:hover {
-    color: red;
-  }
-  
-  
+.back_button_container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+.back_button {
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.delete_button_container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+.delete_button_container img {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+.delete_button {
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back_button:hover {
+  color: red;
+}

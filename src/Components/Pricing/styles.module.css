@@ -1,199 +1,197 @@
-.container{
+.container {
   margin-top: 7%;
   z-index: -1;
 }
 .heading {
-    text-align: center;
-    color: #FFFFFF;
-    margin-bottom: 3rem;
-    font-size: 4rem;
-    background: -webkit-linear-gradient(90deg, #eee, #BFBFBF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+  background: -webkit-linear-gradient(90deg, #eee, #bfbfbf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bgTopImage {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -100;
+  width: 20%;
+  height: auto;
+}
+.bgBottomImage {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+  width: 80%;
+  height: auto;
+}
+.section {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Pricing Cards */
+.pricingCards {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  margin: 1rem auto;
+}
+.pricingCard {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 255, 255, 0.1);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-basis: 100%;
+  width: 30%;
+  backdrop-filter: blur(10px);
+  margin: 0 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+.pricingCard.featured {
+  background: linear-gradient(to right, #f24236, #c0180c);
+
+  margin: 0 1.5rem 0 1.5rem;
+  color: white;
+  transform: scale(1.1);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+.pricingCard.featured_free {
+  background: linear-gradient(to right, #f24236, #c0180c);
+  margin: 0 1.5rem 0 1.5rem;
+  color: white;
+  transform: scale(1.1);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+.pricingCard h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.pricingCard h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  background: -webkit-linear-gradient(90deg, #eee, #bfbfbf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.pricingCard h3 span {
+  font-size: 4rem;
+  margin-right: 0.75rem;
+}
+.pricingCard ul {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  list-style-type: none;
+}
+.pricingCard li {
+  border-top: 1px solid #e2e8f0;
+  padding: 0.75rem 0;
+  color: white;
+}
+.pricingCard li:last-child {
+  border-bottom: 1px solid #e2e8f0;
+}
+.pricingCard.featured li {
+  border-color: white;
+  color: white;
+}
+.pricingCard_button_free {
+  padding: 0.75rem 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  background-color: #f24236;
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
+.pricingCard_button {
+  padding: 0.75rem 0;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #f24236;
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
+
+.pricingCard_button.gradient:hover {
+  border: 2px solid #6b89bc;
+}
+.pricingCard.featured h3 {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.pricingCard.featured button {
+  background-color: white;
+  color: #475569;
+  border: 2px solid white;
+}
+.pricingCard.featured_free button {
+  background-color: white;
+  color: #475569;
+  border: 2px solid white;
+}
+.pricingCard.featured button:hover {
+  background-color: rgba(255, 255, 255, 0.855);
+  color: black;
+}
+.pricingCard_button:hover {
+  cursor: pointer;
+  background-color: #f24336d0;
+}
+.attribution {
+  margin-top: 2rem;
+  text-align: center;
+}
+.attribution a {
+  color: #6b89bc;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    padding-top: 4rem;
   }
-  .bgTopImage {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: -100;
-    width: 20%;
-    height: auto;
-  }
-  .bgBottomImage {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -100;
-    width: 80%;
-    height: auto;
-  }
-  .section {
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  .heading {
+    font-size: 3rem;
   }
 
-  
-  /* Pricing Cards */
   .pricingCards {
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    height: 100%;
-    margin: 1rem auto;
+    width: 100%;
+    z-index: -1;
   }
+
   .pricingCard {
-    padding: 2rem;
-    border-radius: 0.5rem;
-    background-color: rgb(255, 255, 255, 0.1);
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex-basis: 100%;
-    width: 30%;
-    backdrop-filter: blur(10px);
-    margin: 0 1.1rem;
-    transition: all 0.3s ease-in-out;
+    width: 70%;
+    margin-bottom: 2rem;
   }
+
   .pricingCard.featured {
-    background: linear-gradient(to right, #F24236, #C0180C);
-    
-    margin: 0 1.5rem 0 1.5rem;
-    color: white;
-    transform: scale(1.1);
-    backdrop-filter: blur(10px);
-    z-index: 2;
+    margin: 2rem 0;
   }
-  .pricingCard.featured_free{
-    background: linear-gradient(to right, #F24236, #C0180C);
-    margin: 0 1.5rem 0 1.5rem;
-    color: white;
-    transform: scale(1.1);
-    backdrop-filter: blur(10px);
-    z-index: 2;
-  }
-  .pricingCard h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-  .pricingCard h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    margin-bottom: 2rem;
-    background: -webkit-linear-gradient(90deg, #eee, #BFBFBF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .pricingCard h3 span {
-    font-size: 4rem;
-    margin-right: 0.75rem;
-  }
-  .pricingCard ul {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    list-style-type: none;
-  }
-  .pricingCard li {
-    border-top: 1px solid #E2E8F0;
-    padding: 0.75rem 0;
-    color: white;
-  }
-  .pricingCard li:last-child {
-    border-bottom: 1px solid #E2E8F0;
-  }
-  .pricingCard.featured li {
-    border-color: white;
-    color: white;
-  }
-  .pricingCard_button_free {
-    padding: 0.75rem 0;
-    width: 100%;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color:black;
-    background-color: #F24236;
-    border: 0.1rem solid rgba(255, 255, 255, 0.1);
-  }
-  .pricingCard_button {
-    padding: 0.75rem 0;
-    width: 100%;
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    background-color: #F24236;
-    border: 0.1rem solid rgba(255, 255, 255, 0.1);
-  }
-  
-
-  .pricingCard_button.gradient:hover {
-    border: 2px solid #6B89BC;
-  }
-  .pricingCard.featured h3 {
-    background: white;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .pricingCard.featured button {
-    background-color: white;
-    color: #475569;
-    border: 2px solid white;
-  }
-  .pricingCard.featured_free button {
-    background-color: white;
-    color: #475569;
-    border: 2px solid white;
-  }
-  .pricingCard.featured button:hover {
-    background-color: rgba(255, 255, 255, 0.855);
-    color: black;
-  }
-  .pricingCard_button:hover{
-    cursor: pointer;
-    background-color: #f24336d0;
-  }
-  .attribution {
-    margin-top: 2rem;
-    text-align: center;
-  }
-  .attribution a {
-    color: #6B89BC;
-    text-decoration: none;
-  }
-
-  @media screen and (max-width: 1300px) {
-    .container{
-      padding-top: 4rem;
-    }
-    .heading {
-      font-size: 3rem;
-    }
-  
-    .pricingCards {
-      width: 100%;
-      z-index: -1;
-    }
-    
-    .pricingCard {
-      width: 70%;
-      margin-bottom: 2rem;
-    }
-  
-    .pricingCard.featured {
-      margin: 2rem 0;
-    }
-  }
+}
 
 @media screen and (max-width: 768px) {
-  .container{
+  .container {
     padding-top: 6rem;
   }
   .heading {
@@ -206,7 +204,7 @@
     width: 100%;
     z-index: -1;
   }
-  
+
   .pricingCard {
     width: 70%;
     margin-bottom: 2rem;
@@ -219,7 +217,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  .container{
+  .container {
     margin-top: 0rem;
   }
   .heading {

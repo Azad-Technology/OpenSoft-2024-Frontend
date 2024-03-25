@@ -1,25 +1,25 @@
-.skeleton__cards{
-  opacity:0.7;
+.skeleton__cards {
+  opacity: 0.7;
   /* background: transparent !important; */
   background: transparent;
   animation: skeletonLoader 1.5s ease-in-out infinite alternate;
   margin-top: 1.1rem;
-  border-radius: 0.5rem; 
-  margin-right: 1.25rem; 
-  margin-bottom: 1.25rem; 
+  border-radius: 0.5rem;
+  margin-right: 1.25rem;
+  margin-bottom: 1.25rem;
   height: 10rem;
   margin-left: 1.25rem;
   min-width: 15rem;
   width: 15rem;
 }
 
-.skeleton__cards:hover{
+.skeleton__cards:hover {
   transform: scale(1.05);
 }
 
 @keyframes skeletonLoader {
   0% {
-    background-color:hsl(0, 0%, 30%);
+    background-color: hsl(0, 0%, 30%);
   }
   100% {
     background-color: hsl(200, 20%, 95%);
@@ -27,8 +27,12 @@
 }
 
 @keyframes slide {
-  0% { transform: translateX(0); } 
-   50% {transform: translateX(-50%);} 
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
   /* 100% { transform: translateX(0%); }  */
 }
 
@@ -38,7 +42,6 @@
   background-color: #292929;
   animation: slide 180s linear infinite;
   /* animation-fill-mode: backwards; Keep final state after animation */
-
 }
 
 .commentCard {
@@ -47,7 +50,7 @@
   flex: 0 0 auto;
   scroll-snap-align: start; /* Snap to the start of each card */
   align-items: center;
-  background: linear-gradient(to top,#1a1a1a,#000000);
+  background: linear-gradient(to top, #1a1a1a, #000000);
   /* background-color: rgba(0, 0, 0, 0.9); */
   padding: 0.9375rem; /* Add padding */
   border-radius: 0.5rem; /* Add border radius */
@@ -58,38 +61,36 @@
   margin-left: 1.25rem;
   min-width: 15rem;
   width: 15rem;
-  
 }
-
 
 /* Smaller Phones */
 @media (max-width: 480px) {
-  .commentCard { 
-      height: 11rem; /* Allow height to adjust to content */
-      padding: 0.75rem; /* Reduce padding */
-      width: 8rem;
+  .commentCard {
+    height: 11rem; /* Allow height to adjust to content */
+    padding: 0.75rem; /* Reduce padding */
+    width: 8rem;
   }
-  .commentCards{
+  .commentCards {
     width: 2000%;
   }
-  .skeleton__cards{
+  .skeleton__cards {
     height: auto;
     padding: 0.75rem;
   }
-  .username{
-    font-size: .6rem; 
+  .username {
+    font-size: 0.6rem;
   }
-  .commentDetails{
-    font-size: .8rem;
+  .commentDetails {
+    font-size: 0.8rem;
   }
-  .cardMovie{
-    font-size: 0.4rem; 
+  .cardMovie {
+    font-size: 0.4rem;
   }
 }
 
 @media (max-width: 768px) {
   .commentCards {
-    width: 1000%; 
+    width: 1000%;
   }
   .commentCard {
     min-width: 10rem; /* Adjust minimum width for smaller screens */
@@ -105,20 +106,19 @@
 .profilePic {
   width: 2.8rem;
   height: 2.8rem;
-  display:flex;
-  border-radius: 50%; 
+  display: flex;
+  border-radius: 50%;
   margin-right: 0.625rem;
   /* background-color: black; */
 }
-.cardTime{
+.cardTime {
   font-size: 0.8rem;
 }
-.sliderwrapper{
+.sliderwrapper {
   overflow-x: clip;
   background-color: #292929;
-  margin:1rem 1rem 1rem 3rem ;
+  margin: 1rem 1rem 1rem 3rem;
 }
-
 
 .commentCards::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Webkit browsers */
@@ -127,8 +127,8 @@
 .commentCard:hover {
   transform: scale(1.05); /* Apply scale transformation on hover */
 }
-.title{
-  display:flex;
+.title {
+  display: flex;
 }
 
 .commentDetails {
@@ -150,7 +150,7 @@
 
 .cardMovie {
   color: rgb(44, 233, 117); /* Initial color */
-   text-decoration: underline;
+  text-decoration: underline;
   transition: color 0.5s ease; /* Smooth transition for color change */
   margin-top: 5rem;
   /* Optionally, add some styling to make it look beautiful */
@@ -166,7 +166,3 @@
 .commentCards:not(:last-child) {
   margin-top: 0; /* Adjust spacing between cards */
 }
-
-
-
-

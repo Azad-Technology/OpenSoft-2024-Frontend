@@ -1,68 +1,65 @@
-import React, { useState,useEffect,useRef } from "react";
+import React, {useState, useEffect, useRef} from "react";
 import styles from "./Search.module.css";
-import { useDebounce } from "use-debounce";
-import { SearchResults } from "./SearchResults.jsx";
+import {useDebounce} from "use-debounce";
+import {SearchResults} from "./SearchResults.jsx";
 import * as Realm from "realm-web";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import instance from "../../axios.jsx";
 
-export const Search = ({movies,searchBarRef}) => {
+export const Search = ({movies, searchBarRef}) => {
+  const navigate = useNavigate();
 
-  const navigate=useNavigate();
-  
   const [search, setSearch] = useState("");
   const [debouncedSearch] = useDebounce(search, 250);
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-  const [click,setClick]=useState(true);
+  const [click, setClick] = useState(true);
 
-  const searchRef=useRef(null);
+  const searchRef = useRef(null);
 
-  useEffect(()=>{
-    function handleClickOutside(event){
-      if(searchRef.current && !searchRef.current.contains(event.target)){
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
         setClick(false);
       }
     }
-    document.addEventListener("mousedown",handleClickOutside);
-    return ()=>{
-      document.removeEventListener("mousedown",handleClickOutside);
-    }
-  },[])
-  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const getData = async () => {
-    try{
-      const response=await instance.get(`/autosearch/${debouncedSearch}`);
+    try {
+      const response = await instance.get(`/autosearch/${debouncedSearch}`);
       setAutoCompleteResult(response.data);
-    }
-    catch(err){
+    } catch (err) {
       setAutoCompleteResult([]);
     }
-  }
+  };
 
-  useEffect(()=>{
-    function handleClickInside(event){
-      if(searchRef.current && searchRef.current.contains(event.target)){
+  useEffect(() => {
+    function handleClickInside(event) {
+      if (searchRef.current && searchRef.current.contains(event.target)) {
         setClick(true);
       }
     }
-    document.addEventListener("mousedown",handleClickInside);
-    return ()=>{
-      document.removeEventListener("mousedown",handleClickInside);
-    }
-  },[])
-  
+    document.addEventListener("mousedown", handleClickInside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickInside);
+    };
+  }, []);
 
   useEffect(() => {
     getData();
   }, [debouncedSearch]);
 
-  const handleKeyPress=(e,search)=>{
-    if(e.key==='Enter'){
-      if(debouncedSearch){
-        navigate(`/search/${search}`)
+  const handleKeyPress = (e, search) => {
+    if (e.key === "Enter") {
+      if (debouncedSearch) {
+        navigate(`/search/${search}`);
       }
     }
-  }
+  };
 
   return (
     <div ref={searchRef} className={styles.search}>
@@ -74,12 +71,14 @@ export const Search = ({movies,searchBarRef}) => {
           type="text"
           placeholder="Titles, people, genres"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyPress ={(e) => {handleKeyPress(e,search)}}
+          onChange={e => setSearch(e.target.value)}
+          onKeyPress={e => {
+            handleKeyPress(e, search);
+          }}
         />
-        {search && <i onClick={()=>setSearch('')} className={`fa fa-close ${styles.search__icon}`}></i>}
+        {search && <i onClick={() => setSearch("")} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
-      {click && autoCompleteResult && <SearchResults movies={autoCompleteResult} search={debouncedSearch}/>}
+      {click && autoCompleteResult && <SearchResults movies={autoCompleteResult} search={debouncedSearch} />}
     </div>
   );
 };

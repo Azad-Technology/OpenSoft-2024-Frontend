@@ -1,169 +1,165 @@
-.container{
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
-    /* bottom: 2rem; */
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  /* bottom: 2rem; */
 }
 
-.text{
-    color: black;
+.text {
+  color: black;
 }
 
-.wrapper{
-    width: 30rem;
-    background: rgba(255, 255, 255, 0.9);
-    color: black;
-    border-radius: 2rem;
-    padding: 3rem 3rem;
-    box-shadow: -5px -5px 10px 0 rgba(0, 0, 0, 0.5);
+.wrapper {
+  width: 30rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 2rem;
+  padding: 3rem 3rem;
+  box-shadow: -5px -5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
-.wrapper h1{
-    font-size: 2.25rem;
-    text-align: center;
-    padding: 1.25rem;
+.wrapper h1 {
+  font-size: 2.25rem;
+  text-align: center;
+  padding: 1.25rem;
 }
 
-.wrapper .inputBox{
-    position: relative;
-    width: 100%;
-    height: 3.12rem;
-    margin: 0 0;
-    margin-bottom: 1.5rem;
+.wrapper .inputBox {
+  position: relative;
+  width: 100%;
+  height: 3.12rem;
+  margin: 0 0;
+  margin-bottom: 1.5rem;
 }
 
-.inputBox input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    outline: none;
-    border: 0.125rem solid rgb(255, 255, 255, 0.2);
-    border-radius: .3125rem;
-    font-size: 1rem;
-    color: black;
-    padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
-    border-color: black;
-    
+.inputBox input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 0.125rem solid rgb(255, 255, 255, 0.2);
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  color: black;
+  padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
+  border-color: black;
 }
 
-.inputBox input::placeholder{
-    color: black;
+.inputBox input::placeholder {
+  color: black;
 }
 
-.inputBox .icon{
-    position: absolute;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1rem;
-    /* background-color: rgb(0, 0, 0); */
-    border-radius: 50%;
-    padding: .2rem;
+.inputBox .icon {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  /* background-color: rgb(0, 0, 0); */
+  border-radius: 50%;
+  padding: 0.2rem;
 }
 
-
-.remember-forgot label{
-    display: flex;
-
+.remember-forgot label {
+  display: flex;
 }
 
-.remember-forgot label input{
-    accent-color: black;
-    text-decoration: none;
-    margin-right: 0.4rem;
+.remember-forgot label input {
+  accent-color: black;
+  text-decoration: none;
+  margin-right: 0.4rem;
 }
 
-
-.remember-forgot a:hover{
-    text-decoration: underline;
+.remember-forgot a:hover {
+  text-decoration: underline;
 }
 
-.remember-forgot a{
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
+.remember-forgot a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.wrapper button{
-    width: 100%;
-    height: 2.8125rem;
-    background: rgba(255, 255, 255, 0.5 );
-    border: none;
-    outline: none;
-    border-radius: .3125rem;
-    box-shadow: 0 0 0.625rem rgb(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 1rem;
-    color: #333;
-    font-weight: 700;
-    border-color: black;
+.wrapper button {
+  width: 100%;
+  height: 2.8125rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0 0.625rem rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 700;
+  border-color: black;
 }
 
-.OAuth{
-    display: flex;
-    color: black    ;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+.OAuth {
+  display: flex;
+  color: black;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.OAuth button{
-    width: 75%;
+.OAuth button {
+  width: 75%;
 }
 
-.google{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.google {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-.googleIcon{
-    margin-right: 0.625rem;
+.googleIcon {
+  margin-right: 0.625rem;
 }
 
-.wrapper .registerLink{
-    font-size: 0.90625rem;
-    text-align: center;
-    margin: 1.25rem 0 0.9375rem;
+.wrapper .registerLink {
+  font-size: 0.90625rem;
+  text-align: center;
+  margin: 1.25rem 0 0.9375rem;
 }
 
 .registerLink p a {
-    font-size: 0.90625rem;
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
+  font-size: 0.90625rem;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.registerLink p{
-    color: black;
+.registerLink p {
+  color: black;
 }
 
-.registerLink p a:hover{
-    text-decoration: underline;
+.registerLink p a:hover {
+  text-decoration: underline;
 }
 
-.wrapper form h1{
-    color: black;
+.wrapper form h1 {
+  color: black;
 }
 
-.star{
-    color: red;
+.star {
+  color: red;
 }
 
-.Or{
-    margin-bottom: 1.5rem;
+.Or {
+  margin-bottom: 1.5rem;
 }
 
-@media only screen and (max-width:900px){
-    .wrapper{
-        margin-top: 2rem;
-        width: 20rem;
-        padding: 1.73rem 1.73rem;
-    }
-    /* .container{
+@media only screen and (max-width: 900px) {
+  .wrapper {
+    margin-top: 2rem;
+    width: 20rem;
+    padding: 1.73rem 1.73rem;
+  }
+  /* .container{
         top: 8rem;
     }
     
@@ -196,13 +192,13 @@
     } */
 }
 
-.error{
-    color: black;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+.error {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
-.text{
-    margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: left;
+.text {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: left;
 }
