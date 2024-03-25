@@ -44,7 +44,7 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMen
                 onClick={e => handleToggleDropdown(e, menuoption.name, menuoption.genreID)}
                 className={styles.mobileMenu__link}
                 key={index}
-                href="#">
+                href={menuoption.link}>
                 {menuoption.name}
               </a>
               <div className={styles.mobileMenu__dropdown}>
