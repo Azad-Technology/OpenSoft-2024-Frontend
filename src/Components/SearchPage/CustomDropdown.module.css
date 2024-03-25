@@ -253,17 +253,15 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
 
 
-  .not_found{
+  .NoMoviesFound{
     position: relative;
-    top:40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 30rem;
     font-size: 2rem;
     color: #fff;
-  
   }
 
 @media screen and (max-width: 768px) {
