@@ -198,6 +198,12 @@
     }
     .carousel__sideslide-image{
         width: fit-content;
+        height: 80%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .carousel__sideslide-image{
         height: 100%;
     }
 }
