@@ -113,8 +113,7 @@ export const Navbar = ({movies}) => {
           <div className={styles.navbar__left}>
             <i
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}
-            ></i>
+              className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
             <img
               onClick={() => navigate("/")}
               className={styles.navbar__logo}
@@ -136,12 +135,14 @@ export const Navbar = ({movies}) => {
                     }}
                     className={styles.navbar__link}
                     key={index}
-                    href="#"
-                  >
+                    href="#">
                     {menuoption.name}
                   </a>
                   {showDropdown[menuoption.name] && menuoption.dropdown && (
-                    <div ref={dropdownRef} className={styles.dropdown}>
+                    <div
+                      ref={dropdownRef}
+                      className={styles.dropdown}
+                      style={{width: menuoption.name === "Country" ? "50%" : "30%"}}>
                       <div className={styles.dropdown__column}>
                         {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
                           return (
@@ -151,8 +152,7 @@ export const Navbar = ({movies}) => {
                               }}
                               className={styles.navbar__link_dropdown}
                               key={index}
-                              href={dropdown.link}
-                            >
+                              href={dropdown.link}>
                               {dropdown.name}
                             </a>
                           );
@@ -167,15 +167,14 @@ export const Navbar = ({movies}) => {
                               }}
                               className={styles.navbar__link_dropdown}
                               key={index}
-                              href={dropdown.link}
-                            >
+                              href={dropdown.link}>
                               {dropdown.name}
                             </a>
                           );
                         })}
                       </div>
                       <div className={styles.dropdown__column}>
-                        {menuoption.dropdown?.slice(18).map((dropdown, index) => {
+                        {menuoption.dropdown?.slice(18, 27).map((dropdown, index) => {
                           return (
                             <a
                               onClick={event => {
@@ -183,13 +182,46 @@ export const Navbar = ({movies}) => {
                               }}
                               className={styles.navbar__link_dropdown}
                               key={index}
-                              href={dropdown.link}
-                            >
+                              href={dropdown.link}>
                               {dropdown.name}
                             </a>
                           );
                         })}
                       </div>
+                      {menuoption.name === "Country" && ( // Inside the Country dropdown rendering
+                        <div className={styles.dropdown__column}>
+                          {menuoption.dropdown?.slice(27, 36).map((dropdown, index) => {
+                            return (
+                              <a
+                                onClick={event => {
+                                  handleGenreClick(event, dropdown.genreID);
+                                }}
+                                className={styles.navbar__link_dropdown}
+                                key={index}
+                                href={dropdown.link}>
+                                {dropdown.name}
+                              </a>
+                            );
+                          })}
+                        </div>
+                      )}
+                      {menuoption.name === "Country" && ( // Inside the Country dropdown rendering
+                        <div className={styles.dropdown__column}>
+                          {menuoption.dropdown?.slice(36, 45).map((dropdown, index) => {
+                            return (
+                              <a
+                                onClick={event => {
+                                  handleGenreClick(event, dropdown.genreID);
+                                }}
+                                className={styles.navbar__link_dropdown}
+                                key={index}
+                                href={dropdown.link}>
+                                {dropdown.name}
+                              </a>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                   )}
                   {showModal && (
@@ -236,8 +268,7 @@ export const Navbar = ({movies}) => {
           <div className={styles.navbar__left}>
             <i
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}
-            ></i>
+              className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
             <img
               onClick={() => navigate("/")}
               className={styles.navbar__logo}

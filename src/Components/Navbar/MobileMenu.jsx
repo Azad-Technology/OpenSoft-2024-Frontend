@@ -45,8 +45,7 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
                 onClick={e => handleToggleDropdown(e, menuoption.name, menuoption.genreID)}
                 className={styles.mobileMenu__link}
                 key={index}
-                href="#"
-              >
+                href="#">
                 {menuoption.name}
               </a>
               <div className={styles.mobileMenu__dropdown}>
@@ -58,8 +57,7 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}
-                        >
+                          href={dropdown.link}>
                           {dropdown.name}
                         </a>
                       );
@@ -73,8 +71,7 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}
-                        >
+                          href={dropdown.link}>
                           {dropdown.name}
                         </a>
                       );
@@ -82,19 +79,50 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowModal, setSh
                 </div>
                 <div className={styles.mobileMenu__dropdown_column}>
                   {showDropdown[menuoption.name] &&
-                    menuoption.dropdown?.slice(18).map((dropdown, index) => {
+                    menuoption.dropdown?.slice(18, 27).map((dropdown, index) => {
                       return (
                         <a
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}
-                        >
+                          href={dropdown.link}>
                           {dropdown.name}
                         </a>
                       );
                     })}
                 </div>
+                {menuoption.name === "Country" && (
+                  <div className={styles.mobileMenu__dropdown_column}>
+                    {showDropdown[menuoption.name] &&
+                      menuoption.dropdown?.slice(27, 36).map((dropdown, index) => {
+                        return (
+                          <a
+                            onClick={e => handleGenreClick(e, dropdown?.genreID)}
+                            className={`${styles.mobileMenu__link} ${styles.dropdown}`}
+                            key={index}
+                            href={dropdown.link}>
+                            {dropdown.name}
+                          </a>
+                        );
+                      })}
+                  </div>
+                )}
+                {menuoption.name === "Country" && (
+                  <div className={styles.mobileMenu__dropdown_column}>
+                    {showDropdown[menuoption.name] &&
+                      menuoption.dropdown?.slice(36, 45).map((dropdown, index) => {
+                        return (
+                          <a
+                            onClick={e => handleGenreClick(e, dropdown?.genreID)}
+                            className={`${styles.mobileMenu__link} ${styles.dropdown}`}
+                            key={index}
+                            href={dropdown.link}>
+                            {dropdown.name}
+                          </a>
+                        );
+                      })}
+                  </div>
+                )}
                 {/* <div className={styles.mobileMenu__dropdown_left}>
                                 {showDropdown[menuoption.name] && menuoption.dropdown?.slice(12,16).map((dropdown,index)=>{
                                     return(
