@@ -93,11 +93,20 @@ const Profile = () => {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
+            
           },
-        }
+        
+        },
+        
       );
+      alert("Password updated successfully");
     } catch (err) {
-      console.log(err);
+      console.log(err.response);
+      if (err.response && err.response.status === 401) {
+        alert("Wrong password. Please check your current password.");
+      } else {
+        alert("An error occurred. Make sure you have 8 characters, capital letters, numbers and special characters.");
+      }
     }
   };
 
@@ -330,11 +339,14 @@ const Profile = () => {
           </>
         )}
       </div>
+      {favMovie.length > 0 && (
       <div className={styles.favorites}>
         <h1>Favorites</h1>
-        {!favMovie && <div className={styles.nothingToShow}>Nothing to show here</div>}
-        <div className={styles.favorites_card}>{favMovie && <GeneralSlider movie={[...favMovie].reverse()} />}</div>
+        <div className={styles.favorites_card}>
+          {favMovie && <GeneralSlider movie={[...favMovie].reverse()} />}
+        </div>
       </div>
+    )}
 
       <div className={styles.favorites}>
         <AllWatchlists />
