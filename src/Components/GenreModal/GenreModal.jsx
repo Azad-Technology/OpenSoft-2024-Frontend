@@ -49,7 +49,7 @@ function Modal({ onClose, genre, id}) {
             <div className={styles.heading}>{genre}</div>
             <div className={styles.modal}>
                 <div className={styles.movieList}>
-                    {movies ? <MovieModalList movie={movies} onClose={onClose}/> : <h1>Loading...</h1>}
+                    {movies ? <MovieModalList movie={movies} onClose={onClose}/> : <Loader />}
                     {/* {!movies && <MovieList movie={Array(18).fill(null)} />} */}
                 </div>
             </div>
