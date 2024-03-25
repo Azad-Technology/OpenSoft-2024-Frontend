@@ -90,11 +90,11 @@ const addFavouriteRequest = async(e)=>{
         <div className={styles.icons}>
           {movies && <div className={styles.icon} id="heartIcon">
             {like?<i
-              class={`fa fa-heart`}
+              className={`fa fa-heart`}
               aria-hidden="true"
               onClick={openHeart}
             ></i>:<i
-            class={`fa fa-heart-o`}
+            className={`fa fa-heart-o`}
             aria-hidden="true"
             onClick={openHeart}
           ></i>}
