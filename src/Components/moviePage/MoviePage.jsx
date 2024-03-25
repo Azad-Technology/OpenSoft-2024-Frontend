@@ -81,6 +81,7 @@ const MoviePage = () => {
     useEffect(() => {
         const getCommentData = async () => {
             const response = await instance.get(`/movies/${id}/comments`);
+            console.log(response.data);
             setComments(response.data);
         }
         getCommentData();
@@ -351,7 +352,7 @@ const MoviePage = () => {
                     </div>
                 </div>
 
-                {comments ? (<Comments info={comments} />) : (<></>)}
+                {comments ? (<Comments info={comments} id={id} />) : (<></>)}
 
 
                 <MoreLikeThis id={id} />

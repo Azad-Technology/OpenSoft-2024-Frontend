@@ -1,5 +1,8 @@
 import styles from "./Comments.module.css";
 import { useState, useRef, useEffect } from "react";
+import instance from '../../axios.jsx';
+import { useStateValue } from '../../MyContexts/StateProvider.jsx';
+
 
  
 
@@ -11,6 +14,12 @@ import { useState, useRef, useEffect } from "react";
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
 function NewComments(props) {
+
+  const [{token},dispatch]=useStateValue();
+
+  useEffect(()=>{
+    console.log(props)
+  },[props])
   let comments = props.info.map((obj)=>{
     return obj.text;
   });
@@ -96,6 +105,24 @@ function NewComments(props) {
     function handleTextareaBlur(event) {
       setTextareaHeight(no_of_lines()+2 + 'rem');
       setParentHeight(no_of_lines()+ 4 + 'rem');
+    }
+
+    const handleSubmit=async()=>{
+      try{
+        instance.post('/comment',{
+          "comment":newComment,
+          "movie_id":props.id
+        },
+        {
+          headers:{
+            Authorization: `Bearer ${token}`
+          }
+        })
+        // window.location.reload();
+      }
+      catch(error){
+        console.log(error);
+      }
     }
   
     return (
