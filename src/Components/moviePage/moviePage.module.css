@@ -137,6 +137,9 @@
   color: var(--secondary-font-color);
 }
 
+.shadowBox{
+    background: linear-gradient(to right, rgba(0,0,0,1), transparent);
+}
 
 /* .heroContainer .button{
     z-index: 2;
