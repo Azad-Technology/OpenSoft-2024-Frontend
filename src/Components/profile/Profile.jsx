@@ -339,7 +339,7 @@ const Profile = () => {
           </>
         )}
       </div>
-      {favMovie.length > 0 && (
+      {favMovie?.length > 0 && (
       <div className={styles.favorites}>
         <h1>Favorites</h1>
         <div className={styles.favorites_card}>

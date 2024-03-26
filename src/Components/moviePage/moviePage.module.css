@@ -336,6 +336,10 @@
     gap: 0.5rem;
   }
 
+  .heroContainer::before{
+    z-index: -1;
+  }
+
   .heroSmall {
     display: flex;
     /* font-size: 1.2rem; */

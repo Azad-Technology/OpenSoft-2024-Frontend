@@ -75,19 +75,6 @@ function Modal({ onClose, genre, id }) {
 
 const GenreModal = ({genre, id, onClose}) => {
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
-  //       onClose();
-  //     }
-  //   };
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }
-  // , [genre]);
-
   return (
     <div>
       <Modal onClose={onClose} genre={genre} id={id} />
