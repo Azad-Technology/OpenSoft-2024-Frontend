@@ -237,7 +237,7 @@ export const Navbar = ({movies}) => {
                       )}
                     </div>
                   )}
-                  {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
+                  {/* {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />} */}
                   {selectedCountry && (
                     <GenreModalCountry genre={selectedCountry} onClose={() => setSelectedCountry(null)} />
                   )}

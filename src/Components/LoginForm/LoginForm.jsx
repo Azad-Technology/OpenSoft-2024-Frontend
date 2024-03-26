@@ -73,7 +73,7 @@ function LoginForm({register, setShowPopup}) {
     try {
       const response = await instance.get("/login/google");
       console.log(response.data);
-      setIsGoogle(true);
+      // setIsGoogle(true);
       window.open(response.data.url, "_blank");
     } catch (error) {
       // console.log(error);
