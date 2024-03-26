@@ -3,7 +3,6 @@ import instance from "../../axios";
 import Watchlist from "./Watchlist";
 import {useParams} from "react-router";
 import {useStateValue} from "../../MyContexts/StateProvider";
-import Loader from "../Loader/Loader";
 
 export const Watchlists = () => {
   const [movies, setMovies] = useState(null);
@@ -27,5 +26,5 @@ export const Watchlists = () => {
       console.log(error);
     }
   }, []);
-  return <>{movies ? <Watchlist movies={movies.movies} id={movies._id} name={movies.name} /> : <Loader />}</>;
+  return <>{movies ? <Watchlist movies={movies.movies} id={movies._id} name={movies.name} /> : <h1>Loading...</h1>}</>;
 };
