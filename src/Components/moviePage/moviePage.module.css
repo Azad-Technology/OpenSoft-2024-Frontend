@@ -108,7 +108,7 @@
     bottom: 0;
     height: 100%;
     width: 75%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
+    background: linear-gradient(to right, rgb(0, 0, 0), transparent);
 }
 
 .heroContainer .content {
@@ -136,6 +136,10 @@
     align-items: center;
     /* justify-content: center; */
     color: var(--secondary-font-color);
+}
+
+.shadowBox{
+    background: linear-gradient(to right, rgba(0,0,0,1), transparent);
 }
 
 
