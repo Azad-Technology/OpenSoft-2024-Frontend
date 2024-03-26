@@ -47,6 +47,9 @@ function Modal({ onClose, genre, id }) {
         getData();
     }, [])
 
+  
+
+
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.heading}>{genre}</div>
