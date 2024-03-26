@@ -5,12 +5,24 @@ import instance from "../../axios.jsx";
 import MovieList from "../movieList/MovieList.jsx";
 import Loader from "./../Loader/Loader.jsx";
 import TopMovieList from "../movieList/TopMovieList.jsx";
+import {useStateValue} from "../../MyContexts/StateProvider";
 
 export const Slider = ({genre, id}) => {
   const [movies, setMovies] = useState(null);
+  const [{token}, dispatch] = useStateValue();
 
   useEffect(() => {
     const getData = async () => {
+      if(genre==="Handpicked"){
+        const response = await instance.request('/recommend',{
+          method:"GET",
+          headers:{
+            Authorization: `Bearer ${token}`
+          }
+        })
+        setMovies(response.data);
+        return;
+      }
       if (genre === "Popular in your region") {
         const response = await instance.get(`my_country/?count=18`);
         setMovies(response.data);
@@ -40,7 +52,7 @@ export const Slider = ({genre, id}) => {
       setMovies(response.data);
     };
     getData();
-  }, [genre, id]);
+  }, [genre, id,token]);
 
   const [showLeftBtn, setShowLeftBtn] = useState(false);
   const [showRightBtn, setShowRightBtn] = useState(true);

@@ -3,6 +3,7 @@ import styles from "./GenreModal.module.css";
 import instance from "../../axios";
 import MovieModalList from "./MovieModalList";
 import Loader from "../Loader/Loader";
+import { useRef } from "react";
 
 function Modal({ onClose, genre, id }) {
     const [movies, setMovies] = useState(null)
@@ -63,10 +64,25 @@ function Modal({ onClose, genre, id }) {
 }
 
 const GenreModal = ({genre, id, onClose}) => {
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }
+  , [genre]);
+
+  const modalRef = useRef();
   return (
-    <>
+    <div ref={modalRef}>
       <Modal onClose={onClose} genre={genre} id={id} />
-    </>
+    </div>
   );
 };
 

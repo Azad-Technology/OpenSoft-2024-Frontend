@@ -30,7 +30,7 @@ function Modal({onClose, genre}) {
   );
 }
 
-const GenreModalCountry = ({genre, id, onClose}) => {
+const GenreModalCountry = ({genre, onClose}) => {
   return (
     <>
       <Modal onClose={onClose} genre={genre} />

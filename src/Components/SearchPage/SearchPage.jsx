@@ -14,15 +14,16 @@ const SearchPage = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const app = new Realm.App({id: "application-0-gisfr"});
-      const credentials = Realm.Credentials.anonymous();
-      try {
-        const user = await app.logIn(credentials);
-        const results = await user.functions.fuzzy_dave(searchTerm, "*");
-        setFuzzy(results);
-      } catch (err) {
-        setFuzzy(null);
-        console.error("Failed to log in", err);
+      try{
+        const response=await axios.post('https://embed.popkorn.tech/rrf',{
+          query:searchTerm,
+          arg:"*"
+        })
+        setFuzzy(response.data);
+      }
+      catch(error){
+        setFuzzy([]);
+        console.error("Error fetching movies:", error);
       }
     };
     getData();

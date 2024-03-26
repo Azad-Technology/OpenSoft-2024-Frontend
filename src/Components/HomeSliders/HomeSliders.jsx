@@ -19,11 +19,11 @@ export const HomeSliders = () => {
       link: "#",
       genreID: "topseries",
     },
-    // {
-    //   name: "Popular in your region",
-    //   link: "#",
-    //   genreID: "my_country"
-    // },
+    {
+      name: "Popular in your region",
+      link: "#",
+      genreID: "my_country"
+    },
     {
       name: "Romance",
       link: "#",
@@ -148,6 +148,12 @@ export const HomeSliders = () => {
 
   return (
     <div className={styles.sliders}>
+      <div className={styles.slider_container}>
+        <div className={styles.slider__header}>
+          <div className={styles.slider__title}>Handpicked for You</div>
+        </div>
+        <Slider genre="Handpicked" />
+      </div>
       <div id="popular" className={styles.slider_container}>
         <div className={styles.slider__header}>
           <div className={styles.slider__title}>Top Movies</div>
