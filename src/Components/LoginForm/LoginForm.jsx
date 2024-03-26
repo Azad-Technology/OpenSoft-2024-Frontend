@@ -72,11 +72,11 @@ function LoginForm({register, setShowPopup}) {
   const handleGoogleClick = async () => {
     try {
       const response = await instance.get("/login/google");
-      // console.log(response.data);
+      console.log(response.data);
       setIsGoogle(true);
       window.open(response.data.url, "_blank");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setErrors(error.response.data.detail);
     }
   };

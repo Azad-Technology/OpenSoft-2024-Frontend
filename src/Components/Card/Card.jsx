@@ -12,6 +12,7 @@ import LoginForm from "../LoginForm/LoginForm.jsx";
 import imdb from "../../assets/imdb-icon.svg";
 const Card = ({movies, val, length, onClose}) => {
   const [{user, token}, dispatch] = useStateValue();
+
   if (onClose === undefined || onClose === null) {
     onClose = () => {};
   }

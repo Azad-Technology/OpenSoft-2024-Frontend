@@ -97,6 +97,7 @@
   color: white;
   font-size: 1.5rem;
   font-weight: 500;
+  margin-left: 3rem;
 }
 
 @media screen and (min-width: 250px) {

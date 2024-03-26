@@ -62,14 +62,7 @@ const reducer = (state, action) => {
           fav: state.user.fav.filter(item => item._id !== action.movie._id),
         },
       };
-    case "ADD_MOVIE_TO_WATCHLIST":
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          watchlist: [...state.user.watchlist, action.watchlist],
-        },
-      };
+
     default:
       return state;
   }
