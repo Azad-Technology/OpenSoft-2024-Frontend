@@ -139,7 +139,7 @@ export const Navbar = ({movies}) => {
                     <div
                       ref={dropdownRef}
                       className={styles.dropdown}
-                      style={{width: menuoption.name === "Country" ? "50%" : "30%"}}>
+                      style={{width: menuoption.name === "Country" ? "45%" : "30%"}}>
                       <div className={styles.dropdown__column}>
                         {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
                           return (
