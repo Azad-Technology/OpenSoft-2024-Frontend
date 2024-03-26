@@ -57,6 +57,9 @@ function Modal({ onClose, genre, id }) {
       }
     }, [genre]);
 
+  
+
+
   return (
     <div className={styles.modal_overlay} id="overlay" ref={modalRef}>
       <div className={styles.heading} id="genre">{genre}</div>
