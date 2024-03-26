@@ -93,11 +93,8 @@ const Profile = () => {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
-            
           },
-        
-        },
-        
+        }
       );
       alert("Password updated successfully");
     } catch (err) {
@@ -340,13 +337,11 @@ const Profile = () => {
         )}
       </div>
       {favMovie.length > 0 && (
-      <div className={styles.favorites}>
-        <h1>Favorites</h1>
-        <div className={styles.favorites_card}>
-          {favMovie && <GeneralSlider movie={[...favMovie].reverse()} />}
+        <div className={styles.favorites}>
+          <h1>Favorites</h1>
+          <div className={styles.favorites_card}>{favMovie && <GeneralSlider movie={[...favMovie].reverse()} />}</div>
         </div>
-      </div>
-    )}
+      )}
 
       <div className={styles.favorites}>
         <AllWatchlists />

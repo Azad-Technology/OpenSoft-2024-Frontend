@@ -23,7 +23,6 @@
   aspect-ratio: 1/1;
 }
 
-
 @keyframes slideRight {
   from {
     opacity: 0;
@@ -102,13 +101,13 @@
 }
 
 .heroContainer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 75%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
 }
 
 .heroContainer .content {
@@ -137,8 +136,8 @@
   color: var(--secondary-font-color);
 }
 
-.shadowBox{
-    background: linear-gradient(to right, rgba(0,0,0,1), transparent);
+.shadowBox {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
 }
 
 /* .heroContainer .button{

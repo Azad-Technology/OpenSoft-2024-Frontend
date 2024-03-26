@@ -14,14 +14,13 @@ const SearchPage = () => {
 
   useEffect(() => {
     const getData = async () => {
-      try{
-        const response=await axios.post('https://embed.popkorn.tech/rrf',{
-          query:searchTerm,
-          arg:"*"
-        })
+      try {
+        const response = await axios.post("https://embed.popkorn.tech/rrf", {
+          query: searchTerm,
+          arg: "*",
+        });
         setFuzzy(response.data);
-      }
-      catch(error){
+      } catch (error) {
         setFuzzy([]);
         console.error("Error fetching movies:", error);
       }

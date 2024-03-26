@@ -30,11 +30,10 @@ export const Search = ({movies, searchBarRef}) => {
 
   const getData = async () => {
     try {
-      if(debouncedSearch.length){
+      if (debouncedSearch.length) {
         const response = await instance.get(`/autosearch/${debouncedSearch}`);
         setAutoCompleteResult(response.data);
       }
-      
     } catch (err) {
       setAutoCompleteResult([]);
     }

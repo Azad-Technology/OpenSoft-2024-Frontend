@@ -13,13 +13,13 @@ export const Slider = ({genre, id}) => {
 
   useEffect(() => {
     const getData = async () => {
-      if(genre==="Handpicked"){
-        const response = await instance.request('/recommend',{
-          method:"GET",
-          headers:{
-            Authorization: `Bearer ${token}`
-          }
-        })
+      if (genre === "Handpicked") {
+        const response = await instance.request("/recommend", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setMovies(response.data);
         return;
       }
@@ -52,7 +52,7 @@ export const Slider = ({genre, id}) => {
       setMovies(response.data);
     };
     getData();
-  }, [genre, id,token]);
+  }, [genre, id, token]);
 
   const [showLeftBtn, setShowLeftBtn] = useState(false);
   const [showRightBtn, setShowRightBtn] = useState(true);

@@ -112,7 +112,8 @@ export const Navbar = ({movies}) => {
           <div className={styles.navbar__left}>
             <i
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
+              className={`fa fa-2x fa-bars ${styles.hamburger}`}
+            ></i>
             <img
               onClick={() => navigate("/")}
               className={styles.navbar__logo}
@@ -132,14 +133,16 @@ export const Navbar = ({movies}) => {
                     }}
                     className={styles.navbar__link}
                     to={menuoption.link} // Replace href with to
-                    key={index}>
+                    key={index}
+                  >
                     {menuoption.name}
                   </Link>
                   {showDropdown[menuoption.name] && menuoption.dropdown && (
                     <div
                       ref={dropdownRef}
                       className={styles.dropdown}
-                      style={{width: menuoption.name === "Country" ? "45%" : "30%"}}>
+                      style={{width: menuoption.name === "Country" ? "45%" : "30%"}}
+                    >
                       <div className={styles.dropdown__column}>
                         {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
                           return (
@@ -278,7 +281,8 @@ export const Navbar = ({movies}) => {
           <div className={styles.navbar__left}>
             <i
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
+              className={`fa fa-2x fa-bars ${styles.hamburger}`}
+            ></i>
             <img
               onClick={() => navigate("/")}
               className={styles.navbar__logo}

@@ -36,10 +36,7 @@ export const AllWatchlists = () => {
         </>
       )}
 
-      {(!watchlists || watchlists.length === 0) && (
-        <div className={styles.nothingToShow}>Nothing to show here</div>
-      )}
+      {(!watchlists || watchlists.length === 0) && <div className={styles.nothingToShow}>Nothing to show here</div>}
     </>
   );
 };
-
