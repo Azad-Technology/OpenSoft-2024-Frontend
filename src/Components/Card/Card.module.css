@@ -1,11 +1,11 @@
-.skeleton__cards{
+.skeleton__cards {
   /* opacity:0.7; */
   animation: skeletonLoader 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes skeletonLoader {
   0% {
-    background-color:hsl(0, 0%, 30%);
+    background-color: hsl(0, 0%, 30%);
   }
   100% {
     background-color: hsl(200, 20%, 95%);
@@ -18,7 +18,8 @@
   height: 15rem;
   max-height: 20%;
   opacity: 1;
-  margin: 2rem 1.3rem 2rem 0;
+  /* margin: 2rem 1.3rem 2rem 0; */
+  margin: 2rem 1.3rem 2rem 1.3rem;
   cursor: pointer;
   box-shadow: 0 0.25rem 0.3rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -31,24 +32,24 @@
 }
 
 .cards__overlay {
-  margin:0;
+  margin: 0;
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 0.5rem;
   width: 100%;
   height: 7rem;
-  background-color: rgba(0, 0, 0, 0.9); 
+  background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   transition: opacity 0.3s ease;
-  opacity: 0; 
+  opacity: 0;
   min-height: 30%;
 }
 
 .card__title {
   font-size: small;
   font-weight: bold;
-  margin: 0.4rem;  
+  margin: 0.4rem;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -62,7 +63,7 @@
   vertical-align: bottom;
   justify-content: space-between;
   align-items: center;
-  font-size:x-small;
+  font-size: x-small;
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -71,14 +72,14 @@
   display: flex;
   align-items: center;
 }
-.card__rating svg{
+.card__rating svg {
   margin-right: 0.3rem;
 }
 .card__description {
   font-size: 0.7rem;
   display: none;
   text-wrap: wrap;
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   margin-top: 0rem;
@@ -86,7 +87,7 @@
   font-size: xx-small;
 }
 
-.cards:hover .cards__overlay{
+.cards:hover .cards__overlay {
   opacity: 1;
 }
 
@@ -96,41 +97,40 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   max-width: 100%;
-  opacity: 1; 
+  opacity: 1;
 }
 
 .cards_img {
   width: 10rem;
-  height: 15rem; 
+  height: 15rem;
   max-height: 100%;
-  border-radius: 0; 
+  border-radius: 0;
   transition: 0.4s ease-in-out;
 }
-.icons{
+.icons {
   display: block;
 }
-.icon{
+.icon {
   position: absolute;
   top: 2%;
-  left:5%;
+  left: 5%;
   z-index: 3;
   height: 9%;
   width: 14%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding-top: 0.2rem;
   padding-left: 0.18rem;
   border-radius: 5rem;
-  
 }
-.premium{
+.premium {
   position: absolute;
   top: 2%;
-  right:5%;
+  right: 5%;
   z-index: 3;
   float: right;
   color: gold;
 }
-#heartIcon{  
+#heartIcon {
   box-shadow: 200px;
 }
 .numberIcons {
@@ -138,10 +138,10 @@
   top: 10%;
   left: 5%;
   z-index: 3;
-  color: red
+  color: red;
 }
-.Genrediv{
-  position: absolute; 
+.Genrediv {
+  position: absolute;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -151,17 +151,17 @@
   background: linear-gradient(to bottom, rgba(59, 147, 247, 0.853), rgb(9, 51, 189));
   opacity: 0.77;
 }
-.contain{
+.contain {
   display: flex;
 }
-.number{
+.number {
   display: flex;
   flex-direction: column;
   justify-content: end;
   font-size: xxx-large;
 }
 
-.number__gradient{
+.number__gradient {
   background: linear-gradient(0deg, #ffffff, #7d7d7d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -170,46 +170,44 @@
   transition: scale(1.1, 1.1);
 } */
 @media screen and (max-width: 1024px) {
-  .cards{
+  .cards {
     /* min-width: 10rem; */
     flex-basis: 15%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .cards{
+  .cards {
     /* min-width: 10rem; */
     flex-basis: 20%;
   }
-  .cards:hover{
+  .cards:hover {
     transform: none;
   }
-  .card__description{
+  .card__description {
     display: none;
   }
 }
 @media screen and (max-width: 600px) {
-  .cards{
+  .cards {
     /* flex-basis: 40%; */
     min-width: 8rem;
-    height:12rem;
+    height: 12rem;
   }
-  .cards_img{
-    width: 8rem;  
-    height:12rem;
+  .cards_img {
+    width: 8rem;
+    height: 12rem;
   }
-  .cards__overlay{
+  .cards__overlay {
     height: 6rem;
   }
-  .first__card{
+  .first__card {
     margin-left: 1.3rem;
   }
 }
 @media screen and (max-width: 250px) {
-  .cards{
+  .cards {
     /* min-width: 10rem; */
     flex-basis: 100%;
   }
 }
-
-

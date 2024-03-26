@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from "react";
 import styles from "./CustomDropdown.module.css";
-import { useRef } from 'react';
+import {useRef} from "react";
 
-const CustomDropdown = ({ label, options, selectedItems, updateSelectedItems }) => {
-  const dropdownRef = useRef(null)
+const CustomDropdown = ({label, options, selectedItems, updateSelectedItems}) => {
+  const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-
-  const handleClickOutside = (event) => {
+  const handleClickOutside = event => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsOpen(false);
     }
@@ -15,11 +14,11 @@ const CustomDropdown = ({ label, options, selectedItems, updateSelectedItems }) 
 
   // Add the event listener when the component mounts
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
 
     // Cleanup function to remove the listener when component unmounts
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -31,29 +30,27 @@ const CustomDropdown = ({ label, options, selectedItems, updateSelectedItems }) 
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    dropdownRef.current.classList.toggle('open');
+    dropdownRef.current.classList.toggle("open");
   };
 
-  const handleSelectChange = (event) => {
+  const handleSelectChange = event => {
     const value = event.target.value;
-  const isChecked = event.target.checked;
+    const isChecked = event.target.checked;
 
-  updateSelectedItems && updateSelectedItems( // Use the update function
-    isChecked 
-        ? [...selectedItems, value] 
-        : selectedItems.filter(item => item !== value)
-  );
+    updateSelectedItems &&
+      updateSelectedItems(
+        // Use the update function
+        isChecked ? [...selectedItems, value] : selectedItems.filter(item => item !== value)
+      );
   };
 
-  const displaySelected = (label) => {
+  const displaySelected = label => {
     if (selectedItems.length === 0) {
       return label; // Display 'Genre', 'Year', or 'Language'
     } else if (selectedItems.length > 1) {
-      return `${selectedItems.slice(0, 1).join(', ')} + ${
-        selectedItems.length - 1
-      } more`;
+      return `${selectedItems.slice(0, 1).join(", ")} + ${selectedItems.length - 1} more`;
     } else {
-      return selectedItems.join(', ');
+      return selectedItems.join(", ");
     }
   };
   // const displaySelected = () => {
@@ -75,7 +72,7 @@ const CustomDropdown = ({ label, options, selectedItems, updateSelectedItems }) 
       </button>
       {isOpen && (
         <ul className={styles.dropdownlist}>
-          {options.map((option) => (
+          {options.map(option => (
             <li key={option.value}>
               <label>
                 <input
@@ -85,7 +82,6 @@ const CustomDropdown = ({ label, options, selectedItems, updateSelectedItems }) 
                   onChange={handleSelectChange}
                 />
                 {option.label}
-               
               </label>
             </li>
           ))}
@@ -93,8 +89,8 @@ const CustomDropdown = ({ label, options, selectedItems, updateSelectedItems }) 
       )}
     </div>
   );
-}
+};
 
 export default CustomDropdown;
 
-// 
+//

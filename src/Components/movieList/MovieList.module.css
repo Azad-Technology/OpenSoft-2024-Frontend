@@ -1,7 +1,7 @@
 .cardcontainer {
-    z-index: 10;
+  z-index: 10;
 }
 
 .movieList {
-    display: flex;
+  display: flex;
 }

@@ -1,7 +1,7 @@
 import styles from "./Comments.module.css";
-import { useState, useRef, useEffect } from "react";
-
- 
+import {useState, useRef, useEffect} from "react";
+import instance from "../../axios.jsx";
+import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 
 // let comments = ['Lorem ',
 // 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus.',
@@ -11,168 +11,218 @@ import { useState, useRef, useEffect } from "react";
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
 function NewComments(props) {
-  let comments = props.info.map((obj)=>{
+  const [{token}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    console.log(props);
+  }, [props]);
+  let comments = props.info.map(obj => {
     return obj.text;
   });
-  
-  let name = props.info.map((obj)=>{
+
+  let name = props.info.map(obj => {
     return obj.name;
   });
-  
-  let date = props.info.map((obj)=>{
+
+  let date = props.info.map(obj => {
     return obj.date;
   });
-    
-    const [clicked, setClicked] = useState(false);
-    const [state, setState] = useState("See more");
-    const [parentHeight, setParentHeight] = useState('auto');
-    const [textareaHeight, setTextareaHeight] = useState('auto');
-    const [disableBtn, setDisableBtn] = useState(true);
-    const textareaRef = useRef(null);
-    const initialParentHeight = useRef(null);
-    const initialTextareaHeight = useRef(null);
-    
-    function SwitchState() {
-      setClicked(!clicked);
-      const elem = document.getElementById("showMoreBtn");
-      
-      if (state === "See more") {
-        setState("See less");
-        elem.style.transform = 'rotate(0deg)';
-      } else {
-        setState("See more");
-        elem.style.transform = 'rotate(180deg)';
-      }
-    }
 
-    function no_of_lines(){
-      const strEle = document.getElementById('myTextArea');
-      let count = 0;
-      if(strEle!=null){
-        const str = document.getElementById('myTextArea').value;
-        const len = str.length;
-        for(let i=0;i<len;i++){
-          if(str[i]=='\n'){
-            count++;
-          }
+  const [clicked, setClicked] = useState(false);
+  const [state, setState] = useState("See more");
+  const [parentHeight, setParentHeight] = useState("auto");
+  const [textareaHeight, setTextareaHeight] = useState("auto");
+  const [disableBtn, setDisableBtn] = useState(true);
+  const textareaRef = useRef(null);
+  const initialParentHeight = useRef(null);
+  const initialTextareaHeight = useRef(null);
+
+  function SwitchState() {
+    setClicked(!clicked);
+    const elem = document.getElementById("showMoreBtn");
+
+    if (state === "See more") {
+      setState("See less");
+      elem.style.transform = "rotate(0deg)";
+    } else {
+      setState("See more");
+      elem.style.transform = "rotate(180deg)";
+    }
+  }
+
+  function no_of_lines() {
+    const strEle = document.getElementById("myTextArea");
+    let count = 0;
+    if (strEle != null) {
+      const str = document.getElementById("myTextArea").value;
+      const len = str.length;
+      for (let i = 0; i < len; i++) {
+        if (str[i] == "\n") {
+          count++;
         }
       }
-      return count;
     }
-    
-    function handleTextAreaChange(event) {
-      setNewComment(event.target.value);
-      if(event.target.value){
-        setDisableBtn(false);
-      }
-      else{
-        setDisableBtn(true);
-      }
-      const newTextareaHeight = no_of_lines()+2+'rem';
-      const parentHeight = no_of_lines()+4+'rem';
+    return count;
+  }
 
-      const typeComment = document.getElementById('myTextArea');
-      typeComment.style.height = newTextareaHeight;
-
-      setTextareaHeight(newTextareaHeight);
-      setParentHeight(parentHeight);
+  function handleTextAreaChange(event) {
+    setNewComment(event.target.value);
+    if (event.target.value) {
+      setDisableBtn(false);
+    } else {
+      setDisableBtn(true);
     }
-    
- 
-    const [newComment,setNewComment] = useState('');
-    
-    function handleTextareaFocus(event) {
-      const newTextareaHeight = no_of_lines()+2+'rem';
-      const parentHeight = no_of_lines()+4+'rem';
+    const newTextareaHeight = no_of_lines() + 2 + "rem";
+    const parentHeight = no_of_lines() + 4 + "rem";
 
-      const typeComment = document.getElementById('myTextArea');
-      typeComment.style.height = newTextareaHeight;
+    const typeComment = document.getElementById("myTextArea");
+    typeComment.style.height = newTextareaHeight;
 
-      setTextareaHeight(newTextareaHeight); 
-      setParentHeight(parentHeight);
+    setTextareaHeight(newTextareaHeight);
+    setParentHeight(parentHeight);
+  }
+
+  const [newComment, setNewComment] = useState("");
+
+  function handleTextareaFocus(event) {
+    const newTextareaHeight = no_of_lines() + 2 + "rem";
+    const parentHeight = no_of_lines() + 4 + "rem";
+
+    const typeComment = document.getElementById("myTextArea");
+    typeComment.style.height = newTextareaHeight;
+
+    setTextareaHeight(newTextareaHeight);
+    setParentHeight(parentHeight);
+  }
+
+  function handleTextareaBlur(event) {
+    setTextareaHeight(no_of_lines() + 2 + "rem");
+    setParentHeight(no_of_lines() + 4 + "rem");
+  }
+
+  const handleSubmit = async () => {
+    try {
+      instance.post(
+        "/comment",
+        {
+          comment: newComment,
+          movie_id: props.id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      // window.location.reload();
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    function handleTextareaBlur(event) {
-      setTextareaHeight(no_of_lines()+2 + 'rem');
-      setParentHeight(no_of_lines()+ 4 + 'rem');
-    }
-  
-    return (
-      <>
-        <div className={styles.commentContainer}>
-          <div className={styles.heading}>Comments</div>
-          <div className={styles.yourComment}>
-            <div className={styles.imgTextBtnContainer} style={{ height: parentHeight }}>
-              <div className={styles.userImg}> </div>
-              <div className={styles.textBtnCont} style={{ height: parentHeight }}>
-                <div className={styles.textArea} style={{ height: textareaHeight }}>
-                  <textarea id="myTextArea"
-                    ref={textareaRef}
-                    name="typeComment"
-                    placeholder="Type your comment here..."
-                    cols={190}
-                    className={styles.typeComment}
-                    style={{ height: '100%', overflow: 'hidden', whiteSpace: 'pre-wrap' }} 
-                    onChange={(event)=>handleTextAreaChange(event)} 
-                    onFocus={handleTextareaFocus}
-                    // onBlur={handleTextareaBlur}
-                    value={newComment} 
-                  ></textarea>
-                </div>
-                <div className={styles.submitBtnContainer}>
-                  {disableBtn && (<button type="submit" className={styles.submitBtn} disabled>Submit</button>)}
-                  {!disableBtn && (<button onClick={(e)=>handleSubmit(e)} className={styles.submitBtn} >Submit</button>)}
-                  
-                </div>
+  return (
+    <>
+      <div className={styles.commentContainer}>
+        <div className={styles.heading}>Comments</div>
+        <div className={styles.yourComment}>
+          <div className={styles.imgTextBtnContainer} style={{height: parentHeight}}>
+            <div className={styles.userImg}> </div>
+            <div className={styles.textBtnCont} style={{height: parentHeight}}>
+              <div className={styles.textArea} style={{height: textareaHeight}}>
+                <textarea
+                  id="myTextArea"
+                  ref={textareaRef}
+                  name="typeComment"
+                  placeholder="Type your comment here..."
+                  cols={190}
+                  className={styles.typeComment}
+                  style={{height: "100%", overflow: "hidden", whiteSpace: "pre-wrap"}}
+                  onChange={event => handleTextAreaChange(event)}
+                  onFocus={handleTextareaFocus}
+                  // onBlur={handleTextareaBlur}
+                  value={newComment}
+                ></textarea>
+              </div>
+              <div className={styles.submitBtnContainer}>
+                {disableBtn && (
+                  <button type="submit" className={styles.submitBtn} disabled>
+                    Submit
+                  </button>
+                )}
+                {!disableBtn && (
+                  <button onClick={e => handleSubmit(e)} className={styles.submitBtn}>
+                    Submit
+                  </button>
+                )}
               </div>
             </div>
           </div>
+        </div>
 
-
-          {
-            comments.length?(
-              <div className={styles.allComments}>
-              {clicked ? (
-                comments.map((comment, index) => (
-                  <div key={index} className={styles.allCommentsContainer}>
-                    <div className={styles.commentInfo}>
-                      <div className={styles.imgContainer}></div>
-                      <div className={styles.userName}>@{name[index]}</div>
-                    </div>
-                    <div className={styles.commentContent}>
-                      <div className={styles.commentContent}>{comment}</div>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className={styles.allCommentsContainer}>
+        {comments.length ? (
+          <div className={styles.allComments}>
+            {clicked ? (
+              comments.map((comment, index) => (
+                <div key={index} className={styles.allCommentsContainer}>
                   <div className={styles.commentInfo}>
                     <div className={styles.imgContainer}></div>
-                    <div className={styles.userName}>@{name[0]}</div>
+                    <div className={styles.userName}>@{name[index]}</div>
                   </div>
                   <div className={styles.commentContent}>
-                    <div className={styles.commentContent}>{comments[0]}</div>
+                    <div className={styles.commentContent}>{comment}</div>
                   </div>
                 </div>
-              )}
-              {(comments.length>1)?(
-                <div className={styles.showMoreBtnContainer}>
-                <button onClick={SwitchState} className={styles.showMoreBtn} id="showMoreBtn"><svg fill="#cf0a0a" height="25px" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.001 512.001" xmlSpace="preserve"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokelinecap="round" strokelinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path> </g> </g> </g></svg></button>
+              ))
+            ) : (
+              <div className={styles.allCommentsContainer}>
+                <div className={styles.commentInfo}>
+                  <div className={styles.imgContainer}></div>
+                  <div className={styles.userName}>@{name[0]}</div>
                 </div>
-              ):(
-                <></>
-              )}
-              
+                <div className={styles.commentContent}>
+                  <div className={styles.commentContent}>{comments[0]}</div>
+                </div>
               </div>
-            ):(
+            )}
+            {comments.length > 1 ? (
+              <div className={styles.showMoreBtnContainer}>
+                <button onClick={SwitchState} className={styles.showMoreBtn} id="showMoreBtn">
+                  <svg
+                    fill="#cf0a0a"
+                    height="25px"
+                    width="25px"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 512.001 512.001"
+                    xmlSpace="preserve"
+                  >
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokelinecap="round" strokelinejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      {" "}
+                      <g>
+                        {" "}
+                        <g>
+                          {" "}
+                          <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
+                        </g>{" "}
+                      </g>{" "}
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            ) : (
               <></>
-            )
-          }
-          
-          
-        </div>
-      </>
-    )
-  }
+            )}
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
+    </>
+  );
+}
 
-  export default NewComments;
+export default NewComments;

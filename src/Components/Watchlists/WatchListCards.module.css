@@ -1,130 +1,131 @@
-.card{
-    display: flex;
-    position: relative;
-    flex-grow: 0;
-    flex-shrink: 0;
-    height: 10rem;
-    width: 15rem;
-    border-radius: 1rem;
-    background-color: #FF340A;
-    padding: 1rem;
-    cursor: pointer;
-    z-index: 1;
+.card {
+  display: flex;
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 10rem;
+  width: 15rem;
+  border-radius: 1rem;
+  background-color: #ff340a;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.cardcontainer{
-    display: flex;
-    position: relative;
-    flex-grow: 0;
-    flex-shrink: 0;
-    height: 10rem;
-    width: 15rem;
-    transition: all 0.5s ease;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+.cardcontainer {
+  display: flex;
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 10rem;
+  width: 15rem;
+  transition: all 0.5s ease;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
 }
 
-.nothingToShow{
-    margin: .5rem 0 .8rem 1.8rem;
-    color: #6c757d;
-    font-size: 1.3rem;
-    margin-top: .5rem;
-    margin-left:1.8rem;
-   }
-
-.cardcontainer:hover{
-    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
-    transform: translate3d(0px, -1rem, 0px);
+.nothingToShow {
+  margin: 0.5rem 0 0.8rem 1.8rem;
+  color: #6c757d;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  margin-left: 1.8rem;
 }
 
-.slider__movies{
-    box-sizing: border-box;
-    gap:2rem;
-    display: flex;
-    overflow-y: auto;
-    overflow-x: scroll;
-    padding: 1rem 10rem 1rem 2rem;
-    margin: 0 -20px 0px 0px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    width: 100vw;
-    align-items: center;
-    scroll-behavior: smooth;
+.cardcontainer:hover {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+  transform: translate3d(0px, -1rem, 0px);
 }
 
-.container{
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+.slider__movies {
+  box-sizing: border-box;
+  gap: 2rem;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: scroll;
+  padding: 1rem 10rem 1rem 2rem;
+  margin: 0 -20px 0px 0px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100vw;
+  align-items: center;
+  scroll-behavior: smooth;
 }
 
-.LeftbtnContainer{
-    position: absolute;
-    left: .5rem;
-    z-index: 30;
-    transform: rotate(-90deg);
-    
-}
-.RightbtnContainer{
-    /* display: flex; */
-    position: absolute;
-    right: .5rem;
-    z-index: 30;
-    transform: rotate(90deg);
+.container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
-.LeftbtnContainer, .RightbtnContainer{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all .3s ease;
+.LeftbtnContainer {
+  position: absolute;
+  left: 0.5rem;
+  z-index: 30;
+  transform: rotate(-90deg);
 }
-.LeftbtnContainer:hover{
-    transform: scale(1.2) rotate(-90deg) translateY(5px);
-}
-.RightbtnContainer:hover{
-    transform: scale(1.2) rotate(90deg) translateY(5px);
-}
-
-.LeftbtnContainer button, .RightbtnContainer button{
-    /* background-color: rgba(130, 118, 118, 0.445); */
-    background-color: transparent;
-    height: 2.3rem;
-    width: 2.3rem;
-    z-index: 3;
-    border-radius: 50%;
-    border: none;
-    transition: all .3 ease;
+.RightbtnContainer {
+  /* display: flex; */
+  position: absolute;
+  right: 0.5rem;
+  z-index: 30;
+  transform: rotate(90deg);
 }
 
-.LeftbtnContainer button:hover, .RightbtnContainer button:hover{
-    background-color: rgba(130, 118, 118, 0.599);
+.LeftbtnContainer,
+.RightbtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.LeftbtnContainer:hover {
+  transform: scale(1.2) rotate(-90deg) translateY(5px);
+}
+.RightbtnContainer:hover {
+  transform: scale(1.2) rotate(90deg) translateY(5px);
 }
 
-.slider{
-    padding-right: 2rem;
-}
-.slider__movies::-webkit-scrollbar{
-    display: none;
-}
-.sliders{
-    margin-right: 3rem;
+.LeftbtnContainer button,
+.RightbtnContainer button {
+  /* background-color: rgba(130, 118, 118, 0.445); */
+  background-color: transparent;
+  height: 2.3rem;
+  width: 2.3rem;
+  z-index: 3;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3 ease;
 }
 
-.delete_icon{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    height: 2rem;
-    width: 2rem;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    z-index: 100;
+.LeftbtnContainer button:hover,
+.RightbtnContainer button:hover {
+  background-color: rgba(130, 118, 118, 0.599);
 }
-.delete_icon:hover{
-    transform: scale(1.2);
+
+.slider {
+  padding-right: 2rem;
 }
-.delete_icon img{
-    height: 1.5rem;
+.slider__movies::-webkit-scrollbar {
+  display: none;
+}
+.sliders {
+  margin-right: 3rem;
+}
+
+.delete_icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  z-index: 100;
+}
+.delete_icon:hover {
+  transform: scale(1.2);
+}
+.delete_icon img {
+  height: 1.5rem;
 }

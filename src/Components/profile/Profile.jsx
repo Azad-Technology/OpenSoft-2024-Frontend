@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./Profile.module.css";
 import Card from "../Card/Card";
-import { useNavigate } from "react-router-dom";
-import { useStateValue } from "../../MyContexts/StateProvider";
+import {useNavigate} from "react-router-dom";
+import {useStateValue} from "../../MyContexts/StateProvider";
 import GenreCard from "../Card/GenreCard";
-import { AllWatchlists } from "../Watchlists/AllWatchlists";
+import {AllWatchlists} from "../Watchlists/AllWatchlists";
 import instance from "../../axios";
-import { Slider } from "@vidstack/react";
+import {Slider} from "@vidstack/react";
 import MovieList from "../movieList/MovieList";
-import GeneralSlider from "../HomeSliders/GeneralSlider"
+import GeneralSlider from "../HomeSliders/GeneralSlider";
 
 const Profile = () => {
-  const [{ token, user }, dispatch] = useStateValue();
+  const [{token, user}, dispatch] = useStateValue();
   const navigate = useNavigate();
   const [fullname, setFullname] = useState("name");
   const [currentPlan, setCurrentPlan] = useState("Basic");
@@ -22,49 +22,45 @@ const Profile = () => {
   const [address, setAddress] = useState("Bay Area, San Francisco, CA");
   const [password, setPassword] = useState("currentPassword");
   const [isEditPasswordDisabled, setIsEditPasswordDisabled] = useState(true);
-  const [verificationcurrentPassword, setVerificationCurrentPassword] =
-    useState("");
+  const [verificationcurrentPassword, setVerificationCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
-  const [isChangePasswordModalOpen, setChangePasswordModalOpen] =
-    useState(false);
+  const [isChangePasswordModalOpen, setChangePasswordModalOpen] = useState(false);
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [favMovie, setFavMovie] = useState([]);
   const handlecChangePasswordClick = () => {
     setChangePasswordModalOpen(true);
   };
 
-  const sendChangeRequest = async(e) =>{
-    
-    try{
-      const response=await instance.patch('/update_user/',{
-        new_name:fullname,
-        new_email:user.email
-      },
-      {
-        headers:{
-          'Content-Type':'application/json',
-          Authorization: `Bearer ${token}`
+  const sendChangeRequest = async e => {
+    try {
+      const response = await instance.patch(
+        "/update_user/",
+        {
+          new_name: fullname,
+          new_email: user.email,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
         }
-      });
-    }
-    catch(err){
+      );
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   const handleEditProfileClick = () => {
-    if(user.subtype!="Basic"){
+    if (user.subtype != "Basic") {
       setIsProfileActive(true);
       setIsEditNameDisabled(false);
-    }else{
+    } else {
       navigate("/pricing");
     }
-
-    
   };
   const handleConfirmChanges = () => {
-
     setIsProfileActive(false);
     setIsEditNameDisabled(true);
     setIsAddressDisabled(true);
@@ -84,26 +80,37 @@ const Profile = () => {
   // setIsEditPasswordDisabled(false);
   // };
 
-  const handleUpdatePasswordRequest = async(e)=>{
-    try{
-      const response=await instance.patch('/update_password/',{
-        old_password:verificationcurrentPassword,
-        new_password:newPassword,
-        repeat_password:confirmNewPassword
-      },
-      {
-        headers:{
-          'Content-Type':'application/json',
-          Authorization: `Bearer ${token}`
-        }
-      });
+  const handleUpdatePasswordRequest = async e => {
+    try {
+      const response = await instance.patch(
+        "/update_password/",
+        {
+          old_password: verificationcurrentPassword,
+          new_password: newPassword,
+          repeat_password: confirmNewPassword,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+            
+          },
+        
+        },
+        
+      );
+      alert("Password updated successfully");
+    } catch (err) {
+      console.log(err.response);
+      if (err.response && err.response.status === 401) {
+        alert("Wrong password. Please check your current password.");
+      } else {
+        alert("An error occurred. Make sure you have 8 characters, capital letters, numbers and special characters.");
+      }
     }
-    catch(err){
-      console.log(err);
-    }
-  }
+  };
 
-  const handleUpdatePassword = () => {    
+  const handleUpdatePassword = () => {
     setChangePasswordModalOpen(false);
     setIsEditPasswordDisabled(true);
     handleUpdatePasswordRequest();
@@ -119,20 +126,15 @@ const Profile = () => {
     navigate("/");
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     setFullname(user?.name);
     setFavMovie(user?.fav);
     console.log(favMovie);
   }, [user]);
-  
+
   return (
-    <div style={{ backgroundColor: "#101010", display: "block" }}>
-      <i
-        class="fa fa-angle-double-left"
-        aria-hidden="true"
-        id={styles.homeIcon}
-        onClick={handleNavigateBackward}
-      ></i>
+    <div style={{backgroundColor: "#101010", display: "block"}}>
+      <i class="fa fa-angle-double-left" aria-hidden="true" id={styles.homeIcon} onClick={handleNavigateBackward}></i>
       <div className={styles.maincontainer}>
         <div className={styles.card}>
           <div className={styles.cardBody}>
@@ -152,25 +154,25 @@ const Profile = () => {
                 <p className={styles.head}> Full Name</p>
               </div>
               <div className={styles.col_sm_9}>
-                {isEditNameDisabled?<input
-                  id="input"
-                  className={styles.details}
-                  value={fullname}
-                  disabled={isEditNameDisabled}
-                  onChange={(e) => setFullname(e.target.value)}
-                />:<input
-                id="input"
-                className={styles.edittableDetails}
-                value={fullname}
-                disabled={isEditNameDisabled}
-                onChange={(e) => setFullname(e.target.value)}
-              />}
-                
-                {isEditProfileActive ? (
-                  <i class="fa fa-edit editbtn" onClick={handleNameChange}></i>
+                {isEditNameDisabled ? (
+                  <input
+                    id="input"
+                    className={styles.details}
+                    value={fullname}
+                    disabled={isEditNameDisabled}
+                    onChange={e => setFullname(e.target.value)}
+                  />
                 ) : (
-                  <p></p>
+                  <input
+                    id="input"
+                    className={styles.edittableDetails}
+                    value={fullname}
+                    disabled={isEditNameDisabled}
+                    onChange={e => setFullname(e.target.value)}
+                  />
                 )}
+
+                {isEditProfileActive ? <i class="fa fa-edit editbtn" onClick={handleNameChange}></i> : <p></p>}
               </div>
             </div>
 
@@ -179,12 +181,7 @@ const Profile = () => {
                 <p className={styles.head}> Email</p>
               </div>
               <div className={styles.col_sm_9}>
-                <input
-                  id="input"
-                  className={styles.details}
-                  disabled
-                  value={user?.email}
-                />
+                <input id="input" className={styles.details} disabled value={user?.email} />
               </div>
             </div>
 
@@ -202,14 +199,8 @@ const Profile = () => {
                 />
 
                 {isEditPasswordDisabled ? (
-                  <div
-                    className={styles.col_sm_3}
-                    id={styles.changePasswordcol}
-                  >
-                    <button
-                      className={styles._btn}
-                      onClick={handlecChangePasswordClick}
-                    >
+                  <div className={styles.col_sm_3} id={styles.changePasswordcol}>
+                    <button className={styles._btn} onClick={handlecChangePasswordClick}>
                       Change Password
                     </button>
                   </div>
@@ -223,9 +214,7 @@ const Profile = () => {
                         id={styles.Conpass}
                         type="password"
                         name="password"
-                        onChange={(e) =>
-                          setVerificationCurrentPassword(e.target.value)
-                        }
+                        onChange={e => setVerificationCurrentPassword(e.target.value)}
                       ></input>
                     </div>
 
@@ -237,13 +226,10 @@ const Profile = () => {
                         id={styles.Conpass}
                         type="password"
                         name="password"
-                        onChange={(e) => setNewPassword(e.target.value)}
+                        onChange={e => setNewPassword(e.target.value)}
                       ></input>
                     </div>
-                    <button
-                      className={styles.Confpass}
-                      onClick={handleUpdatePassword}
-                    >
+                    <button className={styles.Confpass} onClick={handleUpdatePassword}>
                       confirm changes
                     </button>
                   </>
@@ -251,7 +237,7 @@ const Profile = () => {
               </div>
             </div>
 
-            {!user?.subtype==="Basic" ? (
+            {!user?.subtype === "Basic" ? (
               <div></div>
             ) : (
               <div className={styles.row}>
@@ -269,25 +255,18 @@ const Profile = () => {
                 <p className={styles.head}> Plan</p>
               </div>
               <div className={styles.col_plan}>
-                <input
-                  id="input"
-                  className={styles.details}
-                  disabled
-                  value={user?.subtype}
-                />
-                {user?.subtype!="Gold" && <button className={styles._btn} onClick={handlePremiumClick}>
-                  Convert to Premium
-                </button>}
-                
+                <input id="input" className={styles.details} disabled value={user?.subtype} />
+                {user?.subtype != "Gold" && (
+                  <button className={styles._btn} onClick={handlePremiumClick}>
+                    Convert to Premium
+                  </button>
+                )}
               </div>
             </div>
             {isChangePasswordModalOpen && (
               <div className={styles.modal}>
                 <div className={styles.modal_content}>
-                  <span
-                    className={styles.close}
-                    onClick={() => setChangePasswordModalOpen(false)}
-                  >
+                  <span className={styles.close} onClick={() => setChangePasswordModalOpen(false)}>
                     &times;
                   </span>
                   <h2 className={styles.changepass}>Change Password</h2>
@@ -297,9 +276,7 @@ const Profile = () => {
                     className={styles.currpass}
                     placeholder="Current Password"
                     value={verificationcurrentPassword}
-                    onChange={(e) =>
-                      setVerificationCurrentPassword(e.target.value)
-                    }
+                    onChange={e => setVerificationCurrentPassword(e.target.value)}
                   />
                   <input
                     id="input"
@@ -307,7 +284,7 @@ const Profile = () => {
                     className={styles.currpass}
                     placeholder="New Password"
                     value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
+                    onChange={e => setNewPassword(e.target.value)}
                   />
                   <input
                     id="input"
@@ -315,12 +292,10 @@ const Profile = () => {
                     className={styles.currpass}
                     placeholder="Confirm New Password"
                     value={confirmNewPassword}
-                    onChange={(e) => setConfirmNewPassword(e.target.value)}
+                    onChange={e => setConfirmNewPassword(e.target.value)}
                   />
                   <div className={styles.edit_button_modal} id="modal_button">
-                    <button onClick={handleUpdatePassword}>
-                      Confirm Changes
-                    </button>
+                    <button onClick={handleUpdatePassword}>Confirm Changes</button>
                   </div>
                 </div>
               </div>
@@ -364,20 +339,18 @@ const Profile = () => {
           </>
         )}
       </div>
+      {favMovie.length > 0 && (
       <div className={styles.favorites}>
         <h1>Favorites</h1>
-        {(favMovie?.length==0) && <div className={styles.nothingToShow}>Nothing to show here</div>}
         <div className={styles.favorites_card}>
-          {(favMovie) && (<GeneralSlider movie={[...favMovie].reverse()}/>)}
-         
+          {favMovie && <GeneralSlider movie={[...favMovie].reverse()} />}
         </div>
       </div>
+    )}
 
       <div className={styles.favorites}>
-       
         <AllWatchlists />
       </div>
-
     </div>
   );
 };

@@ -1,128 +1,129 @@
-.slider__header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.slider__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.view__more{
-    display: block;
-    position: relative;
-    right:0;
-    background-color: rgba(255, 9, 9, 0.925);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-    cursor: pointer;
-    font-size: large;
+.view__more {
+  display: block;
+  position: relative;
+  right: 0;
+  background-color: rgba(255, 9, 9, 0.925);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  font-size: large;
 }
 
-.view__more:hover{
-    cursor: pointer;
-    background-color: rgb(150, 1, 1);
-    /* transform: translateY(-8px); */
+.view__more:hover {
+  cursor: pointer;
+  background-color: rgb(150, 1, 1);
+  /* transform: translateY(-8px); */
 }
-.slider__movies{
-    box-sizing: border-box;
-    display: flex;
-    overflow-y: auto;
-    overflow-x: scroll;
-    padding: 1rem 0rem 1rem 0rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    width: inherit;
-    align-items: center;
-    scroll-behavior: smooth;
-}
-
-.container{
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+.slider__movies {
+  box-sizing: border-box;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: scroll;
+  padding: 1rem 0rem 1rem 0rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: inherit;
+  align-items: center;
+  scroll-behavior: smooth;
 }
 
-.LeftbtnContainer{
-    position: absolute;
-    left: .5rem;
-    z-index: 30;
-    transform: rotate(-90deg);
-    
-}
-.RightbtnContainer{
-    /* display: flex; */
-    position: absolute;
-    right: .5rem;
-    z-index: 30;
-    transform: rotate(90deg);
+.container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
-.LeftbtnContainer, .RightbtnContainer{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all .3s ease;
+.LeftbtnContainer {
+  position: absolute;
+  left: 0.5rem;
+  z-index: 30;
+  transform: rotate(-90deg);
 }
-.LeftbtnContainer:hover{
-    transform: scale(1.2) rotate(-90deg) translateY(5px);
-}
-.RightbtnContainer:hover{
-    transform: scale(1.2) rotate(90deg) translateY(5px);
-}
-
-.LeftbtnContainer button, .RightbtnContainer button{
-    /* background-color: rgba(130, 118, 118, 0.445); */
-    background-color: transparent;
-    height: 2.3rem;
-    width: 2.3rem;
-    z-index: 3;
-    border-radius: 50%;
-    border: none;
-    transition: all .3 ease;
+.RightbtnContainer {
+  /* display: flex; */
+  position: absolute;
+  right: 0.5rem;
+  z-index: 30;
+  transform: rotate(90deg);
 }
 
-.LeftbtnContainer button:hover, .RightbtnContainer button:hover{
-    background-color: rgba(130, 118, 118, 0.599);
+.LeftbtnContainer,
+.RightbtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.LeftbtnContainer:hover {
+  transform: scale(1.2) rotate(-90deg) translateY(5px);
+}
+.RightbtnContainer:hover {
+  transform: scale(1.2) rotate(90deg) translateY(5px);
 }
 
-.slider{
-    padding-right: 0rem;
-}
-.slider__movies::-webkit-scrollbar{
-    display: none;
+.LeftbtnContainer button,
+.RightbtnContainer button {
+  /* background-color: rgba(130, 118, 118, 0.445); */
+  background-color: transparent;
+  height: 2.3rem;
+  width: 2.3rem;
+  z-index: 3;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3 ease;
 }
 
-.slider__title{
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-left: 3rem;
+.LeftbtnContainer button:hover,
+.RightbtnContainer button:hover {
+  background-color: rgba(130, 118, 118, 0.599);
+}
+
+.slider {
+  padding-right: 0rem;
+}
+.slider__movies::-webkit-scrollbar {
+  display: none;
+}
+
+.slider__title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 250px) {
-    .sliders{
-        margin-right: 0rem;
-        margin-left: 0rem;
-    }
+  .sliders {
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
 }
 
-@media screen and (max-width: 768px){
-    .slider__title{
-        margin-left: 1rem;
-    }
-    .LeftbtnContainer, .RightbtnContainer{
-        display: none;
-    }
-    .view__more{
-        padding: 0.5rem;
-        font-size: medium;
-        margin-right: 1rem;
-    }
+@media screen and (max-width: 768px) {
+  .slider__title {
+    margin-left: 1rem;
+  }
+  .LeftbtnContainer,
+  .RightbtnContainer {
+    display: none;
+  }
+  .view__more {
+    padding: 0.5rem;
+    font-size: medium;
+    margin-right: 1rem;
+  }
 }
 
 @media screen and (min-width: 426px) {
-    .sliders{
-        margin-right: 2rem;
-        margin-left: 2rem;
-    }
+  .sliders {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
 }

@@ -1,10 +1,10 @@
-.App{
-    width: 100%;
+.App {
+  width: 100%;
 }
-.homepage{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 100%;
-    /* z-index: 0; */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  /* z-index: 0; */
 }

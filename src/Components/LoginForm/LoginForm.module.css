@@ -1,102 +1,102 @@
-.login{
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
+.login {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }
 
-.wrapper{
-    width: 30rem;
-    background: rgba(255, 255, 255, 0.9);
-    color: black;
-    border-radius: 2rem;
-    padding: 3rem 3rem; 
-    box-shadow: -5px -5px 10px 0 rgba(0, 0, 0, 0.5);
+.wrapper {
+  width: 30rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 2rem;
+  padding: 3rem 3rem;
+  box-shadow: -5px -5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
-.wrapper h1{
-    font-size: 2.25rem;
-    text-align: center;
-    padding: 1.25rem;
+.wrapper h1 {
+  font-size: 2.25rem;
+  text-align: center;
+  padding: 1.25rem;
 }
 
-.wrapper .input-box{
-    position: relative;
-    width: 100%;
-    height: 3.12rem;
-    margin: 2rem 0;
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 3.12rem;
+  margin: 2rem 0;
 }
 
-.Oth{
-    display: flex;
-    justify-content: center;
-    height : 100%;
-    margin-top: 3%;
+.Oth {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin-top: 3%;
 }
 .signup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3%;
-    margin-bottom: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 4%;
 }
 
-.signup input{
-    display : flex;
-    justify-content: left;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    outline: none;
-    border: 0.125rem solid rgb(255, 255, 255, 0.2);
-    border-radius: .3125rem;
-    font-size: 1rem;
-    color: black;
-    padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
-    border-color: black;
+.signup input {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 0.125rem solid rgb(255, 255, 255, 0.2);
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  color: black;
+  padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
+  border-color: black;
 }
 
-.icon_box{
-    height : 100%;
-    /* width : 100% */
+.icon_box {
+  height: 100%;
+  /* width : 100% */
 }
 
-.eyeIcon{
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
+.eyeIcon {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
 }
 
-.input_box{
-    display: flex;
-    margin-top: 3%;
-    margin-bottom: 4%;
+.input_box {
+  display: flex;
+  margin-top: 3%;
+  margin-bottom: 4%;
 }
 
-.input_box{
-    border: 0.125rem solid black;
-    border-radius: .3125rem;
-    height: 100%;
+.input_box {
+  border: 0.125rem solid black;
+  border-radius: 0.3125rem;
+  height: 100%;
 }
 
-.input_box input{
-    display : flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    outline: none;
-    /* border: 0.125rem solid rgb(255, 255, 255, 0.2); */
-    border: none;
-    border-radius: .3125rem;
-    font-size: 1rem;
-    color: black;
-    padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
-    border-color: black;
-    /* margin-bottom: 10%;  */
+.input_box input {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  /* border: 0.125rem solid rgb(255, 255, 255, 0.2); */
+  border: none;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  color: black;
+  padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
+  border-color: black;
+  /* margin-bottom: 10%;  */
 }
 
 /* .input_box input::placeholder{
@@ -111,98 +111,114 @@
     font-size: 1rem;
 } */
 
-
-.remember-forgot label{
-    display: flex;
-
+.remember-forgot label {
+  display: flex;
 }
 
-.remember-forgot label input{
-    accent-color: black;
-    text-decoration: none;
-    margin-right: 0.4rem;
+.remember-forgot label input {
+  accent-color: black;
+  text-decoration: none;
+  margin-right: 0.4rem;
 }
 
-
-.remember-forgot a:hover{
-    text-decoration: underline;
+.remember-forgot a:hover {
+  text-decoration: underline;
 }
 
-.remember-forgot a{
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
+.remember-forgot a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.wrapper button{
-    width: 100%;
-    height: 2.8125rem;
-    background: rgba(255, 255, 255, 0.5 );
-    border: none;
-    outline: none;
-    border-radius: .3125rem;
-    box-shadow: 0 0 0.625rem rgb(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 1rem;
-    color: #333;
-    font-weight: 700;
-    border-color: black;
-    margin-bottom: 2rem;
+.wrapper button {
+  width: 100%;
+  height: 2.8125rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0 0.625rem rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 700;
+  border-color: black;
+  margin-bottom: 2rem;
 }
 
-
-.wrapper .register_link{
-    font-size: 1rem;
-    text-align: center;
-    margin: 1.25rem 0 0.9375rem;
-
+.wrapper .register_link {
+  font-size: 1rem;
+  text-align: center;
+  margin: 1.25rem 0 0.9375rem;
 }
 
 .register_link p a {
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.register_link p a:hover{
-    text-decoration: underline;
+.register_link p a:hover {
+  text-decoration: underline;
 }
 
-.OAuth{
-    display: flex;
-    accent-color: white;
-    justify-content: center;
+.OAuth {
+  display: flex;
+  accent-color: white;
+  justify-content: center;
 }
 
-.OAuth button{
-    width: 75%;
+.OAuth button {
+  width: 75%;
 }
 
-.Or{
-    margin-top: 1.25rem;
-    margin-bottom: 0.625rem;
-    display: flex;
-    justify-content: center;
+.Or {
+  margin-top: 1.25rem;
+  margin-bottom: 0.625rem;
+  display: flex;
+  justify-content: center;
 }
 
-.google{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.google {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-.google_icon{
-    margin-right: 0.625rem;
+.google_icon {
+  margin-right: 0.625rem;
 }
 
-@media only screen and (max-width: 900px){
-    .wrapper{
-        width: 20rem;
-        margin-top: 2rem;
-        padding: 1.73rem 1.73rem;
-
-    }
-    /* .wrapper{
+@media only screen and (max-width: 900px) {
+  .wrapper {
+    width: 20rem;
+    margin-top: 2rem;
+    padding: 1.73rem 1.73rem;
+  }
+  .wrapper h1{
+    font-size: 1.4rem;
+    padding: 0.722rem;
+  }
+  .wrapper button{
+      font-size: 0.rem;
+  }
+  .input-box input{
+      font-size: 0.9rem;
+  }
+  .Or{
+      font-size: 0.8rem;
+  }
+  .wrapper .register-link{
+      font-size: 0.7rem;
+      margin-top: 0.722rem;
+      margin-bottom: 0;
+  }
+  #error {
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+  }
+  /* .wrapper{
         margin-top: 50%;
         display: flex;
         justify-content: space-around;
@@ -235,7 +251,65 @@
     } */
 }
 
-#error{
-    font-size: 1rem;
-    margin-bottom: 1rem;
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: 90vw;
+    min-width: 300px;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .wrapper h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 0rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .wrapper button {
+    font-size: 0.8rem;
+    margin-bottom: 0rem;
+    height: 2rem;
+  }
+  .input-box input {
+    font-size: 0.9rem;
+  }
+  .Or {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+  }
+  .Oth{
+    font-size: 0.8rem;
+  }
+  .wrapper .register_link {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1.25rem 0 0 0;
+  }
+  #error {
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+  .signup input {
+    padding: 0.2rem;
+    border: 1px solid black;
+  }
+  .input_box input {
+    padding: 0.2rem;
+  }
+  .input_box{
+    border: 1px solid black;
+    height: 2rem;
+  }
+  .eyeIcon{
+    padding: 0 0.2rem 0 0;
+  }
+  input::placeholder{
+    font-size: 0.7rem;
+  }
+}
+
+#error {
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
