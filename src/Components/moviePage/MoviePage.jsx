@@ -220,13 +220,14 @@ const MoviePage = () => {
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
+          style={{backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}}
         >
           <div className={styles.title}>{movie?.title}</div>
         </div>
         <div
           className={styles.heroContainer}
           style={
-            (!smallScreen && movie)
+            !smallScreen && movie
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -234,7 +235,7 @@ const MoviePage = () => {
           <div className={styles.content}>
             {premium && <div className={styles.premium}>Included with premium</div>}
 
-            <div className="shadowBox">
+            <div className={styles.shadowBox}>
               <div className={styles.title}>{movie?.title}</div>
               <div className={styles.description} id="description">
                 {movie?.plot}
@@ -258,7 +259,7 @@ const MoviePage = () => {
                   <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
                 </span>
                 {/* <span>{props.info.duration}</span> */}
-                <span>{movie?.year}</span>
+                <span>{String(movie?.released).substring(0, 4)}</span>
               </span>
             </div>
             <div className={styles.genreList}>

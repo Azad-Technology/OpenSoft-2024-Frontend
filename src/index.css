@@ -14,63 +14,61 @@ body {
   overflow-x: hidden;
 }
 
-.vds-radio-hint{
+.vds-radio-hint {
   margin-left: auto;
 }
-.vds-menu-button-hint{
+.vds-menu-button-hint {
   margin-left: auto;
 }
-.vds-settings-menu-items{
-  margin: auto;
-} 
-.vds-menu-items{
+.vds-settings-menu-items {
   margin: auto;
 }
-.vds-slider-chapter{
+.vds-menu-items {
+  margin: auto;
+}
+.vds-slider-chapter {
   margin-top: 2%;
 }
-.vds-slider-thumb{
+.vds-slider-thumb {
   display: none;
 }
-.vds-controls-group{
+.vds-controls-group {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
-.vds-slider-chapters{
+.vds-slider-chapters {
   margin: auto;
   padding: auto;
 }
-.vds-radio-label{
+.vds-radio-label {
   margin-left: 1rem;
 }
-.vds-menu-button-label{
+.vds-menu-button-label {
   margin-left: 0.5rem;
 }
 
-
 @media screen and (max-width: 676px) {
-  .vds-time-group{
+  .vds-time-group {
     margin-bottom: -3%;
   }
-  .vds-fullscreen-button{
+  .vds-fullscreen-button {
     margin-bottom: -3%;
   }
 }
 @media screen and (max-width: 490px) {
-  .vds-time-group{
+  .vds-time-group {
     margin-bottom: -7%;
   }
-  .vds-fullscreen-button{
+  .vds-fullscreen-button {
     margin-bottom: -6%;
   }
 }
 @media screen and (max-width: 376px) {
-  .vds-time-group{
+  .vds-time-group {
     margin-bottom: -8%;
   }
-  .vds-fullscreen-button{
+  .vds-fullscreen-button {
     margin-bottom: -7%;
   }
 }
-

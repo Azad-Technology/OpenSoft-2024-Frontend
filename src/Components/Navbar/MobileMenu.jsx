@@ -44,7 +44,8 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMen
                 onClick={e => handleToggleDropdown(e, menuoption.name, menuoption.genreID)}
                 className={styles.mobileMenu__link}
                 key={index}
-                href={menuoption.link}>
+                href={menuoption.link}
+              >
                 {menuoption.name}
               </a>
               <div className={styles.mobileMenu__dropdown}>
@@ -56,7 +57,8 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMen
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}>
+                          href={dropdown.link}
+                        >
                           {dropdown.name}
                         </a>
                       );
@@ -70,7 +72,8 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMen
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}>
+                          href={dropdown.link}
+                        >
                           {dropdown.name}
                         </a>
                       );
@@ -84,7 +87,8 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMen
                           onClick={e => handleGenreClick(e, dropdown?.genreID)}
                           className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                           key={index}
-                          href={dropdown.link}>
+                          href={dropdown.link}
+                        >
                           {dropdown.name}
                         </a>
                       );
@@ -99,7 +103,8 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMen
                             onClick={e => handleGenreClick(e, dropdown?.genreID)}
                             className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                             key={index}
-                            href={dropdown.link}>
+                            href={dropdown.link}
+                          >
                             {dropdown.name}
                           </a>
                         );
@@ -115,7 +120,8 @@ export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMen
                             onClick={e => handleGenreClick(e, dropdown?.genreID)}
                             className={`${styles.mobileMenu__link} ${styles.dropdown}`}
                             key={index}
-                            href={dropdown.link}>
+                            href={dropdown.link}
+                          >
                             {dropdown.name}
                           </a>
                         );

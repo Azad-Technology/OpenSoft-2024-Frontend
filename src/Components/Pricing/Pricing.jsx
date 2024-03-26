@@ -9,8 +9,8 @@ function Pricing() {
   const [annually, setAnnually] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
   const [{token}, dispatch] = useStateValue();
-  const [isGold,setIsGold]=useState(false);
-  const [isSilver,setIsSilver]=useState(false);
+  const [isGold, setIsGold] = useState(false);
+  const [isSilver, setIsSilver] = useState(false);
   useEffect(() => {
     dispatch({
       type: "INITIALIZE_TOKEN",
@@ -28,16 +28,16 @@ function Pricing() {
             user: user.data,
           });
           //console.log(user.data.subtype);
-          if(user.data.subtype=='Gold'){
+          if (user.data.subtype == "Gold") {
             setIsGold(true);
           }
-          if(user.data.subtype=='Silver'){
+          if (user.data.subtype == "Silver") {
             setIsSilver(true);
           }
           //console.log(isGold,isSilver);
         } catch (err) {
           console.log(err);
-        } 
+        }
       };
       getUser();
     }
