@@ -79,7 +79,7 @@ const Card = ({movies, val, length, onClose}) => {
           // const class_name = genreModalStyles.modal_overlay;
           // console.log(genreModalStyles.modal_overlay);
         }}
-        className={`${styles.cards} ${styles.skeleton__cards} ${val === 0 ? `${styles.first__card}` : ""}`}
+        className={`${styles.cards} ${!movies && styles.skeleton__cards} ${val === 0 ? `${styles.first__card}` : ""}`}
         id={movies ? movies._id : ""}
         onMouseOver={handlehover}
       >
