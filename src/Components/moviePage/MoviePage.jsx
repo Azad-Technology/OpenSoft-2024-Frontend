@@ -314,7 +314,7 @@ const MoviePage = () => {
             </div>
             }
             {movie?.languages && <div className={styles.cell}>
-              <div className={styles.subHeading}>Audio Languages</div>
+              <div className={styles.subHeading}>Languages</div>
               <div className={styles.content}>{makeString(movie?.languages)}</div>
             </div>}
             {movie?.directors && <div className={styles.cell}>
