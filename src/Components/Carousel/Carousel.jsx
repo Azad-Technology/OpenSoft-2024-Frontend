@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useCallback} from "react";
 import "./Carousel.css";
 import {movies} from "./data";
 import {useNavigate} from "react-router";
