@@ -23,7 +23,7 @@
   cursor: pointer;
   box-shadow: 0 0.25rem 0.3rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  transform-origin: left;
+  transform-origin: var(--val);
 }
 .cards:hover {
   /* position: absolute; */
