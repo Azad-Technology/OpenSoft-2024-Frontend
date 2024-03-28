@@ -2,7 +2,7 @@ import React from "react";
 import {GoogleLogin} from "react-google-login";
 import {useStateValue} from "../../MyContexts/StateProvider";
 import instance from "../../axios";
-
+import styles from "./LoginForm.module.css"
 const clientID = "950287933882-5bvrs6br7a5ubeb1l2m8di6vgjgu7sco.apps.googleusercontent.com";
 
 export const GoogleLoginButton = () => {
@@ -35,5 +35,5 @@ export const GoogleLoginButton = () => {
     console.log(response);
   };
 
-  return <GoogleLogin clientId={clientID} buttonText="Login with Google" onSuccess={onSuccess} onFailure={onFailure} />;
+  return <GoogleLogin clientId={clientID} buttonText="Login with Google" onSuccess={onSuccess} onFailure={onFailure} className={styles.GoogleLogin}/>;
 };
