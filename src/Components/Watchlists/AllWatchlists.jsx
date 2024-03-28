@@ -28,7 +28,7 @@ export const AllWatchlists = () => {
             <div className={styles.container}>
               <div className={styles.slider__movies} ref={scrollableDivRef}>
                 {watchlists.map((watchlist, index) => (
-                  <WatchListCards key={index} name={watchlist.name} id={watchlist._id} />
+                  <WatchListCards key={index} isOdd={index%2} name={watchlist.name} id={watchlist._id} />
                 ))}
               </div>
             </div>

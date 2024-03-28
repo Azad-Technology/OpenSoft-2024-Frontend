@@ -5,8 +5,9 @@
   flex-shrink: 0;
   height: 10rem;
   width: 15rem;
-  border-radius: .4rem;
-  background-color: #6b69690f;
+  border-radius: 0 .4rem .4rem 0;
+  /* background-color: #a49d9d36; */
+  background-image: linear-gradient(to right, #201f1f, #8a898976);
   padding: 1rem;
   cursor: pointer;
   z-index: 1;
@@ -45,6 +46,7 @@
   width: 15rem;
   transition: all 0.3s ease;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+  border-left: 4px solid rgba(255, 5, 5, 0.569);
 }
 
 .nothingToShow {
@@ -66,7 +68,7 @@
   display: flex;
   overflow-y: auto;
   overflow-x: scroll;
-  padding: 1rem 10rem 1rem 2rem;
+  padding: 1rem 10rem 1rem 0rem;
   margin: 0 -20px 0px 0px;
   -ms-overflow-style: none;
   scrollbar-width: none;
