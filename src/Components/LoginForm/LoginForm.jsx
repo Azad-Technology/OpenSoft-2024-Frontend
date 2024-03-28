@@ -20,6 +20,7 @@ function LoginForm({register, setShowPopup}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isGoogle, setIsGoogle] = useState(false);
+  const [googleWindow, setGoogleWindow] = useState(null);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -74,7 +75,11 @@ function LoginForm({register, setShowPopup}) {
       const response = await instance.get("/login/google");
       console.log(response.data);
       // setIsGoogle(true);
-      window.open(response.data.url, "_blank");
+      let newWindow = window.open(response.data.url, "name", "height=600,width=450");
+      setGoogleWindow(newWindow);
+      console.log(newWindow);
+      if (window.focus) newWindow.focus();
+      setIsGoogle(true);
     } catch (error) {
       // console.log(error);
       setErrors(error.response.data.detail);
@@ -90,7 +95,7 @@ function LoginForm({register, setShowPopup}) {
   return (
     <div className={styles.login}>
       {showPopup2 && <RejectedPopup message={err} />}
-      {isGoogle && <GoogleCallback setIsGoogle={setIsGoogle} />}
+      {isGoogle && <GoogleCallback setIsGoogle={setIsGoogle} googleWindow={googleWindow} />}
       {!isGoogle && (
         <div className={styles.wrapper}>
           <form action="">

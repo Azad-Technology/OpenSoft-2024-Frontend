@@ -56,12 +56,12 @@ const SearchPage = () => {
       const response = await axios.post("https://embed.popkorn.tech/fts_search_filter", {
         query: searchTerm,
         genre: genreSelections.join(","),
-        language: languageSelections.join(",")
-      });     
+        language: languageSelections.join(","),
+      });
       // setMovies(response.data);
-      setFuzzy(response.data)
+      setFuzzy(response.data);
     } catch (error) {
-      setFuzzy([])
+      setFuzzy([]);
       console.error("Error fetching movies:", error);
     }
   }, [genreSelections, languageSelections]);

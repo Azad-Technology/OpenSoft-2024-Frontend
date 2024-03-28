@@ -60,11 +60,6 @@
   color: hsla(250, 2%, 59%, 1);
 }
 
-.carousel__ratings {
-  background-color: gray;
-  color: aquamarine;
-}
-
 .carousel__sideslide {
   position: absolute;
   z-index: 15;
@@ -83,17 +78,17 @@
   display: none;
   position: absolute;
   margin-top: 1.5rem;
-  background-color: rgba(255, 9, 9, 0.925);
-  color: white;
+  background-color: rgb(255, 254, 62, 1);
+  color: #332b50;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   padding: 0.75rem;
   cursor: pointer;
   z-index: 20;
   font-size: large;
 }
 .carousel__button:hover {
-  background-color: rgba(255, 9, 9, 0.7);
+  background-color: #cccc00;
 }
 
 .carousel__sideslide::-webkit-scrollbar {
