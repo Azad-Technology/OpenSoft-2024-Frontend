@@ -49,7 +49,7 @@ export const Slider = ({genre, id}) => {
     }
     const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
     setMovies(response.data);
-  },[genre, id, token] );
+  }, [genre, id, token]);
   useEffect(() => {
     getData();
   }, [getData]);

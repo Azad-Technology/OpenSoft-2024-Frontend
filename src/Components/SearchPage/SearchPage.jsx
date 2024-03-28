@@ -91,9 +91,7 @@ const SearchPage = () => {
       </div>
       {fuzzy && (
         <div className={styles.results_container}>
-          {fuzzy.map((movie, index) => (
-            movie.poster_path!==undefined && <Card key={index} movies={movie} />
-          ))}
+          {fuzzy.map((movie, index) => movie.poster_path !== undefined && <Card key={index} movies={movie} />)}
         </div>
       )}
       {!fuzzy && (

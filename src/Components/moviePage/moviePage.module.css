@@ -12,7 +12,6 @@
   font-weight: 400;
   font-style: normal; */
   background-color: rgb(31, 12, 25);
-  
 }
 
 /* hero small screen */
@@ -355,9 +354,9 @@
     font-size: 1.1rem;
   }
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .font {
-    margin-top: 4rem; 
+    margin-top: 4rem;
   }
 }
 
@@ -441,22 +440,22 @@
   padding: 2rem 0 9rem 0;
 }
 
-.fullplot{
+.fullplot {
   margin-left: 1rem;
   width: 50%;
   height: 100%;
 }
 
- .heading {
+.heading {
   color: #fffe3e;
   font-weight: bold;
   margin: 1rem auto 0rem 1rem;
-  top:0;
+  top: 0;
   left: 0;
   font-size: 2rem;
 }
 
- .container {
+.container {
   position: absolute;
   right: 0;
   width: 40%;
@@ -467,23 +466,23 @@
   /* height: 100%; */
 }
 
-.popupIcon{
+.popupIcon {
   height: 0.75rem;
   width: 0.75rem;
 }
 
- .cell {
+.cell {
   gap: 1rem;
 }
 
- .subHeading {
+.subHeading {
   margin-bottom: 0.5rem;
   color: white;
   font-weight: bold;
   font-size: 1.25rem;
 }
 
- .content {
+.content {
   color: #c2b8b8;
 }
 
@@ -511,15 +510,15 @@
   .heading {
     font-size: 1.3rem;
   }
-  .movieInfo{
+  .movieInfo {
     flex-direction: column;
     padding-right: 1rem;
   }
-  .fullplot{
+  .fullplot {
     width: 100%;
     margin-bottom: 1rem;
   }
-  .container{
+  .container {
     position: relative;
     right: auto;
     width: 100%;
@@ -532,4 +531,3 @@
         max-width:none;
     } */
 }
-

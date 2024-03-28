@@ -15,7 +15,7 @@ const LoginExpired = () => {
         <div
           className={styles.LoginExpired}
           onClick={() => {
-            navigate("/login",{replace:true});
+            navigate("/login", {replace: true});
           }}
         >
           Log In
