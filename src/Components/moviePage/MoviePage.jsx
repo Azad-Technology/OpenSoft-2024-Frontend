@@ -1,23 +1,23 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import styles from "./moviePage.module.css";
-import {useState} from "react";
+import { useState } from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider} from "@vidstack/react";
-import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
+import { MediaPlayer, MediaProvider } from "@vidstack/react";
+import { defaultLayoutIcons, DefaultVideoLayout } from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
-import {useStateValue} from "../../MyContexts/StateProvider";
-import {useNavigate} from "react-router-dom";
+import { useStateValue } from "../../MyContexts/StateProvider";
+import { useNavigate } from "react-router-dom";
 import watchlistoff from "./../../assets/watchlistoff.svg";
 import Loader from "./../Loader/Loader.jsx";
 import WatchListModal from "./WatchListModal.jsx";
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
 
-function Modal({onClose}) {
+function Modal({ onClose }) {
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal}>
@@ -46,7 +46,7 @@ function Modal({onClose}) {
 const MoviePage = () => {
   const [premium, setPremium] = useState(true);
 
-  const [{token, user}, dispatch] = useStateValue();
+  const [{ token, user }, dispatch] = useStateValue();
 
   //Genre Modals
   const [selectedGenre, setSelectedGenre] = useState(null);
@@ -60,7 +60,7 @@ const MoviePage = () => {
   const navigate = useNavigate();
   const [showWatchListModal, setShowWatchListModal] = useState(false);
 
-  const {id} = useParams();
+  const { id } = useParams();
   // const {com} = useParams();
   const [comments, setComments] = useState(null);
   const [movie, setMovie] = useState(null);
@@ -93,7 +93,7 @@ const MoviePage = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [showLess, setShowLess] = useState(false);
   const [showMoreInfo, setShowMoreInfo] = useState(false);
-  const [smallScreen, setSmallScreen] = useState(false);
+  const [smallScreen, setSmallScreen] = useState(window.innerWidth <= 550);
 
   // functions
 
@@ -167,9 +167,9 @@ const MoviePage = () => {
         },
       });
       if (!like) {
-        dispatch({type: "ADD_FAV", movie: movie});
+        dispatch({ type: "ADD_FAV", movie: movie });
       } else {
-        dispatch({type: "REM_FAV", movie: movie});
+        dispatch({ type: "REM_FAV", movie: movie });
       }
     } catch (err) {
       console.log(err);
@@ -179,11 +179,6 @@ const MoviePage = () => {
   useEffect(() => {
     setlike(user?.fav.some(movies => movies?._id === movie?._id));
   }, [movie, user]);
-
-  //     // event listeners
-
-  //     window.addEventListener("resize", screenSizeChanged);
-  //     window.addEventListener("load", screenSizeChanged);
 
   window.addEventListener("resize", () => {
     setSmallScreen(window.innerWidth <= 550);
@@ -220,16 +215,16 @@ const MoviePage = () => {
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
-          style={{backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}}
+          style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` }}
         >
           <div className={styles.title}>{movie?.title}</div>
         </div>
         <div
           className={styles.heroContainer}
           style={
-            !smallScreen && movie
-              ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
-              : {backgroundImage: "none"}
+            (!smallScreen && movie)
+              ? { backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` }
+              : { backgroundImage: "none" }
           }
         >
           <div className={styles.content}>
