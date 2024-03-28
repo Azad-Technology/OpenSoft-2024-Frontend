@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState, useRef, useCallback} from "react";
 import styles from "./HomeSliders.module.css";
 import Card from "../Card/Card.jsx";
 import instance from "../../axios.jsx";
@@ -11,48 +11,48 @@ export const Slider = ({genre, id}) => {
   const [movies, setMovies] = useState(null);
   const [{token}, dispatch] = useStateValue();
 
-  useEffect(() => {
-    const getData = async () => {
-      if (genre === "Handpicked") {
-        const response = await instance.request("/recommend", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setMovies(response.data);
-        return;
-      }
-      if (genre === "Popular in your region") {
-        const response = await instance.get(`my_country/?count=18`);
-        setMovies(response.data);
-        return;
-      }
-      if (genre === "More Like This") {
-        const response = await instance.get("/movies/" + id + "/related_movies/?count=18");
-        setMovies(response.data);
-        return;
-      }
-      if (genre === "Top Movies") {
-        const response = await instance.get("/top_movies/?count=10");
-        setMovies(response.data);
-        return;
-      }
-      if (genre === "Top Series") {
-        const response = await instance.get("/top_series/?count=10");
-        setMovies(response.data);
-        return;
-      }
-      if (genre === "Recent") {
-        const response = await instance.get("/recent_movies/?count=18");
-        setMovies(response.data);
-        return;
-      }
-      const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+  const getData = useCallback(async () => {
+    if (genre === "Handpicked") {
+      const response = await instance.request("/recommend", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setMovies(response.data);
-    };
-    getData();
+      return;
+    }
+    if (genre === "Popular in your region") {
+      const response = await instance.get(`my_country/?count=18`);
+      setMovies(response.data);
+      return;
+    }
+    if (genre === "More Like This") {
+      const response = await instance.get("/movies/" + id + "/related_movies/?count=18");
+      setMovies(response.data);
+      return;
+    }
+    if (genre === "Top Movies") {
+      const response = await instance.get("/top_movies/?count=10");
+      setMovies(response.data);
+      return;
+    }
+    if (genre === "Top Series") {
+      const response = await instance.get("/top_series/?count=10");
+      setMovies(response.data);
+      return;
+    }
+    if (genre === "Recent") {
+      const response = await instance.get("/recent_movies/?count=18");
+      setMovies(response.data);
+      return;
+    }
+    const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+    setMovies(response.data);
   }, [genre, id, token]);
+  useEffect(() => {
+    getData();
+  }, [getData]);
 
   const [showLeftBtn, setShowLeftBtn] = useState(false);
   const [showRightBtn, setShowRightBtn] = useState(true);
