@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import CustomDropdown from "./CustomDropdown.jsx";
 import axios from "axios";
 import styles from "./CustomDropdown.module.css";
@@ -12,38 +12,29 @@ const SearchPage = () => {
 
   const [fuzzy, setFuzzy] = useState(null);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.post("https://embed.popkorn.tech/rrf", {
-          query: searchTerm,
-          arg: "*",
-        });
-        setFuzzy(response.data);
-      } catch (error) {
-        setFuzzy([]);
-        console.error("Error fetching movies:", error);
-      }
-    };
-    getData();
+  const getData = useCallback(async () => {
+    try {
+      const response = await axios.post("https://embed.popkorn.tech/rrf", {
+        query: searchTerm,
+      });
+      setFuzzy(response.data);
+    } catch (error) {
+      setFuzzy([]);
+      console.error("Error fetching movies:", error);
+    }
   }, [searchTerm]);
+  useEffect(() => {
+    getData();
+  }, [getData]);
 
   const [movies, setMovies] = useState([]);
   const [genreSelections, setGenreSelections] = useState([]);
-  const [yearSelections, setYearSelections] = useState([]);
   const [languageSelections, setLanguageSelections] = useState([]);
   const genreOptions = [
     {label: "Action", value: "action"},
     {label: "Comedy", value: "comedy"},
     {label: "Sci-Fi", value: "sci-fi"},
     // ... add more genres
-  ];
-
-  const yearOptions = [
-    {label: "2023", value: "2023"},
-    {label: "2022", value: "2022"},
-    {label: "2021", value: "2021"},
-    // ... add more years
   ];
 
   const languageOptions = [
@@ -54,23 +45,29 @@ const SearchPage = () => {
   ];
   // State to store fetched movies
 
-  const fetchMovies = async () => {
+  const fetchMovies = useCallback(async () => {
     const filters = {
+      query: searchTerm,
       genre: genreSelections.join(","),
-      year: yearSelections.join(","),
       language: languageSelections.join(","),
     };
 
     try {
-      const response = await axios.get("/api/movies", {params: filters});
-      setMovies(response.data);
+      const response = await axios.post("https://embed.popkorn.tech/fts_search_filter", {
+        query: searchTerm,
+        genre: genreSelections.join(","),
+        language: languageSelections.join(","),
+      });
+      // setMovies(response.data);
+      setFuzzy(response.data);
     } catch (error) {
+      setFuzzy([]);
       console.error("Error fetching movies:", error);
     }
-  };
+  }, [genreSelections, languageSelections]);
   useEffect(() => {
     fetchMovies();
-  }, [genreSelections, yearSelections, languageSelections]);
+  }, [fetchMovies]);
 
   return (
     <div className={styles.maincontentwrapper}>
@@ -81,13 +78,6 @@ const SearchPage = () => {
           options={genreOptions}
           selectedItems={genreSelections}
           updateSelectedItems={setGenreSelections}
-        />
-        <CustomDropdown
-          key="year-dropdown"
-          label="Year"
-          options={yearOptions}
-          selectedItems={yearSelections}
-          updateSelectedItems={setYearSelections}
         />
         <CustomDropdown
           key="language-dropdown"

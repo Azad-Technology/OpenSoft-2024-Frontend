@@ -1,7 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "./GoogleCallback.module.css";
 
-export const GoogleCallback = setIsGoogle => {
+export const GoogleCallback = (setIsGoogle, googleWindow) => {
+  const checkAuth = () => {
+    if (googleWindow.location.href.includes("opensoft.eastasia.cloudapp.azure.com")) {
+      let accessToken = googleWindow.document.body.innerHTML;
+      console.log(accessToken);
+    }
+  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      checkAuth();
+    });
+    return () => clearInterval(interval);
+  });
   return (
     <div className={styles.contain}>
       <div className={styles.container}>

@@ -148,7 +148,7 @@ export const HomeSliders = () => {
 
   return (
     <div className={styles.sliders}>
-      {token && token != undefined && token != "null" && token != "undefined" && token != "" && (
+      {token && token !== "null" && token !== undefined && token !== "undefined" && token !== "" && (
         <div className={styles.slider_container}>
           <div className={styles.slider__header}>
             <div className={styles.slider__title}>Handpicked for You</div>
