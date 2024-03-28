@@ -360,7 +360,7 @@
     gap: 0.5rem;
   }
 
-  .heroContainer::before{
+  .heroContainer::before {
     z-index: -1;
   }
 

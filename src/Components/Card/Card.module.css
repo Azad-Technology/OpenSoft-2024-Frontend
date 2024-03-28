@@ -112,15 +112,21 @@
   display: block;
 }
 .icon {
+  /* border: 2px solid red; */
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 2%;
   left: 5%;
   z-index: 3;
-  height: 9%;
-  width: 14%;
+  /* height: 14%; */
+  width: 18%;
+  aspect-ratio: 1/1;
   background-color: rgba(0, 0, 0, 0.5);
-  padding-top: 0.2rem;
-  padding-left: 0.18rem;
+  /* padding-top: 0.2rem;
+  padding-left: 0.18rem; */
+  padding: 0.2rem;
   border-radius: 5rem;
 }
 .premium {

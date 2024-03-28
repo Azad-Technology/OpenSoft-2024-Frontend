@@ -74,7 +74,7 @@ const Card = ({movies, val, length, onClose}) => {
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
       <div
         onClick={() => {
-          // onClose();
+          onClose();
           navigate(`/movie/${movies?._id}`);
           // const class_name = genreModalStyles.modal_overlay;
           // console.log(genreModalStyles.modal_overlay);
