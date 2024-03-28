@@ -34,7 +34,7 @@ function SignUp({setShowPopup}) {
       else {
         if (confPass === newPass) {
           setErrors("");
-          const username = "";
+          let username = "";
           if (name.length) username = name;
           else username = usernamegenerator();
           try {
