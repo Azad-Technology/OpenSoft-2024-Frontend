@@ -16,6 +16,7 @@ body {
 }
 button {
   font-family: "Jost", sans-serif;
+  font-weight: bold;
 }
 
 .vds-radio-hint {
