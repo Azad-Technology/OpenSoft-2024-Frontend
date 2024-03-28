@@ -228,12 +228,15 @@
 }
 
 .nothingToShow {
-  margin: 0.5rem 0 0.8rem 1.8rem;
+  /* margin: 0.5rem 0 0.8rem 2rem; */
   color: #6c757d;
   font-size: 1.3rem;
-  margin-top: 0.5rem;
-  margin-left: 1.8rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
+
+
 
 @media screen and (max-width: 800px) {
   .maincontainer {
@@ -340,3 +343,4 @@
   background-color: #e42b2b;
   transition: 0.2s;
 }
+
