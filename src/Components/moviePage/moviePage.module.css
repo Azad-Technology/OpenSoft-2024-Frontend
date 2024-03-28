@@ -11,7 +11,7 @@
   /* font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal; */
-  background-color: black;
+  background-color: rgb(31, 12, 25);
 }
 
 /* hero small screen */
@@ -140,6 +140,30 @@
   background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
 }
 
+/* 
+  .shadowBox::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    filter: blur(1rem);
+    transform: rotate(-30deg);
+  }
+  
+  .shadowBox::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgb(209, 203, 203) 50%, transparent);
+    mix-blend-mode: overlay;
+  }
+   */
+
 /* .heroContainer .button{
     z-index: 2;
 } */
@@ -201,7 +225,8 @@
 }
 
 .heroContainer .description {
-  width: 55%;
+  min-width: 55%;
+  max-width: 65%;
   font-size: 1.2rem;
   font-weight: 400;
   text-align: left;
@@ -215,8 +240,8 @@
 .modalbutton {
   display: block;
   position: relative;
-  background-color: rgba(255, 9, 9, 0.925);
-  color: white;
+  background-color: #fffe3e;
+  color: rgb(31, 12, 25);
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -226,7 +251,7 @@
 
 .modalbutton:hover {
   cursor: pointer;
-  background-color: rgb(157, 5, 5);
+  background-color: #cccc00;
 }
 
 .watchlisticon {
@@ -323,7 +348,7 @@
 
 @media screen and (max-width: 840px) {
   .heroContainer .description {
-    width: 70%;
+    min-width: 70%;
     font-size: 1.1rem;
   }
 }
@@ -333,6 +358,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .heroContainer::before{
+    z-index: -1;
   }
 
   .heroSmall {
@@ -396,11 +425,12 @@
 /* movie-info */
 
 .movieInfo {
-  background-color: black;
+  background-color: rgb(31, 12, 25);
 }
 
 .movieInfo .heading {
-  color: white;
+  color: #fffe3e;
+  font-weight: bold;
   margin: 1rem auto auto 1rem;
   font-size: 1.5rem;
 }

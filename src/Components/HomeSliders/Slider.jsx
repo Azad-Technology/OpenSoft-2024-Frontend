@@ -96,7 +96,7 @@ export const Slider = ({genre, id}) => {
               {showLeftBtn && (
                 <button onClick={handleLeftScroll}>
                   <svg
-                    fill="#cf0a0a"
+                    fill="#CCAA00"
                     height="25px"
                     width="25px"
                     version="1.1"
@@ -126,7 +126,7 @@ export const Slider = ({genre, id}) => {
               {showRightBtn && (
                 <button onClick={handleRightScroll}>
                   <svg
-                    fill="#cf0a0a"
+                    fill="#CCAA00"
                     height="25px"
                     width="25px"
                     version="1.1"

@@ -8,6 +8,7 @@ import {MdEmail} from "react-icons/md";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import RejectedPopup from "../LoginAcceptedRejected/rejectedLogin";
+import usernamegenerator from "./usernamegenerator.jsx";
 
 function SignUp({setShowPopup}) {
   const [{token, premium}, dispatch] = useStateValue();
@@ -15,6 +16,7 @@ function SignUp({setShowPopup}) {
   const [isPasswordVisible1, setisPasswordVisible1] = useState(false);
   const [isPasswordVisible2, setisPasswordVisible2] = useState(false);
   const [err, setErrors] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPopup2, setShowPopup2] = useState(false);
@@ -32,11 +34,14 @@ function SignUp({setShowPopup}) {
       else {
         if (confPass === newPass) {
           setErrors("");
+          let username = "";
+          if (name.length) username = name;
+          else username = usernamegenerator();
           try {
             const response = await instance.post(
               "/signup",
               {
-                name: "Dummy",
+                name: username,
                 email: email,
                 password: password,
               },
@@ -103,12 +108,12 @@ function SignUp({setShowPopup}) {
 
           <hr className={styles.Or} />
 
-          {/* <div className={styles.text}>Full Name</div>
+          <div className={styles.text}>Full Name</div>
 
-        <div className={styles.inputBox}>
-            <input type="text" id='name'required />
-            <FaUser style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}/>
-        </div> */}
+          <div className={styles.inputBox}>
+            <input type="text" id="name" value={name} onChange={e => setName(e.target.value)} />
+            <FaUser style={{width: "1.25rem", height: "1.25rem"}} className={styles.icon} />
+          </div>
 
           <div className={styles.text}>
             Email<div className={styles.star}>*</div>

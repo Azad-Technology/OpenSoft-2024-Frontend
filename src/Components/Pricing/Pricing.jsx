@@ -73,7 +73,7 @@ function Pricing() {
             className={`${styles.pricingCard} ${isHovered === 1 ? styles.featured : ""}`}
             onMouseEnter={() => setIsHovered(1)}
             onMouseLeave={() => setIsHovered(null)}
-            >
+          >
             <h2>Silver</h2>
             <h3>
               <span>₹</span> 50
@@ -81,7 +81,7 @@ function Pricing() {
             <Link
               target="_blank"
               to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"
-              >
+            >
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>
 

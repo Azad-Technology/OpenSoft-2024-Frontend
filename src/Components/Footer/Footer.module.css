@@ -5,7 +5,7 @@
   grid-template-rows: auto 1fr auto;
   font-size: 1rem;
   align-items: start;
-  background-color: black;
+  background-color: #3b172f;
   width: 100%;
   position: relative;
 }
@@ -48,8 +48,9 @@
 }
 
 .nav__title {
-  font-weight: 400;
+  font-weight: bold;
   font-size: 1rem;
+  color: #fffe3e;
 }
 
 .footer address {

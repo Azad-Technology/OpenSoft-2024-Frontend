@@ -234,7 +234,7 @@ const Profile = () => {
               </div>
             </div>
 
-            {!user?.subtype === "Basic" ? (
+            {/* {!user?.subtype === "Basic" ? (
               <div></div>
             ) : (
               <div className={styles.row}>
@@ -245,7 +245,7 @@ const Profile = () => {
                   <p className={styles.details}>UPI hai bhai</p>
                 </div>
               </div>
-            )}
+            )} */}
 
             <div className={styles.row}>
               <div className={styles.col_sm_3}>

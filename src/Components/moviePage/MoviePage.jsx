@@ -83,7 +83,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const getCommentData = async () => {
-      const response = await instance.get(`/movies/${id}/comments`);
+      const response = await instance.get(`/movies/${id}/comments/?count=10`);
       console.log(response.data);
       setComments(response.data);
     };
