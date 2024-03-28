@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import CommentCard from "./CommentCard";
 import styles from "./CommentCard.module.css";
 //import axios from "../../axios.jsx";
@@ -7,15 +7,15 @@ function CommentCards() {
   const [commentsData, setCommentsData] = useState([]);
   const [isError, setIsError] = useState(false);
 
+  const getCommentsData = useCallback(async () => {
+    try {
+      const response = await instance.get("/recent_comments/?count=5");
+      setCommentsData(response.data);
+    } catch (error) {
+      setIsError(true);
+    }
+  }, []);
   useEffect(() => {
-    const getCommentsData = async () => {
-      try {
-        const response = await instance.get("/recent_comments/?count=5");
-        setCommentsData(response.data);
-      } catch (error) {
-        setIsError(true);
-      }
-    };
     getCommentsData();
   }, []);
 
