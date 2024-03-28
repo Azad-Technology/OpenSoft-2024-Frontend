@@ -29,7 +29,7 @@ function Footer() {
 
               <ul className={styles.nav__ul}>
                 <li>
-                  <a onClick={() => handleClick("Recent")}>Movies</a>
+                  <a onClick={() => handleClick("Recent")}>Recent</a>
                 </li>
 
                 <li>
@@ -51,11 +51,11 @@ function Footer() {
                 </li>
 
                 <li>
-                  <a onClick={() => handleClick("Top Movies")}>10 Movies</a>
+                  <a onClick={() => handleClick("Top Movies")}>Movies</a>
                 </li>
 
                 <li>
-                  <a onClick={() => handleClick("Top Series")}>10 TV Shows</a>
+                  <a onClick={() => handleClick("Top Series")}>Series</a>
                 </li>
                 {/* 
                             <li>
