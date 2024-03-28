@@ -36,23 +36,22 @@ function Modal({onClose, genre, id}) {
     };
     getData();
   }, []);
-    const modalRef = useRef(null);
-    useEffect(()=>{
-      if(modalRef.current){
-        modalRef.current.addEventListener("click", (event)=>{
-          if(event.target.id=="overlay" || event.target.id=="genre"){
-            onClose();
-          }
-        })
-      }
-    }, [genre]);
-
-  
-
+  const modalRef = useRef(null);
+  useEffect(() => {
+    if (modalRef.current) {
+      modalRef.current.addEventListener("click", event => {
+        if (event.target.id == "overlay" || event.target.id == "genre") {
+          onClose();
+        }
+      });
+    }
+  }, [genre]);
 
   return (
     <div className={styles.modal_overlay} id="overlay" ref={modalRef}>
-      <div className={styles.heading} id="genre">{genre}</div>
+      <div className={styles.heading} id="genre">
+        {genre}
+      </div>
       <div className={styles.modal}>
         <div className={styles.movieList}>
           {movies ? <MovieModalList movie={movies} onClose={onClose} /> : <Loader />}
@@ -67,7 +66,6 @@ function Modal({onClose, genre, id}) {
 }
 
 const GenreModal = ({genre, id, onClose}) => {
-
   return (
     <div>
       <Modal onClose={onClose} genre={genre} id={id} />

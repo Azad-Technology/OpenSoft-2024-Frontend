@@ -147,6 +147,7 @@
   margin-top: 2rex;
   flex: 1;
   height: 75%;
+  overflow: hidden;
   width: 100%;
   position: relative;
   align-items: center;
@@ -154,12 +155,11 @@
 
 .cardComment {
   margin: 0.3125rem 0;
+  font-size: 1rem;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: 1rem;
-  height: 80%;
 }
 
 .cardMovie {
@@ -168,6 +168,7 @@
   text-decoration: underline;
   transition: color 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
   width: 100%;
+  height: 22%;
   bottom: 8%;
   text-align: center;
   font-weight: bold;
