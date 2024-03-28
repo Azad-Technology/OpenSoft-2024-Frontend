@@ -49,7 +49,7 @@ const SearchPage = () => {
     try {
       const response = await axios.post("https://embed.popkorn.tech/fts_search_filter", {
         query: searchTerm,
-        genre: genreSelections.join(","),
+        genre: genreSelections,
         language: languageSelections.join(","),
       });
       // setMovies(response.data);
