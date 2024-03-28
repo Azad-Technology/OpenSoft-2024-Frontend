@@ -9,8 +9,8 @@ function Pricing() {
   const [annually, setAnnually] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
   const [{token}, dispatch] = useStateValue();
-  const [isGold,setIsGold]=useState(false);
-  const [isSilver,setIsSilver]=useState(false);
+  const [isGold, setIsGold] = useState(false);
+  const [isSilver, setIsSilver] = useState(false);
   useEffect(() => {
     dispatch({
       type: "INITIALIZE_TOKEN",
@@ -28,16 +28,16 @@ function Pricing() {
             user: user.data,
           });
           //console.log(user.data.subtype);
-          if(user.data.subtype=='Gold'){
+          if (user.data.subtype == "Gold") {
             setIsGold(true);
           }
-          if(user.data.subtype=='Silver'){
+          if (user.data.subtype == "Silver") {
             setIsSilver(true);
           }
           //console.log(isGold,isSilver);
         } catch (err) {
           console.log(err);
-        } 
+        }
       };
       getUser();
     }
@@ -66,7 +66,6 @@ function Pricing() {
               <li>Quality upto 480p</li>
               <li>Add up to 10 favorites</li>
               <li>Make up to 1 watchlist</li>
-              <li>Customizable user profile</li>
             </ul>
           </article>
 
@@ -79,20 +78,12 @@ function Pricing() {
             <h3>
               <span>₹</span> 50
             </h3>
-            {isSilver ? (
-              <button className={styles.pricingCard_button_purchased}>
-                <p>Your Current Plan</p>
-              </button>
-            ) : (
-              <Link
-                target="_blank"
-                to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1"
-              >
-                <button className={styles.pricingCard_button}>
-                  <p>Purchase</p>
-                </button>
-              </Link>
-            )}
+            <Link
+              target="_blank"
+              to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"
+            >
+              <button className={styles.pricingCard_button}>Purchase</button>
+            </Link>
 
             <ul>
               <li>Get access to Premium Movies</li>
@@ -101,6 +92,7 @@ function Pricing() {
               <li>Unlimited favorites</li>
               <li>Continue Watching where you left off</li>
               <li>Picture in Picture mode</li>
+              <li>Customizable user profile</li>
             </ul>
           </article>
 
@@ -113,20 +105,12 @@ function Pricing() {
             <h3>
               <span>₹</span> 100
             </h3>
-            {isGold ? (
-              <button className={styles.pricingCard_button_purchased}>
-                <p>Your Current Plan</p>
-              </button>
-            ) : (
-              <Link
-                target="_blank"
-                to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1"
-              >
-                <button className={styles.pricingCard_button}>
-                  <p>Purchase</p>
-                </button>
-              </Link>
-            )}
+            <Link
+              target="_blank"
+              to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1"
+            >
+              <button className={styles.pricingCard_button}>Purchase</button>
+            </Link>
             <ul>
               <li>Get access to Premium Movies</li>
               <li>Quality upto 1080p</li>

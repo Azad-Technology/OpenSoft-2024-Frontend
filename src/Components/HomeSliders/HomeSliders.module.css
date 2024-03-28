@@ -8,10 +8,10 @@
   display: block;
   position: relative;
   right: 0;
-  background-color: rgba(255, 9, 9, 0.925);
-  color: white;
+  background-color: #fffe3e;
+  color: #332b50;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   padding: 0.75rem;
   cursor: pointer;
   font-size: large;
@@ -19,7 +19,7 @@
 
 .view__more:hover {
   cursor: pointer;
-  background-color: rgb(150, 1, 1);
+  background-color: #cccc00;
   /* transform: translateY(-8px); */
 }
 .slider__movies {
@@ -97,6 +97,7 @@
   color: white;
   font-size: 1.5rem;
   font-weight: 500;
+  margin-left: 3rem;
 }
 
 @media screen and (min-width: 250px) {

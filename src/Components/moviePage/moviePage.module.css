@@ -11,7 +11,7 @@
   /* font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal; */
-  background-color: black;
+  background-color: rgb(31, 12, 25);
 }
 
 /* hero small screen */
@@ -22,7 +22,6 @@
   height: 5vh;
   aspect-ratio: 1/1;
 }
-
 
 @keyframes slideRight {
   from {
@@ -102,13 +101,13 @@
 }
 
 .heroContainer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 75%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
 }
 
 .heroContainer .content {
@@ -137,10 +136,8 @@
   color: var(--secondary-font-color);
 }
 
-.shadowBox{
-    z-index: 1  ;
-    position: relative;
-    background: linear-gradient(to right , rgba(0,0,0,1), transparent);
+.shadowBox {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
 }
 
 /* 
@@ -243,8 +240,8 @@
 .modalbutton {
   display: block;
   position: relative;
-  background-color: rgba(255, 9, 9, 0.925);
-  color: white;
+  background-color: #fffe3e;
+  color: rgb(31, 12, 25);
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -254,7 +251,7 @@
 
 .modalbutton:hover {
   cursor: pointer;
-  background-color: rgb(157, 5, 5);
+  background-color: #cccc00;
 }
 
 .watchlisticon {
@@ -428,11 +425,12 @@
 /* movie-info */
 
 .movieInfo {
-  background-color: black;
+  background-color: rgb(31, 12, 25);
 }
 
 .movieInfo .heading {
-  color: white;
+  color: #fffe3e;
+  font-weight: bold;
   margin: 1rem auto auto 1rem;
   font-size: 1.5rem;
 }

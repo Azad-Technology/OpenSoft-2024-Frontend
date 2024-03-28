@@ -7,6 +7,7 @@ import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
 import GenreModalCountry from "../GenreModal/GenreModalCountry.jsx";
+import popKornLogo from "../../assets/PopKorn_logo.svg";
 
 export const Navbar = ({movies}) => {
   const navigate = useNavigate();
@@ -112,13 +113,9 @@ export const Navbar = ({movies}) => {
           <div className={styles.navbar__left}>
             <i
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
-            <img
-              onClick={() => navigate("/")}
-              className={styles.navbar__logo}
-              src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
-              alt="Netflix Logo"
-            />
+              className={`fa fa-2x fa-bars ${styles.hamburger}`}
+            ></i>
+            <img onClick={() => navigate("/")} className={styles.navbar__logo} src={popKornLogo} alt="popKorn Logo" />
             <div className={styles.navbar__links}>
               {menuoptions.map((menuoption, index) => (
                 <div className={styles.desktopLinks} key={index}>
@@ -132,14 +129,16 @@ export const Navbar = ({movies}) => {
                     }}
                     className={styles.navbar__link}
                     to={menuoption.link} // Replace href with to
-                    key={index}>
+                    key={index}
+                  >
                     {menuoption.name}
                   </Link>
                   {showDropdown[menuoption.name] && menuoption.dropdown && (
                     <div
                       ref={dropdownRef}
                       className={styles.dropdown}
-                      style={{width: menuoption.name === "Country" ? "45%" : "30%"}}>
+                      style={{width: menuoption.name === "Country" ? "45%" : "30%"}}
+                    >
                       <div className={styles.dropdown__column}>
                         {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
                           return (
@@ -234,7 +233,7 @@ export const Navbar = ({movies}) => {
                       )}
                     </div>
                   )}
-                  {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
+                  {/* {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />} */}
                   {selectedCountry && (
                     <GenreModalCountry genre={selectedCountry} onClose={() => setSelectedCountry(null)} />
                   )}
@@ -278,13 +277,9 @@ export const Navbar = ({movies}) => {
           <div className={styles.navbar__left}>
             <i
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}></i>
-            <img
-              onClick={() => navigate("/")}
-              className={styles.navbar__logo}
-              src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
-              alt="Netflix Logo"
-            />
+              className={`fa fa-2x fa-bars ${styles.hamburger}`}
+            ></i>
+            <img onClick={() => navigate("/")} className={styles.navbar__logo} src={popKornLogo} alt="PopKorn Logo" />
           </div>
           <div className={styles.navbar__right}>
             <i onClick={() => setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>

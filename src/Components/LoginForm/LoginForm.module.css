@@ -196,27 +196,27 @@
     margin-top: 2rem;
     padding: 1.73rem 1.73rem;
   }
-  .wrapper h1{
+  .wrapper h1 {
     font-size: 1.4rem;
     padding: 0.722rem;
   }
-  .wrapper button{
-      font-size: 0.rem;
+  .wrapper button {
+    font-size: 0.9rem;
   }
-  .input-box input{
-      font-size: 0.9rem;
+  .input-box input {
+    font-size: 0.9rem;
   }
-  .Or{
-      font-size: 0.8rem;
+  .Or {
+    font-size: 0.8rem;
   }
-  .wrapper .register-link{
-      font-size: 0.7rem;
-      margin-top: 0.722rem;
-      margin-bottom: 0;
+  .wrapper .register-link {
+    font-size: 0.7rem;
+    margin-top: 0.722rem;
+    margin-bottom: 0;
   }
   #error {
-      font-size: 0.8rem;
-      margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
   }
   /* .wrapper{
         margin-top: 50%;
@@ -278,7 +278,7 @@
     font-size: 0.8rem;
     margin: 0.5rem;
   }
-  .Oth{
+  .Oth {
     font-size: 0.8rem;
   }
   .wrapper .register_link {
@@ -297,14 +297,14 @@
   .input_box input {
     padding: 0.2rem;
   }
-  .input_box{
+  .input_box {
     border: 1px solid black;
     height: 2rem;
   }
-  .eyeIcon{
+  .eyeIcon {
     padding: 0 0.2rem 0 0;
   }
-  input::placeholder{
+  input::placeholder {
     font-size: 0.7rem;
   }
 }

@@ -921,10 +921,10 @@ const menuoptions = [
       },
     ],
   },
-  {
-    name: "Movies",
-    link: "#",
-  },
+  // {
+  //   name: "Movies",
+  //   link: "#",
+  // },
   {
     name: "TV Shows",
     link: "#",

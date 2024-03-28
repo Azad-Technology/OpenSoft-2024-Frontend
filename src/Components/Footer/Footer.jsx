@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import GenreModal from "../GenreModal/GenreModal.jsx";
 import {faMapMarkerAlt, faPhone, faEnvelopeOpen} from "@fortawesome/free-solid-svg-icons";
 import {Link, useNavigate} from "react-router-dom";
+import popKornLogo from "../../assets/PopKorn_logoText.svg";
 
 function Footer() {
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +20,7 @@ function Footer() {
         <footer className={styles.footer}>
           <div className={styles.footer__addr}>
             {/* <h1 className={styles.footer__log}>Something</h1> */}
-            <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="" />
+            <img src={popKornLogo} alt="PopKorn Logo" />
           </div>
 
           <ul className={styles.footer__nav}>

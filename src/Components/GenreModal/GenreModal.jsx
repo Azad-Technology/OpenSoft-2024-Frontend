@@ -3,49 +3,39 @@ import styles from "./GenreModal.module.css";
 import instance from "../../axios";
 import MovieModalList from "./MovieModalList";
 import Loader from "../Loader/Loader";
-import { useRef } from "react";
+import {useRef} from "react";
 
-function Modal({ onClose, genre, id }) {
-    const [movies, setMovies] = useState(null)
-    useEffect(() => {
-        const getData = async () => {
-            if(id==="country") return;
-            if (genre === "Top Movies" || genre === "Top IMDB") {
-                const response = await instance.get('/top_movies/?count=18');
-                setMovies(response.data);
-                return;
-            }
-            if (genre === "Top Series") {
-                const response = await instance.get('/top_series/?count=18');
-                setMovies(response.data);
-                return;
-            }
-            if (genre === "Recent") {
-                const response = await instance.get('/recent_movies/?count=18');
-                setMovies(response.data);
-                return;
-            }
-            if (genre === "TV Shows") {
-                const response = await instance.get('/top_series/?count=18');
-                setMovies(response.data);
-                return;
-            }
-            const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
-            setMovies(response.data);
-        }
-        getData();
-    }, [genre])
-
-    useEffect(() => {
-        const getData = async () => {
-            if(id==="country"){
-                const response = await instance.get(`/countries_top/${genre}/?count=18`)
-                setMovies(response.data);
-                return;
-            }
-        }
-        getData();
-    }, [])
+function Modal({onClose, genre, id}) {
+  const [movies, setMovies] = useState(null);
+  useEffect(() => {
+    const getData = async () => {
+      if (id === "country") {
+        const response = await instance.get(`/countries_top/${genre}/?count=18`);
+        setMovies(response.data);
+        return;
+      } else if (genre === "Top Movies" || genre === "Top IMDB") {
+        const response = await instance.get("/top_movies/?count=18");
+        setMovies(response.data);
+        return;
+      } else if (genre === "Top Series") {
+        const response = await instance.get("/top_series/?count=18");
+        setMovies(response.data);
+        return;
+      } else if (genre === "Recent") {
+        const response = await instance.get("/recent_movies/?count=18");
+        setMovies(response.data);
+        return;
+      } else if (genre === "TV Shows") {
+        const response = await instance.get("/top_series/?count=18");
+        setMovies(response.data);
+        return;
+      } else {
+        const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+        setMovies(response.data);
+      }
+    };
+    getData();
+  }, []);
     const modalRef = useRef(null);
     useEffect(()=>{
       if(modalRef.current){

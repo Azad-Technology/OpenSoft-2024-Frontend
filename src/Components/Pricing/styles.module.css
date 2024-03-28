@@ -1,6 +1,5 @@
 .container {
   margin-top: 7%;
-  margin-bottom: 5%;
   z-index: -1;
 }
 .heading {
@@ -152,11 +151,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.pricingCard.featured_free h3 {
-  background: white;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .pricingCard.featured button {
   background-color: white;
   color: #475569;
@@ -194,7 +188,6 @@
 
   .pricingCards {
     width: 100%;
-    z-index: -1;
   }
 
   .pricingCard {
@@ -219,7 +212,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    z-index: -1;
   }
 
   .pricingCard {

@@ -20,6 +20,7 @@ function LoginForm({register, setShowPopup}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isGoogle, setIsGoogle] = useState(false);
+  const [googleWindow, setGoogleWindow] = useState(null);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -72,11 +73,15 @@ function LoginForm({register, setShowPopup}) {
   const handleGoogleClick = async () => {
     try {
       const response = await instance.get("/login/google");
-      // console.log(response.data);
+      console.log(response.data);
+      // setIsGoogle(true);
+      let newWindow = window.open(response.data.url, "name", "height=600,width=450");
+      setGoogleWindow(newWindow);
+      console.log(newWindow);
+      if (window.focus) newWindow.focus();
       setIsGoogle(true);
-      window.open(response.data.url, "_blank");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setErrors(error.response.data.detail);
     }
   };
@@ -90,13 +95,13 @@ function LoginForm({register, setShowPopup}) {
   return (
     <div className={styles.login}>
       {showPopup2 && <RejectedPopup message={err} />}
-      {isGoogle && <GoogleCallback setIsGoogle={setIsGoogle} />}
+      {isGoogle && <GoogleCallback setIsGoogle={setIsGoogle} googleWindow={googleWindow} />}
       {!isGoogle && (
         <div className={styles.wrapper}>
           <form action="">
             <h1>Welcome Back.</h1>
             <div className="OAuth">
-              <button type="submit" className={styles.google} onClick={handleGoogleClick}>
+              <button className={styles.google} onClick={handleGoogleClick}>
                 <FcGoogle className={styles.google_icon} />
                 {register === "register" ? "Sign Up" : "Login"} with Google
               </button>

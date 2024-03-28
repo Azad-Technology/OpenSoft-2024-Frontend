@@ -159,32 +159,32 @@
     width: 20rem;
     padding: 1.73rem 1.73rem;
   }
-  .wrapper h1{
+  .wrapper h1 {
     font-size: 1.4rem;
     padding: 0.722rem;
   }
-  .wrapper button{
-      font-size: 0.rem;
+  .wrapper button {
+    font-size: 0.8rem;
   }
-  .inputBox input{
-      font-size: 0.9rem;
+  .inputBox input {
+    font-size: 0.9rem;
   }
-  .Or{
-      font-size: 0.8rem;
+  .Or {
+    font-size: 0.8rem;
   }
-  .wrapper .registerLink{
-      font-size: 0.7rem;
-      margin-top: 0.722rem;
-      margin-bottom: 0;
+  .wrapper .registerLink {
+    font-size: 0.7rem;
+    margin-top: 0.722rem;
+    margin-bottom: 0;
   }
 
-  .registerLink p a{
-      font-size: 0.7rem;
+  .registerLink p a {
+    font-size: 0.7rem;
   }
 
   #error {
-      font-size: 0.8rem;
-      margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
   }
   /* .container{
         top: 8rem;
@@ -240,10 +240,10 @@
     height: 2rem;
   }
 
-  .wrapper .OAuth{
+  .wrapper .OAuth {
     margin-bottom: 0;
   }
-  .text{
+  .text {
     font-size: 0.8rem;
   }
   .inputBox input {
@@ -251,7 +251,7 @@
     padding: 0.2rem;
     border: 1px solid black;
   }
-  .inputBox .icon{
+  .inputBox .icon {
     padding: 0 0.2rem 0 0;
     right: 0.25rem;
   }
@@ -259,7 +259,7 @@
     font-size: 0.8rem;
     margin: 0.5rem;
   }
-  .Oth{
+  .Oth {
     font-size: 0.8rem;
   }
   .wrapper .register_link {
@@ -276,18 +276,18 @@
     border: 1px solid black;
   }
 
-  .wrapper .inputBox{
+  .wrapper .inputBox {
     /* border: 1px solid black; */
     height: 2rem;
-    margin-bottom: 0.5rem;  
+    margin-bottom: 0.5rem;
   }
-  .eyeIcon{
+  .eyeIcon {
     padding: 0 0.2rem 0 0;
   }
-  input::placeholder{
+  input::placeholder {
     font-size: 0.7rem;
   }
-  #loginButton{
+  #loginButton {
     margin-top: 0.5rem;
   }
 }

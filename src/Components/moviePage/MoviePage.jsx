@@ -83,7 +83,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const getCommentData = async () => {
-      const response = await instance.get(`/movies/${id}/comments`);
+      const response = await instance.get(`/movies/${id}/comments/?count=10`);
       console.log(response.data);
       setComments(response.data);
     };
@@ -220,13 +220,14 @@ const MoviePage = () => {
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
+          style={{backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}}
         >
           <div className={styles.title}>{movie?.title}</div>
         </div>
         <div
           className={styles.heroContainer}
           style={
-            (!smallScreen && movie)
+            !smallScreen && movie
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -234,65 +235,77 @@ const MoviePage = () => {
           <div className={styles.content}>
             {premium && <div className={styles.premium}>Included with premium</div>}
 
-                        <div className={styles.shadowBox}>
-                        <div className={styles.title}>{movie?.title}</div>
-                        <div className={styles.description} id="description">{movie?.plot}{!isExpanded && (<button className={styles.readMore} onClick={handleReadMore}>  ...Show more</button>)}{isExpanded && showLess && (<button className={styles.readMore} onClick={handleShowLess}>&nbsp;Show less</button>)}</div>
-                        </div>
-                        <div className={styles.info}>
-                            <span>
-                                <span className={styles.imdbContainer}><span className={styles.imdb}>IMDb</span><span className={styles.imdbRating}>{movie?.imdb.rating}</span></span>
-                                {/* <span>{props.info.duration}</span> */}
-                                <span>{String(movie?.released).substring(0, 4)}</span>
-                            </span>
-                            
-                        </div>
-                        <div className={styles.genreList}>
-                            {
-                                movie?.genres.map((ele) => (
-                                    <button className={styles.genreButtons} onClick={() => openModal(ele)}>{ele}</button>
-                                ))
-                            }
-                        </div>
-                        <div className={styles.Mbutton}>
-                            <span>
-                                <button className={styles.modalbutton} onClick={handleClick}>
-                                    Watch Now
-                                </button>
-                                <span><span className={styles.icon} id="heartIcon">
-            {like?<i
-              class={`fa fa-heart fa-lg`}
-              aria-hidden="true"
-              onClick={openHeart}
-            ></i>:<i
-            class={`fa fa-heart-o fa-lg`}
-            aria-hidden="true"
-            onClick={openHeart}
-          ></i>}
-            
-          </span></span>
-                                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                                {showModal && <Modal onClose={() => setShowModal(false)} />}
-                                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.movieInfo}>
-                    <div className={styles.heading}>More Details</div>
-                    <div className={styles.container}>
-                        <div className={styles.cell}>
-                            <div className={styles.subHeading}>Directors</div>
-                            <div className={styles.content}>{makeString(movie?.directors)}</div>
-                        </div>
-                        
-                        <div className={styles.cell}>
-                            <div className={styles.subHeading}>Audio Languages</div>
-                            <div className={styles.content}>{makeString(movie?.languages)}</div>
-                        </div>
-                        <div className={styles.cell}>
-                            <div className={styles.subHeading}>Awards</div>
-                            <div className={styles.content}>{movie?.awards.text}</div>
-                        </div>
+            <div className={styles.shadowBox}>
+              <div className={styles.title}>{movie?.title}</div>
+              <div className={styles.description} id="description">
+                {movie?.plot}
+                {!isExpanded && (
+                  <button className={styles.readMore} onClick={handleReadMore}>
+                    {" "}
+                    ...Show more
+                  </button>
+                )}
+                {isExpanded && showLess && (
+                  <button className={styles.readMore} onClick={handleShowLess}>
+                    &nbsp;Show less
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className={styles.info}>
+              <span>
+                <span className={styles.imdbContainer}>
+                  <span className={styles.imdb}>IMDb</span>
+                  <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
+                </span>
+                {/* <span>{props.info.duration}</span> */}
+                <span>{String(movie?.released).substring(0, 4)}</span>
+              </span>
+            </div>
+            <div className={styles.genreList}>
+              {movie?.genres.map(ele => (
+                <button className={styles.genreButtons} onClick={() => openModal(ele)}>
+                  {ele}
+                </button>
+              ))}
+            </div>
+            <div className={styles.Mbutton}>
+              <span>
+                <button className={styles.modalbutton} onClick={handleClick}>
+                  Watch Now
+                </button>
+                <span>
+                  <span className={styles.icon} id="heartIcon">
+                    {like ? (
+                      <i class={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                    ) : (
+                      <i class={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                    )}
+                  </span>
+                </span>
+                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
+                {showModal && <Modal onClose={() => setShowModal(false)} />}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className={styles.movieInfo}>
+          <div className={styles.heading}>More Details</div>
+          <div className={styles.container}>
+            <div className={styles.cell}>
+              <div className={styles.subHeading}>Directors</div>
+              <div className={styles.content}>{makeString(movie?.directors)}</div>
+            </div>
+
+            <div className={styles.cell}>
+              <div className={styles.subHeading}>Audio Languages</div>
+              <div className={styles.content}>{makeString(movie?.languages)}</div>
+            </div>
+            <div className={styles.cell}>
+              <div className={styles.subHeading}>Awards</div>
+              <div className={styles.content}>{movie?.awards.text}</div>
+            </div>
 
             {showMoreInfo && (
               <div className={styles.cast}>
