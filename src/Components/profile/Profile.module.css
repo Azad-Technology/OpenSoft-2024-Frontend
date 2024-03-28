@@ -236,8 +236,6 @@
   margin-bottom: 2rem;
 }
 
-
-
 @media screen and (max-width: 800px) {
   .maincontainer {
     flex-direction: column;
@@ -357,4 +355,3 @@
   background-color: #e42b2b;
   transition: 0.2s;
 }
-
