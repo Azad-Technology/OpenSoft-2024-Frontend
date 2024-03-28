@@ -9,10 +9,27 @@ import {useStateValue} from "../../MyContexts/StateProvider";
 import {useNavigate} from "react-router-dom";
 import RejectedPopup from "../LoginAcceptedRejected/rejectedLogin";
 import {GoogleCallback} from "./GoogleCallback";
+import {GoogleLoginButton} from "./GoogleLoginButton";
+import {gapi} from "gapi-script";
+
+const clientID = "950287933882-5bvrs6br7a5ubeb1l2m8di6vgjgu7sco.apps.googleusercontent.com";
+import bgTop from "../../assets/bg-top.svg";
+import { MdEmail } from "react-icons/md";
+
 
 function LoginForm({register, setShowPopup}) {
   const [{token, premium}, dispatch] = useStateValue();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    function start() {
+      gapi.client.init({
+        clientId: clientID,
+        scope: "",
+      });
+    }
+    gapi.load("client:auth2", start);
+  }, []);
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [err, setErrors] = useState("");
@@ -101,10 +118,7 @@ function LoginForm({register, setShowPopup}) {
           <form action="">
             <h1>Welcome Back.</h1>
             <div className="OAuth">
-              <button className={styles.google} onClick={handleGoogleClick}>
-                <FcGoogle className={styles.google_icon} />
-                {register === "register" ? "Sign Up" : "Login"} with Google
-              </button>
+              <GoogleLoginButton className={styles.GoogleLogin}/>
             </div>
             <hr className={styles.Or} />
             <div>
@@ -120,7 +134,9 @@ function LoginForm({register, setShowPopup}) {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
               />
+              <div className={styles.eyeIcon}><MdEmail className={styles.icon}/></div>
             </div>
+            
             <div className={styles.input_box}>
               <input
                 type={isPasswordVisible ? "text" : "password"}
@@ -141,8 +157,8 @@ function LoginForm({register, setShowPopup}) {
             </button>
             <div className={styles.register_link}>
               <p>
-                Don't have an account? <a href="/signup">Register</a>
-              </p>
+                Don't have an account?</p> <a href="/signup">Register</a>
+              
             </div>
           </form>
         </div>

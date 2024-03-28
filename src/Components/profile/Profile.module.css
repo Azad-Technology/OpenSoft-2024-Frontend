@@ -280,14 +280,14 @@
     width: 40%;
   }
 }
-@media screen and (max-width: 400px){
-  .edit_button{
+@media screen and (max-width: 400px) {
+  .edit_button {
     justify-content: space-around;
   }
-  .edit_button>button{
+  .edit_button > button {
     margin-right: 0;
   }
-  .favorites{
+  .favorites {
     padding-left: 0;
   }
 }
