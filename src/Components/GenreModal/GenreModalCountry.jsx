@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useCallback} from "react";
 import styles from "./GenreModal.module.css";
 import instance from "../../axios";
 import MovieModalList from "./MovieModalList";
@@ -6,13 +6,13 @@ import Loader from "../Loader/Loader";
 
 function Modal({onClose, genre}) {
   const [movies, setMovies] = useState(null);
-  useEffect(() => {
-    const getData = async () => {
-      const response = await instance.get(`/countries_top/${genre}/?count=18`);
-      setMovies(response.data);
-    };
-    getData();
+  const getData = useCallback(async () => {
+    const response = await instance.get(`/countries_top/${genre}/?count=18`);
+    setMovies(response.data);
   }, [genre]);
+  useEffect(() => {
+    getData();
+  }, [getData]);
 
   return (
     <div className={styles.modal_overlay}>

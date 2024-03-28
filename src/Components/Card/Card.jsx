@@ -8,8 +8,8 @@ import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import instance from "../../axios.jsx";
 import {faL} from "@fortawesome/free-solid-svg-icons";
 import LoginForm from "../LoginForm/LoginForm.jsx";
-
 import imdb from "../../assets/imdb-icon.svg";
+
 const Card = ({movies, val, length, onClose}) => {
   const [{user, token}, dispatch] = useStateValue();
 
@@ -74,7 +74,7 @@ const Card = ({movies, val, length, onClose}) => {
       {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
       <div
         onClick={() => {
-          // onClose();
+          onClose();
           navigate(`/movie/${movies?._id}`);
           // const class_name = genreModalStyles.modal_overlay;
           // console.log(genreModalStyles.modal_overlay);
