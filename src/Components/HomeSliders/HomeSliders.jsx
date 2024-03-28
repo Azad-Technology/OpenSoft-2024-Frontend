@@ -176,10 +176,10 @@ export const HomeSliders = () => {
         </div>
         <Slider genre="Recent" />
       </div>
-      <>
         <div className={styles.slider__title}>Comments</div>
+      <div className={styles.commentCardParent}>
         <CommentCards />
-      </>
+      </div>
       {genres.map(genre => {
         return (
           <div id={genre.genreID} className={styles.slider_container}>

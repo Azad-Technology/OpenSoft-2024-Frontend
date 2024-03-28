@@ -17,6 +17,10 @@
   font-size: large;
 }
 
+.commentCardParent{
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
 .view__more:hover {
   cursor: pointer;
   background-color: #cccc00;

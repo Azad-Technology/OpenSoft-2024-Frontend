@@ -38,7 +38,7 @@ function timeSince(date) {
   return `${Math.floor(seconds)} seconds ago`;
 }
 
-function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
+function CommentCard({ username, profilePic, comment, movie, link, timestamp }) {
   const commentTime = new Date(timestamp);
   const timeAgo = timeSince(commentTime);
 
@@ -47,12 +47,14 @@ function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
       <div className={username === "" ? `${styles.skeleton__cards}` : `${styles.commentCard}`}>
         <div className={styles.title}>
           {profilePic != "" && <img src={profilePic} alt="" className={styles.profilePic} />}
-          <h3 className={styles.username}>{username}</h3>
+          <div>
+            <h3 className={styles.username}>{username}</h3>
+            <div className={styles.cardTime}>{timestamp != "" && timeAgo}</div>
+          </div>
         </div>
 
         <div className={styles.commentDetails}>
-          <p className={styles.cardComment}>{truncateComment(comment, 10)}</p>
-          <div className={styles.cardTime}>{timestamp != "" && timeAgo}</div>
+          <p className={styles.cardComment}>{comment}</p>
           <a href={link} className={styles.cardMovie}>
             {movie ? movie : ""}
           </a>
