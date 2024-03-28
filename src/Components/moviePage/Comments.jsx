@@ -193,7 +193,8 @@ function NewComments(props) {
               <div className={styles.showMoreBtnContainer}>
                 <button onClick={SwitchState} className={styles.showMoreBtn} id="showMoreBtn">
                   <svg
-                    fill="#cf0a0a"
+                    // fill="#cf0a0a"
+                    fill="#fffe3e"
                     height="25px"
                     width="25px"
                     version="1.1"
