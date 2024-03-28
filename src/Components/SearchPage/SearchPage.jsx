@@ -46,16 +46,10 @@ const SearchPage = () => {
   // State to store fetched movies
 
   const fetchMovies = useCallback(async () => {
-    const filters = {
-      query: searchTerm,
-      genre: genreSelections.join(","),
-      language: languageSelections.join(","),
-    };
-
     try {
       const response = await axios.post("https://embed.popkorn.tech/fts_search_filter", {
         query: searchTerm,
-        genre: genreSelections.join(","),
+        genre: genreSelections,
         language: languageSelections.join(","),
       });
       // setMovies(response.data);

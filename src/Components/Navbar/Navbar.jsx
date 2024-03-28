@@ -7,7 +7,7 @@ import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
 import GenreModalCountry from "../GenreModal/GenreModalCountry.jsx";
-import popKornLogo from "../../assets/PopKorn_logo.svg";
+import popKornLogo from "../../assets/PopKorn_logoText.svg";
 
 export const Navbar = ({movies}) => {
   const navigate = useNavigate();

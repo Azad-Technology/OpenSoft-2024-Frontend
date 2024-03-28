@@ -5,12 +5,21 @@ import bgBottom from "../../assets/bg-bottom.svg";
 import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
 import {Link} from "react-router-dom";
+import {useSearchParams} from "react-router-dom";
 function Pricing() {
   const [annually, setAnnually] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
-  const [{token}, dispatch] = useStateValue();
+  const [{token, user}, dispatch] = useStateValue();
   const [isGold, setIsGold] = useState(false);
   const [isSilver, setIsSilver] = useState(false);
+  const [showEditPrompt, setShowEditPrompt] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const shouldShowPrompt = searchParams.get("editProfile") === "true";
+    setShowEditPrompt(shouldShowPrompt);
+  }, [searchParams]);
+
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -52,12 +61,18 @@ function Pricing() {
       </div>
       <section className={styles.section}>
         <h1 className={styles.heading}>Our Pricing</h1>
+        {showEditPrompt && (
+          <div>
+            <p className={styles.editprofile}>
+              You are currently on the Basic plan. To edit your profile, please upgrade to a higher tier.
+            </p>
+          </div>
+        )}
         <div className={styles.pricingCards}>
           <article
             className={`${styles.pricingCard} ${isHovered === 0 ? styles.featured_free : ""}`}
             onMouseEnter={() => setIsHovered(0)}
-            onMouseLeave={() => setIsHovered(null)}
-          >
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Basic</h2>
 
             <h3>Free</h3>
@@ -75,16 +90,14 @@ function Pricing() {
           <article
             className={`${styles.pricingCard} ${isHovered === 1 ? styles.featured : ""}`}
             onMouseEnter={() => setIsHovered(1)}
-            onMouseLeave={() => setIsHovered(null)}
-          >
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Silver</h2>
             <h3>
               <span>₹</span> 50
             </h3>
             <Link
               target="_blank"
-              to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"
-            >
+              to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1">
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>
 
@@ -102,16 +115,14 @@ function Pricing() {
           <article
             className={`${styles.pricingCard} ${isHovered === 2 ? styles.featured : ""}`}
             onMouseEnter={() => setIsHovered(2)}
-            onMouseLeave={() => setIsHovered(null)}
-          >
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Gold</h2>
             <h3>
               <span>₹</span> 100
             </h3>
             <Link
               target="_blank"
-              to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1"
-            >
+              to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1">
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>
             <ul>
