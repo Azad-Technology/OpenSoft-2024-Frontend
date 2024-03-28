@@ -18,10 +18,10 @@
   margin: 0 1rem 1rem 0;
 }
 
-.yourComment {
+/* .yourComment {
   display: flex;
   justify-content: center;
-}
+} */
 
 .commentContainer .textBtnCont {
   box-sizing: border-box;
