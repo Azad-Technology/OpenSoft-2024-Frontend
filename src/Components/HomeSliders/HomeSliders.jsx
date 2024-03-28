@@ -176,7 +176,7 @@ export const HomeSliders = () => {
         </div>
         <Slider genre="Recent" />
       </div>
-        <div className={styles.slider__title}>Comments</div>
+      <div className={styles.slider__title}>Comments</div>
       <div className={styles.commentCardParent}>
         <CommentCards />
       </div>

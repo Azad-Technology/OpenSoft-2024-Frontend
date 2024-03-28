@@ -38,7 +38,7 @@ function timeSince(date) {
   return `${Math.floor(seconds)} seconds ago`;
 }
 
-function CommentCard({ username, profilePic, comment, movie, link, timestamp }) {
+function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
   const commentTime = new Date(timestamp);
   const timeAgo = timeSince(commentTime);
 
