@@ -96,7 +96,7 @@ function LoginForm({register, setShowPopup}) {
           <form action="">
             <h1>Welcome Back.</h1>
             <div className="OAuth">
-              <button type="submit" className={styles.google} onClick={handleGoogleClick}>
+              <button className={styles.google} onClick={handleGoogleClick}>
                 <FcGoogle className={styles.google_icon} />
                 {register === "register" ? "Sign Up" : "Login"} with Google
               </button>
