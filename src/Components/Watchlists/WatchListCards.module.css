@@ -5,7 +5,7 @@
   flex-shrink: 0;
   height: 10rem;
   width: 15rem;
-  border-radius: 0 .4rem .4rem 0;
+  border-radius: 0 0.4rem 0.4rem 0;
   /* background-color: #a49d9d36; */
   background-image: linear-gradient(to right, #201f1f, #8a898976);
   padding: 1rem;
@@ -15,22 +15,17 @@
   justify-content: center;
   font-size: 1.2rem;
 
-
-
-
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   /* box-shadow: 2.2px 2.2px 6px rgba(255, 0, 0, .4); */
-
 }
-.card:hover{
+.card:hover {
   box-shadow: none;
-
 }
-.card svg{
+.card svg {
   height: 3rem;
   width: 3rem;
 }
-.card>span{
+.card > span {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +54,7 @@
 
 .cardcontainer:hover {
   box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
-  transform: translate3d(0px, -.7rem, 0px);
+  transform: translate3d(0px, -0.7rem, 0px);
 }
 
 .slider__movies {
@@ -156,15 +151,13 @@
   height: 1.5rem;
 }
 
-
-.nothingToShow svg{
+.nothingToShow svg {
   height: 70px;
   width: 70px;
 }
-.nothingToShow{
+.nothingToShow {
   width: 100%;
   text-align: center;
-
 }
 .favorites_card {
   display: flex;
