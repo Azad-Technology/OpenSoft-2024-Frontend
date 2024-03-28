@@ -8,6 +8,9 @@
 html {
   scroll-behavior: smooth;
 }
+input[type="text"] {
+  font-family: "Jost", sans-serif;
+}
 body {
   color: white;
   font-family: "Jost", sans-serif;
