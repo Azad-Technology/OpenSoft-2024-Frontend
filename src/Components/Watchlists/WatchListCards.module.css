@@ -5,11 +5,35 @@
   flex-shrink: 0;
   height: 10rem;
   width: 15rem;
-  border-radius: 1rem;
-  background-color: #ff340a;
+  border-radius: .4rem;
+  background-color: #6b69690f;
   padding: 1rem;
   cursor: pointer;
   z-index: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+
+
+
+
+  transition: all .3s linear;
+  /* box-shadow: 2.2px 2.2px 6px rgba(255, 0, 0, .4); */
+
+}
+.card:hover{
+  box-shadow: none;
+
+}
+.card svg{
+  height: 3rem;
+  width: 3rem;
+}
+.card>span{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardcontainer {
@@ -19,7 +43,7 @@
   flex-shrink: 0;
   height: 10rem;
   width: 15rem;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
 }
 
@@ -33,7 +57,7 @@
 
 .cardcontainer:hover {
   box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
-  transform: translate3d(0px, -1rem, 0px);
+  transform: translate3d(0px, -.7rem, 0px);
 }
 
 .slider__movies {
@@ -128,4 +152,22 @@
 }
 .delete_icon img {
   height: 1.5rem;
+}
+
+
+.nothingToShow svg{
+  height: 70px;
+  width: 70px;
+}
+.nothingToShow{
+  width: 100%;
+  text-align: center;
+
+}
+.favorites_card {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin-left: -1.5rem;
+  /* justify-content: space-between; */
 }
