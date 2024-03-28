@@ -111,7 +111,7 @@ function SignUp({setShowPopup}) {
           <div className={styles.text}>Full Name</div>
 
           <div className={styles.inputBox}>
-            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" id="name" value={name} onChange={e => setName(e.target.value)} />
             <FaUser style={{width: "1.25rem", height: "1.25rem"}} className={styles.icon} />
           </div>
 
