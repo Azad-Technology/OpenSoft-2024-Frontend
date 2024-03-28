@@ -12,6 +12,9 @@ function Pricing() {
   const [isGold, setIsGold] = useState(false);
   const [isSilver, setIsSilver] = useState(false);
   useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+  useEffect(() => {
     dispatch({
       type: "INITIALIZE_TOKEN",
     });
