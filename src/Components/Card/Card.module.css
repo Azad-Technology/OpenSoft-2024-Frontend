@@ -189,7 +189,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .cards {
     /* flex-basis: 40%; */
     min-width: 8rem;
@@ -206,7 +206,7 @@
     margin-left: 1.3rem;
   }
 }
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 320px) {
   .cards {
     /* min-width: 10rem; */
     flex-basis: 100%;

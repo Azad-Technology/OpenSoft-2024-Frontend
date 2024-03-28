@@ -235,7 +235,7 @@
   margin-left: 1.8rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .maincontainer {
     flex-direction: column;
   }
@@ -248,7 +248,7 @@
   }
 }
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 550px) {
   .col_sm_3,
   .head {
     width: 100%;

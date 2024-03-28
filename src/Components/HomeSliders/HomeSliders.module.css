@@ -100,7 +100,7 @@
   margin-left: 3rem;
 }
 
-@media screen and (min-width: 250px) {
+@media screen and (min-width: 320px) {
   .sliders {
     margin-right: 0rem;
     margin-left: 0rem;
@@ -122,7 +122,7 @@
   }
 }
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 425px) {
   .sliders {
     margin-right: 2rem;
     margin-left: 2rem;

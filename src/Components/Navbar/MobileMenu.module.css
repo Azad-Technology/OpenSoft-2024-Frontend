@@ -106,7 +106,7 @@
     margin-right:15%;
 } */
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1024px) {
   .mobileMenu {
     display: block;
     max-width: 65%;
@@ -118,14 +118,14 @@
   transform-origin: top center;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 600px) {
   .mobileMenu {
     /* display: none; */
     max-width: 90%;
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 550px) {
   .mobileMenu {
     /* display: none; */
     max-width: 90%;
