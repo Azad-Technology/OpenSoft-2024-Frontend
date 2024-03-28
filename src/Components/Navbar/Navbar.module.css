@@ -38,7 +38,7 @@
   padding: 0% 0;
   transition-timing-function: ease-in;
   transition: all 0.5s;
-  font-family: "arial";
+  /* font-family: "arial"; */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
