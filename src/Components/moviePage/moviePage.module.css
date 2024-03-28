@@ -12,6 +12,7 @@
   font-weight: 400;
   font-style: normal; */
   background-color: rgb(31, 12, 25);
+  
 }
 
 /* hero small screen */
@@ -352,6 +353,11 @@
     font-size: 1.1rem;
   }
 }
+@media screen and (max-width:600px) {
+  .font {
+    margin-top: 4rem; 
+  }
+}
 
 @media screen and (max-width: 550px) {
   .heroContainer .info {
@@ -517,3 +523,4 @@
         max-width:none;
     } */
 }
+

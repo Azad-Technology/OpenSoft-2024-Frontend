@@ -249,6 +249,9 @@
 }
 
 @media screen and (max-width: 525px) {
+  .maincontainer {
+    margin: 0rem 1rem 0rem 1rem;
+  }
   .col_sm_3,
   .head {
     width: 100%;
@@ -274,6 +277,17 @@
   }
   .modal {
     width: 40%;
+  }
+}
+@media screen and (max-width: 400px){
+  .edit_button{
+    justify-content: space-around;
+  }
+  .edit_button>button{
+    margin-right: 0;
+  }
+  .favorites{
+    padding-left: 0;
   }
 }
 
