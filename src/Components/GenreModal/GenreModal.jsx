@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useCallback} from "react";
 import styles from "./GenreModal.module.css";
 import instance from "../../axios";
 import MovieModalList from "./MovieModalList";
@@ -7,39 +7,56 @@ import {useRef} from "react";
 
 function Modal({onClose, genre, id}) {
   const [movies, setMovies] = useState(null);
+  const getData = useCallback(async () => {
+    if (id === "country"){
+      const response = await instance.get(`/countries_top/${genre}/?count=18`);
+      setMovies(response.data);
+      return;
+    }
+    else if (genre === "Top Movies" || genre === "Top IMDB") {
+      const response = await instance.get("/top_movies/?count=18");
+      setMovies(response.data);
+      return;
+    }
+    else if (genre === "Top Series") {
+      const response = await instance.get("/top_series/?count=18");
+      setMovies(response.data);
+      return;
+    }
+    else if (genre === "Recent") {
+      const response = await instance.get("/recent_movies/?count=18");
+      setMovies(response.data);
+      return;
+    }
+    else if (genre === "TV Shows") {
+      const response = await instance.get("/top_series/?count=18");
+      setMovies(response.data);
+      return;
+    }
+    else{
+      const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+      setMovies(response.data);
+    }
+  }, []);
   useEffect(() => {
-    const getData = async () => {
-      if (id === "country") {
-        const response = await instance.get(`/countries_top/${genre}/?count=18`);
-        setMovies(response.data);
-        return;
-      } else if (genre === "Top Movies" || genre === "Top IMDB") {
-        const response = await instance.get("/top_movies/?count=18");
-        setMovies(response.data);
-        return;
-      } else if (genre === "Top Series") {
-        const response = await instance.get("/top_series/?count=18");
-        setMovies(response.data);
-        return;
-      } else if (genre === "Recent") {
-        const response = await instance.get("/recent_movies/?count=18");
-        setMovies(response.data);
-        return;
-      } else if (genre === "TV Shows") {
-        const response = await instance.get("/top_series/?count=18");
-        setMovies(response.data);
-        return;
-      } else {
-        const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
-        setMovies(response.data);
-      }
-    };
     getData();
   }, []);
+  const modalRef = useRef(null);
+  useEffect(() => {
+    if (modalRef.current) {
+      modalRef.current.addEventListener("click", event => {
+        if (event.target.id == "overlay" || event.target.id == "genre") {
+          onClose();
+        }
+      });
+    }
+  }, [genre]);
 
   return (
-    <div className={styles.modal_overlay}>
-      <div className={styles.heading}>{genre}</div>
+    <div className={styles.modal_overlay} id="overlay" ref={modalRef}>
+      <div className={styles.heading} id="genre">
+        {genre}
+      </div>
       <div className={styles.modal}>
         <div className={styles.movieList}>
           {movies ? <MovieModalList movie={movies} onClose={onClose} /> : <Loader />}
@@ -54,21 +71,8 @@ function Modal({onClose, genre, id}) {
 }
 
 const GenreModal = ({genre, id, onClose}) => {
-  useEffect(() => {
-    const handleClickOutside = event => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClose();
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [genre]);
-
-  const modalRef = useRef();
   return (
-    <div ref={modalRef}>
+    <div>
       <Modal onClose={onClose} genre={genre} id={id} />
     </div>
   );

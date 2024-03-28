@@ -1,23 +1,24 @@
-import { useEffect } from "react";
+import {useEffect} from "react";
 import styles from "./moviePage.module.css";
-import { useState } from "react";
+import {useState} from "react";
 import Comments from "./Comments";
 import instance from "../../axios";
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import { MediaPlayer, MediaProvider } from "@vidstack/react";
-import { defaultLayoutIcons, DefaultVideoLayout } from "@vidstack/react/player/layouts/default";
+import {MediaPlayer, MediaProvider} from "@vidstack/react";
+import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
-import { useStateValue } from "../../MyContexts/StateProvider";
-import { useNavigate } from "react-router-dom";
+import {useStateValue} from "../../MyContexts/StateProvider";
+import {useNavigate} from "react-router-dom";
 import watchlistoff from "./../../assets/watchlistoff.svg";
 import Loader from "./../Loader/Loader.jsx";
+import popupIcon from "./../../assets/popupIcon.svg";
 import WatchListModal from "./WatchListModal.jsx";
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
 
-function Modal({ onClose }) {
+function Modal({onClose}) {
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal}>
@@ -46,7 +47,7 @@ function Modal({ onClose }) {
 const MoviePage = () => {
   const [premium, setPremium] = useState(true);
 
-  const [{ token, user }, dispatch] = useStateValue();
+  const [{token, user}, dispatch] = useStateValue();
 
   //Genre Modals
   const [selectedGenre, setSelectedGenre] = useState(null);
@@ -60,7 +61,7 @@ const MoviePage = () => {
   const navigate = useNavigate();
   const [showWatchListModal, setShowWatchListModal] = useState(false);
 
-  const { id } = useParams();
+  const {id} = useParams();
   // const {com} = useParams();
   const [comments, setComments] = useState(null);
   const [movie, setMovie] = useState(null);
@@ -73,6 +74,7 @@ const MoviePage = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await instance.get(`/movies/${id}`);
+      // console.log(response.data);
       setMovie(response.data[0]);
     };
     getData();
@@ -84,7 +86,7 @@ const MoviePage = () => {
   useEffect(() => {
     const getCommentData = async () => {
       const response = await instance.get(`/movies/${id}/comments/?count=10`);
-      console.log(response.data);
+      // console.log(response.data);
       setComments(response.data);
     };
     getCommentData();
@@ -93,7 +95,7 @@ const MoviePage = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [showLess, setShowLess] = useState(false);
   const [showMoreInfo, setShowMoreInfo] = useState(false);
-  const [smallScreen, setSmallScreen] = useState(window.innerWidth <= 550);
+  const [smallScreen, setSmallScreen] = useState(false);
 
   // functions
 
@@ -167,9 +169,9 @@ const MoviePage = () => {
         },
       });
       if (!like) {
-        dispatch({ type: "ADD_FAV", movie: movie });
+        dispatch({type: "ADD_FAV", movie: movie});
       } else {
-        dispatch({ type: "REM_FAV", movie: movie });
+        dispatch({type: "REM_FAV", movie: movie});
       }
     } catch (err) {
       console.log(err);
@@ -179,6 +181,11 @@ const MoviePage = () => {
   useEffect(() => {
     setlike(user?.fav.some(movies => movies?._id === movie?._id));
   }, [movie, user]);
+
+  //     // event listeners
+
+  //     window.addEventListener("resize", screenSizeChanged);
+  //     window.addEventListener("load", screenSizeChanged);
 
   window.addEventListener("resize", () => {
     setSmallScreen(window.innerWidth <= 550);
@@ -215,7 +222,7 @@ const MoviePage = () => {
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
-          style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` }}
+          style={{backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}}
         >
           <div className={styles.title}>{movie?.title}</div>
         </div>
@@ -223,8 +230,8 @@ const MoviePage = () => {
           className={styles.heroContainer}
           style={
             (!smallScreen && movie)
-              ? { backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})` }
-              : { backgroundImage: "none" }
+              ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
+              : {backgroundImage: "none"}
           }
         >
           <div className={styles.content}>
@@ -249,18 +256,20 @@ const MoviePage = () => {
             </div>
             <div className={styles.info}>
               <span>
+                {movie?.imdb && 
                 <span className={styles.imdbContainer}>
-                  <span className={styles.imdb}>IMDb</span>
-                  <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
-                </span>
+                <span className={styles.imdb}>IMDb</span>
+                <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
+              </span>
+              }
                 {/* <span>{props.info.duration}</span> */}
-                <span>{String(movie?.released).substring(0, 4)}</span>
+                <span>{movie?.year}</span>
               </span>
             </div>
             <div className={styles.genreList}>
               {movie?.genres.map(ele => (
                 <button className={styles.genreButtons} onClick={() => openModal(ele)}>
-                  {ele}
+                  {ele} <img src = {popupIcon} className={styles.popupIcon} />
                 </button>
               ))}
             </div>
@@ -285,89 +294,36 @@ const MoviePage = () => {
             </div>
           </div>
         </div>
+        
+        <div className={styles.heading}>More Details</div>
         <div className={styles.movieInfo}>
-          <div className={styles.heading}>More Details</div>
+          
+          <div className={styles.fullplot}>
+            {movie?.fullplot && (
+              <div className={styles.cell}>
+                <div className={styles.subHeading}>Plot</div>
+                <div className={styles.content}>{movie.fullplot}</div>
+              </div>
+            )}
+          </div>
+
           <div className={styles.container}>
-            <div className={styles.cell}>
-              <div className={styles.subHeading}>Directors</div>
-              <div className={styles.content}>{makeString(movie?.directors)}</div>
+            {movie?.cast && <div className={styles.cell}>
+              <div className={styles.subHeading}>Cast</div>
+              <div className={styles.content}>{makeString(movie?.cast)}</div>
             </div>
-
-            <div className={styles.cell}>
-              <div className={styles.subHeading}>Audio Languages</div>
+            }
+            {movie?.languages && <div className={styles.cell}>
+              <div className={styles.subHeading}>Languages</div>
               <div className={styles.content}>{makeString(movie?.languages)}</div>
-            </div>
-            <div className={styles.cell}>
-              <div className={styles.subHeading}>Awards</div>
-              <div className={styles.content}>{movie?.awards.text}</div>
-            </div>
+            </div>}
+            {movie?.directors && <div className={styles.cell}>
+              <div className={styles.subHeading}>Director</div>
+              <div className={styles.content}>{makeString(movie?.directors)}</div>
+            </div>}
+          </div>
 
-            {showMoreInfo && (
-              <div className={styles.cast}>
-                <div className={styles.subHeading}>Cast</div>
-                <div className={styles.content}>
-                  {movie?.cast?.map(actor => (
-                    <div className={styles.subContent}>{actor}</div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {showMoreInfo && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Writers</div>
-                <div className={styles.content}>{makeString(movie?.writers)}</div>
-              </div>
-            )}
-            {showMoreInfo && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Countrie</div>
-                <div className={styles.content}>{makeString(movie?.countries)}</div>
-              </div>
-            )}
-            {showMoreInfo && movie?.tomatoes && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Tomatometer</div>
-                <div className={styles.content}>
-                  <div>Viewer: {movie?.tomatoes?.viewer.rating}</div>
-                  {/*<div>Critic: {props.info.tomatometer.critic}</div>*/}
-                </div>
-              </div>
-            )}
-            {showMoreInfo && movie?.production && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Production</div>
-                <div className={styles.content}>{movie?.tomatoes?.production}</div>
-              </div>
-            )}
-          </div>
-          <div className={styles.showMoreInfoBtnCont}>
-            <button id="showMoreInfo" className={styles.showMoreInfoBtn} onClick={handleShowMoreInfoBtn}>
-              <svg
-                fill="#cf0a0a"
-                height="25px"
-                width="25px"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 512.001 512.001"
-                xmlSpace="preserve"
-              >
-                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <g>
-                    {" "}
-                    <g>
-                      {" "}
-                      <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
-                    </g>{" "}
-                  </g>{" "}
-                </g>
-              </svg>
-            </button>
-          </div>
+          
         </div>
 
         {comments ? <Comments info={comments} id={id} /> : <></>}
