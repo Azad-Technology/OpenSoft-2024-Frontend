@@ -34,7 +34,45 @@ function Modal({onClose, genre, id}) {
     }
   }, []);
   useEffect(() => {
+  const getData = useCallback(async () => {
+    if (id === "country") {
+      const response = await instance.get(`/countries_top/${genre}/?count=18`);
+      setMovies(response.data);
+      return;
+    } else if (genre === "Top Movies" || genre === "Top IMDB") {
+      const response = await instance.get("/top_movies/?count=18");
+      setMovies(response.data);
+      return;
+    } else if (genre === "Top Series") {
+      const response = await instance.get("/top_series/?count=18");
+      setMovies(response.data);
+      return;
+    } else if (genre === "Recent") {
+      const response = await instance.get("/recent_movies/?count=18");
+      setMovies(response.data);
+      return;
+    } else if (genre === "TV Shows") {
+      const response = await instance.get("/top_series/?count=18");
+      setMovies(response.data);
+      return;
+    } else {
+      const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+      setMovies(response.data);
+    }
+  }, []);
+  useEffect(() => {
     getData();
+  }, []);
+  const modalRef = useRef(null);
+  useEffect(() => {
+    if (modalRef.current) {
+      modalRef.current.addEventListener("click", event => {
+        if (event.target.id == "overlay" || event.target.id == "genre") {
+          onClose();
+        }
+      });
+    }
+  }, [genre]);
   }, [getData]);
     const modalRef = useRef(null);
     useEffect(()=>{
@@ -52,10 +90,16 @@ function Modal({onClose, genre, id}) {
 
   return (
     <div className={styles.modal_overlay} id="overlay" ref={modalRef}>
-      <div className={styles.heading} id="genre">{genre}</div>
+      <div className={styles.heading} id="genre">
+        {genre}
+      </div>
       <div className={styles.modal}>
         <div className={styles.movieList}>
-          {movies ? <MovieModalList movie={movies} onClose={onClose} /> : <Loader />}
+          {movies ? (
+            <MovieModalList movie={movies} onClose={onClose} />
+          ) : (
+            <MovieModalList movie={Array(18).fill(null)} />
+          )}
           {/* {!movies && <MovieList movie={Array(18).fill(null)} />} */}
         </div>
       </div>
@@ -67,7 +111,6 @@ function Modal({onClose, genre, id}) {
 }
 
 const GenreModal = ({genre, id, onClose}) => {
-
   return (
     <div>
       <Modal onClose={onClose} genre={genre} id={id} />

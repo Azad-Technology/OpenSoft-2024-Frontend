@@ -57,7 +57,7 @@ const Profile = () => {
       setIsProfileActive(true);
       setIsEditNameDisabled(false);
     } else {
-      navigate("/pricing");
+      navigate("/pricing?editProfile=true");
     }
   };
   const handleConfirmChanges = () => {
@@ -131,7 +131,12 @@ const Profile = () => {
 
   return (
     <div style={{backgroundColor: "#101010", display: "block"}}>
-      <i class="fa fa-angle-double-left" aria-hidden="true" id={styles.homeIcon} onClick={handleNavigateBackward}></i>
+      <i
+        className="fa fa-angle-double-left"
+        aria-hidden="true"
+        id={styles.homeIcon}
+        onClick={handleNavigateBackward}
+      ></i>
       <div className={styles.maincontainer}>
         <div className={styles.card}>
           <div className={styles.cardBody}>
@@ -169,7 +174,7 @@ const Profile = () => {
                   />
                 )}
 
-                {isEditProfileActive ? <i class="fa fa-edit editbtn" onClick={handleNameChange}></i> : <p></p>}
+                {isEditProfileActive ? <i className="fa fa-edit editbtn" onClick={handleNameChange}></i> : <p></p>}
               </div>
             </div>
 
