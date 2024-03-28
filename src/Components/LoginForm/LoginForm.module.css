@@ -21,6 +21,7 @@
   font-size: 2.25rem;
   text-align: center;
   padding: 1.25rem;
+  margin-top: 2rem;
 }
 
 .wrapper .input-box {
@@ -256,7 +257,7 @@
     width: 90vw;
     min-width: 300px;
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 4rem 2rem;
     border-radius: 1rem;
   }
   .wrapper h1 {
