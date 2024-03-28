@@ -29,8 +29,10 @@ import useAlan from "./Components/Alan";
 import BuyPremiumToWatch from "./Components/moviePage/BuyPremiumToWatch.jsx";
 import SuccessPopup from "./Components/LoginAcceptedRejected/successfulLogin.jsx";
 import GenreModal from "./Components/GenreModal/GenreModal";
+import LoginExpired from './Components/LoginExpired/LoginExpired.jsx';
 
 const App = () => {
+
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -72,6 +74,12 @@ const App = () => {
             user: user.data,
           });
         } catch (err) {
+          if(err.request.status === 401){
+            dispatch({
+              type: "REMOVE_TOKEN",
+            });
+          }
+          window.location.href = "/login-expired";
           console.log(err);
         }
       };
@@ -165,6 +173,12 @@ const App = () => {
             }
           />
           <Route path="/watchlist/:id" element={token ? <Watchlists /> : <LoginForm />} />
+          <Route path="/login-expired" element={
+            <>
+              <Navbar />
+              <LoginExpired />
+            </>
+          } />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}

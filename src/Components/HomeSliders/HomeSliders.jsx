@@ -148,12 +148,12 @@ export const HomeSliders = () => {
 
   return (
     <div className={styles.sliders}>
-      <div className={styles.slider_container}>
+      {token && token !=='null' && token !==undefined && token !== 'undefined' && token !=='' && <div className={styles.slider_container}>
         <div className={styles.slider__header}>
           <div className={styles.slider__title}>Handpicked for You</div>
         </div>
         <Slider genre="Handpicked" />
-      </div>
+      </div>}
       <div id="popular" className={styles.slider_container}>
         <div className={styles.slider__header}>
           <div className={styles.slider__title}>Top Movies</div>
