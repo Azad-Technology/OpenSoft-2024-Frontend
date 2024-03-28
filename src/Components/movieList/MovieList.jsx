@@ -3,7 +3,7 @@ import styles from "./MovieList.module.css";
 import Card from "../../Components/Card/Card.jsx";
 
 const MovieList = ({movie}) => {
-  const length = movie.length;
+  const length = movie.length ===1 ? 2 :movie.length;// The problem was only for 1 card
   return (
     <div className={styles.movieList}>
       {movie.map((m, i) => {

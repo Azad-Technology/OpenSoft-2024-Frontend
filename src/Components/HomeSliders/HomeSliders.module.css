@@ -31,7 +31,7 @@
   display: flex;
   overflow-y: auto;
   overflow-x: scroll;
-  padding: 1rem 0rem 1rem 0rem;
+  padding: 1rem 2.5rem 1rem 0rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
   width: inherit;
@@ -40,7 +40,7 @@
 }
 
 .container {
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   width: 100%;
 }
