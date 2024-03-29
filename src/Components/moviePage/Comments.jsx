@@ -103,26 +103,23 @@ function NewComments(props) {
   }
 
   const handleSubmit = async () => {
-    if (!token) {
-      navigate("/login");
-    } else {
-      try {
-        instance.post(
-          "/comment",
-          {
-            comment: newComment,
-            movie_id: props.id,
+    try {
+      await instance.post(
+        "/comment",
+        {
+          comment: newComment,
+          movie_id: props.id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
           },
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        // window.location.reload();
-      } catch (error) {
-        console.log(error);
-      }
+        }
+      );
+
+      // window.location.reload();
+    } catch (error) {
+      console.log(error);
     }
   };
 

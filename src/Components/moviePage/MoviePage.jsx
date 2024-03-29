@@ -45,7 +45,34 @@ function Modal({onClose}) {
   );
 }
 
-const MoviePage = ({setShowPopup}) => {
+function ModalTrail({onClose}) {
+  return (
+    <div className={styles.modal_overlay}>
+      <div className={styles.modal}>
+        {/* Video container */}
+        <div className={styles.video_container}>
+          <div className={styles.video}>
+            <MediaPlayer
+              clipEndTime={30}
+              storage="storage-key"
+              title="Dune"
+              src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8"
+            >
+              <MediaProvider />
+              <DefaultVideoLayout icons={defaultLayoutIcons} />
+            </MediaPlayer>
+          </div>
+        </div>
+        {/* Close button */}
+        <button className={styles.close_button} onClick={onClose}>
+          <img src={closeIcon} alt="Close" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+const MoviePage = () => {
   const [premium, setPremium] = useState(true);
 
   const [{token, user}, dispatch] = useStateValue();
@@ -66,6 +93,7 @@ const MoviePage = ({setShowPopup}) => {
   // const {com} = useParams();
   const [comments, setComments] = useState(null);
   const [movie, setMovie] = useState(null);
+  const [showTrailModal, setShowTrailModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [like, setlike] = useState(false);
   useEffect(() => {
@@ -215,6 +243,9 @@ const MoviePage = ({setShowPopup}) => {
       navigate("/login");
     }
   };
+  const handleTrailerClick = () => {
+    setShowTrailModal(true);
+  };
   const toggleWatchlist = () => {
     if (token && token != "null" && token !== undefined && token != "undefined" && token != "") {
       setShowWatchListModal(true);
@@ -235,7 +266,7 @@ const MoviePage = ({setShowPopup}) => {
         <div
           className={styles.heroContainer}
           style={
-            (!smallScreen && movie)
+            !smallScreen && movie
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -321,7 +352,7 @@ const MoviePage = ({setShowPopup}) => {
               )}
               {movie?.genres.map(ele => (
                 <button className={styles.genreButtons} onClick={() => openModal(ele)}>
-                  {ele} <img src = {popupIcon} className={styles.popupIcon} />
+                  {ele} <img src={popupIcon} className={styles.popupIcon} />
                 </button>
               ))}
             </div>
@@ -329,6 +360,9 @@ const MoviePage = ({setShowPopup}) => {
               <span>
                 <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
+                </button>
+                <button className={styles.modalbutton} onClick={handleTrailerClick}>
+                  Trailer
                 </button>
                 <span>
                   <span className={styles.icon} id="heartIcon">
@@ -341,15 +375,15 @@ const MoviePage = ({setShowPopup}) => {
                 </span>
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
                 {showModal && <Modal onClose={() => setShowModal(false)} />}
+                {showTrailModal && <ModalTrail onClose={() => setShowTrailModal(false)} />}
                 {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
               </span>
             </div>
           </div>
         </div>
-        
+
         <div className={styles.heading}>More Details</div>
         <div className={styles.movieInfo}>
-          
           <div className={styles.fullplot}>
             <div className={styles.cell}>
               {movie?.fullplot && <div className={styles.subHeading}>Plot</div>}
@@ -401,8 +435,6 @@ const MoviePage = ({setShowPopup}) => {
               </div>
             )}
           </div>
-
-          
         </div>
 
         {comments ? <Comments info={comments} id={id} /> : <></>}

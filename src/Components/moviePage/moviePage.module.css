@@ -555,19 +555,19 @@
   padding: 2rem 0 9rem 0;
 }
 
-.fullplot{
+.fullplot {
   margin-left: 1rem;
   width: 50%;
   height: 100%;
 }
 
-.fullplot{
+.fullplot {
   margin-left: 1rem;
   width: 50%;
   height: 100%;
 }
 
- .heading {
+.heading {
   color: #fffe3e;
   font-weight: bold;
   margin: 1rem auto 0rem 1rem;
@@ -576,7 +576,7 @@
   font-size: 2rem;
 }
 
- .container {
+.container {
   position: absolute;
   right: 0;
   width: 40%;
@@ -591,24 +591,23 @@
   /* height: 100%; */
 }
 
-.popupIcon{
+.popupIcon {
   height: 1rem;
   width: 1rem;
 }
 
-
- .cell {
+.cell {
   gap: 1rem;
 }
 
- .subHeading {
+.subHeading {
   margin-bottom: 0.5rem;
   color: white;
   font-weight: bold;
   font-size: 1.25rem;
 }
 
- .content {
+.content {
   color: #c2b8b8;
   font-weight: bold;
   font-size: 1.25rem;

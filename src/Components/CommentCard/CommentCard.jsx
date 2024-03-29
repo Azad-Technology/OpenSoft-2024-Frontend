@@ -44,7 +44,7 @@ function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
 
   return (
     <>
-      <div className={username === "" ? `${styles.skeleton__cards}` : `${styles.commentCard}`}>
+      <div className={username === "" ? `${styles.skeleton__cards} ${styles.commentCard}` : `${styles.commentCard}`}>
         <div className={styles.title}>
           {profilePic != "" && <img src={profilePic} alt="" className={styles.profilePic} />}
           <div>
