@@ -199,7 +199,7 @@
   margin-left: 90%;
 }
 .favorites {
-  padding-left: 5rem;
+  padding-left: 3rem;
   color: white;
 }
 .favorites h1 {
@@ -288,6 +288,7 @@
   .edit_button > button {
     margin-right: 0;
   }
+
   .favorites {
     padding-left: 0;
   }
