@@ -437,7 +437,7 @@ const MoviePage = () => {
           </div>
         </div>
 
-        {comments ? <Comments info={comments} id={id} /> : <></>}
+        {comments ? <Comments setComments={setComments} info={comments} id={id} /> : <></>}
 
         <MoreLikeThis id={id} />
         {/* <div className={styles.loaderIcon}>
