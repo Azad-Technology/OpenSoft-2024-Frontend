@@ -2,6 +2,7 @@ import styles from "./Comments.module.css";
 import {useState, useRef, useEffect} from "react";
 import instance from "../../axios.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
+import {useNavigate} from "react-router-dom";
 
 // let comments = ['Lorem ',
 // 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus.',
@@ -36,6 +37,7 @@ function NewComments(props) {
   const textareaRef = useRef(null);
   const initialParentHeight = useRef(null);
   const initialTextareaHeight = useRef(null);
+  const navigate = useNavigate();
 
   function SwitchState() {
     setClicked(!clicked);
@@ -101,22 +103,26 @@ function NewComments(props) {
   }
 
   const handleSubmit = async () => {
-    try {
-      instance.post(
-        "/comment",
-        {
-          comment: newComment,
-          movie_id: props.id,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
+    if (!token) {
+      navigate("/login");
+    } else {
+      try {
+        instance.post(
+          "/comment",
+          {
+            comment: newComment,
+            movie_id: props.id,
           },
-        }
-      );
-      // window.location.reload();
-    } catch (error) {
-      console.log(error);
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        // window.location.reload();
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -140,8 +146,7 @@ function NewComments(props) {
                   onChange={event => handleTextAreaChange(event)}
                   onFocus={handleTextareaFocus}
                   // onBlur={handleTextareaBlur}
-                  value={newComment}
-                ></textarea>
+                  value={newComment}></textarea>
               </div>
               <div className={styles.submitBtnContainer}>
                 {disableBtn && (
@@ -197,10 +202,9 @@ function NewComments(props) {
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 512.001 512.001"
-                    xmlSpace="preserve"
-                  >
+                    xmlSpace="preserve">
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                    <g id="SVGRepo_tracerCarrier" strokelinecap="round" strokelinejoin="round"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
                       {" "}
                       <g>

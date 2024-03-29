@@ -11,6 +11,7 @@ import MovieList from "../movieList/MovieList";
 import GeneralSlider from "../HomeSliders/GeneralSlider";
 
 const Profile = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [{token, user}, dispatch] = useStateValue();
   const navigate = useNavigate();
   const [fullname, setFullname] = useState("name");
@@ -30,6 +31,25 @@ const Profile = () => {
   const [favMovie, setFavMovie] = useState([]);
   const handlecChangePasswordClick = () => {
     setChangePasswordModalOpen(true);
+  };
+
+  const handleDownloadInvoice = async () => {
+    setIsLoading(true);
+    try {
+      const response = await instance.get("/user", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const invoiceUrl = response.data.invoice_url;
+      window.open(invoiceUrl, "_blank");
+    } catch (error) {
+      console.error("Error fetching and downloading invoice:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const sendChangeRequest = async e => {
@@ -135,8 +155,7 @@ const Profile = () => {
         className="fa fa-angle-double-left"
         aria-hidden="true"
         id={styles.homeIcon}
-        onClick={handleNavigateBackward}
-      ></i>
+        onClick={handleNavigateBackward}></i>
       <div className={styles.maincontainer}>
         <div className={styles.card}>
           <div className={styles.cardBody}>
@@ -216,8 +235,7 @@ const Profile = () => {
                         id={styles.Conpass}
                         type="password"
                         name="password"
-                        onChange={e => setVerificationCurrentPassword(e.target.value)}
-                      ></input>
+                        onChange={e => setVerificationCurrentPassword(e.target.value)}></input>
                     </div>
 
                     <div className={styles.col_sm_3}>
@@ -228,8 +246,7 @@ const Profile = () => {
                         id={styles.Conpass}
                         type="password"
                         name="password"
-                        onChange={e => setNewPassword(e.target.value)}
-                      ></input>
+                        onChange={e => setNewPassword(e.target.value)}></input>
                     </div>
                     <button className={styles.Confpass} onClick={handleUpdatePassword}>
                       confirm changes
@@ -329,6 +346,9 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.edit_button}>
+        <button onClick={handleDownloadInvoice} disabled={isLoading}>
+          {isLoading ? "Downloading..." : "Download Invoice"}
+        </button>
         {isEditProfileActive ? (
           <>
             <button onClick={handleConfirmChanges}>Save Changes</button>
