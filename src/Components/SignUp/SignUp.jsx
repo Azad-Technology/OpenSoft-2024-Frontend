@@ -9,6 +9,7 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import RejectedPopup from "../LoginAcceptedRejected/rejectedLogin";
 import usernamegenerator from "./usernamegenerator.jsx";
+import { GoogleLoginButton } from "../LoginForm/GoogleLoginButton.jsx";
 
 function SignUp({setShowPopup}) {
   const [{token, premium}, dispatch] = useStateValue();
@@ -99,12 +100,7 @@ function SignUp({setShowPopup}) {
         <form action="">
           <h1>Sign Up</h1>
 
-          <div className={styles.OAuth}>
-            <button type="submit" className={styles.google} onClick={handleGoogleClick}>
-              <FcGoogle style={{width: "1.25rem", height: "1.25rem"}} className={styles.googleIcon} />
-              Sign up with Google
-            </button>
-          </div>
+          <GoogleLoginButton register={true}/>
 
           <hr className={styles.Or} />
 

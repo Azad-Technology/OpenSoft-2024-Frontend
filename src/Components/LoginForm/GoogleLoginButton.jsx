@@ -3,11 +3,12 @@ import {useGoogleLogin} from "@react-oauth/google";
 import {useStateValue} from "../../MyContexts/StateProvider";
 import instance from "../../axios";
 import styles from "./LoginForm.module.css";
+import {FcGoogle} from "react-icons/fc";
 import axios from "axios";
 
 const clientID = "950287933882-5bvrs6br7a5ubeb1l2m8di6vgjgu7sco.apps.googleusercontent.com";
 
-export const GoogleLoginButton = () => {
+export const GoogleLoginButton = ({register}) => {
   const [{}, dispatch] = useStateValue();
 
   const login = useGoogleLogin({
@@ -38,5 +39,7 @@ export const GoogleLoginButton = () => {
     },
   });
 
-  return <button onClick={() => login()}>Login with Google</button>;
+  return <button className={styles.googleButton} onClick={() => login()}>
+      <FcGoogle style={{width: "1.25rem", height: "1.25rem"}} className={styles.googleIcon} />    
+      Sign {register?"up":"in"} with Google</button>;
 };

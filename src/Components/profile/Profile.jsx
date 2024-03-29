@@ -211,7 +211,7 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className={styles.row}>
+            {!user?.isGoogleAuth && <div className={styles.row}>
               <div className={styles.col_sm_3}>
                 <p className={styles.head}> Password</p>
               </div>
@@ -261,7 +261,7 @@ const Profile = () => {
                   </>
                 )}
               </div>
-            </div>
+            </div>}
 
             {/* {!user?.subtype === "Basic" ? (
               <div></div>

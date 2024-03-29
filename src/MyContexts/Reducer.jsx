@@ -8,6 +8,7 @@ export const initialState = {
     fav: [],
     watchlist: [],
     profilePic: "",
+    isGoogleAuth:false
   },
 };
 
@@ -34,6 +35,7 @@ const reducer = (state, action) => {
           subtype: "",
           fav: [],
           profilePic: "",
+          isGoogleAuth:false
         },
       };
     case "SET_TOKEN":
@@ -47,6 +49,7 @@ const reducer = (state, action) => {
           subtype: "",
           fav: [],
           profilePic: "",
+          isGoogleAuth:false
         },
       };
     case "ADD_FAV":
