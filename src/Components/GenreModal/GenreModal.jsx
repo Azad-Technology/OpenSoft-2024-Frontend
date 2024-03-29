@@ -4,6 +4,7 @@ import instance from "../../axios";
 import MovieModalList from "./MovieModalList";
 import Loader from "../Loader/Loader";
 import {useRef} from "react";
+import closeIcon from "../../assets/close-47.svg";
 
 function Modal({onClose, genre, id}) {
   const [movies, setMovies] = useState(null);
@@ -59,7 +60,7 @@ function Modal({onClose, genre, id}) {
         </div>
       </div>
       <button className={styles.close_button} onClick={onClose}>
-        X
+        <img src={closeIcon} alt="Close" />
       </button>
     </div>
   );

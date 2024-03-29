@@ -19,7 +19,7 @@
   max-height: 20%;
   opacity: 1;
   /* margin: 2rem 1.3rem 2rem 0; */
-  margin: 2rem 1.3rem 2rem 1.3rem;
+  margin: 2rem 1.3rem 2rem 0.2rem;
   cursor: pointer;
   box-shadow: 0 0.25rem 0.3rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -209,7 +209,7 @@
     height: 6rem;
   }
   .first__card {
-    margin-left: 1.3rem;
+    margin-left: 1.5rem;
   }
 }
 @media screen and (max-width: 250px) {
