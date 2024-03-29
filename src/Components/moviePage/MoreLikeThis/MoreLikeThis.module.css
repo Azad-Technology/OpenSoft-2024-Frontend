@@ -55,7 +55,7 @@
     gap: 1rem;
   }
 }
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 425px) {
   .container .gridcontainer {
     grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
     gap: 1rem;
@@ -63,7 +63,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   .container .title {
     font-size: 1.3rem;
   }
