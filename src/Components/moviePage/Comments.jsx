@@ -2,6 +2,7 @@ import styles from "./Comments.module.css";
 import {useState, useRef, useEffect} from "react";
 import instance from "../../axios.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
+import {useNavigate} from "react-router-dom";
 
 // let comments = ['Lorem ',
 // 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus.',
@@ -36,6 +37,7 @@ function NewComments(props) {
   const textareaRef = useRef(null);
   const initialParentHeight = useRef(null);
   const initialTextareaHeight = useRef(null);
+  const navigate = useNavigate();
 
   function SwitchState() {
     setClicked(!clicked);
@@ -201,7 +203,7 @@ function NewComments(props) {
                     xmlSpace="preserve"
                   >
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                    <g id="SVGRepo_tracerCarrier" strokelinecap="round" strokelinejoin="round"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
                       {" "}
                       <g>

@@ -225,13 +225,18 @@ const MoviePage = () => {
 
   const handleClick = () => {
     if (token && token != "null" && token !== undefined && token != "undefined" && token != "") {
+      if (!movie) return;
       if (!premium) {
         setShowModal(true);
       } else {
         if (user && user.subtype != "Basic") {
           setShowModal(true);
         } else {
+          setShowPopup(true);
           navigate("/pricing");
+          setTimeout(() => {
+            setShowPopup(false);
+          }, 4000);
         }
       }
     } else {
@@ -261,7 +266,7 @@ const MoviePage = () => {
         <div
           className={styles.heroContainer}
           style={
-            !smallScreen && movie
+            (!smallScreen && movie)
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -270,7 +275,23 @@ const MoviePage = () => {
             {premium && <div className={styles.premium}>Included with premium</div>}
 
             <div className={styles.shadowBox}>
+              {!movie?.title && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__header}></div>
+                  <div className={styles.skeleton__header}></div>
+                  <div className={styles.skeleton__header}></div>
+                </div>
+              )}
               <div className={styles.title}>{movie?.title}</div>
+              {!movie?.plot && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__description}></div>
+                  <div className={styles.skeleton__description}></div>
+                  <div className={styles.skeleton__description}></div>
+                  <div className={styles.skeleton__description}></div>
+                  <div className={styles.skeleton__description}></div>
+                </div>
+              )}
               <div className={styles.description} id="description">
                 {movie?.plot}
                 {!isExpanded && (
@@ -288,26 +309,56 @@ const MoviePage = () => {
             </div>
             <div className={styles.info}>
               <span>
-                {movie?.imdb && (
-                  <span className={styles.imdbContainer}>
-                    <span className={styles.imdb}>IMDb</span>
-                    <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
+                <span className={styles.imdbContainer}>
+                  <span className={styles.imdb}>IMDb</span>
+                  <span className={styles.imdbRating}>
+                    {!movie?.imdb && (
+                      <div className={styles.skeleton__headers}>
+                        <div className={styles.skeleton__small}></div>
+                        <div className={styles.skeleton__small}></div>
+                      </div>
+                    )}
+                    {movie?.imdb && movie?.imdb.rating}
                   </span>
-                )}
+                </span>
                 {/* <span>{props.info.duration}</span> */}
-                <span>{movie?.year}</span>
+                {!movie?.year && (
+                  <div className={styles.skeleton__headers}>
+                    <div className={styles.skeleton__small}></div>
+                    <div className={styles.skeleton__small}></div>
+                  </div>
+                )}
+                <span>{movie?.year && movie?.year}</span>
               </span>
             </div>
             <div className={styles.genreList}>
+              {!movie?.genres && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__small}></div>
+                  <div className={styles.skeleton__small}></div>
+                </div>
+              )}
+              {!movie?.genres && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__small}></div>
+                  <div className={styles.skeleton__small}></div>
+                </div>
+              )}
+              {!movie?.genres && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__small}></div>
+                  <div className={styles.skeleton__small}></div>
+                </div>
+              )}
               {movie?.genres.map(ele => (
                 <button className={styles.genreButtons} onClick={() => openModal(ele)}>
-                  {ele} <img src={popupIcon} className={styles.popupIcon} />
+                  {ele} <img src = {popupIcon} className={styles.popupIcon} />
                 </button>
               ))}
             </div>
             <div className={styles.Mbutton}>
               <span>
-                <button className={styles.modalbutton} onClick={handleClick}>
+                <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
                 <button className={styles.modalbutton} onClick={handleTrailerClick}>
@@ -330,31 +381,54 @@ const MoviePage = () => {
             </div>
           </div>
         </div>
-
+        
         <div className={styles.heading}>More Details</div>
         <div className={styles.movieInfo}>
+          
           <div className={styles.fullplot}>
-            {movie?.fullplot && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Plot</div>
-                <div className={styles.content}>{movie.fullplot}</div>
+            <div className={styles.cell}>
+              {movie?.fullplot && <div className={styles.subHeading}>Plot</div>}
+              <div className={styles.content}>
+                {!movie?.fullplot && (
+                  <div className={styles.skeleton__headers}>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                  </div>
+                )}
+                {movie?.fullplot}
               </div>
-            )}
+            </div>
           </div>
 
           <div className={styles.container}>
             {movie?.cast && (
               <div className={styles.cell}>
-                <div className={styles.subHeading}>Cast</div>
+                {movie?.cast && <div className={styles.subHeading}>Cast</div>}
                 <div className={styles.content}>{makeString(movie?.cast)}</div>
               </div>
             )}
-            {movie?.languages && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Languages</div>
-                <div className={styles.content}>{makeString(movie?.languages)}</div>
+            <div className={styles.cell}>
+              {movie?.languages && <div className={styles.subHeading}>Languages</div>}
+              <div className={styles.content}>
+                {!movie?.fullplot && (
+                  <div className={styles.skeleton__headers}>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                  </div>
+                )}
+                {makeString(movie?.languages)}
               </div>
-            )}
+            </div>
             {movie?.directors && (
               <div className={styles.cell}>
                 <div className={styles.subHeading}>Director</div>
@@ -362,6 +436,8 @@ const MoviePage = () => {
               </div>
             )}
           </div>
+
+          
         </div>
 
         {comments ? <Comments info={comments} id={id} /> : <></>}

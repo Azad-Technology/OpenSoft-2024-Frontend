@@ -12,14 +12,14 @@
   width: 20%;
   padding-bottom: 3rem;
   height: fit-content;
-  background-color: #101010;
+  background-color: #11060d;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   box-shadow: 1rem 1rem 5rem 0.01rem #000000;
 }
 .card_desc {
   margin-bottom: 1rem;
   border-radius: 0.25rem;
-  background-color: #101010;
+  background-color: #11060d;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   width: 75%;
   /* height: 25rem; */
@@ -50,14 +50,14 @@
 .details,
 .head {
   margin-bottom: 0.25rem;
-  color: #6c757d;
+  color: #c6dab7;
   width: 100%;
   /* padding-top: 5%; */
   font-size: large;
   text-align: right;
 }
 .details {
-  background-color: #101010;
+  background-color: #11060d;
   outline: none;
   border: none;
   text-align: right;
@@ -77,7 +77,7 @@
 }
 
 ._btn {
-  background-color: #101010;
+  background-color: transparent;
 }
 .row {
   display: flex;
@@ -105,7 +105,7 @@
 ._btn {
   color: rgb(26, 86, 141);
   text-decoration: underline;
-  background-color: #101010;
+  background-color: transparent;
   border: none;
   outline: none;
   text-align: right;
@@ -180,8 +180,9 @@
   display: block;
   /* position: absolute; */
   /* margin-top: 2rem; */
-  background-color: rgba(255, 9, 9, 0.925);
-  color: white;
+  background-color: #cccc00;
+  color: #332b50;
+  /* color: white; */
   border: none;
   border-radius: 0.5rem;
   padding: 0.7rem;
@@ -190,7 +191,7 @@
   font-size: 1.1rem;
 }
 .edit_button button:hover {
-  background-color: rgba(255, 9, 9, 0.7);
+  background-color: #a1a104;
 }
 .editbtn {
   background-color: #101010;
@@ -198,7 +199,7 @@
   margin-left: 90%;
 }
 .favorites {
-  padding-left: 5rem;
+  padding-left: 3rem;
   color: white;
 }
 .favorites h1 {
@@ -212,7 +213,7 @@
   /* justify-content: space-between; */
 }
 #homeIcon {
-  color: red;
+  color: #a8a806;
   font-size: 3rem;
   position: absolute;
   top: 5%;
@@ -228,11 +229,12 @@
 }
 
 .nothingToShow {
-  margin: 0.5rem 0 0.8rem 1.8rem;
+  /* margin: 0.5rem 0 0.8rem 2rem; */
   color: #6c757d;
   font-size: 1.3rem;
-  margin-top: 0.5rem;
-  margin-left: 1.8rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -286,6 +288,7 @@
   .edit_button > button {
     margin-right: 0;
   }
+
   .favorites {
     padding-left: 0;
   }

@@ -91,7 +91,7 @@
   margin-right: 0.5rem;
 }
 .delete_button {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: #fff;
   border: none;
   border-radius: 0.25rem;

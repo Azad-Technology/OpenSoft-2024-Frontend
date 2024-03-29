@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, useRef} from "react";
 import styles from "./WatchListModal.module.css";
 import instance from "../../axios";
 import axios from "axios";
@@ -7,6 +7,13 @@ const WatchListModal = ({onClose, movieID}) => {
   const [{token, user}, dispatch] = useStateValue();
   const [watchlistName, setWatchListName] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const dropdownRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [selectedWatchlistsName, setSelectedWatchlistsName] = useState([]);
+
+  let label = `Watchlists`;
+
   console.log(user);
   const watchlists = user?.watchlist;
   //   console.log(user);
@@ -92,6 +99,35 @@ const WatchListModal = ({onClose, movieID}) => {
     });
   };
 
+  const handleCheckboxChange2 = (name, checked) => {
+    setSelectedWatchlistsName(prev => {
+      if (checked) {
+        return [...prev, name];
+      }
+      return prev.filter(watchlist => watchlist !== name);
+    });
+  };
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+    if (isOpen) {
+      setUpDownArrow("25B2");
+    } else {
+      setUpDownArrow("25BC");
+    }
+    dropdownRef.current.classList.toggle("open");
+  };
+
+  const displaySelected = label => {
+    if (selectedWatchlistsName.length === 0) {
+      return label; // Display 'Genre', 'Year', or 'Language'
+    } else if (selectedWatchlistsName.length > 1) {
+      return `${selectedWatchlistsName.slice(0, 1).join(", ")} + ${selectedWatchlistsName.length - 1} more`;
+    } else {
+      return selectedWatchlistsName.join(", ");
+    }
+  };
+
   return (
     <div className={styles.watchlist_modal_overlay}>
       <div className={styles.watchlist_modal}>
@@ -117,30 +153,61 @@ const WatchListModal = ({onClose, movieID}) => {
           <div className={styles.watchlist_divider}></div>
           <div className={styles.watchlist_modal_section}>
             <div className={styles.watchlist_modal_section_heading}>Add to Existing</div>
-            <div className={styles.watchlist_modal_buttons}>
-              {watchlists?.map(watchlist => (
-                <div className={styles.checkbox_wrapper}>
-                  <label className={styles.checkbox}>
-                    <input
-                      type="checkbox"
-                      className={styles.checkbox__input}
-                      onChange={e => handleCheckboxChange(watchlist._id, e.target.checked)}
-                    />
-                    <span className={styles.checkbox__label}></span>
-                    {watchlist.name}
-                  </label>
-                </div>
-              ))}
+            <div className={styles.dropdown_submit_btn_container}>
+              <div className={styles.dropdowncontainer} ref={dropdownRef}>
+                <button onClick={toggleDropdown} className={styles.dropdownbutton}>
+                  {displaySelected(label)}
+                  {/* Watchlists */}
+                </button>
+                <button type="submit" className={styles.watchlist_modal_button} onClick={e => addWatchList(e)}>
+                  {" "}
+                  Add{" "}
+                </button>
+              </div>
             </div>
-            <button type="submit" className={styles.watchlist_modal_button} onClick={e => addWatchList(e)}>
-              {" "}
-              Add{" "}
-            </button>
+            <div className={styles.dropdowncontainer} ref={dropdownRef}>
+              {isOpen && (
+                <ul className={styles.dropdownlist}>
+                  {watchlists?.map(watchlist => (
+                    <li>
+                      <label className={styles.checkbox}>
+                        <input
+                          type="checkbox"
+                          className={styles.checkbox__input}
+                          checked={selectedWatchlistsName.includes(watchlist.name) ? "checked" : ""}
+                          onChange={e => {
+                            handleCheckboxChange(watchlist._id, e.target.checked);
+                            handleCheckboxChange2(watchlist.name, e.target.checked);
+                          }}
+                        />
+                        <span class="input-check"></span>
+                        {watchlist.name}
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            {/* <div className={styles.watchlist_modal_buttons}>
+                {watchlists?.map(watchlist => (
+                  <div className={styles.checkbox_wrapper}>
+                    <label className={styles.checkbox}>
+                      <input
+                        type="checkbox"
+                        className={styles.checkbox__input}
+                        onChange={e => handleCheckboxChange(watchlist._id, e.target.checked)}
+                      />
+                      <span className={styles.checkbox__label}></span>
+                      {watchlist.name}
+                    </label>
+                  </div>
+                ))}
+              </div> */}
           </div>
+          <button className={styles.watchlist_close_button} onClick={onClose}>
+            X
+          </button>
         </div>
-        <button className={styles.watchlist_close_button} onClick={onClose}>
-          X
-        </button>
       </div>
     </div>
   );

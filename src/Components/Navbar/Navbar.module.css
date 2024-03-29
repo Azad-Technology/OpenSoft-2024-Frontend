@@ -7,6 +7,15 @@
   }
 }
 
+.Desktop__navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile__navbar {
+  display: none;
+}
+
 .navbar__mobile {
   position: relative;
 }
@@ -196,6 +205,13 @@ a {
   }
   .desktop_login {
     display: none;
+  }
+  .Desktop__navbar {
+    display: none;
+  }
+  .mobile__navbar {
+    display: flex;
+    flex-direction: column;
   }
 }
 
