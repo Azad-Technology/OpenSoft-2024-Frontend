@@ -1,20 +1,22 @@
 .login {
-  height: 100%;
+  height: 89vh;
   width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
+  background-color: #330033;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .wrapper {
   width: 30rem;
-  background: rgba(255, 255, 255, 0.9);
-  color: black;
+  background: rgba(31, 22, 28, 0.5);
+  color: rgb(255, 255, 255);
   border-radius: 2rem;
   padding: 3rem 3rem;
-  box-shadow: -5px -5px 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: -0.1rem 0rem 1rem 0.25rem rgba(16, 15, 15, 1);
 }
 
 .wrapper h1 {
@@ -43,6 +45,9 @@
   align-items: center;
   margin-top: 3%;
   margin-bottom: 4%;
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 0.3125rem;
+  height: 100%;
 }
 
 .signup input {
@@ -57,7 +62,7 @@
   font-size: 1rem;
   color: black;
   padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
-  border-color: black;
+  border-color: transparent;
 }
 
 .icon_box {
@@ -78,7 +83,7 @@
 }
 
 .input_box {
-  border: 0.125rem solid black;
+  border: 0.125rem solid rgb(255, 255, 255);
   border-radius: 0.3125rem;
   height: 100%;
 }
@@ -96,13 +101,13 @@
   font-size: 1rem;
   color: black;
   padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
-  border-color: black;
+  border-color: rgb(255, 255, 255);
   /* margin-bottom: 10%;  */
 }
 
-/* .input_box input::placeholder{
-    color: black;
-} */
+.input_box input::placeholder {
+  color: rgb(255, 255, 255);
+}
 
 /* .input_box .icon{
     position: absolute;
@@ -135,7 +140,7 @@
 .wrapper button {
   width: 100%;
   height: 2.8125rem;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgb(255, 255, 255);
   border: none;
   outline: none;
   border-radius: 0.3125rem;
@@ -152,11 +157,21 @@
   font-size: 1rem;
   text-align: center;
   margin: 1.25rem 0 0.9375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
+/* 
 .register_link p a {
   color: black;
   text-decoration: none;
+  font-weight: 600;
+} */
+
+.register-link p a {
+  font-size: 0.90625rem;
   font-weight: 600;
 }
 
@@ -168,14 +183,21 @@
   display: flex;
   accent-color: white;
   justify-content: center;
+  width: 50%;
 }
 
-.OAuth button {
-  width: 75%;
+.GoogleLogin div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5;
+}
+
+.wrapper hr {
+  margin-bottom: 1.5rem;
 }
 
 .Or {
-  margin-top: 1.25rem;
   margin-bottom: 0.625rem;
   display: flex;
   justify-content: center;
@@ -252,6 +274,10 @@
     } */
 }
 
+.signup input::placeholder {
+  color: rgb(255, 255, 255);
+}
+
 @media screen and (max-width: 500px) {
   .wrapper {
     width: 90vw;
@@ -291,10 +317,12 @@
     font-size: 0.8rem;
     margin-bottom: 0.6rem;
   }
+
   .signup input {
     padding: 0.2rem;
     border: 1px solid black;
   }
+
   .input_box input {
     padding: 0.2rem;
   }

@@ -18,10 +18,10 @@
   margin: 0 1rem 1rem 0;
 }
 
-.yourComment {
+/* .yourComment {
   display: flex;
   justify-content: center;
-}
+} */
 
 .commentContainer .textBtnCont {
   box-sizing: border-box;
@@ -80,7 +80,7 @@
 
 .commentContainer .submitBtn {
   background-color: #fffe3e; /* Dark background color */
-  color: rgb(31,12,25);
+  color: rgb(31, 12, 25);
   /* border: .3px solid #ffffffb6; */
   padding: 0.2rem 0.3rem; /* Padding */
   margin: 0.5rem;
@@ -122,9 +122,8 @@ textarea {
   resize: none;
 }
 textarea:focus {
-  all: unset;
   white-space: pre-wrap;
-  width: 90%;
+  width: 100%;
   box-sizing: border-box;
   /* border-radius: 30px; */
   padding: 0.5rem;
@@ -132,6 +131,7 @@ textarea:focus {
   /* height: 4rem; */
   background-color: var(--primary-bg-color);
   resize: none;
+  outline: none;
 }
 
 .allCommentsContainer {

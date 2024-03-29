@@ -22,7 +22,7 @@ export const Slider = ({genre, id}) => {
       setMovies(response.data);
       return;
     }
-    if (genre === "Popular in your region") {
+    if (genre === "Regional Hits") {
       const response = await instance.get(`my_country/?count=18`);
       setMovies(response.data);
       return;
@@ -49,7 +49,7 @@ export const Slider = ({genre, id}) => {
     }
     const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
     setMovies(response.data);
-  },[genre, id, token] );
+  }, [genre, id, token]);
   useEffect(() => {
     getData();
   }, [getData]);

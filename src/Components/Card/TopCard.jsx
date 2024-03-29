@@ -62,7 +62,7 @@ const TopCard = ({movies, val, length}) => {
       </div>
       <div
         onClick={() => navigate(`/movie/${movies?._id}`)}
-        className={`${styles.cards} ${styles.skeleton__cards}`}
+        className={`${styles.cards} ${!movies && styles.skeleton__cards}`}
         id={`${movies?._id}`}
         onMouseOver={handlehover}
       >

@@ -12,7 +12,6 @@
   font-weight: 400;
   font-style: normal; */
   background-color: rgb(31, 12, 25);
-  
 }
 
 /* hero small screen */
@@ -326,13 +325,25 @@
 /* Close Button */
 .close_button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
+  width: 2.5rem; /* Adjust width as needed */
+  height: 2.55rem; /* Adjust height as needed */
+  background-image: url("../../assets/close-47.svg"); /* Path to your SVG file */
+  background-size: contain; /* Ensure the SVG fits inside the button */
+  background-repeat: no-repeat; /* Prevent repetition */
   background-color: transparent;
   border: none;
-  color: #fff;
-  font-size: 20px;
   cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.7s;
+}
+
+@media screen and (min-width: 1024px) {
+  .close_button:hover {
+    width: 7rem;
+    height: 7rem;
+  }
 }
 
 .icon {
@@ -355,9 +366,9 @@
     font-size: 1.1rem;
   }
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .font {
-    margin-top: 4rem; 
+    margin-top: 4rem;
   }
 }
 
@@ -441,22 +452,22 @@
   padding: 2rem 0 9rem 0;
 }
 
-.fullplot{
+.fullplot {
   margin-left: 1rem;
   width: 50%;
   height: 100%;
 }
 
- .heading {
+.heading {
   color: #fffe3e;
   font-weight: bold;
   margin: 1rem auto 0rem 1rem;
-  top:0;
+  top: 0;
   left: 0;
   font-size: 2rem;
 }
 
- .container {
+.container {
   position: absolute;
   right: 0;
   width: 40%;
@@ -467,23 +478,23 @@
   /* height: 100%; */
 }
 
-.popupIcon{
+.popupIcon {
   height: 0.75rem;
   width: 0.75rem;
 }
 
- .cell {
+.cell {
   gap: 1rem;
 }
 
- .subHeading {
+.subHeading {
   margin-bottom: 0.5rem;
   color: white;
   font-weight: bold;
   font-size: 1.25rem;
 }
 
- .content {
+.content {
   color: #c2b8b8;
 }
 
@@ -511,15 +522,15 @@
   .heading {
     font-size: 1.3rem;
   }
-  .movieInfo{
+  .movieInfo {
     flex-direction: column;
     padding-right: 1rem;
   }
-  .fullplot{
+  .fullplot {
     width: 100%;
     margin-bottom: 1rem;
   }
-  .container{
+  .container {
     position: relative;
     right: auto;
     width: 100%;
@@ -532,4 +543,3 @@
         max-width:none;
     } */
 }
-

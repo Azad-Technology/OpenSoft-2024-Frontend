@@ -20,7 +20,7 @@ export const HomeSliders = () => {
       genreID: "topseries",
     },
     {
-      name: "Popular in your region",
+      name: "Regional Hits",
       link: "#",
       genreID: "my_country",
     },

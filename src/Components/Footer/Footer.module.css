@@ -167,6 +167,9 @@
     text-align: center;
   }
   .legal {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+  }
+  .footer__nav {
+    flex-wrap: nowrap;
   }
 }

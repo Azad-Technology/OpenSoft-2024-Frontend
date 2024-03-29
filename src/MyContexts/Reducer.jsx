@@ -7,6 +7,7 @@ export const initialState = {
     subtype: "",
     fav: [],
     watchlist: [],
+    profilePic: "",
   },
 };
 
@@ -32,6 +33,7 @@ const reducer = (state, action) => {
           role: "",
           subtype: "",
           fav: [],
+          profilePic: "",
         },
       };
     case "SET_TOKEN":
@@ -44,6 +46,7 @@ const reducer = (state, action) => {
           role: "",
           subtype: "",
           fav: [],
+          profilePic: "",
         },
       };
     case "ADD_FAV":
