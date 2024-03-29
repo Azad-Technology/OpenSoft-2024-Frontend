@@ -32,7 +32,7 @@
   overflow-y: hidden;
   overflow-x: scroll;
   /* note: dont change the padding at all it will cause scrolling effect on the cards */
-  padding: 0rem 2.5rem 0rem 0rem;
+  padding: 0.2rem 2.5rem 0.2rem 0rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
   width: inherit;

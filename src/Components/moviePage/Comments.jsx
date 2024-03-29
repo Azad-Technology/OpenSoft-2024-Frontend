@@ -102,7 +102,7 @@ function NewComments(props) {
 
   const handleSubmit = async () => {
     try {
-      instance.post(
+      await instance.post(
         "/comment",
         {
           comment: newComment,
@@ -114,6 +114,7 @@ function NewComments(props) {
           },
         }
       );
+
       // window.location.reload();
     } catch (error) {
       console.log(error);
