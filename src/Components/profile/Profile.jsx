@@ -155,7 +155,8 @@ const Profile = () => {
         className="fa fa-angle-double-left"
         aria-hidden="true"
         id={styles.homeIcon}
-        onClick={handleNavigateBackward}></i>
+        onClick={handleNavigateBackward}
+      ></i>
       <div className={styles.maincontainer}>
         <div className={styles.card}>
           <div className={styles.cardBody}>
@@ -235,7 +236,8 @@ const Profile = () => {
                         id={styles.Conpass}
                         type="password"
                         name="password"
-                        onChange={e => setVerificationCurrentPassword(e.target.value)}></input>
+                        onChange={e => setVerificationCurrentPassword(e.target.value)}
+                      ></input>
                     </div>
 
                     <div className={styles.col_sm_3}>
@@ -246,7 +248,8 @@ const Profile = () => {
                         id={styles.Conpass}
                         type="password"
                         name="password"
-                        onChange={e => setNewPassword(e.target.value)}></input>
+                        onChange={e => setNewPassword(e.target.value)}
+                      ></input>
                     </div>
                     <button className={styles.Confpass} onClick={handleUpdatePassword}>
                       confirm changes
