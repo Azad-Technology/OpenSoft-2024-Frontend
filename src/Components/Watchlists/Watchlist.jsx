@@ -21,7 +21,7 @@ const Watchlist = ({movies, name, id}) => {
       };
       const response = await instance.request(`/remove_watchlist/${id}`, config);
       navigate("/profile");
-      window.location.reload(); // Force reload after navigation to show the effect of deletion 
+      window.location.reload(); // Force reload after navigation to show the effect of deletion
     } catch (err) {
       console.log(err);
     }

@@ -10,7 +10,6 @@ function truncateComment(comment, maxLength) {
   return truncatedComment;
 }
 
-
 function timeSince(date) {
   const seconds = Math.floor((new Date() - date) / 1000);
 

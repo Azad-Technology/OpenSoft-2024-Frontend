@@ -34,35 +34,46 @@ function Modal({onClose, genre, id}) {
     }
   }, []);
   useEffect(() => {
-  const getData = useCallback(async () => {
-    if (id === "country") {
-      const response = await instance.get(`/countries_top/${genre}/?count=18`);
-      setMovies(response.data);
-      return;
-    } else if (genre === "Top Movies" || genre === "Top IMDB") {
-      const response = await instance.get("/top_movies/?count=18");
-      setMovies(response.data);
-      return;
-    } else if (genre === "Top Series") {
-      const response = await instance.get("/top_series/?count=18");
-      setMovies(response.data);
-      return;
-    } else if (genre === "Recent") {
-      const response = await instance.get("/recent_movies/?count=18");
-      setMovies(response.data);
-      return;
-    } else if (genre === "TV Shows") {
-      const response = await instance.get("/top_series/?count=18");
-      setMovies(response.data);
-      return;
-    } else {
-      const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
-      setMovies(response.data);
-    }
-  }, []);
-  useEffect(() => {
-    getData();
-  }, []);
+    const getData = useCallback(async () => {
+      if (id === "country") {
+        const response = await instance.get(`/countries_top/${genre}/?count=18`);
+        setMovies(response.data);
+        return;
+      } else if (genre === "Top Movies" || genre === "Top IMDB") {
+        const response = await instance.get("/top_movies/?count=18");
+        setMovies(response.data);
+        return;
+      } else if (genre === "Top Series") {
+        const response = await instance.get("/top_series/?count=18");
+        setMovies(response.data);
+        return;
+      } else if (genre === "Recent") {
+        const response = await instance.get("/recent_movies/?count=18");
+        setMovies(response.data);
+        return;
+      } else if (genre === "TV Shows") {
+        const response = await instance.get("/top_series/?count=18");
+        setMovies(response.data);
+        return;
+      } else {
+        const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+        setMovies(response.data);
+      }
+    }, []);
+    useEffect(() => {
+      getData();
+    }, []);
+    const modalRef = useRef(null);
+    useEffect(() => {
+      if (modalRef.current) {
+        modalRef.current.addEventListener("click", event => {
+          if (event.target.id == "overlay" || event.target.id == "genre") {
+            onClose();
+          }
+        });
+      }
+    }, [genre]);
+  }, [getData]);
   const modalRef = useRef(null);
   useEffect(() => {
     if (modalRef.current) {
@@ -73,20 +84,6 @@ function Modal({onClose, genre, id}) {
       });
     }
   }, [genre]);
-  }, [getData]);
-    const modalRef = useRef(null);
-    useEffect(()=>{
-      if(modalRef.current){
-        modalRef.current.addEventListener("click", (event)=>{
-          if(event.target.id=="overlay" || event.target.id=="genre"){
-            onClose();
-          }
-        })
-      }
-    }, [genre]);
-
-  
-
 
   return (
     <div className={styles.modal_overlay} id="overlay" ref={modalRef}>

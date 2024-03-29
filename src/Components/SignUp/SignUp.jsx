@@ -121,7 +121,7 @@ function SignUp({setShowPopup}) {
 
           <div className={styles.inputBox}>
             <input type="email" id="email" required onChange={e => setEmail(e.target.value)} />
-            <MdEmail style={{width: '1.25rem', height: '1.25rem'}} className={styles.icon}></MdEmail>
+            <MdEmail style={{width: "1.25rem", height: "1.25rem"}} className={styles.icon}></MdEmail>
           </div>
 
           <div className={styles.text}>
