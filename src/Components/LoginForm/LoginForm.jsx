@@ -15,7 +15,7 @@ const clientID = "950287933882-5bvrs6br7a5ubeb1l2m8di6vgjgu7sco.apps.googleuserc
 import bgTop from "../../assets/bg-top.svg";
 import {MdEmail} from "react-icons/md";
 
-function LoginForm({register, setShowPopup, setShowPopup2,showPopup2}) {
+function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
   const [{token, premium}, dispatch] = useStateValue();
   const navigate = useNavigate();
 
