@@ -150,7 +150,7 @@ const Profile = () => {
   }, [user]);
 
   return (
-    <div style={{backgroundColor: "#101010", display: "block"}}>
+    <div style={{display: "block"}}>
       <i
         className="fa fa-angle-double-left"
         aria-hidden="true"
