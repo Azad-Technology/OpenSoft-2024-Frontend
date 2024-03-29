@@ -230,7 +230,7 @@ const MoviePage = () => {
         <div
           className={styles.heroContainer}
           style={
-            !smallScreen && movie
+            (!smallScreen && movie)
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -257,12 +257,12 @@ const MoviePage = () => {
             </div>
             <div className={styles.info}>
               <span>
-                {movie?.imdb && (
-                  <span className={styles.imdbContainer}>
-                    <span className={styles.imdb}>IMDb</span>
-                    <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
-                  </span>
-                )}
+                {movie?.imdb && 
+                <span className={styles.imdbContainer}>
+                <span className={styles.imdb}>IMDb</span>
+                <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
+              </span>
+              }
                 {/* <span>{props.info.duration}</span> */}
                 <span>{movie?.year}</span>
               </span>
@@ -270,7 +270,7 @@ const MoviePage = () => {
             <div className={styles.genreList}>
               {movie?.genres.map(ele => (
                 <button className={styles.genreButtons} onClick={() => openModal(ele)}>
-                  {ele} <img src={popupIcon} className={styles.popupIcon} />
+                  {ele} <img src = {popupIcon} className={styles.popupIcon} />
                 </button>
               ))}
             </div>
@@ -295,9 +295,10 @@ const MoviePage = () => {
             </div>
           </div>
         </div>
-
+        
         <div className={styles.heading}>More Details</div>
         <div className={styles.movieInfo}>
+          
           <div className={styles.fullplot}>
             {movie?.fullplot && (
               <div className={styles.cell}>
@@ -308,25 +309,22 @@ const MoviePage = () => {
           </div>
 
           <div className={styles.container}>
-            {movie?.cast && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Cast</div>
-                <div className={styles.content}>{makeString(movie?.cast)}</div>
-              </div>
-            )}
-            {movie?.languages && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Languages</div>
-                <div className={styles.content}>{makeString(movie?.languages)}</div>
-              </div>
-            )}
-            {movie?.directors && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Director</div>
-                <div className={styles.content}>{makeString(movie?.directors)}</div>
-              </div>
-            )}
+            {movie?.cast && <div className={styles.cell}>
+              <div className={styles.subHeading}>Cast</div>
+              <div className={styles.content}>{makeString(movie?.cast)}</div>
+            </div>
+            }
+            {movie?.languages && <div className={styles.cell}>
+              <div className={styles.subHeading}>Languages</div>
+              <div className={styles.content}>{makeString(movie?.languages)}</div>
+            </div>}
+            {movie?.directors && <div className={styles.cell}>
+              <div className={styles.subHeading}>Director</div>
+              <div className={styles.content}>{makeString(movie?.directors)}</div>
+            </div>}
           </div>
+
+          
         </div>
 
         {comments ? <Comments info={comments} id={id} /> : <></>}

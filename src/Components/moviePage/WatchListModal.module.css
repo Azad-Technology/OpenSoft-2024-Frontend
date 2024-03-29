@@ -14,7 +14,7 @@
 }
 
 .watchlist_modal {
-  background-color: rgb(8, 26, 39);
+  background-color: #3b172f;
   border-radius: 0.6rem;
   box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.4);
   max-width: 31.25rem;
@@ -68,8 +68,8 @@
 .watchlist_modal_input {
   width: 100%;
   padding: 0.625rem;
-  border: 0.0625rem solid #c0180c;
-  background-color: rgb(50, 1, 1);
+  border: 0.0625rem solid white;
+  background-color: #828C51;
   color: white;
   border-radius: 0.25rem;
 }
