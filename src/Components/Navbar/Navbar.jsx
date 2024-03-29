@@ -6,7 +6,6 @@ import {MobileMenu} from "./MobileMenu.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
-import GenreModalCountry from "../GenreModal/GenreModalCountry.jsx";
 import popKornLogo from "../../assets/PopKorn_logoText.svg";
 
 export const Navbar = ({movies}) => {
@@ -44,7 +43,6 @@ export const Navbar = ({movies}) => {
   const dropdownRef = useRef(null);
   const searchBarRef = useRef(null);
   const [selectedGenre, setSelectedGenre] = useState(null);
-  const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedID, setSelectedID] = useState(null);
 
   useEffect(() => {
@@ -143,11 +141,7 @@ export const Navbar = ({movies}) => {
                         {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
                           return (
                             <Link
-                              onClick={event =>
-                                menuoption.name === "Genre"
-                                  ? setSelectedGenre(dropdown.name)
-                                  : setSelectedCountry(dropdown.name)
-                              }
+                              onClick={event => handleGenreClick(event, dropdown.genreID)}
                               className={styles.navbar__link_dropdown}
                               key={index}
                               to={dropdown.link} // Replace href with to
@@ -161,11 +155,7 @@ export const Navbar = ({movies}) => {
                         {menuoption.dropdown?.slice(9, 18).map((dropdown, index) => {
                           return (
                             <Link
-                              onClick={event =>
-                                menuoption.name === "Genre"
-                                  ? setSelectedGenre(dropdown.name)
-                                  : setSelectedCountry(dropdown.name)
-                              }
+                              onClick={event => handleGenreClick(event, dropdown.genreID)}
                               className={styles.navbar__link_dropdown}
                               key={index}
                               to={dropdown.link} // Replace href with to
@@ -179,11 +169,7 @@ export const Navbar = ({movies}) => {
                         {menuoption.dropdown?.slice(18, 27).map((dropdown, index) => {
                           return (
                             <Link
-                              onClick={event =>
-                                menuoption.name === "Genre"
-                                  ? setSelectedGenre(dropdown.name)
-                                  : setSelectedCountry(dropdown.name)
-                              }
+                              onClick={event => handleGenreClick(event, dropdown.genreID)}
                               className={styles.navbar__link_dropdown}
                               key={index}
                               to={dropdown.link} // Replace href with to
@@ -198,11 +184,7 @@ export const Navbar = ({movies}) => {
                           {menuoption.dropdown?.slice(27, 36).map((dropdown, index) => {
                             return (
                               <Link
-                                onClick={event =>
-                                  menuoption.name === "Genre"
-                                    ? setSelectedGenre(dropdown.name)
-                                    : setSelectedCountry(dropdown.name)
-                                }
+                                onClick={event => handleGenreClick(event, dropdown.genreID)}
                                 className={styles.navbar__link_dropdown}
                                 key={index}
                                 to={dropdown.link} // Replace href with to
@@ -218,9 +200,7 @@ export const Navbar = ({movies}) => {
                           {menuoption.dropdown?.slice(36, 45).map((dropdown, index) => {
                             return (
                               <Link
-                                onClick={event => {
-                                  handleGenreClick(event, dropdown.genreID);
-                                }}
+                                onClick={event => handleGenreClick(event, dropdown.genreID)}
                                 className={styles.navbar__link_dropdown}
                                 key={index}
                                 to={dropdown.link} // Replace href with to
@@ -234,9 +214,9 @@ export const Navbar = ({movies}) => {
                     </div>
                   )}
                   {/* {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />} */}
-                  {selectedCountry && (
+                  {/* {selectedCountry && (
                     <GenreModalCountry genre={selectedCountry} onClose={() => setSelectedCountry(null)} />
-                  )}
+                  )} */}
                 </div>
               ))}
             </div>
