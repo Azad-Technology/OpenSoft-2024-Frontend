@@ -6,7 +6,7 @@ import instance from "../../axios";
 import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider} from "@vidstack/react";
+import {MediaPlayer, MediaProvider, PIPButton} from "@vidstack/react";
 import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -18,8 +18,34 @@ import WatchListModal from "./WatchListModal.jsx";
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
 import closeIcon from "../../assets/close-47.svg";
+import chooseMovie from "./MovieList.jsx";
 
-function Modal({onClose}) {
+function Modal({onClose, movie, token}) {
+
+  const [{user}, dispatch] = useStateValue();
+
+  const [vidsrc, setVidsrc] = useState(null);
+  useEffect(() => {
+    if(movie && token){
+      const choosenmovie=chooseMovie(movie?.title);
+      console.log("choosenmovie",choosenmovie);
+      console.log(choosenmovie);
+      switch(user.subtype) {
+        case "Basic":
+          setVidsrc(choosenmovie[0]);
+          break;
+        case "Silver":
+          setVidsrc(choosenmovie[1]);
+          break;
+        case "Gold":
+          setVidsrc(choosenmovie[2]);
+          break;
+        default:
+          setVidsrc(choosenmovie[0]);
+      }
+    }
+  }, [user, movie]);
+
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal}>
@@ -28,8 +54,8 @@ function Modal({onClose}) {
           <div className={styles.video}>
             <MediaPlayer
               storage="storage-key"
-              title="Dune"
-              src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8"
+              title={movie?.title}
+              src={vidsrc}
             >
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
@@ -45,7 +71,32 @@ function Modal({onClose}) {
   );
 }
 
-function ModalTrail({onClose}) {
+function ModalTrail({onClose, movie}) {
+
+  const [{user}, dispatch] = useStateValue();
+
+  const [vidsrc, setVidsrc] = useState(null);
+  useEffect(() => {
+    if(movie ){
+      const choosenmovie=chooseMovie(movie?.title);
+      console.log("choosenmovie",choosenmovie);
+      console.log(choosenmovie);
+      switch(user?.subtype) {
+        case "Basic":
+          setVidsrc(choosenmovie[0]);
+          break;
+        case "Silver":
+          setVidsrc(choosenmovie[1]);
+          break;
+        case "Gold":
+          setVidsrc(choosenmovie[2]);
+          break;
+        default:
+          setVidsrc(choosenmovie[0]);
+      }
+    }
+  }, [ user,movie]);
+
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal}>
@@ -53,10 +104,10 @@ function ModalTrail({onClose}) {
         <div className={styles.video_container}>
           <div className={styles.video}>
             <MediaPlayer
-              clipEndTime={30}
+            clipEndTime={30}
               storage="storage-key"
-              title="Dune"
-              src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8"
+              title={movie?.title}
+              src={vidsrc}
             >
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
@@ -375,7 +426,9 @@ const MoviePage = () => {
                 <button className={styles.modalbutton} onClick={handleTrailerClick}>
                   Trailer
                 </button>
-                <span>
+                    {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
+                    {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
+                {/* <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
                       <i class={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
@@ -385,9 +438,7 @@ const MoviePage = () => {
                   </span>
                 </span>
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showModal && <Modal onClose={() => setShowModal(false)} />}
-                {showTrailModal && <ModalTrail onClose={() => setShowTrailModal(false)} />}
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />} */}
               </span>
             </div>
           </div>
