@@ -9,9 +9,8 @@ import {useStateValue} from "../../MyContexts/StateProvider";
 import {useNavigate} from "react-router-dom";
 import RejectedPopup from "../LoginAcceptedRejected/rejectedLogin";
 import {GoogleCallback} from "./GoogleCallback";
-import {GoogleLoginButton} from "./GoogleLoginButton";
+import {GoogleLoginButton} from "../LoginForm/GoogleLoginButton.jsx";
 
-const clientID = "950287933882-5bvrs6br7a5ubeb1l2m8di6vgjgu7sco.apps.googleusercontent.com";
 import bgTop from "../../assets/bg-top.svg";
 import {MdEmail} from "react-icons/md";
 
@@ -105,7 +104,12 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
           <form action="">
             <h1>Welcome Back.</h1>
             <div className="OAuth">
-              <GoogleLoginButton className={styles.GoogleLogin} />
+              <GoogleLoginButton 
+                className={styles.GoogleLogin} 
+                setShowPopup={setShowPopup} 
+                setShowPopup2={setShowPopup2} 
+                showPopup2={showPopup2}
+              />
             </div>
             <hr className={styles.Or} />
             <div>

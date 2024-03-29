@@ -100,7 +100,13 @@ function SignUp({setShowPopup}) {
         <form action="">
           <h1>Sign Up</h1>
 
-          <GoogleLoginButton register={true}/>
+          <GoogleLoginButton 
+                className={styles.GoogleLogin} 
+                setShowPopup={setShowPopup} 
+                setShowPopup2={setShowPopup2} 
+                showPopup2={showPopup2}
+                register={true}
+              />
 
           <hr className={styles.Or} />
 
