@@ -104,3 +104,12 @@
 .back_button:hover {
   color: red;
 }
+
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding-bottom: 4rem;
+}

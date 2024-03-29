@@ -6,7 +6,7 @@ import instance from "../../axios";
 import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider} from "@vidstack/react";
+import {MediaPlayer, MediaProvider, PIPButton} from "@vidstack/react";
 import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -18,19 +18,40 @@ import WatchListModal from "./WatchListModal.jsx";
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
 import closeIcon from "../../assets/close-47.svg";
+import chooseMovie from "./MovieList.jsx";
 
-function Modal({onClose}) {
+function Modal({onClose, movie, token}) {
+  const [{user}, dispatch] = useStateValue();
+
+  const [vidsrc, setVidsrc] = useState(null);
+  useEffect(() => {
+    if (movie && token) {
+      const choosenmovie = chooseMovie(movie?.title);
+      console.log("choosenmovie", choosenmovie);
+      console.log(choosenmovie);
+      switch (user.subtype) {
+        case "Basic":
+          setVidsrc(choosenmovie[0]);
+          break;
+        case "Silver":
+          setVidsrc(choosenmovie[1]);
+          break;
+        case "Gold":
+          setVidsrc(choosenmovie[2]);
+          break;
+        default:
+          setVidsrc(choosenmovie[0]);
+      }
+    }
+  }, [user, movie]);
+
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal}>
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer
-              storage="storage-key"
-              title="Dune"
-              src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8"
-            >
+            <MediaPlayer storage="storage-key" title={movie?.title} src={vidsrc}>
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
             </MediaPlayer>
@@ -45,7 +66,53 @@ function Modal({onClose}) {
   );
 }
 
-const MoviePage = ({setShowPopup}) => {
+function ModalTrail({onClose, movie}) {
+  const [{user}, dispatch] = useStateValue();
+
+  const [vidsrc, setVidsrc] = useState(null);
+  useEffect(() => {
+    if (movie) {
+      const choosenmovie = chooseMovie(movie?.title);
+      console.log("choosenmovie", choosenmovie);
+      console.log(choosenmovie);
+      switch (user?.subtype) {
+        case "Basic":
+          setVidsrc(choosenmovie[0]);
+          break;
+        case "Silver":
+          setVidsrc(choosenmovie[1]);
+          break;
+        case "Gold":
+          setVidsrc(choosenmovie[2]);
+          break;
+        default:
+          setVidsrc(choosenmovie[0]);
+      }
+    }
+  }, [user, movie]);
+
+  return (
+    <div className={styles.modal_overlay}>
+      <div className={styles.modal}>
+        {/* Video container */}
+        <div className={styles.video_container}>
+          <div className={styles.video}>
+            <MediaPlayer clipEndTime={30} storage="storage-key" title={movie?.title} src={vidsrc}>
+              <MediaProvider />
+              <DefaultVideoLayout icons={defaultLayoutIcons} />
+            </MediaPlayer>
+          </div>
+        </div>
+        {/* Close button */}
+        <button className={styles.close_button} onClick={onClose}>
+          <img src={closeIcon} alt="Close" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+const MoviePage = () => {
   const [premium, setPremium] = useState(true);
 
   const [{token, user}, dispatch] = useStateValue();
@@ -66,6 +133,7 @@ const MoviePage = ({setShowPopup}) => {
   // const {com} = useParams();
   const [comments, setComments] = useState(null);
   const [movie, setMovie] = useState(null);
+  const [showTrailModal, setShowTrailModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [like, setlike] = useState(false);
   useEffect(() => {
@@ -215,6 +283,9 @@ const MoviePage = ({setShowPopup}) => {
       navigate("/login");
     }
   };
+  const handleTrailerClick = () => {
+    setShowTrailModal(true);
+  };
   const toggleWatchlist = () => {
     if (token && token != "null" && token !== undefined && token != "undefined" && token != "") {
       setShowWatchListModal(true);
@@ -235,7 +306,7 @@ const MoviePage = ({setShowPopup}) => {
         <div
           className={styles.heroContainer}
           style={
-            (!smallScreen && movie)
+            !smallScreen && movie
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -298,6 +369,17 @@ const MoviePage = ({setShowPopup}) => {
                   </div>
                 )}
                 <span>{movie?.year && movie?.year}</span>
+                <span>
+                  <span className={styles.icon} id="heartIcon">
+                    {like ? (
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                    ) : (
+                      <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                    )}
+                  </span>
+                </span>
+                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
               </span>
             </div>
             <div className={styles.genreList}>
@@ -321,7 +403,7 @@ const MoviePage = ({setShowPopup}) => {
               )}
               {movie?.genres.map(ele => (
                 <button className={styles.genreButtons} onClick={() => openModal(ele)}>
-                  {ele} <img src = {popupIcon} className={styles.popupIcon} />
+                  {ele} <img src={popupIcon} className={styles.popupIcon} />
                 </button>
               ))}
             </div>
@@ -330,7 +412,12 @@ const MoviePage = ({setShowPopup}) => {
                 <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
-                <span>
+                <button className={styles.modalbutton} onClick={handleTrailerClick}>
+                  Trailer
+                </button>
+                {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
+                {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
+                {/* <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
                       <i class={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
@@ -340,16 +427,14 @@ const MoviePage = ({setShowPopup}) => {
                   </span>
                 </span>
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showModal && <Modal onClose={() => setShowModal(false)} />}
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />} */}
               </span>
             </div>
           </div>
         </div>
-        
+
         <div className={styles.heading}>More Details</div>
         <div className={styles.movieInfo}>
-          
           <div className={styles.fullplot}>
             <div className={styles.cell}>
               {movie?.fullplot && <div className={styles.subHeading}>Plot</div>}
@@ -401,11 +486,9 @@ const MoviePage = ({setShowPopup}) => {
               </div>
             )}
           </div>
-
-          
         </div>
 
-        {comments ? <Comments info={comments} id={id} /> : <></>}
+        {comments ? <Comments setComments={setComments} info={comments} id={id} /> : <></>}
 
         <MoreLikeThis id={id} />
         {/* <div className={styles.loaderIcon}>
