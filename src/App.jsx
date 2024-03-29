@@ -162,7 +162,7 @@ const App = () => {
             element={
               <>
                 <Navbar />
-                <LoginForm setShowPopup={setShowPopup} />
+                <LoginForm setShowPopup={setShowPopup} setShowPopup2={setShowPopup2} showPopup2={showPopup2}/>
               </>
             }
           />
