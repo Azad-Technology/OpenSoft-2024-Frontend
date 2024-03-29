@@ -1,12 +1,12 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Slackside+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Slackside+One&display=swap'); */
 
-:root {
+/* :root {
   --primary-font-color: #ffffff;
   --secondary-font-color: #c2b8b8;
   --tertiary-font-color: #cf0a0a;
   --primary-bg-color: #161515;
-}
+} */
 
 .commentContainer {
   color: white;
@@ -18,10 +18,10 @@
   margin: 0 1rem 1rem 0;
 }
 
-.yourComment {
+/* .yourComment {
   display: flex;
   justify-content: center;
-}
+} */
 
 .commentContainer .textBtnCont {
   box-sizing: border-box;
@@ -33,6 +33,8 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 10px;
+  background-color: #2a1825;
+
   /* opacity: 50%; */
 }
 
@@ -77,11 +79,12 @@
 }
 
 .commentContainer .submitBtn {
-  background-color: #333; /* Dark background color */
-  color: #ffffffb9;
+  background-color: #fffe3e; /* Dark background color */
+  color: rgb(31, 12, 25);
   /* border: .3px solid #ffffffb6; */
   padding: 0.2rem 0.3rem; /* Padding */
   margin: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 0.9rem; /* Font size */
   cursor: pointer; /* Cursor style */
   border-radius: 5px;
@@ -92,8 +95,8 @@
 }
 
 .commentContainer .submitBtn:hover {
-  background-color: #555; /* Darken background on hover */
-  border-color: #555; /* Darken border on hover */
+  background-color: #cccc00; /* Darken background on hover */
+  /* border-color: #555; Darken border on hover */
 }
 
 .commentContainer .submitBtnContainer {
@@ -119,9 +122,8 @@ textarea {
   resize: none;
 }
 textarea:focus {
-  all: unset;
   white-space: pre-wrap;
-  width: 90%;
+  width: 100%;
   box-sizing: border-box;
   /* border-radius: 30px; */
   padding: 0.5rem;
@@ -129,6 +131,7 @@ textarea:focus {
   /* height: 4rem; */
   background-color: var(--primary-bg-color);
   resize: none;
+  outline: none;
 }
 
 .allCommentsContainer {

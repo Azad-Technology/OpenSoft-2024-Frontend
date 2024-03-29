@@ -102,7 +102,7 @@
   justify-content: space-around;
 
   /* width: 12.5rem; */
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   margin-top: 4rem;
   /* margin: 3.125rem auto 1.875rem; */
 }
@@ -125,7 +125,7 @@
   border-radius: 0.25rem;
   padding: 0.625rem 0.9375rem;
   cursor: pointer;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .dropdownbutton:hover {
@@ -187,7 +187,7 @@
   /* background: #00050d; */
   font-weight: 500;
   font-style: normal;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   color: var(--primary-font-color);
   padding-top: 2rem;
   padding-bottom: 2rem;

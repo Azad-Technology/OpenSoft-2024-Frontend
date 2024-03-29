@@ -88,6 +88,10 @@
   cursor: pointer;
 }
 
+.footer a:hover {
+  color: #fffe3e;
+}
+
 .footer__nav {
   display: flex;
   flex-flow: row wrap;
@@ -163,6 +167,9 @@
     text-align: center;
   }
   .legal {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+  }
+  .footer__nav {
+    flex-wrap: nowrap;
   }
 }

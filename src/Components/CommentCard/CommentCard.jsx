@@ -5,10 +5,8 @@ function truncateComment(comment, maxLength) {
   if (comment.length <= maxLength) {
     return comment;
   }
-  // Split the comment into words
-  const words = comment.split(" ");
-  // Concatenate the first few words and add "..."
-  const truncatedComment = words.slice(0, 5).join(" ") + "...";
+  // Truncate the comment to the specified maximum length and add "..."
+  const truncatedComment = comment.slice(0, maxLength) + "...";
   return truncatedComment;
 }
 
@@ -41,18 +39,22 @@ function timeSince(date) {
 function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
   const commentTime = new Date(timestamp);
   const timeAgo = timeSince(commentTime);
+  const maxLength = 120; // Adjust this value as needed
+  const truncatedComment = truncateComment(comment, maxLength);
 
   return (
     <>
       <div className={username === "" ? `${styles.skeleton__cards}` : `${styles.commentCard}`}>
         <div className={styles.title}>
           {profilePic != "" && <img src={profilePic} alt="" className={styles.profilePic} />}
-          <h3 className={styles.username}>{username}</h3>
+          <div>
+            <h3 className={styles.username}>{username}</h3>
+            <div className={styles.cardTime}>{timestamp != "" && timeAgo}</div>
+          </div>
         </div>
 
         <div className={styles.commentDetails}>
-          <p className={styles.cardComment}>{truncateComment(comment, 10)}</p>
-          <div className={styles.cardTime}>{timestamp != "" && timeAgo}</div>
+          <p className={styles.cardComment}>{truncatedComment}</p>
           <a href={link} className={styles.cardMovie}>
             {movie ? movie : ""}
           </a>

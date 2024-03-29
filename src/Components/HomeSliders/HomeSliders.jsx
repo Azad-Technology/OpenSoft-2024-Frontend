@@ -20,7 +20,7 @@ export const HomeSliders = () => {
       genreID: "topseries",
     },
     {
-      name: "Popular in your region",
+      name: "Regional Hits",
       link: "#",
       genreID: "my_country",
     },
@@ -89,61 +89,7 @@ export const HomeSliders = () => {
       link: "#",
       genreID: "family",
     },
-    {
-      name: "Biography",
-      link: "#",
-      genreID: "biography",
-    },
-    {
-      name: "History",
-      link: "#",
-      genreID: "history",
-    },
-    {
-      name: "War",
-      link: "#",
-      genreID: "war",
-    },
-    {
-      name: "Documentary",
-      link: "#",
-      genreID: "documentary",
-    },
-    {
-      name: "Music",
-      link: "#",
-      genreID: "music",
-    },
-    {
-      name: "Sport",
-      link: "#",
-      genreID: "sport",
-    },
-    {
-      name: "Western",
-      link: "#",
-      genreID: "western",
-    },
-    {
-      name: "Short",
-      link: "#",
-      genreID: "short",
-    },
-    {
-      name: "Film-Noir",
-      link: "#",
-      genreID: "filmnoir",
-    },
-    {
-      name: "Talk-Show",
-      link: "#",
-      genreID: "talkshow",
-    },
-    {
-      name: "News",
-      link: "#",
-      genreID: "news",
-    },
+    
   ];
 
   return (
@@ -176,10 +122,10 @@ export const HomeSliders = () => {
         </div>
         <Slider genre="Recent" />
       </div>
-      <>
-        <div className={styles.slider__title}>Comments</div>
+      <div className={styles.slider__title}>Comments</div>
+      <div className={styles.commentCardParent}>
         <CommentCards />
-      </>
+      </div>
       {genres.map(genre => {
         return (
           <div id={genre.genreID} className={styles.slider_container}>

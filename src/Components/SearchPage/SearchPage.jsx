@@ -5,7 +5,7 @@ import styles from "./CustomDropdown.module.css";
 import {useParams} from "react-router-dom";
 import MovieModalList from "../GenreModal/MovieModalList.jsx";
 import * as Realm from "realm-web";
-import Card from "../Card/Card.jsx";
+import FuzzyCard from "../Card/FuzzyCard.jsx";
 
 const SearchPage = () => {
   const {searchTerm} = useParams();
@@ -18,6 +18,7 @@ const SearchPage = () => {
         query: searchTerm,
       });
       setFuzzy(response.data);
+      // console.log(response.data);
     } catch (error) {
       setFuzzy([]);
       console.error("Error fetching movies:", error);
@@ -46,16 +47,10 @@ const SearchPage = () => {
   // State to store fetched movies
 
   const fetchMovies = useCallback(async () => {
-    const filters = {
-      query: searchTerm,
-      genre: genreSelections.join(","),
-      language: languageSelections.join(","),
-    };
-
     try {
       const response = await axios.post("https://embed.popkorn.tech/fts_search_filter", {
         query: searchTerm,
-        genre: genreSelections.join(","),
+        genre: genreSelections,
         language: languageSelections.join(","),
       });
       // setMovies(response.data);
@@ -97,9 +92,7 @@ const SearchPage = () => {
       </div>
       {fuzzy && (
         <div className={styles.results_container}>
-          {fuzzy.map((movie, index) => (
-            <Card key={index} movies={movie} />
-          ))}
+          {fuzzy.map((movie, index) => <FuzzyCard key={index} movies={movie} basis={movies.highlights ? movies.highlights.sort((a, b) => (b.score - a.score))[0].path : "plot"} />)}
         </div>
       )}
       {!fuzzy && (
@@ -107,15 +100,15 @@ const SearchPage = () => {
           {Array(18)
             .fill(null)
             .map((movie, index) => (
-              <Card key={index} movies={movie} />
+              <FuzzyCard key={index} movies={movie} />
             ))}
         </div>
       )}
-      {fuzzy?.length === 0 && (
-        <div className={styles.NoMoviesFound}>
-          <p>No Movie Found</p>
+      {/* {fuzzy?.length === 0 && (
+        <div className={styles.results_container}>
+
         </div>
-      )}
+      )} */}
     </div>
   );
 };

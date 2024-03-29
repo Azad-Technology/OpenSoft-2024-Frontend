@@ -1,15 +1,26 @@
-import React, {useState, useEffect} from "react";
-import styles from "./Card.module.css";
+import {useEffect, useState} from "react";
+import styles from "./FuzzyCard.module.css";
+import genreModalStyles from "./../GenreModal/GenreModal.module.css";
+import imdbIcon from "../../assets/imdb-icon.svg";
 import {useNavigate} from "react-router-dom";
-import instance from "../../axios.jsx";
+import Loader from "../Loader/Loader.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
+import instance from "../../axios.jsx";
+import {faL} from "@fortawesome/free-solid-svg-icons";
+import LoginForm from "../LoginForm/LoginForm.jsx";
+import imdb from "../../assets/imdb-icon.svg";
 
-const TopCard = ({movies, val, length}) => {
+const Card = ({movies, val, length, onClose, basis}) => {
   const [{user, token}, dispatch] = useStateValue();
 
-  const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
+  if (onClose === undefined || onClose === null) {
+    onClose = () => {};
+  }
+  // for dummy purpose we take movies?.like=false;
   const [like, setlike] = useState(false);
-  const [value, setvalue] = useState("-o");
+  const navigate = useNavigate();
+  const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
+
   const openHeart = event => {
     if (!token) {
       navigate("/login");
@@ -22,14 +33,6 @@ const TopCard = ({movies, val, length}) => {
     }
     event.stopPropagation();
     addFavouriteRequest();
-  };
-  const handlehover = event => {
-    const particularCard = document.getElementById(`${movies?._id}`);
-    if (val === length - 1) {
-      particularCard.style.transformOrigin = "right";
-    } else {
-      particularCard.style.transformOrigin = "left";
-    }
   };
 
   const addFavouriteRequest = async e => {
@@ -50,20 +53,34 @@ const TopCard = ({movies, val, length}) => {
     }
   };
 
+  const handlehover = event => {
+    // console.log(movies)
+    const particularCard = document.getElementById(`${movies?._id}`);
+    if (val === length - 1) {
+      document.documentElement.style.setProperty("--val", "right");
+    } else if (val === 0) {
+      document.documentElement.style.setProperty("--val", "left");
+    } else {
+      document.documentElement.style.setProperty("--val", "center");
+    }
+  };
+
   useEffect(() => {
     setlike(user?.fav.some(movie => movie?._id === movies?._id));
   }, [movies, user]);
 
-  const navigate = useNavigate();
   return (
-    <div className={styles.contain}>
-      <div className={styles.number}>
-        <h2 className={styles.number__gradient}>{val + 1}</h2>
-      </div>
+    <>
+      {/* <div className={`${styles.cards} ${styles.skeleton__cards}`}></div> */}
       <div
-        onClick={() => navigate(`/movie/${movies?._id}`)}
-        className={`${styles.cards} ${!movies && styles.skeleton__cards}`}
-        id={`${movies?._id}`}
+        onClick={() => {
+          onClose();
+          navigate(`/movie/${movies?._id}`);
+          // const class_name = genreModalStyles.modal_overlay;
+          // console.log(genreModalStyles.modal_overlay);
+        }}
+        className={`${styles.cards} ${!movies && styles.skeleton__cards} ${val === 0 ? `${styles.first__card}` : ""}`}
+        id={movies ? movies._id : ""}
         onMouseOver={handlehover}
       >
         {movies && (
@@ -82,28 +99,31 @@ const TopCard = ({movies, val, length}) => {
               </span>
             </div>
             <div className={styles.card__description}>{movies?.plot}</div>
+            <p className={styles.card__basis}>Matched on the basis of {basis}</p>
           </div>
         )}
-        <div>
-          <div className={styles.icon}>
-            {like ? (
-              <i className={`fa fa-heart`} aria-hidden="true" onClick={openHeart} style={{color: "red"}}></i>
-            ) : (
-              <i className={`fa fa-heart-o`} aria-hidden="true" onClick={openHeart}></i>
-            )}
-          </div>
-          <div className={styles.premium}>
-            {movies && premium && <i className={`fa fa-star`} aria-hidden="true"></i>}
-          </div>
-          <img
-            src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
-            className={styles.cards_img}
-            alt="Image Not Found"
-          />
+        <div className={styles.icons}>
+          {movies && (
+            <div className={styles.icon} id="heartIcon">
+              {like ? (
+                <i class={`fa fa-heart`} aria-hidden="true" onClick={openHeart} style={{color: "red"}}></i>
+              ) : (
+                <i class={`fa fa-heart-o`} aria-hidden="true" onClick={openHeart}></i>
+              )}
+            </div>
+          )}
+
+          <div className={styles.premium}>{movies && premium && <i class={`fa fa-star`} aria-hidden="true"></i>}</div>
+          {movies && (
+            <img
+              loading="lazy"
+              src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
+              className={styles.cards_img}
+            />
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
-
-export default TopCard;
+export default Card;

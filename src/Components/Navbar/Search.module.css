@@ -35,7 +35,7 @@
   color: white;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .search {
     /* width:20%; */
     min-width: 15rem;
@@ -83,7 +83,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 359px) {
   .search {
     margin-top: 30%;
     width: 80%;

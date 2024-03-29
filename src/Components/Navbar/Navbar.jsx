@@ -1,13 +1,12 @@
 import React, {useState, useEffect, useRef} from "react";
 import styles from "./Navbar.module.css";
-import {Link, useNavigate} from "react-router-dom"; // Import Link and useNavigate from react-router-dom
+import {useNavigate} from "react-router-dom";
 import {Search} from "./Search";
 import {MobileMenu} from "./MobileMenu.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
-import GenreModalCountry from "../GenreModal/GenreModalCountry.jsx";
-import popKornLogo from "../../assets/PopKorn_logo.svg";
+import popKornLogo from "../../assets/PopKorn_logoText.svg";
 
 export const Navbar = ({movies}) => {
   const navigate = useNavigate();
@@ -44,7 +43,6 @@ export const Navbar = ({movies}) => {
   const dropdownRef = useRef(null);
   const searchBarRef = useRef(null);
   const [selectedGenre, setSelectedGenre] = useState(null);
-  const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedID, setSelectedID] = useState(null);
 
   useEffect(() => {
@@ -106,216 +104,191 @@ export const Navbar = ({movies}) => {
     setSelectedID(genreID);
   };
 
-  if (window.innerWidth > 600) {
-    return (
-      <div className={styles.DesktopMenu}>
-        <div className={`${styles.navbar} ${show && styles.navBlack}`}>
-          <div className={styles.navbar__left}>
-            <i
-              onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}
-            ></i>
-            <img onClick={() => navigate("/")} className={styles.navbar__logo} src={popKornLogo} alt="popKorn Logo" />
-            <div className={styles.navbar__links}>
-              {menuoptions.map((menuoption, index) => (
-                <div className={styles.desktopLinks} key={index}>
-                  <Link
-                    onMouseOver={handleToggleDropdown}
-                    onClick={event => {
-                      if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
-                        event.preventDefault();
-                        setSelectedGenre(menuoption.name);
-                      }
-                    }}
-                    className={styles.navbar__link}
-                    to={menuoption.link} // Replace href with to
-                    key={index}
-                  >
-                    {menuoption.name}
-                  </Link>
-                  {showDropdown[menuoption.name] && menuoption.dropdown && (
+  return (
+    <>
+      <div className={styles.Desktop__navbar}>
+        <div className={styles.DesktopMenu}>
+          <div className={`${styles.navbar} ${show && styles.navBlack}`}>
+            <div className={styles.navbar__left}>
+              <i
+                onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
+                className={`fa fa-2x fa-bars ${styles.hamburger}`}
+              ></i>
+              <img onClick={() => navigate("/")} className={styles.navbar__logo} src={popKornLogo} alt="popKorn Logo" />
+              <div className={styles.navbar__links}>
+                {menuoptions.map((menuoption, index) => (
+                  <div className={styles.desktopLinks} key={index}>
                     <div
-                      ref={dropdownRef}
-                      className={styles.dropdown}
-                      style={{width: menuoption.name === "Country" ? "45%" : "30%"}}
+                      onMouseOver={handleToggleDropdown}
+                      onClick={event => {
+                        if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
+                          event.preventDefault();
+                          setSelectedGenre(menuoption.name);
+                        }
+                      }}
+                      className={styles.navbar__link}
                     >
-                      <div className={styles.dropdown__column}>
-                        {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
-                          return (
-                            <Link
-                              onClick={event =>
-                                menuoption.name === "Genre"
-                                  ? setSelectedGenre(dropdown.name)
-                                  : setSelectedCountry(dropdown.name)
-                              }
-                              className={styles.navbar__link_dropdown}
-                              key={index}
-                              to={dropdown.link} // Replace href with to
-                            >
-                              {dropdown.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                      <div className={styles.dropdown__column}>
-                        {menuoption.dropdown?.slice(9, 18).map((dropdown, index) => {
-                          return (
-                            <Link
-                              onClick={event =>
-                                menuoption.name === "Genre"
-                                  ? setSelectedGenre(dropdown.name)
-                                  : setSelectedCountry(dropdown.name)
-                              }
-                              className={styles.navbar__link_dropdown}
-                              key={index}
-                              to={dropdown.link} // Replace href with to
-                            >
-                              {dropdown.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                      <div className={styles.dropdown__column}>
-                        {menuoption.dropdown?.slice(18, 27).map((dropdown, index) => {
-                          return (
-                            <Link
-                              onClick={event =>
-                                menuoption.name === "Genre"
-                                  ? setSelectedGenre(dropdown.name)
-                                  : setSelectedCountry(dropdown.name)
-                              }
-                              className={styles.navbar__link_dropdown}
-                              key={index}
-                              to={dropdown.link} // Replace href with to
-                            >
-                              {dropdown.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                      {menuoption.name === "Country" && (
-                        <div className={styles.dropdown__column}>
-                          {menuoption.dropdown?.slice(27, 36).map((dropdown, index) => {
-                            return (
-                              <Link
-                                onClick={event =>
-                                  menuoption.name === "Genre"
-                                    ? setSelectedGenre(dropdown.name)
-                                    : setSelectedCountry(dropdown.name)
-                                }
-                                className={styles.navbar__link_dropdown}
-                                key={index}
-                                to={dropdown.link} // Replace href with to
-                              >
-                                {dropdown.name}
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      )}
-                      {menuoption.name === "Country" && (
-                        <div className={styles.dropdown__column}>
-                          {menuoption.dropdown?.slice(36, 45).map((dropdown, index) => {
-                            return (
-                              <Link
-                                onClick={event => {
-                                  handleGenreClick(event, dropdown.genreID);
-                                }}
-                                className={styles.navbar__link_dropdown}
-                                key={index}
-                                to={dropdown.link} // Replace href with to
-                              >
-                                {dropdown.name}
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      )}
+                      {menuoption.name}
                     </div>
-                  )}
-                  {/* {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />} */}
-                  {selectedCountry && (
-                    <GenreModalCountry genre={selectedCountry} onClose={() => setSelectedCountry(null)} />
-                  )}
+                    {showDropdown[menuoption.name] && menuoption.dropdown && (
+                      <div
+                        ref={dropdownRef}
+                        className={styles.dropdown}
+                        style={{
+                          width: menuoption.name === "Country" ? "45%" : "30%",
+                        }}
+                      >
+                        <div className={styles.dropdown__column}>
+                          {menuoption.dropdown.slice(0, 9).map((dropdown, index) => {
+                            return (
+                              <div
+                                onClick={event => handleGenreClick(event, dropdown.genreID)}
+                                className={styles.navbar__link_dropdown}
+                                key={index}
+                              >
+                                {dropdown.name}
+                              </div>
+                            );
+                          })}
+                        </div>
+                        <div className={styles.dropdown__column}>
+                          {menuoption.dropdown?.slice(9, 18).map((dropdown, index) => {
+                            return (
+                              <div
+                                onClick={event => handleGenreClick(event, dropdown.genreID)}
+                                className={styles.navbar__link_dropdown}
+                                key={index}
+                              >
+                                {dropdown.name}
+                              </div>
+                            );
+                          })}
+                        </div>
+                        <div className={styles.dropdown__column}>
+                          {menuoption.dropdown?.slice(18, 27).map((dropdown, index) => {
+                            return (
+                              <div
+                                onClick={event => handleGenreClick(event, dropdown.genreID)}
+                                className={styles.navbar__link_dropdown}
+                                key={index}
+                              >
+                                {dropdown.name}
+                              </div>
+                            );
+                          })}
+                        </div>
+                        {menuoption.name === "Country" && (
+                          <div className={styles.dropdown__column}>
+                            {menuoption.dropdown?.slice(27, 36).map((dropdown, index) => {
+                              return (
+                                <div
+                                  onClick={event => handleGenreClick(event, dropdown.genreID)}
+                                  className={styles.navbar__link_dropdown}
+                                  key={index}
+                                >
+                                  {dropdown.name}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+                        {menuoption.name === "Country" && (
+                          <div className={styles.dropdown__column}>
+                            {menuoption.dropdown?.slice(36, 45).map((dropdown, index) => {
+                              return (
+                                <div
+                                  onClick={event => handleGenreClick(event, dropdown.genreID)}
+                                  className={styles.navbar__link_dropdown}
+                                  key={index}
+                                >
+                                  {dropdown.name}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className={styles.navbar__right}>
+              <Search movies={movies} />
+              {token &&
+              token !== undefined &&
+              token !== "null" &&
+              token !== "undefined" &&
+              token !== null &&
+              token !== "" ? (
+                <div onClick={() => navigate("/profile")} className={`fa fa-2x fa-user ${styles.desktop_login}`}></div>
+              ) : (
+                <div onClick={() => navigate("/login")} className={styles.desktop_login}>
+                  Login
                 </div>
-              ))}
+              )}
             </div>
           </div>
-          <div className={styles.navbar__right}>
-            <Search movies={movies} />
-            {token &&
-            token !== undefined &&
-            token !== "null" &&
-            token !== "undefined" &&
-            token !== null &&
-            token !== "" ? (
-              <i onClick={() => navigate("/profile")} className={`fa fa-2x fa-user ${styles.desktop_login}`}></i>
-            ) : (
-              <div onClick={() => navigate("/login")} className={styles.desktop_login}>
-                Login
-              </div>
-            )}
-          </div>
+          {/* {showHamburgerMenu && <div className={styles.backdrop}></div>} */}
+          {/* {showHamburgerMenu && (
+            <div ref={mobileMenuRef}>
+              <MobileMenu
+                setSelectedGenre={setSelectedGenre}
+                setSelectedID={setSelectedID}
+                setShowHamburgerMenu={setShowHamburgerMenu}
+              />
+            </div>
+          )} */}
+          {selectedGenre && <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />}
         </div>
-        {showHamburgerMenu && <div className={styles.backdrop}></div>}
-        {showHamburgerMenu && (
-          <div ref={mobileMenuRef}>
-            <MobileMenu
-              setSelectedGenre={setSelectedGenre}
-              setSelectedID={setSelectedID}
-              setShowHamburgerMenu={setShowHamburgerMenu}
-            />
-          </div>
-        )}
-        {selectedGenre && <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />}
       </div>
-    );
-  } else {
-    return (
-      <div className={styles.navbar__mobile}>
-        <div className={`${styles.navbar} ${styles.navBlack}`}>
-          <div className={styles.navbar__left}>
-            <i
-              onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              className={`fa fa-2x fa-bars ${styles.hamburger}`}
-            ></i>
-            <img onClick={() => navigate("/")} className={styles.navbar__logo} src={popKornLogo} alt="PopKorn Logo" />
+
+      <div className={styles.mobile__navbar}>
+        <div className={styles.navbar__mobile}>
+          <div className={`${styles.navbar} ${styles.navBlack}`}>
+            <div className={styles.navbar__left}>
+              <i
+                onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
+                className={`fa fa-2x fa-bars ${styles.hamburger}`}
+              ></i>
+              <img onClick={() => navigate("/")} className={styles.navbar__logo} src={popKornLogo} alt="PopKorn Logo" />
+            </div>
+            <div className={styles.navbar__right}>
+              <i onClick={() => setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
+              {token &&
+              token !== undefined &&
+              token !== "null" &&
+              token !== "undefined" &&
+              token !== null &&
+              token !== "" ? (
+                <i onClick={() => navigate("/profile")} className={`fa fa-2x fa-user ${styles.mobile_login}`}></i>
+              ) : (
+                <div onClick={() => navigate("/login")} className={styles.mobile_login}>
+                  Login
+                </div>
+              )}
+            </div>
           </div>
-          <div className={styles.navbar__right}>
-            <i onClick={() => setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
-            {token &&
-            token !== undefined &&
-            token !== "null" &&
-            token !== "undefined" &&
-            token !== null &&
-            token !== "" ? (
-              <i onClick={() => navigate("/profile")} className={`fa fa-2x fa-user ${styles.mobile_login}`}></i>
-            ) : (
-              <div onClick={() => navigate("/login")} className={styles.mobile_login}>
-                Login
-              </div>
-            )}
-          </div>
+          {showSearchBar && (
+            <div ref={searchRef}>
+              <Search movies={movies} searchBarRef={searchBarRef} />
+            </div>
+          )}
+          {selectedGenre && selectedID && (
+            <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />
+          )}
         </div>
-        {showSearchBar && (
-          <div ref={searchRef}>
-            <Search movies={movies} searchBarRef={searchBarRef} />
-          </div>
-        )}
-        {showHamburgerMenu && <div className={styles.backdrop}></div>}
-        {showHamburgerMenu && (
-          <div ref={mobileMenuRef}>
-            <MobileMenu
-              setSelectedGenre={setSelectedGenre}
-              setSelectedID={setSelectedID}
-              setShowHamburgerMenu={setShowHamburgerMenu}
-            />
-          </div>
-        )}
-        {selectedGenre && selectedID && (
-          <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />
-        )}
       </div>
-    );
-  }
+      {showHamburgerMenu && <div className={styles.backdrop}></div>}
+      {showHamburgerMenu && (
+        <div ref={mobileMenuRef}>
+          <MobileMenu
+            setSelectedGenre={setSelectedGenre}
+            setSelectedID={setSelectedID}
+            setShowHamburgerMenu={setShowHamburgerMenu}
+          />
+        </div>
+      )}
+    </>
+  );
 };

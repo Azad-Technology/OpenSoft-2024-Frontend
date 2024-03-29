@@ -13,9 +13,11 @@ import {useStateValue} from "../../MyContexts/StateProvider";
 import {useNavigate} from "react-router-dom";
 import watchlistoff from "./../../assets/watchlistoff.svg";
 import Loader from "./../Loader/Loader.jsx";
+import popupIcon from "./../../assets/popupIcon.svg";
 import WatchListModal from "./WatchListModal.jsx";
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
+import closeIcon from "../../assets/close-47.svg";
 
 function Modal({onClose}) {
   return (
@@ -36,14 +38,14 @@ function Modal({onClose}) {
         </div>
         {/* Close button */}
         <button className={styles.close_button} onClick={onClose}>
-          X
+          <img src={closeIcon} alt="Close" />
         </button>
       </div>
     </div>
   );
 }
 
-const MoviePage = () => {
+const MoviePage = ({setShowPopup}) => {
   const [premium, setPremium] = useState(true);
 
   const [{token, user}, dispatch] = useStateValue();
@@ -73,6 +75,7 @@ const MoviePage = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await instance.get(`/movies/${id}`);
+      // console.log(response.data);
       setMovie(response.data[0]);
     };
     getData();
@@ -84,7 +87,7 @@ const MoviePage = () => {
   useEffect(() => {
     const getCommentData = async () => {
       const response = await instance.get(`/movies/${id}/comments/?count=10`);
-      console.log(response.data);
+      // console.log(response.data);
       setComments(response.data);
     };
     getCommentData();
@@ -194,13 +197,18 @@ const MoviePage = () => {
 
   const handleClick = () => {
     if (token && token != "null" && token !== undefined && token != "undefined" && token != "") {
+      if (!movie) return;
       if (!premium) {
         setShowModal(true);
       } else {
         if (user && user.subtype != "Basic") {
           setShowModal(true);
         } else {
+          setShowPopup(true);
           navigate("/pricing");
+          setTimeout(() => {
+            setShowPopup(false);
+          }, 4000);
         }
       }
     } else {
@@ -227,7 +235,7 @@ const MoviePage = () => {
         <div
           className={styles.heroContainer}
           style={
-            !smallScreen && movie
+            (!smallScreen && movie)
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -236,7 +244,23 @@ const MoviePage = () => {
             {premium && <div className={styles.premium}>Included with premium</div>}
 
             <div className={styles.shadowBox}>
+              {!movie?.title && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__header}></div>
+                  <div className={styles.skeleton__header}></div>
+                  <div className={styles.skeleton__header}></div>
+                </div>
+              )}
               <div className={styles.title}>{movie?.title}</div>
+              {!movie?.plot && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__description}></div>
+                  <div className={styles.skeleton__description}></div>
+                  <div className={styles.skeleton__description}></div>
+                  <div className={styles.skeleton__description}></div>
+                  <div className={styles.skeleton__description}></div>
+                </div>
+              )}
               <div className={styles.description} id="description">
                 {movie?.plot}
                 {!isExpanded && (
@@ -256,22 +280,54 @@ const MoviePage = () => {
               <span>
                 <span className={styles.imdbContainer}>
                   <span className={styles.imdb}>IMDb</span>
-                  <span className={styles.imdbRating}>{movie?.imdb.rating}</span>
+                  <span className={styles.imdbRating}>
+                    {!movie?.imdb && (
+                      <div className={styles.skeleton__headers}>
+                        <div className={styles.skeleton__small}></div>
+                        <div className={styles.skeleton__small}></div>
+                      </div>
+                    )}
+                    {movie?.imdb && movie?.imdb.rating}
+                  </span>
                 </span>
                 {/* <span>{props.info.duration}</span> */}
-                <span>{String(movie?.released).substring(0, 4)}</span>
+                {!movie?.year && (
+                  <div className={styles.skeleton__headers}>
+                    <div className={styles.skeleton__small}></div>
+                    <div className={styles.skeleton__small}></div>
+                  </div>
+                )}
+                <span>{movie?.year && movie?.year}</span>
               </span>
             </div>
             <div className={styles.genreList}>
+              {!movie?.genres && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__small}></div>
+                  <div className={styles.skeleton__small}></div>
+                </div>
+              )}
+              {!movie?.genres && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__small}></div>
+                  <div className={styles.skeleton__small}></div>
+                </div>
+              )}
+              {!movie?.genres && (
+                <div className={styles.skeleton__headers}>
+                  <div className={styles.skeleton__small}></div>
+                  <div className={styles.skeleton__small}></div>
+                </div>
+              )}
               {movie?.genres.map(ele => (
                 <button className={styles.genreButtons} onClick={() => openModal(ele)}>
-                  {ele}
+                  {ele} <img src = {popupIcon} className={styles.popupIcon} />
                 </button>
               ))}
             </div>
             <div className={styles.Mbutton}>
               <span>
-                <button className={styles.modalbutton} onClick={handleClick}>
+                <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
                 <span>
@@ -290,89 +346,63 @@ const MoviePage = () => {
             </div>
           </div>
         </div>
+        
+        <div className={styles.heading}>More Details</div>
         <div className={styles.movieInfo}>
-          <div className={styles.heading}>More Details</div>
+          
+          <div className={styles.fullplot}>
+            <div className={styles.cell}>
+              {movie?.fullplot && <div className={styles.subHeading}>Plot</div>}
+              <div className={styles.content}>
+                {!movie?.fullplot && (
+                  <div className={styles.skeleton__headers}>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                  </div>
+                )}
+                {movie?.fullplot}
+              </div>
+            </div>
+          </div>
+
           <div className={styles.container}>
+            {movie?.cast && (
+              <div className={styles.cell}>
+                {movie?.cast && <div className={styles.subHeading}>Cast</div>}
+                <div className={styles.content}>{makeString(movie?.cast)}</div>
+              </div>
+            )}
             <div className={styles.cell}>
-              <div className={styles.subHeading}>Directors</div>
-              <div className={styles.content}>{makeString(movie?.directors)}</div>
+              {movie?.languages && <div className={styles.subHeading}>Languages</div>}
+              <div className={styles.content}>
+                {!movie?.fullplot && (
+                  <div className={styles.skeleton__headers}>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                    <div className={styles.skeleton__plot}></div>
+                  </div>
+                )}
+                {makeString(movie?.languages)}
+              </div>
             </div>
-
-            <div className={styles.cell}>
-              <div className={styles.subHeading}>Audio Languages</div>
-              <div className={styles.content}>{makeString(movie?.languages)}</div>
-            </div>
-            <div className={styles.cell}>
-              <div className={styles.subHeading}>Awards</div>
-              <div className={styles.content}>{movie?.awards.text}</div>
-            </div>
-
-            {showMoreInfo && (
-              <div className={styles.cast}>
-                <div className={styles.subHeading}>Cast</div>
-                <div className={styles.content}>
-                  {movie?.cast?.map(actor => (
-                    <div className={styles.subContent}>{actor}</div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {showMoreInfo && (
+            {movie?.directors && (
               <div className={styles.cell}>
-                <div className={styles.subHeading}>Writers</div>
-                <div className={styles.content}>{makeString(movie?.writers)}</div>
-              </div>
-            )}
-            {showMoreInfo && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Countrie</div>
-                <div className={styles.content}>{makeString(movie?.countries)}</div>
-              </div>
-            )}
-            {showMoreInfo && movie?.tomatoes && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Tomatometer</div>
-                <div className={styles.content}>
-                  <div>Viewer: {movie?.tomatoes?.viewer.rating}</div>
-                  {/*<div>Critic: {props.info.tomatometer.critic}</div>*/}
-                </div>
-              </div>
-            )}
-            {showMoreInfo && movie?.production && (
-              <div className={styles.cell}>
-                <div className={styles.subHeading}>Production</div>
-                <div className={styles.content}>{movie?.tomatoes?.production}</div>
+                <div className={styles.subHeading}>Director</div>
+                <div className={styles.content}>{makeString(movie?.directors)}</div>
               </div>
             )}
           </div>
-          <div className={styles.showMoreInfoBtnCont}>
-            <button id="showMoreInfo" className={styles.showMoreInfoBtn} onClick={handleShowMoreInfoBtn}>
-              <svg
-                fill="#cf0a0a"
-                height="25px"
-                width="25px"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 512.001 512.001"
-                xmlSpace="preserve"
-              >
-                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <g>
-                    {" "}
-                    <g>
-                      {" "}
-                      <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
-                    </g>{" "}
-                  </g>{" "}
-                </g>
-              </svg>
-            </button>
-          </div>
+
+          
         </div>
 
         {comments ? <Comments info={comments} id={id} /> : <></>}

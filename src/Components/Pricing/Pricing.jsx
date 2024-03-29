@@ -5,12 +5,24 @@ import bgBottom from "../../assets/bg-bottom.svg";
 import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
 import {Link} from "react-router-dom";
+import {useSearchParams} from "react-router-dom";
 function Pricing() {
   const [annually, setAnnually] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
-  const [{token}, dispatch] = useStateValue();
+  const [{token, user}, dispatch] = useStateValue();
   const [isGold, setIsGold] = useState(false);
   const [isSilver, setIsSilver] = useState(false);
+  const [showEditPrompt, setShowEditPrompt] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const shouldShowPrompt = searchParams.get("editProfile") === "true";
+    setShowEditPrompt(shouldShowPrompt);
+  }, [searchParams]);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   useEffect(() => {
     dispatch({
       type: "INITIALIZE_TOKEN",
@@ -49,6 +61,13 @@ function Pricing() {
       </div>
       <section className={styles.section}>
         <h1 className={styles.heading}>Our Pricing</h1>
+        {showEditPrompt && (
+          <div>
+            <p className={styles.editprofile}>
+              You are currently on the Basic plan. To edit your profile, please upgrade to a higher tier.
+            </p>
+          </div>
+        )}
         <div className={styles.pricingCards}>
           <article
             className={`${styles.pricingCard} ${isHovered === 0 ? styles.featured_free : ""}`}
@@ -80,7 +99,7 @@ function Pricing() {
             </h3>
             <Link
               target="_blank"
-              to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"
+              to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262"
             >
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>
@@ -107,7 +126,7 @@ function Pricing() {
             </h3>
             <Link
               target="_blank"
-              to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1"
+              to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a"
             >
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>

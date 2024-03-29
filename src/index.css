@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +8,21 @@
 html {
   scroll-behavior: smooth;
 }
+input[type="text"] {
+  font-family: "Jost", sans-serif;
+}
+textarea {
+  font-family: "Jost", sans-serif;
+}
 body {
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Jost", sans-serif;
   background-color: rgb(31, 12, 25);
   overflow-x: hidden;
+}
+button {
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
 }
 
 .vds-radio-hint {
