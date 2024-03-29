@@ -72,8 +72,7 @@ function Pricing() {
           <article
             className={`${styles.pricingCard} ${isHovered === 0 ? styles.featured_free : ""}`}
             onMouseEnter={() => setIsHovered(0)}
-            onMouseLeave={() => setIsHovered(null)}
-          >
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Basic</h2>
 
             <h3>Free</h3>
@@ -91,18 +90,24 @@ function Pricing() {
           <article
             className={`${styles.pricingCard} ${isHovered === 1 ? styles.featured : ""}`}
             onMouseEnter={() => setIsHovered(1)}
-            onMouseLeave={() => setIsHovered(null)}
-          >
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Silver</h2>
             <h3>
               <span>₹</span> 50
             </h3>
-            <Link
-              target="_blank"
-              to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262"
-            >
-              <button className={styles.pricingCard_button}>Purchase</button>
-            </Link>
+            {isSilver ? (
+              <Link
+                target="_blank"
+                to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262">
+                <button className={styles.pricingCard_button}>Owned</button>
+              </Link>
+            ) : (
+              <Link
+                target="_blank"
+                to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262">
+                <button className={styles.pricingCard_button}>Purchase</button>
+              </Link>
+            )}
 
             <ul>
               <li>Get access to Premium Movies</li>
@@ -118,18 +123,25 @@ function Pricing() {
           <article
             className={`${styles.pricingCard} ${isHovered === 2 ? styles.featured : ""}`}
             onMouseEnter={() => setIsHovered(2)}
-            onMouseLeave={() => setIsHovered(null)}
-          >
+            onMouseLeave={() => setIsHovered(null)}>
             <h2>Gold</h2>
             <h3>
               <span>₹</span> 100
             </h3>
-            <Link
-              target="_blank"
-              to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a"
-            >
-              <button className={styles.pricingCard_button}>Purchase</button>
-            </Link>
+            {isGold ? (
+              <Link
+                target="_blank"
+                to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a">
+                <button className={styles.pricingCard_button}>owned</button>
+              </Link>
+            ) : (
+              <Link
+                target="_blank"
+                to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a">
+                <button className={styles.pricingCard_button}>Purchase</button>
+              </Link>
+            )}
+
             <ul>
               <li>Get access to Premium Movies</li>
               <li>Quality upto 1080p</li>
