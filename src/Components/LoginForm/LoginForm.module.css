@@ -60,7 +60,7 @@
   border: 0.125rem solid rgb(255, 255, 255, 0.2);
   border-radius: 0.3125rem;
   font-size: 1rem;
-  color: black;
+  color: rgb(255, 255, 255);
   padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
   border-color: transparent;
 }
@@ -99,7 +99,7 @@
   border: none;
   border-radius: 0.3125rem;
   font-size: 1rem;
-  color: black;
+  color: rgb(255, 255, 255);
   padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
   border-color: rgb(255, 255, 255);
   /* margin-bottom: 10%;  */
