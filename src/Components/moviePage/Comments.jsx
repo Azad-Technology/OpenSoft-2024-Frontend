@@ -146,7 +146,8 @@ function NewComments(props) {
                   onChange={event => handleTextAreaChange(event)}
                   onFocus={handleTextareaFocus}
                   // onBlur={handleTextareaBlur}
-                  value={newComment}></textarea>
+                  value={newComment}
+                ></textarea>
               </div>
               <div className={styles.submitBtnContainer}>
                 {disableBtn && (
@@ -202,7 +203,8 @@ function NewComments(props) {
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 512.001 512.001"
-                    xmlSpace="preserve">
+                    xmlSpace="preserve"
+                  >
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">

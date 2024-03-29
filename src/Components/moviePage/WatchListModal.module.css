@@ -1,4 +1,3 @@
-
 /* Watchlist Modal Styles */
 .watchlist_modal_overlay {
   position: fixed;
@@ -195,11 +194,11 @@
   border-color: green;
 }
 
-.checkbox__input:checked{
+.checkbox__input:checked {
   border: 2px solid red;
 }
 
-.checkbox input{
+.checkbox input {
   border: 2px solid red;
 }
 
@@ -269,10 +268,10 @@
   justify-content: space-between;
   width: 100%;
   /* margin: 1rem; */
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
 }
 
-.dropdown_submit_btn_container{
+.dropdown_submit_btn_container {
   display: flex;
   justify-content: space-between;
 }

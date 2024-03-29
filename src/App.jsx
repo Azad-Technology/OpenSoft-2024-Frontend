@@ -28,6 +28,7 @@ import {Watchlists} from "./Components/Watchlists/Watchlists.jsx";
 import useAlan from "./Components/Alan";
 import BuyPremiumToWatch from "./Components/moviePage/BuyPremiumToWatch.jsx";
 import SuccessPopup from "./Components/LoginAcceptedRejected/successfulLogin.jsx";
+import RejectedPopup from "./Components/LoginAcceptedRejected/rejectedLogin.jsx";
 import GenreModal from "./Components/GenreModal/GenreModal";
 import LoginExpired from "./Components/LoginExpired/LoginExpired.jsx";
 
@@ -54,6 +55,8 @@ const App = () => {
 
   const [movies, setMovies] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const [showPopup2, setShowPopup2] = useState(false);
+
   const [{token}, dispatch] = useStateValue();
 
   useEffect(() => {
@@ -120,6 +123,7 @@ const App = () => {
             path="/pricing"
             element={
               <>
+                {showPopup2 && <RejectedPopup message="Premium access required for the movie" />}
                 <Navbar />
                 <div className="home">
                   <Pricing />
@@ -134,7 +138,7 @@ const App = () => {
             element={
               <>
                 <Navbar />
-                <MoviePage />
+                <MoviePage setShowPopup={setShowPopup2} />
                 <Footer />
                 {/* <MoreLikeThis /> */}
                 {/* <SearchPage /> */}

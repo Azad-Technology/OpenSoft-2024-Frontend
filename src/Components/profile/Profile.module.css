@@ -57,7 +57,7 @@
   text-align: right;
 }
 .details {
-  background-color: #11060D;
+  background-color: #11060d;
   outline: none;
   border: none;
   text-align: right;
@@ -180,8 +180,8 @@
   display: block;
   /* position: absolute; */
   /* margin-top: 2rem; */
-  background-color: #CCCC00;
-  color:#332b50;
+  background-color: #cccc00;
+  color: #332b50;
   /* color: white; */
   border: none;
   border-radius: 0.5rem;

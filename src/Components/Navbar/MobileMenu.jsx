@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import styles from "./MobileMenu.module.css";
 import {useNavigate} from "react-router-dom";
 import menuoptions from "./Menuoptions.jsx";
-import GenreModal from "../GenreModal/GenreModal.jsx";
 
 export const MobileMenu = ({setSelectedGenre, setSelectedID, setShowHamburgerMenu}) => {
   const navigate = useNavigate();
