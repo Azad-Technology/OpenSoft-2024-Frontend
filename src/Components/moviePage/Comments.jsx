@@ -12,23 +12,7 @@ import {useNavigate} from "react-router-dom";
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
 function NewComments(props) {
-  const [{token}, dispatch] = useStateValue();
-
-  useEffect(() => {
-    console.log(props);
-  }, [props]);
-  let comments = props.info.map(obj => {
-    return obj.text;
-  });
-
-  let name = props.info.map(obj => {
-    return obj.name;
-  });
-
-  let date = props.info.map(obj => {
-    return obj.date;
-  });
-
+  const [{token,user}, dispatch] = useStateValue();
   const [clicked, setClicked] = useState(false);
   const [state, setState] = useState("See more");
   const [parentHeight, setParentHeight] = useState("auto");
@@ -107,7 +91,7 @@ function NewComments(props) {
       navigate("/login");
     } else {
       try {
-        instance.post(
+        await instance.post(
           "/comment",
           {
             comment: newComment,
@@ -119,6 +103,14 @@ function NewComments(props) {
             },
           }
         );
+        const temp={
+          name:user.name,
+          text:newComment
+        }
+        let curr=props.info;
+        curr.unshift(temp);
+        props.setComments(curr);
+          setNewComment("");
         // window.location.reload();
       } catch (error) {
         console.log(error);
@@ -165,17 +157,17 @@ function NewComments(props) {
           </div>
         </div>
 
-        {comments.length ? (
+        {props.info.length ? (
           <div className={styles.allComments}>
             {clicked ? (
-              comments.map((comment, index) => (
+              props.info.map((comment, index) => (
                 <div key={index} className={styles.allCommentsContainer}>
                   <div className={styles.commentInfo}>
                     <div className={styles.imgContainer}></div>
-                    <div className={styles.userName}>@{name[index]}</div>
+                    <div className={styles.userName}>@{comment.name}</div>
                   </div>
                   <div className={styles.commentContent}>
-                    <div className={styles.commentContent}>{comment}</div>
+                    <div className={styles.commentContent}>{comment.text}</div>
                   </div>
                 </div>
               ))
@@ -183,14 +175,14 @@ function NewComments(props) {
               <div className={styles.allCommentsContainer}>
                 <div className={styles.commentInfo}>
                   <div className={styles.imgContainer}></div>
-                  <div className={styles.userName}>@{name[0]}</div>
+                  <div className={styles.userName}>@{props.info[0].name}</div>
                 </div>
                 <div className={styles.commentContent}>
-                  <div className={styles.commentContent}>{comments[0]}</div>
+                  <div className={styles.commentContent}>{props.info[0].text}</div>
                 </div>
               </div>
             )}
-            {comments.length > 1 ? (
+            {props.info.length > 1 ? (
               <div className={styles.showMoreBtnContainer}>
                 <button onClick={SwitchState} className={styles.showMoreBtn} id="showMoreBtn">
                   <svg
@@ -233,3 +225,5 @@ function NewComments(props) {
 }
 
 export default NewComments;
+
+

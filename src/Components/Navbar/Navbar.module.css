@@ -65,6 +65,7 @@
   align-items: center;
   margin-right: 15%;
   position: relative;
+  cursor:pointer
 }
 
 .navBlack {
@@ -145,6 +146,7 @@ a {
 
 .navbar__link_dropdown {
   padding-bottom: 0.8rem;
+  cursor:pointer;
 }
 
 .navbar__links {
@@ -158,6 +160,7 @@ a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
+  cursor:pointer
 }
 
 .navbar__link:hover {

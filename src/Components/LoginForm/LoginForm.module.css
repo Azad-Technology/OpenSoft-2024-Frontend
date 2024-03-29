@@ -342,3 +342,12 @@
   font-size: 1rem;
   margin-bottom: 1rem;
 }
+
+
+.googleButton{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  gap:1em;
+}

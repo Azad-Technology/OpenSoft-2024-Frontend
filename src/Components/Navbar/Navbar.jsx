@@ -118,18 +118,19 @@ export const Navbar = ({movies}) => {
               <div className={styles.navbar__links}>
                 {menuoptions.map((menuoption, index) => (
                   <div className={styles.desktopLinks} key={index}>
-                    <div
+                    <a
                       onMouseOver={handleToggleDropdown}
                       onClick={event => {
-                        if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
-                          event.preventDefault();
+                        console.log()
+                        if(menuoption.name==="Pricing") navigate('/pricing');
+                        else if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
                           setSelectedGenre(menuoption.name);
                         }
                       }}
                       className={styles.navbar__link}
                     >
                       {menuoption.name}
-                    </div>
+                    </a>
                     {showDropdown[menuoption.name] && menuoption.dropdown && (
                       <div
                         ref={dropdownRef}

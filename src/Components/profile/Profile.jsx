@@ -160,11 +160,15 @@ const Profile = () => {
       <div className={styles.maincontainer}>
         <div className={styles.card}>
           <div className={styles.cardBody}>
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-              alt="avatar"
-              className={styles.avatar}
-            />
+            {user.profilePic ? (
+              <img src={user.profilePic} alt="avatar" className={styles.avatar} />
+            ) : (
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                alt="avatar"
+                className={styles.avatar}
+              />
+            )}
             <p className={styles.details_f}>{fullname}</p>
             <p className={styles.details_f}>{user?.subtype}</p>
           </div>
@@ -207,7 +211,7 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className={styles.row}>
+            {!user?.isGoogleAuth && <div className={styles.row}>
               <div className={styles.col_sm_3}>
                 <p className={styles.head}> Password</p>
               </div>
@@ -257,7 +261,7 @@ const Profile = () => {
                   </>
                 )}
               </div>
-            </div>
+            </div>}
 
             {/* {!user?.subtype === "Basic" ? (
               <div></div>

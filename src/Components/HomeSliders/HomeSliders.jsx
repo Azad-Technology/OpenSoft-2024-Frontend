@@ -89,7 +89,6 @@ export const HomeSliders = () => {
       link: "#",
       genreID: "family",
     },
-    
   ];
 
   return (
