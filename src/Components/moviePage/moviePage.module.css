@@ -325,13 +325,25 @@
 /* Close Button */
 .close_button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
+  width: 2.5rem; /* Adjust width as needed */
+  height: 2.55rem; /* Adjust height as needed */
+  background-image: url("../../assets/close-47.svg"); /* Path to your SVG file */
+  background-size: contain; /* Ensure the SVG fits inside the button */
+  background-repeat: no-repeat; /* Prevent repetition */
   background-color: transparent;
   border: none;
-  color: #fff;
-  font-size: 20px;
   cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.7s;
+}
+
+@media screen and (min-width: 1024px) {
+  .close_button:hover {
+    width: 7rem;
+    height: 7rem;
+  }
 }
 
 .icon {

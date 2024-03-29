@@ -99,7 +99,7 @@ function Pricing() {
             </h3>
             <Link
               target="_blank"
-              to="https://paisawala.lemonsqueezy.com/checkout/buy/d7accfc5-fe92-41d3-a155-82e72dfcfd90?embed=1"
+              to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262"
             >
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>
@@ -126,7 +126,7 @@ function Pricing() {
             </h3>
             <Link
               target="_blank"
-              to="https://paisawala.lemonsqueezy.com/checkout/buy/1840ab67-0984-4d07-98e3-7439cfa644d4?embed=1"
+              to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a"
             >
               <button className={styles.pricingCard_button}>Purchase</button>
             </Link>

@@ -17,6 +17,7 @@ import popupIcon from "./../../assets/popupIcon.svg";
 import WatchListModal from "./WatchListModal.jsx";
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
+import closeIcon from "../../assets/close-47.svg";
 
 function Modal({onClose}) {
   return (
@@ -37,7 +38,7 @@ function Modal({onClose}) {
         </div>
         {/* Close button */}
         <button className={styles.close_button} onClick={onClose}>
-          X
+          <img src={closeIcon} alt="Close" />
         </button>
       </div>
     </div>
