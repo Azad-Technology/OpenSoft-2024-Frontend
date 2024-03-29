@@ -29,9 +29,10 @@
 .slider__movies {
   box-sizing: border-box;
   display: flex;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: scroll;
-  padding: 1rem 2.5rem 1rem 0rem;
+  /* note: dont change the padding at all it will cause scrolling effect on the cards */
+  padding: 0rem 2.5rem 0rem 0rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
   width: inherit;
@@ -98,16 +99,25 @@
 }
 
 .slider__title {
-  color: white;
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 500;
   margin-left: 3rem;
 }
+.slider__title::first-letter {
+  color: #fffe3e;
+  font-size: 4rem;
+}
 
-@media screen and (min-width: 250px) {
+@media screen and (min-width: 320px) {
   .sliders {
     margin-right: 0rem;
     margin-left: 0rem;
+  }
+  .slider__title {
+    font-size: 2rem;
+  }
+  .slider__title::first-letter {
+    font-size: 2.5rem;
   }
 }
 
@@ -126,9 +136,15 @@
   }
 }
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 425px) {
   .sliders {
     margin-right: 2rem;
     margin-left: 2rem;
+  }
+  .slider__title {
+    font-size: 2.5rem;
+  }
+  .slider__title::first-letter {
+    font-size: 3rem;
   }
 }

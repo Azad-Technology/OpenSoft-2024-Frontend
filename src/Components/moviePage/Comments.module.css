@@ -18,10 +18,10 @@
   margin: 0 1rem 1rem 0;
 }
 
-.yourComment {
+/* .yourComment {
   display: flex;
   justify-content: center;
-}
+} */
 
 .commentContainer .textBtnCont {
   box-sizing: border-box;
@@ -55,7 +55,7 @@
 }
 
 .commentContainer .userImg {
-  background-image: url("https://source.unsplash.com/random");
+  background-image: url("https://i.pinimg.com/736x/c8/bd/1f/c8bd1fc2319f225147e1a490d5c0c26a.jpg");
   background-size: cover;
   height: 2rem;
   width: 2rem;
@@ -122,9 +122,8 @@ textarea {
   resize: none;
 }
 textarea:focus {
-  all: unset;
   white-space: pre-wrap;
-  width: 90%;
+  width: 100%;
   box-sizing: border-box;
   /* border-radius: 30px; */
   padding: 0.5rem;
@@ -132,6 +131,7 @@ textarea:focus {
   /* height: 4rem; */
   background-color: var(--primary-bg-color);
   resize: none;
+  outline: none;
 }
 
 .allCommentsContainer {
@@ -163,13 +163,15 @@ textarea:focus {
 }
 
 .allCommentsContainer .imgContainer {
-  background-image: url("https://source.unsplash.com/random");
+  /* background-image: url("https://source.unsplash.com/random"); */
   background-size: cover;
   width: 2rem;
   height: 2rem;
   aspect-ratio: 1/1;
   border-radius: 50px;
   margin: 0.5rem 0.5rem 0.5rem 0;
+  /* overflow: hidden; */
+  /* object-fit: contain; */
 }
 
 .showMoreBtnContainer {
@@ -195,7 +197,7 @@ textarea:focus {
   padding: 0rem 1rem;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   .imgTextBtnContainer {
     width: 100%;
   }
@@ -228,3 +230,7 @@ textarea:focus {
 /* .allCommentsContainer .userName{
     margin-left: 0.5rem;
 } */
+.readMoreBtn {
+  background-color: #dfdf14;
+  color :#2a1825;
+}

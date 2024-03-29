@@ -57,7 +57,7 @@
   text-align: right;
 }
 .details {
-  background-color: #11060D;
+  background-color: #11060d;
   outline: none;
   border: none;
   text-align: right;
@@ -180,8 +180,8 @@
   display: block;
   /* position: absolute; */
   /* margin-top: 2rem; */
-  background-color: #CCCC00;
-  color:#332b50;
+  background-color: #cccc00;
+  color: #332b50;
   /* color: white; */
   border: none;
   border-radius: 0.5rem;
@@ -199,7 +199,7 @@
   margin-left: 90%;
 }
 .favorites {
-  padding-left: 5rem;
+  padding-left: 3rem;
   color: white;
 }
 .favorites h1 {
@@ -229,14 +229,15 @@
 }
 
 .nothingToShow {
-  margin: 0.5rem 0 0.8rem 1.8rem;
+  /* margin: 0.5rem 0 0.8rem 2rem; */
   color: #6c757d;
   font-size: 1.3rem;
-  margin-top: 0.5rem;
-  margin-left: 1.8rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .maincontainer {
     flex-direction: column;
   }
@@ -287,6 +288,7 @@
   .edit_button > button {
     margin-right: 0;
   }
+
   .favorites {
     padding-left: 0;
   }

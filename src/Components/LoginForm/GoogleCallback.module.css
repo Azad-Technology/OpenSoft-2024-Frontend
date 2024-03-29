@@ -37,7 +37,7 @@
   font-size: large;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .fourOfour {
     font-size: 4rem;
   }

@@ -2,6 +2,7 @@ import styles from "./Comments.module.css";
 import {useState, useRef, useEffect} from "react";
 import instance from "../../axios.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
+import {useNavigate} from "react-router-dom";
 
 // let comments = ['Lorem ',
 // 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam finibus ipsum, nec posuere purus pulvinar fermentum. Morbi semper lacus mattis neque lobortis tincidunt non varius felis. Mauris mollis tortor non pretium condimentum. Nam aliquet blandit ultrices. Fusce vitae lorem eleifend, laoreet enim porta, mattis neque. Etiam pellentesque vel tellus.',
@@ -13,6 +14,50 @@ import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 function NewComments(props) {
   const [{token}, dispatch] = useStateValue();
 
+ 
+  const [isOpenArray, setIsOpenArray] = useState(Array(10).fill(false));
+
+  const toggleComment = (index) => {
+    const newArray = [...isOpenArray];
+    newArray[index] = !newArray[index];
+    setIsOpenArray(newArray);
+  };
+
+  const maxLength=150; // Max length of comment
+
+  function truncateComment(comment, maxLength) {
+    if (comment.length <= maxLength) {
+      return comment;
+    }
+
+    // Truncate the comment to the specified maximum length and add "..."
+    return comment.slice(0, maxLength) + '...';
+  }
+
+
+
+
+
+
+//check mobile view
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Example threshold for mobile view
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Initial check for screen size
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     console.log(props);
   }, [props]);
@@ -23,6 +68,33 @@ function NewComments(props) {
   let name = props.info.map(obj => {
     return obj.name;
   });
+
+  // Assuming you have an array of profile picture links
+const profilePicLinks = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
+  "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
+  "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
+  "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
+  "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
+  "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
+  "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
+  "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
+  "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
+];
+
+function getProfilePicLink(username) {
+  // Find the index of the username in the 'name' array
+  const index = name.indexOf(username);
+  if (index !== -1) {
+    // If the username is found, use modulus to cycle through the profile picture links
+    return profilePicLinks[index];
+  } else {
+    // If the username is not found, return a default profile picture link
+    return "default_profile_pic.jpg";
+  }
+}
+
 
   let date = props.info.map(obj => {
     return obj.date;
@@ -36,6 +108,7 @@ function NewComments(props) {
   const textareaRef = useRef(null);
   const initialParentHeight = useRef(null);
   const initialTextareaHeight = useRef(null);
+  const navigate = useNavigate();
 
   function SwitchState() {
     setClicked(!clicked);
@@ -101,22 +174,26 @@ function NewComments(props) {
   }
 
   const handleSubmit = async () => {
-    try {
-      instance.post(
-        "/comment",
-        {
-          comment: newComment,
-          movie_id: props.id,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
+    if (!token) {
+      navigate("/login");
+    } else {
+      try {
+         instance.post(
+          "/comment",
+          {
+            comment: newComment,
+            movie_id: props.id,
           },
-        }
-      );
-      // window.location.reload();
-    } catch (error) {
-      console.log(error);
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        //window.location.reload();
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -126,7 +203,7 @@ function NewComments(props) {
         <div className={styles.heading}>Comments</div>
         <div className={styles.yourComment}>
           <div className={styles.imgTextBtnContainer} style={{height: parentHeight}}>
-            <div className={styles.userImg}> </div>
+            <div className={styles.userImg}></div>
             <div className={styles.textBtnCont} style={{height: parentHeight}}>
               <div className={styles.textArea} style={{height: textareaHeight}}>
                 <textarea
@@ -165,22 +242,87 @@ function NewComments(props) {
               comments.map((comment, index) => (
                 <div key={index} className={styles.allCommentsContainer}>
                   <div className={styles.commentInfo}>
-                    <div className={styles.imgContainer}></div>
+                    <div className={styles.imgContainer}>
+                      <img src={getProfilePicLink(name[index])} className={styles.imgContainer}></img>
+                    </div>
                     <div className={styles.userName}>@{name[index]}</div>
                   </div>
                   <div className={styles.commentContent}>
-                    <div className={styles.commentContent}>{comment}</div>
+                    <div className={styles.commentContent}>
+                    {
+                          isMobile && comments[index].length>maxLength ? (
+                            <>
+                              <p>
+                                {isOpenArray[index]?(
+                                  <p>
+                                  {comments[index]}
+                                  </p>
+                                ):(
+                                  <p>
+                                  {truncateComment(comments[index],maxLength)}
+                                  </p>
+                                )
+
+                              }
+                                
+                              </p>
+                              <button onClick={()=>toggleComment(index)} className={styles.readMoreBtn}>
+                                {isOpenArray[index]? 'read less...': 'read more...'}
+                              </button>
+                              
+                            </>
+                          ):(
+                            <>{comments[index]}</>
+                          )
+                    }
+                    {/* <p style={isOpen? null: paragraphStyle}>
+                      {comments[0]}
+                    </p> */}
+
+                    </div>
                   </div>
                 </div>
               ))
             ) : (
               <div className={styles.allCommentsContainer}>
                 <div className={styles.commentInfo}>
-                  <div className={styles.imgContainer}></div>
+                  <div className={styles.imgContainer}>
+                    <img src={profilePicLinks[0]} className={styles.imgContainer}></img>
+                  </div>
                   <div className={styles.userName}>@{name[0]}</div>
                 </div>
                 <div className={styles.commentContent}>
-                  <div className={styles.commentContent}>{comments[0]}</div>
+                  <div className={styles.commentContent}>
+                  {
+                        isMobile && comments[0].length>maxLength ? (
+                          <>
+                            <p>
+                              {isOpenArray[0]?(
+                                <p>
+                                {comments[0]}
+                                </p>
+                              ):(
+                                <p>
+                                {truncateComment(comments[0],maxLength)}
+                                </p>
+                              )
+
+                            }
+                              
+                            </p>
+                            <button onClick={()=>toggleComment(0)} className={styles.readMoreBtn}>
+                              {isOpenArray[0]? 'read less...': 'read more...'}
+                            </button>
+                          </>
+                        ):(
+                          <>{comments[0]}</>
+                        )
+                  }
+                  {/* <p style={isOpen? null: paragraphStyle}>
+                    {comments[0]}
+                  </p> */}
+
+                  </div>
                 </div>
               </div>
             )}
@@ -200,7 +342,7 @@ function NewComments(props) {
                     xmlSpace="preserve"
                   >
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                    <g id="SVGRepo_tracerCarrier" strokelinecap="round" strokelinejoin="round"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
                       {" "}
                       <g>

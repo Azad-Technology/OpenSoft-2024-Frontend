@@ -1,39 +1,42 @@
 import React from "react";
-import {GoogleLogin} from "react-google-login";
+import {useGoogleLogin} from "@react-oauth/google";
 import {useStateValue} from "../../MyContexts/StateProvider";
 import instance from "../../axios";
-import styles from "./LoginForm.module.css"
+import styles from "./LoginForm.module.css";
+import axios from "axios";
+
 const clientID = "950287933882-5bvrs6br7a5ubeb1l2m8di6vgjgu7sco.apps.googleusercontent.com";
 
 export const GoogleLoginButton = () => {
   const [{}, dispatch] = useStateValue();
 
-  const onSuccess = response => {
-    console.log(response);
-    const name = response.profileObj.name;
-    const email = response.profileObj.email;
-    const profilePic = response.profileObj.imageUrl;
-    console.log(name, email);
-    const res = instance
-      .post("/auth/callback", {
-        name: name,
-        email: email,
-        profilePic: profilePic,
-      })
-      .then(res => {
-        dispatch({
-          type: "SET_TOKEN",
-          token: res.data.token,
-        });
-      })
-      .catch(err => {
-        console.log(err);
+  const login = useGoogleLogin({
+    onSuccess: async codeResponse => {
+      console.log("codeResponse", codeResponse);
+      const response = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+        headers: {
+          Authorization: `Bearer ${codeResponse.access_token}`,
+        },
       });
-  };
+      console.log(response);
+      const email = response.data.email;
+      const name = response.data.name;
+      const profilePic = response.data.picture;
+      await instance
+        .post("/auth/callback", {
+          email: email,
+          name: name,
+          profilePic: profilePic,
+        })
+        .then(response => {
+          console.log(response);
+          dispatch({
+            type: "SET_TOKEN",
+            token: response.data.token,
+          });
+        });
+    },
+  });
 
-  const onFailure = response => {
-    console.log(response);
-  };
-
-  return <GoogleLogin clientId={clientID} buttonText="Login with Google" onSuccess={onSuccess} onFailure={onFailure} className={styles.GoogleLogin}/>;
+  return <button onClick={() => login()}>Login with Google</button>;
 };

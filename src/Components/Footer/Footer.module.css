@@ -152,7 +152,7 @@
     flex: 2 0px;
   }
 }
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1024px) {
   .footer__addr {
     text-align: center;
     margin-bottom: 1rem;
@@ -167,6 +167,9 @@
     text-align: center;
   }
   .legal {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+  }
+  .footer__nav {
+    flex-wrap: nowrap;
   }
 }

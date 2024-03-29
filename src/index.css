@@ -8,6 +8,12 @@
 html {
   scroll-behavior: smooth;
 }
+input[type="text"] {
+  font-family: "Jost", sans-serif;
+}
+textarea {
+  font-family: "Jost", sans-serif;
+}
 body {
   color: white;
   font-family: "Jost", sans-serif;
@@ -16,6 +22,7 @@ body {
 }
 button {
   font-family: "Jost", sans-serif;
+  font-weight: bold;
 }
 
 .vds-radio-hint {
@@ -60,7 +67,7 @@ button {
     margin-bottom: -3%;
   }
 }
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 500px) {
   .vds-time-group {
     margin-bottom: -7%;
   }
@@ -68,7 +75,7 @@ button {
     margin-bottom: -6%;
   }
 }
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 375px) {
   .vds-time-group {
     margin-bottom: -8%;
   }
