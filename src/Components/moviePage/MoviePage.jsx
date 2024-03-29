@@ -235,7 +235,7 @@ const MoviePage = ({setShowPopup}) => {
         <div
           className={styles.heroContainer}
           style={
-            !smallScreen && movie
+            (!smallScreen && movie)
               ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
               : {backgroundImage: "none"}
           }
@@ -321,7 +321,7 @@ const MoviePage = ({setShowPopup}) => {
               )}
               {movie?.genres.map(ele => (
                 <button className={styles.genreButtons} onClick={() => openModal(ele)}>
-                  {ele} <img src={popupIcon} className={styles.popupIcon} />
+                  {ele} <img src = {popupIcon} className={styles.popupIcon} />
                 </button>
               ))}
             </div>
@@ -346,9 +346,10 @@ const MoviePage = ({setShowPopup}) => {
             </div>
           </div>
         </div>
-
+        
         <div className={styles.heading}>More Details</div>
         <div className={styles.movieInfo}>
+          
           <div className={styles.fullplot}>
             <div className={styles.cell}>
               {movie?.fullplot && <div className={styles.subHeading}>Plot</div>}
@@ -400,6 +401,8 @@ const MoviePage = ({setShowPopup}) => {
               </div>
             )}
           </div>
+
+          
         </div>
 
         {comments ? <Comments info={comments} id={id} /> : <></>}

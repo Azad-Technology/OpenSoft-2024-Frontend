@@ -5,7 +5,7 @@ import styles from "./CustomDropdown.module.css";
 import {useParams} from "react-router-dom";
 import MovieModalList from "../GenreModal/MovieModalList.jsx";
 import * as Realm from "realm-web";
-import Card from "../Card/Card.jsx";
+import FuzzyCard from "../Card/FuzzyCard.jsx";
 
 const SearchPage = () => {
   const {searchTerm} = useParams();
@@ -18,6 +18,7 @@ const SearchPage = () => {
         query: searchTerm,
       });
       setFuzzy(response.data);
+      // console.log(response.data);
     } catch (error) {
       setFuzzy([]);
       console.error("Error fetching movies:", error);
@@ -91,7 +92,7 @@ const SearchPage = () => {
       </div>
       {fuzzy && (
         <div className={styles.results_container}>
-          {fuzzy.map((movie, index) => movie.poster_path !== undefined && <Card key={index} movies={movie} />)}
+          {fuzzy.map((movie, index) => <FuzzyCard key={index} movies={movie} basis={movies.highlights ? movies.highlights.sort((a, b) => (b.score - a.score))[0].path : "plot"} />)}
         </div>
       )}
       {!fuzzy && (
@@ -99,7 +100,7 @@ const SearchPage = () => {
           {Array(18)
             .fill(null)
             .map((movie, index) => (
-              <Card key={index} movies={movie} />
+              <FuzzyCard key={index} movies={movie} />
             ))}
         </div>
       )}
