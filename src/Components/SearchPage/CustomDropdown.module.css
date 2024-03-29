@@ -112,7 +112,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: -2rem;
 }
 
 .dropdownbutton {
@@ -195,7 +195,7 @@
 
 .container .title {
   font-size: 1.5rem;
-  margin: auto 2rem auto 2rem;
+  margin: 0 2rem 0 2rem;
 }
 
 .container .title span::after {
@@ -282,7 +282,7 @@
 
 .container .title {
   font-size: 1.5rem;
-  margin: auto auto auto 1rem;
+  /* margin: auto auto auto 1rem; */
 }
 
 .container .title span::before {

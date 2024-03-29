@@ -329,6 +329,17 @@ const MoviePage = () => {
                   </div>
                 )}
                 <span>{movie?.year && movie?.year}</span>
+                <span>
+                  <span className={styles.icon} id="heartIcon">
+                    {like ? (
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                    ) : (
+                      <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                    )}
+                  </span>
+                </span>
+                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
               </span>
             </div>
             <div className={styles.genreList}>

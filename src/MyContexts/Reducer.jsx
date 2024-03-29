@@ -68,7 +68,22 @@ const reducer = (state, action) => {
           fav: state.user.fav.filter(item => item._id !== action.movie._id),
         },
       };
-
+    case "CREATE_WATCHLIST":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          watchlist: [...state.user.watchlist, action.watchlist],
+        },
+      };
+    case "REMOVE_WATCHLIST":
+      return{
+        ...state,
+        user: {
+          ...state.user,
+          watchlist: state.user.watchlist.filter(watchlist => watchlist._id !== action.watchlistID),
+        },
+      }
     default:
       return state;
   }
