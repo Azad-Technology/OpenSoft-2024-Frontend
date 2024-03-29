@@ -25,7 +25,7 @@ export const Slider = ({genre, id}) => {
     if (genre === "Regional Hits") {
       const response = await instance.get(`my_country/?count=18`);
       setMovies(response.data);
-      
+
       return;
     }
     if (genre === "More Like This") {

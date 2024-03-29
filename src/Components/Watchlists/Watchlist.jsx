@@ -58,11 +58,11 @@ const Watchlist = ({movies, name, id}) => {
       </div>
       <div className={styles.movie_grid}>
         <div className={styles.movieList}>
-        {movies.map((m, i) => {
-          if (m && m.poster_path === undefined) return;
-          return <Card movies={m}/>;
-        })}
-      </div>
+          {movies.map((m, i) => {
+            if (m && m.poster_path === undefined) return;
+            return <Card movies={m} />;
+          })}
+        </div>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@
 }
 
 .watchlist_modal {
-  background-color: rgb(31,12,25);
+  background-color: rgb(31, 12, 25);
   border-radius: 0.6rem;
   box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.4);
   max-width: 31.25rem;
@@ -88,8 +88,8 @@
 }
 
 .watchlist_modal_button {
-  background-color: #FFFE3E;
-  color: #1D0B17;
+  background-color: #fffe3e;
+  color: #1d0b17;
   font-weight: bold;
   border: none;
   width: 5rem;
@@ -101,7 +101,7 @@
 }
 
 .watchlist_modal_button:hover {
-  background-color: #CCCC00;
+  background-color: #cccc00;
 }
 
 .watchlist_close_button {
@@ -161,7 +161,7 @@
   width: var(--size);
 }
 
-.checkbox__content{
+.checkbox__content {
   display: flex;
   overflow: hidden;
 }
@@ -262,8 +262,6 @@
   box-shadow: 0 0 0.8rem rgba(120, 121, 123, 0.5); /* Soft border glow */
 }
 
-
-
 .dropdownbutton::after {
   content: "\25BC";
   font-size: 0.8em;
@@ -275,7 +273,7 @@
   position: absolute;
   color: #fff;
   width: 80%;
-  top:-1.2rem;
+  top: -1.2rem;
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 15rem;
@@ -285,11 +283,11 @@
   background-color: #191e25; /* A dark gray background */
   box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.4);
   border: 0.0625rem solid #33373d;
-  border-top:none;
+  border-top: none;
   border-radius: 0.25rem;
 }
 
-.dropdownlist::-webkit-scrollbar{
+.dropdownlist::-webkit-scrollbar {
   display: none;
 }
 
@@ -314,7 +312,7 @@
 }
 
 .dropdownlist input[type="checkbox"] {
-  margin-right: 0.625rem; 
+  margin-right: 0.625rem;
 }
 
 .dropdownbutton:focus {

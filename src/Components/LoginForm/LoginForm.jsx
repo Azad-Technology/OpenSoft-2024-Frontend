@@ -104,10 +104,10 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
           <form action="">
             <h1>Welcome Back.</h1>
             <div className="OAuth">
-              <GoogleLoginButton 
-                className={styles.GoogleLogin} 
-                setShowPopup={setShowPopup} 
-                setShowPopup2={setShowPopup2} 
+              <GoogleLoginButton
+                className={styles.GoogleLogin}
+                setShowPopup={setShowPopup}
+                setShowPopup2={setShowPopup2}
                 showPopup2={showPopup2}
               />
             </div>

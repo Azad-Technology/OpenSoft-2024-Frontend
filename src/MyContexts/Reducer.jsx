@@ -8,7 +8,7 @@ export const initialState = {
     fav: [],
     watchlist: [],
     profilePic: "",
-    isGoogleAuth:false
+    isGoogleAuth: false,
   },
 };
 
@@ -35,7 +35,7 @@ const reducer = (state, action) => {
           subtype: "",
           fav: [],
           profilePic: "",
-          isGoogleAuth:false
+          isGoogleAuth: false,
         },
       };
     case "SET_TOKEN":
@@ -49,7 +49,7 @@ const reducer = (state, action) => {
           subtype: "",
           fav: [],
           profilePic: "",
-          isGoogleAuth:false
+          isGoogleAuth: false,
         },
       };
     case "ADD_FAV":
@@ -77,13 +77,13 @@ const reducer = (state, action) => {
         },
       };
     case "REMOVE_WATCHLIST":
-      return{
+      return {
         ...state,
         user: {
           ...state.user,
           watchlist: state.user.watchlist.filter(watchlist => watchlist._id !== action.watchlistID),
         },
-      }
+      };
     default:
       return state;
   }

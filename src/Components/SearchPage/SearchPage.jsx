@@ -92,7 +92,13 @@ const SearchPage = () => {
       </div>
       {fuzzy && (
         <div className={styles.results_container}>
-          {fuzzy.map((movie, index) => <FuzzyCard key={index} movies={movie} basis={movie.highlights ? movie.highlights.sort((a, b) => (b.score - a.score))[0].path : "plot"} />)}
+          {fuzzy.map((movie, index) => (
+            <FuzzyCard
+              key={index}
+              movies={movie}
+              basis={movie.highlights ? movie.highlights.sort((a, b) => b.score - a.score)[0].path : "plot"}
+            />
+          ))}
         </div>
       )}
       {!fuzzy && (

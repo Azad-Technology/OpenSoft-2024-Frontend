@@ -13,6 +13,20 @@ function Modal({onClose, genre, id}) {
       const response = await instance.get(`/countries_top/${genre}/?count=18`);
       setMovies(response.data);
       return;
+    } else if (genre === "Handpicked") {
+      const response = await instance.request("/recommend", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setMovies(response.data);
+      return;
+    } else if (genre === "Regional Hits") {
+      const response = await instance.get(`my_country/?count=18`);
+      setMovies(response.data);
+
+      return;
     } else if (genre === "Top Movies" || genre === "Top IMDB") {
       const response = await instance.get("/top_movies/?count=18");
       setMovies(response.data);
