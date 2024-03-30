@@ -207,9 +207,16 @@
 }
 .favorites_card {
   display: flex;
-  width: 100%;
-  max-width: 100%;
   margin-left: -0.8rem;
+  overflow-y: auto;
+  overflow-x: scroll;
+  padding: 1rem 0rem 1rem 0rem;
+  margin: 0 -20px 0px 0px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100vw;
+  align-items: center;
+  scroll-behavior: smooth;
   /* justify-content: space-between; */
 }
 #homeIcon {
