@@ -70,30 +70,30 @@ function NewComments(props) {
   });
 
   // Assuming you have an array of profile picture links
-  const profilePicLinks = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
-    "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
-    "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
-    "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
-    "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
-    "https://upload.wikimedia.org/wikipedia/en/b/bd/Doraemon_character.png",
-    "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
-    "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
-    "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
-    "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
-  ];
+const profilePicLinks = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
+  "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
+  "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
+  "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
+  "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
+  "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
+  "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
+  "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
+  "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
+];
 
-  function getProfilePicLink(username) {
-    // Find the index of the username in the 'name' array
-    const index = name.indexOf(username);
-    if (index !== -1) {
-      // If the username is found, use modulus to cycle through the profile picture links
-      return profilePicLinks[index];
-    } else {
-      // If the username is not found, return a default profile picture link
-      return "default_profile_pic.jpg";
-    }
+function getProfilePicLink(username) {
+  // Find the index of the username in the 'name' array
+  const index = name.indexOf(username);
+  if (index !== -1) {
+    // If the username is found, use modulus to cycle through the profile picture links
+    return profilePicLinks[index];
+  } else {
+    // If the username is not found, return a default profile picture link
+    return "default_profile_pic.jpg";
   }
+}
 
 
   let date = props.info.map(obj => {
@@ -211,7 +211,7 @@ function NewComments(props) {
         <div className={styles.heading}>Comments</div>
         <div className={styles.yourComment}>
           <div className={styles.imgTextBtnContainer} style={{height: parentHeight}}>
-            <div className={styles.userImg}> </div>
+            <div className={styles.userImg}></div>
             <div className={styles.textBtnCont} style={{height: parentHeight}}>
               <div className={styles.textArea} style={{height: textareaHeight}}>
                 <textarea
@@ -338,7 +338,6 @@ function NewComments(props) {
               <div className={styles.showMoreBtnContainer}>
                 <button onClick={SwitchState} className={styles.showMoreBtn} id="showMoreBtn">
                   <svg
-                    // fill="#cf0a0a"
                     fill="#fffe3e"
                     height="25px"
                     width="25px"

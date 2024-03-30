@@ -27,6 +27,10 @@ const WatchListModal = ({onClose, movieID}) => {
       setErrorMsg("Please enter a name");
       return;
     }
+    if(watchlistName.length > 15){
+      setErrorMsg("Name should be less than 15 characters");
+      return;
+    }
     if (watchlists?.find(watchlist => watchlist.name === watchlistName)) {
       setErrorMsg("Watchlist already exists");
       return;

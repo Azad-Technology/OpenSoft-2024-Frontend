@@ -15,7 +15,7 @@
   background: rgba(31, 22, 28, 0.6);
   color: rgb(255, 255, 255);
   border-radius: 2rem;
-  padding: 3rem 3rem;
+  padding: 0rem 3rem;
   box-shadow: -0.1rem 0rem 1rem 0.25rem rgba(16, 15, 15, 1);
 }
 
@@ -60,7 +60,7 @@
   border: 0.125rem solid rgb(255, 255, 255, 0.2);
   border-radius: 0.3125rem;
   font-size: 1rem;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
   border-color: transparent;
 }
@@ -99,7 +99,7 @@
   border: none;
   border-radius: 0.3125rem;
   font-size: 1rem;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
   border-color: rgb(255, 255, 255);
   /* margin-bottom: 10%;  */
@@ -161,6 +161,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 2.5rem;
 }
 
 /* 
@@ -283,8 +284,9 @@
     width: 90vw;
     min-width: 300px;
     margin-top: 2rem;
-    padding: 4rem 2rem;
+    padding: 1rem 2rem;
     border-radius: 1rem;
+    
   }
   .wrapper h1 {
     font-size: 1.2rem;
@@ -303,15 +305,17 @@
   }
   .Or {
     font-size: 0.8rem;
-    margin: 0.5rem;
+    margin: 1rem 0rem;
   }
   .Oth {
     font-size: 0.8rem;
+    margin-bottom: 1rem;
   }
   .wrapper .register_link {
     font-size: 0.8rem;
     text-align: center;
     margin: 1.25rem 0 0 0;
+    margin-bottom: 1rem;
   }
   #error {
     font-size: 0.8rem;
@@ -327,7 +331,7 @@
     padding: 0.2rem;
   }
   .input_box {
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     height: 2rem;
   }
   .eyeIcon {
