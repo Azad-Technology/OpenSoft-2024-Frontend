@@ -12,7 +12,6 @@ function truncateComment(comment, maxLength) {
 
 function timeSince(date) {
   const seconds = Math.floor((new Date() - date) / 1000);
-  console.log(date);
 
   let interval = Math.floor(seconds / 31536000);
   if (interval > 1) {

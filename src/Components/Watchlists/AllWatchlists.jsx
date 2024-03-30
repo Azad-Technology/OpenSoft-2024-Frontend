@@ -6,7 +6,6 @@ import {useStateValue} from "../../MyContexts/StateProvider";
 export const AllWatchlists = () => {
   const [{token, user}, dispatch] = useStateValue();
   const watchlists = user?.watchlist;
-  console.log('watch: ', watchlists);
   const [showLeftBtn, setShowLeftBtn] = useState(false);
   const [showRightBtn, setShowRightBtn] = useState(true);
 

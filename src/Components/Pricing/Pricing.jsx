@@ -154,7 +154,7 @@ function Pricing() {
               <li>Unlimited favorites</li>
               <li>Continue Watching where you left off</li>
               <li>Picture in Picture mode</li>
-              <li>Voice Commands with Alan AI</li>
+              <li>Voice Commands with Korn AI</li>
               <li>Personalized recommendation system</li>
             </ul>
           </article>

@@ -6,7 +6,7 @@ import instance from "../../axios";
 import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider, PIPButton} from "@vidstack/react";
+import {MediaPlayer, MediaProvider, PIPButton,useMediaState} from "@vidstack/react";
 import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -22,11 +22,13 @@ import chooseMovie from "./MovieList.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
-
   const [vidsrc, setVidsrc] = useState(null);
+  const [vidthumb, setVidthumb] = useState(null);
+  // const isActive = useMediaState('pictureInPicture');
   useEffect(() => {
     if (movie && token) {
       const choosenmovie = chooseMovie(movie?.title);
+      setVidthumb(choosenmovie[3]);
       switch (user.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -49,10 +51,32 @@ function Modal({onClose, movie, token}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer storage="storage-key" title={movie?.title} src={vidsrc}>
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
+            {user?.subtype==="Basic"? <div className="basic_video">
+
+              <MediaPlayer
+                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                </DefaultVideoLayout>
+              </MediaPlayer>
+            </div>:
+            <div className="premium_video">
+
+              <MediaPlayer
+                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                </DefaultVideoLayout>
+              </MediaPlayer>
+            </div>}
           </div>
         </div>
         {/* Close button */}
@@ -66,11 +90,12 @@ function Modal({onClose, movie, token}) {
 
 function ModalTrail({onClose, movie}) {
   const [{user}, dispatch] = useStateValue();
-
   const [vidsrc, setVidsrc] = useState(null);
+  const [vidthumb, setVidthumb] = useState(null);
   useEffect(() => {
     if (movie) {
       const choosenmovie = chooseMovie(movie?.title);
+      setVidthumb(choosenmovie[3]);
       switch (user?.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -93,10 +118,17 @@ function ModalTrail({onClose, movie}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer clipEndTime={30} storage="storage-key" title={movie?.title} src={vidsrc}>
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
+            <div className="basic_video">
+              <MediaPlayer
+              clipEndTime={30}
+                storage={user?.subtype!="Basic" && `${movie?._id} trail ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?tid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} />
+              </MediaPlayer>
+            </div>
           </div>
         </div>
         {/* Close button */}
@@ -267,7 +299,7 @@ const MoviePage = () => {
         if (user && user.subtype != "Basic") {
           setShowModal(true);
         } else {
-          setShowPopup(true);
+          // setShowPopup(true);
           navigate("/pricing");
           setTimeout(() => {
             setShowPopup(false);
@@ -371,7 +403,7 @@ const MoviePage = () => {
                 <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
-                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart} style={{color:"red"}}></i>
                     ) : (
                       <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
                     )}
@@ -416,17 +448,7 @@ const MoviePage = () => {
                 </button>
                 {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
                 {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
-                {/* <span>
-                  <span className={styles.icon} id="heartIcon">
-                    {like ? (
-                      <i class={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
-                    ) : (
-                      <i class={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
-                    )}
-                  </span>
-                </span>
-                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />} */}
+                
               </span>
             </div>
           </div>
@@ -490,32 +512,32 @@ const MoviePage = () => {
         </div>
         {movie?.fullplot.length >= 600 && (
           <div className={styles.showMoreInfoBtnCont}>
-            <button id="showMoreInfo" className={styles.showMoreInfoBtn} onClick={handleShowMoreInfoBtn}>
-              <svg
-                fill="#FFFE3E"
-                height="25px"
-                width="25px"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 512.001 512.001"
-                xmlSpace="preserve"
-              >
-                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <g>
-                    {" "}
-                    <g>
+            <button onClick={handleShowMoreInfoBtn} className={styles.showMoreInfoBtn} id="showMoreInfo">
+                  <svg
+                    fill="#fffe3e"
+                    height="25px"
+                    width="25px"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 512.001 512.001"
+                    xmlSpace="preserve"
+                  >
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
                       {" "}
-                      <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
-                    </g>{" "}
-                  </g>{" "}
-                </g>
-              </svg>
-            </button>
+                      <g>
+                        {" "}
+                        <g>
+                          {" "}
+                          <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
+                        </g>{" "}
+                      </g>{" "}
+                    </g>
+                  </svg>
+                </button>
           </div>
         )}
 

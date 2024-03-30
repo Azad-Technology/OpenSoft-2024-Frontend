@@ -36,6 +36,14 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
       setErrorMsg("Name should be less than 15 characters");
       return;
     }
+    if(user?.subtype === "Basic" && user.watchlist.length >= 1){
+      setErrorMsg("You can only have 1 watchlist with a free account");
+      return;
+    }
+    if(user?.subtype === "Silver" && user.watchlist.length >= 5){
+      setErrorMsg("You can only have 5 watchlists with a silver account");
+      return;
+    }
     if (watchlists?.find(watchlist => watchlist.name === watchlistName)) {
       setErrorMsg("Watchlist already exists");
       return;
