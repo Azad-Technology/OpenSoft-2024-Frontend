@@ -95,6 +95,7 @@
 
 .maincontentwrapper {
   margin-top: 2rem;
+  /* margin-bottom: 2rem; */
 }
 .dropdowncontainer {
   display: flex;
@@ -164,6 +165,18 @@
   border: 0.0625rem solid #33373d;
   border-radius: 0.25rem;
 }
+
+.no_results{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40rem;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
 
 .dropdownlist li {
   width: 9rem;
@@ -283,7 +296,7 @@
 :root {
   --primary-font-color: #ffffff;
   --secondary-font-color: #c2b8b8;
-  --tertiary-font-color: #cf0a0a;
+  --tertiary-font-color: #FFFE3E;
 }
 
 .container .title {

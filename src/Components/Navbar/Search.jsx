@@ -6,7 +6,7 @@ import * as Realm from "realm-web";
 import {useNavigate} from "react-router-dom";
 import instance from "../../axios.jsx";
 
-export const Search = ({movies, searchBarRef}) => {
+export const Search = ({movies, searchBarRef,setShowSearchBar}) => {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
@@ -33,6 +33,9 @@ export const Search = ({movies, searchBarRef}) => {
       if (debouncedSearch.length) {
         const response = await instance.get(`/autosearch/${debouncedSearch}`);
         setAutoCompleteResult(response.data);
+      }
+      else{
+        setAutoCompleteResult([]);
       }
     } catch (err) {
       setAutoCompleteResult([]);
@@ -66,7 +69,7 @@ export const Search = ({movies, searchBarRef}) => {
   return (
     <div ref={searchRef} className={styles.search}>
       <div className={styles.searchBox}>
-        <i className={`fa fa-search ${styles.search__icon}`}></i>
+        <i onClick={()=>{navigate(`/search/${search}`); setShowSearchBar(false)}} className={`fa fa-search ${styles.search__icon}`}></i>
         <input
           ref={searchBarRef}
           className={styles.search__input}
@@ -78,9 +81,9 @@ export const Search = ({movies, searchBarRef}) => {
             handleKeyPress(e, search);
           }}
         />
-        {search && <i onClick={() => setSearch("")} className={`fa fa-close ${styles.search__icon}`}></i>}
+        {search && <i onClick={() => {navigate(`/search/${search}`);setSearch("")}} className={`fa fa-close ${styles.search__icon}`}></i>}
       </div>
-      {click && autoCompleteResult && <SearchResults movies={autoCompleteResult} search={debouncedSearch} />}
+      {click && autoCompleteResult && <SearchResults setShowSearchBar={setShowSearchBar} setSearch={setSearch} movies={autoCompleteResult} search={debouncedSearch} />}
     </div>
   );
 };

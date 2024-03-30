@@ -1,6 +1,6 @@
 .wrapper {
   margin: 0;
-  margin-top: auto;
+  margin-top: 2rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-size: 1rem;
