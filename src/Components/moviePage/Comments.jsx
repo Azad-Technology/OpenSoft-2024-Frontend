@@ -52,9 +52,6 @@ function NewComments(props) {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(props);
-  }, [props]);
   let comments = props.info.map(obj => {
     return obj.text;
   });
@@ -182,31 +179,39 @@ function NewComments(props) {
     }
   };
 
+  const handleTextAreaClick = () => {
+    setShowBtns(true); // Show buttons when textarea is clicked
+    setShowLine(true); // Show line when textarea is clicked
+  };
+
+  const handleDiscardClick = () => {
+    setShowBtns(false); // Hide buttons when discard button is clicked
+    setNewComment(""); // Clear textarea content
+  };
+
   return (
     <>
       <div className={styles.commentContainer}>
         <div className={styles.heading}>Comments</div>
         <div className={styles.yourComment}>
           <div className={styles.imgTextBtnContainer} style={{height: parentHeight}}>
-            <div className={styles.userImg}></div>
-            <div className={styles.textBtnCont} style={{height: parentHeight}}>
-              <div className={styles.textArea} style={{height: textareaHeight}}>
-                <textarea
-                  id="myTextArea"
-                  ref={textareaRef}
-                  name="typeComment"
-                  placeholder="Type your comment here..."
-                  cols={190}
-                  className={styles.typeComment}
-                  style={{height: "100%", overflow: "hidden", whiteSpace: "pre-wrap"}}
-                  onChange={event => handleTextAreaChange(event)}
-                  // onBlur={handleTextareaBlur}
-                  value={newComment}
-                ></textarea>
-              </div>
-              <div className={styles.submitBtnContainer}>
-                {disableBtn && (
-                  <button type="submit" className={styles.submitBtn} disabled>
+          <div className={styles.userImg}> </div>
+            <div className={styles.commentTextBox}>
+              <textarea
+                id="myTextArea"
+                ref={textareaRef}
+                name="typeComment"
+                placeholder="Type your comment here..."
+                className={`${styles.typeComment} ${styles.textBtnCont}`}
+                style={{height: "100%", overflow: "hidden", whiteSpace: "pre-wrap"}}
+                onChange={event => handleTextAreaChange(event)}
+                onClick={handleTextAreaClick} // Call handleTextAreaClick when textarea is clicked
+                value={newComment}
+              ></textarea>
+
+              {showBtns && (
+                <div className={styles.btnGroup}>
+                  <button onClick={handleSubmit} className={styles.submitBtn} disabled={disableBtn}>
                     Submit
                   </button>
                 )}

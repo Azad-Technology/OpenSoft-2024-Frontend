@@ -299,7 +299,7 @@ const MoviePage = () => {
         <div
           className={styles.heroSmall}
           style={{
-            backgroundImage: `url(${movie && movie.backdrop_path !== undefined ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
+            backgroundImage: `url(${movie && movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
           }}
         >
           <div className={styles.title}>{movie?.title}</div>
@@ -309,7 +309,7 @@ const MoviePage = () => {
           style={
             !smallScreen && movie
               ? {
-                  backgroundImage: `url(${movie && movie.backdrop_path !== undefined ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
+                  backgroundImage: `url(${movie && movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
                 }
               : {backgroundImage: "none"}
           }

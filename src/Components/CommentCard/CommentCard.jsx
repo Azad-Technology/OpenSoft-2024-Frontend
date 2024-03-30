@@ -60,9 +60,6 @@ function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
   const maxLength = 120; // Adjust this value as needed
   const truncatedComment = truncateComment(comment, maxLength);
 
-  console.log(truncatedComment);
-  console.log(timestamp);
-
   return (
     <>
       <div className={username === "" ? `${styles.skeleton__cards} ${styles.commentCard}` : `${styles.commentCard}`}>
