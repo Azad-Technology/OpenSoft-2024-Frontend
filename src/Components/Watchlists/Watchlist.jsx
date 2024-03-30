@@ -27,7 +27,7 @@ const Watchlist = ({movies, name, id}) => {
       });
       navigate("/profile");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -47,7 +47,7 @@ const Watchlist = ({movies, name, id}) => {
       });
       window.location.reload();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

@@ -88,7 +88,7 @@
 
 .LeftbtnContainer button:hover,
 .RightbtnContainer button:hover {
-  background-color: rgba(130, 118, 118, 0.599);
+  background-color: #1f0c19;
 }
 
 .slider {
