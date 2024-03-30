@@ -49,7 +49,7 @@ function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
         <div className={styles.title}>
           {profilePic != "" && <img src={profilePic} alt="" className={styles.profilePic} />}
           <div>
-            <h3 className={styles.username}>{username}</h3>
+            <div className={styles.username}>{username}</div>
             <div className={styles.cardTime}>{timestamp != "" && timeAgo}</div>
           </div>
         </div>

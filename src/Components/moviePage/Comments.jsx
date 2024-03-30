@@ -12,8 +12,7 @@ import {useNavigate} from "react-router-dom";
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
 function NewComments(props) {
-<<<<<<< HEAD
-  const [{token}, dispatch] = useStateValue();
+  const [{token,user}, dispatch] = useStateValue();
 
  
   const [isOpenArray, setIsOpenArray] = useState(Array(10).fill(false));
@@ -101,9 +100,6 @@ function getProfilePicLink(username) {
     return obj.date;
   });
 
-=======
-  const [{token, user}, dispatch] = useStateValue();
->>>>>>> 1b5cabc15ab1169f7dfcbdb123fec03f916f7355
   const [clicked, setClicked] = useState(false);
   const [state, setState] = useState("See more");
   const [parentHeight, setParentHeight] = useState("auto");
@@ -182,11 +178,7 @@ function getProfilePicLink(username) {
       navigate("/login");
     } else {
       try {
-<<<<<<< HEAD
-         instance.post(
-=======
         await instance.post(
->>>>>>> 1b5cabc15ab1169f7dfcbdb123fec03f916f7355
           "/comment",
           {
             comment: newComment,
@@ -198,9 +190,6 @@ function getProfilePicLink(username) {
             },
           }
         );
-<<<<<<< HEAD
-        //window.location.reload();
-=======
         const temp = {
           name: user.name,
           text: newComment,
@@ -210,7 +199,6 @@ function getProfilePicLink(username) {
         props.setComments(curr);
         setNewComment("");
         // window.location.reload();
->>>>>>> 1b5cabc15ab1169f7dfcbdb123fec03f916f7355
       } catch (error) {
         console.log(error);
       }
@@ -262,7 +250,6 @@ function getProfilePicLink(username) {
               props.info.map((comment, index) => (
                 <div key={index} className={styles.allCommentsContainer}>
                   <div className={styles.commentInfo}>
-<<<<<<< HEAD
                     <div className={styles.imgContainer}>
                       <img src={getProfilePicLink(name[index])} className={styles.imgContainer}></img>
                     </div>
@@ -301,20 +288,12 @@ function getProfilePicLink(username) {
                     </p> */}
 
                     </div>
-=======
-                    <div className={styles.imgContainer}></div>
-                    <div className={styles.userName}>@{comment.name}</div>
-                  </div>
-                  <div className={styles.commentContent}>
-                    <div className={styles.commentContent}>{comment.text}</div>
->>>>>>> 1b5cabc15ab1169f7dfcbdb123fec03f916f7355
                   </div>
                 </div>
               ))
             ) : (
               <div className={styles.allCommentsContainer}>
                 <div className={styles.commentInfo}>
-<<<<<<< HEAD
                   <div className={styles.imgContainer}>
                     <img src={profilePicLinks[0]} className={styles.imgContainer}></img>
                   </div>
@@ -352,13 +331,6 @@ function getProfilePicLink(username) {
                   </p> */}
 
                   </div>
-=======
-                  <div className={styles.imgContainer}></div>
-                  <div className={styles.userName}>@{props.info[0].name}</div>
-                </div>
-                <div className={styles.commentContent}>
-                  <div className={styles.commentContent}>{props.info[0].text}</div>
->>>>>>> 1b5cabc15ab1169f7dfcbdb123fec03f916f7355
                 </div>
               </div>
             )}
