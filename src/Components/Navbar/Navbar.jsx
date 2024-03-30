@@ -121,15 +121,7 @@ export const Navbar = ({movies}) => {
                     <a
                       onMouseOver={handleToggleDropdown}
                       onClick={event => {
-                        if (
-                          menuoption.name === "Pricing" &&
-                          token &&
-                          token !== "null" &&
-                          token !== "undefined" &&
-                          token !== undefined
-                        )
-                          navigate("/pricing");
-                        else if (menuoption.name === "Pricing") navigate("/login");
+                        if (menuoption.name === "Pricing") navigate("/pricing");
                         else if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
                           setSelectedGenre(menuoption.name);
                         }
@@ -279,7 +271,7 @@ export const Navbar = ({movies}) => {
           </div>
           {showSearchBar && (
             <div ref={searchRef}>
-              <Search movies={movies} searchBarRef={searchBarRef} />
+              <Search movies={movies} setShowSearchBar={setShowSearchBar} searchBarRef={searchBarRef} />
             </div>
           )}
           {selectedGenre && selectedID && (

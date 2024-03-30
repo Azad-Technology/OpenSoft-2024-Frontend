@@ -33,6 +33,7 @@
 
 .search__icon {
   color: white;
+  cursor:pointer;
 }
 
 @media screen and (max-width: 900px) {

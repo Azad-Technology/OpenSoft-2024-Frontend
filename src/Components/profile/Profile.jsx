@@ -260,6 +260,26 @@ const Profile = ({setShowPopup3}) => {
               </div>
             )}
 
+            {user?.subtype === "Basic" ?(
+              <div className={styles.row}>
+                <div className={styles.col_sm_3}>
+                  <p className={styles.head}> Account details</p>
+                </div>
+                <div className={styles.col_sm_9}>
+                  <p className={styles.details}>No information available</p>
+                </div>
+              </div>
+            ):
+            <div className={styles.row}>
+              <div className={styles.col_sm_3}>
+                <p className={styles.head}> Account details</p>
+              </div>
+              <div className={styles.col_sm_9}>
+                <p className={styles.details}>Credit Card</p>
+              </div>
+            </div>
+            }
+
             {/* {!user?.subtype === "Basic" ? (
               <div></div>
             ) : (

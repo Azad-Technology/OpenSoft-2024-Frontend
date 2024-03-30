@@ -6,11 +6,18 @@ import {useParams} from "react-router-dom";
 import MovieModalList from "../GenreModal/MovieModalList.jsx";
 import * as Realm from "realm-web";
 import FuzzyCard from "../Card/FuzzyCard.jsx";
+import  Card  from '../Card/Card.jsx';
+import GeneralSlider from "../HomeSliders/GeneralSlider.jsx";
+import MovieList from "../movieList/MovieList.jsx";
 
 const SearchPage = () => {
   const {searchTerm} = useParams();
 
   const [fuzzy, setFuzzy] = useState(null);
+  const [movies, setMovies] = useState([]);
+  const [genreSelections, setGenreSelections] = useState([]);
+  const [languageSelections, setLanguageSelections] = useState([]);
+  const [nlp,setNlp]=useState([]);
 
   const getData = useCallback(async () => {
     try {
@@ -18,7 +25,13 @@ const SearchPage = () => {
         query: searchTerm,
       });
       setFuzzy(response.data);
-
+      setGenreSelections([]);
+      setLanguageSelections([]);
+      const response1=await axios.post("https://embed.popkorn.tech/nlp", {
+        query: searchTerm,
+      });
+      setNlp(response1.data);
+      console.log(response1.data);
       // console.log(response.data);
     } catch (error) {
       setFuzzy([]);
@@ -27,11 +40,8 @@ const SearchPage = () => {
   }, [searchTerm]);
   useEffect(() => {
     getData();
-  }, [getData]);
+  }, [searchTerm]);
 
-  const [movies, setMovies] = useState([]);
-  const [genreSelections, setGenreSelections] = useState([]);
-  const [languageSelections, setLanguageSelections] = useState([]);
   const genreOptions = [
     // {label: "Action", value: "action"},
     // {label: "Comedy", value: "comedy"},
@@ -260,6 +270,22 @@ const SearchPage = () => {
             ))}
         </div>
       )}
+      {nlp?.length?<div className={styles.nlp}>
+      <div className="moviescontainer">
+        <section className={styles.container}>
+          <div className={styles.title}>
+            <span>Natural Language Search Results</span>
+          </div>
+          <div className={styles.gridcontainer}></div>
+        </section>
+      </div>
+      <MovieList movie={nlp} />
+      </div>
+      :null
+      }
+
+
+
       {/* {fuzzy?.length === 0 && (
         <div className={styles.results_container}>
 

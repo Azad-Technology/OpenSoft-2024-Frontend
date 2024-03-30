@@ -5,7 +5,7 @@ import bgBottom from "../../assets/bg-bottom.svg";
 import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
 import {Link} from "react-router-dom";
-import {useSearchParams} from "react-router-dom";
+import {useSearchParams,useNavigate} from "react-router-dom";
 
 function Pricing() {
   const [annually, setAnnually] = useState(false);
@@ -15,6 +15,7 @@ function Pricing() {
   const [isSilver, setIsSilver] = useState(false);
   const [showEditPrompt, setShowEditPrompt] = useState(false);
   const [searchParams] = useSearchParams();
+  const navigate=useNavigate();
 
   useEffect(() => {
     const shouldShowPrompt = searchParams.get("editProfile") === "true";
@@ -38,7 +39,7 @@ function Pricing() {
       };
       getUser();
     }
-  }, [token]);
+  }, [user]);
   return (
     <div className={styles.container}>
       <div className={styles.bgTopImage}>
@@ -62,10 +63,18 @@ function Pricing() {
             <h2>Basic</h2>
 
             <h3>Free</h3>
-
-            <button disabled className={styles.pricingCard_button_free}>
+            {token===null || token===undefined || token==="" || token==='undefined' || token==='null'?(
+              <button onClick={()=>navigate('/login')} className={styles.pricingCard_button_free}>Purchase</button>
+            )
+            :(isGold || isSilver)?
+              <button disabled className={styles.pricingCard_button_purchased}>
+                <p>Owned</p>
+              </button>
+              :
+              <button disabled className={styles.pricingCard_button_free}>
               Owned
             </button>
+            }
             <ul>
               <li>Quality upto 480p</li>
               <li>Add up to 10 favorites</li>
@@ -89,11 +98,18 @@ function Pricing() {
             ) : (
               <Link
                 target="_blank"
-                to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262"
+                to={`https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262?checkout[email]=${user?.email}&checkout[name]=${user?.name}`}
               >
+                
+                {isGold?
+                  <button disabled className={styles.pricingCard_button_purchased}> 
+                  <p>Owned</p>
+                </button>
+                :
                 <button className={styles.pricingCard_button}>
                   <p>Purchase</p>
-                </button>
+                </button>   
+              }
               </Link>
             )}
 
@@ -124,7 +140,7 @@ function Pricing() {
             ) : (
               <Link
                 target="_blank"
-                to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a"
+                to={`https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a?checkout[email]=${user?.email}&checkout[name]=${user?.name}`}
               >
                 <button className={styles.pricingCard_button}>
                   <p>Purchase</p>
