@@ -60,7 +60,7 @@
   border: 0.125rem solid rgb(255, 255, 255, 0.2);
   border-radius: 0.3125rem;
   font-size: 1rem;
-  color: black;
+  color: white;
   padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
   border-color: transparent;
 }
@@ -99,7 +99,7 @@
   border: none;
   border-radius: 0.3125rem;
   font-size: 1rem;
-  color: black;
+  color: white;
   padding: 1.25rem 2.8125rem 1.25rem 1.25rem;
   border-color: rgb(255, 255, 255);
   /* margin-bottom: 10%;  */
@@ -343,11 +343,10 @@
   margin-bottom: 1rem;
 }
 
-
-.googleButton{
-  display:flex;
+.googleButton {
+  display: flex;
   justify-content: center;
   align-items: center;
   font-weight: normal;
-  gap:1em;
+  gap: 1em;
 }

@@ -12,7 +12,7 @@ import {useNavigate} from "react-router-dom";
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
 function NewComments(props) {
-  const [{token,user}, dispatch] = useStateValue();
+  const [{token, user}, dispatch] = useStateValue();
   const [clicked, setClicked] = useState(false);
   const [state, setState] = useState("See more");
   const [parentHeight, setParentHeight] = useState("auto");
@@ -103,14 +103,14 @@ function NewComments(props) {
             },
           }
         );
-        const temp={
-          name:user.name,
-          text:newComment
-        }
-        let curr=props.info;
+        const temp = {
+          name: user.name,
+          text: newComment,
+        };
+        let curr = props.info;
         curr.unshift(temp);
         props.setComments(curr);
-          setNewComment("");
+        setNewComment("");
         // window.location.reload();
       } catch (error) {
         console.log(error);
@@ -225,5 +225,3 @@ function NewComments(props) {
 }
 
 export default NewComments;
-
-
