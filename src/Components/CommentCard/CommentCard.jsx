@@ -40,7 +40,7 @@ function timeSince(date) {
 function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
   const commentTime = new Date(timestamp);
   const timeAgo = timeSince(commentTime);
-  const maxLength = 120; // Adjust this value as needed
+  const maxLength = 100; // Adjust this value as needed
   const truncatedComment = truncateComment(comment, maxLength);
 
   return (
