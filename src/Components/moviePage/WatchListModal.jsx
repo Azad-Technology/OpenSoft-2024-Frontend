@@ -90,16 +90,16 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
     onClose();
   };
 
-  function addedToWatchlist(){
-    setAddedToWatchlist(true)
-    setTimeout(()=>{
-      setAddedToWatchlist(false)
-    },2500)
+  // function addedToWatchlist(){
+  //   setAddedToWatchlist(true)
+  //   setTimeout(()=>{
+  //     setAddedToWatchlist(false)
+  //   },2500)
 
-  }
+  // }
 
   const addWatchList = async e => {
-    addedToWatchlist()
+    // addedToWatchlist()
     e.preventDefault();
     if (selectedWatchlists.length === 0) {
       setErrorMsg("Please select a watchlist");
@@ -148,11 +148,7 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    if (isOpen) {
-      setUpDownArrow("25B2");
-    } else {
-      setUpDownArrow("25BC");
-    }
+    
     dropdownRef.current.classList.toggle("open");
   };
 
