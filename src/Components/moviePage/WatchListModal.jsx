@@ -89,17 +89,8 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
     }
     onClose();
   };
-
-  // function addedToWatchlist(){
-  //   setAddedToWatchlist(true)
-  //   setTimeout(()=>{
-  //     setAddedToWatchlist(false)
-  //   },2500)
-
-  // }
-
+  
   const addWatchList = async e => {
-    // addedToWatchlist()
     e.preventDefault();
     if (selectedWatchlists.length === 0) {
       setErrorMsg("Please select a watchlist");
@@ -120,6 +111,11 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
           },
         };
         const response = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config);
+        setAddedToWatchlist(true)
+        setTimeout(()=>{
+          setAddedToWatchlist(false)
+        },2500)
+
       } catch (err) {
         // console.log(err);
       }

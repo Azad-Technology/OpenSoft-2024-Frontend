@@ -19,6 +19,7 @@ import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
 import closeIcon from "../../assets/close-47.svg";
 import chooseMovie from "./MovieList.jsx";
+import Notification from "../Notification/notification.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
@@ -196,6 +197,7 @@ const MoviePage = () => {
   const [showPlotLess, setShowPlotLess] = useState(true);
   const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [smallScreen, setSmallScreen] = useState(false);
+  const [addedToWatchlist, setAddedToWatchlist] = useState(false);
 
   // functions
 
@@ -323,6 +325,7 @@ const MoviePage = () => {
 
   return (
     <>
+      {addedToWatchlist && <Notification message={`Added To Watchlist`} isVisible={addedToWatchlist}/>}
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
@@ -410,7 +413,7 @@ const MoviePage = () => {
                   </span>
                 </span>
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} setAddedToWatchlist={setAddedToWatchlist} />}
               </span>
             </div>
             <div className={styles.genreList}>
