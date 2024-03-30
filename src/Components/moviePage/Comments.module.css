@@ -18,7 +18,7 @@
   margin: 0 1rem 1rem 0;
 }
 
-.commentTextBox{
+.commentTextBox {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -27,7 +27,7 @@
 .textBtnCont {
   position: relative;
   width: 100%;
-  margin-left:0.3rem;
+  margin-left: 0.3rem;
   overflow: scroll;
   overflow-x: hidden;
   min-height: 5rem;
@@ -91,7 +91,6 @@
   /* width: 80rem ; */
 }
 
-
 .commentContainer .submitBtn {
   background-color: #fffe3e; /* Dark background color */
   color: rgb(31, 12, 25);
@@ -132,7 +131,7 @@ textarea {
   background-color: var(--primary-bg-color);
   height: 100%;
   overflow: scroll;
-  resize:none;
+  resize: none;
 }
 textarea:focus {
   white-space: pre-wrap;
@@ -211,4 +210,3 @@ textarea:focus {
         margin-left: .2rem;
     } */
 }
-

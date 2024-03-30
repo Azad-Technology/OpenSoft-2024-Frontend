@@ -49,14 +49,10 @@ function Modal({onClose, movie, token}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer
-              storage={`${movie?._id} movie`}
-              title={movie?.title}
-              src={vidsrc+"?mid="+movie?._id}
-            >
+            <MediaPlayer storage={`${movie?._id} movie`} title={movie?.title} src={vidsrc + "?mid=" + movie?._id}>
               <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} >
-                <PIPButton/>
+              <DefaultVideoLayout icons={defaultLayoutIcons}>
+                <PIPButton />
               </DefaultVideoLayout>
             </MediaPlayer>
           </div>
@@ -100,10 +96,10 @@ function ModalTrail({onClose, movie}) {
         <div className={styles.video_container}>
           <div className={styles.video}>
             <MediaPlayer
-            clipEndTime={30}
+              clipEndTime={30}
               storage={`${movie?._id} trail`}
               title={movie?.title}
-              src={vidsrc+"?tid="+movie?._id}
+              src={vidsrc + "?tid=" + movie?._id}
             >
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
@@ -383,7 +379,12 @@ const MoviePage = () => {
                 <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
-                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart} style={{color:"red"}}></i>
+                      <i
+                        className={`fa fa-heart fa-lg`}
+                        aria-hidden="true"
+                        onClick={openHeart}
+                        style={{color: "red"}}
+                      ></i>
                     ) : (
                       <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
                     )}
@@ -423,7 +424,10 @@ const MoviePage = () => {
                 <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
-                <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleTrailerClick}>
+                <button
+                  className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`}
+                  onClick={handleTrailerClick}
+                >
                   Trailer
                 </button>
                 {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}

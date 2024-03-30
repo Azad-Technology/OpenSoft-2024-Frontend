@@ -32,7 +32,7 @@
   align-items: center;
 }
 
-.titleofcard{
+.titleofcard {
   font-size: 1.25rem;
   display: flex;
   -webkit-line-clamp: 1;

@@ -158,11 +158,13 @@ const Profile = ({setShowPopup3}) => {
             {user?.profilePic ? (
               <img src={user.profilePic} alt="avatar" className={styles.avatar} />
             ) : (
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                alt="avatar"
-                className={styles.avatar}
-              />
+              <div
+                // src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                // alt="avatar"
+                className={styles.dp}
+              >
+                {user?.name && user.name.charAt(0).toUpperCase()}
+              </div>
             )}
             <p className={styles.details_f}>{fullname}</p>
             <p className={styles.details_f}>{user?.subtype}</p>
