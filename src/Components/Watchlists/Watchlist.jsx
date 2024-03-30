@@ -31,6 +31,26 @@ const Watchlist = ({movies, name, id}) => {
     }
   };
 
+  const deleteMovie = async (movieID) => {
+    try {
+      let config = {
+        method: "patch",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const response = await instance.request(`/add_movie_to_watchlist/${id}/${movieID}`, config);
+      dispatch({
+        type: "REMOVE_MOVIE_FROM_WATCHLIST",
+        movieID: movieID,
+        watchlistID: id,
+      });
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <div className={styles.watchlist_container}>
       <div className={styles.background_grad}></div>
@@ -63,7 +83,7 @@ const Watchlist = ({movies, name, id}) => {
             return (
               <div className={styles.cardcontainer}>
                 <Card movies={m} />
-                <img src={deleteIconWhite} className={styles.deleteimage} height={30} width={30} />
+                <img src={deleteIconWhite} className={styles.deleteimage} height={30} width={30} onClick={() => (deleteMovie(m._id))} />
               </div>
             )
           })}
