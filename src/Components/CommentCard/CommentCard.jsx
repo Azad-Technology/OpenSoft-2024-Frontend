@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./CommentCard.module.css";
 
-// Define functions and components here
 function truncateComment(comment, maxLength) {
   if (comment.length <= maxLength) {
     return comment;
@@ -10,9 +9,10 @@ function truncateComment(comment, maxLength) {
   const truncatedComment = comment.slice(0, maxLength) + "...";
   return truncatedComment;
 }
+
 function timeSince(date) {
-  const backendDate = new Date(date);
-  const seconds = Math.floor((new Date() - backendDate) / 1000 - 19800);
+  const seconds = Math.floor((new Date() - date) / 1000);
+  console.log(date);
 
   let interval = Math.floor(seconds / 31536000);
   if (interval > 1) {
@@ -25,6 +25,7 @@ function timeSince(date) {
   if (interval > 1) {
     return `${interval} months ago`;
   }
+
   if (interval > 0) {
     return `${interval} month ago`;
   }
@@ -44,7 +45,6 @@ function timeSince(date) {
     return `${interval} hour ago`;
   }
   interval = Math.floor(seconds / 60);
-
   if (interval > 1) {
     return `${interval} minutes ago`;
   }
@@ -55,13 +55,10 @@ function timeSince(date) {
 }
 
 function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
-  // Component implementation
   const commentTime = new Date(timestamp);
   const timeAgo = timeSince(commentTime);
-  const maxLength = 100; // Adjust this value as needed
-  const maxName = 15;
+  const maxLength = 120; // Adjust this value as needed
   const truncatedComment = truncateComment(comment, maxLength);
-  const truncatedName = truncateComment(username, maxName);
 
   console.log(truncatedComment);
   console.log(timestamp);
@@ -72,7 +69,7 @@ function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
         <div className={styles.title}>
           {profilePic != "" && <img src={profilePic} alt="" className={styles.profilePic} />}
           <div>
-            <div className={styles.username}>{truncatedName}</div>
+            <h3 className={styles.username}>{username}</h3>
             <div className={styles.cardTime}>{timestamp != "" && timeAgo}</div>
           </div>
         </div>

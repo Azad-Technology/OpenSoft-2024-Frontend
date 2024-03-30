@@ -19,7 +19,6 @@ import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
 import closeIcon from "../../assets/close-47.svg";
 import chooseMovie from "./MovieList.jsx";
-import Notification from "../Notification/notification.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
@@ -28,6 +27,8 @@ function Modal({onClose, movie, token}) {
   useEffect(() => {
     if (movie && token) {
       const choosenmovie = chooseMovie(movie?.title);
+      console.log("choosenmovie", choosenmovie);
+      console.log(choosenmovie);
       switch (user.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -50,11 +51,9 @@ function Modal({onClose, movie, token}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer storage={`${movie?._id} movie`} title={movie?.title} src={vidsrc + "?mid=" + movie?._id}>
+            <MediaPlayer storage="storage-key" title={movie?.title} src={vidsrc}>
               <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons}>
-                <PIPButton />
-              </DefaultVideoLayout>
+              <DefaultVideoLayout icons={defaultLayoutIcons} />
             </MediaPlayer>
           </div>
         </div>
@@ -74,6 +73,8 @@ function ModalTrail({onClose, movie}) {
   useEffect(() => {
     if (movie) {
       const choosenmovie = chooseMovie(movie?.title);
+      console.log("choosenmovie", choosenmovie);
+      console.log(choosenmovie);
       switch (user?.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -96,12 +97,7 @@ function ModalTrail({onClose, movie}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer
-              clipEndTime={30}
-              storage={`${movie?._id} trail`}
-              title={movie?.title}
-              src={vidsrc + "?tid=" + movie?._id}
-            >
+            <MediaPlayer clipEndTime={30} storage="storage-key" title={movie?.title} src={vidsrc}>
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
             </MediaPlayer>
@@ -118,8 +114,7 @@ function ModalTrail({onClose, movie}) {
 
 const MoviePage = () => {
   const [premium, setPremium] = useState(true);
-  const [addedToWatchlist, setAddedToWatchlist] = useState(false)
-  const [addedComment, setAddedComment] = useState(false)
+
   const [{token, user}, dispatch] = useStateValue();
 
   //Genre Modals
@@ -161,7 +156,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const getCommentData = async () => {
-      const response = await instance.get(`/movies/${id}/comments?count=10`);
+      const response = await instance.get(`/movies/${id}/comments/?count=10`);
       // console.log(response.data);
       setComments(response.data);
     };
@@ -171,7 +166,7 @@ const MoviePage = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [showLess, setShowLess] = useState(false);
   const [showPlotLess, setShowPlotLess] = useState(true);
-  const [showMoreInfo, setShowMoreInfo] = useState(true);
+  const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [smallScreen, setSmallScreen] = useState(false);
 
   // functions
@@ -381,25 +376,16 @@ const MoviePage = () => {
                 <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
-                      <i
-                        className={`fa fa-heart fa-lg`}
-                        aria-hidden="true"
-                        onClick={openHeart}
-                        style={{color: "red"}}
-                      ></i>
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
                     ) : (
                       <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
                     )}
                   </span>
                 </span>
-
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} setAddedToWatchlist={setAddedToWatchlist}/>}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
               </span>
-
             </div>
-            <Notification message="Added to watchlist" isVisible={addedToWatchlist}/>
-
             <div className={styles.genreList}>
               {!movie?.genres && (
                 <div className={styles.skeleton__headers}>
@@ -430,10 +416,7 @@ const MoviePage = () => {
                 <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
-                <button
-                  className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`}
-                  onClick={handleTrailerClick}
-                >
+                <button className={styles.modalbutton} onClick={handleTrailerClick}>
                   Trailer
                 </button>
                 {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
@@ -541,8 +524,8 @@ const MoviePage = () => {
           </div>
         )}
 
-        {comments ? <Comments setComments={setComments} info={comments} id={id} setAddedComment={setAddedComment}/> : <></>}
-          <Notification message="Comment posted" isVisible={addedComment}/>
+        {comments ? <Comments setComments={setComments} info={comments} id={id} /> : <></>}
+
         <MoreLikeThis id={id} />
         {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
       </div>
