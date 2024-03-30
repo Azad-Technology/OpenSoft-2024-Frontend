@@ -152,16 +152,12 @@
   z-index: 100;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 16rem;
+  justify-content: space-around;
+  width: 25rem;
   position: absolute;
-  left: 1rem;
+  left: 0.1rem;
   top: 3rem;
   color: #fff;
-  padding: 0;
-  /* margin-top: 3rem;
-  margin-left: 10rem; */
-  /* width: max-content; */
   overflow-y: auto;
   background-color: #191e25; /* A dark gray background */
   box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.4);
@@ -170,10 +166,9 @@
 }
 
 .dropdownlist li {
-  width: 7rem;
+  width: 9rem;
   list-style: none;
-  /* padding: 0.625rem 0.9375rem; */
-  padding: 0.3rem 0;
+  padding: 0.3rem;
 }
 
 .dropdownlist li:hover {

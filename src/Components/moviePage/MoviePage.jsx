@@ -173,7 +173,7 @@ const MoviePage = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [showLess, setShowLess] = useState(false);
   const [showPlotLess, setShowPlotLess] = useState(true);
-  const [showMoreInfo, setShowMoreInfo] = useState(false);
+  const [showMoreInfo, setShowMoreInfo] = useState(true);
   const [smallScreen, setSmallScreen] = useState(false);
 
   // functions
