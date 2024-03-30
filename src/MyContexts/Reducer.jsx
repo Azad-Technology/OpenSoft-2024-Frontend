@@ -84,6 +84,22 @@ const reducer = (state, action) => {
           watchlist: state.user.watchlist.filter(watchlist => watchlist._id !== action.watchlistID),
         },
       };
+      case "REMOVE_MOVIE_FROM_WATCHLIST":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          watchlist: state.user.watchlist.map(watchlist => {
+            if (watchlist._id === action.watchlistID) {
+              return {
+                ...watchlist,
+                movies: watchlist.movies.filter(movie => movie._id !== action.movieID),
+              };
+            }
+            return watchlist;
+          }),
+        },
+      };
     default:
       return state;
   }

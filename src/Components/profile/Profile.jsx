@@ -160,7 +160,7 @@ const Profile = () => {
       <div className={styles.maincontainer}>
         <div className={styles.card}>
           <div className={styles.cardBody}>
-            {user.profilePic ? (
+            {user?.profilePic ? (
               <img src={user.profilePic} alt="avatar" className={styles.avatar} />
             ) : (
               <img
