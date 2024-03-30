@@ -136,6 +136,7 @@ const Profile = ({setShowPopup3}) => {
       type: "REMOVE_TOKEN",
     });
     navigate("/");
+    window.location.reload();
   };
 
   useEffect(() => {

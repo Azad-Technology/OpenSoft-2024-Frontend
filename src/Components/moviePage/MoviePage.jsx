@@ -49,9 +49,15 @@ function Modal({onClose, movie, token}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer storage="storage-key" title={movie?.title} src={vidsrc}>
+            <MediaPlayer
+              storage={`${movie?._id} movie`}
+              title={movie?.title}
+              src={vidsrc+"?mid="+movie?._id}
+            >
               <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
+              <DefaultVideoLayout icons={defaultLayoutIcons} >
+                <PIPButton/>
+              </DefaultVideoLayout>
             </MediaPlayer>
           </div>
         </div>
@@ -93,7 +99,12 @@ function ModalTrail({onClose, movie}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer clipEndTime={30} storage="storage-key" title={movie?.title} src={vidsrc}>
+            <MediaPlayer
+            clipEndTime={30}
+              storage={`${movie?._id} trail`}
+              title={movie?.title}
+              src={vidsrc+"?tid="+movie?._id}
+            >
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
             </MediaPlayer>
@@ -412,7 +423,7 @@ const MoviePage = () => {
                 <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
-                <button className={styles.modalbutton} onClick={handleTrailerClick}>
+                <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleTrailerClick}>
                   Trailer
                 </button>
                 {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
