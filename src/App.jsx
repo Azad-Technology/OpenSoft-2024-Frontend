@@ -56,6 +56,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [showPopup2, setShowPopup2] = useState(false);
+  const [showPopup3, setShowPopup3] = useState(false);
 
   const [{token}, dispatch] = useStateValue();
 
@@ -82,7 +83,6 @@ const App = () => {
             });
           }
           window.location.href = "/login-expired";
-          console.log(err);
         }
       };
       getUser();
@@ -99,10 +99,11 @@ const App = () => {
             element={
               <>
                 {showPopup && <SuccessPopup message="Logged in successfully" />}
+                {showPopup3 && <RejectedPopup message="Something went wrong" />}
                 <Navbar />
                 <div className="homepage">
                   <Carousel />
-                  <HomeSliders />
+                  <HomeSliders setShowPopup3={setShowPopup3} />
                   <Footer setSelectedGenre={setSelectedGenre} />
                 </div>
               </>
@@ -118,7 +119,15 @@ const App = () => {
               </>
             }
           />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <>
+                {showPopup3 && <RejectedPopup message="Something went wrong" />}
+                <Profile />
+              </>
+            }
+          />
           <Route
             path="/pricing"
             element={

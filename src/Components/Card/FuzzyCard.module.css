@@ -132,9 +132,11 @@
 
 .card__basis {
   position: absolute;
-  bottom: 0;
+  bottom: -1rem;
   margin-left: -0.5rem;
   display: flex;
+  align-items: center;
+  text-align: center;
   font-size: 0.6rem;
   font-weight: 600;
   align-items: center;

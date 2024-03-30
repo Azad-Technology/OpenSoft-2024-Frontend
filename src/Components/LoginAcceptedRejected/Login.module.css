@@ -26,7 +26,30 @@
   animation: fadeInfadeOutBorderReject 0.9s ease-in-out alternate infinite;
 }
 
+.intermediatePopup {
+  position: fixed;
+  top: 4rem;
+  right: 1.25rem;
+  background-color: rgba(49, 44, 44, 0.493);
+  color: rgb(255, 249, 249);
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border: 2px solid;
+  animation: fadeInfadeOutBorderIntermediate 0.9s ease-in-out alternate infinite;
+}
+
 @keyframes fadeInfadeOutBorderReject {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: rgb(150, 14, 14);
+  }
+}
+
+@keyframes fadeInfadeOutBorderIntermediate {
   from {
     border-color: transparent;
   }

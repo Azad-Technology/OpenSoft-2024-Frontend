@@ -22,7 +22,7 @@ const Card = ({movies, val, length, onClose, basis}) => {
   const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
 
   const openHeart = event => {
-    if (!token) {
+    if (token === null || token === undefined || token === "null" || token === "undefined") {
       navigate("/login");
     }
 

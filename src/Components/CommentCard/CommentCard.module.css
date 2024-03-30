@@ -72,10 +72,6 @@
     padding: 0.75rem;
   }
 
-  .username {
-    font-size: 0.6rem;
-  }
-
   .commentDetails {
     font-size: 0.8rem;
   }
@@ -116,6 +112,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cardTime {

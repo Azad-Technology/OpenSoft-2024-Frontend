@@ -32,6 +32,10 @@
 .cardBody {
   text-align: center;
   padding-top: 25%;
+  display: flex;
+  flex-direction: column; /* Change flex direction to column */
+  justify-content: center;
+  align-items: center;
 }
 .cardBody_desc {
   text-align: center;
@@ -180,8 +184,8 @@
   display: block;
   /* position: absolute; */
   /* margin-top: 2rem; */
-  background-color: #cccc00;
-  color: #332b50;
+  background-color: #FFFE3E;
+  color:#3b172f;
   /* color: white; */
   border: none;
   border-radius: 0.5rem;
@@ -191,7 +195,7 @@
   font-size: 1.1rem;
 }
 .edit_button button:hover {
-  background-color: #a1a104;
+  background-color:#cccc00;
 }
 .editbtn {
   background-color: #101010;
@@ -211,16 +215,16 @@
   overflow-y: auto;
   overflow-x: scroll;
   padding: 1rem 0rem 1rem 0rem;
-  margin: 0 -20px 0px 0px;
+  margin: 0 0px 0px 0px;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   scroll-behavior: smooth;
   /* justify-content: space-between; */
 }
 #homeIcon {
-  color: #a8a806;
+  color:#FFFE3E;
   font-size: 3rem;
   position: absolute;
   top: 5%;
@@ -363,4 +367,60 @@
 .edit_button_modal button:hover {
   background-color: #e42b2b;
   transition: 0.2s;
+}
+.dp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: #e4dabe;
+  background-color: #4f633d;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  margin: 1rem;
+}
+.LeftbtnContainer {
+  position: absolute;
+  left: 0.5rem;
+  z-index: 30;
+  transform: rotate(-90deg);
+}
+.RightbtnContainer {
+  /* display: flex; */
+  position: absolute;
+  right: 0.5rem;
+  z-index: 30;
+  transform: rotate(90deg);
+}
+
+.LeftbtnContainer,
+.RightbtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.LeftbtnContainer:hover {
+  transform: scale(1.2) rotate(-90deg) translateY(5px);
+}
+.RightbtnContainer:hover {
+  transform: scale(1.2) rotate(90deg) translateY(5px);
+}
+
+.LeftbtnContainer button,
+.RightbtnContainer button {
+  /* background-color: rgba(130, 118, 118, 0.445); */
+  background-color: transparent;
+  height: 2.3rem;
+  width: 2.3rem;
+  z-index: 3;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3 ease;
+}
+
+.LeftbtnContainer button:hover,
+.RightbtnContainer button:hover {
+  background-color: rgba(130, 118, 118, 0.599);
 }

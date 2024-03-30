@@ -7,9 +7,9 @@
   flex-direction: row;
 }
 .background_grad {
-  background: linear-gradient(180deg, #f24236, rgb(21, 15, 15));
+  background: linear-gradient(180deg, #672853, #1f0c19);
   height: 80vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
 }
 
@@ -66,8 +66,8 @@
 }
 
 .back_button {
-  background-color: black;
-  color: #fff;
+  background-color: #fffe3e;
+  color: #1f0c19;
   border: none;
   border-radius: 0.25rem;
   padding: 1rem;
@@ -91,18 +91,21 @@
   margin-right: 0.5rem;
 }
 .delete_button {
-  background-color: rgb(0, 0, 0);
-  color: #fff;
+  background-color: #fffe3e;
+  color: rgb(31, 12, 25);
   border: none;
   border-radius: 0.25rem;
   padding: 1rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
+}
+.delete_button:hover {
+  background-color: #cccc00;
 }
 
 .back_button:hover {
-  color: red;
+  background-color: #cccc00;
 }
 
 .movieList {
@@ -111,5 +114,71 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  padding-bottom: 4rem;
+  padding: 0 2rem 4rem 2rem;
+}
+
+.cardcontainer {
+  display: flex;
+  position: relative;
+}
+
+.deleteimage {
+  position: absolute;
+  top: 1.1rem;
+  right: -0.3rem;
+  cursor: pointer;
+}
+
+.deleteimage:hover {
+  transform: scale(1.3);
+}
+
+.LeftbtnContainer {
+  position: absolute;
+  left: 0.5rem;
+  z-index: 30;
+  transform: rotate(-90deg);
+}
+.RightbtnContainer {
+  /* display: flex; */
+  position: absolute;
+  right: 0.5rem;
+  z-index: 30;
+  transform: rotate(90deg);
+}
+
+.LeftbtnContainer,
+.RightbtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.LeftbtnContainer:hover {
+  transform: scale(1.2) rotate(-90deg) translateY(5px);
+}
+.RightbtnContainer:hover {
+  transform: scale(1.2) rotate(90deg) translateY(5px);
+}
+
+.LeftbtnContainer button,
+.RightbtnContainer button {
+  /* background-color: rgba(130, 118, 118, 0.445); */
+  background-color: transparent;
+  height: 2.3rem;
+  width: 2.3rem;
+  z-index: 3;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3 ease;
+}
+
+.LeftbtnContainer button:hover,
+.RightbtnContainer button:hover {
+  background-color: rgba(130, 118, 118, 0.599);
+}
+
+.mainSliders{
+  /* width: fit-content; */
+  width: 100%;
 }

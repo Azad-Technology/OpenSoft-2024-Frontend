@@ -38,7 +38,7 @@ export const WatchListCards = ({name, id, isOdd}) => {
                 <path d="M20 10L9.5 10M3 10H5.25" stroke="#fe2a2a" stroke-width="1.5" stroke-linecap="round"></path>{" "}
               </g>
             </svg>
-            <span>{name}</span>
+            <span className={styles.titleofcard}>{name}</span>
           </span>
         </div>
       ) : (
