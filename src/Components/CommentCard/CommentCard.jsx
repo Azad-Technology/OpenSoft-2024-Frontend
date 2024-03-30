@@ -12,6 +12,7 @@ function truncateComment(comment, maxLength) {
 
 function timeSince(date) {
   const seconds = Math.floor((new Date() - date) / 1000);
+  console.log(date);
 
   let interval = Math.floor(seconds / 31536000);
   if (interval > 1) {
@@ -27,6 +28,7 @@ function timeSince(date) {
   }
   interval = Math.floor(seconds / 3600);
   if (interval > 1) {
+    console.log(interval);
     return `${interval} hours ago`;
   }
   interval = Math.floor(seconds / 60);
@@ -41,6 +43,9 @@ function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
   const timeAgo = timeSince(commentTime);
   const maxLength = 120; // Adjust this value as needed
   const truncatedComment = truncateComment(comment, maxLength);
+
+  console.log(truncatedComment);
+  console.log(timestamp);
 
   return (
     <>

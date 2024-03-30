@@ -32,17 +32,158 @@ const SearchPage = () => {
   const [genreSelections, setGenreSelections] = useState([]);
   const [languageSelections, setLanguageSelections] = useState([]);
   const genreOptions = [
-    {label: "Action", value: "action"},
-    {label: "Comedy", value: "comedy"},
-    {label: "Sci-Fi", value: "sci-fi"},
-    // ... add more genres
+    // {label: "Action", value: "action"},
+    // {label: "Comedy", value: "comedy"},
+    // {label: "Sci-Fi", value: "sci-fi"},
+    {
+      label: "Action",
+      link: "#",
+      value: "Action",
+    },
+    {
+      label: "Comedy",
+      link: "#",
+      value: "Comedy",
+    },
+    {
+      label: "Horror",
+      link: "#",
+      value: "Horror",
+    },
+    {
+      label: "Romance",
+      link: "#",
+      value: "Homance",
+    },
+    {
+      label: "Thriller",
+      link: "#",
+      value: "Thriller",
+    },
+    {
+      label: "Sci-Fi",
+      link: "#",
+      value: "Scifi",
+    },
+    {
+      label: "Drama",
+      link: "#",
+      value: "Drama",
+    },
+    {
+      label: "Mystery",
+      link: "#",
+      value: "Mystery",
+    },
+    {
+      label: "Crime",
+      link: "#",
+      value: "Crime",
+    },
+    {
+      label: "Animation",
+      link: "#",
+      value: "Animation",
+    },
+    {
+      label: "Adventure",
+      link: "#",
+      value: "Adventure",
+    },
+    {
+      label: "Fantasy",
+      link: "#",
+      value: "Fantasy",
+    },
+    {
+      label: "Family",
+      link: "#",
+      value: "Family",
+    },
+    {
+      label: "Biography",
+      link: "#",
+      value: "Biography",
+    },
+    {
+      label: "History",
+      link: "#",
+      value: "History",
+    },
+    {
+      label: "War",
+      link: "#",
+      value: "War",
+    },
+    {
+      label: "Documentary",
+      link: "#",
+      value: "Documentary",
+    },
+    {
+      label: "Music",
+      link: "#",
+      value: "Music",
+    },
+    {
+      label: "Sport",
+      link: "#",
+      value: "Sport",
+    },
+    {
+      label: "Western",
+      link: "#",
+      value: "Western",
+    },
+    {
+      label: "Short",
+      link: "#",
+      value: "Short",
+    },
+    {
+      label: "Film-Noir",
+      link: "#",
+      value: "Filmnoir",
+    },
+    {
+      label: "Talk-Show",
+      link: "#",
+      value: "Talkshow",
+    },
+    {
+      label: "News",
+      link: "#",
+      value: "News",
+    }
   ];
 
   const languageOptions = [
-    {label: "English", value: "english"},
-    {label: "Spanish", value: "spanish"},
-    {label: "French", value: "french"},
-    // ... add more languages
+    {label: "English", value:"English"},
+    {label: "French", value:"French"},
+    {label: "Spanish", value:"Spanish"},
+    {label: "German", value:"German"},
+    {label: "Italian", value:"Italian"},
+    {label: "Russian", value:"Russian"},
+    {label: "Japanese", value:"Japanese"},
+    {label: "Mandarin", value:"Mandarin"},
+    {label: "Hindi", value:"Hindi"},
+    {label: "Portuguese", value:"Portuguese"},
+    {label: "Cantonese", value:"Cantonese"},
+    {label: "Swedish", value:"Swedish"},
+    {label: "Arabic", value:"Arabic"},
+    {label: "Korean", value:"Korean"},
+    {label: "Finnish", value:"Finnish"},
+    {label: "Polish", value:"Polish"},
+    {label: "Dutch", value:"Dutch"},
+    {label: "Danish", value:"Danish"},
+    {label: "Hebrew", value:"Hebrew"},
+    {label: "Latin", value:"Latin"},
+    {label: "Turkish", value:"Turkish"},
+    {label: "Greek", value:"Greek"},
+    {label: "Hungarian", value:"Hungarian"},
+    {label: "Norwegian", value:"Norwegian"},
+    {label: "Persian", value:"Persian"},
+    {label: "Czech", value:"Czech"},
   ];
   // State to store fetched movies
 
@@ -67,6 +208,7 @@ const SearchPage = () => {
   return (
     <div className={styles.maincontentwrapper}>
       <div className={styles.dropdownscontainer} style={{display: "flex", gap: "2rem", marginLeft: "2rem"}}>
+        
         <CustomDropdown
           key="genre-dropdown"
           label="Genre"
@@ -74,6 +216,7 @@ const SearchPage = () => {
           selectedItems={genreSelections}
           updateSelectedItems={setGenreSelections}
         />
+        
         <CustomDropdown
           key="language-dropdown"
           label="Language"
