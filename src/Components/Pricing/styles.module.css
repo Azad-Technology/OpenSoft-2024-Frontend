@@ -277,8 +277,8 @@
     font-size: 2.5rem;
   }
 }
-@media screen and (min-width:451px) {
-  .pricingCards{
+@media screen and (min-width: 451px) {
+  .pricingCards {
     transform: scaleY(0.9);
   }
 }

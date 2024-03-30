@@ -7,9 +7,41 @@ import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
 import popKornLogo from "../../assets/PopKorn_logoText.svg";
+import instance from "../../axios";
 
 export const Navbar = ({movies}) => {
+  const [{dpToken, user}, dpDispatch] = useStateValue();
   const navigate = useNavigate();
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await instance.get("/user", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${dpToken}`,
+          },
+        });
+
+        // Assuming response.data contains the user data
+        const userData = response.data;
+
+        // Dispatch an action to update the user state with fetched data
+        dpDispatch({type: "UPDATE_USER", payload: userData});
+
+        // Optional: Do something after fetching user data
+      } catch (error) {
+        // Handle errors (e.g., unauthorized access)
+        console.error("Error fetching user data:", error);
+        // Optionally, you can navigate to a login page or display an error message
+        // navigate('/login');
+      }
+    };
+
+    // Check if dpToken exists before making the request
+    if (dpToken) {
+      fetchUserData();
+    }
+  }, [dpToken]);
   const [{token}, dispatch] = useStateValue();
 
   const [showDropdown, setShowDropdown] = useState({
@@ -229,7 +261,19 @@ export const Navbar = ({movies}) => {
               token !== "undefined" &&
               token !== null &&
               token !== "" ? (
-                <div onClick={() => navigate("/profile")} className={`fa fa-2x fa-user ${styles.desktop_login}`}></div>
+                <div onClick={() => navigate("/profile")} className={styles.avatar}>
+                  {user?.profilePic ? (
+                    <img src={user.profilePic} alt="avatar" className={styles.avatar} />
+                  ) : (
+                    <div
+                      // src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                      // alt="avatar"
+                      className={styles.dp}
+                    >
+                      {user?.name && user.name.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <div onClick={() => navigate("/login")} className={styles.desktop_login}>
                   Login
@@ -269,7 +313,19 @@ export const Navbar = ({movies}) => {
               token !== "undefined" &&
               token !== null &&
               token !== "" ? (
-                <i onClick={() => navigate("/profile")} className={`fa fa-2x fa-user ${styles.mobile_login}`}></i>
+                <div onClick={() => navigate("/profile")} className={styles.avatar}>
+                  {user?.profilePic ? (
+                    <img src={user.profilePic} alt="avatar" className={styles.avatar} />
+                  ) : (
+                    <div
+                      // src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                      // alt="avatar"
+                      className={styles.dp}
+                    >
+                      {user?.name && user.name.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <div onClick={() => navigate("/login")} className={styles.mobile_login}>
                   Login
