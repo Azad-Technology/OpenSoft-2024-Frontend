@@ -47,45 +47,47 @@ function Modal({onClose, movie, token}) {
   }, [user, movie]);
 
   return (
-    <div className={styles.modal_overlay}>
-      <div className={styles.modal}>
-        {/* Video container */}
-        <div className={styles.video_container}>
-          <div className={styles.video}>
-            {user?.subtype==="Basic"? <div className="basic_video">
-
-              <MediaPlayer
-                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
-                title={movie?.title}
-                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
-              >
-                <MediaProvider />
-                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
-                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
-                </DefaultVideoLayout>
-              </MediaPlayer>
+      <div className={styles.modal_overlay}>
+          <div className={styles.modal}>
+          {/* Video container */}
+            <div className={styles.video_container}>
+            {user?.subtype==="Basic"? 
+            <div className="basic_video">
+              <div className={styles.video}>
+                <MediaPlayer
+                  storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                  title={movie?.title}
+                  src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+                >
+                  <MediaProvider />
+                  <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                    {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                  </DefaultVideoLayout>
+                </MediaPlayer>
+              </div>
             </div>:
             <div className="premium_video">
-
-              <MediaPlayer
-                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
-                title={movie?.title}
-                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
-              >
-                <MediaProvider />
-                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
-                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
-                </DefaultVideoLayout>
-              </MediaPlayer>
-            </div>}
+              <div className={styles.video}>
+                <MediaPlayer
+                  storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                  title={movie?.title}
+                  src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+                >
+                  <MediaProvider />
+                  <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                    {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                  </DefaultVideoLayout>
+                </MediaPlayer>
+              </div>
+            </div>
+}
+            </div>
           </div>
-        </div>
         {/* Close button */}
         <button className={styles.close_button} onClick={onClose}>
           <img src={closeIcon} alt="Close" />
         </button>
       </div>
-    </div>
   );
 }
 
@@ -118,8 +120,8 @@ function ModalTrail({onClose, movie}) {
       <div className={styles.modal}>
         {/* Video container */}
         <div className={styles.video_container}>
-          <div className={styles.video}>
-            <div className="basic_video">
+          <div className="basic_video">
+            <div className={styles.video}>
               <MediaPlayer
               clipEndTime={30}
                 storage={user?.subtype!="Basic" && `${movie?._id} trail ${user?.email} user`}
