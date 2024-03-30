@@ -6,32 +6,43 @@ import {useParams} from "react-router-dom";
 import MovieModalList from "../GenreModal/MovieModalList.jsx";
 import * as Realm from "realm-web";
 import FuzzyCard from "../Card/FuzzyCard.jsx";
+import  Card  from '../Card/Card.jsx';
+import GeneralSlider from "../HomeSliders/GeneralSlider.jsx";
+import MovieList from "../movieList/MovieList.jsx";
 
 const SearchPage = () => {
   const {searchTerm} = useParams();
 
   const [fuzzy, setFuzzy] = useState(null);
+  const [movies, setMovies] = useState([]);
+  const [genreSelections, setGenreSelections] = useState([]);
+  const [languageSelections, setLanguageSelections] = useState([]);
+  const [nlp,setNlp]=useState([]);
 
   const getData = useCallback(async () => {
+    setFuzzy(null);
+    setNlp([]);
     try {
       const response = await axios.post("https://embed.popkorn.tech/rrf", {
         query: searchTerm,
       });
       setFuzzy(response.data);
-
+      setGenreSelections([]);
+      setLanguageSelections([]);
+      const response1=await axios.post("https://embed.popkorn.tech/nlp", {
+        query: searchTerm,
+      });
+      setNlp(response1.data);
+      console.log(response1.data);
       // console.log(response.data);
     } catch (error) {
-      setFuzzy([]);
       console.error("Error fetching movies:", error);
     }
   }, [searchTerm]);
   useEffect(() => {
     getData();
-  }, [getData]);
+  }, [searchTerm]);
 
-  const [movies, setMovies] = useState([]);
-  const [genreSelections, setGenreSelections] = useState([]);
-  const [languageSelections, setLanguageSelections] = useState([]);
   const genreOptions = [
     // {label: "Action", value: "action"},
     // {label: "Comedy", value: "comedy"},
@@ -251,6 +262,13 @@ const SearchPage = () => {
           })}
         </div>
       )}
+      {fuzzy && fuzzy.length === 0 && 
+      <div className={styles.results_container}>
+        <div className={styles.no_results}>
+          <h1>No results found</h1>
+        </div>
+      </div>
+      }
       {!fuzzy && (
         <div className={styles.results_container}>
           {Array(18)
@@ -260,6 +278,27 @@ const SearchPage = () => {
             ))}
         </div>
       )}
+      {nlp?.length?<div className={styles.nlp}>
+      <div className="moviescontainer">
+        <section className={styles.container}>
+          <div className={styles.title}>
+            <span>Natural Language Search Results</span>
+          </div>
+          <div className={styles.gridcontainer}></div>
+        </section>
+      </div>
+      <div className={styles.results_container}>
+        {nlp.map((movie, index) => {
+          return <Card key={index} movies={movie} />;
+        })
+      }
+      </div>
+      </div>
+      :null
+      }
+
+
+
       {/* {fuzzy?.length === 0 && (
         <div className={styles.results_container}>
 

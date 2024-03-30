@@ -2,14 +2,21 @@ import React, {useEffect, useState} from "react";
 import styles from "./SearchResults.module.css";
 import {useNavigate} from "react-router-dom";
 
-export const SearchResult = ({movie}) => {
+export const SearchResult = ({movie,setSearch,setShowSearchBar}) => {
   const navigate = useNavigate();
   const [premium, setPremium] = useState(false);
   useEffect(() => {
     setPremium(movie.imdb.rating >= 8);
   }, [movie]);
+
+  const handleClick = () => {
+    setSearch("");
+    setShowSearchBar(false);
+    navigate(`/movie/${movie?._id}`);
+  }
+
   return (
-    <div onClick={() => navigate(`/movie/${movie?._id}`)} className={styles.searchResult}>
+    <div onClick={handleClick} className={styles.searchResult}>
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         style={{height: "4rem", width: "3rem"}}

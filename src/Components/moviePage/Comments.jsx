@@ -101,10 +101,6 @@ function NewComments(props) {
   const textareaRef = useRef(null);
   const initialParentHeight = useRef(null);
   const initialTextareaHeight = useRef(null);
-  // const [showLine, setShowLine] = useState(false); // State variable for showing line
-  const [showDiscardBtn, setShowDiscardBtn] = useState(false); // State variable for showing discard button
-  const [showBtns, setShowBtns] = useState(false); // State variable to show/hide buttons
-  // const [showSubmitBtn, setShowSubmitBtn] = useState(false); // State variable for showing discard button
   const navigate = useNavigate();
 
   function SwitchState() {
@@ -142,10 +138,10 @@ function NewComments(props) {
     } else {
       setDisableBtn(true);
     }
+
   }
 
   const [newComment, setNewComment] = useState("");
-
   
   function addedComment(){
     props.setAddedComment(true)
@@ -186,62 +182,54 @@ function NewComments(props) {
     }
   };
 
-  const handleTextAreaClick = () => {
-    // setShowSubmitBtn(true); // Show submit button when textarea is clicked
-    setShowBtns(true); // Show buttons when textarea is clicked
-    setShowLine(true); // Show line when textarea is clicked
-    // setShowDiscardBtn(true); // Show discard button when textarea is clicked
-  };
-
-  const handleDiscardClick = () => {
-    // setShowSubmitBtn(false); // Hide submit button when discard button is clicked
-    setShowBtns(false); // Hide buttons when discard button is clicked
-    // setShowLine(false); // Hide line when discard button is clicked
-    // setShowDiscardBtn(false); // Hide discard button when discard button is clicked
-    setNewComment(""); // Clear textarea content
-  };
-
   return (
     <>
       <div className={styles.commentContainer}>
         <div className={styles.heading}>Comments</div>
         <div className={styles.yourComment}>
           <div className={styles.imgTextBtnContainer} style={{height: parentHeight}}>
-            <div className={styles.userImg}> </div>
-            <div className={styles.commentTextBox}>
-              <textarea
-                id="myTextArea"
-                ref={textareaRef}
-                name="typeComment"
-                placeholder="Type your comment here..."
-                className={`${styles.typeComment} ${styles.textBtnCont}`}
-                style={{height: "100%", overflow: "hidden", whiteSpace: "pre-wrap"}}
-                onChange={event => handleTextAreaChange(event)}
-                onClick={handleTextAreaClick} // Call handleTextAreaClick when textarea is clicked
-                value={newComment}
-              ></textarea>
-
-              {showBtns && (
-                <div className={styles.btnGroup}>
-                  <button onClick={handleSubmit} className={styles.submitBtn} disabled={disableBtn}>
+            <div className={styles.userImg}></div>
+            <div className={styles.textBtnCont} style={{height: parentHeight}}>
+              <div className={styles.textArea} style={{height: textareaHeight}}>
+                <textarea
+                  id="myTextArea"
+                  ref={textareaRef}
+                  name="typeComment"
+                  placeholder="Type your comment here..."
+                  cols={190}
+                  className={styles.typeComment}
+                  style={{height: "100%", overflow: "hidden", whiteSpace: "pre-wrap"}}
+                  onChange={event => handleTextAreaChange(event)}
+                  // onBlur={handleTextareaBlur}
+                  value={newComment}
+                ></textarea>
+              </div>
+              <div className={styles.submitBtnContainer}>
+                {disableBtn && (
+                  <button type="submit" className={styles.submitBtn} disabled>
                     Submit
                   </button>
-                  <button className={styles.discardBtn} onClick={handleDiscardClick}>
-                    Discard
+                )}
+                {!disableBtn && (
+                  <button onClick={e => handleSubmit(e)} className={styles.submitBtn}>
+                    Submit
                   </button>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
         </div>
+
         {props.info.length ? (
           <div className={styles.allComments}>
             {clicked ? (
               props.info.map((comment, index) => (
                 <div key={index} className={styles.allCommentsContainer}>
                   <div className={styles.commentInfo}>
-                    <div className={styles.imgContainer}></div>
-                    <div className={styles.userName}>@{comment.name}</div>
+                    <div className={styles.imgContainer}>
+                      <img src={getProfilePicLink(name[index])} className={styles.imgContainer}></img>
+                    </div>
+                    <div className={styles.userName}>@{name[index]}</div>
                   </div>
                   <div className={styles.commentContent}>
                     <div className={styles.commentContent}>
@@ -268,8 +256,10 @@ function NewComments(props) {
             ) : (
               <div className={styles.allCommentsContainer}>
                 <div className={styles.commentInfo}>
-                  <div className={styles.imgContainer}></div>
-                  <div className={styles.userName}>@{props.info[0].name}</div>
+                  <div className={styles.imgContainer}>
+                    <img src={profilePicLinks[0]} className={styles.imgContainer}></img>
+                  </div>
+                  <div className={styles.userName}>@{name[0]}</div>
                 </div>
                 <div className={styles.commentContent}>
                   <div className={styles.commentContent}>
@@ -289,6 +279,7 @@ function NewComments(props) {
                     {comments[0]}
                   </p> */}
                   </div>
+
                 </div>
               </div>
             )}
@@ -296,7 +287,6 @@ function NewComments(props) {
               <div className={styles.showMoreBtnContainer}>
                 <button onClick={SwitchState} className={styles.showMoreBtn} id="showMoreBtn">
                   <svg
-                    // fill="#cf0a0a"
                     fill="#fffe3e"
                     height="25px"
                     width="25px"

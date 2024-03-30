@@ -18,25 +18,29 @@
   margin: 0 1rem 1rem 0;
 }
 
-.commentTextBox {
+/* .yourComment {
+  display: flex;
+  justify-content: center;
+} */
+
+.commentContainer .textBtnCont {
+  box-sizing: border-box;
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-
-.textBtnCont {
-  position: relative;
-  width: 100%;
-  margin-left: 0.3rem;
-  overflow: scroll;
-  overflow-x: hidden;
-  min-height: 5rem;
-  height: fit-content;
-  max-height: 20rem;
   background-color: var(--primary-bg-color);
+  justify-content: space-around;
+  align-items: center;
   border-radius: 10px;
   background-color: #2a1825;
+
+  /* opacity: 50%; */
 }
+
+/* .commentContainer .textBtnCont:hover{
+    box-shadow: 0 0 0.2rem 0.2rem red;
+} */
 
 .commentContainer .textBtnCont:target {
   box-shadow: 0 0 0.2rem 0.2rem red;
@@ -50,33 +54,8 @@
   /* width: 100%; */
 }
 
-.btnGroup {
-  display: flex;
-  position: relative;
-  height: fit-content;
-  background-color: var(--primary-bg-color);
-}
-
-.discardBtn {
-  /*background-color: #ff5733;*/ /* Background color for discard button */
-  /*color: white; /* Text color for discard button */
-  /*border: none;*/
-  background-color: #fffe3e; /* Dark background color */
-  color: rgb(31, 12, 25);
-  /* border: .3px solid #ffffffb6; */
-  padding: 0.2rem 0.3rem; /* Padding */
-  margin: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem; /* Font size */
-  cursor: pointer; /* Cursor style */
-  border-radius: 5px;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease; /* Smooth transitions */
-}
 .commentContainer .userImg {
-  background-image: url("https://source.unsplash.com/random");
+  background-image: url("https://i.pinimg.com/736x/c8/bd/1f/c8bd1fc2319f225147e1a490d5c0c26a.jpg");
   background-size: cover;
   height: 2rem;
   width: 2rem;
@@ -89,6 +68,14 @@
 .commentContainer .typeComment {
   border: none;
   /* width: 80rem ; */
+}
+
+.commentContainer .textArea {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: #2b2929; */
 }
 
 .commentContainer .submitBtn {
@@ -125,32 +112,47 @@
 
 textarea {
   width: 100%;
+  /* border-radius: 30px; */
   padding: 0.5rem;
   color: white;
   overflow: visible;
   background-color: var(--primary-bg-color);
-  height: 100%;
-  overflow: scroll;
+  height: 4rem;
+  box-sizing: border-box;
   resize: none;
 }
 textarea:focus {
   white-space: pre-wrap;
   width: 100%;
+  box-sizing: border-box;
+  /* border-radius: 30px; */
+  padding: 0.5rem;
   color: white;
-  overflow: scroll;
+  /* height: 4rem; */
+  background-color: var(--primary-bg-color);
   resize: none;
   outline: none;
 }
 
 .allCommentsContainer {
+  /* border: 2px solid green; */
+  /* 
+    background-image: linear-gradient(to right, #161616, #752d2d);
+    border-radius: 10px;
+    padding: 1rem; */
   margin: 1rem 0 1rem 0;
+  /* background-color: rgba(255, 255, 255, 0.146); Semi-transparent white */
+  /* border-radius: 10px; */
   padding: 10px;
   margin-left: 1rem;
+  /* border-left: 2px solid white; */
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.359); Glassy shadow */
 }
 
 .allCommentsContainer:hover {
   transform: scale(1.01);
   background-color: rgba(255, 255, 255, 0.158); /* Scale up on hover */
+  /* box-shadow: 0 0 40px rgba(255, 255, 255, 0.3); Increase shadow intensity on hover */
 }
 
 .allCommentsContainer .commentInfo {
@@ -161,13 +163,15 @@ textarea:focus {
 }
 
 .allCommentsContainer .imgContainer {
-  background-image: url("https://source.unsplash.com/random");
+  /* background-image: url("https://source.unsplash.com/random"); */
   background-size: cover;
   width: 2rem;
   height: 2rem;
   aspect-ratio: 1/1;
   border-radius: 50px;
   margin: 0.5rem 0.5rem 0.5rem 0;
+  /* overflow: hidden; */
+  /* object-fit: contain; */
 }
 
 .showMoreBtnContainer {
@@ -209,4 +213,24 @@ textarea:focus {
 
         margin-left: .2rem;
     } */
+}
+
+/* @media screen and (max-width:1000px){
+    .imgTextBtnContainer{
+        width: 75%;
+    }
+}
+
+@media screen and (min-width:1001px){
+    .imgTextBtnContainer{
+        width: 50%;
+    }
+} */
+
+/* .allCommentsContainer .userName{
+    margin-left: 0.5rem;
+} */
+.readMoreBtn {
+  background-color: #dfdf14;
+  color: #2a1825;
 }
