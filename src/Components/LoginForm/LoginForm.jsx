@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import styles from "./LoginForm.module.css";
 import {FaBeer} from "react-icons/fa";
 import {FaUser, FaEye, FaEyeSlash} from "react-icons/fa";
-import {FcGoogle} from "react-icons/fc";
 import {useState} from "react";
 import instance from "../../axios";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -11,7 +10,6 @@ import RejectedPopup from "../LoginAcceptedRejected/rejectedLogin";
 import {GoogleCallback} from "./GoogleCallback";
 import {GoogleLoginButton} from "../LoginForm/GoogleLoginButton.jsx";
 
-import bgTop from "../../assets/bg-top.svg";
 import {MdEmail} from "react-icons/md";
 
 function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {

@@ -32,8 +32,6 @@ const SearchPage = () => {
         query: searchTerm,
       });
       setNlp(response1.data);
-      console.log(response1.data);
-      // console.log(response.data);
     } catch (error) {
       console.error("Error fetching movies:", error);
     }

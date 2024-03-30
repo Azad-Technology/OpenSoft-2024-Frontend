@@ -239,16 +239,15 @@ const MoviePage = () => {
     screenSizeChanged();
   }
   function handleShowMoreInfoBtn() {
-    const elem = document.getElementById("showMoreInfo");
-    if (showMoreInfo) {
-      setShowMoreInfo(false);
-      setShowPlotLess(false);
-      elem.style.transform = "rotate(180deg)";
-    } else {
-      setShowMoreInfo(true);
-      setShowPlotLess(true);
+    console.log("clicked");
+    const elem = document.getElementById("showMoreInfobtn");
+    if(showMoreInfo){
       elem.style.transform = "rotate(0deg)";
+    } else{
+      elem.style.transform = "rotate(180deg)";
     }
+    setShowMoreInfo(!showMoreInfo);
+    setShowPlotLess(!showPlotLess);
   }
   const openHeart = event => {
     if (!token) {
@@ -515,8 +514,9 @@ const MoviePage = () => {
         </div>
         {movie?.fullplot.length >= 600 && (
           <div className={styles.showMoreInfoBtnCont}>
-            <button onClick={handleShowMoreInfoBtn} className={styles.showMoreInfoBtn} id="showMoreInfo">
+            <button onClick={handleShowMoreInfoBtn} className={styles.showMoreInfoBtn} id="showMoreInfobtn">
                   <svg
+                    // fill="#cf0a0a"
                     fill="#fffe3e"
                     height="25px"
                     width="25px"

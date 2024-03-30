@@ -604,7 +604,7 @@
   border: none;
   background-color: transparent;
   background-color: rgba(202, 196, 196, 0.203);
-  transform: rotate(180deg);
+  cursor: pointer;
   transition: all 0.3s ease-out;
 }
 
