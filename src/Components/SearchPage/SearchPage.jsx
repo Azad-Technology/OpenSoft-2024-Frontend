@@ -216,7 +216,7 @@ const SearchPage = () => {
 
   return (
     <div className={styles.maincontentwrapper}>
-      <div className={styles.dropdownscontainer} style={{display: "flex", gap: "2rem", marginLeft: "2rem"}}>
+      <div className={styles.dropdownscontainer} style={{display: "flex", gap: "2rem", marginLeft: "1.8rem"}}>
         <CustomDropdown
           key="genre-dropdown"
           label="Genre"
