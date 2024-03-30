@@ -32,6 +32,18 @@
   align-items: center;
 }
 
+.titleofcard{
+  font-size: 1.25rem;
+  display: flex;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: calc(12ch + 0.6rem);
+}
+
 .cardcontainer {
   display: flex;
   position: relative;

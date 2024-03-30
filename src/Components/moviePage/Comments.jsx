@@ -21,6 +21,10 @@ function NewComments(props) {
   const textareaRef = useRef(null);
   const initialParentHeight = useRef(null);
   const initialTextareaHeight = useRef(null);
+  // const [showLine, setShowLine] = useState(false); // State variable for showing line
+  const [showDiscardBtn, setShowDiscardBtn] = useState(false); // State variable for showing discard button
+  const [showBtns, setShowBtns] = useState(false); // State variable to show/hide buttons
+  // const [showSubmitBtn, setShowSubmitBtn] = useState(false); // State variable for showing discard button
   const navigate = useNavigate();
 
   function SwitchState() {
@@ -118,6 +122,21 @@ function NewComments(props) {
     }
   };
 
+  const handleTextAreaClick = () => {
+    // setShowSubmitBtn(true); // Show submit button when textarea is clicked
+    setShowBtns(true); // Show buttons when textarea is clicked
+    setShowLine(true); // Show line when textarea is clicked
+    // setShowDiscardBtn(true); // Show discard button when textarea is clicked
+  };
+
+  const handleDiscardClick = () => {
+    // setShowSubmitBtn(false); // Hide submit button when discard button is clicked
+    setShowBtns(false); // Hide buttons when discard button is clicked
+    // setShowLine(false); // Hide line when discard button is clicked
+    // setShowDiscardBtn(false); // Hide discard button when discard button is clicked
+    setNewComment(""); // Clear textarea content
+  };
+
   return (
     <>
       <div className={styles.commentContainer}>
@@ -132,16 +151,17 @@ function NewComments(props) {
                   ref={textareaRef}
                   name="typeComment"
                   placeholder="Type your comment here..."
-                  cols={190}
+
                   className={styles.typeComment}
                   style={{height: "100%", overflow: "hidden", whiteSpace: "pre-wrap"}}
                   onChange={event => handleTextAreaChange(event)}
+                  onClick={handleTextAreaClick} // Call handleTextAreaClick when textarea is clicked
                   onFocus={handleTextareaFocus}
                   // onBlur={handleTextareaBlur}
                   value={newComment}
                 ></textarea>
               </div>
-              <div className={styles.submitBtnContainer}>
+              {/* <div className={styles.submitBtnContainer}>
                 {disableBtn && (
                   <button type="submit" className={styles.submitBtn} disabled>
                     Submit
@@ -152,11 +172,31 @@ function NewComments(props) {
                     Submit
                   </button>
                 )}
+
+              </div> */}
+              {/* <div className={styles.btnGroup}>
+              {showDiscardBtn && (
+                <button className={styles.discardBtn} onClick={handleDiscardClick}>
+                  Discard
+                </button>
+              )}
+              <button onClick={handleSubmit} className={styles.submitBtn} disabled={disableBtn}>
+                Submit
+              </button>
+            </div> */}
+            {showBtns && (
+              <div className={styles.btnGroup}>
+                <button onClick={handleSubmit} className={styles.submitBtn} disabled={disableBtn}>
+                  Submit
+                </button>
+                <button className={styles.discardBtn} onClick={handleDiscardClick}>
+                  Discard
+                </button>
               </div>
+            )}
             </div>
           </div>
         </div>
-
         {props.info.length ? (
           <div className={styles.allComments}>
             {clicked ? (
