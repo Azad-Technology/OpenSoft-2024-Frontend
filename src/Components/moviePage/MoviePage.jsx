@@ -255,11 +255,6 @@ const MoviePage = () => {
     setlike(user?.fav.some(movies => movies?._id === movie?._id));
   }, [movie, user]);
 
-  //     // event listeners
-
-  //     window.addEventListener("resize", screenSizeChanged);
-  //     window.addEventListener("load", screenSizeChanged);
-
   window.addEventListener("resize", () => {
     setSmallScreen(window.innerWidth <= 550);
   });
@@ -303,7 +298,9 @@ const MoviePage = () => {
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
-          style={{backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}}
+          style={{
+            backgroundImage: `url(${movie && movie.backdrop_path !== undefined ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
+          }}
         >
           <div className={styles.title}>{movie?.title}</div>
         </div>
@@ -311,7 +308,9 @@ const MoviePage = () => {
           className={styles.heroContainer}
           style={
             !smallScreen && movie
-              ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
+              ? {
+                  backgroundImage: `url(${movie && movie.backdrop_path !== undefined ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
+                }
               : {backgroundImage: "none"}
           }
         >

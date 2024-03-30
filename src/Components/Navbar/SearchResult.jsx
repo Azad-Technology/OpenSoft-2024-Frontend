@@ -18,7 +18,7 @@ export const SearchResult = ({movie,setSearch,setShowSearchBar}) => {
   return (
     <div onClick={handleClick} className={styles.searchResult}>
       <img
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+        src={movie && movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "/poster_1.jpg"}
         style={{height: "4rem", width: "3rem"}}
         alt="search result"
       />

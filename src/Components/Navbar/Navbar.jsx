@@ -1,16 +1,16 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.css";
-import {useNavigate} from "react-router-dom";
-import {Search} from "./Search";
-import {MobileMenu} from "./MobileMenu.jsx";
-import {useStateValue} from "../../MyContexts/StateProvider.jsx";
+import { useNavigate } from "react-router-dom";
+import { Search } from "./Search";
+import { MobileMenu } from "./MobileMenu.jsx";
+import { useStateValue } from "../../MyContexts/StateProvider.jsx";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
 import popKornLogo from "../../assets/PopKorn_logoText.svg";
 import instance from "../../axios";
 
-export const Navbar = ({movies}) => {
-  const [{dpToken, user}, dpDispatch] = useStateValue();
+export const Navbar = ({ movies }) => {
+  const [{ dpToken, user }, dpDispatch] = useStateValue();
   const navigate = useNavigate();
   useEffect(() => {
     const fetchUserData = async () => {
@@ -26,7 +26,7 @@ export const Navbar = ({movies}) => {
         const userData = response.data;
 
         // Dispatch an action to update the user state with fetched data
-        dpDispatch({type: "UPDATE_USER", payload: userData});
+        dpDispatch({ type: "UPDATE_USER", payload: userData });
 
         // Optional: Do something after fetching user data
       } catch (error) {
@@ -42,7 +42,7 @@ export const Navbar = ({movies}) => {
       fetchUserData();
     }
   }, [dpToken]);
-  const [{token}, dispatch] = useStateValue();
+  const [{ token }, dispatch] = useStateValue();
 
   const [showDropdown, setShowDropdown] = useState({
     Genre: false,
@@ -248,11 +248,11 @@ export const Navbar = ({movies}) => {
             <div className={styles.navbar__right}>
               <Search movies={movies} />
               {token &&
-              token !== undefined &&
-              token !== "null" &&
-              token !== "undefined" &&
-              token !== null &&
-              token !== "" ? (
+                token !== undefined &&
+                token !== "null" &&
+                token !== "undefined" &&
+                token !== null &&
+                token !== "" ? (
                 <div onClick={() => navigate("/profile")} className={styles.avatar}>
                   {user?.profilePic ? (
                     <img src={user.profilePic} alt="avatar" className={styles.avatar} />
@@ -262,7 +262,9 @@ export const Navbar = ({movies}) => {
                       // alt="avatar"
                       className={styles.dp}
                     >
-                      {user?.name && user.name.charAt(0).toUpperCase()}
+                      <div className={styles.dpName}>
+                        {user?.name && user.name.charAt(0).toUpperCase()}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -300,11 +302,11 @@ export const Navbar = ({movies}) => {
             <div className={styles.navbar__right}>
               <i onClick={() => setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
               {token &&
-              token !== undefined &&
-              token !== "null" &&
-              token !== "undefined" &&
-              token !== null &&
-              token !== "" ? (
+                token !== undefined &&
+                token !== "null" &&
+                token !== "undefined" &&
+                token !== null &&
+                token !== "" ? (
                 <div onClick={() => navigate("/profile")} className={styles.avatar}>
                   {user?.profilePic ? (
                     <img src={user.profilePic} alt="avatar" className={styles.avatar} />
