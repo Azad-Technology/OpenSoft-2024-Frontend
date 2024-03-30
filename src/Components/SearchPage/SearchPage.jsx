@@ -154,36 +154,36 @@ const SearchPage = () => {
       label: "News",
       link: "#",
       value: "News",
-    }
+    },
   ];
 
   const languageOptions = [
-    {label: "English", value:"English"},
-    {label: "French", value:"French"},
-    {label: "Spanish", value:"Spanish"},
-    {label: "German", value:"German"},
-    {label: "Italian", value:"Italian"},
-    {label: "Russian", value:"Russian"},
-    {label: "Japanese", value:"Japanese"},
-    {label: "Mandarin", value:"Mandarin"},
-    {label: "Hindi", value:"Hindi"},
-    {label: "Portuguese", value:"Portuguese"},
-    {label: "Cantonese", value:"Cantonese"},
-    {label: "Swedish", value:"Swedish"},
-    {label: "Arabic", value:"Arabic"},
-    {label: "Korean", value:"Korean"},
-    {label: "Finnish", value:"Finnish"},
-    {label: "Polish", value:"Polish"},
-    {label: "Dutch", value:"Dutch"},
-    {label: "Danish", value:"Danish"},
-    {label: "Hebrew", value:"Hebrew"},
-    {label: "Latin", value:"Latin"},
-    {label: "Turkish", value:"Turkish"},
-    {label: "Greek", value:"Greek"},
-    {label: "Hungarian", value:"Hungarian"},
-    {label: "Norwegian", value:"Norwegian"},
-    {label: "Persian", value:"Persian"},
-    {label: "Czech", value:"Czech"},
+    {label: "English", value: "English"},
+    {label: "French", value: "French"},
+    {label: "Spanish", value: "Spanish"},
+    {label: "German", value: "German"},
+    {label: "Italian", value: "Italian"},
+    {label: "Russian", value: "Russian"},
+    {label: "Japanese", value: "Japanese"},
+    {label: "Mandarin", value: "Mandarin"},
+    {label: "Hindi", value: "Hindi"},
+    {label: "Portuguese", value: "Portuguese"},
+    {label: "Cantonese", value: "Cantonese"},
+    {label: "Swedish", value: "Swedish"},
+    {label: "Arabic", value: "Arabic"},
+    {label: "Korean", value: "Korean"},
+    {label: "Finnish", value: "Finnish"},
+    {label: "Polish", value: "Polish"},
+    {label: "Dutch", value: "Dutch"},
+    {label: "Danish", value: "Danish"},
+    {label: "Hebrew", value: "Hebrew"},
+    {label: "Latin", value: "Latin"},
+    {label: "Turkish", value: "Turkish"},
+    {label: "Greek", value: "Greek"},
+    {label: "Hungarian", value: "Hungarian"},
+    {label: "Norwegian", value: "Norwegian"},
+    {label: "Persian", value: "Persian"},
+    {label: "Czech", value: "Czech"},
   ];
   // State to store fetched movies
 
@@ -208,7 +208,6 @@ const SearchPage = () => {
   return (
     <div className={styles.maincontentwrapper}>
       <div className={styles.dropdownscontainer} style={{display: "flex", gap: "2rem", marginLeft: "2rem"}}>
-        
         <CustomDropdown
           key="genre-dropdown"
           label="Genre"
@@ -216,7 +215,7 @@ const SearchPage = () => {
           selectedItems={genreSelections}
           updateSelectedItems={setGenreSelections}
         />
-        
+
         <CustomDropdown
           key="language-dropdown"
           label="Language"
