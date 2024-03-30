@@ -16,6 +16,7 @@ const MoreLikeThis = ({id}) => {
   return (
     <section className={styles.container}>
       <div className={styles.title}>
+          <hr style={{borderColor:"yellow", marginRight:"1rem"}}/>
         <span>More Like This</span>
       </div>
       <div>

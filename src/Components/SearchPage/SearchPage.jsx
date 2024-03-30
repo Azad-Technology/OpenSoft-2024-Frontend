@@ -18,6 +18,7 @@ const SearchPage = () => {
         query: searchTerm,
       });
       setFuzzy(response.data);
+      
       // console.log(response.data);
     } catch (error) {
       setFuzzy([]);
@@ -32,19 +33,159 @@ const SearchPage = () => {
   const [genreSelections, setGenreSelections] = useState([]);
   const [languageSelections, setLanguageSelections] = useState([]);
   const genreOptions = [
-    {label: "Action", value: "action"},
-    {label: "Comedy", value: "comedy"},
-    {label: "Sci-Fi", value: "sci-fi"},
-    // ... add more genres
+    // {label: "Action", value: "action"},
+    // {label: "Comedy", value: "comedy"},
+    // {label: "Sci-Fi", value: "sci-fi"},
+    {
+      label: "Action",
+      link: "#",
+      value: "Action",
+    },
+    {
+      label: "Comedy",
+      link: "#",
+      value: "Comedy",
+    },
+    {
+      label: "Horror",
+      link: "#",
+      value: "Horror",
+    },
+    {
+      label: "Romance",
+      link: "#",
+      value: "Homance",
+    },
+    {
+      label: "Thriller",
+      link: "#",
+      value: "Thriller",
+    },
+    {
+      label: "Sci-Fi",
+      link: "#",
+      value: "Scifi",
+    },
+    {
+      label: "Drama",
+      link: "#",
+      value: "Drama",
+    },
+    {
+      label: "Mystery",
+      link: "#",
+      value: "Mystery",
+    },
+    {
+      label: "Crime",
+      link: "#",
+      value: "Crime",
+    },
+    {
+      label: "Animation",
+      link: "#",
+      value: "Animation",
+    },
+    {
+      label: "Adventure",
+      link: "#",
+      value: "Adventure",
+    },
+    {
+      label: "Fantasy",
+      link: "#",
+      value: "Fantasy",
+    },
+    {
+      label: "Family",
+      link: "#",
+      value: "Family",
+    },
+    {
+      label: "Biography",
+      link: "#",
+      value: "Biography",
+    },
+    {
+      label: "History",
+      link: "#",
+      value: "History",
+    },
+    {
+      label: "War",
+      link: "#",
+      value: "War",
+    },
+    {
+      label: "Documentary",
+      link: "#",
+      value: "Documentary",
+    },
+    {
+      label: "Music",
+      link: "#",
+      value: "Music",
+    },
+    {
+      label: "Sport",
+      link: "#",
+      value: "Sport",
+    },
+    {
+      label: "Western",
+      link: "#",
+      value: "Western",
+    },
+    {
+      label: "Short",
+      link: "#",
+      value: "Short",
+    },
+    {
+      label: "Film-Noir",
+      link: "#",
+      value: "Filmnoir",
+    },
+    {
+      label: "Talk-Show",
+      link: "#",
+      value: "Talkshow",
+    },
+    {
+      label: "News",
+      link: "#",
+      value: "News",
+    },
   ];
 
   const languageOptions = [
-    {label: "English", value: "english"},
-    {label: "Spanish", value: "spanish"},
-    {label: "French", value: "french"},
-    // ... add more languages
+    {label: "English", value: "English"},
+    {label: "French", value: "French"},
+    {label: "Spanish", value: "Spanish"},
+    {label: "German", value: "German"},
+    {label: "Italian", value: "Italian"},
+    {label: "Russian", value: "Russian"},
+    {label: "Japanese", value: "Japanese"},
+    {label: "Mandarin", value: "Mandarin"},
+    {label: "Hindi", value: "Hindi"},
+    {label: "Portuguese", value: "Portuguese"},
+    {label: "Cantonese", value: "Cantonese"},
+    {label: "Swedish", value: "Swedish"},
+    {label: "Arabic", value: "Arabic"},
+    {label: "Korean", value: "Korean"},
+    {label: "Finnish", value: "Finnish"},
+    {label: "Polish", value: "Polish"},
+    {label: "Dutch", value: "Dutch"},
+    {label: "Danish", value: "Danish"},
+    {label: "Hebrew", value: "Hebrew"},
+    {label: "Latin", value: "Latin"},
+    {label: "Turkish", value: "Turkish"},
+    {label: "Greek", value: "Greek"},
+    {label: "Hungarian", value: "Hungarian"},
+    {label: "Norwegian", value: "Norwegian"},
+    {label: "Persian", value: "Persian"},
+    {label: "Czech", value: "Czech"},
   ];
-  // State to store fetched movies
 
   const fetchMovies = useCallback(async () => {
     try {
@@ -74,6 +215,7 @@ const SearchPage = () => {
           selectedItems={genreSelections}
           updateSelectedItems={setGenreSelections}
         />
+
         <CustomDropdown
           key="language-dropdown"
           label="Language"
@@ -92,13 +234,27 @@ const SearchPage = () => {
       </div>
       {fuzzy && (
         <div className={styles.results_container}>
-          {fuzzy.map((movie, index) => (
-            <FuzzyCard
-              key={index}
-              movies={movie}
-              basis={movie.highlights ? movie.highlights.sort((a, b) => b.score - a.score)[0].path : "plot"}
-            />
-          ))}
+          {fuzzy?.map((movie, index) =>{ 
+              const paths = movie.highlights
+              ? Array.from(new Set(movie.highlights.map((highlight) => highlight.path)))
+              : [];
+
+              let basisText =
+              paths.length > 0
+                ? paths
+                    .slice(0, -1)
+                    .join(", ")
+                    .concat(paths.length > 1 ? ` and ${paths.slice(-1)}` : "")
+                : "plot";
+              paths.length === 1 ? (basisText = paths[0]) : basisText;
+              return(
+                <FuzzyCard
+                key={index}
+                movies={movie}
+                basis={basisText}
+                />
+              )
+            })}
         </div>
       )}
       {!fuzzy && (
