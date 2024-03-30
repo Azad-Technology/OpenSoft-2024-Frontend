@@ -4,9 +4,8 @@ import {useStateValue} from "../MyContexts/StateProvider";
 const useAlan = handleFoundGenre => {
   const [{token, user}] = useStateValue();
   useEffect(() => {
-    console.log("plan = ",user?.subtype);
-    if(user?.subtype==="Gold")
-    {
+    console.log("plan = ", user?.subtype);
+    if (user?.subtype === "Gold") {
       alanBtn({
         key: "a2e30ce08222ef4aac4b4ef40bbcd5ca2e956eca572e1d8b807a3e2338fdd0dc/stage",
         onCommand: ({command, genres, genreOrCategory, query}) => {
@@ -45,7 +44,7 @@ const useAlan = handleFoundGenre => {
     //     },
     //   });
     // }
-  }, [user,token]);
+  }, [user, token]);
 };
 
 export default useAlan;

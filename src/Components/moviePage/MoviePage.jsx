@@ -21,16 +21,15 @@ import closeIcon from "../../assets/close-47.svg";
 import chooseMovie from "./MovieList.jsx";
 
 function Modal({onClose, movie, token}) {
-
   const [{user}, dispatch] = useStateValue();
 
   const [vidsrc, setVidsrc] = useState(null);
   useEffect(() => {
-    if(movie && token){
-      const choosenmovie=chooseMovie(movie?.title);
-      console.log("choosenmovie",choosenmovie);
+    if (movie && token) {
+      const choosenmovie = chooseMovie(movie?.title);
+      console.log("choosenmovie", choosenmovie);
       console.log(choosenmovie);
-      switch(user.subtype) {
+      switch (user.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
           break;
@@ -52,11 +51,7 @@ function Modal({onClose, movie, token}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer
-              storage="storage-key"
-              title={movie?.title}
-              src={vidsrc}
-            >
+            <MediaPlayer storage="storage-key" title={movie?.title} src={vidsrc}>
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
             </MediaPlayer>
@@ -72,16 +67,15 @@ function Modal({onClose, movie, token}) {
 }
 
 function ModalTrail({onClose, movie}) {
-
   const [{user}, dispatch] = useStateValue();
 
   const [vidsrc, setVidsrc] = useState(null);
   useEffect(() => {
-    if(movie ){
-      const choosenmovie=chooseMovie(movie?.title);
-      console.log("choosenmovie",choosenmovie);
+    if (movie) {
+      const choosenmovie = chooseMovie(movie?.title);
+      console.log("choosenmovie", choosenmovie);
       console.log(choosenmovie);
-      switch(user?.subtype) {
+      switch (user?.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
           break;
@@ -95,7 +89,7 @@ function ModalTrail({onClose, movie}) {
           setVidsrc(choosenmovie[0]);
       }
     }
-  }, [ user,movie]);
+  }, [user, movie]);
 
   return (
     <div className={styles.modal_overlay}>
@@ -103,12 +97,7 @@ function ModalTrail({onClose, movie}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer
-            clipEndTime={30}
-              storage="storage-key"
-              title={movie?.title}
-              src={vidsrc}
-            >
+            <MediaPlayer clipEndTime={30} storage="storage-key" title={movie?.title} src={vidsrc}>
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
             </MediaPlayer>
@@ -432,8 +421,8 @@ const MoviePage = () => {
                 <button className={styles.modalbutton} onClick={handleTrailerClick}>
                   Trailer
                 </button>
-                    {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
-                    {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
+                {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
+                {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
                 {/* <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
