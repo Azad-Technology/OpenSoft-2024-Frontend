@@ -51,7 +51,6 @@ const Profile = ({setShowPopup3}) => {
         "/update_user",
         {
           new_name: fullname,
-          new_email: user.email,
         },
         {
           headers: {
@@ -150,10 +149,7 @@ const Profile = ({setShowPopup3}) => {
   const scrollableDivRef = useRef(null);
   useEffect(() => {
     if (favMovie) {
-      console.log(scrollableDivRef.current.scrollWidth -
-          scrollableDivRef.current.scrollLeft -
-          scrollableDivRef.current.clientWidth >
-          40 && scrollableDivRef.current.clientWidth < scrollableDivRef.current.scrollWidth);
+      
       setShowRightBtn(
         scrollableDivRef.current.scrollWidth -
           scrollableDivRef.current.scrollLeft -

@@ -258,8 +258,6 @@ export const Navbar = ({ movies }) => {
                     <img src={user.profilePic} alt="avatar" className={styles.avatar} />
                   ) : (
                     <div
-                      // src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                      // alt="avatar"
                       className={styles.dp}
                     >
                       <div className={styles.dpName}>

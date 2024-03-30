@@ -2,7 +2,6 @@ import React, {useState, useEffect, useRef} from "react";
 import styles from "./Search.module.css";
 import {useDebounce} from "use-debounce";
 import {SearchResults} from "./SearchResults.jsx";
-import * as Realm from "realm-web";
 import {useNavigate} from "react-router-dom";
 import instance from "../../axios.jsx";
 
