@@ -11,7 +11,7 @@ export const SearchResult = ({movie}) => {
   return (
     <div onClick={() => navigate(`/movie/${movie?._id}`)} className={styles.searchResult}>
       <img
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+        src={movie && movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "/poster_1.jpg"}
         style={{height: "4rem", width: "3rem"}}
         alt="search result"
       />
