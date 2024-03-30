@@ -8,9 +8,8 @@ import Notification from "../Notification/notification.jsx";
 import { faL } from "@fortawesome/free-solid-svg-icons";
 
 
-const WatchListModal = ({onClose, movieID}) => {
+const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
   const [createwatchlist, setCreateWatchlist] = useState(false)
-  const [addedToWatchlist, setAddedToWatchlist] = useState(false)
   const [{token, user}, dispatch] = useStateValue();
   const [watchlistName, setWatchListName] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -83,7 +82,16 @@ const WatchListModal = ({onClose, movieID}) => {
     onClose();
   };
 
+  function addedToWatchlist(){
+    setAddedToWatchlist(true)
+    setTimeout(()=>{
+      setAddedToWatchlist(false)
+    },2500)
+
+  }
+
   const addWatchList = async e => {
+    addedToWatchlist()
     e.preventDefault();
     if (selectedWatchlists.length === 0) {
       setErrorMsg("Please select a watchlist");
@@ -104,10 +112,6 @@ const WatchListModal = ({onClose, movieID}) => {
           },
         };
         const response = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config);
-        setAddedToWatchlist(true)
-        setTimeout(()=>{
-          setAddedToWatchlist(true)
-        },2500)
       } catch (err) {
         console.log(err);
       }
