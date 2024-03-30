@@ -6,6 +6,7 @@ import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import {useNavigate} from "react-router";
 import MovieModalList from "../GenreModal/MovieModalList.jsx";
 import deleteIcon from "../../assets/Delete_Icon.svg";
+import deleteIconWhite from "../../assets/Delete_Icon_White.svg";
 import instance from "../../axios.jsx";
 
 const Watchlist = ({movies, name, id}) => {
@@ -59,8 +60,12 @@ const Watchlist = ({movies, name, id}) => {
       <div className={styles.movie_grid}>
         <div className={styles.movieList}>
           {movies.map((m, i) => {
-            if (m && m.poster_path === undefined) return;
-            return <Card movies={m} />;
+            return (
+              <div className={styles.cardcontainer}>
+                <Card movies={m} />
+                <img src={deleteIconWhite} className={styles.deleteimage} height={30} width={30} />
+              </div>
+            )
           })}
         </div>
       </div>
