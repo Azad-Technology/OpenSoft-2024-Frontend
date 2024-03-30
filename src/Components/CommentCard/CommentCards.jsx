@@ -18,8 +18,6 @@ function CommentCards() {
   useEffect(() => {
     getCommentsData();
   }, []);
-  console.log("yo");
-  console.log(commentsData);
 
   const profilePics = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
@@ -30,8 +28,6 @@ function CommentCards() {
   ];
 
   const repeatedCommentsData = Array.from({length: 5}, () => commentsData).flat();
-  console.log("looo");
-  console.log(repeatedCommentsData);
 
   return (
     <div className={styles.sliderwrapper}>
