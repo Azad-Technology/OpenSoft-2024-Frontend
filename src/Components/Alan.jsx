@@ -12,7 +12,7 @@ const useAlan = handleFoundGenre => {
             const foundGenre = genres.find(g => g.name.toLowerCase() === genreOrCategory.toLowerCase());
             handleFoundGenre(foundGenre.name);
           } else if (command === "logout") {
-            localStorage.clear();
+            localStorage.removeItem("token");
             window.location.reload();
           } else if (command === "home") {
             window.location.replace("https://popkorn.tech");

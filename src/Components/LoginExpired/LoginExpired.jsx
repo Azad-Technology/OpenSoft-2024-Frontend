@@ -3,7 +3,8 @@ import {useNavigate} from "react-router-dom";
 
 const LoginExpired = () => {
   const navigate = useNavigate();
-  localStorage.clear();
+  localStorage.removeItem("token");
+
 
   return (
     <>
