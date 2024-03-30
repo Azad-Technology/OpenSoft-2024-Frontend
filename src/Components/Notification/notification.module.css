@@ -1,0 +1,20 @@
+
+
+.notification {
+    position: fixed;
+    display: flex;
+    top: 1rem; /* Distance from the top */
+    right: 1rem; /* Distance from the right */
+    background-color: #f0f0f0; /* Light background color */
+    color: #333; /* Text color */
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    box-shadow: -0.3rem 0.5rem 0.5rem 0rem rgba(0, 0, 0, 1);
+    transition: all 0.3s ease;
+    z-index: 1000; /* Ensure it's above other content */
+    border: 0.1rem solid black;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+      

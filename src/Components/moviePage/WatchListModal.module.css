@@ -20,6 +20,7 @@
   max-width: 31.25rem;
   width: 90%;
   z-index: 301;
+  padding-bottom: 1rem;
   position: relative;
 }
 
@@ -36,7 +37,7 @@
 .watchlist_modal_section {
   border-bottom: 2rem;
   border-color: black;
-  margin-bottom: 1.25rem;
+  /* margin-bottom: 1.25rem; */
 }
 
 .watchlist_error {
@@ -67,21 +68,25 @@
   width: 100%;
   border: 1px solid #93e1d8;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .watchlist_modal_section_heading {
   font-size: 1.125rem;
   font-weight: bold;
-  margin-bottom: 0.625rem;
 }
 
 .watchlist_modal_input {
   width: 100%;
   padding: 0.625rem;
-  border: 1px solid white;
-  background-color: #bba0b2;
-  color: black;
+  border: none;
+  background-color: #3b172f;
+  color: white;
   border-radius: 0.25rem;
+}
+
+.watchlist_create input::placeholder {
+  color: white;
 }
 
 .watchlist_modal_buttons {
@@ -243,7 +248,7 @@
   width: 100%;
   align-items: center;
   /* justify-content: space-around; */
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .results_container {
@@ -258,9 +263,9 @@
   display: flex;
   align-items: center;
   width: 80%;
-  color: black;
+  color: white;
   justify-content: space-between;
-  background-color: #bba0b2;
+  background-color: #3b172f;
   border: 0.0625rem solid #33373d;
   border-radius: 0.25rem;
   padding: 0.625rem 0.9375rem;
@@ -269,7 +274,6 @@
 
 .dropdownbutton:hover {
   border-color: #33373d; /* Example accent color */
-  box-shadow: 0 0 0.8rem rgba(120, 121, 123, 0.5); /* Soft border glow */
 }
 
 .dropdownbutton::after {
@@ -283,14 +287,14 @@
   position: absolute;
   color: #fff;
   width: 80%;
-  top: -1.2rem;
+  top: 0rem;
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 15rem;
   padding: 0;
   margin-top: 0;
   overflow-y: auto;
-  background-color: #77556c; /* A dark gray background */
+  background-color: #3b172f; /* A dark gray background */
   box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.4);
   border: 0.0625rem solid #33373d;
   border-top: none;
