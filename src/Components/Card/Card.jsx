@@ -25,19 +25,17 @@ const Card = ({movies, val, length, onClose, setShowPopup3}) => {
     if (!token) {
       navigate("/login");
     }
-    addFavouriteRequest();
+
     if (like) {
       setlike(false);
     } else {
       setlike(true);
     }
     event.stopPropagation();
+    addFavouriteRequest();
   };
 
   const addFavouriteRequest = async e => {
-    if(user?.fav.length >= 10 && user?.subtype === "Basic"){
-      return;
-    }
     try {
       const response = await instance.patch(`/add_favourite/${movies?._id}`, null, {
         headers: {
@@ -82,6 +80,7 @@ const Card = ({movies, val, length, onClose, setShowPopup3}) => {
           onClose();
           navigate(`/movie/${movies?._id}`);
           // const class_name = genreModalStyles.modal_overlay;
+          // console.log(genreModalStyles.modal_overlay);
         }}
         className={`${styles.cards} ${!movies && styles.skeleton__cards} ${val === 0 ? `${styles.first__card}` : ""}`}
         id={movies ? movies._id : ""}

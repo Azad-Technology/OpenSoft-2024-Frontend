@@ -98,7 +98,7 @@ function Pricing() {
             ) : (
               <Link
                 target="_blank"
-                to={`https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262?checkout[email]=${user?.email}&checkout[name]=${user?.name}`}
+                to={token && token !=='null' && token!==undefined && token!=='undefined'?`https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262?checkout[email]=${user?.email}&checkout[name]=${user?.name}`:"/login"}
               >
                 
                 {isGold?
@@ -140,7 +140,7 @@ function Pricing() {
             ) : (
               <Link
                 target="_blank"
-                to={`https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a?checkout[email]=${user?.email}&checkout[name]=${user?.name}`}
+                to={token && token !=='null' && token!==undefined && token!=='undefined'?`https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a?checkout[email]=${user?.email}&checkout[name]=${user?.name}`:"/login"}
               >
                 <button className={styles.pricingCard_button}>
                   <p>Purchase</p>
