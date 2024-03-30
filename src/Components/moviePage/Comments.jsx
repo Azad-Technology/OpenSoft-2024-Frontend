@@ -52,9 +52,6 @@ function NewComments(props) {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(props);
-  }, [props]);
   let comments = props.info.map(obj => {
     return obj.text;
   });

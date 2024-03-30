@@ -77,7 +77,6 @@ const Card = ({movies, val, length, onClose, basis}) => {
           onClose();
           navigate(`/movie/${movies?._id}`);
           // const class_name = genreModalStyles.modal_overlay;
-          // console.log(genreModalStyles.modal_overlay);
         }}
         className={`${styles.cards} ${!movies && styles.skeleton__cards} ${val === 0 ? `${styles.first__card}` : ""}`}
         id={movies ? movies._id : ""}

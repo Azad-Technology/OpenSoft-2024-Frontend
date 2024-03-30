@@ -38,7 +38,7 @@ const useAlan = handleFoundGenre => {
     //   alanBtn({
     //     key: "a2e30ce08222ef4aac4b4ef40bbcd5ca2e956eca572e1d8b807a3e2338fdd0dc/stage",
     //     onClick: () => {
-    //       console.log("You need a Gold plan to use this feature");
+    //       
     //       window.location.replace("http://localhost:5173/pricing");
     //     },
     //   });

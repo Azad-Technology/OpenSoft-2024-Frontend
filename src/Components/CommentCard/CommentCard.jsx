@@ -63,8 +63,6 @@ function CommentCard({username, profilePic, comment, movie, link, timestamp}) {
   const truncatedComment = truncateComment(comment, maxLength);
   const truncatedName = truncateComment(username, maxName);
 
-  console.log(truncatedComment);
-  console.log(timestamp);
 
   return (
     <>

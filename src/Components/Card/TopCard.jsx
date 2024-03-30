@@ -46,7 +46,7 @@ const TopCard = ({movies, val, length, setShowPopup3}) => {
         dispatch({type: "REM_FAV", movie: movies});
       }
     } catch (err) {
-      // console.log(err);
+      console.log(err);
     }
   };
 
