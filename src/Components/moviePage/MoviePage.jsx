@@ -329,7 +329,7 @@ const MoviePage = () => {
           }
         >
           <div className={styles.content}>
-            {premium && <div className={styles.premium}>Included with premium</div>}
+            {premium && <div className={styles.premium}>Premium Movie</div>}
 
             <div className={styles.shadowBox}>
               {!movie?.title && (
