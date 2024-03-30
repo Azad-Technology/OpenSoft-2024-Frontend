@@ -21,7 +21,6 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isGoogle, setIsGoogle] = useState(false);
-  const [googleWindow, setGoogleWindow] = useState(null);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -79,17 +78,18 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
   return (
     <div className={styles.login}>
       {showPopup2 && <RejectedPopup message={err} />}
-      {isGoogle && <GoogleCallback setIsGoogle={setIsGoogle} googleWindow={googleWindow} />}
+      {isGoogle && <GoogleCallback setIsGoogle={setIsGoogle} />}
       {!isGoogle && (
         <div className={styles.wrapper}>
           <form action="">
             <h1>Welcome Back.</h1>
-            <div className="OAuth">
+            <div className="OAuth" >
               <GoogleLoginButton
                 className={styles.GoogleLogin}
                 setShowPopup={setShowPopup}
                 setShowPopup2={setShowPopup2}
                 showPopup2={showPopup2}
+                setIsGoogle={setIsGoogle}
               />
             </div>
             <hr className={styles.Or} />

@@ -225,6 +225,7 @@ a {
   margin-bottom: 5%;
   margin-top: 1.25rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .dp {
