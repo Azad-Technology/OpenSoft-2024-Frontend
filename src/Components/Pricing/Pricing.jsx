@@ -97,12 +97,20 @@ function Pricing() {
             <h3>
               <span>₹</span> 50
             </h3>
-            <Link
-              target="_blank"
-              to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262"
-            >
-              <button className={styles.pricingCard_button}>Purchase</button>
-            </Link>
+            {isSilver ? (
+              <button className={styles.pricingCard_button_purchased}>
+                <p>Your Current Plan</p>
+              </button>
+            ) : (
+              <Link
+                target="_blank"
+                to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262"
+              >
+                <button className={styles.pricingCard_button}>
+                  <p>Purchase</p>
+                </button>
+              </Link>
+            )}
 
             <ul>
               <li>Get access to Premium Movies</li>
@@ -124,12 +132,20 @@ function Pricing() {
             <h3>
               <span>₹</span> 100
             </h3>
-            <Link
-              target="_blank"
-              to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a"
-            >
-              <button className={styles.pricingCard_button}>Purchase</button>
-            </Link>
+            {isGold ? (
+              <button className={styles.pricingCard_button_purchased}>
+                <p>Your Current Plan</p>
+              </button>
+            ) : (
+              <Link
+                target="_blank"
+                to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a"
+              >
+                <button className={styles.pricingCard_button}>
+                  <p>Purchase</p>
+                </button>
+              </Link>
+            )}
             <ul>
               <li>Get access to Premium Movies</li>
               <li>Quality upto 1080p</li>
