@@ -20,6 +20,8 @@ const SearchPage = () => {
   const [nlp,setNlp]=useState([]);
 
   const getData = useCallback(async () => {
+    setFuzzy(null);
+    setNlp([]);
     try {
       const response = await axios.post("https://embed.popkorn.tech/rrf", {
         query: searchTerm,
@@ -34,7 +36,6 @@ const SearchPage = () => {
       console.log(response1.data);
       // console.log(response.data);
     } catch (error) {
-      setFuzzy([]);
       console.error("Error fetching movies:", error);
     }
   }, [searchTerm]);
@@ -261,6 +262,13 @@ const SearchPage = () => {
           })}
         </div>
       )}
+      {fuzzy && fuzzy.length === 0 && 
+      <div className={styles.results_container}>
+        <div className={styles.no_results}>
+          <h1>No results found</h1>
+        </div>
+      </div>
+      }
       {!fuzzy && (
         <div className={styles.results_container}>
           {Array(18)
@@ -279,7 +287,12 @@ const SearchPage = () => {
           <div className={styles.gridcontainer}></div>
         </section>
       </div>
-      <MovieList movie={nlp} />
+      <div className={styles.results_container}>
+        {nlp.map((movie, index) => {
+          return <Card key={index} movies={movie} />;
+        })
+      }
+      </div>
       </div>
       :null
       }
