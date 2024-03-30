@@ -184,8 +184,8 @@
   display: block;
   /* position: absolute; */
   /* margin-top: 2rem; */
-  background-color: #cccc00;
-  color: #332b50;
+  background-color: #FFFE3E;
+  color:#3b172f;
   /* color: white; */
   border: none;
   border-radius: 0.5rem;
@@ -195,7 +195,7 @@
   font-size: 1.1rem;
 }
 .edit_button button:hover {
-  background-color: #a1a104;
+  background-color:#cccc00;
 }
 .editbtn {
   background-color: #101010;
@@ -217,7 +217,7 @@
   /* justify-content: space-between; */
 }
 #homeIcon {
-  color: #a8a806;
+  color:#FFFE3E;
   font-size: 3rem;
   position: absolute;
   top: 5%;
@@ -362,6 +362,9 @@
   transition: 0.2s;
 }
 .dp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 4rem;
   color: #e4dabe;
   background-color: #4f633d;

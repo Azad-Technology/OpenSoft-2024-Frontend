@@ -146,6 +146,13 @@ function NewComments(props) {
 
   const [newComment, setNewComment] = useState("");
 
+  
+  function addedComment(){
+    props.setAddedComment(true)
+    setTimeout(()=>{
+      props.setAddedComment(false)
+    },2500)
+  }
   const handleSubmit = async () => {
     if (!token) {
       navigate("/login");
@@ -172,6 +179,7 @@ function NewComments(props) {
         props.setComments(curr);
         setNewComment("");
         // window.location.reload();
+        addedComment()
       } catch (error) {
         console.log(error);
       }

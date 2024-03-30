@@ -23,7 +23,7 @@
   transform: translateX(calc(-100% * var(--index)));
   flex-grow: 0;
   flex-shrink: 0;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .carousel__slide img {
