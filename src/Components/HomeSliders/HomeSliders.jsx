@@ -87,7 +87,7 @@ export const HomeSliders = ({setShowPopup3}) => {
   ];
 
   return (
-    <div className={styles.c}>
+    <div className={styles.sliders}>
       {token && token !== "null" && token !== undefined && token !== "undefined" && token !== "" && (
         <div className={styles.slider_container}>
           <div className={styles.slider__header}>
