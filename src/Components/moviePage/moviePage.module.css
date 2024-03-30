@@ -545,24 +545,13 @@
   background-color: rgb(31, 12, 25);
   position: relative;
   width: 100%;
-  height: fit-content;
-  display: flex;
-  padding: 2rem 0 9rem 0;
-  position: relative;
-  width: 100%;
-  height: fit-content;
+  min-height: fit-content;
   display: flex;
   padding: 2rem 0 9rem 0;
 }
 
 .fullplot {
-  margin-left: 1rem;
-  width: 50%;
-  height: 100%;
-}
-
-.fullplot {
-  margin-left: 1rem;
+  margin-left: 2rem;
   width: 50%;
   height: 100%;
 }
@@ -570,7 +559,7 @@
 .heading {
   color: #fffe3e;
   font-weight: bold;
-  margin: 1rem auto 0rem 1rem;
+  margin: 1rem auto 0rem 2rem;
   top: 0;
   left: 0;
   font-size: 2rem;
@@ -584,11 +573,6 @@
   flex-direction: column;
   gap: 1rem;
   margin-right: 2rem;
-  /* height: 100%; */
-  flex-direction: column;
-  gap: 1rem;
-  margin-right: 2rem;
-  /* height: 100%; */
 }
 
 .popupIcon {
