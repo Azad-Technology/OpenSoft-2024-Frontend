@@ -52,6 +52,16 @@
   margin-top: 1rem;
 }
 
+.watchlist_create input{
+  color: black;
+  font-weight: bold;
+}
+
+.watchlist_create input::placeholder{
+  color: black;
+  font-weight: bold;
+}
+
 .watchlist_divider {
   height: 0;
   width: 100%;
@@ -69,8 +79,8 @@
   width: 100%;
   padding: 0.625rem;
   border: 1px solid white;
-  background-color: #33373d;
-  color: white;
+  background-color: #BBA0B2;
+  color: black;
   border-radius: 0.25rem;
 }
 
@@ -248,9 +258,9 @@
   display: flex;
   align-items: center;
   width: 80%;
-  color: #d2d0d0;
+  color: black;
   justify-content: space-between;
-  background-color: #33373d;
+  background-color: #BBA0B2;
   border: 0.0625rem solid #33373d;
   border-radius: 0.25rem;
   padding: 0.625rem 0.9375rem;
@@ -280,7 +290,7 @@
   padding: 0;
   margin-top: 0;
   overflow-y: auto;
-  background-color: #191e25; /* A dark gray background */
+  background-color: #77556C; /* A dark gray background */
   box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.4);
   border: 0.0625rem solid #33373d;
   border-top: none;
