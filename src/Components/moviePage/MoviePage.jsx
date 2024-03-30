@@ -6,7 +6,7 @@ import instance from "../../axios";
 import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider, PIPButton,useMediaState} from "@vidstack/react";
+import {MediaPlayer, MediaProvider, PIPButton,Poster,useMediaState} from "@vidstack/react";
 import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -59,7 +59,9 @@ function Modal({onClose, movie, token}) {
                   title={movie?.title}
                   src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
                 >
-                  <MediaProvider />
+                  <MediaProvider >
+                    <Poster src={movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"} />
+                  </MediaProvider>
                   <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
                     {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
                   </DefaultVideoLayout>
@@ -73,7 +75,9 @@ function Modal({onClose, movie, token}) {
                   title={movie?.title}
                   src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
                 >
-                  <MediaProvider />
+                  <MediaProvider >
+                    <Poster className="vds-poster" src={movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"} />
+                  </MediaProvider>
                   <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
                     {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
                   </DefaultVideoLayout>
@@ -128,7 +132,9 @@ function ModalTrail({onClose, movie}) {
                 title={movie?.title}
                 src={vidsrc+"?tid="+movie?._id+"?uid="+user?.email}
               >
-                <MediaProvider />
+                <MediaProvider >
+                  <Poster className="vds-poster" src={movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"} />
+                </MediaProvider>
                 <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} />
               </MediaPlayer>
             </div>
