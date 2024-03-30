@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import styles from "./Profile.module.css";
 import Card from "../Card/Card";
 import {useNavigate} from "react-router-dom";
@@ -144,6 +144,42 @@ const Profile = ({setShowPopup3}) => {
     setFavMovie(user?.fav);
   }, [user]);
 
+  const [showLeftBtn, setShowLeftBtn] = useState(false);
+  const [showRightBtn, setShowRightBtn] = useState(true);
+
+  const scrollableDivRef = useRef(null);
+  useEffect(() => {
+    if (favMovie) {
+      console.log(scrollableDivRef.current.scrollWidth -
+          scrollableDivRef.current.scrollLeft -
+          scrollableDivRef.current.clientWidth >
+          40 && scrollableDivRef.current.clientWidth < scrollableDivRef.current.scrollWidth);
+      setShowRightBtn(
+        scrollableDivRef.current.scrollWidth -
+          scrollableDivRef.current.scrollLeft -
+          scrollableDivRef.current.clientWidth >
+          40 && scrollableDivRef.current.clientWidth < scrollableDivRef.current.scrollWidth
+      );
+
+      scrollableDivRef.current.addEventListener("scroll", () => {
+        setShowLeftBtn(scrollableDivRef.current.scrollLeft > 40);
+        setShowRightBtn(
+          scrollableDivRef.current.scrollWidth -
+            scrollableDivRef.current.scrollLeft -
+            scrollableDivRef.current.clientWidth >
+            40 && scrollableDivRef.current.clientWidth < scrollableDivRef.current.scrollWidth
+        );
+      });
+    }
+  }, [favMovie]);
+
+  function handleLeftScroll() {
+    scrollableDivRef.current.scrollLeft -= (80 * window.innerWidth) / 100;
+  }
+  function handleRightScroll() {
+    scrollableDivRef.current.scrollLeft += (80 * window.innerWidth) / 100;
+  }
+
   return (
     <div style={{display: "block"}}>
       <i
@@ -158,11 +194,13 @@ const Profile = ({setShowPopup3}) => {
             {user?.profilePic ? (
               <img src={user.profilePic} alt="avatar" className={styles.avatar} />
             ) : (
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                alt="avatar"
-                className={styles.avatar}
-              />
+              <div
+                // src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                // alt="avatar"
+                className={styles.dp}
+              >
+                {user?.name && user.name.charAt(0).toUpperCase()}
+              </div>
             )}
             <p className={styles.details_f}>{fullname}</p>
             <p className={styles.details_f}>{user?.subtype}</p>
@@ -259,6 +297,26 @@ const Profile = ({setShowPopup3}) => {
                 </div>
               </div>
             )}
+
+            {user?.subtype === "Basic" ?(
+              <div className={styles.row}>
+                <div className={styles.col_sm_3}>
+                  <p className={styles.head}> Account details</p>
+                </div>
+                <div className={styles.col_sm_9}>
+                  <p className={styles.details}>No information available</p>
+                </div>
+              </div>
+            ):
+            <div className={styles.row}>
+              <div className={styles.col_sm_3}>
+                <p className={styles.head}> Account details</p>
+              </div>
+              <div className={styles.col_sm_9}>
+                <p className={styles.details}>Credit Card</p>
+              </div>
+            </div>
+            }
 
             {/* {!user?.subtype === "Basic" ? (
               <div></div>
@@ -369,7 +427,67 @@ const Profile = ({setShowPopup3}) => {
       <div className={styles.favorites}>
         <h1>Favorites</h1>
 
-        <div className={styles.favorites_card}>
+        <div className={styles.favorites_card} ref={scrollableDivRef}>
+          <div className={styles.LeftbtnContainer}>
+                {showLeftBtn && (
+                  <button onClick={handleLeftScroll}>
+                    <svg
+                      fill="#CCAA00"
+                      height="25px"
+                      width="25px"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 512.001 512.001"
+                      xmlSpace="preserve"
+                    >
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        {" "}
+                        <g>
+                          {" "}
+                          <g>
+                            {" "}
+                            <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
+                          </g>{" "}
+                        </g>{" "}
+                      </g>
+                    </svg>
+                  </button>
+                )}
+              </div>
+              <div className={styles.RightbtnContainer}>
+                {showRightBtn && (
+                  <button onClick={handleRightScroll}>
+                    <svg
+                      fill="#CCAA00"
+                      height="25px"
+                      width="25px"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 512.001 512.001"
+                      xmlSpace="preserve"
+                    >
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        {" "}
+                        <g>
+                          {" "}
+                          <g>
+                            {" "}
+                            <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
+                          </g>{" "}
+                        </g>{" "}
+                      </g>
+                    </svg>
+                  </button>
+                )}
+              </div>
           {favMovie && favMovie.length > 0 ? (
             <GeneralSlider movie={[...favMovie].reverse()} />
           ) : (

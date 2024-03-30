@@ -138,34 +138,17 @@ function NewComments(props) {
     } else {
       setDisableBtn(true);
     }
-    const newTextareaHeight = no_of_lines() + 2 + "rem";
-    const parentHeight = no_of_lines() + 4 + "rem";
 
-    const typeComment = document.getElementById("myTextArea");
-    typeComment.style.height = newTextareaHeight;
-
-    setTextareaHeight(newTextareaHeight);
-    setParentHeight(parentHeight);
   }
 
   const [newComment, setNewComment] = useState("");
-
-  function handleTextareaFocus(event) {
-    const newTextareaHeight = no_of_lines() + 2 + "rem";
-    const parentHeight = no_of_lines() + 4 + "rem";
-
-    const typeComment = document.getElementById("myTextArea");
-    typeComment.style.height = newTextareaHeight;
-
-    setTextareaHeight(newTextareaHeight);
-    setParentHeight(parentHeight);
+  
+  function addedComment(){
+    props.setAddedComment(true)
+    setTimeout(()=>{
+      props.setAddedComment(false)
+    },2500)
   }
-
-  function handleTextareaBlur(event) {
-    setTextareaHeight(no_of_lines() + 2 + "rem");
-    setParentHeight(no_of_lines() + 4 + "rem");
-  }
-
   const handleSubmit = async () => {
     if (!token) {
       navigate("/login");
@@ -192,6 +175,7 @@ function NewComments(props) {
         props.setComments(curr);
         setNewComment("");
         // window.location.reload();
+        addedComment()
       } catch (error) {
         console.log(error);
       }
@@ -216,7 +200,6 @@ function NewComments(props) {
                   className={styles.typeComment}
                   style={{height: "100%", overflow: "hidden", whiteSpace: "pre-wrap"}}
                   onChange={event => handleTextAreaChange(event)}
-                  onFocus={handleTextareaFocus}
                   // onBlur={handleTextareaBlur}
                   value={newComment}
                 ></textarea>
@@ -266,9 +249,6 @@ function NewComments(props) {
                       ) : (
                         <>{comments[index]}</>
                       )}
-                      {/* <p style={isOpen? null: paragraphStyle}>
-                      {comments[0]}
-                    </p> */}
                     </div>
                   </div>
                 </div>
@@ -299,6 +279,7 @@ function NewComments(props) {
                     {comments[0]}
                   </p> */}
                   </div>
+
                 </div>
               </div>
             )}

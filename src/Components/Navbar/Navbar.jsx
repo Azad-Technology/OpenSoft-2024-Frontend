@@ -1,16 +1,48 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.css";
-import {useNavigate} from "react-router-dom";
-import {Search} from "./Search";
-import {MobileMenu} from "./MobileMenu.jsx";
-import {useStateValue} from "../../MyContexts/StateProvider.jsx";
+import { useNavigate } from "react-router-dom";
+import { Search } from "./Search";
+import { MobileMenu } from "./MobileMenu.jsx";
+import { useStateValue } from "../../MyContexts/StateProvider.jsx";
 import menuoptions from "./Menuoptions.jsx";
 import GenreModal from "../GenreModal/GenreModal.jsx";
 import popKornLogo from "../../assets/PopKorn_logoText.svg";
+import instance from "../../axios";
 
-export const Navbar = ({movies}) => {
+export const Navbar = ({ movies }) => {
+  const [{ dpToken, user }, dpDispatch] = useStateValue();
   const navigate = useNavigate();
-  const [{token}, dispatch] = useStateValue();
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await instance.get("/user", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${dpToken}`,
+          },
+        });
+
+        // Assuming response.data contains the user data
+        const userData = response.data;
+
+        // Dispatch an action to update the user state with fetched data
+        dpDispatch({ type: "UPDATE_USER", payload: userData });
+
+        // Optional: Do something after fetching user data
+      } catch (error) {
+        // Handle errors (e.g., unauthorized access)
+        console.error("Error fetching user data:", error);
+        // Optionally, you can navigate to a login page or display an error message
+        // navigate('/login');
+      }
+    };
+
+    // Check if dpToken exists before making the request
+    if (dpToken) {
+      fetchUserData();
+    }
+  }, [dpToken]);
+  const [{ token }, dispatch] = useStateValue();
 
   const [showDropdown, setShowDropdown] = useState({
     Genre: false,
@@ -121,15 +153,7 @@ export const Navbar = ({movies}) => {
                     <a
                       onMouseOver={handleToggleDropdown}
                       onClick={event => {
-                        if (
-                          menuoption.name === "Pricing" &&
-                          token &&
-                          token !== "null" &&
-                          token !== "undefined" &&
-                          token !== undefined
-                        )
-                          navigate("/pricing");
-                        else if (menuoption.name === "Pricing") navigate("/login");
+                        if (menuoption.name === "Pricing") navigate("/pricing");
                         else if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
                           setSelectedGenre(menuoption.name);
                         }
@@ -224,12 +248,26 @@ export const Navbar = ({movies}) => {
             <div className={styles.navbar__right}>
               <Search movies={movies} />
               {token &&
-              token !== undefined &&
-              token !== "null" &&
-              token !== "undefined" &&
-              token !== null &&
-              token !== "" ? (
-                <div onClick={() => navigate("/profile")} className={`fa fa-2x fa-user ${styles.desktop_login}`}></div>
+                token !== undefined &&
+                token !== "null" &&
+                token !== "undefined" &&
+                token !== null &&
+                token !== "" ? (
+                <div onClick={() => navigate("/profile")} className={styles.avatar}>
+                  {user?.profilePic ? (
+                    <img src={user.profilePic} alt="avatar" className={styles.avatar} />
+                  ) : (
+                    <div
+                      // src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                      // alt="avatar"
+                      className={styles.dp}
+                    >
+                      <div className={styles.dpName}>
+                        {user?.name && user.name.charAt(0).toUpperCase()}
+                      </div>
+                    </div>
+                  )}
+                </div>
               ) : (
                 <div onClick={() => navigate("/login")} className={styles.desktop_login}>
                   Login
@@ -264,12 +302,24 @@ export const Navbar = ({movies}) => {
             <div className={styles.navbar__right}>
               <i onClick={() => setShowSearchBar(true)} className={`fa fa-2x fa-search ${styles.searchIcon}`}></i>
               {token &&
-              token !== undefined &&
-              token !== "null" &&
-              token !== "undefined" &&
-              token !== null &&
-              token !== "" ? (
-                <i onClick={() => navigate("/profile")} className={`fa fa-2x fa-user ${styles.mobile_login}`}></i>
+                token !== undefined &&
+                token !== "null" &&
+                token !== "undefined" &&
+                token !== null &&
+                token !== "" ? (
+                <div onClick={() => navigate("/profile")} className={styles.avatar}>
+                  {user?.profilePic ? (
+                    <img src={user.profilePic} alt="avatar" className={styles.avatar} />
+                  ) : (
+                    <div
+                      // src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                      // alt="avatar"
+                      className={styles.dp}
+                    >
+                      {user?.name && user.name.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <div onClick={() => navigate("/login")} className={styles.mobile_login}>
                   Login
@@ -279,7 +329,7 @@ export const Navbar = ({movies}) => {
           </div>
           {showSearchBar && (
             <div ref={searchRef}>
-              <Search movies={movies} searchBarRef={searchBarRef} />
+              <Search movies={movies} setShowSearchBar={setShowSearchBar} searchBarRef={searchBarRef} />
             </div>
           )}
           {selectedGenre && selectedID && (

@@ -56,7 +56,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [showPopup2, setShowPopup2] = useState(false);
-  const [showPopup3, setShowPopup3] = useState(false);
+  const [showPopup3,setShowPopup3] = useState(false);
 
   const [{token}, dispatch] = useStateValue();
 
@@ -103,12 +103,12 @@ const App = () => {
                 <Navbar />
                 <div className="homepage">
                   <Carousel />
-                  <HomeSliders setShowPopup3={setShowPopup3} />
+                  <HomeSliders setShowPopup3={setShowPopup3}/>
                   <Footer setSelectedGenre={setSelectedGenre} />
                 </div>
               </>
             }
-          />
+            />
           <Route
             path="/search/:searchTerm"
             element={
@@ -118,16 +118,13 @@ const App = () => {
                 <Footer />
               </>
             }
-          />
-          <Route
-            path="/profile"
-            element={
-              <>
-                {showPopup3 && <RejectedPopup message="Something went wrong" />}
-                <Profile />
-              </>
-            }
-          />
+            />
+          <Route path="/profile" element={
+            <>
+              {showPopup3 && <RejectedPopup message="Something went wrong" />}
+              <Profile setShowPopup3={setShowPopup3}/>
+            </>
+          } />
           <Route
             path="/pricing"
             element={

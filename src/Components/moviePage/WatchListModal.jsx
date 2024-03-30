@@ -4,7 +4,12 @@ import instance from "../../axios";
 import axios from "axios";
 import {useStateValue} from "../../MyContexts/StateProvider";
 import SuccessPopup from "../LoginAcceptedRejected/successfulLogin";
-const WatchListModal = ({onClose, movieID}) => {
+import Notification from "../Notification/notification.jsx";
+import { faL } from "@fortawesome/free-solid-svg-icons";
+
+
+const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
+  const [createwatchlist, setCreateWatchlist] = useState(false)
   const [{token, user}, dispatch] = useStateValue();
   const [watchlistName, setWatchListName] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -61,6 +66,10 @@ const WatchListModal = ({onClose, movieID}) => {
           },
         };
         const response2 = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config2);
+        setCreateWatchlist(true)
+        setTimeout(()=>{
+          setCreateWatchlist(false)
+        },2500)
       } catch (err) {
         console.log(err);
       }
@@ -81,7 +90,16 @@ const WatchListModal = ({onClose, movieID}) => {
     onClose();
   };
 
+  function addedToWatchlist(){
+    setAddedToWatchlist(true)
+    setTimeout(()=>{
+      setAddedToWatchlist(false)
+    },2500)
+
+  }
+
   const addWatchList = async e => {
+    addedToWatchlist()
     e.preventDefault();
     if (selectedWatchlists.length === 0) {
       setErrorMsg("Please select a watchlist");
@@ -152,7 +170,9 @@ const WatchListModal = ({onClose, movieID}) => {
     <div className={styles.watchlist_modal_overlay}>
       {isPopup && <SuccessPopup message={message} />}
       <div className={styles.watchlist_modal}>
-        <div className={styles.watchlist_modal_content}>
+        <div className={styles.watchlist_modal_content}>      
+          <Notification message={`Created watchlist`} isVisible={createwatchlist}/>
+        
           <div className={styles.watchlist_modal_heading}>Add to Watchlist</div>
 
           <div className={styles.watchlist_modal_section}>

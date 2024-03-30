@@ -87,6 +87,7 @@
 }
 
 .navbar__right {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -218,6 +219,34 @@ a {
   }
 }
 
+.avatar {
+  border-radius: 50%;
+  width: 3.5rem;
+  margin-bottom: 5%;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.dp {
+  position: absolute;
+  top: 50%;
+  right: -8%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #ffffff;
+  background-color: #276157;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dpName{
+  font-size: 2rem;
+}
 @media screen and (max-height: 510px) {
   .navbar {
     padding-top: 1rem;
@@ -250,3 +279,4 @@ a {
         height:0rem;
     }
 } */
+

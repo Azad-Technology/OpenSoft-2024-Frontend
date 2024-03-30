@@ -7,7 +7,7 @@ import TopMovieList from "../movieList/TopMovieList.jsx";
 
 const GeneralSlider = ({movie}) => {
   const [movies, setMovies] = useState(null);
-
+  console.log('mov: ' , movies);
   useEffect(() => {
     setMovies(movie);
   }, [movie]);

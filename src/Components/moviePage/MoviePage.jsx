@@ -184,7 +184,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const getCommentData = async () => {
-      const response = await instance.get(`/movies/${id}/comments?count=10`);
+      const response = await instance.get(`/movies/${id}/comments/?count=10`);
       // console.log(response.data);
       setComments(response.data);
     };
@@ -283,11 +283,6 @@ const MoviePage = () => {
     setlike(user?.fav.some(movies => movies?._id === movie?._id));
   }, [movie, user]);
 
-  //     // event listeners
-
-  //     window.addEventListener("resize", screenSizeChanged);
-  //     window.addEventListener("load", screenSizeChanged);
-
   window.addEventListener("resize", () => {
     setSmallScreen(window.innerWidth <= 550);
   });
@@ -331,7 +326,9 @@ const MoviePage = () => {
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
-          style={{backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}}
+          style={{
+            backgroundImage: `url(${movie && movie.backdrop_path !== undefined ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
+          }}
         >
           <div className={styles.title}>{movie?.title}</div>
         </div>
@@ -339,7 +336,9 @@ const MoviePage = () => {
           className={styles.heroContainer}
           style={
             !smallScreen && movie
-              ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
+              ? {
+                  backgroundImage: `url(${movie && movie.backdrop_path !== undefined ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
+                }
               : {backgroundImage: "none"}
           }
         >
@@ -404,7 +403,7 @@ const MoviePage = () => {
                 <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
-                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart} style={{color:"red"}}></i>
                     ) : (
                       <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
                     )}
@@ -444,22 +443,12 @@ const MoviePage = () => {
                 <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
-                <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleTrailerClick}>
+                <button className={styles.modalbutton} onClick={handleTrailerClick}>
                   Trailer
                 </button>
                 {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
                 {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
-                {/* <span>
-                  <span className={styles.icon} id="heartIcon">
-                    {like ? (
-                      <i class={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
-                    ) : (
-                      <i class={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
-                    )}
-                  </span>
-                </span>
-                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />} */}
+                
               </span>
             </div>
           </div>
@@ -523,32 +512,32 @@ const MoviePage = () => {
         </div>
         {movie?.fullplot.length >= 600 && (
           <div className={styles.showMoreInfoBtnCont}>
-            <button id="showMoreInfo" className={styles.showMoreInfoBtn} onClick={handleShowMoreInfoBtn}>
-              <svg
-                fill="#FFFE3E"
-                height="25px"
-                width="25px"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 512.001 512.001"
-                xmlSpace="preserve"
-              >
-                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <g>
-                    {" "}
-                    <g>
+            <button onClick={handleShowMoreInfoBtn} className={styles.showMoreInfoBtn} id="showMoreInfo">
+                  <svg
+                    fill="#fffe3e"
+                    height="25px"
+                    width="25px"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 512.001 512.001"
+                    xmlSpace="preserve"
+                  >
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
                       {" "}
-                      <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
-                    </g>{" "}
-                  </g>{" "}
-                </g>
-              </svg>
-            </button>
+                      <g>
+                        {" "}
+                        <g>
+                          {" "}
+                          <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
+                        </g>{" "}
+                      </g>{" "}
+                    </g>
+                  </svg>
+                </button>
           </div>
         )}
 

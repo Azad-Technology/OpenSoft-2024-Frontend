@@ -117,7 +117,9 @@ const Card = ({movies, val, length, onClose, basis}) => {
           {movies && (
             <img
               loading="lazy"
-              src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
+              src={
+                movies && movies.poster_path ? `https://image.tmdb.org/t/p/w500${movies.poster_path}` : "/poster_1.jpg"
+              }
               className={styles.cards_img}
             />
           )}
