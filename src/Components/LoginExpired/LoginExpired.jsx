@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 const LoginExpired = () => {
   const navigate = useNavigate();
+  localStorage.clear();
 
   return (
     <>
@@ -15,7 +16,7 @@ const LoginExpired = () => {
         <div
           className={styles.LoginExpired}
           onClick={() => {
-            navigate("/login", {replace: true});
+            navigate("/", {replace: true});
           }}
         >
           Log In
