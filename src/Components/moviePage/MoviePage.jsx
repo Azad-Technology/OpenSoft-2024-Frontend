@@ -123,7 +123,7 @@ function ModalTrail({onClose, movie}) {
 const MoviePage = () => {
   const [premium, setPremium] = useState(true);
   const [addedToWatchlist, setAddedToWatchlist] = useState(false)
-
+  const [addedComment, setAddedComment] = useState(false)
   const [{token, user}, dispatch] = useStateValue();
 
   //Genre Modals
@@ -537,8 +537,8 @@ const MoviePage = () => {
           </div>
         )}
 
-        {comments ? <Comments setComments={setComments} info={comments} id={id} /> : <></>}
-
+        {comments ? <Comments setComments={setComments} info={comments} id={id} setAddedComment={setAddedComment}/> : <></>}
+          <Notification message="Comment posted" isVisible={addedComment}/>
         <MoreLikeThis id={id} />
         {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
       </div>
