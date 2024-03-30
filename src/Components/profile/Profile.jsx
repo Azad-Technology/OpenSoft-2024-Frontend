@@ -10,7 +10,7 @@ import {Slider} from "@vidstack/react";
 import MovieList from "../movieList/MovieList";
 import GeneralSlider from "../HomeSliders/GeneralSlider";
 
-const Profile = () => {
+const Profile = ({setShowPopup3}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [{token, user}, dispatch] = useStateValue();
   const navigate = useNavigate();
@@ -36,14 +36,7 @@ const Profile = () => {
   const handleDownloadInvoice = async () => {
     setIsLoading(true);
     try {
-      const response = await instance.get("/user", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      const invoiceUrl = response.data.invoice_url;
+      const invoiceUrl = user?.invoice_url;
       window.open(invoiceUrl, "_blank");
     } catch (error) {
       console.error("Error fetching and downloading invoice:", error);
@@ -55,7 +48,7 @@ const Profile = () => {
   const sendChangeRequest = async e => {
     try {
       const response = await instance.patch(
-        "/update_user/",
+        "/update_user",
         {
           new_name: fullname,
           new_email: user.email,
@@ -68,7 +61,10 @@ const Profile = () => {
         }
       );
     } catch (err) {
-      console.log(err);
+      setShowPopup3(true);
+      setTimeout(() => {
+        setShowPopup3(false);
+      }, 2000);
     }
   };
 
@@ -103,7 +99,7 @@ const Profile = () => {
   const handleUpdatePasswordRequest = async e => {
     try {
       const response = await instance.patch(
-        "/update_password/",
+        "/update_password",
         {
           old_password: verificationcurrentPassword,
           new_password: newPassword,
@@ -118,7 +114,6 @@ const Profile = () => {
       );
       alert("Password updated successfully");
     } catch (err) {
-      console.log(err.response);
       if (err.response && err.response.status === 401) {
         alert("Wrong password. Please check your current password.");
       } else {
@@ -146,7 +141,6 @@ const Profile = () => {
   useEffect(() => {
     setFullname(user?.name);
     setFavMovie(user?.fav);
-    console.log(favMovie);
   }, [user]);
 
   return (

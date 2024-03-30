@@ -18,7 +18,7 @@ const SearchPage = () => {
         query: searchTerm,
       });
       setFuzzy(response.data);
-      
+
       // console.log(response.data);
     } catch (error) {
       setFuzzy([]);
@@ -234,27 +234,21 @@ const SearchPage = () => {
       </div>
       {fuzzy && (
         <div className={styles.results_container}>
-          {fuzzy?.map((movie, index) =>{ 
-              const paths = movie.highlights
-              ? Array.from(new Set(movie.highlights.map((highlight) => highlight.path)))
+          {fuzzy?.map((movie, index) => {
+            const paths = movie.highlights
+              ? Array.from(new Set(movie.highlights.map(highlight => highlight.path)))
               : [];
 
-              let basisText =
+            let basisText =
               paths.length > 0
                 ? paths
                     .slice(0, -1)
                     .join(", ")
                     .concat(paths.length > 1 ? ` and ${paths.slice(-1)}` : "")
                 : "plot";
-              paths.length === 1 ? (basisText = paths[0]) : basisText;
-              return(
-                <FuzzyCard
-                key={index}
-                movies={movie}
-                basis={basisText}
-                />
-              )
-            })}
+            paths.length === 1 ? (basisText = paths[0]) : basisText;
+            return <FuzzyCard key={index} movies={movie} basis={basisText} />;
+          })}
         </div>
       )}
       {!fuzzy && (

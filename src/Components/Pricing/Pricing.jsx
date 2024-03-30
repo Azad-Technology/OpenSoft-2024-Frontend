@@ -6,6 +6,7 @@ import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
 import {Link} from "react-router-dom";
 import {useSearchParams} from "react-router-dom";
+
 function Pricing() {
   const [annually, setAnnually] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
@@ -24,32 +25,16 @@ function Pricing() {
     window.scroll(0, 0);
   }, []);
   useEffect(() => {
-    dispatch({
-      type: "INITIALIZE_TOKEN",
-    });
     if (token && token !== "null" && token !== "undefined") {
       const getUser = async () => {
-        try {
-          const user = await instance.get("/user", {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
-          dispatch({
-            type: "SET_USER",
-            user: user.data,
-          });
-          //console.log(user.data.subtype);
-          if (user.data.subtype == "Gold") {
-            setIsGold(true);
-          }
-          if (user.data.subtype == "Silver") {
-            setIsSilver(true);
-          }
-          //console.log(isGold,isSilver);
-        } catch (err) {
-          console.log(err);
+        //console.log(user.data.subtype);
+        if (user?.subtype == "Gold") {
+          setIsGold(true);
         }
+        if (user?.subtype == "Silver") {
+          setIsSilver(true);
+        }
+        //console.log(isGold,isSilver);
       };
       getUser();
     }

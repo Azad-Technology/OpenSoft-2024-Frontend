@@ -31,7 +31,7 @@ const Watchlist = ({movies, name, id}) => {
     }
   };
 
-  const deleteMovie = async (movieID) => {
+  const deleteMovie = async movieID => {
     try {
       let config = {
         method: "patch",
@@ -49,7 +49,7 @@ const Watchlist = ({movies, name, id}) => {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   return (
     <div className={styles.watchlist_container}>
@@ -83,9 +83,15 @@ const Watchlist = ({movies, name, id}) => {
             return (
               <div className={styles.cardcontainer}>
                 <Card movies={m} />
-                <img src={deleteIconWhite} className={styles.deleteimage} height={30} width={30} onClick={() => (deleteMovie(m._id))} />
+                <img
+                  src={deleteIconWhite}
+                  className={styles.deleteimage}
+                  height={30}
+                  width={30}
+                  onClick={() => deleteMovie(m._id)}
+                />
               </div>
-            )
+            );
           })}
         </div>
       </div>

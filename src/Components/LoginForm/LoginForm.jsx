@@ -59,7 +59,6 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
         }
         navigate(-1);
       } catch (error) {
-        console.log(error);
         setErrors(error.response.data.detail);
         setShowPopup2(true);
         setTimeout(() => {
@@ -71,22 +70,6 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
-  };
-
-  const handleGoogleClick = async () => {
-    try {
-      const response = await instance.get("/login/google");
-      console.log(response.data);
-      // setIsGoogle(true);
-      let newWindow = window.open(response.data.url, "name", "height=600,width=450");
-      setGoogleWindow(newWindow);
-      console.log(newWindow);
-      if (window.focus) newWindow.focus();
-      setIsGoogle(true);
-    } catch (error) {
-      // console.log(error);
-      setErrors(error.response.data.detail);
-    }
   };
 
   useEffect(() => {

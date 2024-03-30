@@ -10,7 +10,7 @@ import {faL} from "@fortawesome/free-solid-svg-icons";
 import LoginForm from "../LoginForm/LoginForm.jsx";
 import imdb from "../../assets/imdb-icon.svg";
 
-const Card = ({movies, val, length, onClose}) => {
+const Card = ({movies, val, length, onClose, setShowPopup3}) => {
   const [{user, token}, dispatch] = useStateValue();
 
   if (onClose === undefined || onClose === null) {
@@ -49,7 +49,10 @@ const Card = ({movies, val, length, onClose}) => {
         dispatch({type: "REM_FAV", movie: movies});
       }
     } catch (err) {
-      console.log(err);
+      setShowPopup3(true);
+      setTimeout(() => {
+        setShowPopup3(false);
+      }, 2000);
     }
   };
 

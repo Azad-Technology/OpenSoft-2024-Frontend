@@ -7,7 +7,7 @@
   flex-direction: row;
 }
 .background_grad {
-  background: linear-gradient(180deg, #672853, #1F0C19);
+  background: linear-gradient(180deg, #672853, #1f0c19);
   height: 80vh;
   width: 100vw;
   position: relative;
@@ -66,8 +66,8 @@
 }
 
 .back_button {
-  background-color: #FFFE3E;
-  color: #1F0C19;
+  background-color: #fffe3e;
+  color: #1f0c19;
   border: none;
   border-radius: 0.25rem;
   padding: 1rem;
@@ -91,8 +91,8 @@
   margin-right: 0.5rem;
 }
 .delete_button {
-  background-color: #FFFE3E;
-  color: rgb(31,12, 25);
+  background-color: #fffe3e;
+  color: rgb(31, 12, 25);
   border: none;
   border-radius: 0.25rem;
   padding: 1rem;
@@ -101,11 +101,11 @@
   transition: color 0.3s ease;
 }
 .delete_button:hover {
-  background-color: #CCCC00;
+  background-color: #cccc00;
 }
 
 .back_button:hover {
-  background-color: #CCCC00;
+  background-color: #cccc00;
 }
 
 .movieList {
@@ -117,18 +117,18 @@
   padding: 0 2rem 4rem 2rem;
 }
 
-.cardcontainer{
+.cardcontainer {
   display: flex;
   position: relative;
 }
 
-.deleteimage{
+.deleteimage {
   position: absolute;
-  top:1.1rem;
-  right:-0.3rem;
+  top: 1.1rem;
+  right: -0.3rem;
   cursor: pointer;
 }
 
-.deleteimage:hover{
+.deleteimage:hover {
   transform: scale(1.3);
 }

@@ -84,7 +84,7 @@ const reducer = (state, action) => {
           watchlist: state.user.watchlist.filter(watchlist => watchlist._id !== action.watchlistID),
         },
       };
-      case "REMOVE_MOVIE_FROM_WATCHLIST":
+    case "REMOVE_MOVIE_FROM_WATCHLIST":
       return {
         ...state,
         user: {

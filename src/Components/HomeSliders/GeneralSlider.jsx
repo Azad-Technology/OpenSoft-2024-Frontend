@@ -1,7 +1,6 @@
 import React, {useEffect, useState, useRef} from "react";
 import styles from "./HomeSliders.module.css";
 import Card from "../Card/Card.jsx";
-import instance from "../../axios.jsx";
 import MovieList from "../movieList/MovieList.jsx";
 import Loader from "./../Loader/Loader.jsx";
 import TopMovieList from "../movieList/TopMovieList.jsx";

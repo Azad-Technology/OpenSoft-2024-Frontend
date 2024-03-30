@@ -121,7 +121,6 @@ export const Navbar = ({movies}) => {
                     <a
                       onMouseOver={handleToggleDropdown}
                       onClick={event => {
-                        console.log();
                         if (
                           menuoption.name === "Pricing" &&
                           token &&

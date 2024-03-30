@@ -27,8 +27,6 @@ function Modal({onClose, movie, token}) {
   useEffect(() => {
     if (movie && token) {
       const choosenmovie = chooseMovie(movie?.title);
-      console.log("choosenmovie", choosenmovie);
-      console.log(choosenmovie);
       switch (user.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -73,8 +71,6 @@ function ModalTrail({onClose, movie}) {
   useEffect(() => {
     if (movie) {
       const choosenmovie = chooseMovie(movie?.title);
-      console.log("choosenmovie", choosenmovie);
-      console.log(choosenmovie);
       switch (user?.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -156,7 +152,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const getCommentData = async () => {
-      const response = await instance.get(`/movies/${id}/comments/?count=10`);
+      const response = await instance.get(`/movies/${id}/comments?count=10`);
       // console.log(response.data);
       setComments(response.data);
     };

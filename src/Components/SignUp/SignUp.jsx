@@ -62,7 +62,6 @@ function SignUp({setShowPopup}) {
             }, 3000);
             navigate(-1);
           } catch (error) {
-            console.log(error);
             setErrors(error.response.data.detail);
             setShowPopup2(true);
             setTimeout(() => {
@@ -72,7 +71,6 @@ function SignUp({setShowPopup}) {
         } else setErrors("Password does not match");
       }
     }
-    console.log(err);
   };
 
   const handleGoogleClick = async () => {
@@ -80,7 +78,6 @@ function SignUp({setShowPopup}) {
       const response = await instance.get("/login/google");
       window.location.href = response.data.url;
     } catch (error) {
-      console.log(error);
       setErrors(error.response.data.detail);
     }
   };

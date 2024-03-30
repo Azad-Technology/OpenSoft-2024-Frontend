@@ -12,18 +12,17 @@ import {useNavigate} from "react-router-dom";
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
 function NewComments(props) {
-  const [{token,user}, dispatch] = useStateValue();
+  const [{token, user}, dispatch] = useStateValue();
 
- 
   const [isOpenArray, setIsOpenArray] = useState(Array(10).fill(false));
 
-  const toggleComment = (index) => {
+  const toggleComment = index => {
     const newArray = [...isOpenArray];
     newArray[index] = !newArray[index];
     setIsOpenArray(newArray);
   };
 
-  const maxLength=150; // Max length of comment
+  const maxLength = 150; // Max length of comment
 
   function truncateComment(comment, maxLength) {
     if (comment.length <= maxLength) {
@@ -31,15 +30,10 @@ function NewComments(props) {
     }
 
     // Truncate the comment to the specified maximum length and add "..."
-    return comment.slice(0, maxLength) + '...';
+    return comment.slice(0, maxLength) + "...";
   }
 
-
-
-
-
-
-//check mobile view
+  //check mobile view
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -47,14 +41,14 @@ function NewComments(props) {
     };
 
     // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Initial check for screen size
     handleResize();
 
     // Clean up the event listener on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -70,31 +64,30 @@ function NewComments(props) {
   });
 
   // Assuming you have an array of profile picture links
-const profilePicLinks = [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
-  "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
-  "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
-  "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
-  "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
-  "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
-  "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
-  "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
-  "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
-];
+  const profilePicLinks = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
+    "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
+    "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
+    "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
+    "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
+    "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
+    "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
+    "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
+    "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
+  ];
 
-function getProfilePicLink(username) {
-  // Find the index of the username in the 'name' array
-  const index = name.indexOf(username);
-  if (index !== -1) {
-    // If the username is found, use modulus to cycle through the profile picture links
-    return profilePicLinks[index];
-  } else {
-    // If the username is not found, return a default profile picture link
-    return "default_profile_pic.jpg";
+  function getProfilePicLink(username) {
+    // Find the index of the username in the 'name' array
+    const index = name.indexOf(username);
+    if (index !== -1) {
+      // If the username is found, use modulus to cycle through the profile picture links
+      return profilePicLinks[index];
+    } else {
+      // If the username is not found, return a default profile picture link
+      return "default_profile_pic.jpg";
+    }
   }
-}
-
 
   let date = props.info.map(obj => {
     return obj.date;
@@ -257,36 +250,25 @@ function getProfilePicLink(username) {
                   </div>
                   <div className={styles.commentContent}>
                     <div className={styles.commentContent}>
-                    {
-                          isMobile && comments[index].length>maxLength ? (
-                            <>
-                              <p>
-                                {isOpenArray[index]?(
-                                  <p>
-                                  {comments[index]}
-                                  </p>
-                                ):(
-                                  <p>
-                                  {truncateComment(comments[index],maxLength)}
-                                  </p>
-                                )
-
-                              }
-                                
-                              </p>
-                              <button onClick={()=>toggleComment(index)} className={styles.readMoreBtn}>
-                                {isOpenArray[index]? 'read less...': 'read more...'}
-                              </button>
-                              
-                            </>
-                          ):(
-                            <>{comments[index]}</>
-                          )
-                    }
-                    {/* <p style={isOpen? null: paragraphStyle}>
+                      {isMobile && comments[index].length > maxLength ? (
+                        <>
+                          <p>
+                            {isOpenArray[index] ? (
+                              <p>{comments[index]}</p>
+                            ) : (
+                              <p>{truncateComment(comments[index], maxLength)}</p>
+                            )}
+                          </p>
+                          <button onClick={() => toggleComment(index)} className={styles.readMoreBtn}>
+                            {isOpenArray[index] ? "read less..." : "read more..."}
+                          </button>
+                        </>
+                      ) : (
+                        <>{comments[index]}</>
+                      )}
+                      {/* <p style={isOpen? null: paragraphStyle}>
                       {comments[0]}
                     </p> */}
-
                     </div>
                   </div>
                 </div>
@@ -301,35 +283,21 @@ function getProfilePicLink(username) {
                 </div>
                 <div className={styles.commentContent}>
                   <div className={styles.commentContent}>
-                  {
-                        isMobile && comments[0].length>maxLength ? (
-                          <>
-                            <p>
-                              {isOpenArray[0]?(
-                                <p>
-                                {comments[0]}
-                                </p>
-                              ):(
-                                <p>
-                                {truncateComment(comments[0],maxLength)}
-                                </p>
-                              )
-
-                            }
-                              
-                            </p>
-                            <button onClick={()=>toggleComment(0)} className={styles.readMoreBtn}>
-                              {isOpenArray[0]? 'read less...': 'read more...'}
-                            </button>
-                          </>
-                        ):(
-                          <>{comments[0]}</>
-                        )
-                  }
-                  {/* <p style={isOpen? null: paragraphStyle}>
+                    {isMobile && comments[0].length > maxLength ? (
+                      <>
+                        <p>
+                          {isOpenArray[0] ? <p>{comments[0]}</p> : <p>{truncateComment(comments[0], maxLength)}</p>}
+                        </p>
+                        <button onClick={() => toggleComment(0)} className={styles.readMoreBtn}>
+                          {isOpenArray[0] ? "read less..." : "read more..."}
+                        </button>
+                      </>
+                    ) : (
+                      <>{comments[0]}</>
+                    )}
+                    {/* <p style={isOpen? null: paragraphStyle}>
                     {comments[0]}
                   </p> */}
-
                   </div>
                 </div>
               </div>

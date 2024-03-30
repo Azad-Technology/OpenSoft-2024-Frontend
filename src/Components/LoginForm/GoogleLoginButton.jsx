@@ -22,7 +22,6 @@ export const GoogleLoginButton = ({register, setShowPopup, setShowPopup2}) => {
             Authorization: `Bearer ${codeResponse.access_token}`,
           },
         });
-        console.log(response);
         const email = response.data.email;
         const name = response.data.name;
         const profilePic = response.data.picture;
@@ -33,7 +32,6 @@ export const GoogleLoginButton = ({register, setShowPopup, setShowPopup2}) => {
             profilePic: profilePic,
           })
           .then(response => {
-            console.log(response);
             dispatch({
               type: "SET_TOKEN",
               token: response.data.token,
@@ -45,7 +43,6 @@ export const GoogleLoginButton = ({register, setShowPopup, setShowPopup2}) => {
           setShowPopup(false);
         }, 4000);
       } catch (err) {
-        console.log(err);
         setShowPopup2(true);
         setTimeout(() => {
           setShowPopup2(false);

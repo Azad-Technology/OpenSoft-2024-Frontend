@@ -1,6 +1,5 @@
 import {useState, useRef, useEffect} from "react";
 import styles from "./WatchListCards.module.css";
-import instance from "../../axios";
 import {WatchListCards} from "./WatchListCards";
 import {useStateValue} from "../../MyContexts/StateProvider";
 
