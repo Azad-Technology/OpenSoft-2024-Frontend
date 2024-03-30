@@ -29,9 +29,6 @@
     "react-oauth": "^0.0.1",
     "react-router-dom": "^6.22.3",
     "react-toastify": "^10.0.5",
-    "react-video-js-player": "^1.1.1",
-    "realm": "^12.6.2",
-    "realm-web": "^2.0.0",
     "use-debounce": "^10.0.0"
   },
   "devDependencies": {

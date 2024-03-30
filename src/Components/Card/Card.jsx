@@ -25,17 +25,19 @@ const Card = ({movies, val, length, onClose, setShowPopup3}) => {
     if (!token) {
       navigate("/login");
     }
-
+    addFavouriteRequest();
     if (like) {
       setlike(false);
     } else {
       setlike(true);
     }
     event.stopPropagation();
-    addFavouriteRequest();
   };
 
   const addFavouriteRequest = async e => {
+    if(user?.fav.length >= 10 && user?.subtype === "Basic"){
+      return;
+    }
     try {
       const response = await instance.patch(`/add_favourite/${movies?._id}`, null, {
         headers: {
@@ -118,7 +120,9 @@ const Card = ({movies, val, length, onClose, setShowPopup3}) => {
           {movies && (
             <img
               loading="lazy"
-              src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
+              src={
+                movies && movies.poster_path ? `https://image.tmdb.org/t/p/w500${movies.poster_path}` : "/poster_1.jpg"
+              }
               className={styles.cards_img}
             />
           )}

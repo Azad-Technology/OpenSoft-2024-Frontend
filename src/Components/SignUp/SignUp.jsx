@@ -60,7 +60,7 @@ function SignUp({setShowPopup}) {
             setTimeout(() => {
               setShowPopup(false);
             }, 3000);
-            navigate(-1);
+            navigate('/');
           } catch (error) {
             setErrors(error.response.data.detail);
             setShowPopup2(true);

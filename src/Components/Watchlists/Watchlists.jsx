@@ -24,7 +24,7 @@ export const Watchlists = () => {
       };
       getWatchlist();
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }, []);
   return <>{movies ? <Watchlist movies={movies.movies} id={movies._id} name={movies.name} /> : <Loader />}</>;

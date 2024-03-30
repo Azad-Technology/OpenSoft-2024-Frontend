@@ -6,7 +6,7 @@ import instance from "../../axios";
 import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider, PIPButton} from "@vidstack/react";
+import {MediaPlayer, MediaProvider, PIPButton,useMediaState} from "@vidstack/react";
 import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -23,11 +23,13 @@ import Notification from "../Notification/notification.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
-
   const [vidsrc, setVidsrc] = useState(null);
+  const [vidthumb, setVidthumb] = useState(null);
+  // const isActive = useMediaState('pictureInPicture');
   useEffect(() => {
     if (movie && token) {
       const choosenmovie = chooseMovie(movie?.title);
+      setVidthumb(choosenmovie[3]);
       switch (user.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -50,12 +52,32 @@ function Modal({onClose, movie, token}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer storage={`${movie?._id} movie`} title={movie?.title} src={vidsrc + "?mid=" + movie?._id}>
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons}>
-                <PIPButton />
-              </DefaultVideoLayout>
-            </MediaPlayer>
+            {user?.subtype==="Basic"? <div className="basic_video">
+
+              <MediaPlayer
+                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                </DefaultVideoLayout>
+              </MediaPlayer>
+            </div>:
+            <div className="premium_video">
+
+              <MediaPlayer
+                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                </DefaultVideoLayout>
+              </MediaPlayer>
+            </div>}
           </div>
         </div>
         {/* Close button */}
@@ -69,11 +91,12 @@ function Modal({onClose, movie, token}) {
 
 function ModalTrail({onClose, movie}) {
   const [{user}, dispatch] = useStateValue();
-
   const [vidsrc, setVidsrc] = useState(null);
+  const [vidthumb, setVidthumb] = useState(null);
   useEffect(() => {
     if (movie) {
       const choosenmovie = chooseMovie(movie?.title);
+      setVidthumb(choosenmovie[3]);
       switch (user?.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -96,15 +119,17 @@ function ModalTrail({onClose, movie}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer
+            <div className="basic_video">
+              <MediaPlayer
               clipEndTime={30}
-              storage={`${movie?._id} trail`}
-              title={movie?.title}
-              src={vidsrc + "?tid=" + movie?._id}
-            >
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
+                storage={user?.subtype!="Basic" && `${movie?._id} trail ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?tid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} />
+              </MediaPlayer>
+            </div>
           </div>
         </div>
         {/* Close button */}
@@ -118,8 +143,7 @@ function ModalTrail({onClose, movie}) {
 
 const MoviePage = () => {
   const [premium, setPremium] = useState(true);
-  const [addedToWatchlist, setAddedToWatchlist] = useState(false)
-  const [addedComment, setAddedComment] = useState(false)
+
   const [{token, user}, dispatch] = useStateValue();
 
   //Genre Modals
@@ -161,7 +185,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const getCommentData = async () => {
-      const response = await instance.get(`/movies/${id}/comments?count=10`);
+      const response = await instance.get(`/movies/${id}/comments/?count=10`);
       // console.log(response.data);
       setComments(response.data);
     };
@@ -171,8 +195,9 @@ const MoviePage = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [showLess, setShowLess] = useState(false);
   const [showPlotLess, setShowPlotLess] = useState(true);
-  const [showMoreInfo, setShowMoreInfo] = useState(true);
+  const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [smallScreen, setSmallScreen] = useState(false);
+  const [addedToWatchlist, setAddedToWatchlist] = useState(false);
 
   // functions
 
@@ -214,16 +239,15 @@ const MoviePage = () => {
     screenSizeChanged();
   }
   function handleShowMoreInfoBtn() {
-    const elem = document.getElementById("showMoreInfo");
-    if (showMoreInfo) {
-      setShowMoreInfo(false);
-      setShowPlotLess(false);
-      elem.style.transform = "rotate(180deg)";
-    } else {
-      setShowMoreInfo(true);
-      setShowPlotLess(true);
+    console.log("clicked");
+    const elem = document.getElementById("showMoreInfobtn");
+    if(showMoreInfo){
       elem.style.transform = "rotate(0deg)";
+    } else{
+      elem.style.transform = "rotate(180deg)";
     }
+    setShowMoreInfo(!showMoreInfo);
+    setShowPlotLess(!showPlotLess);
   }
   const openHeart = event => {
     if (!token) {
@@ -252,18 +276,13 @@ const MoviePage = () => {
         dispatch({type: "REM_FAV", movie: movie});
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
   useEffect(() => {
     setlike(user?.fav.some(movies => movies?._id === movie?._id));
   }, [movie, user]);
-
-  //     // event listeners
-
-  //     window.addEventListener("resize", screenSizeChanged);
-  //     window.addEventListener("load", screenSizeChanged);
 
   window.addEventListener("resize", () => {
     setSmallScreen(window.innerWidth <= 550);
@@ -281,7 +300,7 @@ const MoviePage = () => {
         if (user && user.subtype != "Basic") {
           setShowModal(true);
         } else {
-          setShowPopup(true);
+          // setShowPopup(true);
           navigate("/pricing");
           setTimeout(() => {
             setShowPopup(false);
@@ -305,10 +324,13 @@ const MoviePage = () => {
 
   return (
     <>
+      {addedToWatchlist && <Notification message={`Added To Watchlist`} isVisible={addedToWatchlist}/>}
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
-          style={{backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}}
+          style={{
+            backgroundImage: `url(${movie && movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
+          }}
         >
           <div className={styles.title}>{movie?.title}</div>
         </div>
@@ -316,7 +338,9 @@ const MoviePage = () => {
           className={styles.heroContainer}
           style={
             !smallScreen && movie
-              ? {backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie?.backdrop_path})`}
+              ? {
+                  backgroundImage: `url(${movie && movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"})`,
+                }
               : {backgroundImage: "none"}
           }
         >
@@ -381,25 +405,16 @@ const MoviePage = () => {
                 <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
-                      <i
-                        className={`fa fa-heart fa-lg`}
-                        aria-hidden="true"
-                        onClick={openHeart}
-                        style={{color: "red"}}
-                      ></i>
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart} style={{color:"red"}}></i>
                     ) : (
                       <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
                     )}
                   </span>
                 </span>
-
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} setAddedToWatchlist={setAddedToWatchlist}/>}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} setAddedToWatchlist={setAddedToWatchlist} />}
               </span>
-
             </div>
-            <Notification message="Added to watchlist" isVisible={addedToWatchlist}/>
-
             <div className={styles.genreList}>
               {!movie?.genres && (
                 <div className={styles.skeleton__headers}>
@@ -430,25 +445,12 @@ const MoviePage = () => {
                 <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
-                <button
-                  className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`}
-                  onClick={handleTrailerClick}
-                >
+                <button className={styles.modalbutton} onClick={handleTrailerClick}>
                   Trailer
                 </button>
                 {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
                 {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
-                {/* <span>
-                  <span className={styles.icon} id="heartIcon">
-                    {like ? (
-                      <i class={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
-                    ) : (
-                      <i class={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
-                    )}
-                  </span>
-                </span>
-                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />} */}
+                
               </span>
             </div>
           </div>
@@ -512,8 +514,9 @@ const MoviePage = () => {
         </div>
         {movie?.fullplot.length >= 600 && (
           <div className={styles.showMoreInfoBtnCont}>
-            <button onClick={handleShowMoreInfoBtn} className={styles.showMoreInfoBtn} id="showMoreInfo">
+            <button onClick={handleShowMoreInfoBtn} className={styles.showMoreInfoBtn} id="showMoreInfobtn">
                   <svg
+                    // fill="#cf0a0a"
                     fill="#fffe3e"
                     height="25px"
                     width="25px"
@@ -541,8 +544,8 @@ const MoviePage = () => {
           </div>
         )}
 
-        {comments ? <Comments setComments={setComments} info={comments} id={id} setAddedComment={setAddedComment}/> : <></>}
-          <Notification message="Comment posted" isVisible={addedComment}/>
+        {comments ? <Comments setComments={setComments} info={comments} id={id} /> : <></>}
+
         <MoreLikeThis id={id} />
         {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
       </div>

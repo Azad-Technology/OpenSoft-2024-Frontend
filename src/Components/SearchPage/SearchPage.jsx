@@ -4,7 +4,6 @@ import axios from "axios";
 import styles from "./CustomDropdown.module.css";
 import {useParams} from "react-router-dom";
 import MovieModalList from "../GenreModal/MovieModalList.jsx";
-import * as Realm from "realm-web";
 import FuzzyCard from "../Card/FuzzyCard.jsx";
 import  Card  from '../Card/Card.jsx';
 import GeneralSlider from "../HomeSliders/GeneralSlider.jsx";

@@ -54,12 +54,12 @@
 }
 
 .watchlist_create input {
-  color: black;
+  color: white;
   font-weight: bold;
 }
 
 .watchlist_create input::placeholder {
-  color: black;
+  color: white;
   font-weight: bold;
 }
 

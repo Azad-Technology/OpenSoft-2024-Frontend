@@ -36,6 +36,14 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
       setErrorMsg("Name should be less than 15 characters");
       return;
     }
+    if(user?.subtype === "Basic" && user.watchlist.length >= 1){
+      setErrorMsg("You can only have 1 watchlist with a free account");
+      return;
+    }
+    if(user?.subtype === "Silver" && user.watchlist.length >= 5){
+      setErrorMsg("You can only have 5 watchlists with a silver account");
+      return;
+    }
     if (watchlists?.find(watchlist => watchlist.name === watchlistName)) {
       setErrorMsg("Watchlist already exists");
       return;
@@ -63,7 +71,7 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
           setCreateWatchlist(false)
         },2500)
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
       config.method = "get";
       setWatchListName("");
@@ -74,24 +82,15 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
           watchlist: res.data,
         });
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
     onClose();
   };
-
-  function addedToWatchlist(){
-    setAddedToWatchlist(true)
-    setTimeout(()=>{
-      setAddedToWatchlist(false)
-    },2500)
-
-  }
-
+  
   const addWatchList = async e => {
-    addedToWatchlist()
     e.preventDefault();
     if (selectedWatchlists.length === 0) {
       setErrorMsg("Please select a watchlist");
@@ -112,8 +111,13 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
           },
         };
         const response = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config);
+        setAddedToWatchlist(true)
+        setTimeout(()=>{
+          setAddedToWatchlist(false)
+        },2500)
+
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     });
     setSelectedWatchlists([]);
@@ -140,11 +144,7 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    if (isOpen) {
-      setUpDownArrow("25B2");
-    } else {
-      setUpDownArrow("25BC");
-    }
+    
     dropdownRef.current.classList.toggle("open");
   };
 

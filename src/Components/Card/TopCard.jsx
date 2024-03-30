@@ -85,21 +85,23 @@ const TopCard = ({movies, val, length, setShowPopup3}) => {
           </div>
         )}
         <div>
-          <div className={styles.icon}>
+          {movies && <div className={styles.icon}>
             {like ? (
               <i className={`fa fa-heart`} aria-hidden="true" onClick={openHeart} style={{color: "red"}}></i>
             ) : (
               <i className={`fa fa-heart-o`} aria-hidden="true" onClick={openHeart}></i>
             )}
-          </div>
+          </div>}
           <div className={styles.premium}>
             {movies && premium && <i className={`fa fa-star`} aria-hidden="true"></i>}
           </div>
-          <img
-            src={`https://image.tmdb.org/t/p/w1280${movies?.poster_path}`}
+          {movies && <img
+            src={
+              movies && movies.poster_path ? `https://image.tmdb.org/t/p/w500${movies.poster_path}` : "/poster_1.jpg"
+            }
             className={styles.cards_img}
             alt="Image Not Found"
-          />
+          />}
         </div>
       </div>
     </div>

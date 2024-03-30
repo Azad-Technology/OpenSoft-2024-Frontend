@@ -211,9 +211,16 @@
 }
 .favorites_card {
   display: flex;
-  width: 100%;
-  max-width: 100%;
   margin-left: -0.8rem;
+  overflow-y: auto;
+  overflow-x: scroll;
+  padding: 1rem 0rem 1rem 0rem;
+  margin: 0 0px 0px 0px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100%;
+  align-items: center;
+  scroll-behavior: smooth;
   /* justify-content: space-between; */
 }
 #homeIcon {
@@ -372,4 +379,48 @@
   width: 6rem;
   height: 6rem;
   margin: 1rem;
+}
+.LeftbtnContainer {
+  position: absolute;
+  left: 0.5rem;
+  z-index: 30;
+  transform: rotate(-90deg);
+}
+.RightbtnContainer {
+  /* display: flex; */
+  position: absolute;
+  right: 0.5rem;
+  z-index: 30;
+  transform: rotate(90deg);
+}
+
+.LeftbtnContainer,
+.RightbtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.LeftbtnContainer:hover {
+  transform: scale(1.2) rotate(-90deg) translateY(5px);
+}
+.RightbtnContainer:hover {
+  transform: scale(1.2) rotate(90deg) translateY(5px);
+}
+
+.LeftbtnContainer button,
+.RightbtnContainer button {
+  /* background-color: rgba(130, 118, 118, 0.445); */
+  background-color: transparent;
+  height: 2.3rem;
+  width: 2.3rem;
+  z-index: 3;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3 ease;
+}
+
+.LeftbtnContainer button:hover,
+.RightbtnContainer button:hover {
+  background-color: rgba(130, 118, 118, 0.599);
 }

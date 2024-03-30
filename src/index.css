@@ -25,6 +25,12 @@ button {
   font-weight: bold;
 }
 
+.basic_video .vds-pip-button {
+  display: none;
+}
+.basic_video .vds-google-cast-button {
+  display: none;
+}
 .vds-radio-hint {
   margin-left: auto;
 }
