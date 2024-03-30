@@ -79,7 +79,7 @@ https://popkorn.tech
     * Includes speed control, picture-in-picture
     * Continue watching from where you left
 
-* ```Favourite and Watchlist
+* ```Favourite and Watchlist```
     * Create curated watchlists
     * Mark favourite movies and tv shows
 
