@@ -5,7 +5,7 @@ import {useParams} from "react-router";
 import {useStateValue} from "../../MyContexts/StateProvider";
 import Loader from "../Loader/Loader";
 
-export const Watchlists = () => {
+export const Watchlists = ({setShowLikePopup}) => {
   const [movies, setMovies] = useState(null);
   const [{token, user}, dispatch] = useStateValue();
   if (token === null || token === "null" || token === "undefined" || token === "" || !token) {
@@ -27,5 +27,5 @@ export const Watchlists = () => {
       // console.log(error);
     }
   }, []);
-  return <>{movies ? <Watchlist movies={movies.movies} id={movies._id} name={movies.name} /> : <Loader />}</>;
+  return <>{movies ? <Watchlist setShowLikePopup={setShowLikePopup} movies={movies.movies} id={movies._id} name={movies.name} /> : <Loader />}</>;
 };

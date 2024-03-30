@@ -6,7 +6,7 @@ import {faMapMarkerAlt, faPhone, faEnvelopeOpen} from "@fortawesome/free-solid-s
 import {Link, useNavigate} from "react-router-dom";
 import popKornLogo from "../../assets/PopKorn_logoText.svg";
 
-function Footer() {
+function Footer({setShowLikePopup}) {
   const [showModal, setShowModal] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState("");
   const handleClick = genre => {
@@ -79,7 +79,7 @@ function Footer() {
 
                 </div> */}
         </footer>
-        {showModal && <GenreModal genre={selectedGenre} id={"1"} onClose={() => setShowModal(false)} />}
+        {showModal && <GenreModal setShowLikePopup={setShowLikePopup} genre={selectedGenre} id={"1"} onClose={() => setShowModal(false)} />}
       </div>
     </div>
   );

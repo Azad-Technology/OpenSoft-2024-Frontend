@@ -6,7 +6,7 @@ import Loader from "../Loader/Loader";
 import {useRef} from "react";
 import closeIcon from "../../assets/close-47.svg";
 
-function Modal({onClose, genre, id}) {
+function Modal({onClose, genre, id, setShowLikePopup}) {
   const [movies, setMovies] = useState(null);
   const getData = useCallback(async () => {
     if (id === "country") {
@@ -70,7 +70,7 @@ function Modal({onClose, genre, id}) {
       <div className={styles.modal}>
         <div className={styles.movieList}>
           {movies ? (
-            <MovieModalList movie={movies} onClose={onClose} />
+            <MovieModalList setShowLikePopup={setShowLikePopup} movie={movies} onClose={onClose} />
           ) : (
             <MovieModalList movie={Array(18).fill(null)} />
           )}
@@ -84,10 +84,10 @@ function Modal({onClose, genre, id}) {
   );
 }
 
-const GenreModal = ({genre, id, onClose}) => {
+const GenreModal = ({genre, id, onClose,setShowLikePopup}) => {
   return (
     <div>
-      <Modal onClose={onClose} genre={genre} id={id} />
+      <Modal setShowLikePopup={setShowLikePopup} onClose={onClose} genre={genre} id={id} />
     </div>
   );
 };

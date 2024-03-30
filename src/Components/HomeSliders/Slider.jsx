@@ -7,7 +7,7 @@ import Loader from "./../Loader/Loader.jsx";
 import TopMovieList from "../movieList/TopMovieList.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider";
 
-export const Slider = ({genre, id, setShowPopup3}) => {
+export const Slider = ({genre, id, setShowPopup3,setShowLikePopup}) => {
   const [movies, setMovies] = useState(null);
   const [{token}, dispatch] = useStateValue();
 
@@ -154,8 +154,8 @@ export const Slider = ({genre, id, setShowPopup3}) => {
               )}
             </div>
             {genre === "Top Series" || genre === "Top Movies"
-              ? movies && <TopMovieList setShowPopup3={setShowPopup3} movie={movies} />
-              : movies && <MovieList setShowPopup3={setShowPopup3} movie={movies} />}
+              ? movies && <TopMovieList setShowPopup3={setShowPopup3} movie={movies} setShowLikePopup={setShowLikePopup} />
+              : movies && <MovieList setShowPopup3={setShowPopup3} movie={movies} setShowLikePopup={setShowLikePopup} />}
             {genre === "Top Series" || genre === "Top Movies"
               ? !movies && <TopMovieList movie={Array(18).fill(null)} />
               : !movies && <MovieList movie={Array(18).fill(null)} />}

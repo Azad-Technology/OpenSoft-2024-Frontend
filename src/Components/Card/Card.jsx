@@ -10,7 +10,7 @@ import {faL} from "@fortawesome/free-solid-svg-icons";
 import LoginForm from "../LoginForm/LoginForm.jsx";
 import imdb from "../../assets/imdb-icon.svg";
 
-const Card = ({movies, val, length, onClose, setShowPopup3}) => {
+const Card = ({movies, val, length, onClose, setShowPopup3,setShowLikePopup}) => {
   const [{user, token}, dispatch] = useStateValue();
 
   if (onClose === undefined || onClose === null) {
@@ -22,13 +22,21 @@ const Card = ({movies, val, length, onClose, setShowPopup3}) => {
   const [premium, setPremium] = useState(movies?.imdb.rating >= 8.0);
 
   const openHeart = event => {
-    if (!token) {
+    if (token===null || token===undefined || token==="null" || token==="undefined") {
       navigate("/login");
     }
 
     if (like) {
       setlike(false);
     } else {
+      if(user?.subtype==="Basic" && user.fav.length>=10){
+        event.stopPropagation();
+        setShowLikePopup(true)
+        setTimeout(() => {
+          setShowLikePopup(false)
+        }, 2000);
+        return;
+      }
       setlike(true);
     }
     event.stopPropagation();

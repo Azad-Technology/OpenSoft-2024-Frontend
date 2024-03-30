@@ -9,7 +9,7 @@ import deleteIcon from "../../assets/Delete_Icon.svg";
 import deleteIconWhite from "../../assets/Delete_Icon_White.svg";
 import instance from "../../axios.jsx";
 
-const Watchlist = ({movies, name, id}) => {
+const Watchlist = ({movies, name, id, setShowLikePopup}) => {
   const [{token, user}, dispatch] = useStateValue();
   const navigate = useNavigate();
   const handleDelete = async () => {
@@ -82,7 +82,7 @@ const Watchlist = ({movies, name, id}) => {
           {movies.map((m, i) => {
             return (
               <div className={styles.cardcontainer}>
-                <Card movies={m} />
+                <Card setShowLikePopup={setShowLikePopup} movies={m} />
                 <img
                   src={deleteIconWhite}
                   className={styles.deleteimage}

@@ -10,7 +10,7 @@ import {faL} from "@fortawesome/free-solid-svg-icons";
 import LoginForm from "../LoginForm/LoginForm.jsx";
 import imdb from "../../assets/imdb-icon.svg";
 
-const FuzzyCard = ({movies, val, length, onClose, basis}) => {
+const FuzzyCard = ({movies, val, length, onClose, basis,setShowLikePopup}) => {
   const [{user, token}, dispatch] = useStateValue();
 
   if (onClose === undefined || onClose === null) {
@@ -29,6 +29,14 @@ const FuzzyCard = ({movies, val, length, onClose, basis}) => {
     if (like) {
       setlike(false);
     } else {
+      if (user?.subtype === "Basic" && user.fav.length >= 10) {
+        event.stopPropagation();
+        setShowLikePopup(true);
+        setTimeout(() => {
+          setShowLikePopup(false);
+        }, 2000);
+        return;
+      }
       setlike(true);
     }
     event.stopPropagation();

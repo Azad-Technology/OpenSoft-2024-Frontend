@@ -60,7 +60,7 @@ function Modal({onClose, movie, token}) {
                   src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
                 >
                   <MediaProvider >
-                    <Poster src={movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"} />
+                    <Poster className="vds-poster" src={movie.backdrop_path ? `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` : "/backdrop.jpg"} />
                   </MediaProvider>
                   <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
                     {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
@@ -149,7 +149,7 @@ function ModalTrail({onClose, movie}) {
   );
 }
 
-const MoviePage = () => {
+const MoviePage = ({setShowLikePopup}) => {
   const [premium, setPremium] = useState(true);
 
   const [{token, user}, dispatch] = useStateValue();
@@ -265,6 +265,14 @@ const MoviePage = () => {
     if (like) {
       setlike(false);
     } else {
+      if (user?.subtype === "Basic" && user.fav.length >= 10) {
+        event.stopPropagation();
+        setShowLikePopup(true);
+        setTimeout(() => {
+          setShowLikePopup(false);
+        }, 2000);
+        return;
+      }
       setlike(true);
     }
     event.stopPropagation();
@@ -554,8 +562,8 @@ const MoviePage = () => {
 
         {comments ? <Comments setComments={setComments} info={comments} id={id} /> : <></>}
 
-        <MoreLikeThis id={id} />
-        {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
+        <MoreLikeThis setShowLikePopup={setShowLikePopup} id={id} />
+        {selectedGenre && <GenreModal setShowLikePopup={setShowLikePopup} genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
       </div>
     </>
   );

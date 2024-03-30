@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import instance from "../../axios.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 
-const TopCard = ({movies, val, length, setShowPopup3}) => {
+const TopCard = ({movies, val, length, setShowPopup3,setShowLikePopup}) => {
   const [{user, token}, dispatch] = useStateValue();
 
   const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
@@ -18,6 +18,14 @@ const TopCard = ({movies, val, length, setShowPopup3}) => {
     if (like) {
       setlike(false);
     } else {
+      if (user?.subtype === "Basic" && user.fav.length >= 10) {
+        event.stopPropagation();
+        setShowLikePopup(true);
+        setTimeout(() => {
+          setShowLikePopup(false);
+        }, 2000);
+        return;
+      }
       setlike(true);
     }
     event.stopPropagation();

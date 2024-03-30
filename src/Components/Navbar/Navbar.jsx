@@ -9,7 +9,7 @@ import GenreModal from "../GenreModal/GenreModal.jsx";
 import popKornLogo from "../../assets/PopKorn_logoText.svg";
 import instance from "../../axios";
 
-export const Navbar = ({ movies }) => {
+export const Navbar = ({ movies, setShowLikePopup }) => {
   const [{ dpToken, user }, dpDispatch] = useStateValue();
   const navigate = useNavigate();
   useEffect(() => {
@@ -283,7 +283,7 @@ export const Navbar = ({ movies }) => {
               />
             </div>
           )} */}
-          {selectedGenre && <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />}
+          {selectedGenre && <GenreModal setShowLikePopup={setShowLikePopup} genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />}
         </div>
       </div>
 
@@ -331,7 +331,7 @@ export const Navbar = ({ movies }) => {
             </div>
           )}
           {selectedGenre && selectedID && (
-            <GenreModal genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />
+            <GenreModal setShowLikePopup={setShowLikePopup} genre={selectedGenre} id={selectedID} onClose={() => setSelectedGenre(null)} />
           )}
         </div>
       </div>

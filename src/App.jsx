@@ -89,8 +89,11 @@ const App = () => {
     }
   }, [token]);
 
+  const [showLikePopup, setShowLikePopup] = useState(false);
+
   return (
     <>
+      {showLikePopup && <RejectedPopup message="You can only like 10 movies" />}
       <BrowserRouter>
         <Routes>
           <Route
@@ -100,11 +103,11 @@ const App = () => {
               <>
                 {showPopup && <SuccessPopup message="Logged in successfully" />}
                 {showPopup3 && <RejectedPopup message="Something went wrong" />}
-                <Navbar />
+                <Navbar setShowLikePopup={setShowLikePopup} />
                 <div className="homepage">
                   <Carousel />
-                  <HomeSliders setShowPopup3={setShowPopup3}/>
-                  <Footer setSelectedGenre={setSelectedGenre} />
+                  <HomeSliders setShowPopup3={setShowPopup3} setShowLikePopup={setShowLikePopup}/>
+                  <Footer setShowLikePopup={setShowLikePopup} setSelectedGenre={setSelectedGenre} />
                 </div>
               </>
             }
@@ -113,9 +116,9 @@ const App = () => {
             path="/search/:searchTerm"
             element={
               <>
-                <Navbar />
-                <SearchPage />
-                <Footer />
+                <Navbar setShowLikePopup={setShowLikePopup} />
+                <SearchPage setShowLikePopup={setShowLikePopup} />
+                <Footer setShowLikePopup={setShowLikePopup} />
               </>
             }
             />
@@ -130,10 +133,10 @@ const App = () => {
             element={
               <>
                 {showPopup2 && <RejectedPopup message="Premium access required for the movie" />}
-                <Navbar />
+                <Navbar setShowLikePopup={setShowLikePopup} />
                 <div className="home">
                   <Pricing />
-                  <Footer />
+                  <Footer setShowLikePopup={setShowLikePopup} />
                 </div>
               </>
             }
@@ -143,9 +146,9 @@ const App = () => {
             path="/movie/:id"
             element={
               <>
-                <Navbar />
-                <MoviePage setShowPopup={setShowPopup2} />
-                <Footer />
+                <Navbar setShowLikePopup={setShowLikePopup} />
+                <MoviePage setShowLikePopup={setShowLikePopup} setShowPopup={setShowPopup2} />
+                <Footer setShowLikePopup={setShowLikePopup} />
                 {/* <MoreLikeThis /> */}
                 {/* <SearchPage /> */}
               </>
@@ -155,9 +158,9 @@ const App = () => {
             path="/buyPremium"
             element={
               <>
-                <Navbar />
+                <Navbar setShowLikePopup={setShowLikePopup} />
                 <BuyPremiumToWatch />
-                <Footer />
+                <Footer setShowLikePopup={setShowLikePopup} />
                 {/* <MoreLikeThis /> */}
                 {/* <SearchPage /> */}
               </>
@@ -167,7 +170,7 @@ const App = () => {
             path="/login"
             element={
               <>
-                <Navbar />
+                <Navbar setShowLikePopup={setShowLikePopup} />
                 <LoginForm setShowPopup={setShowPopup} setShowPopup2={setShowPopup2} showPopup2={showPopup2} />
               </>
             }
@@ -176,17 +179,17 @@ const App = () => {
             path="/signup"
             element={
               <>
-                <Navbar />
+                <Navbar setShowLikePopup={setShowLikePopup} />
                 <SignUp setShowPopup={setShowPopup} />
               </>
             }
           />
-          <Route path="/watchlist/:id" element={token ? <Watchlists /> : <LoginForm />} />
+          <Route path="/watchlist/:id" element={token ? <Watchlists setShowLikePopup={setShowLikePopup} /> : <LoginForm />} />
           <Route
             path="/login-expired"
             element={
               <>
-                <Navbar />
+                <Navbar setShowLikePopup={setShowLikePopup} />
                 <LoginExpired />
               </>
             }

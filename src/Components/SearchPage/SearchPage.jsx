@@ -9,7 +9,7 @@ import  Card  from '../Card/Card.jsx';
 import GeneralSlider from "../HomeSliders/GeneralSlider.jsx";
 import MovieList from "../movieList/MovieList.jsx";
 
-const SearchPage = () => {
+const SearchPage = ({setShowLikePopup}) => {
   const {searchTerm} = useParams();
 
   const [fuzzy, setFuzzy] = useState(null);
@@ -256,7 +256,7 @@ const SearchPage = () => {
                     .concat(paths.length > 1 ? ` and ${paths.slice(-1)}` : "")
                 : "plot";
             paths.length === 1 ? (basisText = paths[0]) : basisText;
-            return <FuzzyCard key={index} movies={movie} basis={basisText} />;
+            return <FuzzyCard setShowLikePopup={setShowLikePopup} key={index} movies={movie} basis={basisText} />;
           })}
         </div>
       )}
@@ -287,7 +287,7 @@ const SearchPage = () => {
       </div>
       <div className={styles.results_container}>
         {nlp.map((movie, index) => {
-          return <Card key={index} movies={movie} />;
+          return <Card setShowLikePopup={setShowLikePopup} key={index} movies={movie} />;
         })
       }
       </div>

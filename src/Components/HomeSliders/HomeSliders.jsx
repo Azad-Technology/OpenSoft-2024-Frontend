@@ -5,7 +5,7 @@ import {Slider} from "./Slider.jsx";
 import CommentCards from "../CommentCard/CommentCards.jsx";
 import GenreModal from "../GenreModal/GenreModal";
 
-export const HomeSliders = ({setShowPopup3}) => {
+export const HomeSliders = ({setShowPopup3,setShowLikePopup}) => {
   const [{token}, dispatch] = useStateValue();
   const [selectedGenre, setSelectedGenre] = useState(null);
 
@@ -93,7 +93,7 @@ export const HomeSliders = ({setShowPopup3}) => {
           <div className={styles.slider__header}>
             <div className={styles.slider__title}>Handpicked for You</div>
           </div>
-          <Slider setShowPopup3={setShowPopup3} genre="Handpicked" />
+          <Slider setShowPopup3={setShowPopup3} setShowLikePopup={setShowLikePopup} genre="Handpicked" />
         </div>
       )}
       <div className={styles.slider_container}>
@@ -104,7 +104,7 @@ export const HomeSliders = ({setShowPopup3}) => {
             View More{" "}
           </button>
         </div>
-        <Slider setShowPopup3={setShowPopup3} genre="Regional Hits" />
+        <Slider setShowPopup3={setShowPopup3} setShowLikePopup={setShowLikePopup} genre="Regional Hits" />
       </div>
       <div id="popular" className={styles.slider_container}>
         <div className={styles.slider__header}>
@@ -114,7 +114,7 @@ export const HomeSliders = ({setShowPopup3}) => {
             View More{" "}
           </button>
         </div>
-        <Slider setShowPopup3={setShowPopup3} genre="Top Movies" />
+        <Slider setShowPopup3={setShowPopup3} setShowLikePopup={setShowLikePopup} genre="Top Movies" />
       </div>
       <div id="recent" className={styles.slider_container}>
         <div className={styles.slider__header}>
@@ -124,7 +124,7 @@ export const HomeSliders = ({setShowPopup3}) => {
             View More{" "}
           </button>
         </div>
-        <Slider setShowPopup3={setShowPopup3} genre="Recent" />
+        <Slider setShowPopup3={setShowPopup3} setShowLikePopup={setShowLikePopup} genre="Recent" />
       </div>
       <div className={styles.slider__title}>Comments</div>
       <div className={styles.commentCardParent}>
@@ -140,11 +140,11 @@ export const HomeSliders = ({setShowPopup3}) => {
                 View More{" "}
               </button>
             </div>
-            <Slider setShowPopup3={setShowPopup3} genre={genre.name} />
+            <Slider setShowPopup3={setShowPopup3} setShowLikePopup={setShowLikePopup} genre={genre.name} />
           </div>
         );
       })}
-      {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
+      {selectedGenre && <GenreModal setShowLikePopup={setShowLikePopup} genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
     </div>
   );
 };
