@@ -19,7 +19,7 @@ const Card = ({movies, val, length, onClose, setShowPopup3}) => {
   // for dummy purpose we take movies?.like=false;
   const [like, setlike] = useState(false);
   const navigate = useNavigate();
-  const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
+  const [premium, setPremium] = useState(movies?.imdb.rating >= 8.0);
 
   const openHeart = event => {
     if (!token) {

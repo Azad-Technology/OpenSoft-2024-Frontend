@@ -9,12 +9,13 @@ import {useNavigate} from "react-router-dom";
 
 const clientID = "950287933882-5bvrs6br7a5ubeb1l2m8di6vgjgu7sco.apps.googleusercontent.com";
 
-export const GoogleLoginButton = ({register, setShowPopup, setShowPopup2}) => {
+export const GoogleLoginButton = ({register, setShowPopup, setShowPopup2, setIsGoogle}) => {
   const [{}, dispatch] = useStateValue();
 
   const navigate = useNavigate();
 
   const login = useGoogleLogin({
+    
     onSuccess: async codeResponse => {
       try {
         const response = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
@@ -38,6 +39,7 @@ export const GoogleLoginButton = ({register, setShowPopup, setShowPopup2}) => {
             });
           });
         setShowPopup(true);
+        setIsGoogle(false);
         navigate("/");
         setTimeout(() => {
           setShowPopup(false);
@@ -52,7 +54,10 @@ export const GoogleLoginButton = ({register, setShowPopup, setShowPopup2}) => {
   });
 
   return (
-    <button className={styles.googleButton} onClick={() => login()}>
+    <button className={styles.googleButton} onClick={() => {
+      setIsGoogle(true);
+      login()
+    }}>
       <FcGoogle style={{width: "1.25rem", height: "1.25rem"}} className={styles.googleIcon} />
       Sign {register ? "up" : "in"} with Google
     </button>
