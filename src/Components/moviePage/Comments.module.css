@@ -18,29 +18,25 @@
   margin: 0 1rem 1rem 0;
 }
 
-/* .yourComment {
-  display: flex;
-  justify-content: center;
-} */
-
-.commentContainer .textBtnCont {
-  box-sizing: border-box;
-  /* border: 2px solid red; */
+.commentTextBox{
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: var(--primary-bg-color);
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 10px;
-  background-color: #2a1825;
-
-  /* opacity: 50%; */
 }
 
-/* .commentContainer .textBtnCont:hover{
-    box-shadow: 0 0 0.2rem 0.2rem red;
-} */
+.textBtnCont {
+  position: relative;
+  width: 100%;
+  margin-left:0.3rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  min-height: 5rem;
+  height: fit-content;
+  max-height: 20rem;
+  background-color: var(--primary-bg-color);
+  border-radius: 10px;
+  background-color: #2a1825;
+}
 
 .commentContainer .textBtnCont:target {
   box-shadow: 0 0 0.2rem 0.2rem red;
@@ -55,15 +51,9 @@
 }
 
 .btnGroup {
-  /* display: flex;
-  align-items: center;
-  justify-content: flex-end; */
   display: flex;
-  height: 2rem;
-  width: 100%;
-  /* flex-direction: column; */
-  justify-content: flex-end;
-  align-items: end;
+  position: relative;
+  height: fit-content;
   background-color: var(--primary-bg-color);
 }
 
@@ -101,13 +91,6 @@
   /* width: 80rem ; */
 }
 
-.commentContainer .textArea {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  /* background-color: #2b2929; */
-}
 
 .commentContainer .submitBtn {
   background-color: #fffe3e; /* Dark background color */
@@ -143,46 +126,32 @@
 
 textarea {
   width: 100%;
-  /* border-radius: 30px; */
   padding: 0.5rem;
   color: white;
   overflow: visible;
   background-color: var(--primary-bg-color);
-  height: 4rem;
-  box-sizing: border-box;
-  resize: none;
+  height: 100%;
+  overflow: scroll;
+  resize:none;
 }
 textarea:focus {
   white-space: pre-wrap;
   width: 100%;
-  box-sizing: border-box;
-  /* border-radius: 30px; */
   color: white;
-  /* height: 4rem; */
-  background-color: var(--primary-bg-color);
+  overflow: scroll;
   resize: none;
   outline: none;
 }
 
 .allCommentsContainer {
-  /* border: 2px solid green; */
-  /* 
-    background-image: linear-gradient(to right, #161616, #752d2d);
-    border-radius: 10px;
-    padding: 1rem; */
   margin: 1rem 0 1rem 0;
-  /* background-color: rgba(255, 255, 255, 0.146); Semi-transparent white */
-  /* border-radius: 10px; */
   padding: 10px;
   margin-left: 1rem;
-  /* border-left: 2px solid white; */
-  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.359); Glassy shadow */
 }
 
 .allCommentsContainer:hover {
   transform: scale(1.01);
   background-color: rgba(255, 255, 255, 0.158); /* Scale up on hover */
-  /* box-shadow: 0 0 40px rgba(255, 255, 255, 0.3); Increase shadow intensity on hover */
 }
 
 .allCommentsContainer .commentInfo {
@@ -243,18 +212,3 @@ textarea:focus {
     } */
 }
 
-/* @media screen and (max-width:1000px){
-    .imgTextBtnContainer{
-        width: 75%;
-    }
-}
-
-@media screen and (min-width:1001px){
-    .imgTextBtnContainer{
-        width: 50%;
-    }
-} */
-
-/* .allCommentsContainer .userName{
-    margin-left: 0.5rem;
-} */

@@ -9,9 +9,8 @@ import {useStateValue} from "../../MyContexts/StateProvider";
 import {useNavigate} from "react-router-dom";
 import RejectedPopup from "../LoginAcceptedRejected/rejectedLogin";
 import {GoogleCallback} from "./GoogleCallback";
-import {GoogleLoginButton} from "./GoogleLoginButton";
+import {GoogleLoginButton} from "../LoginForm/GoogleLoginButton.jsx";
 
-const clientID = "950287933882-5bvrs6br7a5ubeb1l2m8di6vgjgu7sco.apps.googleusercontent.com";
 import bgTop from "../../assets/bg-top.svg";
 import {MdEmail} from "react-icons/md";
 
@@ -60,7 +59,6 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
         }
         navigate(-1);
       } catch (error) {
-        console.log(error);
         setErrors(error.response.data.detail);
         setShowPopup2(true);
         setTimeout(() => {
@@ -72,22 +70,6 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
-  };
-
-  const handleGoogleClick = async () => {
-    try {
-      const response = await instance.get("/login/google");
-      console.log(response.data);
-      // setIsGoogle(true);
-      let newWindow = window.open(response.data.url, "name", "height=600,width=450");
-      setGoogleWindow(newWindow);
-      console.log(newWindow);
-      if (window.focus) newWindow.focus();
-      setIsGoogle(true);
-    } catch (error) {
-      // console.log(error);
-      setErrors(error.response.data.detail);
-    }
   };
 
   useEffect(() => {
@@ -105,7 +87,12 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
           <form action="">
             <h1>Welcome Back.</h1>
             <div className="OAuth">
-              <GoogleLoginButton className={styles.GoogleLogin} />
+              <GoogleLoginButton
+                className={styles.GoogleLogin}
+                setShowPopup={setShowPopup}
+                setShowPopup2={setShowPopup2}
+                showPopup2={showPopup2}
+              />
             </div>
             <hr className={styles.Or} />
             <div>

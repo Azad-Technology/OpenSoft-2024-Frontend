@@ -9,7 +9,7 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import RejectedPopup from "../LoginAcceptedRejected/rejectedLogin";
 import usernamegenerator from "./usernamegenerator.jsx";
-import { GoogleLoginButton } from "../LoginForm/GoogleLoginButton.jsx";
+import {GoogleLoginButton} from "../LoginForm/GoogleLoginButton.jsx";
 
 function SignUp({setShowPopup}) {
   const [{token, premium}, dispatch] = useStateValue();
@@ -62,7 +62,6 @@ function SignUp({setShowPopup}) {
             }, 3000);
             navigate(-1);
           } catch (error) {
-            console.log(error);
             setErrors(error.response.data.detail);
             setShowPopup2(true);
             setTimeout(() => {
@@ -72,7 +71,6 @@ function SignUp({setShowPopup}) {
         } else setErrors("Password does not match");
       }
     }
-    console.log(err);
   };
 
   const handleGoogleClick = async () => {
@@ -80,7 +78,6 @@ function SignUp({setShowPopup}) {
       const response = await instance.get("/login/google");
       window.location.href = response.data.url;
     } catch (error) {
-      console.log(error);
       setErrors(error.response.data.detail);
     }
   };
@@ -100,7 +97,13 @@ function SignUp({setShowPopup}) {
         <form action="">
           <h1>Sign Up</h1>
 
-          <GoogleLoginButton register={true}/>
+          <GoogleLoginButton
+            className={styles.GoogleLogin}
+            setShowPopup={setShowPopup}
+            setShowPopup2={setShowPopup2}
+            showPopup2={showPopup2}
+            register={true}
+          />
 
           <hr className={styles.Or} />
 

@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import instance from "../../axios.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 
-const TopCard = ({movies, val, length}) => {
+const TopCard = ({movies, val, length, setShowPopup3}) => {
   const [{user, token}, dispatch] = useStateValue();
 
   const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
@@ -46,7 +46,7 @@ const TopCard = ({movies, val, length}) => {
         dispatch({type: "REM_FAV", movie: movies});
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

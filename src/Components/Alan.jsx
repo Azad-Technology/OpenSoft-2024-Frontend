@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import {useStateValue} from "../MyContexts/StateProvider";
 const useAlan = handleFoundGenre => {
-  const [{token, user}, dispatch] = useStateValue();
+  const [{token, user}] = useStateValue();
   useEffect(() => {
     if (user?.subtype === "Gold") {
       alanBtn({
@@ -43,7 +43,7 @@ const useAlan = handleFoundGenre => {
     //     },
     //   });
     // }
-  }, [token]);
+  }, [user, token]);
 };
 
 export default useAlan;

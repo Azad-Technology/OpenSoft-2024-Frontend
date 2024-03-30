@@ -8,7 +8,7 @@ export const initialState = {
     fav: [],
     watchlist: [],
     profilePic: "",
-    isGoogleAuth:false
+    isGoogleAuth: false,
   },
 };
 
@@ -35,7 +35,7 @@ const reducer = (state, action) => {
           subtype: "",
           fav: [],
           profilePic: "",
-          isGoogleAuth:false
+          isGoogleAuth: false,
         },
       };
     case "SET_TOKEN":
@@ -49,7 +49,7 @@ const reducer = (state, action) => {
           subtype: "",
           fav: [],
           profilePic: "",
-          isGoogleAuth:false
+          isGoogleAuth: false,
         },
       };
     case "ADD_FAV":
@@ -68,7 +68,38 @@ const reducer = (state, action) => {
           fav: state.user.fav.filter(item => item._id !== action.movie._id),
         },
       };
-
+    case "CREATE_WATCHLIST":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          watchlist: [...state.user.watchlist, action.watchlist],
+        },
+      };
+    case "REMOVE_WATCHLIST":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          watchlist: state.user.watchlist.filter(watchlist => watchlist._id !== action.watchlistID),
+        },
+      };
+    case "REMOVE_MOVIE_FROM_WATCHLIST":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          watchlist: state.user.watchlist.map(watchlist => {
+            if (watchlist._id === action.watchlistID) {
+              return {
+                ...watchlist,
+                movies: watchlist.movies.filter(movie => movie._id !== action.movieID),
+              };
+            }
+            return watchlist;
+          }),
+        },
+      };
     default:
       return state;
   }

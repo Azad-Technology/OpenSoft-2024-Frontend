@@ -10,7 +10,7 @@ import {Slider} from "@vidstack/react";
 import MovieList from "../movieList/MovieList";
 import GeneralSlider from "../HomeSliders/GeneralSlider";
 
-const Profile = () => {
+const Profile = ({setShowPopup3}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [{token, user}, dispatch] = useStateValue();
   const navigate = useNavigate();
@@ -36,14 +36,7 @@ const Profile = () => {
   const handleDownloadInvoice = async () => {
     setIsLoading(true);
     try {
-      const response = await instance.get("/user", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      const invoiceUrl = response.data.invoice_url;
+      const invoiceUrl = user?.invoice_url;
       window.open(invoiceUrl, "_blank");
     } catch (error) {
       console.error("Error fetching and downloading invoice:", error);
@@ -55,7 +48,7 @@ const Profile = () => {
   const sendChangeRequest = async e => {
     try {
       const response = await instance.patch(
-        "/update_user/",
+        "/update_user",
         {
           new_name: fullname,
           new_email: user.email,
@@ -68,7 +61,10 @@ const Profile = () => {
         }
       );
     } catch (err) {
-      console.log(err);
+      setShowPopup3(true);
+      setTimeout(() => {
+        setShowPopup3(false);
+      }, 2000);
     }
   };
 
@@ -103,7 +99,7 @@ const Profile = () => {
   const handleUpdatePasswordRequest = async e => {
     try {
       const response = await instance.patch(
-        "/update_password/",
+        "/update_password",
         {
           old_password: verificationcurrentPassword,
           new_password: newPassword,
@@ -118,7 +114,6 @@ const Profile = () => {
       );
       alert("Password updated successfully");
     } catch (err) {
-      console.log(err.response);
       if (err.response && err.response.status === 401) {
         alert("Wrong password. Please check your current password.");
       } else {
@@ -141,12 +136,12 @@ const Profile = () => {
       type: "REMOVE_TOKEN",
     });
     navigate("/");
+    window.location.reload();
   };
 
   useEffect(() => {
     setFullname(user?.name);
     setFavMovie(user?.fav);
-    console.log(favMovie);
   }, [user]);
 
   return (
@@ -160,7 +155,7 @@ const Profile = () => {
       <div className={styles.maincontainer}>
         <div className={styles.card}>
           <div className={styles.cardBody}>
-            {user.profilePic ? (
+            {user?.profilePic ? (
               <img src={user.profilePic} alt="avatar" className={styles.avatar} />
             ) : (
               <img
@@ -211,57 +206,59 @@ const Profile = () => {
               </div>
             </div>
 
-            {!user?.isGoogleAuth && <div className={styles.row}>
-              <div className={styles.col_sm_3}>
-                <p className={styles.head}> Password</p>
-              </div>
-              <div className={styles.col_sm_9}>
-                <input
-                  id="input"
-                  className={styles.details}
-                  type="password"
-                  disabled={isEditPasswordDisabled}
-                  value={password}
-                />
+            {!user?.isGoogleAuth && (
+              <div className={styles.row}>
+                <div className={styles.col_sm_3}>
+                  <p className={styles.head}> Password</p>
+                </div>
+                <div className={styles.col_sm_9}>
+                  <input
+                    id="input"
+                    className={styles.details}
+                    type="password"
+                    disabled={isEditPasswordDisabled}
+                    value={password}
+                  />
 
-                {isEditPasswordDisabled ? (
-                  <div className={styles.col_sm_3} id={styles.changePasswordcol}>
-                    <button className={styles._btn} onClick={handlecChangePasswordClick}>
-                      Change Password
-                    </button>
-                  </div>
-                ) : (
-                  <>
-                    <div className={styles.col_sm_3}>
-                      <label className={styles.head} htmlFor="password">
-                        Current Password
-                      </label>
-                      <input
-                        id={styles.Conpass}
-                        type="password"
-                        name="password"
-                        onChange={e => setVerificationCurrentPassword(e.target.value)}
-                      ></input>
+                  {isEditPasswordDisabled ? (
+                    <div className={styles.col_sm_3} id={styles.changePasswordcol}>
+                      <button className={styles._btn} onClick={handlecChangePasswordClick}>
+                        Change Password
+                      </button>
                     </div>
+                  ) : (
+                    <>
+                      <div className={styles.col_sm_3}>
+                        <label className={styles.head} htmlFor="password">
+                          Current Password
+                        </label>
+                        <input
+                          id={styles.Conpass}
+                          type="password"
+                          name="password"
+                          onChange={e => setVerificationCurrentPassword(e.target.value)}
+                        ></input>
+                      </div>
 
-                    <div className={styles.col_sm_3}>
-                      <label className={styles.head} htmlFor="password">
-                        Current Password
-                      </label>
-                      <input
-                        id={styles.Conpass}
-                        type="password"
-                        name="password"
-                        onChange={e => setNewPassword(e.target.value)}
-                      ></input>
-                    </div>
-                    <button className={styles.Confpass} onClick={handleUpdatePassword}>
-                      confirm changes
-                    </button>
-                  </>
-                )}
+                      <div className={styles.col_sm_3}>
+                        <label className={styles.head} htmlFor="password">
+                          Current Password
+                        </label>
+                        <input
+                          id={styles.Conpass}
+                          type="password"
+                          name="password"
+                          onChange={e => setNewPassword(e.target.value)}
+                        ></input>
+                      </div>
+                      <button className={styles.Confpass} onClick={handleUpdatePassword}>
+                        confirm changes
+                      </button>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>}
+            )}
 
             {/* {!user?.subtype === "Basic" ? (
               <div></div>

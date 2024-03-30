@@ -7,7 +7,7 @@ import Loader from "./../Loader/Loader.jsx";
 import TopMovieList from "../movieList/TopMovieList.jsx";
 import {useStateValue} from "../../MyContexts/StateProvider";
 
-export const Slider = ({genre, id}) => {
+export const Slider = ({genre, id, setShowPopup3}) => {
   const [movies, setMovies] = useState(null);
   const [{token}, dispatch] = useStateValue();
 
@@ -23,31 +23,32 @@ export const Slider = ({genre, id}) => {
       return;
     }
     if (genre === "Regional Hits") {
-      const response = await instance.get(`my_country/?count=18`);
+      const response = await instance.get(`my_country?count=18`);
       setMovies(response.data);
+
       return;
     }
     if (genre === "More Like This") {
-      const response = await instance.get("/movies/" + id + "/related_movies/?count=18");
+      const response = await instance.get("/movies/" + id + "/related_movies?count=18");
       setMovies(response.data);
       return;
     }
     if (genre === "Top Movies") {
-      const response = await instance.get("/top_movies/?count=10");
+      const response = await instance.get("/top_movies?count=10");
       setMovies(response.data);
       return;
     }
     if (genre === "Top Series") {
-      const response = await instance.get("/top_series/?count=10");
+      const response = await instance.get("/top_series?count=10");
       setMovies(response.data);
       return;
     }
     if (genre === "Recent") {
-      const response = await instance.get("/recent_movies/?count=18");
+      const response = await instance.get("/recent_movies?count=18");
       setMovies(response.data);
       return;
     }
-    const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+    const response = await instance.get(`/genre_top_movies/${genre}?count=18`);
     setMovies(response.data);
   }, [genre, id, token]);
   useEffect(() => {
@@ -153,8 +154,8 @@ export const Slider = ({genre, id}) => {
               )}
             </div>
             {genre === "Top Series" || genre === "Top Movies"
-              ? movies && <TopMovieList movie={movies} />
-              : movies && <MovieList movie={movies} />}
+              ? movies && <TopMovieList setShowPopup3={setShowPopup3} movie={movies} />
+              : movies && <MovieList setShowPopup3={setShowPopup3} movie={movies} />}
             {genre === "Top Series" || genre === "Top Movies"
               ? !movies && <TopMovieList movie={Array(18).fill(null)} />
               : !movies && <MovieList movie={Array(18).fill(null)} />}

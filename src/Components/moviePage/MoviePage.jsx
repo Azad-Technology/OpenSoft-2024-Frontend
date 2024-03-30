@@ -6,7 +6,7 @@ import instance from "../../axios";
 import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider} from "@vidstack/react";
+import {MediaPlayer, MediaProvider, PIPButton} from "@vidstack/react";
 import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -18,8 +18,31 @@ import WatchListModal from "./WatchListModal.jsx";
 import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
 import closeIcon from "../../assets/close-47.svg";
+import chooseMovie from "./MovieList.jsx";
 
-function Modal({onClose}) {
+function Modal({onClose, movie, token}) {
+  const [{user}, dispatch] = useStateValue();
+
+  const [vidsrc, setVidsrc] = useState(null);
+  useEffect(() => {
+    if (movie && token) {
+      const choosenmovie = chooseMovie(movie?.title);
+      switch (user.subtype) {
+        case "Basic":
+          setVidsrc(choosenmovie[0]);
+          break;
+        case "Silver":
+          setVidsrc(choosenmovie[1]);
+          break;
+        case "Gold":
+          setVidsrc(choosenmovie[2]);
+          break;
+        default:
+          setVidsrc(choosenmovie[0]);
+      }
+    }
+  }, [user, movie]);
+
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal}>
@@ -27,12 +50,14 @@ function Modal({onClose}) {
         <div className={styles.video_container}>
           <div className={styles.video}>
             <MediaPlayer
-              storage="storage-key"
-              title="Dune"
-              src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8"
+              storage={`${movie?._id} movie`}
+              title={movie?.title}
+              src={vidsrc+"?mid="+movie?._id}
             >
               <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
+              <DefaultVideoLayout icons={defaultLayoutIcons} >
+                <PIPButton/>
+              </DefaultVideoLayout>
             </MediaPlayer>
           </div>
         </div>
@@ -45,7 +70,29 @@ function Modal({onClose}) {
   );
 }
 
-function ModalTrail({onClose}) {
+function ModalTrail({onClose, movie}) {
+  const [{user}, dispatch] = useStateValue();
+
+  const [vidsrc, setVidsrc] = useState(null);
+  useEffect(() => {
+    if (movie) {
+      const choosenmovie = chooseMovie(movie?.title);
+      switch (user?.subtype) {
+        case "Basic":
+          setVidsrc(choosenmovie[0]);
+          break;
+        case "Silver":
+          setVidsrc(choosenmovie[1]);
+          break;
+        case "Gold":
+          setVidsrc(choosenmovie[2]);
+          break;
+        default:
+          setVidsrc(choosenmovie[0]);
+      }
+    }
+  }, [user, movie]);
+
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal}>
@@ -53,10 +100,10 @@ function ModalTrail({onClose}) {
         <div className={styles.video_container}>
           <div className={styles.video}>
             <MediaPlayer
-              clipEndTime={30}
-              storage="storage-key"
-              title="Dune"
-              src="https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/dune_master.m3u8"
+            clipEndTime={30}
+              storage={`${movie?._id} trail`}
+              title={movie?.title}
+              src={vidsrc+"?tid="+movie?._id}
             >
               <MediaProvider />
               <DefaultVideoLayout icons={defaultLayoutIcons} />
@@ -91,6 +138,8 @@ const MoviePage = () => {
 
   const {id} = useParams();
   // const {com} = useParams();
+  const [showMoreButton, setShowMoreButton] = useState(false);
+  const [smallPlot, setSmallPlot] = useState("");
   const [comments, setComments] = useState(null);
   const [movie, setMovie] = useState(null);
   const [showTrailModal, setShowTrailModal] = useState(false);
@@ -114,7 +163,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const getCommentData = async () => {
-      const response = await instance.get(`/movies/${id}/comments/?count=10`);
+      const response = await instance.get(`/movies/${id}/comments?count=10`);
       // console.log(response.data);
       setComments(response.data);
     };
@@ -123,6 +172,7 @@ const MoviePage = () => {
 
   const [isExpanded, setIsExpanded] = useState(true);
   const [showLess, setShowLess] = useState(false);
+  const [showPlotLess, setShowPlotLess] = useState(true);
   const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [smallScreen, setSmallScreen] = useState(false);
 
@@ -169,10 +219,11 @@ const MoviePage = () => {
     const elem = document.getElementById("showMoreInfo");
     if (showMoreInfo) {
       setShowMoreInfo(false);
-
+      setShowPlotLess(false);
       elem.style.transform = "rotate(180deg)";
     } else {
       setShowMoreInfo(true);
+      setShowPlotLess(true);
       elem.style.transform = "rotate(0deg)";
     }
   }
@@ -329,6 +380,17 @@ const MoviePage = () => {
                   </div>
                 )}
                 <span>{movie?.year && movie?.year}</span>
+                <span>
+                  <span className={styles.icon} id="heartIcon">
+                    {like ? (
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart} style={{color:"red"}}></i>
+                    ) : (
+                      <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                    )}
+                  </span>
+                </span>
+                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
               </span>
             </div>
             <div className={styles.genreList}>
@@ -361,10 +423,12 @@ const MoviePage = () => {
                 <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleClick}>
                   Watch Now
                 </button>
-                <button className={styles.modalbutton} onClick={handleTrailerClick}>
+                <button className={`${!movie && styles.skeleton_button} ${styles.modalbutton}`} onClick={handleTrailerClick}>
                   Trailer
                 </button>
-                <span>
+                {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
+                {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
+                {/* <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
                       <i class={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
@@ -374,9 +438,7 @@ const MoviePage = () => {
                   </span>
                 </span>
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showModal && <Modal onClose={() => setShowModal(false)} />}
-                {showTrailModal && <ModalTrail onClose={() => setShowTrailModal(false)} />}
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />} */}
               </span>
             </div>
           </div>
@@ -402,7 +464,9 @@ const MoviePage = () => {
                     <div className={styles.skeleton__plot}></div>
                   </div>
                 )}
-                {movie?.fullplot}
+                {movie?.fullplot.length < 600 && movie?.fullplot}
+                {movie?.fullplot.length >= 600 && showPlotLess && movie?.fullplot.slice(0, 600) + "..."}
+                {movie?.fullplot.length >= 600 && !showPlotLess && movie?.fullplot}
               </div>
             </div>
           </div>
@@ -436,13 +500,40 @@ const MoviePage = () => {
             )}
           </div>
         </div>
+        {movie?.fullplot.length >= 600 && (
+          <div className={styles.showMoreInfoBtnCont}>
+            <button id="showMoreInfo" className={styles.showMoreInfoBtn} onClick={handleShowMoreInfoBtn}>
+              <svg
+                fill="#FFFE3E"
+                height="25px"
+                width="25px"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 512.001 512.001"
+                xmlSpace="preserve"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <g>
+                    {" "}
+                    <g>
+                      {" "}
+                      <path d="M505.749,304.918L271.083,70.251c-8.341-8.341-21.824-8.341-30.165,0L6.251,304.918C2.24,308.907,0,314.326,0,320.001 v106.667c0,8.619,5.184,16.427,13.163,19.712c7.979,3.307,17.152,1.472,23.253-4.629L256,222.166L475.584,441.75 c4.075,4.075,9.536,6.251,15.083,6.251c2.752,0,5.525-0.512,8.171-1.621c7.979-3.285,13.163-11.093,13.163-19.712V320.001 C512,314.326,509.76,308.907,505.749,304.918z"></path>{" "}
+                    </g>{" "}
+                  </g>{" "}
+                </g>
+              </svg>
+            </button>
+          </div>
+        )}
 
         {comments ? <Comments setComments={setComments} info={comments} id={id} /> : <></>}
 
         <MoreLikeThis id={id} />
-        {/* <div className={styles.loaderIcon}>
-                    <Loader />
-                </div> */}
         {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
       </div>
     </>

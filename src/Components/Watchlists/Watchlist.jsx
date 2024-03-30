@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import styles from "./Watchlist.module.css";
-import MovieList from "../movieList/MovieList.jsx";
+import Card from "../Card/Card.jsx";
 import stockIcon from "../../assets/stock_movie_icon.jpg";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import {useNavigate} from "react-router";
 import MovieModalList from "../GenreModal/MovieModalList.jsx";
 import deleteIcon from "../../assets/Delete_Icon.svg";
+import deleteIconWhite from "../../assets/Delete_Icon_White.svg";
 import instance from "../../axios.jsx";
 
 const Watchlist = ({movies, name, id}) => {
@@ -20,8 +21,31 @@ const Watchlist = ({movies, name, id}) => {
         },
       };
       const response = await instance.request(`/remove_watchlist/${id}`, config);
+      dispatch({
+        type: "REMOVE_WATCHLIST",
+        watchlistID: id,
+      });
       navigate("/profile");
-      window.location.reload(); // Force reload after navigation to show the effect of deletion
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const deleteMovie = async movieID => {
+    try {
+      let config = {
+        method: "patch",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const response = await instance.request(`/add_movie_to_watchlist/${id}/${movieID}`, config);
+      dispatch({
+        type: "REMOVE_MOVIE_FROM_WATCHLIST",
+        movieID: movieID,
+        watchlistID: id,
+      });
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
@@ -54,7 +78,22 @@ const Watchlist = ({movies, name, id}) => {
         </button>
       </div>
       <div className={styles.movie_grid}>
-        <MovieModalList movie={movies} />
+        <div className={styles.movieList}>
+          {movies.map((m, i) => {
+            return (
+              <div className={styles.cardcontainer}>
+                <Card movies={m} />
+                <img
+                  src={deleteIconWhite}
+                  className={styles.deleteimage}
+                  height={30}
+                  width={30}
+                  onClick={() => deleteMovie(m._id)}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

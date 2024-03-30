@@ -5,7 +5,7 @@ import {Slider} from "./Slider.jsx";
 import CommentCards from "../CommentCard/CommentCards.jsx";
 import GenreModal from "../GenreModal/GenreModal";
 
-export const HomeSliders = () => {
+export const HomeSliders = ({setShowPopup3}) => {
   const [{token}, dispatch] = useStateValue();
   const [selectedGenre, setSelectedGenre] = useState(null);
 
@@ -18,11 +18,6 @@ export const HomeSliders = () => {
       name: "Top Series",
       link: "#",
       genreID: "topseries",
-    },
-    {
-      name: "Regional Hits",
-      link: "#",
-      genreID: "my_country",
     },
     {
       name: "Romance",
@@ -98,9 +93,19 @@ export const HomeSliders = () => {
           <div className={styles.slider__header}>
             <div className={styles.slider__title}>Handpicked for You</div>
           </div>
-          <Slider genre="Handpicked" />
+          <Slider setShowPopup3={setShowPopup3} genre="Handpicked" />
         </div>
       )}
+      <div className={styles.slider_container}>
+        <div className={styles.slider__header}>
+          <div className={styles.slider__title}>Regional Hits</div>
+          <button className={styles.view__more} onClick={() => openModal("Regional Hits")}>
+            {" "}
+            View More{" "}
+          </button>
+        </div>
+        <Slider setShowPopup3={setShowPopup3} genre="Regional Hits" />
+      </div>
       <div id="popular" className={styles.slider_container}>
         <div className={styles.slider__header}>
           <div className={styles.slider__title}>Top Movies</div>
@@ -109,7 +114,7 @@ export const HomeSliders = () => {
             View More{" "}
           </button>
         </div>
-        <Slider genre="Top Movies" />
+        <Slider setShowPopup3={setShowPopup3} genre="Top Movies" />
       </div>
       <div id="recent" className={styles.slider_container}>
         <div className={styles.slider__header}>
@@ -119,7 +124,7 @@ export const HomeSliders = () => {
             View More{" "}
           </button>
         </div>
-        <Slider genre="Recent" />
+        <Slider setShowPopup3={setShowPopup3} genre="Recent" />
       </div>
       <div className={styles.slider__title}>Comments</div>
       <div className={styles.commentCardParent}>
@@ -135,7 +140,7 @@ export const HomeSliders = () => {
                 View More{" "}
               </button>
             </div>
-            <Slider genre={genre.name} />
+            <Slider setShowPopup3={setShowPopup3} genre={genre.name} />
           </div>
         );
       })}

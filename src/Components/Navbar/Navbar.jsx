@@ -121,8 +121,15 @@ export const Navbar = ({movies}) => {
                     <a
                       onMouseOver={handleToggleDropdown}
                       onClick={event => {
-                        console.log()
-                        if(menuoption.name==="Pricing") navigate('/pricing');
+                        if (
+                          menuoption.name === "Pricing" &&
+                          token &&
+                          token !== "null" &&
+                          token !== "undefined" &&
+                          token !== undefined
+                        )
+                          navigate("/pricing");
+                        else if (menuoption.name === "Pricing") navigate("/login");
                         else if (menuoption.name === "Top IMDB" || menuoption.name === "TV Shows") {
                           setSelectedGenre(menuoption.name);
                         }

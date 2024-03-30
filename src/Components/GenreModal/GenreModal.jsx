@@ -10,27 +10,41 @@ function Modal({onClose, genre, id}) {
   const [movies, setMovies] = useState(null);
   const getData = useCallback(async () => {
     if (id === "country") {
-      const response = await instance.get(`/countries_top/${genre}/?count=18`);
+      const response = await instance.get(`/countries_top/${genre}?count=18`);
       setMovies(response.data);
       return;
+    } else if (genre === "Handpicked") {
+      const response = await instance.request("/recommend", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setMovies(response.data);
+      return;
+    } else if (genre === "Regional Hits") {
+      const response = await instance.get(`my_country?count=18`);
+      setMovies(response.data);
+
+      return;
     } else if (genre === "Top Movies" || genre === "Top IMDB") {
-      const response = await instance.get("/top_movies/?count=18");
+      const response = await instance.get("/top_movies?count=18");
       setMovies(response.data);
       return;
     } else if (genre === "Top Series") {
-      const response = await instance.get("/top_series/?count=18");
+      const response = await instance.get("/top_series?count=18");
       setMovies(response.data);
       return;
     } else if (genre === "Recent") {
-      const response = await instance.get("/recent_movies/?count=18");
+      const response = await instance.get("/recent_movies?count=18");
       setMovies(response.data);
       return;
     } else if (genre === "TV Shows") {
-      const response = await instance.get("/top_series/?count=18");
+      const response = await instance.get("/top_series?count=18");
       setMovies(response.data);
       return;
     } else {
-      const response = await instance.get(`/genre_top_movies/${genre}/?count=18`);
+      const response = await instance.get(`/genre_top_movies/${genre}?count=18`);
       setMovies(response.data);
     }
   }, []);

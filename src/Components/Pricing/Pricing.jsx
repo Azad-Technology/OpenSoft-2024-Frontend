@@ -6,6 +6,7 @@ import bgTop from "../../assets/bg-top.svg";
 import styles from "./styles.module.css";
 import {Link} from "react-router-dom";
 import {useSearchParams} from "react-router-dom";
+
 function Pricing() {
   const [annually, setAnnually] = useState(false);
   const [isHovered, setIsHovered] = useState(null);
@@ -24,32 +25,16 @@ function Pricing() {
     window.scroll(0, 0);
   }, []);
   useEffect(() => {
-    dispatch({
-      type: "INITIALIZE_TOKEN",
-    });
     if (token && token !== "null" && token !== "undefined") {
       const getUser = async () => {
-        try {
-          const user = await instance.get("/user", {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
-          dispatch({
-            type: "SET_USER",
-            user: user.data,
-          });
-          //console.log(user.data.subtype);
-          if (user.data.subtype == "Gold") {
-            setIsGold(true);
-          }
-          if (user.data.subtype == "Silver") {
-            setIsSilver(true);
-          }
-          //console.log(isGold,isSilver);
-        } catch (err) {
-          console.log(err);
+        //console.log(user.data.subtype);
+        if (user?.subtype == "Gold") {
+          setIsGold(true);
         }
+        if (user?.subtype == "Silver") {
+          setIsSilver(true);
+        }
+        //console.log(isGold,isSilver);
       };
       getUser();
     }
@@ -97,12 +82,20 @@ function Pricing() {
             <h3>
               <span>₹</span> 50
             </h3>
-            <Link
-              target="_blank"
-              to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262"
-            >
-              <button className={styles.pricingCard_button}>Purchase</button>
-            </Link>
+            {isSilver ? (
+              <button className={styles.pricingCard_button_purchased}>
+                <p>Your Current Plan</p>
+              </button>
+            ) : (
+              <Link
+                target="_blank"
+                to="https://popkorn.lemonsqueezy.com/checkout/buy/70ffa82f-2efe-4185-8b04-60280b14b262"
+              >
+                <button className={styles.pricingCard_button}>
+                  <p>Purchase</p>
+                </button>
+              </Link>
+            )}
 
             <ul>
               <li>Get access to Premium Movies</li>
@@ -124,12 +117,20 @@ function Pricing() {
             <h3>
               <span>₹</span> 100
             </h3>
-            <Link
-              target="_blank"
-              to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a"
-            >
-              <button className={styles.pricingCard_button}>Purchase</button>
-            </Link>
+            {isGold ? (
+              <button className={styles.pricingCard_button_purchased}>
+                <p>Your Current Plan</p>
+              </button>
+            ) : (
+              <Link
+                target="_blank"
+                to="https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a"
+              >
+                <button className={styles.pricingCard_button}>
+                  <p>Purchase</p>
+                </button>
+              </Link>
+            )}
             <ul>
               <li>Get access to Premium Movies</li>
               <li>Quality upto 1080p</li>

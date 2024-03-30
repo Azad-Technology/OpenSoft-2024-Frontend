@@ -3,6 +3,7 @@ import styles from "./WatchListModal.module.css";
 import instance from "../../axios";
 import axios from "axios";
 import {useStateValue} from "../../MyContexts/StateProvider";
+import SuccessPopup from "../LoginAcceptedRejected/successfulLogin";
 const WatchListModal = ({onClose, movieID}) => {
   const [{token, user}, dispatch] = useStateValue();
   const [watchlistName, setWatchListName] = useState("");
@@ -10,17 +11,24 @@ const WatchListModal = ({onClose, movieID}) => {
   const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const [selectedWatchlistsName, setSelectedWatchlistsName] = useState([]);
+  const [isPopup, setIsPopup] = useState(false);
+  const [message, setMessage] = useState("");
 
+  const [selectedWatchlistsName, setSelectedWatchlistsName] = useState([]);
+  // console.log(user);
   let label = `Watchlists`;
 
-  console.log(user);
+  // console.log(user);
   const watchlists = user?.watchlist;
   //   console.log(user);
   const createWatchList = async e => {
     e.preventDefault();
     if (watchlistName === "") {
       setErrorMsg("Please enter a name");
+      return;
+    }
+    if (watchlistName.length > 15) {
+      setErrorMsg("Name should be less than 15 characters");
       return;
     }
     if (watchlists?.find(watchlist => watchlist.name === watchlistName)) {
@@ -53,7 +61,7 @@ const WatchListModal = ({onClose, movieID}) => {
       try {
         const res = await instance.request(`/watchlist/${watchlistID}`, config);
         dispatch({
-          type: "ADD_MOVIE_TO_WATCHLIST",
+          type: "CREATE_WATCHLIST",
           watchlist: res.data,
         });
       } catch (err) {
@@ -62,7 +70,6 @@ const WatchListModal = ({onClose, movieID}) => {
     } catch (err) {
       console.log(err);
     }
-    window.location.reload();
     onClose();
   };
 
@@ -75,6 +82,11 @@ const WatchListModal = ({onClose, movieID}) => {
     setErrorMsg("");
     selectedWatchlists.forEach(async watchlistID => {
       try {
+        if (
+          user.watchlist.find(watchlist => watchlist._id === watchlistID).movies.find(movie => movie._id === movieID)
+        ) {
+          return;
+        }
         let config = {
           method: "patch",
           headers: {
@@ -130,6 +142,7 @@ const WatchListModal = ({onClose, movieID}) => {
 
   return (
     <div className={styles.watchlist_modal_overlay}>
+      {isPopup && <SuccessPopup message={message} />}
       <div className={styles.watchlist_modal}>
         <div className={styles.watchlist_modal_content}>
           <div className={styles.watchlist_modal_heading}>Add to Watchlist</div>
@@ -150,14 +163,16 @@ const WatchListModal = ({onClose, movieID}) => {
             </div>
             {errorMsg && <div className={styles.watchlist_error}>{errorMsg}</div>}
           </div>
+
           <div className={styles.watchlist_divider}></div>
+
           <div className={styles.watchlist_modal_section}>
             <div className={styles.watchlist_modal_section_heading}>Add to Existing</div>
-            <div className={styles.dropdown_submit_btn_container}>
+
+            <div className={styles.watchlist_create}>
               <div className={styles.dropdowncontainer} ref={dropdownRef}>
                 <button onClick={toggleDropdown} className={styles.dropdownbutton}>
                   {displaySelected(label)}
-                  {/* Watchlists */}
                 </button>
                 <button type="submit" className={styles.watchlist_modal_button} onClick={e => addWatchList(e)}>
                   {" "}
@@ -169,19 +184,22 @@ const WatchListModal = ({onClose, movieID}) => {
               {isOpen && (
                 <ul className={styles.dropdownlist}>
                   {watchlists?.map(watchlist => (
-                    <li>
+                    <li key={watchlist._id}>
                       <label className={styles.checkbox}>
-                        <input
-                          type="checkbox"
-                          className={styles.checkbox__input}
-                          checked={selectedWatchlistsName.includes(watchlist.name) ? "checked" : ""}
-                          onChange={e => {
-                            handleCheckboxChange(watchlist._id, e.target.checked);
-                            handleCheckboxChange2(watchlist.name, e.target.checked);
-                          }}
-                        />
-                        <span class="input-check"></span>
-                        {watchlist.name}
+                        <div className={styles.checkbox__content}>
+                          <input
+                            type="checkbox"
+                            className={styles.checkbox__input}
+                            id={`checkbox-${watchlist._id}`}
+                            checked={selectedWatchlistsName.includes(watchlist.name) ? "checked" : ""}
+                            onChange={e => {
+                              handleCheckboxChange(watchlist._id, e.target.checked);
+                              handleCheckboxChange2(watchlist.name, e.target.checked);
+                            }}
+                          />
+                          <span className={styles.input_check} />
+                          {watchlist.name}
+                        </div>
                       </label>
                     </li>
                   ))}
