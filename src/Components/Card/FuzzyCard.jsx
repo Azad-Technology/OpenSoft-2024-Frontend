@@ -19,7 +19,7 @@ const FuzzyCard = ({movies, val, length, onClose, basis,setShowLikePopup}) => {
   // for dummy purpose we take movies?.like=false;
   const [like, setlike] = useState(false);
   const navigate = useNavigate();
-  const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
+  const [premium, setPremium] = useState(movies?.imdb.rating >= 8.0);
 
   const openHeart = event => {
     if (token === null || token === undefined || token === "null" || token === "undefined") {

@@ -7,7 +7,7 @@ import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 const TopCard = ({movies, val, length, setShowPopup3,setShowLikePopup}) => {
   const [{user, token}, dispatch] = useStateValue();
 
-  const [premium, setPremium] = useState(movies?.imdb.rating >= 8);
+  const [premium, setPremium] = useState(movies?.imdb.rating >= 8.0);
   const [like, setlike] = useState(false);
   const [value, setvalue] = useState("-o");
   const openHeart = event => {
