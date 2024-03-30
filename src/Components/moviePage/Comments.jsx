@@ -12,87 +12,7 @@ import {useNavigate} from "react-router-dom";
 // let image = ['https://source.unsplash.com/random','https://source.unsplash.com/random','https://source.unsplash.com/random'];
 
 function NewComments(props) {
-  const [{token, user}, dispatch] = useStateValue();
-
-  const [isOpenArray, setIsOpenArray] = useState(Array(10).fill(false));
-
-  const toggleComment = index => {
-    const newArray = [...isOpenArray];
-    newArray[index] = !newArray[index];
-    setIsOpenArray(newArray);
-  };
-
-  const maxLength = 150; // Max length of comment
-
-  function truncateComment(comment, maxLength) {
-    if (comment.length <= maxLength) {
-      return comment;
-    }
-
-    // Truncate the comment to the specified maximum length and add "..."
-    return comment.slice(0, maxLength) + "...";
-  }
-
-  //check mobile view
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Example threshold for mobile view
-    };
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Initial check for screen size
-    handleResize();
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log(props);
-  }, [props]);
-  let comments = props.info.map(obj => {
-    return obj.text;
-  });
-
-  let name = props.info.map(obj => {
-    return obj.name;
-  });
-
-  // Assuming you have an array of profile picture links
-  const profilePicLinks = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
-    "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
-    "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
-    "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
-    "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0xnK9Tda9uC_GlPVkwcQO9dRVaCoBWs73V5Yf_FFN8i5gWSzrxBw2oS126sikhXYpQM&usqp=CAU",
-    "https://w0.peakpx.com/wallpaper/1020/704/HD-wallpaper-iron-man-hero-marvel-movie.jpg",
-    "https://pics.craiyon.com/2023-07-13/70f4c8db63f94f30b453aee048daee7b.webp",
-    "https://pics.craiyon.com/2023-05-31/220e4c73f6674d46a84840ebde9f9bc8.webp",
-    "https://xf-assets.pokecharms.com/data/attachment-files/2015/10/236933_Charmander_Picture.png",
-  ];
-
-  function getProfilePicLink(username) {
-    // Find the index of the username in the 'name' array
-    const index = name.indexOf(username);
-    if (index !== -1) {
-      // If the username is found, use modulus to cycle through the profile picture links
-      return profilePicLinks[index];
-    } else {
-      // If the username is not found, return a default profile picture link
-      return "default_profile_pic.jpg";
-    }
-  }
-
-  let date = props.info.map(obj => {
-    return obj.date;
-  });
-
+  const [{token,user}, dispatch] = useStateValue();
   const [clicked, setClicked] = useState(false);
   const [state, setState] = useState("See more");
   const [parentHeight, setParentHeight] = useState("auto");
@@ -101,6 +21,10 @@ function NewComments(props) {
   const textareaRef = useRef(null);
   const initialParentHeight = useRef(null);
   const initialTextareaHeight = useRef(null);
+  // const [showLine, setShowLine] = useState(false); // State variable for showing line
+  const [showDiscardBtn, setShowDiscardBtn] = useState(false); // State variable for showing discard button
+  const [showBtns, setShowBtns] = useState(false); // State variable to show/hide buttons
+  // const [showSubmitBtn, setShowSubmitBtn] = useState(false); // State variable for showing discard button
   const navigate = useNavigate();
 
   function SwitchState() {
@@ -138,33 +62,12 @@ function NewComments(props) {
     } else {
       setDisableBtn(true);
     }
-    const newTextareaHeight = no_of_lines() + 2 + "rem";
-    const parentHeight = no_of_lines() + 4 + "rem";
-
-    const typeComment = document.getElementById("myTextArea");
-    typeComment.style.height = newTextareaHeight;
-
-    setTextareaHeight(newTextareaHeight);
-    setParentHeight(parentHeight);
+    
   }
 
   const [newComment, setNewComment] = useState("");
 
-  function handleTextareaFocus(event) {
-    const newTextareaHeight = no_of_lines() + 2 + "rem";
-    const parentHeight = no_of_lines() + 4 + "rem";
-
-    const typeComment = document.getElementById("myTextArea");
-    typeComment.style.height = newTextareaHeight;
-
-    setTextareaHeight(newTextareaHeight);
-    setParentHeight(parentHeight);
-  }
-
-  function handleTextareaBlur(event) {
-    setTextareaHeight(no_of_lines() + 2 + "rem");
-    setParentHeight(no_of_lines() + 4 + "rem");
-  }
+  
 
   const handleSubmit = async () => {
     if (!token) {
@@ -183,19 +86,34 @@ function NewComments(props) {
             },
           }
         );
-        const temp = {
-          name: user.name,
-          text: newComment,
-        };
-        let curr = props.info;
+        const temp={
+          name:user.name,
+          text:newComment
+        }
+        let curr=props.info;
         curr.unshift(temp);
         props.setComments(curr);
-        setNewComment("");
+          setNewComment("");
         // window.location.reload();
       } catch (error) {
         console.log(error);
       }
     }
+  };
+
+  const handleTextAreaClick = () => {
+    // setShowSubmitBtn(true); // Show submit button when textarea is clicked
+    setShowBtns(true); // Show buttons when textarea is clicked
+    setShowLine(true); // Show line when textarea is clicked
+    // setShowDiscardBtn(true); // Show discard button when textarea is clicked
+  };
+
+  const handleDiscardClick = () => {
+    // setShowSubmitBtn(false); // Hide submit button when discard button is clicked
+    setShowBtns(false); // Hide buttons when discard button is clicked
+    // setShowLine(false); // Hide line when discard button is clicked
+    // setShowDiscardBtn(false); // Hide discard button when discard button is clicked
+    setNewComment(""); // Clear textarea content
   };
 
   return (
@@ -204,101 +122,56 @@ function NewComments(props) {
         <div className={styles.heading}>Comments</div>
         <div className={styles.yourComment}>
           <div className={styles.imgTextBtnContainer} style={{height: parentHeight}}>
-            <div className={styles.userImg}></div>
-            <div className={styles.textBtnCont} style={{height: parentHeight}}>
-              <div className={styles.textArea} style={{height: textareaHeight}}>
+            <div className={styles.userImg}> </div>
+            <div className={styles.commentTextBox}>
+           
                 <textarea
                   id="myTextArea"
                   ref={textareaRef}
                   name="typeComment"
                   placeholder="Type your comment here..."
-                  cols={190}
-                  className={styles.typeComment}
+                  className={`${styles.typeComment} ${styles.textBtnCont}`}
                   style={{height: "100%", overflow: "hidden", whiteSpace: "pre-wrap"}}
                   onChange={event => handleTextAreaChange(event)}
-                  onFocus={handleTextareaFocus}
-                  // onBlur={handleTextareaBlur}
+                  onClick={handleTextAreaClick} // Call handleTextAreaClick when textarea is clicked
                   value={newComment}
                 ></textarea>
-              </div>
-              <div className={styles.submitBtnContainer}>
-                {disableBtn && (
-                  <button type="submit" className={styles.submitBtn} disabled>
-                    Submit
-                  </button>
+
+                {showBtns && (
+                  <div className={styles.btnGroup}>
+                    <button onClick={handleSubmit} className={styles.submitBtn} disabled={disableBtn}>
+                      Submit
+                    </button>
+                    <button className={styles.discardBtn} onClick={handleDiscardClick}>
+                      Discard
+                    </button>
+                  </div>
                 )}
-                {!disableBtn && (
-                  <button onClick={e => handleSubmit(e)} className={styles.submitBtn}>
-                    Submit
-                  </button>
-                )}
-              </div>
             </div>
           </div>
         </div>
-
         {props.info.length ? (
           <div className={styles.allComments}>
             {clicked ? (
               props.info.map((comment, index) => (
                 <div key={index} className={styles.allCommentsContainer}>
                   <div className={styles.commentInfo}>
-                    <div className={styles.imgContainer}>
-                      <img src={getProfilePicLink(name[index])} className={styles.imgContainer}></img>
-                    </div>
-                    <div className={styles.userName}>@{name[index]}</div>
+                    <div className={styles.imgContainer}></div>
+                    <div className={styles.userName}>@{comment.name}</div>
                   </div>
                   <div className={styles.commentContent}>
-                    <div className={styles.commentContent}>
-                      {isMobile && comments[index].length > maxLength ? (
-                        <>
-                          <p>
-                            {isOpenArray[index] ? (
-                              <p>{comments[index]}</p>
-                            ) : (
-                              <p>{truncateComment(comments[index], maxLength)}</p>
-                            )}
-                          </p>
-                          <button onClick={() => toggleComment(index)} className={styles.readMoreBtn}>
-                            {isOpenArray[index] ? "read less..." : "read more..."}
-                          </button>
-                        </>
-                      ) : (
-                        <>{comments[index]}</>
-                      )}
-                      {/* <p style={isOpen? null: paragraphStyle}>
-                      {comments[0]}
-                    </p> */}
-                    </div>
+                    <div className={styles.commentContent}>{comment.text}</div>
                   </div>
                 </div>
               ))
             ) : (
               <div className={styles.allCommentsContainer}>
                 <div className={styles.commentInfo}>
-                  <div className={styles.imgContainer}>
-                    <img src={profilePicLinks[0]} className={styles.imgContainer}></img>
-                  </div>
-                  <div className={styles.userName}>@{name[0]}</div>
+                  <div className={styles.imgContainer}></div>
+                  <div className={styles.userName}>@{props.info[0].name}</div>
                 </div>
                 <div className={styles.commentContent}>
-                  <div className={styles.commentContent}>
-                    {isMobile && comments[0].length > maxLength ? (
-                      <>
-                        <p>
-                          {isOpenArray[0] ? <p>{comments[0]}</p> : <p>{truncateComment(comments[0], maxLength)}</p>}
-                        </p>
-                        <button onClick={() => toggleComment(0)} className={styles.readMoreBtn}>
-                          {isOpenArray[0] ? "read less..." : "read more..."}
-                        </button>
-                      </>
-                    ) : (
-                      <>{comments[0]}</>
-                    )}
-                    {/* <p style={isOpen? null: paragraphStyle}>
-                    {comments[0]}
-                  </p> */}
-                  </div>
+                  <div className={styles.commentContent}>{props.info[0].text}</div>
                 </div>
               </div>
             )}
@@ -306,6 +179,7 @@ function NewComments(props) {
               <div className={styles.showMoreBtnContainer}>
                 <button onClick={SwitchState} className={styles.showMoreBtn} id="showMoreBtn">
                   <svg
+                    // fill="#cf0a0a"
                     fill="#fffe3e"
                     height="25px"
                     width="25px"
@@ -344,3 +218,5 @@ function NewComments(props) {
 }
 
 export default NewComments;
+
+

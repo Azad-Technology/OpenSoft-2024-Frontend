@@ -64,7 +64,7 @@ const Watchlist = ({movies, name, id}) => {
         <div className={styles.titles}>
           <div className={styles.watchlist_details}>
             <p>Watchlist</p>
-            <h2>{name}</h2>
+            <h2 className={styles.titleofwatchlist}>{name}</h2>
             <span>
               <strong>{user?.name}</strong> {movies?.length} Movies{" "}
             </span>

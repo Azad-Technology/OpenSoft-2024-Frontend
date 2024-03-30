@@ -383,7 +383,7 @@ const MoviePage = () => {
                 <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
-                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart} style={{color:"red"}}></i>
                     ) : (
                       <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
                     )}
