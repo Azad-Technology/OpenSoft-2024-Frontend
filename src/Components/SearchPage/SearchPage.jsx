@@ -17,7 +17,7 @@ const SearchPage = () => {
   const [genreSelections, setGenreSelections] = useState([]);
   const [languageSelections, setLanguageSelections] = useState([]);
   const [nlp,setNlp]=useState([]);
-
+  
   const getData = useCallback(async () => {
     setFuzzy(null);
     setNlp([]);
@@ -196,6 +196,7 @@ const SearchPage = () => {
   ];
 
   const fetchMovies = useCallback(async () => {
+    if(genreSelections.length===0 && languageSelections.length===0) return;
     try {
       const response = await axios.post("https://embed.popkorn.tech/fts_search_filter", {
         query: searchTerm,
@@ -211,7 +212,7 @@ const SearchPage = () => {
   }, [genreSelections, languageSelections]);
   useEffect(() => {
     fetchMovies();
-  }, [fetchMovies]);
+  }, [genreSelections, languageSelections]);
 
   return (
     <div className={styles.maincontentwrapper}>
@@ -293,14 +294,6 @@ const SearchPage = () => {
       </div>
       :null
       }
-
-
-
-      {/* {fuzzy?.length === 0 && (
-        <div className={styles.results_container}>
-
-        </div>
-      )} */}
     </div>
   );
 };

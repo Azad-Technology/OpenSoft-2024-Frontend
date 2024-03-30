@@ -10,7 +10,7 @@ import {faL} from "@fortawesome/free-solid-svg-icons";
 import LoginForm from "../LoginForm/LoginForm.jsx";
 import imdb from "../../assets/imdb-icon.svg";
 
-const Card = ({movies, val, length, onClose, basis}) => {
+const FuzzyCard = ({movies, val, length, onClose, basis}) => {
   const [{user, token}, dispatch] = useStateValue();
 
   if (onClose === undefined || onClose === null) {
@@ -127,4 +127,4 @@ const Card = ({movies, val, length, onClose, basis}) => {
     </>
   );
 };
-export default Card;
+export default FuzzyCard;
