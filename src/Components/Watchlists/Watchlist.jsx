@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styles from "./Watchlist.module.css";
-import MovieList from "../movieList/MovieList.jsx";
+import Card from "../Card/Card.jsx";
 import stockIcon from "../../assets/stock_movie_icon.jpg";
 import {useStateValue} from "../../MyContexts/StateProvider.jsx";
 import {useNavigate} from "react-router";
@@ -20,8 +20,11 @@ const Watchlist = ({movies, name, id}) => {
         },
       };
       const response = await instance.request(`/remove_watchlist/${id}`, config);
+      dispatch({
+        type: "REMOVE_WATCHLIST",
+        watchlistID: id,
+      });
       navigate("/profile");
-      window.location.reload(); // Force reload after navigation to show the effect of deletion
     } catch (err) {
       console.log(err);
     }
@@ -54,7 +57,12 @@ const Watchlist = ({movies, name, id}) => {
         </button>
       </div>
       <div className={styles.movie_grid}>
-        <MovieModalList movie={movies} />
+        <div className={styles.movieList}>
+          {movies.map((m, i) => {
+            if (m && m.poster_path === undefined) return;
+            return <Card movies={m} />;
+          })}
+        </div>
       </div>
     </div>
   );

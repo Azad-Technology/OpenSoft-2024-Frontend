@@ -96,7 +96,7 @@ const SearchPage = () => {
             <FuzzyCard
               key={index}
               movies={movie}
-              basis={movies.highlights ? movies.highlights.sort((a, b) => b.score - a.score)[0].path : "plot"}
+              basis={movie.highlights ? movie.highlights.sort((a, b) => b.score - a.score)[0].path : "plot"}
             />
           ))}
         </div>
