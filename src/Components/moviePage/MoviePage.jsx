@@ -19,6 +19,7 @@ import MoreLikeThis from "./MoreLikeThis/MoreLikeThis";
 import GenreModal from "../GenreModal/GenreModal";
 import closeIcon from "../../assets/close-47.svg";
 import chooseMovie from "./MovieList.jsx";
+import Notification from "../Notification/notification.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
@@ -121,7 +122,8 @@ function ModalTrail({onClose, movie}) {
 
 const MoviePage = () => {
   const [premium, setPremium] = useState(true);
-
+  const [addedToWatchlist, setAddedToWatchlist] = useState(false)
+  const [addedComment, setAddedComment] = useState(false)
   const [{token, user}, dispatch] = useStateValue();
 
   //Genre Modals
@@ -389,10 +391,14 @@ const MoviePage = () => {
                     )}
                   </span>
                 </span>
+
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} setAddedToWatchlist={setAddedToWatchlist}/>}
               </span>
+
             </div>
+            <Notification message="Added to watchlist" isVisible={addedToWatchlist}/>
+
             <div className={styles.genreList}>
               {!movie?.genres && (
                 <div className={styles.skeleton__headers}>
@@ -531,8 +537,8 @@ const MoviePage = () => {
           </div>
         )}
 
-        {comments ? <Comments setComments={setComments} info={comments} id={id} /> : <></>}
-
+        {comments ? <Comments setComments={setComments} info={comments} id={id} setAddedComment={setAddedComment}/> : <></>}
+          <Notification message="Comment posted" isVisible={addedComment}/>
         <MoreLikeThis id={id} />
         {selectedGenre && <GenreModal genre={selectedGenre} onClose={() => setSelectedGenre(null)} />}
       </div>
