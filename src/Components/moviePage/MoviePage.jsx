@@ -6,7 +6,7 @@ import instance from "../../axios";
 import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider, PIPButton} from "@vidstack/react";
+import {MediaPlayer, MediaProvider, PIPButton,useMediaState} from "@vidstack/react";
 import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -22,13 +22,13 @@ import chooseMovie from "./MovieList.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
-
   const [vidsrc, setVidsrc] = useState(null);
+  const [vidthumb, setVidthumb] = useState(null);
+  // const isActive = useMediaState('pictureInPicture');
   useEffect(() => {
     if (movie && token) {
       const choosenmovie = chooseMovie(movie?.title);
-      console.log("choosenmovie", choosenmovie);
-      console.log(choosenmovie);
+      setVidthumb(choosenmovie[3]);
       switch (user.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -51,10 +51,32 @@ function Modal({onClose, movie, token}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer storage="storage-key" title={movie?.title} src={vidsrc}>
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
+            {user?.subtype==="Basic"? <div className="basic_video">
+
+              <MediaPlayer
+                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                </DefaultVideoLayout>
+              </MediaPlayer>
+            </div>:
+            <div className="premium_video">
+
+              <MediaPlayer
+                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                </DefaultVideoLayout>
+              </MediaPlayer>
+            </div>}
           </div>
         </div>
         {/* Close button */}
@@ -68,13 +90,12 @@ function Modal({onClose, movie, token}) {
 
 function ModalTrail({onClose, movie}) {
   const [{user}, dispatch] = useStateValue();
-
   const [vidsrc, setVidsrc] = useState(null);
+  const [vidthumb, setVidthumb] = useState(null);
   useEffect(() => {
     if (movie) {
       const choosenmovie = chooseMovie(movie?.title);
-      console.log("choosenmovie", choosenmovie);
-      console.log(choosenmovie);
+      setVidthumb(choosenmovie[3]);
       switch (user?.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -97,10 +118,17 @@ function ModalTrail({onClose, movie}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer clipEndTime={30} storage="storage-key" title={movie?.title} src={vidsrc}>
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
+            <div className="basic_video">
+              <MediaPlayer
+              clipEndTime={30}
+                storage={user?.subtype!="Basic" && `${movie?._id} trail ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?tid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} />
+              </MediaPlayer>
+            </div>
           </div>
         </div>
         {/* Close button */}
@@ -271,7 +299,7 @@ const MoviePage = () => {
         if (user && user.subtype != "Basic") {
           setShowModal(true);
         } else {
-          setShowPopup(true);
+          // setShowPopup(true);
           navigate("/pricing");
           setTimeout(() => {
             setShowPopup(false);
@@ -375,7 +403,7 @@ const MoviePage = () => {
                 <span>
                   <span className={styles.icon} id="heartIcon">
                     {like ? (
-                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
+                      <i className={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart} style={{color:"red"}}></i>
                     ) : (
                       <i className={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
                     )}
@@ -420,17 +448,7 @@ const MoviePage = () => {
                 </button>
                 {showModal && <Modal token={token} movie={movie} onClose={() => setShowModal(false)} />}
                 {showTrailModal && <ModalTrail movie={movie} onClose={() => setShowTrailModal(false)} />}
-                {/* <span>
-                  <span className={styles.icon} id="heartIcon">
-                    {like ? (
-                      <i class={`fa fa-heart fa-lg`} aria-hidden="true" onClick={openHeart}></i>
-                    ) : (
-                      <i class={`fa fa-heart-o fa-lg`} aria-hidden="true" onClick={openHeart}></i>
-                    )}
-                  </span>
-                </span>
-                <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} />} */}
+                
               </span>
             </div>
           </div>
