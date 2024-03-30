@@ -6,7 +6,7 @@ import instance from "../../axios";
 import {useParams} from "react-router-dom";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import {MediaPlayer, MediaProvider, PIPButton} from "@vidstack/react";
+import {MediaPlayer, MediaProvider, PIPButton,useMediaState} from "@vidstack/react";
 import {defaultLayoutIcons, DefaultVideoLayout} from "@vidstack/react/player/layouts/default";
 import "./../../index.css";
 import {useStateValue} from "../../MyContexts/StateProvider";
@@ -22,11 +22,13 @@ import chooseMovie from "./MovieList.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
-
   const [vidsrc, setVidsrc] = useState(null);
+  const [vidthumb, setVidthumb] = useState(null);
+  // const isActive = useMediaState('pictureInPicture');
   useEffect(() => {
     if (movie && token) {
       const choosenmovie = chooseMovie(movie?.title);
+      setVidthumb(choosenmovie[3]);
       switch (user.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -49,16 +51,32 @@ function Modal({onClose, movie, token}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer
-              storage={`${movie?._id} movie`}
-              title={movie?.title}
-              src={vidsrc+"?mid="+movie?._id}
-            >
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} >
-                <PIPButton/>
-              </DefaultVideoLayout>
-            </MediaPlayer>
+            {user?.subtype==="Basic"? <div className="basic_video">
+
+              <MediaPlayer
+                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                </DefaultVideoLayout>
+              </MediaPlayer>
+            </div>:
+            <div className="premium_video">
+
+              <MediaPlayer
+                storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} >
+                  {/* {user?.subtype==="Basic" && <PIPButton style={{display:"none"}}/>} */}
+                </DefaultVideoLayout>
+              </MediaPlayer>
+            </div>}
           </div>
         </div>
         {/* Close button */}
@@ -72,11 +90,12 @@ function Modal({onClose, movie, token}) {
 
 function ModalTrail({onClose, movie}) {
   const [{user}, dispatch] = useStateValue();
-
   const [vidsrc, setVidsrc] = useState(null);
+  const [vidthumb, setVidthumb] = useState(null);
   useEffect(() => {
     if (movie) {
       const choosenmovie = chooseMovie(movie?.title);
+      setVidthumb(choosenmovie[3]);
       switch (user?.subtype) {
         case "Basic":
           setVidsrc(choosenmovie[0]);
@@ -99,15 +118,17 @@ function ModalTrail({onClose, movie}) {
         {/* Video container */}
         <div className={styles.video_container}>
           <div className={styles.video}>
-            <MediaPlayer
-            clipEndTime={30}
-              storage={`${movie?._id} trail`}
-              title={movie?.title}
-              src={vidsrc+"?tid="+movie?._id}
-            >
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
+            <div className="basic_video">
+              <MediaPlayer
+              clipEndTime={30}
+                storage={user?.subtype!="Basic" && `${movie?._id} trail ${user?.email} user`}
+                title={movie?.title}
+                src={vidsrc+"?tid="+movie?._id+"?uid="+user?.email}
+              >
+                <MediaProvider />
+                <DefaultVideoLayout thumbnails={vidthumb} icons={defaultLayoutIcons} />
+              </MediaPlayer>
+            </div>
           </div>
         </div>
         {/* Close button */}
@@ -283,7 +304,7 @@ const MoviePage = () => {
         if (user && user.subtype != "Basic") {
           setShowModal(true);
         } else {
-          setShowPopup(true);
+          // setShowPopup(true);
           navigate("/pricing");
           setTimeout(() => {
             setShowPopup(false);
