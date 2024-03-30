@@ -71,7 +71,7 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
           setCreateWatchlist(false)
         },2500)
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
       config.method = "get";
       setWatchListName("");
@@ -82,10 +82,10 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
           watchlist: res.data,
         });
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
     onClose();
   };
@@ -121,7 +121,7 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
         };
         const response = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     });
     setSelectedWatchlists([]);

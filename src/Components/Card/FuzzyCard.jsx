@@ -49,7 +49,7 @@ const Card = ({movies, val, length, onClose, basis}) => {
         dispatch({type: "REM_FAV", movie: movies});
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

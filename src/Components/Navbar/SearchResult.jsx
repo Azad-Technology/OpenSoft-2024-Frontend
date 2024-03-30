@@ -10,9 +10,9 @@ export const SearchResult = ({movie,setSearch,setShowSearchBar}) => {
   }, [movie]);
 
   const handleClick = () => {
+    navigate(`/movie/${movie?._id}`);
     setSearch("");
     setShowSearchBar(false);
-    navigate(`/movie/${movie?._id}`);
   }
 
   return (

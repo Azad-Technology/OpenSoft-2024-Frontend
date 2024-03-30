@@ -275,7 +275,7 @@ const MoviePage = () => {
         dispatch({type: "REM_FAV", movie: movie});
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
