@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6606dc194185cb979cd940cb",
+    "name": "Akarsh Keer",
+    "email": "akarsh310@example.com",
+    "movie_id": "573a13e9f29313caabdcd054",
+    "text": "I was completely enchanted by the story. I was completely absorbed by the characters and the story.",
+    "date": "2024-03-19 13:13:12"
+  },
+  {
+    "_id": "6606dc194185cb979cda1d64",
+    "name": "Kaira Sekhon",
+    "email": "kaira420@example.com",
+    "movie_id": "573a13e9f29313caabdcd054",
+    "text": "The movie was an absolute pleasure to watch. I can't believe I waited so long to see this movie.",
+    "date": "2024-03-18 21:00:47"
+  }
+]

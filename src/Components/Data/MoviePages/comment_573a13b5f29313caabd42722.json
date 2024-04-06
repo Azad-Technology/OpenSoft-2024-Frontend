@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9ecce",
+    "name": "Taimur Dube",
+    "email": "taimur7@example.com",
+    "movie_id": "573a13b5f29313caabd42722",
+    "text": "I was blown away by the creativity and imagination. I was completely enthralled by every moment of it.",
+    "date": "2024-03-09 18:54:19"
+  },
+  {
+    "_id": "6606dc194185cb979cda42c8",
+    "name": "Myra Kota",
+    "email": "myra158@example.com",
+    "movie_id": "573a13b5f29313caabd42722",
+    "text": "I was completely immersed in the story.",
+    "date": "2024-02-28 19:46:36"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9a42b",
+    "name": "Jhanvi Chander",
+    "email": "jhanvi333@example.com",
+    "movie_id": "573a13f8f29313caabde8d7a",
+    "text": "I was completely swept up in the world of the film. A true masterpiece of cinema.",
+    "date": "2024-03-26 00:22:13"
+  },
+  {
+    "_id": "6606dc194185cb979cd9df94",
+    "name": "Manjari Ramaswamy",
+    "email": "manjari413@example.com",
+    "movie_id": "573a13f8f29313caabde8d7a",
+    "text": "The emotional depth of the characters was astounding. I was utterly mesmerized by the visuals. The pacing was perfect.",
+    "date": "2024-03-15 15:26:30"
+  }
+]

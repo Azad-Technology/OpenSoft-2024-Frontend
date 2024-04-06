@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cda3482",
+    "name": "Dummy",
+    "email": "ab@hg.com",
+    "movie_id": "573a1399f29313caabced021",
+    "text": "It's rare to find a movie that's both entertaining and thought-provoking, but this one nailed it.",
+    "date": "2024-03-26 11:28:42"
+  },
+  {
+    "_id": "6606dc194185cb979cda7f91",
+    "name": "warror",
+    "email": "warror@example.com",
+    "movie_id": "573a1399f29313caabced021",
+    "text": "This movie deserves all the awards. I couldn't stop thinking about it after it ended. The movie was pure joy.",
+    "date": "2024-03-24 03:26:34"
+  },
+  {
+    "_id": "6606dc194185cb979cd98dad",
+    "name": "Badal Shenoy",
+    "email": "badal46@example.com",
+    "movie_id": "573a1399f29313caabced021",
+    "text": "I was completely absorbed by the characters and the story.",
+    "date": "2024-03-16 10:45:29"
+  },
+  {
+    "_id": "6606dc194185cb979cd9987b",
+    "name": "Kismat Bora",
+    "email": "kismat200@example.com",
+    "movie_id": "573a1399f29313caabced021",
+    "text": "It's rare to find a movie that's as visually stunning as it is emotionally resonant, but this one delivered on both fronts. A must-see for any movie lover. This movie left me speechless.",
+    "date": "2024-03-09 06:58:25"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c300",
+    "name": "Stuvan Varty",
+    "email": "stuvan151@example.com",
+    "movie_id": "573a1399f29313caabced021",
+    "text": "The movie was an absolute masterpiece of cinema.",
+    "date": "2024-02-29 01:30:33"
+  },
+  {
+    "_id": "6606dc194185cb979cd96336",
+    "name": "Kartik Biswas",
+    "email": "kartik306@example.com",
+    "movie_id": "573a1399f29313caabced021",
+    "text": "A true masterpiece of cinema. The movie was an emotional rollercoaster.",
+    "date": "2024-02-29 00:43:58"
+  }
+]

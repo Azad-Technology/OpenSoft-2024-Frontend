@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "6606dc194185cb979cda5a1a",
+    "name": "jordon1",
+    "email": "jordon1@example.com",
+    "movie_id": "573a13f6f29313caabde4f8c",
+    "text": "I was completely absorbed by every frame of it. The movie left me feeling uplifted and inspired.",
+    "date": "2024-03-22 18:27:26"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d59b",
+    "name": "Vritika Gade",
+    "email": "vritika203@example.com",
+    "movie_id": "573a13f6f29313caabde4f8c",
+    "text": "I was completely enthralled by every moment of it.",
+    "date": "2024-03-21 13:37:21"
+  },
+  {
+    "_id": "6606dc194185cb979cd9acce",
+    "name": "Kimaya Korpal",
+    "email": "kimaya75@example.com",
+    "movie_id": "573a13f6f29313caabde4f8c",
+    "text": "The movie was an instant favorite. The story was so gripping, I couldn't tear myself away.",
+    "date": "2024-03-13 19:01:47"
+  },
+  {
+    "_id": "6606dc194185cb979cd9548f",
+    "name": "Anahi Mallick",
+    "email": "anahi240@example.com",
+    "movie_id": "573a13f6f29313caabde4f8c",
+    "text": "I was utterly captivated by the characters and the world they inhabited. The movie left me feeling uplifted and inspired. I was left with a smile on my face.",
+    "date": "2024-03-07 00:15:19"
+  },
+  {
+    "_id": "6606dc194185cb979cd9f3bc",
+    "name": "Amira Hans",
+    "email": "amira31@example.com",
+    "movie_id": "573a13f6f29313caabde4f8c",
+    "text": "The movie was a revelation.",
+    "date": "2024-03-05 14:34:03"
+  }
+]

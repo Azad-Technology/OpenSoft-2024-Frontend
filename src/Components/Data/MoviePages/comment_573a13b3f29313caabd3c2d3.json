@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9c580",
+    "name": "Dharmajan Barman",
+    "email": "dharmajan5@example.com",
+    "movie_id": "573a13b3f29313caabd3c2d3",
+    "text": "I loved every second of it. The movie was an absolute masterpiece of filmmaking. The movie was an absolute pleasure to watch.",
+    "date": "2024-03-19 09:13:20"
+  },
+  {
+    "_id": "6606dc194185cb979cda58b0",
+    "name": "Pari Manne",
+    "email": "pari303@example.com",
+    "movie_id": "573a13b3f29313caabd3c2d3",
+    "text": "I can't wait to watch it again! The visual effects were stunning. This movie left me speechless.",
+    "date": "2024-03-06 18:13:10"
+  },
+  {
+    "_id": "6606dc194185cb979cd95d93",
+    "name": "Saksham Swamy",
+    "email": "saksham133@example.com",
+    "movie_id": "573a13b3f29313caabd3c2d3",
+    "text": "The ending was so satisfying. Such a heartwarming story, it brought tears to my eyes.",
+    "date": "2024-03-01 04:52:20"
+  },
+  {
+    "_id": "6606dc194185cb979cd9f4c0",
+    "name": "Kaira Baral",
+    "email": "kaira453@example.com",
+    "movie_id": "573a13b3f29313caabd3c2d3",
+    "text": "I couldn't stop thinking about it after it ended. It's a movie I'll never forget. The movie was a true cinematic experience.",
+    "date": "2024-02-29 10:38:46"
+  }
+]

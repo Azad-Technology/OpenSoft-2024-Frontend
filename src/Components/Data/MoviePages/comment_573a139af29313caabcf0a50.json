@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "6606dc194185cb979cda3a42",
+    "name": "Jayant Dyal",
+    "email": "jayant173@example.com",
+    "movie_id": "573a139af29313caabcf0a50",
+    "text": "I was smiling the whole way through. I couldn't wipe the grin off my face. I can't wait to see it again.",
+    "date": "2024-03-17 16:30:12"
+  },
+  {
+    "_id": "6606dc194185cb979cd95e09",
+    "name": "Raunak Singh",
+    "email": "raunak489@example.com",
+    "movie_id": "573a139af29313caabcf0a50",
+    "text": "It's rare to find a movie that's as visually stunning as it is emotionally resonant, but this one delivered on both fronts. The movie reminded me why I love cinema. I couldn't tear my eyes away from the screen.",
+    "date": "2024-03-17 09:28:56"
+  },
+  {
+    "_id": "6606dc194185cb979cd95d37",
+    "name": "Warrior",
+    "email": "warrior501@example.com",
+    "movie_id": "573a139af29313caabcf0a50",
+    "text": "Every scene was beautifully shot.",
+    "date": "2024-03-14 02:31:37"
+  },
+  {
+    "_id": "6606dc194185cb979cd96523",
+    "name": "shiva123",
+    "email": "shiva1234@example.com",
+    "movie_id": "573a139af29313caabcf0a50",
+    "text": "I was left with a smile on my face. This movie deserves all the awards. I couldn't stop thinking about it after it ended.",
+    "date": "2024-03-04 16:35:39"
+  }
+]

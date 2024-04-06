@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9ec1c",
+    "name": "Navya Batra",
+    "email": "navya349@example.com",
+    "movie_id": "573a13e9f29313caabdcdc99",
+    "text": "The movie was a true masterpiece of storytelling.",
+    "date": "2024-03-26 04:04:40"
+  },
+  {
+    "_id": "6606dc194185cb979cda1500",
+    "name": "Kabir Joshi",
+    "email": "kabir129@example.com",
+    "movie_id": "573a13e9f29313caabdcdc99",
+    "text": "I can't believe I waited so long to see this movie. The movie was a true cinematic triumph.",
+    "date": "2024-03-21 13:08:55"
+  },
+  {
+    "_id": "6606dc194185cb979cd9426a",
+    "name": "Hiran Biswas",
+    "email": "hiran82@example.com",
+    "movie_id": "573a13e9f29313caabdcdc99",
+    "text": "The story was so gripping, I couldn't tear myself away. I was smiling the whole way through.",
+    "date": "2024-03-21 01:42:55"
+  },
+  {
+    "_id": "6606dc194185cb979cda6dcf",
+    "name": "Riaan Tailor",
+    "email": "riaan439@example.com",
+    "movie_id": "573a13e9f29313caabdcdc99",
+    "text": "The movie left me feeling uplifted and inspired. I was blown away by the creativity and imagination. The ending was so satisfying.",
+    "date": "2024-03-17 20:35:49"
+  },
+  {
+    "_id": "6606dc194185cb979cd98461",
+    "name": "Indranil Sangha",
+    "email": "indranil271@example.com",
+    "movie_id": "573a13e9f29313caabdcdc99",
+    "text": "I was smiling the whole way through. Absolutely brilliant. I was left in awe of the creativity and imagination on display.",
+    "date": "2024-03-11 14:17:53"
+  },
+  {
+    "_id": "6606dc194185cb979cd9468c",
+    "name": "jordon1",
+    "email": "jordon1@example.com",
+    "movie_id": "573a13e9f29313caabdcdc99",
+    "text": "I was completely blown away by the sheer talent on display. The story was so compelling. The movie was a true cinematic triumph.",
+    "date": "2024-02-29 09:43:22"
+  },
+  {
+    "_id": "6606dc194185cb979cda211c",
+    "name": "warror",
+    "email": "warror@example.com",
+    "movie_id": "573a13e9f29313caabdcdc99",
+    "text": "Such a heartwarming story, it brought tears to my eyes. The movie was an absolute masterpiece of filmmaking.",
+    "date": "2024-02-28 07:19:28"
+  }
+]

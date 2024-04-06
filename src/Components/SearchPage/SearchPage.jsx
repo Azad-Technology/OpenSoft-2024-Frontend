@@ -8,6 +8,7 @@ import FuzzyCard from "../Card/FuzzyCard.jsx";
 import  Card  from '../Card/Card.jsx';
 import GeneralSlider from "../HomeSliders/GeneralSlider.jsx";
 import MovieList from "../movieList/MovieList.jsx";
+import { saveJsonFile } from "../save.jsx";
 
 const SearchPage = ({setShowLikePopup}) => {
   const {searchTerm} = useParams();
@@ -22,10 +23,15 @@ const SearchPage = ({setShowLikePopup}) => {
     setFuzzy(null);
     setNlp([]);
     try {
-      const response = await axios.post("https://embed.popkorn.tech/rrf", {
-        query: searchTerm,
-      });
-      setFuzzy(response.data);
+      let response = [];
+      if(searchTerm==='iron man'){
+        response = await import(`../Data/Fuzzy/iron_man.json`);
+      } else if(searchTerm==='man builds suit in a cave'){
+        response = await import (`../Data/Fuzzy/man_builds_suit_in_a_cave.json`);
+      }
+      else response = await import(`../Data/Fuzzy/None.json`);
+      setFuzzy(response.default);
+      // saveJsonFile(response.data, `${searchTerm}.json`);
       setGenreSelections([]);
       setLanguageSelections([]);
       const response1=await axios.post("https://embed.popkorn.tech/nlp", {
@@ -41,9 +47,6 @@ const SearchPage = ({setShowLikePopup}) => {
   }, [searchTerm]);
 
   const genreOptions = [
-    // {label: "Action", value: "action"},
-    // {label: "Comedy", value: "comedy"},
-    // {label: "Sci-Fi", value: "sci-fi"},
     {
       label: "Action",
       link: "#",

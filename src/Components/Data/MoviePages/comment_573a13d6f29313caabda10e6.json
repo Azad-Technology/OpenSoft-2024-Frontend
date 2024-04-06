@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "6607d9b2cfa2e58202171500",
+    "name": "Open",
+    "email": "open@soft.com",
+    "movie_id": "573a13d6f29313caabda10e6",
+    "text": "Nice Movie, great direction by Terrence Malick",
+    "date": "2024-03-30 09:21:54"
+  },
+  {
+    "_id": "6606dc194185cb979cda0717",
+    "name": "Amira Gupta",
+    "email": "amira268@example.com",
+    "movie_id": "573a13d6f29313caabda10e6",
+    "text": "I was left in awe of the sheer brilliance of it all. It's a movie I'll want to watch again and again. The movie was a true cinematic gem.",
+    "date": "2024-03-25 11:42:13"
+  },
+  {
+    "_id": "6606dc194185cb979cda6d90",
+    "name": "Jivin Bhagat",
+    "email": "jivin357@example.com",
+    "movie_id": "573a13d6f29313caabda10e6",
+    "text": "The movie was an emotional rollercoaster.",
+    "date": "2024-03-22 01:33:03"
+  },
+  {
+    "_id": "6606dc194185cb979cd94f42",
+    "name": "Amira Hans",
+    "email": "amira31@example.com",
+    "movie_id": "573a13d6f29313caabda10e6",
+    "text": "It's a movie I'll want to watch again and again.",
+    "date": "2024-03-07 18:31:23"
+  }
+]

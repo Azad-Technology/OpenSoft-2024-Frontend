@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "6606dc194185cb979cd952c6",
+    "name": "Urvi Acharya",
+    "email": "urvi182@example.com",
+    "movie_id": "573a13ccf29313caabd823a9",
+    "text": "The movie was a true joy to watch.",
+    "date": "2024-03-25 22:58:20"
+  },
+  {
+    "_id": "6606dc194185cb979cd9ebc7",
+    "name": "Fateh Dar",
+    "email": "fateh368@example.com",
+    "movie_id": "573a13ccf29313caabd823a9",
+    "text": "I was left in awe of the creativity and imagination on display. The movie was pure joy.",
+    "date": "2024-03-22 01:21:02"
+  },
+  {
+    "_id": "6606dc194185cb979cda6aa8",
+    "name": "Umang Wali",
+    "email": "umang257@example.com",
+    "movie_id": "573a13ccf29313caabd823a9",
+    "text": "The movie was an unforgettable experience.",
+    "date": "2024-03-17 17:16:54"
+  },
+  {
+    "_id": "6606dc194185cb979cda4b6a",
+    "name": "Ivana Wable",
+    "email": "ivana242@example.com",
+    "movie_id": "573a13ccf29313caabd823a9",
+    "text": "I couldn't wipe the grin off my face. The movie was an emotional rollercoaster.",
+    "date": "2024-03-10 13:20:59"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d76a",
+    "name": "Ivana Sha",
+    "email": "ivana171@example.com",
+    "movie_id": "573a13ccf29313caabd823a9",
+    "text": "The movie was a true cinematic experience. I couldn't stop thinking about it after it ended.",
+    "date": "2024-03-04 07:49:53"
+  },
+  {
+    "_id": "6606dc194185cb979cd9ad0d",
+    "name": "Dummy",
+    "email": "random@bitch.com",
+    "movie_id": "573a13ccf29313caabd823a9",
+    "text": "I was left with a smile on my face.",
+    "date": "2024-03-03 23:54:04"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d51d",
+    "name": "Dummy",
+    "email": "a@a.com",
+    "movie_id": "573a13ccf29313caabd823a9",
+    "text": "The movie was a breath of fresh air. I was laughing one minute and crying the next. The movie reminded me why I love cinema.",
+    "date": "2024-03-01 23:02:18"
+  }
+]

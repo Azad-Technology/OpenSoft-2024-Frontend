@@ -12,6 +12,8 @@ import {GoogleLoginButton} from "../LoginForm/GoogleLoginButton.jsx";
 
 import {MdEmail} from "react-icons/md";
 
+const data = [{email: "basic@basic.com", password: "Basic123#"}, {email: "silver@silver.com", password: "Silver123#"}, {email: "gold@gold.com", password: "Gold123#"}];
+
 function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
   const [{token, premium}, dispatch] = useStateValue();
   const navigate = useNavigate();
@@ -31,37 +33,66 @@ function LoginForm({register, setShowPopup, setShowPopup2, showPopup2}) {
       setErrors("Please enter a valid email address.");
     } else {
       setErrors("");
-      try {
-        const response = await instance.post(
-          "/login",
-          {
-            email: email,
-            password: password,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        dispatch({
-          type: "SET_TOKEN",
-          token: response.data.token,
-        });
-        {
-          setShowPopup(true);
-          setTimeout(() => {
-            setShowPopup(false);
-          }, 4000);
-        }
-        navigate(-1);
-      } catch (error) {
-        setErrors(error.response.data.detail);
+      const response = data.map((dat) => {return dat.email === newEmail && dat.password === newPass});
+
+      if(!response){
+        setErrors("Invalid email or password");
         setShowPopup2(true);
         setTimeout(() => {
           setShowPopup2(false);
         }, 3000);
+        return;
       }
+      if(newPass === "Basic123#"){
+        dispatch({
+          type: "SET_TOKEN",
+          token: newPass,
+          user: {
+            name: "Basic User",
+            email: newEmail,
+            role: "",
+            subtype: "Basic",
+            fav: [],
+            profilePic: "",
+            isGoogleAuth: false,
+          }
+        });
+      } else if(newPass === "Silver123#"){
+        dispatch({
+          type: "SET_TOKEN",
+          token: newPass,
+          user: {
+            name: "Silver User",
+            email: "silver@silver.com",
+            role: "",
+            subtype: "Silver",
+            fav: [],
+            profilePic: "",
+            isGoogleAuth: false,
+          }
+        }); 
+      } else{
+        dispatch({
+          type: "SET_TOKEN",
+          token: newPass,
+          user: {
+            name: "Gold User",
+            email: "gold@gold.com",
+            role: "",
+            subtype: "Gold",
+            fav: [],
+            profilePic: "",
+            isGoogleAuth: false,
+          }
+        }); 
+      }
+      {
+        setShowPopup(true);
+        setTimeout(() => {
+          setShowPopup(false);
+        }, 4000);
+      }
+      navigate("/");
     }
   };
 

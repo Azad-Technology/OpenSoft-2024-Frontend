@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "66084099a667827a686d4e0a",
+    "name": "Dummy",
+    "email": "abcdef@gh.com",
+    "movie_id": "573a139af29313caabcf0e9a",
+    "text": "Really great movie! Loved it!",
+    "date": "2024-03-30 16:40:57",
+    "ago": "2 days ago",
+    "movie_name": "Eyes Wide Shut"
+  },
+  {
+    "_id": "66083f0c401f452f8fe51f2d",
+    "name": "Stuvan",
+    "email": "stuvan10@example.com",
+    "movie_id": "573a13f9f29313caabdeaf5f",
+    "text": "gud movie",
+    "date": "2024-03-30 16:34:20",
+    "ago": "2 days ago",
+    "movie_name": "Fly Away Solo"
+  },
+  {
+    "_id": "66083eb28cd63495f4768108",
+    "name": "Stuvan",
+    "email": "stuvan10@example.com",
+    "movie_id": "573a13f4f29313caabde224b",
+    "text": "good movie",
+    "date": "2024-03-30 16:32:50",
+    "ago": "2 days ago",
+    "movie_name": "Being Evel"
+  },
+  {
+    "_id": "66083e3ea86c1407f57db2aa",
+    "name": "Dummy",
+    "email": "abcdef@gh.com",
+    "movie_id": "573a13b5f29313caabd42f7f",
+    "text": "Awesome movie!",
+    "date": "2024-03-30 16:30:54",
+    "ago": "2 days ago",
+    "movie_name": "Ex Machina"
+  },
+  {
+    "_id": "660838497ed2e7fbeb01d1fb",
+    "name": "Dummy",
+    "email": "abcdef@gh.com",
+    "movie_id": "573a13f5f29313caabde398f",
+    "text": "Absolute masterpiece!!!!!!!!!!!!",
+    "date": "2024-03-30 16:05:29",
+    "ago": "2 days ago",
+    "movie_name": "World of Tomorrow"
+  }
+]

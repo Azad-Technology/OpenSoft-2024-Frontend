@@ -1,0 +1,54 @@
+{
+  "_id": "573a139af29313caabcf0eae",
+  "fullplot": "Death Row guards at a penitentiary, in the 1930's, have a moral dilemma with their job when they discover one of their prisoners, a convicted murderer, has a special gift.",
+  "imdb": {
+    "rating": 8.5,
+    "votes": 681825,
+    "id": 120689
+  },
+  "year": 1999,
+  "plot": "The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.",
+  "genres": [
+    "Crime",
+    "Drama",
+    "Fantasy"
+  ],
+  "rated": "R",
+  "metacritic": 61,
+  "title": "The Green Mile",
+  "lastupdated": "2015-08-31 00:33:33.090000000",
+  "languages": [
+    "English",
+    "French"
+  ],
+  "writers": [
+    "Stephen King (novel)",
+    "Frank Darabont (screenplay)"
+  ],
+  "type": "movie",
+  "poster": "https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_SY1000_SX677_AL_.jpg",
+  "num_mflix_comments": 144,
+  "released": "1999-12-10 00:00:00",
+  "awards": {
+    "wins": 19,
+    "nominations": 26,
+    "text": "Nominated for 4 Oscars. Another 15 wins & 26 nominations."
+  },
+  "countries": [
+    "USA"
+  ],
+  "cast": [
+    "Tom Hanks",
+    "David Morse",
+    "Michael Clarke Duncan",
+    "Bonnie Hunt"
+  ],
+  "directors": [
+    "Frank Darabont"
+  ],
+  "runtime": 189,
+  "poster_path": "/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg",
+  "backdrop_path": "/vxJ08SvwomfKbpboCWynC3uqUg4.jpg",
+  "dvd": "2000-06-13 00:00:00",
+  "lastUpdated": "2015-09-12 17:52:45"
+}

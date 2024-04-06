@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cd99746",
+    "name": "Drishya Devan",
+    "email": "drishya230@example.com",
+    "movie_id": "573a13bdf29313caabd592a0",
+    "text": "The dialogue was witty and clever.",
+    "date": "2024-03-18 13:49:09"
+  },
+  {
+    "_id": "6606dc194185cb979cd9ec2f",
+    "name": "Dummy",
+    "email": "shash@gmail.com",
+    "movie_id": "573a13bdf29313caabd592a0",
+    "text": "I can't wait to see it again. I was completely swept up in the world of the film.",
+    "date": "2024-03-07 18:43:49"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c018",
+    "name": "Yashvi Balan",
+    "email": "yashvi208@example.com",
+    "movie_id": "573a13bdf29313caabd592a0",
+    "text": "A must-see for any movie lover. This movie deserves all the awards.",
+    "date": "2024-03-07 03:29:06"
+  },
+  {
+    "_id": "6606dc194185cb979cda5a91",
+    "name": "Jivika Uppal",
+    "email": "jivika187@example.com",
+    "movie_id": "573a13bdf29313caabd592a0",
+    "text": "This movie exceeded all my expectations. I was on the edge of my seat the entire time. The performances were absolutely captivating.",
+    "date": "2024-03-04 21:03:21"
+  },
+  {
+    "_id": "6606dc194185cb979cd975ef",
+    "name": "Kavya Tiwari",
+    "email": "kavya198@example.com",
+    "movie_id": "573a13bdf29313caabd592a0",
+    "text": "I've never seen anything quite like it before.",
+    "date": "2024-02-28 11:23:43"
+  },
+  {
+    "_id": "6606dc194185cb979cd9b5de",
+    "name": "Miraya Aggarwal",
+    "email": "miraya185@example.com",
+    "movie_id": "573a13bdf29313caabd592a0",
+    "text": "I was completely captivated by the performances. I was left with a smile on my face. The movie was a revelation in storytelling.",
+    "date": "2024-02-28 10:50:39"
+  }
+]

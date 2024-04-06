@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "66081746632c7d21de78ea94",
+    "name": "temp ",
+    "email": "temp@gmail.com",
+    "movie_id": "573a13eef29313caabdd63e6",
+    "text": "Aee Waow, ekdum Krishna laage che",
+    "date": "2024-03-30 13:44:38"
+  },
+  {
+    "_id": "6606dc194185cb979cd97037",
+    "name": "Vanya Krishnan",
+    "email": "vanya360@example.com",
+    "movie_id": "573a13eef29313caabdd63e6",
+    "text": "I couldn't take my eyes off the screen. I laughed, I cried, it was incredible. The movie was an absolute masterpiece of filmmaking.",
+    "date": "2024-03-15 13:36:35"
+  }
+]

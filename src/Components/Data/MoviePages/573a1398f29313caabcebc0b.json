@@ -1,0 +1,44 @@
+{
+  "_id": "573a1398f29313caabcebc0b",
+  "plot": "A comprehensive survey of the American Civil War.",
+  "genres": [
+    "Documentary",
+    "History",
+    "War"
+  ],
+  "runtime": 680,
+  "cast": [
+    "Sam Waterston",
+    "Julie Harris",
+    "Jason Robards",
+    "Morgan Freeman"
+  ],
+  "num_mflix_comments": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BZDc1NzI2MGEtZDA2Yy00ZWExLTgwYmItNjU3N2QyYmM0MzYwXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SY1000_SX677_AL_.jpg",
+  "title": "The Civil War",
+  "fullplot": "This highly acclaimed mini series traces the course of the U.S. Civil War from the abolitionist movement through all the major battles to the death of President Lincoln and the beginnings of Reconstruction. The story is mostly told in the words of the participants themselves, through their diaries, letters, and Visuals are usually still photographs and illustrations of the time, and the soundtrack is likewise made up of war-era tunes played on period instruments. Several modern-day historians offer periodic comment and insight on the war's causes and events.",
+  "languages": [
+    "English"
+  ],
+  "released": "1990-09-23 00:00:00",
+  "awards": {
+    "wins": 10,
+    "nominations": 3,
+    "text": "Won 2 Primetime Emmys. Another 8 wins & 3 nominations."
+  },
+  "lastupdated": "2015-09-01 00:13:15.693000000",
+  "year": 1990,
+  "imdb": {
+    "rating": 9.4,
+    "votes": 4625,
+    "id": 98769
+  },
+  "countries": [
+    "USA"
+  ],
+  "type": "series",
+  "poster_path": "/eYmzt4EfYlY5VzUqGu5BL5tscKP.jpg",
+  "backdrop_path": "/pI0ke4M5OK2803ZufylqNpFnId2.jpg",
+  "dvd": "2006-01-10 00:00:00",
+  "lastUpdated": "2015-08-25 19:21:52"
+}

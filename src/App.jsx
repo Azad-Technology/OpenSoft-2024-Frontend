@@ -58,32 +58,57 @@ const App = () => {
   const [showPopup2, setShowPopup2] = useState(false);
   const [showPopup3,setShowPopup3] = useState(false);
 
-  const [{token}, dispatch] = useStateValue();
+  const [{token, user}, dispatch] = useStateValue();
 
   useEffect(() => {
     dispatch({
       type: "INITIALIZE_TOKEN",
     });
-    if (token && token !== "null" && token !== "undefined") {
-      const getUser = async () => {
-        try {
-          const user = await instance.get("/user", {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
-          dispatch({
-            type: "SET_USER",
-            user: user.data,
-          });
-        } catch (err) {
-          if (err.request.status === 401) {
+    dispatch({
+      type: "INITIALIZE_USER",
+    });
+    if (token && token !== "null" && token !== "undefined" && user?.name === "") {
+      const getUser = () => {
+          if(token === "Basic123#"){
             dispatch({
-              type: "REMOVE_TOKEN",
-            });
+              type: "SET_USER",
+              user: {
+                name: "Basic User",
+                email: "basic@basic.com",
+                role: "",
+                subtype: "Basic",
+                fav: [],
+                profilePic: "",
+                isGoogleAuth: false,
+              }
+            }); 
+          } else if(token === "Silver123#"){
+            dispatch({
+              type: "SET_USER",
+              user: {
+                name: "Silver User",
+                email: "silver@silver.com",
+                role: "",
+                subtype: "Silver",
+                fav: [],
+                profilePic: "",
+                isGoogleAuth: false,
+              }
+            }); 
+          } else if(token === "Gold123#"){
+            dispatch({
+              type: "SET_USER",
+              user: {
+                name: "Gold User",
+                email: "gold@gold.com",
+                role: "",
+                subtype: "Gold",
+                fav: [],
+                profilePic: "",
+                isGoogleAuth: false,
+              }
+            }); 
           }
-          window.location.href = "/login-expired";
-        }
       };
       getUser();
     }

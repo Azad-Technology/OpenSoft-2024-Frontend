@@ -1,0 +1,370 @@
+[
+  {
+    "plot": "The current educational system in the United States was developed a century ago during the rise of the industrial age and was once the envy of the world. However, the world economy has ...",
+    "genres": [
+      "Documentary",
+      "Drama",
+      "News"
+    ],
+    "runtime": 86,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTgxMDI4MjY1N15BMl5BanBnXkFtZTgwNDQxNjY3MzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Most Likely to Succeed",
+    "released": "2015-01-25 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.9,
+      "votes": 31,
+      "id": 4267108
+    },
+    "poster_path": "/ksbjCDnc2HEkC0nWrLoYnVVA66m.jpg",
+    "_id": "573a13f6f29313caabde4f8c",
+    "relevance_score": 26
+  },
+  {
+    "plot": "The Great Alone is a feature length independent documentary film that tells the inspiring comeback story of Iditarod Champion Lance Mackey.",
+    "genres": [
+      "Documentary",
+      "Adventure",
+      "Drama"
+    ],
+    "runtime": 80,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTUxMzk0MjY4M15BMl5BanBnXkFtZTgwMjMyNjQxNDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Great Alone",
+    "released": "2015-04-25 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.7,
+      "votes": 16,
+      "id": 3288930
+    },
+    "poster_path": "/5L4eccrkaB6N045qEWzA3moW7Bb.jpg",
+    "backdrop_path": "/yUPv97t5OgYsaZBe7znGfxD1Wz5.jpg",
+    "_id": "573a13e9f29313caabdcc662",
+    "relevance_score": 24
+  },
+  {
+    "plot": "A drama based on the experiences of Agu, a child soldier fighting in the civil war of an unnamed African country.",
+    "genres": [
+      "Drama",
+      "War"
+    ],
+    "runtime": 133,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTYwMzMzMDI0NF5BMl5BanBnXkFtZTgwNDQ3NjI3NjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Beasts of No Nation",
+    "released": "2015-10-16 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.5,
+      "votes": 118,
+      "id": 1365050
+    },
+    "poster_path": "/tQuKfCWtOHm8NmLIdqs9aOnpIr1.jpg",
+    "backdrop_path": "/vDfbeUK3OhoeyQRlUODwfSy6tyE.jpg",
+    "_id": "573a13c4f29313caabd6e307",
+    "relevance_score": 22
+  },
+  {
+    "plot": "A struggling Liberian rubber plantation worker risks everything to discover a new life as a Yellow Cab driver in New York City.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 87,
+    "title": "Out of My Hand",
+    "released": "2015-06-12 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 8,
+      "id": 3922764
+    },
+    "_id": "573a13f3f29313caabddf28a",
+    "relevance_score": 21
+  },
+  {
+    "plot": "In 1979, an Indian family moves to America with hopes of living the American Dream. While their 10-year-old boy Smith falls head-over-heels for the girl next door, his desire to become a \"good old boy\" propels him further away from his family's ideals than ever before.",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Family"
+    ],
+    "runtime": 102,
+    "title": "Good Ol' Boy",
+    "released": "2015-06-01 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 47,
+      "id": 1105355
+    },
+    "poster_path": "/ncALkAajnctju0CYKH4bFm40QJD.jpg",
+    "backdrop_path": "/h0YBqSr5nnsYkbUZwwzP3UHgLXJ.jpg",
+    "_id": "573a13bff29313caabd5e4b4",
+    "relevance_score": 21
+  },
+  {
+    "plot": "Matthias is the younger of the two Landberg brothers. While his brother David has followed in their father's footsteps on the path to success, Matthias lives his life far away from ...",
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "runtime": 100,
+    "title": "Im Sommer wohnt er unten",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 25,
+      "id": 2181814
+    },
+    "poster_path": "/ojfryM4DePAU0UvQa93WKCIdF0a.jpg",
+    "backdrop_path": "/njd9cwOLSvtqohw0xtOSOkCk8mR.jpg",
+    "_id": "573a13d8f29313caabda5981",
+    "relevance_score": 21
+  },
+  {
+    "plot": "In the hazy aftermath of an unimaginable loss, Sarah and Phil come unhinged, recklessly ignoring the repercussions. Phil starts to lose sight of his morals; Sarah takes off on a potentially disastrous journey, falling deeper into her own fever dream.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 105,
+    "title": "Meadowland",
+    "released": "2015-10-16 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 110,
+      "id": 3529656
+    },
+    "poster_path": "/yrvg3703wPftQLNI4xbBP2cuNy9.jpg",
+    "backdrop_path": "/nDu5empxd15LVQiBwh8bfM7OXhN.jpg",
+    "_id": "573a13edf29313caabdd4281",
+    "relevance_score": 20
+  },
+  {
+    "plot": "The story follows a man who returns home to discover a long-buried family secret, and whose attempts to put things right threaten the lives of those he left home years before.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 96,
+    "title": "The Daughter",
+    "released": "2015-06-04 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 60,
+      "id": 3922816
+    },
+    "poster_path": "/hOxjDfpvxILdlqLYoZlmgZDaHPZ.jpg",
+    "backdrop_path": "/pXEs3ZY701aRKarE8ja56sBQAuT.jpg",
+    "_id": "573a13f3f29313caabddf2b1",
+    "relevance_score": 20
+  },
+  {
+    "plot": "Set in early 19th century Wallachia, when a local policeman, Costandin, is hired by Iordache, a boyar (local noble), to find Garfin, a Gypsy slave who had run away from the boyar's estate ...",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Drama"
+    ],
+    "runtime": 108,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTgxNjA5MDkzNF5BMl5BanBnXkFtZTgwMTUyNzA5NDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Aferim!",
+    "released": "2015-03-06 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 1125,
+      "id": 4374460
+    },
+    "poster_path": "/fQyRszfnlXPFqQSWlqvdDDo42Ze.jpg",
+    "backdrop_path": "/sFhI2qDM2s5QdcdXQDxj4XxFEkn.jpg",
+    "_id": "573a13f7f29313caabde68f4",
+    "relevance_score": 20
+  },
+  {
+    "plot": "Meeting the right person at the wrong time can be the best thing that ever happened to you.",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 86,
+    "title": "This Isn't Funny",
+    "released": "2015-12-01 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 16,
+      "id": 3334212
+    },
+    "poster_path": "/kodEqRQtanUr4xuemS6GCg93yM8.jpg",
+    "_id": "573a13e9f29313caabdcdc99",
+    "relevance_score": 19
+  },
+  {
+    "plot": "Four lives intersect along the Ganges: a low caste boy hopelessly in love, a daughter ridden with guilt of a sexual encounter ending in a tragedy, a hapless father with fading morality, and...",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 109,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTU4NTE0NTMyNl5BMl5BanBnXkFtZTgwNjI5MDkxNjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Fly Away Solo",
+    "released": "2015-06-24 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 1273,
+      "id": 4635372
+    },
+    "poster_path": "/pDg9Em9YJtIdIzvjMklmFsTBB0s.jpg",
+    "backdrop_path": "/6vTv4OEy7Qq4FGeDpWxBsAXyTH.jpg",
+    "_id": "573a13f9f29313caabdeaf5f",
+    "relevance_score": 19
+  },
+  {
+    "plot": "A movie shot in a single take about Victoria, a runaway party girl, who's asked by three friendly men to join them as they hit the town. Their wild night of partying turns into a bank robbery.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 140,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc5NzQzNjk2NF5BMl5BanBnXkFtZTgwODU0MjI5NjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Victoria",
+    "released": "2015-10-09 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 3031,
+      "id": 4226388
+    },
+    "poster_path": "/fEt9U7JQYO8j8VtCCuyDzznPM2x.jpg",
+    "backdrop_path": "/ltvsxWWWfvcxoUbKVL8Dhhlwnrx.jpg",
+    "_id": "573a13f6f29313caabde4709",
+    "relevance_score": 19
+  },
+  {
+    "plot": "High schooler Greg, who spends most of his time making parodies of classic movies with his co-worker Earl, finds his outlook forever altered after befriending a classmate who has just been diagnosed with cancer.",
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "runtime": 105,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTA1NzUzNjY4MV5BMl5BanBnXkFtZTgwNDU0MDI0NTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Me and Earl and the Dying Girl",
+    "released": "2015-06-12 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 6396,
+      "id": 2582496
+    },
+    "poster_path": "/eLjS2bLMjln2n2I73Xu6TaANPDZ.jpg",
+    "backdrop_path": "/4sOeeDX9uBteu81ty2bcdbzU933.jpg",
+    "_id": "573a13dff29313caabdb85ce",
+    "relevance_score": 19
+  },
+  {
+    "plot": "A car mechanic in a small, working class town comes out of the closet to his unsuspecting, blue-collar best friends.",
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "runtime": 86,
+    "title": "Fourth Man Out",
+    "released": "2015-05-30 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 50,
+      "id": 3978720
+    },
+    "poster_path": "/74CtR9ZNIyWM9zSHEib2OSnaETv.jpg",
+    "backdrop_path": "/m38tszFoVDUXGQ5THIF83hCB6fK.jpg",
+    "_id": "573a13f3f29313caabddff60",
+    "relevance_score": 19
+  },
+  {
+    "plot": "The dark year 2204, in a world that has seen 73 years of continuous war. A Shaman is sent on a mission to convert the soul of a giant battle colossus.",
+    "genres": [
+      "Short",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "runtime": 18,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTYyODA0NzEwM15BMl5BanBnXkFtZTgwODk1NDQ0NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Shaman",
+    "released": "2015-04-18 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 11,
+      "id": 4215858
+    },
+    "poster_path": "/irQaZ3SgJI5ofdbQYJSIgLCT4oz.jpg",
+    "backdrop_path": "/xE5MOeGbNPDl6DOBQzVb9OWdhQo.jpg",
+    "_id": "573a13f5f29313caabde445e",
+    "relevance_score": 19
+  },
+  {
+    "plot": "A children's book author is the gatekeeper to a mysterious door in his closet that only allows certain people to enter. When he learns where the door leads, his life is forever changed.",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Fantasy"
+    ],
+    "runtime": 108,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjQyNDIwMjkzOF5BMl5BanBnXkFtZTgwMjQ5NDA3ODE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Welcome to Happiness",
+    "released": "2015-04-27 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 34,
+      "id": 3564794
+    },
+    "poster_path": "/nIIUpF9EaSGsrXyuPBGxifSCgNe.jpg",
+    "backdrop_path": "/s1Dn3ZNld1Z8jJOHRA05nR1dvAF.jpg",
+    "_id": "573a13eef29313caabdd55df",
+    "relevance_score": 19
+  },
+  {
+    "plot": "A philanthropist meddles in the lives of newly-married couples in an attempt to relive his past.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 90,
+    "title": "The Benefactor",
+    "released": "2015-04-17 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 83,
+      "id": 3165630
+    },
+    "poster_path": "/rvUazZEuj1UBK58TIxXEsla2Phy.jpg",
+    "backdrop_path": "/6GTQQLQjF2j7eC2ocWXgViZAIrH.jpg",
+    "_id": "573a13e7f29313caabdc8b24",
+    "relevance_score": 19
+  },
+  {
+    "plot": "This Internet is under attack. Communications, culture, free speech, innovation, and democracy are all up for grabs. Will the Internet be dominated by a few powerful interests? Or will citizens rise up to protect it?",
+    "genres": [
+      "Documentary",
+      "Drama"
+    ],
+    "runtime": 72,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTUxMjM5MDUyMF5BMl5BanBnXkFtZTgwNDMyODQwNDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Killswitch",
+    "released": "2014-10-18 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.8,
+      "votes": 39,
+      "id": 4067162
+    },
+    "poster_path": "/oOFizg5CTL4GgD1I54ZOq2DZfNp.jpg",
+    "backdrop_path": "/kMK8lYR5qj5R9zybCyUTpJO53Bd.jpg",
+    "_id": "573a13f4f29313caabde1f08",
+    "relevance_score": 18
+  }
+]

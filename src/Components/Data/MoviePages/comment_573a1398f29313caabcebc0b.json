@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cda558c",
+    "name": "Urvi Chana",
+    "email": "urvi246@example.com",
+    "movie_id": "573a1398f29313caabcebc0b",
+    "text": "The story was so original and refreshing.",
+    "date": "2024-03-12 00:19:36"
+  },
+  {
+    "_id": "6606dc194185cb979cd96edc",
+    "name": "Stuvan Varty",
+    "email": "stuvan151@example.com",
+    "movie_id": "573a1398f29313caabcebc0b",
+    "text": "The movie was a true cinematic triumph. Every scene was beautifully shot.",
+    "date": "2024-03-10 12:01:15"
+  },
+  {
+    "_id": "6606dc194185cb979cda507f",
+    "name": "Purab Atwal",
+    "email": "purab319@example.com",
+    "movie_id": "573a1398f29313caabcebc0b",
+    "text": "I was completely immersed in the story. I was smiling the whole way through. The movie was a revelation.",
+    "date": "2024-03-07 02:57:43"
+  },
+  {
+    "_id": "6606dc194185cb979cda0d73",
+    "name": "Ryan Badal",
+    "email": "ryan473@example.com",
+    "movie_id": "573a1398f29313caabcebc0b",
+    "text": "I couldn't tear my eyes away from the screen. The movie was a true delight from start to finish. The movie was an absolute delight from start to finish.",
+    "date": "2024-03-07 00:10:54"
+  },
+  {
+    "_id": "6606dc194185cb979cd9aa99",
+    "name": "Rohan Karan",
+    "email": "rohan287@example.com",
+    "movie_id": "573a1398f29313caabcebc0b",
+    "text": "I was left in awe of the sheer brilliance of it all. I can't wait to watch it again!",
+    "date": "2024-02-28 16:45:46"
+  },
+  {
+    "_id": "6606dc194185cb979cd9dada",
+    "name": "Biju Sur",
+    "email": "biju100@example.com",
+    "movie_id": "573a1398f29313caabcebc0b",
+    "text": "I loved every minute of it. I can't wait to see it again. I was completely blown away by the sheer talent on display.",
+    "date": "2024-02-28 13:01:25"
+  }
+]

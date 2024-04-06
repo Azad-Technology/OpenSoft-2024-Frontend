@@ -1,0 +1,54 @@
+{
+  "_id": "573a13bdf29313caabd582fd",
+  "fullplot": "In The Wolf of Wall Street DiCaprio plays Belfort, a Long Island penny stockbroker who served 22 months in prison for defrauding investors in a massive 1990s securities scam that involved widespread corruption on Wall Street and in the corporate banking world, including shoe designer Steve Madden.",
+  "imdb": {
+    "rating": 8.2,
+    "votes": 632551,
+    "id": 993846
+  },
+  "year": 2013,
+  "plot": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+  "genres": [
+    "Biography",
+    "Comedy",
+    "Crime"
+  ],
+  "rated": "R",
+  "metacritic": 75,
+  "title": "The Wolf of Wall Street",
+  "lastupdated": "2015-08-22 00:01:38.720000000",
+  "languages": [
+    "English",
+    "French"
+  ],
+  "writers": [
+    "Terence Winter (screenplay)",
+    "Jordan Belfort (book)"
+  ],
+  "type": "movie",
+  "poster": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SY1000_SX677_AL_.jpg",
+  "num_mflix_comments": 1,
+  "released": "2013-12-25 00:00:00",
+  "awards": {
+    "wins": 52,
+    "nominations": 128,
+    "text": "Nominated for 5 Oscars. Another 47 wins & 128 nominations."
+  },
+  "countries": [
+    "USA"
+  ],
+  "cast": [
+    "Leonardo DiCaprio",
+    "Jonah Hill",
+    "Margot Robbie",
+    "Matthew McConaughey"
+  ],
+  "directors": [
+    "Martin Scorsese"
+  ],
+  "runtime": 180,
+  "poster_path": "/34m2tygAYBGqA9MXKhRDtzYd4MR.jpg",
+  "backdrop_path": "/2P0toWq3feNvFAzf28j7vNc1IuZ.jpg",
+  "dvd": "2014-03-25 00:00:00",
+  "lastUpdated": "2015-09-10 17:12:53"
+}

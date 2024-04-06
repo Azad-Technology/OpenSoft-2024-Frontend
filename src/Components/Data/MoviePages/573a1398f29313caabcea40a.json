@@ -1,0 +1,43 @@
+{
+  "_id": "573a1398f29313caabcea40a",
+  "plot": "Ten television drama films, each one based on one of the Ten Commandments.",
+  "genres": [
+    "Drama"
+  ],
+  "runtime": 572,
+  "cast": [
+    "Artur Barcis",
+    "Olgierd Lukaszewicz",
+    "Olaf Lubaszenko",
+    "Piotr Machalica"
+  ],
+  "num_mflix_comments": 0,
+  "poster": "https://m.media-amazon.com/images/M/MV5BZWIzNDIzMTYtN2RiZS00NjA1LWFjNzMtOWQ0MDYxNWI1YTJiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_SX677_AL_.jpg",
+  "title": "The Decalogue",
+  "fullplot": "This is a series of ten shorts created for Polish Television, with plots loosely based upon the Ten Commandments, directed by Krzysztof Kieslowski. Two of these, Dekalog 5 and 6, are shorter cuts from the feature-length films--Krotki film o zabijaniu (A Short Film About Killing) and Krotki film o milosci (A Short Film About Love), respectively. They deal with the emotional turmoil suffered by humanity, when instinctual acts and societal morality conflict.",
+  "languages": [
+    "Polish"
+  ],
+  "released": "1989-12-10 00:00:00",
+  "awards": {
+    "wins": 9,
+    "nominations": 0,
+    "text": "9 wins."
+  },
+  "lastupdated": "2015-08-26 00:25:24.917000000",
+  "year": 1989,
+  "imdb": {
+    "rating": 9.2,
+    "votes": 10958,
+    "id": 92337
+  },
+  "countries": [
+    "Poland",
+    "West Germany"
+  ],
+  "type": "series",
+  "poster_path": "/ipZEwcNtdqnt8SkkOoGO5sX4jPH.jpg",
+  "backdrop_path": "/vMB1sHLkLugteLiT6NEkqKClOmP.jpg",
+  "dvd": "2005-03-01 00:00:00",
+  "lastUpdated": "2015-03-20 19:29:27"
+}

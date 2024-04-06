@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "6606dc194185cb979cda706e",
+    "name": "Siya Halder",
+    "email": "siya408@example.com",
+    "movie_id": "573a13c9f29313caabd7a481",
+    "text": "I was left in awe of the sheer talent on display. The movie was a tour de force of storytelling. This movie deserves all the awards.",
+    "date": "2024-03-26 23:49:20"
+  },
+  {
+    "_id": "6606dc194185cb979cd9bf14",
+    "name": "Yakshit Basak",
+    "email": "yakshit381@example.com",
+    "movie_id": "573a13c9f29313caabd7a481",
+    "text": "The cinematography was stunning.",
+    "date": "2024-03-15 05:50:01"
+  },
+  {
+    "_id": "6606dc194185cb979cda1cff",
+    "name": "Ela Srinivas",
+    "email": "ela490@example.com",
+    "movie_id": "573a13c9f29313caabd7a481",
+    "text": "I was on the edge of my seat the entire time. I can't get the movie out of my head. I was blown away by the creativity and imagination.",
+    "date": "2024-03-12 16:30:36"
+  },
+  {
+    "_id": "6606dc194185cb979cd98235",
+    "name": "Dummy",
+    "email": "soya@soya.com",
+    "movie_id": "573a13c9f29313caabd7a481",
+    "text": "I was completely immersed in the world of the film. It's a movie I'll be thinking about for a long time to come.",
+    "date": "2024-03-12 15:54:42"
+  },
+  {
+    "_id": "6606dc194185cb979cd96da2",
+    "name": "Shanaya Gole",
+    "email": "shanaya395@example.com",
+    "movie_id": "573a13c9f29313caabd7a481",
+    "text": "The movie was an absolute marvel of storytelling. The movie was an absolute masterpiece of cinema.",
+    "date": "2024-03-06 18:45:33"
+  },
+  {
+    "_id": "6606dc194185cb979cda0b19",
+    "name": "Mishti Bala",
+    "email": "mishti142@example.com",
+    "movie_id": "573a13c9f29313caabd7a481",
+    "text": "I couldn't get enough of it. The attention to detail was incredible. I was completely enthralled by every moment of it.",
+    "date": "2024-03-05 19:42:17"
+  },
+  {
+    "_id": "6606dc194185cb979cd96a4f",
+    "name": "Mamooty Madan",
+    "email": "mamooty236@example.com",
+    "movie_id": "573a13c9f29313caabd7a481",
+    "text": "A true masterpiece of cinema. I was utterly captivated by the characters and the world they inhabited.",
+    "date": "2024-03-04 17:19:24"
+  },
+  {
+    "_id": "6606dc194185cb979cd96fcd",
+    "name": "Nishith Sachdev",
+    "email": "nishith454@example.com",
+    "movie_id": "573a13c9f29313caabd7a481",
+    "text": "The movie was a true gem. The movie was an absolute delight from start to finish. The movie was a triumph of storytelling.",
+    "date": "2024-03-01 16:58:38"
+  }
+]

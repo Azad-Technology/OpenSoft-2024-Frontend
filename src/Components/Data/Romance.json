@@ -1,0 +1,381 @@
+[
+  {
+    "plot": "Meeting the right person at the wrong time can be the best thing that ever happened to you.",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 86,
+    "title": "This Isn't Funny",
+    "released": "2015-12-01 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 16,
+      "id": 3334212
+    },
+    "poster_path": "/kodEqRQtanUr4xuemS6GCg93yM8.jpg",
+    "_id": "573a13e9f29313caabdcdc99",
+    "relevance_score": 19
+  },
+  {
+    "plot": "In a dystopian near future, single people are obliged to find a matching mate in 45 days or are transformed into animals and released into the woods.",
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "runtime": 118,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDQ1NDE5NzQ1NF5BMl5BanBnXkFtZTgwNzA5OTM2NTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Lobster",
+    "released": "2015-10-16 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 685,
+      "id": 3464902
+    },
+    "poster_path": "/7Y9ILV1unpW9mLpGcqyGQU72LUy.jpg",
+    "backdrop_path": "/s48CvFbWoWHhSPgz2wW9Rffw04q.jpg",
+    "_id": "573a13ecf29313caabdd1d85",
+    "relevance_score": 19
+  },
+  {
+    "plot": "Liza's a nurse, seeking love. Her only company is a long-dead Japanese pop star, who turns her into a fox-fairy out of jealousy. Now, every men who desires Liza shall die horribly. Can she overcome the curse?",
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Romance"
+    ],
+    "runtime": 98,
+    "poster": "https://m.media-amazon.com/images/M/MV5BZmQyYTdkNzMtYWVjMS00MWRmLTgzYjktZGY2NmY4OTZmMGExXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Liza, the Fox-Fairy",
+    "released": "2015-02-19 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 1799,
+      "id": 2210769
+    },
+    "poster_path": "/h0nP7HDejKeuiJumJpR5S5GOnG1.jpg",
+    "backdrop_path": "/92WRlngSn5FqhlQrl0Gny4gSonO.jpg",
+    "_id": "573a13d8f29313caabda746a",
+    "relevance_score": 19
+  },
+  {
+    "plot": "Set on a remote Pacific island, covered in rain forest and dominated by an active volcano, this heartfelt story, enacted by the Yakel tribe, tells of a sister's loyalty, a forbidden love affair and the pact between the old ways and the new.",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 100,
+    "title": "Tanna",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjEwNjEzOTU0OV5BMl5BanBnXkFtZTgwMjYyMzQ3NjE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-09-07 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8,
+      "votes": 6,
+      "id": 4239726
+    },
+    "poster_path": "/iKk0Nu3dytbDzX1SFwYJvUreQW.jpg",
+    "backdrop_path": "/9ONfuzzle1i07XxOSKdVWdSrYZQ.jpg",
+    "_id": "573a13f6f29313caabde499c",
+    "relevance_score": 17
+  },
+  {
+    "plot": "On Manhattan's gilded Upper East Side, a young gay painter is torn between an obsession with his infamous best friend and a promising new romance with an older foreign pianist.",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 89,
+    "title": "Those People",
+    "released": "2015-05-16 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.7,
+      "votes": 40,
+      "id": 3899516
+    },
+    "poster_path": "/f3OXph1b1QZ9IUvLrd9yjgRqBPW.jpg",
+    "backdrop_path": "/8CzGobNkJ8lUrO1QmOC3mnmC9E2.jpg",
+    "_id": "573a13f3f29313caabdde7e8",
+    "relevance_score": 14
+  },
+  {
+    "imdb": {
+      "rating": 7.7,
+      "votes": 157543,
+      "id": 470752
+    },
+    "year": 2015,
+    "plot": "A young programmer is selected to participate in a ground-breaking experiment in artificial intelligence by evaluating the human qualities of a breath-taking female A.I.",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Romance"
+    ],
+    "title": "Ex Machina",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTUxNzc0OTIxMV5BMl5BanBnXkFtZTgwNDI3NzU2NDE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-04-24 00:00:00",
+    "runtime": 108,
+    "poster_path": "/iJAe7tHMlqtiCBcz048yqvXGeM5.jpg",
+    "backdrop_path": "/jFxxqdEQ9TkXQSytO7qM8wlwXL1.jpg",
+    "_id": "573a13b5f29313caabd42f7f",
+    "relevance_score": 14
+  },
+  {
+    "plot": "A young man returns to Kashmir after his father's disappearance to confront uncle - the man who had a role in his father's fate.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 160,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA1NTEwMDMxMF5BMl5BanBnXkFtZTgwODkzMzI0MjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Haider",
+    "released": "2014-10-02 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 31553,
+      "id": 3390572
+    },
+    "poster_path": "/lOCotkHPODWdsRDMoLbSdLdVT3L.jpg",
+    "backdrop_path": "/tiyqwRBKVyLgKwVNicKjKvjaLXf.jpg",
+    "_id": "573a13eaf29313caabdcf6cd",
+    "relevance_score": 14
+  },
+  {
+    "plot": "Rex is a loner, and when he's told he doesn't have long to live, he embarks on an epic drive through the Australian outback from Broken Hill to Darwin to die on his own terms; but his ...",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTk2NDAwNTY1OV5BMl5BanBnXkFtZTgwODQwODg1NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Last Cab to Darwin",
+    "released": "2015-06-06 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 302,
+      "id": 3680410
+    },
+    "poster_path": "/2MuEECBQKHTfrDY0HJuLRWwCNTJ.jpg",
+    "backdrop_path": "/zFupvLYze4HaahLZngVCLhkWeF3.jpg",
+    "_id": "573a13eff29313caabdd8be5",
+    "relevance_score": 13
+  },
+  {
+    "plot": "A stranger in the city asks questions no one has asked before. Known only by his initials, P.K.'s innocent questions and childlike curiosity will take him on a journey of love, laughter and letting-go.",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 153,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTYzOTE2NjkxN15BMl5BanBnXkFtZTgwMDgzMTg0MzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "PK",
+    "released": "2014-12-19 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 66083,
+      "id": 2338151
+    },
+    "poster_path": "/pzSN4XWmmU9uDeLu3aUw6OclGeD.jpg",
+    "backdrop_path": "/5zHwzmGjkB1TqClgUVfQyCqIUJu.jpg",
+    "_id": "573a13dbf29313caabdaed6d",
+    "relevance_score": 13
+  },
+  {
+    "plot": "There is just one week until Kate Mercer's 45th wedding anniversary and the planning for the party is going well. But then a letter arrives for her husband. The body of his first love has been discovered, frozen and preserved in the icy glaciers of the Swiss Alps. By the time the party is upon them, five days later, there may not be a marriage left to celebrate.",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 95,
+    "title": "45 Years",
+    "released": "2015-08-28 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 395,
+      "id": 3544082
+    },
+    "poster_path": "/8elIJYYXWq2HpcZ6TgVMC9EwTnn.jpg",
+    "backdrop_path": "/nfISD7hILE6UYqXGT1cubcgsxUA.jpg",
+    "_id": "573a13edf29313caabdd49ad",
+    "relevance_score": 13
+  },
+  {
+    "plot": "The Department of Emotional Integrity (DEI) documents all relationship activity. A 'relationship score' is given to keep people accountable for their choices. The score is public for all to...",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 99,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ2OTA2MjA3Nl5BMl5BanBnXkFtZTgwMDc2NjIwODE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Everything Before Us",
+    "released": "2015-06-03 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 246,
+      "id": 4401704
+    },
+    "poster_path": "/hbRUOTH4K7mYp6DWHQJmgYzLnpS.jpg",
+    "_id": "573a13f7f29313caabde6f18",
+    "relevance_score": 13
+  },
+  {
+    "plot": "James is all too eager to put his one-minute time machine to use in winning the heart of Regina, until he discovers the unexpected consequences of his actions.",
+    "genres": [
+      "Short",
+      "Comedy",
+      "Romance"
+    ],
+    "runtime": 6,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjg0OTI1NTA4NV5BMl5BanBnXkFtZTgwNDA0MzU1MTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "One-Minute Time Machine",
+    "released": "2014-03-29 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 236,
+      "id": 3620860
+    },
+    "poster_path": "/2JQUM8bNjGFlwilokqmZ0AvvsY4.jpg",
+    "backdrop_path": "/qiewTS30GsKTFXKTL55soJYuLh4.jpg",
+    "_id": "573a13eff29313caabdd7401",
+    "relevance_score": 12
+  },
+  {
+    "plot": "In a community vibrant with migrants from across the African Continent, against the backdrop of unspoken love, a young woman tries to navigate a path for herself. But this is a world where ...",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 105,
+    "title": "Ayanda and the Mechanic",
+    "released": "2015-06-13 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.4,
+      "votes": 5,
+      "id": 4459386
+    },
+    "poster_path": "/pYKEYEp8k3jThfQVbel0aeXvZOQ.jpg",
+    "backdrop_path": "/o248FEc2joRatpEHwzVcJMYfvsz.jpg",
+    "_id": "573a13f8f29313caabde7b9d",
+    "relevance_score": 11
+  },
+  {
+    "plot": "MEET THE PATELS is a laugh-out-loud real life romantic comedy about Ravi Patel, an almost-30-year-old Indian-American who enters a love triangle between the woman of his dreams - and his parents.",
+    "genres": [
+      "Documentary",
+      "Comedy",
+      "Romance"
+    ],
+    "runtime": 88,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjAxNzM3NjE4M15BMl5BanBnXkFtZTgwMDg3NjMzNjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Meet the Patels",
+    "released": "2015-09-11 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 67,
+      "id": 2378401
+    },
+    "poster_path": "/uGR59XUUEnm5EG3CudqCrSXmrqE.jpg",
+    "backdrop_path": "/gQVp9cbYZB36c7nTACsbtDIrfsh.jpg",
+    "_id": "573a13dcf29313caabdb16c4",
+    "relevance_score": 11
+  },
+  {
+    "plot": "A couple who have lived together for 76 years faces the last moment of their marriage.",
+    "genres": [
+      "Documentary",
+      "Family",
+      "Romance"
+    ],
+    "runtime": 86,
+    "title": "My Love, Don't Cross That River",
+    "released": "2014-11-27 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 69,
+      "id": 4063314
+    },
+    "poster_path": "/obrH3hsIJc472myVWi6PF86hBmL.jpg",
+    "backdrop_path": "/9arjrWcyBJmONoVMnoAYKN3Yguj.jpg",
+    "_id": "573a13f4f29313caabde1dfd",
+    "relevance_score": 11
+  },
+  {
+    "plot": "The History of Eternity is a synesthetic essay about love, desires and dreams. The entire narrative takes place in the same village with approximately 40 inhabitants in a desert landscape, ...",
+    "genres": [
+      "Drama",
+      "Music",
+      "Romance"
+    ],
+    "runtime": 121,
+    "title": "A Histèria Da Eternidade",
+    "released": "2015-02-26 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8,
+      "votes": 139,
+      "id": 3565050
+    },
+    "_id": "573a13eef29313caabdd5610",
+    "relevance_score": 10
+  },
+  {
+    "plot": "A young woman, born at the turn of the 20th century, is rendered ageless after an accident. After many solitary years, she meets a man who complicates the eternal life she has settled into.",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 112,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTAzMTQzMTA2MjheQTJeQWpwZ15BbWU4MDk2MTg2MzUx._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Age of Adaline",
+    "released": "2015-04-24 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.3,
+      "votes": 45693,
+      "id": 1655441
+    },
+    "poster_path": "/MbILysGhjAbnZi1Okae9wYqLMx.jpg",
+    "backdrop_path": "/w89trVfLmEdBxv7rxWKy5HyckXR.jpg",
+    "_id": "573a13cdf29313caabd83c32",
+    "relevance_score": 10
+  },
+  {
+    "plot": "A woman who changed the course of history.",
+    "genres": [
+      "Biography",
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 110,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTA0ODAzMDg3MzheQTJeQWpwZ15BbWU4MDc0OTQzOTIx._V1_SY1000_SX677_AL_.jpg",
+    "title": "Bitva za Sevastopol",
+    "released": "2015-04-02 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.2,
+      "votes": 1766,
+      "id": 4084744
+    },
+    "poster_path": "/6PXb2TxEFzmi1FbJIV0NOLdhW9M.jpg",
+    "backdrop_path": "/9q11rNi2hCla4KoiqQq3IRTMPHL.jpg",
+    "_id": "573a13f4f29313caabde24c7",
+    "relevance_score": 9
+  }
+]

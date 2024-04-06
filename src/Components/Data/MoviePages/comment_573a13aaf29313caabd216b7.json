@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "6606dc194185cb979cda0668",
+    "name": "Nehmat Shenoy",
+    "email": "nehmat34@example.com",
+    "movie_id": "573a13aaf29313caabd216b7",
+    "text": "I was utterly captivated by the characters and the world they inhabited. The performances were absolutely captivating. I was completely absorbed in the world of the film.",
+    "date": "2024-03-28 01:39:34"
+  },
+  {
+    "_id": "6606dc194185cb979cd9cccd",
+    "name": "Indrans Dash",
+    "email": "indrans121@example.com",
+    "movie_id": "573a13aaf29313caabd216b7",
+    "text": "I can't wait to watch it again!",
+    "date": "2024-03-15 23:37:06"
+  },
+  {
+    "_id": "6606dc194185cb979cd9dcee",
+    "name": "Rohan Soni",
+    "email": "rohan140@example.com",
+    "movie_id": "573a13aaf29313caabd216b7",
+    "text": "I was completely enthralled by every moment of it. I was left in awe of the sheer brilliance of it all. The movie reminded me why I love cinema.",
+    "date": "2024-03-15 01:24:04"
+  },
+  {
+    "_id": "6606dc194185cb979cd98712",
+    "name": "Anvi Bhalla",
+    "email": "anvi311@example.com",
+    "movie_id": "573a13aaf29313caabd216b7",
+    "text": "I was blown away by the creativity and imagination. It's rare to find a movie that's as visually stunning as it is emotionally resonant, but this one delivered on both fronts. I was completely swept up in the world of the film.",
+    "date": "2024-03-02 03:02:17"
+  }
+]

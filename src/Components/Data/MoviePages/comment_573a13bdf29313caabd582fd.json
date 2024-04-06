@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9766d",
+    "name": "Ojas Kanda",
+    "email": "ojas64@example.com",
+    "movie_id": "573a13bdf29313caabd582fd",
+    "text": "I couldn't stop thinking about it after it ended. I was left with chills down my spine.",
+    "date": "2024-03-27 23:20:50"
+  },
+  {
+    "_id": "6606dc194185cb979cda7d0c",
+    "name": "Saira Sodhi",
+    "email": "saira424@example.com",
+    "movie_id": "573a13bdf29313caabd582fd",
+    "text": "I was completely enchanted by the story. It's a movie I'll never forget.",
+    "date": "2024-03-27 20:02:33"
+  },
+  {
+    "_id": "6606dc194185cb979cda4fbb",
+    "name": "Jayan Butala",
+    "email": "jayan217@example.com",
+    "movie_id": "573a13bdf29313caabd582fd",
+    "text": "The story was so gripping, I couldn't tear myself away. I loved every second of it. The movie was an emotional rollercoaster.",
+    "date": "2024-03-23 13:08:04"
+  },
+  {
+    "_id": "6606dc194185cb979cda22b2",
+    "name": "Ehsaan Borra",
+    "email": "ehsaan206@example.com",
+    "movie_id": "573a13bdf29313caabd582fd",
+    "text": "The ending was so satisfying.",
+    "date": "2024-03-18 04:52:01"
+  },
+  {
+    "_id": "6606dc194185cb979cd98747",
+    "name": "Trisha Dutt",
+    "email": "trisha231@example.com",
+    "movie_id": "573a13bdf29313caabd582fd",
+    "text": "An instant classic. The movie was a breath of fresh air. I couldn't tear my eyes away from the screen.",
+    "date": "2024-03-17 09:25:02"
+  },
+  {
+    "_id": "6606dc194185cb979cd98c62",
+    "name": "Drishya Bhatti",
+    "email": "drishya443@example.com",
+    "movie_id": "573a13bdf29313caabd582fd",
+    "text": "The movie was a revelation. I couldn't have asked for a better moviegoing experience. This movie exceeded all my expectations.",
+    "date": "2024-03-17 08:13:14"
+  },
+  {
+    "_id": "6606dc194185cb979cd9f65f",
+    "name": "Aaryahi Bava",
+    "email": "aaryahi96@example.com",
+    "movie_id": "573a13bdf29313caabd582fd",
+    "text": "The humor was spot-on.",
+    "date": "2024-02-29 16:27:10"
+  }
+]

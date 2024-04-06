@@ -12,43 +12,20 @@ import instance from "../../axios.jsx";
 const Watchlist = ({movies, name, id, setShowLikePopup}) => {
   const [{token, user}, dispatch] = useStateValue();
   const navigate = useNavigate();
-  const handleDelete = async () => {
-    try {
-      let config = {
-        method: "delete",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const response = await instance.request(`/remove_watchlist/${id}`, config);
-      dispatch({
-        type: "REMOVE_WATCHLIST",
-        watchlistID: id,
-      });
-      navigate("/profile");
-    } catch (err) {
-      // console.log(err);
-    }
+  const handleDelete = () => {
+    dispatch({
+      type: "REMOVE_WATCHLIST",
+      watchlistID: id,
+    });
+    navigate("/profile");
   };
 
-  const deleteMovie = async movieID => {
-    try {
-      let config = {
-        method: "patch",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const response = await instance.request(`/add_movie_to_watchlist/${id}/${movieID}`, config);
-      dispatch({
-        type: "REMOVE_MOVIE_FROM_WATCHLIST",
-        movieID: movieID,
-        watchlistID: id,
-      });
-      window.location.reload();
-    } catch (err) {
-      // console.log(err);
-    }
+  const deleteMovie = movieID => {
+    dispatch({
+      type: "REMOVE_MOVIE_FROM_WATCHLIST",
+      movieID: movieID,
+      watchlistID: id,
+    });
   };
 
   return (
@@ -79,17 +56,11 @@ const Watchlist = ({movies, name, id, setShowLikePopup}) => {
       </div>
       <div className={styles.movie_grid}>
         <div className={styles.movieList}>
-          {movies.map((m, i) => {
+          {movies?.map((m, i) => {
             return (
               <div className={styles.cardcontainer}>
                 <Card setShowLikePopup={setShowLikePopup} movies={m} />
-                <img
-                  src={deleteIconWhite}
-                  className={styles.deleteimage}
-                  height={30}
-                  width={30}
-                  onClick={() => deleteMovie(m._id)}
-                />
+                
               </div>
             );
           })}

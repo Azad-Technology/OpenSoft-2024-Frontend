@@ -1,0 +1,700 @@
+[
+  {
+      "_id": "573a1396f29313caabce5317",
+      "plot": "An anthology of five horror stories shared by five men trapped in the basement of an office building.",
+      "runtime": 87,
+      "title": "The Vault of Horror",
+      "year": 1973,
+      "imdb": {
+          "rating": 6.6,
+          "votes": 2784,
+          "id": 70868
+      },
+      "poster_path": "/10H05rKoxX2hggBeEMwpm9il2GL.jpg",
+      "score": 0.3333333333333333
+  },
+  {
+      "_id": "573a13adf29313caabd2bf71",
+      "plot": "After being held captive in an Afghan cave, an industrialist creates a unique weaponized suit of armor to fight evil.",
+      "runtime": 126,
+      "title": "Iron Man",
+      "year": 2008,
+      "imdb": {
+          "rating": 7.9,
+          "votes": 615059,
+          "id": 371746
+      },
+      "poster_path": "/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+      "score": 0.25
+  },
+  {
+      "_id": "573a1397f29313caabce5f2e",
+      "plot": "A Victorian era scientist and his assistant take a test run in their Iron Mole drilling machine and end up in a strange underground labyrinth ruled by a species of giant telepathic bird and full of prehistoric monsters and cavemen.",
+      "runtime": 89,
+      "title": "At the Earth's Core",
+      "year": 1976,
+      "imdb": {
+          "rating": 5.2,
+          "votes": 2528,
+          "id": 74157
+      },
+      "poster_path": "/ntoB5onzp4Cm4LXHFRrLrogkeI3.jpg",
+      "score": 0.2
+  },
+  {
+      "_id": "573a13c9f29313caabd79092",
+      "plot": "Story begins couple of days after the war has ended. A group of soldiers in charge of clearing the fields from mines discovers a man sealed inside a factory's basement. Mysterious man says ...",
+      "runtime": 108,
+      "title": "The Enemy",
+      "year": 2011,
+      "imdb": {
+          "rating": 7.3,
+          "votes": 1517,
+          "id": 1517225
+      },
+      "poster_path": "/fSobyeBJrS3AwpONE8gnZ8J5Vq3.jpg",
+      "score": 0.16666666666666666
+  },
+  {
+      "_id": "573a13c3f29313caabd6a56f",
+      "plot": "A reclusive physicist creates a mysterious machine in his basement that changes his life and all those around him.",
+      "title": "The Scientist",
+      "year": 2010,
+      "imdb": {
+          "rating": 3.6,
+          "votes": 450,
+          "id": 1311087
+      },
+      "poster_path": "/hIkKM1nlzk8DThFT4vxgW1KoofL.jpg",
+      "score": 0.14285714285714285
+  },
+  {
+      "_id": "573a13c3f29313caabd6a820",
+      "plot": "A group of people are trapped in an elevator and the Devil is mysteriously amongst them.",
+      "runtime": 80,
+      "title": "Devil",
+      "year": 2010,
+      "imdb": {
+          "rating": 6.3,
+          "votes": 96660,
+          "id": 1314655
+      },
+      "poster_path": "/aivXPSi53H95BoUa5njEYso389s.jpg",
+      "score": 0.125
+  },
+  {
+      "_id": "573a13c2f29313caabd66c3d",
+      "plot": "A man prepares and goes to work in a bizarre world, where the meaning of human workforce is taken to another level.",
+      "runtime": 7,
+      "title": "The Employment",
+      "year": 2008,
+      "imdb": {
+          "rating": 8.1,
+          "votes": 1261,
+          "id": 1247184
+      },
+      "poster_path": "/7mBotD6KlFEI7uk0fWuaiYvwQVQ.jpg",
+      "score": 0.1111111111111111
+  },
+  {
+      "_id": "573a13aef29313caabd2e73d",
+      "plot": "After moving with his family into a new home, a boy discovers a bird-like man living in the old garage on their property.",
+      "runtime": 102,
+      "title": "Skellig: The Owl Man",
+      "year": 2009,
+      "imdb": {
+          "rating": 6.6,
+          "votes": 1552,
+          "id": 382301
+      },
+      "poster_path": "/dyJlxhY5WLcrlCm7Gjd2ztpCoay.jpg",
+      "score": 0.1
+  },
+  {
+      "_id": "573a13c6f29313caabd736b7",
+      "plot": "An AWOL Black Ops soldier mentally unravels when holed up in a Brooklyn motel room.",
+      "runtime": 93,
+      "title": "Legacy: Black Ops",
+      "year": 2010,
+      "imdb": {
+          "rating": 5.3,
+          "votes": 1143,
+          "id": 1436034
+      },
+      "poster_path": "/4FviXkOo3udmM3QTW26i0VYNMla.jpg",
+      "score": 0.09090909090909091
+  },
+  {
+      "_id": "573a13c8f29313caabd78903",
+      "plot": "Two men in an apartment with their opposing beliefs.",
+      "runtime": 91,
+      "title": "The Sunset Limited",
+      "year": 2011,
+      "imdb": {
+          "rating": 7.4,
+          "votes": 19122,
+          "id": 1510938
+      },
+      "poster_path": "/8cwqylJVbCfMflcjXQ71CwsXdpf.jpg",
+      "score": 0.08333333333333333
+  },
+  {
+      "_id": "573a1394f29313caabcdf488",
+      "plot": "The Bowery Boys find themselves in London, in an old mansion complete with a dungeon, an ominous bell tower and the ghost of an old hangman.",
+      "runtime": 62,
+      "title": "Loose in London",
+      "year": 1953,
+      "imdb": {
+          "rating": 7.0,
+          "votes": 182,
+          "id": 46011
+      },
+      "poster_path": "/7xBwl2Q4p4SLea9GTvB53WrYxyX.jpg",
+      "score": 0.07692307692307693
+  },
+  {
+      "_id": "573a13b6f29313caabd47178",
+      "plot": "In an apartment building where neighbors, friends, and family are living in close quarters, three male protagonists encounter three phases of manhood in Turkish society. Directors Reha ...",
+      "runtime": 128,
+      "title": "What's a Human Anyway?",
+      "year": 2004,
+      "imdb": {
+          "rating": 7.8,
+          "votes": 1606,
+          "id": 488400
+      },
+      "poster_path": "/s01elOPQ5E8WIeNlCW0OoOFLV36.jpg",
+      "score": 0.07142857142857142
+  },
+  {
+      "_id": "573a1398f29313caabceb55d",
+      "plot": "In an imaginary dictature of a futuristic world, rebellion has broken out. The men in power scramble to the Bunker Palace Hotel, a bunker built long ago for just this kind of contingency. ...",
+      "runtime": 95,
+      "title": "Bunker Palace Hètel",
+      "year": 1989,
+      "imdb": {
+          "rating": 6.7,
+          "votes": 557,
+          "id": 96994
+      },
+      "poster_path": null,
+      "score": 0.06666666666666667
+  },
+  {
+      "_id": "573a13aaf29313caabd22669",
+      "plot": "A janitor at an alien night-club gets his wish to be a singer.",
+      "runtime": 6,
+      "title": "The Chubbchubbs!",
+      "year": 2002,
+      "imdb": {
+          "rating": 7.6,
+          "votes": 3197,
+          "id": 331218
+      },
+      "poster_path": "/1MtQFiKWSlr5D8jUqYtfDVTld6J.jpg",
+      "score": 0.0625
+  },
+  {
+      "_id": "573a1398f29313caabce9a15",
+      "plot": "Set in an underground dungeon inhabited by bundled, ragged human beings, after the nuclear holocaust. The story follows the wanderings of a hero through the situations of survival. People ...",
+      "runtime": 88,
+      "title": "O-Bi, O-Ba - The End of Civilization",
+      "year": 1985,
+      "imdb": {
+          "rating": 7.2,
+          "votes": 482,
+          "id": 89714
+      },
+      "poster_path": "/yqEr7wi67GMkrZLFqJntCsIvGud.jpg",
+      "score": 0.058823529411764705
+  },
+  {
+      "_id": "573a13b1f29313caabd3719d",
+      "plot": "Twenty-four male students out of seventy-five were selected to take on randomly assigned roles of prisoners and guards in a mock prison situated in the basement of the Stanford psychology building.",
+      "runtime": 122,
+      "title": "The Stanford Prison Experiment",
+      "year": 2015,
+      "imdb": {
+          "rating": 7.2,
+          "votes": 887,
+          "id": 420293
+      },
+      "poster_path": "/kSUWvTkYcDZI2yX6nyWeK7J1Sus.jpg",
+      "score": 0.05555555555555555
+  },
+  {
+      "_id": "573a13bdf29313caabd586e4",
+      "plot": "An eccentric man living alone in a decrepit house in Tokyo periodically transforms into a 100-foot tall giant in order to defend Japan against similarly sized monsters.",
+      "runtime": 113,
+      "title": "Big Man Japan",
+      "year": 2007,
+      "imdb": {
+          "rating": 6.4,
+          "votes": 2500,
+          "id": 997147
+      },
+      "poster_path": "/pT5ze3fjW8rYPVtqDyHSRNExHTq.jpg",
+      "score": 0.05263157894736842
+  },
+  {
+      "_id": "573a13b9f29313caabd4f023",
+      "plot": "A detective investigates a mysterious motel room, which acts as a portal to an alternate universe.",
+      "runtime": 270,
+      "title": "The Lost Room",
+      "year": 2006,
+      "imdb": {
+          "rating": 8.3,
+          "votes": 21199,
+          "id": 830361
+      },
+      "poster_path": null,
+      "score": 0.05
+  },
+  {
+      "_id": "573a13a1f29313caabd07747",
+      "imdb": {
+          "rating": 7.2,
+          "votes": 7439,
+          "id": 216787
+      },
+      "year": 2000,
+      "plot": "Three men, three women, opposites, possibilities, and tastes. Castella owns a industrial steel barrel plant in Rouen; Bruno is his flute-playing driver, Franck is his temporary bodyguard ...",
+      "title": "The Taste of Others",
+      "runtime": 112,
+      "poster_path": "/vvJYa9wEO5kbmnaEZgNon2LV1SU.jpg",
+      "score": 0.047619047619047616
+  },
+  {
+      "_id": "573a13b5f29313caabd446c6",
+      "plot": "Custom chopper builder and punk rocker Kutty Noteboom builds his working man's chopper from the ground up with the help of good friend Rico and the rest of his biker brothers in this ...",
+      "title": "Choppertown: The Sinners",
+      "year": 2005,
+      "imdb": {
+          "rating": 8.1,
+          "votes": 56,
+          "id": 476969
+      },
+      "poster_path": "/A93gRAKMNXXYMSFTB5x6l9s1NpL.jpg",
+      "score": 0.045454545454545456
+  },
+  {
+      "_id": "573a13c2f29313caabd66a98",
+      "imdb": {
+          "rating": 6.6,
+          "votes": 51274,
+          "id": 1245112
+      },
+      "year": 2009,
+      "plot": "In order to ascertain the current situation inside, a supposed medical officer and a GEO team step into the quarantined and ill-fated apartment building.",
+      "title": "[Rec] 2",
+      "runtime": 85,
+      "poster_path": "/i7wr12YmZfJxXv2R6ksvSffyhAT.jpg",
+      "score": 0.043478260869565216
+  },
+  {
+      "_id": "573a13f3f29313caabddf9c3",
+      "plot": "A documentary that reveals what its subjects do in their respective basements.",
+      "runtime": 81,
+      "title": "In the Basement",
+      "year": 2014,
+      "imdb": {
+          "rating": 7.1,
+          "votes": 648,
+          "id": 3962828
+      },
+      "poster_path": "/qmddUxRwbsxHa7oEXm4PWh1KZe8.jpg",
+      "score": 0.041666666666666664
+  },
+  {
+      "_id": "573a1396f29313caabce5b19",
+      "plot": "Peter Cushing stars as a former priest who harbors a dark and horrible secret in his attic. The locked room serves as a prison cell for his crazed, cannibalistic adult son, who acquired his...",
+      "runtime": 88,
+      "title": "The Ghoul",
+      "year": 1975,
+      "imdb": {
+          "rating": 4.6,
+          "votes": 980,
+          "id": 73042
+      },
+      "poster_path": "/1qbonhVXGKTEH6JenZRqc1XNz1D.jpg",
+      "score": 0.04
+  },
+  {
+      "_id": "573a1398f29313caabceb839",
+      "plot": "A boy discovers an incredible and gruesome world of monsters under his bed.",
+      "runtime": 100,
+      "title": "Little Monsters",
+      "year": 1989,
+      "imdb": {
+          "rating": 6.0,
+          "votes": 7265,
+          "id": 97758
+      },
+      "poster_path": "/oQvUq7UmumBTcAnvgFLFvegY47d.jpg",
+      "score": 0.038461538461538464
+  },
+  {
+      "_id": "573a1397f29313caabce7731",
+      "plot": "A man staying at a secluded historical mansion finds himself being haunted by the presence of a spectre.",
+      "runtime": 107,
+      "title": "The Changeling",
+      "year": 1980,
+      "imdb": {
+          "rating": 7.3,
+          "votes": 20570,
+          "id": 80516
+      },
+      "poster_path": "/z4nTYj3JZ5jWAhDgrmEhW2GRAzb.jpg",
+      "score": 0.037037037037037035
+  },
+  {
+      "_id": "573a13caf29313caabd7e7f8",
+      "plot": "Finnish men in sauna, speaking straight from the heart.",
+      "runtime": 81,
+      "title": "Steam of Life",
+      "year": 2010,
+      "imdb": {
+          "rating": 8.0,
+          "votes": 2009,
+          "id": 1583323
+      },
+      "poster_path": "/e7h7G7p7teeMYAMX3YWO4FfwmEH.jpg",
+      "score": 0.03571428571428571
+  },
+  {
+      "_id": "573a1397f29313caabce5f8a",
+      "plot": "1970. After discussions and dishonest negotiations, a decision is taken as to where a large new chemical factory is to be built and Bednarz, an honest Party man, is put in charge of the ...",
+      "runtime": 112,
+      "title": "The Scar",
+      "year": 1976,
+      "imdb": {
+          "rating": 6.8,
+          "votes": 962,
+          "id": 74220
+      },
+      "poster_path": "/eKBWpucWHjoFbsAoh1tGEHi5YqF.jpg",
+      "score": 0.034482758620689655
+  },
+  {
+      "_id": "573a1398f29313caabcebf8a",
+      "plot": "In a very old textile mill, with a serious rat infestation, the workers discover a horrifying secret deep in the basement.",
+      "runtime": 89,
+      "title": "Graveyard Shift",
+      "year": 1990,
+      "imdb": {
+          "rating": 4.7,
+          "votes": 6362,
+          "id": 99697
+      },
+      "poster_path": "/vITvLxFsDbbg6TMgpYWWscMOf0G.jpg",
+      "score": 0.03333333333333333
+  },
+  {
+      "_id": "573a13baf29313caabd50fb6",
+      "plot": "An underworld drama set in the early 1980s, about a lonely factory worker whose life is transformed when he becomes a nightclub doorman.",
+      "runtime": 95,
+      "title": "Clubbed",
+      "year": 2008,
+      "imdb": {
+          "rating": 6.9,
+          "votes": 3113,
+          "id": 856778
+      },
+      "poster_path": "/h6M5pTXg8s5EA9hINpk80uHQx71.jpg",
+      "score": 0.03225806451612903
+  },
+  {
+      "_id": "573a1399f29313caabcec5c4",
+      "plot": "Two inventor brothers create a working robot that is also inhabited by the spirit of their dead father.",
+      "runtime": 92,
+      "title": "And You Thought Your Parents Were Weird",
+      "year": 1991,
+      "imdb": {
+          "rating": 4.4,
+          "votes": 361,
+          "id": 101343
+      },
+      "poster_path": "/oz954ONX3OYdgFU7ZtuVAtbYKhB.jpg",
+      "score": 0.03125
+  },
+  {
+      "_id": "573a13e2f29313caabdbeeda",
+      "plot": "Gary, an unskilled young man, lands a job as a decontamination sub-contractor at a nuclear power plant in the lower valley of the Rhone. Inducted into the workforce by supervisor Gilles and...",
+      "runtime": 94,
+      "title": "Grand Central",
+      "year": 2013,
+      "imdb": {
+          "rating": 6.2,
+          "votes": 1450,
+          "id": 2835548
+      },
+      "poster_path": "/qH0LA0KJNr6f98agFNxJ8OvrY7W.jpg",
+      "score": 0.030303030303030304
+  },
+  {
+      "_id": "573a13b1f29313caabd370e2",
+      "plot": "A Palestinian family is trapped inside a house commandeered by Israeli soldiers.",
+      "runtime": 90,
+      "title": "Private",
+      "year": 2004,
+      "imdb": {
+          "rating": 7.0,
+          "votes": 686,
+          "id": 420090
+      },
+      "poster_path": "/9PmZS6wFtMtenNmEmAGMFjE5LAV.jpg",
+      "score": 0.029411764705882353
+  },
+  {
+      "_id": "573a13bbf29313caabd5489c",
+      "plot": "A futuristic story about a man and his clone.",
+      "runtime": 95,
+      "title": "Possibility of an Island",
+      "year": 2008,
+      "imdb": {
+          "rating": 3.6,
+          "votes": 231,
+          "id": 926764
+      },
+      "poster_path": "/6A7FIjv3tM0UhUzwNe4L8645qGR.jpg",
+      "score": 0.02857142857142857
+  },
+  {
+      "_id": "573a13b7f29313caabd49d6c",
+      "plot": "An old man lives a lonely life under the dark shadows of industrial smog. One day he receives a mysterious package which gives him the ability to change his environment.",
+      "runtime": 9,
+      "title": "Delivery",
+      "year": 2005,
+      "imdb": {
+          "rating": 7.4,
+          "votes": 351,
+          "id": 756639
+      },
+      "poster_path": "/Aufa4YdZIv4AXpR9rznwVA5SEfd.jpg",
+      "score": 0.027777777777777776
+  },
+  {
+      "_id": "573a13bdf29313caabd5a7c7",
+      "plot": "A television reporter and cameraman follow emergency workers into a dark apartment building and are quickly locked inside with something terrifying.",
+      "runtime": 78,
+      "title": "[Rec]",
+      "year": 2007,
+      "imdb": {
+          "rating": 7.5,
+          "votes": 120434,
+          "id": 1038988
+      },
+      "poster_path": "/tI1534q0Up7PBcLdXdFerLmIXn3.jpg",
+      "score": 0.02702702702702703
+  },
+  {
+      "_id": "573a1399f29313caabcec19a",
+      "plot": "A young boy with a distant father enters a world of make-believe and magic through a portal within an antique book.",
+      "runtime": 89,
+      "title": "The Neverending Story II: The Next Chapter",
+      "year": 1990,
+      "imdb": {
+          "rating": 5.0,
+          "votes": 16580,
+          "id": 100240
+      },
+      "poster_path": "/bRSLCuO2B6owYBtUwGYGqWZCVo6.jpg",
+      "score": 0.02631578947368421
+  },
+  {
+      "_id": "573a1398f29313caabcea2f8",
+      "plot": "A man closes up a lecture hall; he reaches into a box and snips the string holding a gaunt puppet. Released, the puppet warily explores the darkened rooms about him. Screws twist out of ...",
+      "runtime": 20,
+      "title": "Street of Crocodiles",
+      "year": 1986,
+      "imdb": {
+          "rating": 7.8,
+          "votes": 1578,
+          "id": 92020
+      },
+      "poster_path": "/vt4txw8qVB6IMqNgncJ2jBF4G1j.jpg",
+      "score": 0.02564102564102564
+  },
+  {
+      "_id": "573a1399f29313caabcec43b",
+      "plot": "Stewart McBain (Coleman) is a real-estate mogul who spends his living blowing up old buildings to make room to erect new buildings. All goes as planned for a new subdivision, until a group ...",
+      "runtime": 107,
+      "title": "Where the Heart Is",
+      "year": 1990,
+      "imdb": {
+          "rating": 6.1,
+          "votes": 1237,
+          "id": 100924
+      },
+      "poster_path": "/h8PBkTn6kDK9ZMCLj6jP6JnIBhY.jpg",
+      "score": 0.025
+  },
+  {
+      "_id": "573a139bf29313caabcf50fb",
+      "plot": "What's the bond between partners, between brothers, and between spouses? In L.A., Bill Holt handcuffs Sean Rickhart inside a rebar frame for a freeway pillar at a construction site; Bill's ...",
+      "runtime": 97,
+      "title": "Cement",
+      "year": 2000,
+      "imdb": {
+          "rating": 7.9,
+          "votes": 498,
+          "id": 138353
+      },
+      "poster_path": "/tEOWxb4o2EicUue41oUHqNZnKrl.jpg",
+      "score": 0.024390243902439025
+  },
+  {
+      "_id": "573a13c1f29313caabd649a8",
+      "plot": "When a structural-security authority finds himself set up and incarcerated in the world's most secret and secure prison, he has to use his skills to escape with help from the inside.",
+      "runtime": 115,
+      "title": "Escape Plan",
+      "year": 2013,
+      "imdb": {
+          "rating": 6.8,
+          "votes": 160051,
+          "id": 1211956
+      },
+      "poster_path": "/k09ydRsOtdjCUxierkknRdujIF2.jpg",
+      "score": 0.023809523809523808
+  },
+  {
+      "_id": "573a13bef29313caabd5d452",
+      "imdb": {
+          "rating": 5.7,
+          "votes": 17621,
+          "id": 1085779
+      },
+      "year": 2009,
+      "plot": "A pair of brothers stumble upon a mysterious hole in their basement that leads to the darkest corridors of their fears and nightmares.",
+      "title": "The Hole",
+      "runtime": 92,
+      "poster_path": "/zVDhZHjcE0ksNfFSsJVoxDdAYCJ.jpg",
+      "score": 0.023255813953488372
+  },
+  {
+      "_id": "573a13a4f29313caabd0ffc2",
+      "plot": "Seven German soldiers are enclosed in one bunker during the Second World War. They soon feel surrounded by enemies. When they hear about the tunnel-system beneath the bunker and some mystic...",
+      "runtime": 88,
+      "title": "The Bunker",
+      "year": 2001,
+      "imdb": {
+          "rating": 5.4,
+          "votes": 4961,
+          "id": 252963
+      },
+      "poster_path": "/xhIe9F81CrksB6E4SggAjqoUoLA.jpg",
+      "score": 0.022727272727272728
+  },
+  {
+      "_id": "573a13b3f29313caabd3e31a",
+      "imdb": {
+          "rating": 6.8,
+          "votes": 195259,
+          "id": 450385
+      },
+      "year": 2007,
+      "plot": "A man who specializes in debunking paranormal occurrences checks into the fabled room 1408 in the Dolphin Hotel. Soon after settling in, he confronts genuine terror.",
+      "title": "1408",
+      "runtime": 104,
+      "poster_path": "/yE9MCW7ZNxSw5SC1TMqm51pMBIV.jpg",
+      "score": 0.022222222222222223
+  },
+  {
+      "_id": "573a13dff29313caabdb808a",
+      "plot": "The story takes place in a technologically advanced society in which robots can be programmed to behave like a complete human. A robot is asked to replace Hal, who died in an accident, to ...",
+      "runtime": 60,
+      "title": "Hal",
+      "year": 2013,
+      "imdb": {
+          "rating": 6.9,
+          "votes": 465,
+          "id": 2573198
+      },
+      "poster_path": "/zwtegwJ5iLEpnd6UVzyYlJHsH33.jpg",
+      "score": 0.021739130434782608
+  },
+  {
+      "_id": "573a13b1f29313caabd36eb3",
+      "plot": "In 1923, the Korean teenager Kim Shun-Pei moves from Cheju Island, in South Korea, to Osaka, in Japan. Along the years, he becomes a cruel, greedy and violent man and builds a factory of ...",
+      "runtime": 140,
+      "title": "Blood and Bones",
+      "year": 2004,
+      "imdb": {
+          "rating": 7.2,
+          "votes": 1616,
+          "id": 419515
+      },
+      "poster_path": "/zngpZqvE9sLbHEGGXcotQVJ7BJV.jpg",
+      "score": 0.02127659574468085
+  },
+  {
+      "_id": "573a1398f29313caabce8f5b",
+      "plot": "Adventurer/surgeon/rock musician Buckaroo Banzai and his band of men, the Hong Kong Cavaliers, take on evil alien invaders from the 8th dimension.",
+      "runtime": 103,
+      "title": "The Adventures of Buckaroo Banzai Across the 8th Dimension",
+      "year": 1984,
+      "imdb": {
+          "rating": 6.4,
+          "votes": 16877,
+          "id": 86856
+      },
+      "poster_path": "/a7K5OcylQbWtCbrUzegfi31yaSs.jpg",
+      "score": 0.020833333333333332
+  },
+  {
+      "_id": "573a13d0f29313caabd8b223",
+      "plot": "A team of parapsychologists try to figure out a strange phenomenon occurring in an apartment building.",
+      "runtime": 80,
+      "title": "Apartment 143",
+      "year": 2011,
+      "imdb": {
+          "rating": 5.1,
+          "votes": 8867,
+          "id": 1757742
+      },
+      "poster_path": "/hAXqjMVgF6TS8oa40TIRfrNix5d.jpg",
+      "score": 0.02040816326530612
+  },
+  {
+      "_id": "573a139af29313caabcefe28",
+      "plot": "Adolf Hitler faces himself and must come to terms with his infamous career in an imaginary post-war subterranean bunker where he reviews historical films, dictates his memoirs and ...",
+      "runtime": 118,
+      "title": "The Empty Mirror",
+      "year": 1996,
+      "imdb": {
+          "rating": 6.2,
+          "votes": 308,
+          "id": 116192
+      },
+      "poster_path": null,
+      "score": 0.02
+  },
+  {
+      "_id": "573a1399f29313caabcee886",
+      "imdb": {
+          "rating": 6.8,
+          "votes": 240786,
+          "id": 110475
+      },
+      "year": 1994,
+      "plot": "Bank clerk Stanley Ipkiss is transformed into a manic super-hero when he wears a mysterious mask.",
+      "title": "The Mask",
+      "runtime": 101,
+      "poster_path": "/xbbXp9px4o8Oe7IbGd0yIbla8mZ.jpg",
+      "score": 0.0196078431372549
+  },
+  {
+      "_id": "573a13d7f29313caabda1b36",
+      "plot": "Norwegian folklore turns out to be real when Leo and Elvis encounter Thale in a basement. A regular cleaning job turns into a struggle for survival, while they're trying to figure out what ...",
+      "runtime": 76,
+      "title": "Thale",
+      "year": 2012,
+      "imdb": {
+          "rating": 5.6,
+          "votes": 4322,
+          "id": 2112287
+      },
+      "poster_path": "/wzHeVg5U0G83Lkq5o86c2KiWgGZ.jpg",
+      "score": 0.019230769230769232
+  }
+]

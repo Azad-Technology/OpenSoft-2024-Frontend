@@ -106,7 +106,10 @@ function Pricing() {
                   <p>Owned</p>
                 </button>
                 :
-                <button className={styles.pricingCard_button}>
+                <button className={styles.pricingCard_button} onClick={() => (dispatch({
+                  type: "SET_SUBTYPE",
+                  subtype: "Silver",
+                }))}>
                   <p>Purchase</p>
                 </button>   
               }
@@ -142,7 +145,10 @@ function Pricing() {
                 target="_blank"
                 to={token && token !=='null' && token!==undefined && token!=='undefined'?`https://popkorn.lemonsqueezy.com/checkout/buy/a5268a32-b1cb-4d35-952d-7766e242a76a?checkout[email]=${user?.email}&checkout[name]=${user?.name}`:"/login"}
               >
-                <button className={styles.pricingCard_button}>
+                <button className={styles.pricingCard_button} onClick={() => (dispatch({
+                  type: "SET_SUBTYPE",
+                  subtype: "Gold",
+                }))}>
                   <p>Purchase</p>
                 </button>
               </Link>

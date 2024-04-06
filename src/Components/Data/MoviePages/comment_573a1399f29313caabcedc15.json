@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "6606dc194185cb979cda3fa8",
+    "name": "Abhinav",
+    "email": "abc@xyz.com",
+    "movie_id": "573a1399f29313caabcedc15",
+    "text": "I was on the edge of my seat the entire time. The movie was an instant favorite.",
+    "date": "2024-03-28 22:24:59"
+  },
+  {
+    "_id": "6606dc194185cb979cda4d7c",
+    "name": "Ehsaan Bajaj",
+    "email": "ehsaan415@example.com",
+    "movie_id": "573a1399f29313caabcedc15",
+    "text": "I was completely immersed in the story. I was completely enthralled by every moment of it. The movie was an absolute pleasure to watch.",
+    "date": "2024-03-26 03:45:15"
+  },
+  {
+    "_id": "6606dc194185cb979cd98297",
+    "name": "Alisha Kala",
+    "email": "alisha399@example.com",
+    "movie_id": "573a1399f29313caabcedc15",
+    "text": "I couldn't stop thinking about it after it ended. I was left speechless by the sheer beauty of it all.",
+    "date": "2024-03-23 03:15:54"
+  },
+  {
+    "_id": "6606dc194185cb979cda3d70",
+    "name": "Urvi Rama",
+    "email": "urvi44@example.com",
+    "movie_id": "573a1399f29313caabcedc15",
+    "text": "The story was so compelling.",
+    "date": "2024-03-21 10:36:53"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c6ab",
+    "name": "Arnav Ranganathan",
+    "email": "arnav227@example.com",
+    "movie_id": "573a1399f29313caabcedc15",
+    "text": "I was hooked from the opening scene. The writing was sharp and witty.",
+    "date": "2024-03-17 06:53:22"
+  },
+  {
+    "_id": "6606dc194185cb979cda4769",
+    "name": "Shalv Warrior",
+    "email": "shalv87@example.com",
+    "movie_id": "573a1399f29313caabcedc15",
+    "text": "I was completely enchanted by every moment of it. I was completely absorbed by every frame of it. I was left breathless by the sheer brilliance of it all.",
+    "date": "2024-03-06 20:35:36"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c2ce",
+    "name": "Kimaya Bansal",
+    "email": "kimaya253@example.com",
+    "movie_id": "573a1399f29313caabcedc15",
+    "text": "The performances were Oscar-worthy.",
+    "date": "2024-03-01 05:10:37"
+  },
+  {
+    "_id": "6606dc194185cb979cd96af1",
+    "name": "Himdyuti Sandilya",
+    "email": "himdyutisandilya@gmail.com",
+    "movie_id": "573a1399f29313caabcedc15",
+    "text": "I couldn't take my eyes off the screen.",
+    "date": "2024-02-29 07:08:40"
+  }
+]

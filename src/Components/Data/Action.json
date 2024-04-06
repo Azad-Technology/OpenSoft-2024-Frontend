@@ -1,0 +1,395 @@
+[
+  {
+    "plot": "The life of the greatest karate master of a generation.",
+    "genres": [
+      "Documentary",
+      "Action",
+      "History"
+    ],
+    "runtime": 90,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTY3MjI0MjA1OF5BMl5BanBnXkFtZTgwMTI3Nzc2MjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Real Miyagi",
+    "released": "2015-02-20 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 9.3,
+      "votes": 41,
+      "id": 2313306
+    },
+    "poster_path": "/pHjTftF3uXX941UBhuinhxfjocU.jpg",
+    "backdrop_path": "/oHoCeiS6lYhZ9bCf6vhQsBgUNSa.jpg",
+    "_id": "573a13daf29313caabdad25f",
+    "relevance_score": 30
+  },
+  {
+    "plot": "In 1985, Kung Fury, the toughest martial artist cop in Miami, goes back in time to kill the worst criminal of all time - kung fuhrer Hitler.",
+    "genres": [
+      "Short",
+      "Action",
+      "Comedy"
+    ],
+    "runtime": 31,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjQwMjU2ODU5NF5BMl5BanBnXkFtZTgwNTU1NjM4NTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Kung Fury",
+    "released": "2015-05-28 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 24575,
+      "id": 3472226
+    },
+    "poster_path": "/6Qam8Leycapwik947j6U3vcUbAv.jpg",
+    "backdrop_path": "/gdxPHC5nw9sBrrUyiOnzkWqnLE4.jpg",
+    "_id": "573a13ecf29313caabdd21a3",
+    "relevance_score": 20
+  },
+  {
+    "imdb": {
+      "rating": 8.3,
+      "votes": 314071,
+      "id": 1392190
+    },
+    "year": 2015,
+    "plot": "A woman rebels against a tyrannical ruler in post apocalyptic Australia in search for her homeland with the help of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "title": "Mad Max: Fury Road",
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-05-15 00:00:00",
+    "runtime": 120,
+    "poster_path": "/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg",
+    "backdrop_path": "/nlCHUWjY9XWbuEUQauCBgnY8ymF.jpg",
+    "_id": "573a13c5f29313caabd70568",
+    "relevance_score": 20
+  },
+  {
+    "plot": "Three elite climbers struggle to find their way through obsession and loss as they attempt to climb Mount Meru, one of the most coveted prizes in the high stakes game of Himalayan big wall climbing.",
+    "genres": [
+      "Documentary",
+      "Action",
+      "Adventure"
+    ],
+    "runtime": 87,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ4MDM3NjY2Nl5BMl5BanBnXkFtZTgwNjkyNTIzNjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Meru",
+    "released": "2015-08-14 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 263,
+      "id": 2545428
+    },
+    "poster_path": "/oQsMMSTJnWneD9YwYbUbsJzbQ7f.jpg",
+    "backdrop_path": "/pjMm3ChyDqsfq2STH4MlMVjZmJz.jpg",
+    "_id": "573a13dff29313caabdb72de",
+    "relevance_score": 20
+  },
+  {
+    "plot": "The relevant epic story of the strong-willed, courageous and independent woman before her time, Kurmanjan, who is revered to this day for her diplomacy for saving her nation from complete destruction when the Russians invaded.",
+    "genres": [
+      "Action",
+      "Biography",
+      "Drama"
+    ],
+    "runtime": 135,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjE0ODAxNDQ0MV5BMl5BanBnXkFtZTgwNzY1MDUyMjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Queen of the Mountains",
+    "released": "2015-01-06 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.6,
+      "votes": 3106,
+      "id": 2640460
+    },
+    "poster_path": "/9my4y17YNNIIx6A1aP8BvuO5WdG.jpg",
+    "backdrop_path": "/cKR1w5l5m6HjhysaGHpZhoHtT8P.jpg",
+    "_id": "573a13e0f29313caabdba169",
+    "relevance_score": 16
+  },
+  {
+    "plot": "A documentary that follows undercover activists trying to stave off a man-made mass extinction.",
+    "genres": [
+      "Documentary",
+      "Action",
+      "Adventure"
+    ],
+    "runtime": 90,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQyNTk0ODU5Ml5BMl5BanBnXkFtZTgwMTc2NzA0NDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Racing Extinction",
+    "released": "2015-01-24 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 83,
+      "id": 1618448
+    },
+    "poster_path": "/8go3YMk4SXImzIH7uqSAg2qbDXg.jpg",
+    "backdrop_path": "/9MTbSRF0NYPxNSXdnrAbzZpvA2p.jpg",
+    "_id": "573a13cbf29313caabd81378",
+    "relevance_score": 16
+  },
+  {
+    "plot": "An idealistic FBI agent is enlisted by an elected government task force to aid in the escalating war against drugs at the border area between the U.S. and Mexico.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 121,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA5NjM3NTk1M15BMl5BanBnXkFtZTgwMzg1MzU2NjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Sicario",
+    "released": "2015-10-02 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 1689,
+      "id": 3397884
+    },
+    "poster_path": "/lz8vNyXeidqqOdJW9ZjnDAMb5Vr.jpg",
+    "backdrop_path": "/4NdAMnBwSAaSsUjoXkcU5aW28RF.jpg",
+    "_id": "573a13eaf29313caabdcfa99",
+    "relevance_score": 16
+  },
+  {
+    "plot": "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's Mightiest Heroes to stop the villainous Ultron from enacting his terrible plans.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 141,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Avengers: Age of Ultron",
+    "released": "2015-05-01 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.8,
+      "votes": 282723,
+      "id": 2395427
+    },
+    "poster_path": "/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+    "backdrop_path": "/6YwkGolwdOMNpbTOmLjoehlVWs5.jpg",
+    "_id": "573a13dcf29313caabdb2759",
+    "relevance_score": 15
+  },
+  {
+    "imdb": {
+      "rating": 7.8,
+      "votes": 111807,
+      "id": 478970
+    },
+    "year": 2015,
+    "plot": "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "title": "Ant-Man",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-07-17 00:00:00",
+    "runtime": 117,
+    "poster_path": "/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
+    "backdrop_path": "/1K3JmSNUN8OpjYsCjc0Hy0SYxAb.jpg",
+    "_id": "573a13b5f29313caabd44e2b",
+    "relevance_score": 15
+  },
+  {
+    "plot": "Trapped standing on an armed landmine, an American tourist is forced to watch helplessly while his girlfriend is terrorized and brutally assaulted.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 110,
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDZhOGJiOTUtNjIxOS00MWZiLWFiZWUtMTYzZThmNGYwNmI0XkEyXkFqcGdeQXVyNTcwMzkyNDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Landmine Goes Click",
+    "released": "2015-11-20 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 289,
+      "id": 2186848
+    },
+    "poster_path": "/dRzCChRwhFXSjamEaj7wUWtTl7T.jpg",
+    "backdrop_path": "/pBNTlK05egmrIIs14rTBcImhibN.jpg",
+    "_id": "573a13d8f29313caabda5e45",
+    "relevance_score": 13
+  },
+  {
+    "plot": "A physician in Michoacèn, Mexico leads a citizen uprising against the drug cartel that has wrecked havoc on the region for years. Across the U.S. border, a veteran heads a paramilitary ...",
+    "genres": [
+      "Documentary",
+      "Action",
+      "Drama"
+    ],
+    "runtime": 100,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjE1MzI2MzcxOV5BMl5BanBnXkFtZTgwNTE2Mjk4NTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Cartel Land",
+    "released": "2015-07-03 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 429,
+      "id": 4126304
+    },
+    "poster_path": "/bNNP8IYV1VZKsS5CRavRpRDWV06.jpg",
+    "backdrop_path": "/lHFsMi0uprGSD25sIR1OVeqFiFR.jpg",
+    "_id": "573a13f5f29313caabde2e80",
+    "relevance_score": 12
+  },
+  {
+    "plot": "Vishwanathan, a Kathak dance teacher in New York, is in a rather happy marriage with Nirupama who is a nuclear oncologist. She hires a detective to keep a watch on her husband, who ...",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime"
+    ],
+    "runtime": 148,
+    "title": "Vishwaroopam",
+    "released": "2013-01-25 00:00:00",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.8,
+      "votes": 33015,
+      "id": 2199711
+    },
+    "poster_path": "/6j0ie6qImOH0ndS7uaZb4879PwC.jpg",
+    "backdrop_path": "/6lqrB3D4EqLPPV9LSHPyFfMfEQW.jpg",
+    "_id": "573a13d8f29313caabda6b38",
+    "relevance_score": 11
+  },
+  {
+    "plot": "The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that results in doom for both humans and mutants.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 132,
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGIzNWYzN2YtMjcwYS00YjQ3LWI2NjMtOTNiYTUyYjE2MGNkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_SX677_AL_.jpg",
+    "title": "X-Men: Days of Future Past",
+    "released": "2014-05-23 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 436254,
+      "id": 1877832
+    },
+    "poster_path": "/tYfijzolzgoMOtegh1Y7j2Enorg.jpg",
+    "backdrop_path": "/fctQU5MoXgJ5pNMljFzlEFXwfSu.jpg",
+    "_id": "573a13d3f29313caabd947a8",
+    "relevance_score": 11
+  },
+  {
+    "plot": "Kyuta, a boy living in Shibuya, and Kumatetsu, a lonesome beast from Jutengai, an imaginary world. One day, Kyuta forays into the imaginary world and, as he's looking for his way back, ...",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "runtime": 119,
+    "title": "The Boy and the Beast",
+    "released": "2015-07-11 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.4,
+      "votes": 92,
+      "id": 4272866
+    },
+    "poster_path": "/kzKJxfIdZ70nsPfKyq7hlYlJwSx.jpg",
+    "backdrop_path": "/keSpEdNRKB1MW3zLcpz2AxPWVBJ.jpg",
+    "_id": "573a13f6f29313caabde50df",
+    "relevance_score": 11
+  },
+  {
+    "plot": "There is a murder while at prayer. Selman Bulut, the imam of mosque, starts to investigate the murder and faces with people in the neighborhood.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 110,
+    "title": "Let's Sin",
+    "released": "2014-04-18 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 3587,
+      "id": 3646462
+    },
+    "poster_path": "/yRhWTB64HGn9vF07r8Z2rF4IzMJ.jpg",
+    "backdrop_path": "/yEKWIIOJn4tmaoV0TTxpV9dGjqb.jpg",
+    "_id": "573a13eff29313caabdd7dbc",
+    "relevance_score": 11
+  },
+  {
+    "imdb": {
+      "rating": 7.4,
+      "votes": 211346,
+      "id": 2820852
+    },
+    "year": 2015,
+    "plot": "Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "title": "Furious 7",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQxOTA2NDUzOV5BMl5BanBnXkFtZTgwNzY2MTMxMzE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-04-03 00:00:00",
+    "runtime": 137,
+    "poster_path": "/ktofZ9Htrjiy0P6LEowsDaxd3Ri.jpg",
+    "backdrop_path": "/cHkhb5A4gQRK6zs6Pv7zorHs8Nk.jpg",
+    "_id": "573a13e2f29313caabdbe8fe",
+    "relevance_score": 11
+  },
+  {
+    "plot": "A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 121,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_SY1000_SX677_AL_.jpg",
+    "title": "Guardians of the Galaxy",
+    "released": "2014-08-01 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 539583,
+      "id": 2015381
+    },
+    "poster_path": "/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+    "backdrop_path": "/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg",
+    "_id": "573a13d5f29313caabd9c312",
+    "relevance_score": 11
+  },
+  {
+    "imdb": {
+      "rating": 7.3,
+      "votes": 64198,
+      "id": 3079380
+    },
+    "year": 2015,
+    "plot": "A desk-bound CIA analyst volunteers to go undercover to infiltrate the world of a deadly arms dealer, and prevent diabolical global disaster.",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime"
+    ],
+    "title": "Spy",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjI5OTQ0MDQxM15BMl5BanBnXkFtZTgwMzcwNjMyNTE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-06-05 00:00:00",
+    "runtime": 120,
+    "poster_path": "/6On9Ed52fz8W1h9PzaDQ12ZfHdn.jpg",
+    "backdrop_path": "/a0jJMlI1Nw83EXaYmN0QHuccRXm.jpg",
+    "_id": "573a13e6f29313caabdc5f20",
+    "relevance_score": 10
+  }
+]

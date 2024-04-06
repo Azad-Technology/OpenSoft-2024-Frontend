@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "6606dc194185cb979cda5af3",
+    "name": "Riaan Tailor",
+    "email": "riaan439@example.com",
+    "movie_id": "573a13d6f29313caabda0bba",
+    "text": "The performances were absolutely captivating. I was utterly mesmerized by the visuals. Such a heartwarming story, it brought tears to my eyes.",
+    "date": "2024-03-22 18:40:43"
+  },
+  {
+    "_id": "6606dc194185cb979cda0111",
+    "name": "Dishani Verma",
+    "email": "dishani181@example.com",
+    "movie_id": "573a13d6f29313caabda0bba",
+    "text": "The movie was a true joy to watch. I wish I could give it more than five stars.",
+    "date": "2024-03-15 19:53:14"
+  },
+  {
+    "_id": "6606dc194185cb979cda0f61",
+    "name": "Vardaniya Kothari",
+    "email": "vardaniya68@example.com",
+    "movie_id": "573a13d6f29313caabda0bba",
+    "text": "I left the theater with a renewed sense of hope.",
+    "date": "2024-03-14 01:34:40"
+  },
+  {
+    "_id": "6606dc194185cb979cda4756",
+    "name": "Chirag Randhawa",
+    "email": "chirag293@example.com",
+    "movie_id": "573a13d6f29313caabda0bba",
+    "text": "I was utterly mesmerized by the visuals.",
+    "date": "2024-03-09 19:39:45"
+  },
+  {
+    "_id": "6606dc194185cb979cda2b49",
+    "name": "Sara Kant",
+    "email": "sara168@example.com",
+    "movie_id": "573a13d6f29313caabda0bba",
+    "text": "The movie was an emotional rollercoaster.",
+    "date": "2024-03-01 02:06:00"
+  }
+]

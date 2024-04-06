@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "6606dc194185cb979cd97b60",
+    "name": "Samaira Kamdar",
+    "email": "samaira315@example.com",
+    "movie_id": "573a13f4f29313caabde0bfd",
+    "text": "I was completely enthralled by every moment of it.",
+    "date": "2024-03-18 16:37:24"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d438",
+    "name": "Jivika Uppal",
+    "email": "jivika187@example.com",
+    "movie_id": "573a13f4f29313caabde0bfd",
+    "text": "I felt like I was right there with the characters.",
+    "date": "2024-03-17 11:27:36"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c559",
+    "name": "Kaira Banerjee",
+    "email": "kaira229@example.com",
+    "movie_id": "573a13f4f29313caabde0bfd",
+    "text": "I was left wanting more. The soundtrack perfectly complemented the movie. The emotional depth of the characters was astounding.",
+    "date": "2024-03-03 00:02:22"
+  },
+  {
+    "_id": "6606dc194185cb979cd981c2",
+    "name": "Shlok Sathe",
+    "email": "shlok3@example.com",
+    "movie_id": "573a13f4f29313caabde0bfd",
+    "text": "A true masterpiece of cinema.",
+    "date": "2024-02-29 20:51:53"
+  }
+]

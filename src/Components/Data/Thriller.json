@@ -1,0 +1,377 @@
+[
+  {
+    "plot": "A movie shot in a single take about Victoria, a runaway party girl, who's asked by three friendly men to join them as they hit the town. Their wild night of partying turns into a bank robbery.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 140,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc5NzQzNjk2NF5BMl5BanBnXkFtZTgwODU0MjI5NjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Victoria",
+    "released": "2015-10-09 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 3031,
+      "id": 4226388
+    },
+    "poster_path": "/fEt9U7JQYO8j8VtCCuyDzznPM2x.jpg",
+    "backdrop_path": "/ltvsxWWWfvcxoUbKVL8Dhhlwnrx.jpg",
+    "_id": "573a13f6f29313caabde4709",
+    "relevance_score": 19
+  },
+  {
+    "plot": "THE CONFINES is a claustrophobic thriller that follows a troubled young woman who, in a last-ditch effort at getting her life together, takes a job working nights as a security guard at an ...",
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime": 86,
+    "title": "The Confines",
+    "released": "2015-06-13 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 21,
+      "id": 3311988
+    },
+    "poster_path": "/cRyLGIsYpYkUT4e6aqGrN3DMrpX.jpg",
+    "_id": "573a13e9f29313caabdcd054",
+    "relevance_score": 16
+  },
+  {
+    "plot": "Emma, a graduate student living alone in NYC, is being watched by a stalker who hacks into the technology that surrounds her - laptop, cell phone, and other web connected devices. This ...",
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 80,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTU0MzU3NzYzM15BMl5BanBnXkFtZTgwODU3NjAwODE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Ratter",
+    "released": "2015-01-24 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.8,
+      "votes": 64,
+      "id": 3836512
+    },
+    "poster_path": "/vSwYyxa12OqcrVnW6qPGqIBFyh2.jpg",
+    "backdrop_path": "/rmwyGjvG2SPox7jVudJXWu1YrQS.jpg",
+    "_id": "573a13f2f29313caabddd292",
+    "relevance_score": 15
+  },
+  {
+    "plot": "A derelict Landlord tries desperately to repay stolen cash to a dog-fighting sociopath who has his daughter abducted.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 91,
+    "title": "Cash Only",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.7,
+      "votes": 19,
+      "id": 2883448
+    },
+    "poster_path": "/yTck6GtitvERKNfalHmW65ZCFSg.jpg",
+    "backdrop_path": "/b9Pz2q4mikCXHABrc4wYdoi117d.jpg",
+    "_id": "573a13e3f29313caabdc00fc",
+    "relevance_score": 14
+  },
+  {
+    "plot": "One night. One apartment. One missing person. Rami takes his dog on a walk and does not return. He disappeared. His wife, Shir, is clueless as to his whereabouts. Different people come in ...",
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 92,
+    "title": "The Man in the Wall",
+    "released": "2015-01-23 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 37,
+      "id": 4029356
+    },
+    "poster_path": "/gVChTtzRzULWy7jyChcgt8ULfx1.jpg",
+    "backdrop_path": "/bmxpDHRxPROn6rsSvsCtkpho8Gd.jpg",
+    "_id": "573a13f4f29313caabde122f",
+    "relevance_score": 13
+  },
+  {
+    "plot": "Suspecting that people around him are turning into evil creatures, a troubled man questions whether to protect his only friend from an impending war, or from himself.",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime": 80,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTk0ODA1MzY3NF5BMl5BanBnXkFtZTgwMjQ0NzcyNDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "They Look Like People",
+    "released": "2015-01-25 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 59,
+      "id": 4105970
+    },
+    "poster_path": "/qXIXNduWXxCpKie5I8NitOcWt8z.jpg",
+    "backdrop_path": "/ywGCXYAfFYImYI5fWt1WwrWLHxq.jpg",
+    "_id": "573a13f4f29313caabde29cd",
+    "relevance_score": 13
+  },
+  {
+    "plot": "A jealous husband out of control, his sexy actress wife, a sleazy Hollywood director, a reckless drug messenger, a disoriented young woman, an ex-con hot dog vendor, a troubled student on a...",
+    "genres": [
+      "Thriller"
+    ],
+    "runtime": 81,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWM4MmE5NWUtOTI1Zi00NGJhLTlkODEtM2M0NWY5OWMzNDgzXkEyXkFqcGdeQXVyMjA3MjE1MzM@._V1_SY1000_SX677_AL_.jpg",
+    "title": "11 Minutes",
+    "released": "2015-10-23 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 17,
+      "id": 3865478
+    },
+    "poster_path": "/qZ07UY5rEbvygj87YeOZElk7hDW.jpg",
+    "backdrop_path": "/9nKwoiWISrIaZf9Le6cd4AVhD6y.jpg",
+    "_id": "573a13f2f29313caabdddd72",
+    "relevance_score": 13
+  },
+  {
+    "plot": "Set against the backdrop of an international finance deal in New York and Peru, Oliver's Deal is an intense political drama which explores how far people will go to get what they want.",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime": 99,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjEwNzQ2OTM0NF5BMl5BanBnXkFtZTgwODA2Mzk0OTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Oliver's Deal",
+    "released": "2015-04-18 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 18,
+      "id": 2698966
+    },
+    "poster_path": "/xYqFyLOtdXta5wOmzMKOUsPVRph.jpg",
+    "backdrop_path": "/87iUhqMgXuYT5BYBJWNRSUMxd09.jpg",
+    "_id": "573a13e0f29313caabdbb6db",
+    "relevance_score": 13
+  },
+  {
+    "plot": "A desperate housewife discovers her husband is having an affair and kidnaps his unsuspecting mistress, but what starts as a prank quickly spirals out of control.",
+    "genres": [
+      "Thriller"
+    ],
+    "runtime": 82,
+    "title": "Caught",
+    "released": "2015-06-12 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 11,
+      "id": 4273170
+    },
+    "poster_path": "/33sUPXPUqIe9YnZ80d8xzkiL2gb.jpg",
+    "backdrop_path": "/1pZJXiLnfg5rjhCErUCAXBCkhC1.jpg",
+    "_id": "573a13f6f29313caabde50b0",
+    "relevance_score": 12
+  },
+  {
+    "plot": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime": 149,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Gone Girl",
+    "released": "2014-10-03 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 456460,
+      "id": 2267998
+    },
+    "poster_path": "/lv5xShBIDPe7m4ufdlV0IAc7Avk.jpg",
+    "backdrop_path": "/h2JaQWLKhapm7AuSViJwGiv8ngC.jpg",
+    "_id": "573a13d9f29313caabdaa9e1",
+    "relevance_score": 12
+  },
+  {
+    "plot": "On his birthday, a hitman reluctantly takes on the easy task of killing a writer, only to find the job a lot more difficult than expected.",
+    "genres": [
+      "Comedy",
+      "Thriller"
+    ],
+    "runtime": 96,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzIyNDI5MDM1N15BMl5BanBnXkFtZTgwMjM0ODk1NTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Schneider vs. Bax",
+    "released": "2015-05-28 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 366,
+      "id": 3430416
+    },
+    "poster_path": "/9dFuGHEnofYo8TLwmFcyD83qnaV.jpg",
+    "backdrop_path": "/5j8CrEqrFQGRoScB3Ds5pKIAcgn.jpg",
+    "_id": "573a13ebf29313caabdd0bc9",
+    "relevance_score": 12
+  },
+  {
+    "plot": "In rural Indiana, Noah and his impoverished family wrestle with the mysterious return of his now mute sister Lauren, who was kidnapped and held captive for over a decade.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 93,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTk4NzQ4OTYyMF5BMl5BanBnXkFtZTgwMjg3OTI3NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Sand Castles",
+    "released": "2016-03-01 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 97,
+      "id": 2233170
+    },
+    "poster_path": "/pe2vpFDaFCpew23DFuTg7eOAVSk.jpg",
+    "backdrop_path": "/g5KHHtOd2jSFh7j64C7S05hrvCH.jpg",
+    "_id": "573a13d9f29313caabda885a",
+    "relevance_score": 12
+  },
+  {
+    "plot": "Desperate measures are taken by a man who tries to save his family from the dark side of the law, after they commit an unexpected crime.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 160,
+    "title": "Drishyam",
+    "released": "2013-12-19 00:00:00",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.9,
+      "votes": 6485,
+      "id": 3417422
+    },
+    "_id": "573a13ebf29313caabdd0481",
+    "relevance_score": 12
+  },
+  {
+    "plot": "'Welcome to Leith' is a feature documentary chronicling the attempted takeover of a small town in North Dakota by notorious white supremacist Craig Cobb. Filmed in the days leading up to ...",
+    "genres": [
+      "Documentary",
+      "Thriller"
+    ],
+    "runtime": 85,
+    "title": "Welcome to Leith",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjAwMjU4ODMwOV5BMl5BanBnXkFtZTgwMTUwMDQ1NjE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-01-26 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 79,
+      "id": 3962848
+    },
+    "poster_path": "/f9ovXeSRnOSxCh4jMIhkzg9jKSz.jpg",
+    "_id": "573a13f3f29313caabddf9c7",
+    "relevance_score": 12
+  },
+  {
+    "imdb": {
+      "rating": 8.2,
+      "votes": 51324,
+      "id": 3011894
+    },
+    "year": 2014,
+    "plot": "Six short stories involving distressed people.",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Thriller"
+    ],
+    "title": "Wild Tales",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzAzMjA1ODAxOV5BMl5BanBnXkFtZTgwODg4NTQzNDE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2014-08-21 00:00:00",
+    "runtime": 122,
+    "poster_path": "/vmeCDuWJ6B2cqi9f3QFyIwRKqFV.jpg",
+    "backdrop_path": "/dnhQCtQ4tyOlOrX5ApW5jhmzhdw.jpg",
+    "_id": "573a13e5f29313caabdc4193",
+    "relevance_score": 12
+  },
+  {
+    "plot": "In a time of starvation, a survivalist lives off a small plot of land hidden deep in forest. When two women seeking food and shelter discover his farm, he finds his existence threatened.",
+    "genres": [
+      "Drama",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "runtime": 104,
+    "title": "The Survivalist",
+    "released": "2015-04-18 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 22,
+      "id": 2580382
+    },
+    "poster_path": "/x7XhPGGtT8eIJnBuWoiB2TxjE9D.jpg",
+    "backdrop_path": "/2P7pGVJ5dGixxdmUyUvQBdkJNKR.jpg",
+    "_id": "573a13dff29313caabdb849f",
+    "relevance_score": 12
+  },
+  {
+    "plot": "A young punk rock band find themselves trapped in a secluded venue after stumbling upon a horrific act of violence.",
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "runtime": 94,
+    "title": "Green Room",
+    "released": "2015-05-17 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.4,
+      "votes": 124,
+      "id": 4062536
+    },
+    "poster_path": "/evZicaR7nXe4LiD9G6QYTorcJGO.jpg",
+    "backdrop_path": "/wjTNqt0RLe4aRMJHvjlKLtzw1vr.jpg",
+    "_id": "573a13f4f29313caabde1d9a",
+    "relevance_score": 11
+  },
+  {
+    "imdb": {
+      "rating": 7.4,
+      "votes": 211346,
+      "id": 2820852
+    },
+    "year": 2015,
+    "plot": "Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "title": "Furious 7",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQxOTA2NDUzOV5BMl5BanBnXkFtZTgwNzY2MTMxMzE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-04-03 00:00:00",
+    "runtime": 137,
+    "poster_path": "/ktofZ9Htrjiy0P6LEowsDaxd3Ri.jpg",
+    "backdrop_path": "/cHkhb5A4gQRK6zs6Pv7zorHs8Nk.jpg",
+    "_id": "573a13e2f29313caabdbe8fe",
+    "relevance_score": 11
+  }
+]

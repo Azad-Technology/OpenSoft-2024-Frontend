@@ -20,6 +20,7 @@ import GenreModal from "../GenreModal/GenreModal";
 import closeIcon from "../../assets/close-47.svg";
 import chooseMovie from "./MovieList.jsx";
 import Notification from "../Notification/notification.jsx";
+import { saveJsonFile } from "../save.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
@@ -57,6 +58,7 @@ function Modal({onClose, movie, token}) {
                 <MediaPlayer
                   storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
                   title={movie?.title}
+                  // src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
                   src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
                 >
                   <MediaProvider >
@@ -73,6 +75,7 @@ function Modal({onClose, movie, token}) {
                 <MediaPlayer
                   storage={user?.subtype!="Basic" && `${movie?._id} movie ${user?.email} user`}
                   title={movie?.title}
+                  // src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
                   src={vidsrc+"?mid="+movie?._id+"?uid="+user?.email}
                 >
                   <MediaProvider >
@@ -130,6 +133,7 @@ function ModalTrail({onClose, movie}) {
               clipEndTime={30}
                 storage={user?.subtype!="Basic" && `${movie?._id} trail ${user?.email} user`}
                 title={movie?.title}
+                // src={vidsrc+"?tid="+movie?._id+"?uid="+user?.email}
                 src={vidsrc+"?tid="+movie?._id+"?uid="+user?.email}
               >
                 <MediaProvider >
@@ -175,15 +179,17 @@ const MoviePage = ({setShowLikePopup}) => {
   const [showTrailModal, setShowTrailModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [like, setlike] = useState(false);
+  
   useEffect(() => {
     window.scroll(0, 0);
-  }, [id]);
-
-  useEffect(() => {
     const getData = async () => {
-      const response = await instance.get(`/movies/${id}`);
-      // console.log(response.data);
-      setMovie(response.data[0]);
+      try{
+        const response = await import(`../Data/MoviePages/${id}.json`)
+        setMovie(response.default);
+      } catch(err){
+        const response = await import('../Data/MoviePages/573a139af29313caabcefb1d.json');
+        setMovie(response.default);
+      }
     };
     getData();
   }, [id]);
@@ -193,9 +199,13 @@ const MoviePage = ({setShowLikePopup}) => {
 
   useEffect(() => {
     const getCommentData = async () => {
-      const response = await instance.get(`/movies/${id}/comments/?count=10`);
-      // console.log(response.data);
-      setComments(response.data);
+      try{
+        const response = await import(`../Data/MoviePages/comment_${id}`);
+        setComments(response.default);
+      } catch(err){
+        const response = await import(`../Data/MoviePages/comment_573a139af29313caabcefb1d.json`);
+        setComments(response.default);
+      }
     };
     getCommentData();
   }, [id]);
@@ -206,7 +216,7 @@ const MoviePage = ({setShowLikePopup}) => {
   const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [smallScreen, setSmallScreen] = useState(false);
   const [addedToWatchlist, setAddedToWatchlist] = useState(false);
-
+  const [createdWatchlist, setCreateWatchlist] = useState(false);
   // functions
 
   function makeString(list) {
@@ -279,21 +289,12 @@ const MoviePage = ({setShowLikePopup}) => {
     addFavouriteRequest();
   };
   const addFavouriteRequest = async e => {
-    try {
-      const response = await instance.patch(`/add_favourite/${movie?._id}`, null, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      
       if (!like) {
         dispatch({type: "ADD_FAV", movie: movie});
       } else {
         dispatch({type: "REM_FAV", movie: movie});
       }
-    } catch (err) {
-      // console.log(err);
-    }
   };
 
   useEffect(() => {
@@ -341,6 +342,7 @@ const MoviePage = ({setShowLikePopup}) => {
   return (
     <>
       {addedToWatchlist && <Notification message={`Added To Watchlist`} isVisible={addedToWatchlist}/>}
+      {createdWatchlist && <Notification message={`Watchlist Created`} isVisible={createdWatchlist}/>}
       <div className={styles.font}>
         <div
           className={styles.heroSmall}
@@ -428,7 +430,7 @@ const MoviePage = ({setShowLikePopup}) => {
                   </span>
                 </span>
                 <img src={watchlistoff} className={styles.watchlisticon} onClick={toggleWatchlist} />
-                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} setAddedToWatchlist={setAddedToWatchlist} />}
+                {showWatchListModal && <WatchListModal movieID={id} onClose={() => setShowWatchListModal(false)} setAddedToWatchlist={setAddedToWatchlist} setCreatedWatchlist={setCreateWatchlist} />}
               </span>
             </div>
             <div className={styles.genreList}>

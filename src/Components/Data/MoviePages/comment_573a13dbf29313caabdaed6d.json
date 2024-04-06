@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "6606dc194185cb979cda7fbc",
+    "name": "Shaan Contractor",
+    "email": "shaan69@example.com",
+    "movie_id": "573a13dbf29313caabdaed6d",
+    "text": "The writing was sharp and witty. I was left in awe of the sheer talent on display. Every scene was beautifully shot.",
+    "date": "2024-03-24 23:20:25"
+  },
+  {
+    "_id": "6606dc194185cb979cda5ced",
+    "name": "Example name",
+    "email": "example521@example.com",
+    "movie_id": "573a13dbf29313caabdaed6d",
+    "text": "The movie was a shining example of what cinema can achieve.",
+    "date": "2024-03-17 02:42:13"
+  },
+  {
+    "_id": "6606dc194185cb979cda0fa3",
+    "name": "Baiju Sahota",
+    "email": "baiju388@example.com",
+    "movie_id": "573a13dbf29313caabdaed6d",
+    "text": "The acting was top-notch, especially from the lead actor. The movie was a true work of art. The movie was an absolute masterpiece of filmmaking.",
+    "date": "2024-03-16 20:34:19"
+  },
+  {
+    "_id": "6606dc194185cb979cda1cac",
+    "name": "Dummy",
+    "email": "test123@test.com",
+    "movie_id": "573a13dbf29313caabdaed6d",
+    "text": "I was completely blown away by the sheer talent on display. This movie deserves all the awards. I was completely enchanted by every frame of it.",
+    "date": "2024-03-12 15:16:14"
+  },
+  {
+    "_id": "6606dc194185cb979cda57c9",
+    "name": "user",
+    "email": "user513@example.com",
+    "movie_id": "573a13dbf29313caabdaed6d",
+    "text": "I was blown away by the attention to detail.",
+    "date": "2024-03-05 09:57:37"
+  },
+  {
+    "_id": "6606dc194185cb979cd9433f",
+    "name": "Anay Ranganathan",
+    "email": "anay30@example.com",
+    "movie_id": "573a13dbf29313caabdaed6d",
+    "text": "I was completely blown away by the sheer talent on display. I was completely blown away by the sheer talent on display.",
+    "date": "2024-03-02 02:49:32"
+  },
+  {
+    "_id": "6606dc194185cb979cd993e4",
+    "name": "Madhav Sangha",
+    "email": "madhav105@example.com",
+    "movie_id": "573a13dbf29313caabdaed6d",
+    "text": "The soundtrack was hauntingly beautiful. The movie was a true gem.",
+    "date": "2024-03-01 14:07:37"
+  },
+  {
+    "_id": "6606dc194185cb979cda1e7d",
+    "name": "Baiju Sahota",
+    "email": "baiju388@example.com",
+    "movie_id": "573a13dbf29313caabdaed6d",
+    "text": "I highly recommend this movie to everyone. I was completely blown away by the sheer talent on display.",
+    "date": "2024-03-01 05:41:36"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9aac6",
+    "name": "Dummy",
+    "email": "123@example.com",
+    "movie_id": "573a13cdf29313caabd85402",
+    "text": "I was completely swept up in the world of the film. I've never seen anything quite like it before.",
+    "date": "2024-03-24 14:48:24"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d117",
+    "name": "Sahil Sant",
+    "email": "sahil212@example.com",
+    "movie_id": "573a13cdf29313caabd85402",
+    "text": "I couldn't stop thinking about it after it ended. The story was so compelling. I was left in awe of the sheer brilliance of it all.",
+    "date": "2024-03-20 03:48:12"
+  },
+  {
+    "_id": "6606dc194185cb979cd991a1",
+    "name": "Alisha Sule",
+    "email": "alisha348@example.com",
+    "movie_id": "573a13cdf29313caabd85402",
+    "text": "I was blown away by the creativity and imagination. I was on the edge of my seat the entire time. The dialogue was witty and clever.",
+    "date": "2024-03-20 02:55:53"
+  },
+  {
+    "_id": "6606dc194185cb979cda5be2",
+    "name": "Zeeshan Tata",
+    "email": "zeeshan248@example.com",
+    "movie_id": "573a13cdf29313caabd85402",
+    "text": "I loved every minute of it.",
+    "date": "2024-03-16 23:31:40"
+  },
+  {
+    "_id": "6606dc194185cb979cd972b9",
+    "name": "Prerak Lala",
+    "email": "prerak174@example.com",
+    "movie_id": "573a13cdf29313caabd85402",
+    "text": "I was left breathless by the sheer brilliance of it all. I was completely blown away by the sheer talent on display. The movie was a tour de force of storytelling.",
+    "date": "2024-03-10 16:08:27"
+  }
+]

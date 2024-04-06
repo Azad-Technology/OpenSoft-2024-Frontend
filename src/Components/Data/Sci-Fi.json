@@ -1,0 +1,379 @@
+[
+  {
+    "imdb": {
+      "rating": 8.3,
+      "votes": 314071,
+      "id": 1392190
+    },
+    "year": 2015,
+    "plot": "A woman rebels against a tyrannical ruler in post apocalyptic Australia in search for her homeland with the help of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "title": "Mad Max: Fury Road",
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 120,
+    "poster_path": "/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg",
+    "backdrop_path": "/nlCHUWjY9XWbuEUQauCBgnY8ymF.jpg",
+    "_id": "573a13c5f29313caabd70568",
+    "relevance_score": 20
+  },
+  {
+    "plot": "The dark year 2204, in a world that has seen 73 years of continuous war. A Shaman is sent on a mission to convert the soul of a giant battle colossus.",
+    "genres": [
+      "Short",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "runtime": 18,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTYyODA0NzEwM15BMl5BanBnXkFtZTgwODk1NDQ0NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Shaman",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 11,
+      "id": 4215858
+    },
+    "poster_path": "/irQaZ3SgJI5ofdbQYJSIgLCT4oz.jpg",
+    "backdrop_path": "/xE5MOeGbNPDl6DOBQzVb9OWdhQo.jpg",
+    "_id": "573a13f5f29313caabde445e",
+    "relevance_score": 19
+  },
+  {
+    "plot": "In a dystopian near future, single people are obliged to find a matching mate in 45 days or are transformed into animals and released into the woods.",
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "runtime": 118,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDQ1NDE5NzQ1NF5BMl5BanBnXkFtZTgwNzA5OTM2NTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Lobster",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 685,
+      "id": 3464902
+    },
+    "poster_path": "/7Y9ILV1unpW9mLpGcqyGQU72LUy.jpg",
+    "backdrop_path": "/s48CvFbWoWHhSPgz2wW9Rffw04q.jpg",
+    "_id": "573a13ecf29313caabdd1d85",
+    "relevance_score": 19
+  },
+  {
+    "imdb": {
+      "rating": 8.7,
+      "votes": 699518,
+      "id": 816692
+    },
+    "year": 2014,
+    "plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "title": "Interstellar",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 169,
+    "poster_path": "/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "backdrop_path": "/ln2Gre4IYRhpjuGVybbtaF4CLo5.jpg",
+    "_id": "573a13b9f29313caabd4ddff",
+    "relevance_score": 17
+  },
+  {
+    "plot": "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's Mightiest Heroes to stop the villainous Ultron from enacting his terrible plans.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 141,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Avengers: Age of Ultron",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.8,
+      "votes": 282723,
+      "id": 2395427
+    },
+    "poster_path": "/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+    "backdrop_path": "/6YwkGolwdOMNpbTOmLjoehlVWs5.jpg",
+    "_id": "573a13dcf29313caabdb2759",
+    "relevance_score": 15
+  },
+  {
+    "imdb": {
+      "rating": 7.8,
+      "votes": 111807,
+      "id": 478970
+    },
+    "year": 2015,
+    "plot": "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "title": "Ant-Man",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 117,
+    "poster_path": "/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
+    "backdrop_path": "/1K3JmSNUN8OpjYsCjc0Hy0SYxAb.jpg",
+    "_id": "573a13b5f29313caabd44e2b",
+    "relevance_score": 15
+  },
+  {
+    "plot": "In a time of starvation, a survivalist lives off a small plot of land hidden deep in forest. When two women seeking food and shelter discover his farm, he finds his existence threatened.",
+    "genres": [
+      "Drama",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "runtime": 104,
+    "title": "The Survivalist",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 22,
+      "id": 2580382
+    },
+    "poster_path": "/x7XhPGGtT8eIJnBuWoiB2TxjE9D.jpg",
+    "backdrop_path": "/2P7pGVJ5dGixxdmUyUvQBdkJNKR.jpg",
+    "_id": "573a13dff29313caabdb849f",
+    "relevance_score": 12
+  },
+  {
+    "plot": "A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 121,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_SY1000_SX677_AL_.jpg",
+    "title": "Guardians of the Galaxy",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 539583,
+      "id": 2015381
+    },
+    "poster_path": "/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+    "backdrop_path": "/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg",
+    "_id": "573a13d5f29313caabd9c312",
+    "relevance_score": 11
+  },
+  {
+    "plot": "The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that results in doom for both humans and mutants.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 132,
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGIzNWYzN2YtMjcwYS00YjQ3LWI2NjMtOTNiYTUyYjE2MGNkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_SX677_AL_.jpg",
+    "title": "X-Men: Days of Future Past",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 436254,
+      "id": 1877832
+    },
+    "poster_path": "/tYfijzolzgoMOtegh1Y7j2Enorg.jpg",
+    "backdrop_path": "/fctQU5MoXgJ5pNMljFzlEFXwfSu.jpg",
+    "_id": "573a13d3f29313caabd947a8",
+    "relevance_score": 11
+  },
+  {
+    "plot": "A new theme park is built on the original site of Jurassic Park. Everything is going well until the park's newest attraction--a genetically modified giant stealth killing machine--escapes containment and goes on a killing spree.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 124,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzQ3OTY4NjAtNzM5OS00N2ZhLWJlOWUtYzYwZjNmOWRiMzcyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Jurassic World",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.3,
+      "votes": 252556,
+      "id": 369610
+    },
+    "poster_path": "/A0LZHXUzo5C60Oahvt7VxvwuzHw.jpg",
+    "backdrop_path": "/dF6FjTZzRTENfB4R17HDN20jLT2.jpg",
+    "_id": "573a13adf29313caabd2b765",
+    "relevance_score": 10
+  },
+  {
+    "plot": "Held captive and faced with their imminent executions, fifty strangers are forced to choose the one person among them who deserves to live.",
+    "genres": [
+      "Drama",
+      "Horror",
+      "Sci-Fi"
+    ],
+    "runtime": 87,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTg0Mjg0MjUwOF5BMl5BanBnXkFtZTgwNjk0NzQ4NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Circle",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.2,
+      "votes": 26,
+      "id": 3118452
+    },
+    "poster_path": "/hbIL53MdZFJXsgxXaSOVuApWTs8.jpg",
+    "backdrop_path": "/siaFJwm0uXxkZJFEUSB6rumFpiM.jpg",
+    "_id": "573a13e7f29313caabdc7372",
+    "relevance_score": 9
+  },
+  {
+    "plot": "A military officer is brought into an alien war against an extraterrestrial enemy who can reset the day and know the future. When this officer is enabled with the same power, he teams up with a Special Forces warrior to try and end the war.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 113,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc5OTk4MTM3M15BMl5BanBnXkFtZTgwODcxNjg3MDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Edge of Tomorrow",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 357609,
+      "id": 1631867
+    },
+    "poster_path": "/xjw5trHV7Mwo61P0kCTy8paEkgO.jpg",
+    "backdrop_path": "/4V1yIoAKPMRQwGBaSses8Bp2nsi.jpg",
+    "_id": "573a13ccf29313caabd823a9",
+    "relevance_score": 9
+  },
+  {
+    "plot": "A man suffering from insomnia is tricked into buying a drug, Lucia, that makes his desires come true in his dreams, blurring the line between fantasy and reality.",
+    "genres": [
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "runtime": 135,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQyMDA5ODkzN15BMl5BanBnXkFtZTgwMjIzMDkyMDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Lucia",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.5,
+      "votes": 6699,
+      "id": 2358592
+    },
+    "poster_path": "/mFceUpxhRuMgnveNkPuV9IOrtOX.jpg",
+    "backdrop_path": "/bLgWv6cux1SUYB0HO676buFqRbE.jpg",
+    "_id": "573a13dbf29313caabdb009e",
+    "relevance_score": 8
+  },
+  {
+    "imdb": {
+      "rating": 7.8,
+      "votes": 398260,
+      "id": 1843866
+    },
+    "year": 2014,
+    "plot": "As Steve Rogers struggles to embrace his role in the modern world, he teams up with another super soldier, the black widow, to battle a new threat from old history: an assassin known as the Winter Soldier.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "title": "Captain America: The Winter Soldier",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzA2NDkwODAwM15BMl5BanBnXkFtZTgwODk5MTgzMTE@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 136,
+    "poster_path": "/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
+    "backdrop_path": "/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
+    "_id": "573a13d2f29313caabd91d33",
+    "relevance_score": 8
+  },
+  {
+    "plot": "The world's first \"perfect\" Artificial Intelligence begins to exhibit startling and unnerving emergent behavior when a reporter begins a relationship with the scientist who created it.",
+    "genres": [
+      "Drama",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "runtime": 91,
+    "title": "Uncanny",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ3ODU1NTY0Ml5BMl5BanBnXkFtZTgwODU0MzA3NjE@._V1_SY1000_SX677_AL_.jpg",
+    "year": 2015,
+    "imdb": {
+      "rating": 7,
+      "votes": 66,
+      "id": 2321502
+    },
+    "poster_path": "/w9bUDD6uT3Fhs8L34nfMj18uqcR.jpg",
+    "backdrop_path": "/tZEGrL1ej2xInHhESDsmtJMgjaP.jpg",
+    "_id": "573a13daf29313caabdadba3",
+    "relevance_score": 7
+  },
+  {
+    "plot": "A growing nation of genetically evolved apes led by Caesar is threatened by a band of human survivors of the devastating virus unleashed a decade earlier.",
+    "genres": [
+      "Action",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "runtime": 130,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTgwODk3NDc1N15BMl5BanBnXkFtZTgwNTc1NjQwMjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Dawn of the Planet of the Apes",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.7,
+      "votes": 276188,
+      "id": 2103281
+    },
+    "poster_path": "/kScdQEwS9jPEdnO23XjGAtaoRcT.jpg",
+    "backdrop_path": "/zlU8BIkgY7E6SMfD3USTWC6bchL.jpg",
+    "_id": "573a13d7f29313caabda1354",
+    "relevance_score": 7
+  },
+  {
+    "plot": "Men and Chicken is a black comedy about two outcast brothers, who by getting to know their unknown family also discover a horrible truth about themselves and their relatives.",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "runtime": 104,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTcwMjI0OTgxM15BMl5BanBnXkFtZTgwNDg3MzczODE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Men & Chicken",
+    "year": 2015,
+    "imdb": {
+      "rating": 6.8,
+      "votes": 1615,
+      "id": 3877674
+    },
+    "poster_path": "/2mtQwJKVKQrZgTz49Dizb25eOQQ.jpg",
+    "backdrop_path": "/2ex2beZ4ssMeOduLD0ILzXKCiep.jpg",
+    "_id": "573a13f2f29313caabdde0b4",
+    "relevance_score": 5
+  },
+  {
+    "plot": "A team of genius-but-broke grad students invent mind-reading technology that destroys their lives and threatens the future of free-will itself.",
+    "genres": [
+      "Drama",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "runtime": 100,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTkyOTkxOTc1MF5BMl5BanBnXkFtZTgwODAwODQ2NjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Listening",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 71,
+      "id": 3153582
+    },
+    "poster_path": "/yrmNdnf0njvaH5TrX8wuHJdtIis.jpg",
+    "backdrop_path": "/lGjgJaD0liPP2kIaayeivIZQpvz.jpg",
+    "_id": "573a13e7f29313caabdc8538",
+    "relevance_score": 5
+  }
+]

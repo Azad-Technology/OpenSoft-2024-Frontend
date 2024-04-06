@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9b979",
+    "name": "Hrishita Lala",
+    "email": "hrishita276@example.com",
+    "movie_id": "573a139ef29313caabcfcd94",
+    "text": "I was completely absorbed by every frame of it. The chemistry between the actors was palpable. I was left in awe of the sheer brilliance of it all.",
+    "date": "2024-03-26 22:42:46"
+  },
+  {
+    "_id": "6606dc194185cb979cd9bec0",
+    "name": "Dhanush Chaudhari",
+    "email": "dhanush98@example.com",
+    "movie_id": "573a139ef29313caabcfcd94",
+    "text": "The movie was a testament to the power of cinema.",
+    "date": "2024-03-08 20:55:40"
+  },
+  {
+    "_id": "6606dc194185cb979cda542b",
+    "name": "Rati Dani",
+    "email": "rati128@example.com",
+    "movie_id": "573a139ef29313caabcfcd94",
+    "text": "I've already recommended it to all my friends. The movie was a true joy to watch.",
+    "date": "2024-02-29 17:55:03"
+  }
+]

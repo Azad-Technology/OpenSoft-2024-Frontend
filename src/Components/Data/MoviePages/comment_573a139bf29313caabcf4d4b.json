@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9dc94",
+    "name": "Nishith Yogi",
+    "email": "nishith285@example.com",
+    "movie_id": "573a139bf29313caabcf4d4b",
+    "text": "I was blown away by the attention to detail.",
+    "date": "2024-03-27 08:43:01"
+  },
+  {
+    "_id": "6606dc194185cb979cda4b1a",
+    "name": "Biju Bhatti",
+    "email": "biju359@example.com",
+    "movie_id": "573a139bf29313caabcf4d4b",
+    "text": "I couldn't have asked for a better moviegoing experience.",
+    "date": "2024-03-20 13:23:02"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d4a6",
+    "name": "Zaina Srivastava",
+    "email": "zaina305@example.com",
+    "movie_id": "573a139bf29313caabcf4d4b",
+    "text": "The emotional depth of the characters was astounding. I was utterly mesmerized by the visuals. The movie was a revelation in storytelling.",
+    "date": "2024-03-20 00:25:01"
+  },
+  {
+    "_id": "6606dc194185cb979cda4027",
+    "name": "Vaibhav Dara",
+    "email": "vaibhav474@example.com",
+    "movie_id": "573a139bf29313caabcf4d4b",
+    "text": "The movie was a true cinematic triumph.",
+    "date": "2024-03-18 05:45:22"
+  },
+  {
+    "_id": "6606dc194185cb979cd956b8",
+    "name": "Kashvi Venkataraman",
+    "email": "kashvi462@example.com",
+    "movie_id": "573a139bf29313caabcf4d4b",
+    "text": "I was laughing one minute and crying the next. I was completely enchanted by every moment of it. I was completely immersed in the world of the film.",
+    "date": "2024-03-17 15:20:43"
+  },
+  {
+    "_id": "6606dc194185cb979cd96764",
+    "name": "Baiju Zacharia",
+    "email": "baiju325@example.com",
+    "movie_id": "573a139bf29313caabcf4d4b",
+    "text": "The movie was a true work of art.",
+    "date": "2024-03-11 15:29:55"
+  },
+  {
+    "_id": "6606dc194185cb979cda37f1",
+    "name": "Rohan Gola",
+    "email": "rohan24@example.com",
+    "movie_id": "573a139bf29313caabcf4d4b",
+    "text": "I couldn't wipe the grin off my face. The performances were Oscar-worthy.",
+    "date": "2024-03-10 14:33:02"
+  },
+  {
+    "_id": "6606dc194185cb979cd96a11",
+    "name": "Aarav Sahni",
+    "email": "aarav54@example.com",
+    "movie_id": "573a139bf29313caabcf4d4b",
+    "text": "I was completely absorbed by every frame of it. The movie was an absolute delight from start to finish. The soundtrack was hauntingly beautiful.",
+    "date": "2024-02-28 08:45:15"
+  }
+]

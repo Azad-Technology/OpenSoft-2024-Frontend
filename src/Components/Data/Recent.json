@@ -1,0 +1,346 @@
+[
+  {
+    "plot": "Costi leads a peaceful life. At night he likes to read his 6-year-old son stories, to help him sleep. Their favourite is Robin Hood. Costi sees himself as the hero - righter of wrongs and ...",
+    "genres": [
+      "Comedy"
+    ],
+    "runtime": 89,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTUzNjIyOTU1Ml5BMl5BanBnXkFtZTgwMjEzNzI2NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Treasure",
+    "released": "2016-03-23 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 217,
+      "id": 4515684
+    },
+    "poster_path": "/9Nw1fhLUdkxVNtskgoyPGRivaTV.jpg",
+    "_id": "573a13f8f29313caabde8d7a"
+  },
+  {
+    "imdb": {
+      "rating": 7.1,
+      "votes": 904,
+      "id": 2101383
+    },
+    "year": 2015,
+    "plot": "A screenwriter living in LA tries to make sense of the strange events occurring around him.",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "title": "Knight of Cups",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjQyOTcwODIyNF5BMl5BanBnXkFtZTgwMDE4OTI4NzE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2016-03-04 00:00:00",
+    "runtime": 118,
+    "poster_path": "/xejFBC19Nc7Xi1MiIvcf84ZCy2g.jpg",
+    "backdrop_path": "/8tupHJ6SDmOHPaeLaEQ2W58Xwlj.jpg",
+    "_id": "573a13d6f29313caabda10e6"
+  },
+  {
+    "plot": "In rural Indiana, Noah and his impoverished family wrestle with the mysterious return of his now mute sister Lauren, who was kidnapped and held captive for over a decade.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 93,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTk4NzQ4OTYyMF5BMl5BanBnXkFtZTgwMjg3OTI3NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Sand Castles",
+    "released": "2016-03-01 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 97,
+      "id": 2233170
+    },
+    "poster_path": "/pe2vpFDaFCpew23DFuTg7eOAVSk.jpg",
+    "backdrop_path": "/g5KHHtOd2jSFh7j64C7S05hrvCH.jpg",
+    "_id": "573a13d9f29313caabda885a"
+  },
+  {
+    "plot": "Anna suffers from agoraphobia so crippling that when a trio of criminals break into her house, she cannot bring herself to flee. But what the intruders don't realize is that agoraphobia is not her only psychosis.",
+    "genres": [
+      "Drama",
+      "Horror",
+      "Thriller"
+    ],
+    "runtime": 90,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTY5MzE0MjUwNV5BMl5BanBnXkFtZTgwNjQxNzM2NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Shut In",
+    "released": "2016-02-19 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.1,
+      "votes": 79,
+      "id": 4009278
+    },
+    "poster_path": "/b5ug4LyLQFeR6azAJyIPBQz5ur9.jpg",
+    "backdrop_path": "/ufagam4FwlIcgPqJlr21EshNkNd.jpg",
+    "_id": "573a13f4f29313caabde0bfd"
+  },
+  {
+    "plot": "A hot summer's day in the Gaza Strip. Today the electricity is on. Christine's beauty salon is heaving with female clients: a bride-to-be, a pregnant woman, a bitter divorcèe, a devout ...",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 85,
+    "title": "Dègradè",
+    "released": "2016-02-10 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 6.5,
+      "votes": 17,
+      "id": 4429074
+    },
+    "poster_path": "/txJjydKf8Cce2B2sHgCARf70p3w.jpg",
+    "backdrop_path": "/8ywj23w2hhVXXUu8fGB6Mkc68Nh.jpg",
+    "_id": "573a13f7f29313caabde74df"
+  },
+  {
+    "plot": "Sun Wukong, (The Monkey King) is a monkey born from a heavenly stone who acquires supernatural powers. After rebelling against heaven and being imprisoned under a mountain for 500 years, he...",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Family"
+    ],
+    "runtime": 119,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA0NTE5OTczNl5BMl5BanBnXkFtZTgwNDAxNTc3NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Monkey King",
+    "released": "2016-02-08 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 4.7,
+      "votes": 2515,
+      "id": 1717715
+    },
+    "poster_path": "/i6ye8ueFhVE5pXatgyRrZ83LBD8.jpg",
+    "backdrop_path": "/jDjmnEuNUfWHg8rbW6u8mylkcO0.jpg",
+    "_id": "573a13cef29313caabd88223"
+  },
+  {
+    "plot": "After having left a long time ago, a humble country sugar cane worker returns home to meet his grandson and deal with the hardships his family has been put into.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 97,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTUwZTM3M2ItZWM2Ny00ZDUwLWIzYzEtMWVmODc2NzYwODE1XkEyXkFqcGdeQXVyNjQ0NTQwNjk@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Land and Shade",
+    "released": "2016-01-27 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 215,
+      "id": 4663992
+    },
+    "poster_path": "/se4W7dzlEFGpQYge73Nx9IfMh5P.jpg",
+    "backdrop_path": "/l2KA5mBDz5NwHCle3kIfXN8tVtQ.jpg",
+    "_id": "573a13f9f29313caabdeb527"
+  },
+  {
+    "plot": "An unexpected romance blooms after the the youngest daughter of a merchant who has fallen on hard times offers herself to the mysterious beast to which her father has become indebted.",
+    "genres": [
+      "Fantasy",
+      "Romance"
+    ],
+    "runtime": 112,
+    "poster": "https://m.media-amazon.com/images/M/MV5BODhiZDEzM2MtOTAyMS00NGYwLThjMTYtZDc4OGZkYjU0NTg5XkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Beauty and the Beast",
+    "released": "2016-01-20 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 6.4,
+      "votes": 8887,
+      "id": 2316801
+    },
+    "poster_path": "/hKegSKIDep2ewJWPUQD7u0KqFIp.jpg",
+    "backdrop_path": "/m3tdSyl11fhgXPDSEt3aBctTqGP.jpg",
+    "_id": "573a13daf29313caabdad539"
+  },
+  {
+    "plot": "The darkest chapter of the 20th century collides with a contemporary mission of revenge.",
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 95,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjM3OTY3Njc1OV5BMl5BanBnXkFtZTgwNDY0MzE1NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Remember",
+    "released": "2016-01-15 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.4,
+      "votes": 36,
+      "id": 3704050
+    },
+    "poster_path": "/x496Ip0weJYfsEX23eNyzG4MjXV.jpg",
+    "backdrop_path": "/3HJpbh02zCrnjH9TnhKRB7pCHme.jpg",
+    "_id": "573a13f0f29313caabdd969c"
+  },
+  {
+    "plot": "In the well-to-do suburbs of a small town, a group of pretty average, well-adjusted sixteen and seventeen year olds are ordinary adolescents who take a singular path.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 98,
+    "title": "Bang Gang (A Modern Love Story)",
+    "released": "2016-01-13 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 6.1,
+      "votes": 22,
+      "id": 3838728
+    },
+    "poster_path": "/1F2SDyc8eZVqbZZo6kORJsfGcyT.jpg",
+    "backdrop_path": "/xxlrS9wjrvElMVoUkF2KCd8zSBp.jpg",
+    "_id": "573a13f2f29313caabddd3b6"
+  },
+  {
+    "plot": "A futuristic love story set in a world where emotions have been eradicated.",
+    "genres": [
+      "Drama",
+      "Sci-Fi"
+    ],
+    "runtime": 101,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTg3NTQ5MDU3OF5BMl5BanBnXkFtZTgwODc2Mzk5NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Equals",
+    "released": "2015-12-31 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 6.3,
+      "votes": 182,
+      "id": 3289728
+    },
+    "poster_path": "/vP1i0dddTbLL3pyddrSCPnJa8S7.jpg",
+    "backdrop_path": "/aESEssF0wUyARxzZaLTDKzzg6uI.jpg",
+    "_id": "573a13e9f29313caabdcc6c6"
+  },
+  {
+    "plot": "China, 1999. Childhood friends Liangzi and Zhang are both in love with Tao, the town beauty. Tao eventually decides to marry the wealthier Zhang. They soon have a son he names Dollar... ...",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 131,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjMwNjgyMjk1OV5BMl5BanBnXkFtZTgwMzgzNDc5NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Mountains May Depart",
+    "released": "2015-12-23 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 6.6,
+      "votes": 206,
+      "id": 3740778
+    },
+    "poster_path": "/zMg4uP2Ev8lIZr1kOvHrPOM8teA.jpg",
+    "backdrop_path": "/1yWVWs2nrUCd4iDvQfKaaR1xV1c.jpg",
+    "_id": "573a13f0f29313caabdda7ac"
+  },
+  {
+    "plot": "In the horror of 1944 Auschwitz, a prisoner forced to burn the corpses of his own people finds moral survival upon trying to salvage from the flames the body of a boy he takes for his son.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 107,
+    "poster": "https://m.media-amazon.com/images/M/MV5BODcxYzMzNTktNDc2Zi00MzFjLWFhMDUtY2U2MTgxMTcyOTU5XkEyXkFqcGdeQXVyNDkzNTM2ODg@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Son of Saul",
+    "released": "2015-12-18 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 1071,
+      "id": 3808342
+    },
+    "poster_path": "/9ZcX6NjCJam5uwkooXffhHI29Lj.jpg",
+    "backdrop_path": "/vM7FGdOnzSHYNdlJYxlzKamSPa.jpg",
+    "_id": "573a13f1f29313caabddc788"
+  },
+  {
+    "plot": "1892, Saint Petersburg. Sasha, a young Russian aristocrat, has always been fascinated by her grandfather's life as an adventurer. A renowned explorer, he designed a magnificent arctic ship,...",
+    "genres": [
+      "Animation"
+    ],
+    "title": "Long Way North",
+    "released": "2015-12-16 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8,
+      "votes": 15,
+      "id": 2262345
+    },
+    "poster_path": "/qzVUricGLnNIeW7NFQtSOQFUUrh.jpg",
+    "backdrop_path": "/5cJw0kJK6PxLLqsexTCbNL6B1R1.jpg",
+    "_id": "573a13d9f29313caabdaa555"
+  },
+  {
+    "plot": "The Dark Horse is an emotionally-charged and inspiring drama about a man who searches for the courage to lead, despite his own adversities - finding purpose and hope in passing on his gift to the children in his community.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 124,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjQzNjIxOTI4OF5BMl5BanBnXkFtZTgwMzQwNTg5NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Dark Horse",
+    "released": "2015-12-11 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8,
+      "votes": 1794,
+      "id": 2192016
+    },
+    "poster_path": "/qaYROTCUIYYfHLU6ClzXygychzu.jpg",
+    "backdrop_path": "/h1FiTVcFyz4lKVxnT3MnfJeuJxY.jpg",
+    "_id": "573a13d8f29313caabda63c2"
+  },
+  {
+    "genres": [
+      "Documentary"
+    ],
+    "runtime": 89,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzIxODY5MDUzOF5BMl5BanBnXkFtZTgwMzQ0NTE4MDI@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Ice and the Sky",
+    "released": "2015-12-11 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.2,
+      "votes": 23,
+      "id": 4466550
+    },
+    "poster_path": "/z3Rt1nzTnNWKaPDxdeYCuJiECRS.jpg",
+    "backdrop_path": "/kYjKjGYPaLKpTE5cT4xsLpwFV0P.jpg",
+    "_id": "573a13f8f29313caabde7d77"
+  },
+  {
+    "plot": "Celina works at a remote tollbooth on a desert road, few days before Christmas, her father dies and Celina becomes a door-to-door encyclopedia saleswoman so she can earn enough money to travel to Italy and find her mom.",
+    "genres": [
+      "Drama"
+    ],
+    "title": "Como funcionan casi todas las cosas",
+    "released": "2015-12-10 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 2,
+      "votes": "",
+      "id": 3529010
+    },
+    "poster_path": "/90KQw1lwSHVmx1ZlrgCURmfwURy.jpg",
+    "backdrop_path": "/pYXg6VzDDsi2YVR9kK0PMvhZTR0.jpg",
+    "_id": "573a13edf29313caabdd41ff"
+  },
+  {
+    "plot": "Fred and Mick, two old friends, are on vacation in an elegant hotel at the foot of the Alps. Fred, a composer and conductor, is now retired. Mick, a film director, is still working. They ...",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 118,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjI2OTk5MzYyMl5BMl5BanBnXkFtZTgwMzY1MjE3NjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Youth",
+    "released": "2015-12-04 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.3,
+      "votes": 2026,
+      "id": 3312830
+    },
+    "poster_path": "/tSJkgDVgrbUFhPEEnHhIiHzrC66.jpg",
+    "backdrop_path": "/vt7eSeZvz98Bp6WGNhDvD4H52RR.jpg",
+    "_id": "573a13e9f29313caabdcd0d3"
+  }
+]

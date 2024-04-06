@@ -1,0 +1,370 @@
+[
+  {
+    "plot": "The Great Alone is a feature length independent documentary film that tells the inspiring comeback story of Iditarod Champion Lance Mackey.",
+    "genres": [
+      "Documentary",
+      "Adventure",
+      "Drama"
+    ],
+    "runtime": 80,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTUxMzk0MjY4M15BMl5BanBnXkFtZTgwMjMyNjQxNDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Great Alone",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.7,
+      "votes": 16,
+      "id": 3288930
+    },
+    "poster_path": "/5L4eccrkaB6N045qEWzA3moW7Bb.jpg",
+    "backdrop_path": "/yUPv97t5OgYsaZBe7znGfxD1Wz5.jpg",
+    "_id": "573a13e9f29313caabdcc662",
+    "relevance_score": 24
+  },
+  {
+    "imdb": {
+      "rating": 8.6,
+      "votes": 108087,
+      "id": 2096673
+    },
+    "year": 2015,
+    "plot": "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "title": "Inside Out",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 94,
+    "poster_path": "/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
+    "backdrop_path": "/j29ekbcLpBvxnGk6LjdTc2EI5SA.jpg",
+    "_id": "573a13d6f29313caabda0bba",
+    "relevance_score": 23
+  },
+  {
+    "plot": "The story of the relationship between Karamakate, an Amazonian shaman and last survivor of his people, and two scientists who work together over the course of 40 years to search the Amazon for a sacred healing plant.",
+    "genres": [
+      "Adventure"
+    ],
+    "runtime": 125,
+    "title": "Embrace of the Serpent",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 421,
+      "id": 4285496
+    },
+    "poster_path": "/t3Lmw8jvm7tpik0lSkub8hU4oRW.jpg",
+    "backdrop_path": "/a9jgZnmKVbhxiiC2Rl01X7BNK1k.jpg",
+    "_id": "573a13f6f29313caabde538a",
+    "relevance_score": 21
+  },
+  {
+    "plot": "Set in early 19th century Wallachia, when a local policeman, Costandin, is hired by Iordache, a boyar (local noble), to find Garfin, a Gypsy slave who had run away from the boyar's estate ...",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Drama"
+    ],
+    "runtime": 108,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTgxNjA5MDkzNF5BMl5BanBnXkFtZTgwMTUyNzA5NDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Aferim!",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 1125,
+      "id": 4374460
+    },
+    "poster_path": "/fQyRszfnlXPFqQSWlqvdDDo42Ze.jpg",
+    "backdrop_path": "/sFhI2qDM2s5QdcdXQDxj4XxFEkn.jpg",
+    "_id": "573a13f7f29313caabde68f4",
+    "relevance_score": 20
+  },
+  {
+    "imdb": {
+      "rating": 8.3,
+      "votes": 314071,
+      "id": 1392190
+    },
+    "year": 2015,
+    "plot": "A woman rebels against a tyrannical ruler in post apocalyptic Australia in search for her homeland with the help of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "title": "Mad Max: Fury Road",
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 120,
+    "poster_path": "/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg",
+    "backdrop_path": "/nlCHUWjY9XWbuEUQauCBgnY8ymF.jpg",
+    "_id": "573a13c5f29313caabd70568",
+    "relevance_score": 20
+  },
+  {
+    "plot": "Three elite climbers struggle to find their way through obsession and loss as they attempt to climb Mount Meru, one of the most coveted prizes in the high stakes game of Himalayan big wall climbing.",
+    "genres": [
+      "Documentary",
+      "Action",
+      "Adventure"
+    ],
+    "runtime": 87,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ4MDM3NjY2Nl5BMl5BanBnXkFtZTgwNjkyNTIzNjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Meru",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 263,
+      "id": 2545428
+    },
+    "poster_path": "/oQsMMSTJnWneD9YwYbUbsJzbQ7f.jpg",
+    "backdrop_path": "/pjMm3ChyDqsfq2STH4MlMVjZmJz.jpg",
+    "_id": "573a13dff29313caabdb72de",
+    "relevance_score": 20
+  },
+  {
+    "plot": "Jack is a fifteen year-old delinquent stuck in a run-down small town. Trapped in a violent feud with a cruel older bully and facing another bout of summer school, Jack's got all the ...",
+    "genres": [
+      "Adventure"
+    ],
+    "title": "King Jack",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 34,
+      "id": 3863484
+    },
+    "poster_path": "/mguFl12DkIljwp8Kal04q04FeLw.jpg",
+    "backdrop_path": "/bBFOFiL40TEv5fZ9waigXmoR6Yr.jpg",
+    "_id": "573a13f2f29313caabdddc8c",
+    "relevance_score": 19
+  },
+  {
+    "imdb": {
+      "rating": 8.7,
+      "votes": 699518,
+      "id": 816692
+    },
+    "year": 2014,
+    "plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "title": "Interstellar",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 169,
+    "poster_path": "/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "backdrop_path": "/ln2Gre4IYRhpjuGVybbtaF4CLo5.jpg",
+    "_id": "573a13b9f29313caabd4ddff",
+    "relevance_score": 17
+  },
+  {
+    "plot": "In its first 25 years only 10 people have finished The Barkley Marathons. Based on a historic prison escape, this cult like race tempts people from around the world to test their limits of ...",
+    "genres": [
+      "Documentary",
+      "Adventure",
+      "History"
+    ],
+    "runtime": 89,
+    "title": "The Barkley Marathons: The Race That Eats Its Young",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.6,
+      "votes": 12,
+      "id": 2400291
+    },
+    "poster_path": "/1ugzwqaN5mcIgigfI1J3T1Zedym.jpg",
+    "backdrop_path": "/owcXnnnEcbIkthtHrLhREPQ3Fpp.jpg",
+    "_id": "573a13dcf29313caabdb2bbc",
+    "relevance_score": 16
+  },
+  {
+    "plot": "In 1971, a group of friends sail into a nuclear test zone, and their protest captures the world's imagination. Using never before seen archive that brings their extraordinary world to life,...",
+    "genres": [
+      "Documentary",
+      "Adventure",
+      "Biography"
+    ],
+    "runtime": 110,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjExNTM1OTE5MV5BMl5BanBnXkFtZTgwMjAxODUwNDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "How to Change the World",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 72,
+      "id": 4144504
+    },
+    "poster_path": "/994hnuZUbkAkpCZMaqasMw2cWvj.jpg",
+    "backdrop_path": "/dNVPnT907VhhIYSaNpG96MzBc3s.jpg",
+    "_id": "573a13f5f29313caabde329f",
+    "relevance_score": 16
+  },
+  {
+    "plot": "A documentary that follows undercover activists trying to stave off a man-made mass extinction.",
+    "genres": [
+      "Documentary",
+      "Action",
+      "Adventure"
+    ],
+    "runtime": 90,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQyNTk0ODU5Ml5BMl5BanBnXkFtZTgwMTc2NzA0NDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Racing Extinction",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 83,
+      "id": 1618448
+    },
+    "poster_path": "/8go3YMk4SXImzIH7uqSAg2qbDXg.jpg",
+    "backdrop_path": "/9MTbSRF0NYPxNSXdnrAbzZpvA2p.jpg",
+    "_id": "573a13cbf29313caabd81378",
+    "relevance_score": 16
+  },
+  {
+    "plot": "1941. France asleep in the nineteenth century, governed by steam and Napoleon V, where scientists vanish mysteriously. Avril (Marion Cotillard), a teenage girl, goes in search of her missing scientist parents.",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "runtime": 90,
+    "poster": "https://m.media-amazon.com/images/M/MV5BZTg1ZWIxODItY2ZjMC00MzMzLTgwMDctNTlmY2YzNjM3NzhmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "title": "April and the Extraordinary World",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 43,
+      "id": 3422078
+    },
+    "poster_path": "/cenqAhHFJRGf08L8rgvHTlFrLuL.jpg",
+    "backdrop_path": "/bALW6bJuN1VW2xRsx49Hy7JIejG.jpg",
+    "_id": "573a13ebf29313caabdd0792",
+    "relevance_score": 16
+  },
+  {
+    "imdb": {
+      "rating": 7.8,
+      "votes": 111807,
+      "id": 478970
+    },
+    "year": 2015,
+    "plot": "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "title": "Ant-Man",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 117,
+    "poster_path": "/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
+    "backdrop_path": "/1K3JmSNUN8OpjYsCjc0Hy0SYxAb.jpg",
+    "_id": "573a13b5f29313caabd44e2b",
+    "relevance_score": 15
+  },
+  {
+    "plot": "A Delhi girl from a traditional family sets out on a solo honeymoon after her marriage gets cancelled.",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Drama"
+    ],
+    "runtime": 146,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWYyOWRlOWItZWM5MS00ZjJkLWI0MTUtYTE3NTI5MDAwYjgyXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Queen",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.5,
+      "votes": 32358,
+      "id": 3322420
+    },
+    "poster_path": "/vKLp0X2RQOuA31R3AdaYtDdKIPK.jpg",
+    "backdrop_path": "/hlxq2oXkKzAANTVsT34j8wOYZUz.jpg",
+    "_id": "573a13e9f29313caabdcd625",
+    "relevance_score": 15
+  },
+  {
+    "plot": "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's Mightiest Heroes to stop the villainous Ultron from enacting his terrible plans.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "runtime": 141,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Avengers: Age of Ultron",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.8,
+      "votes": 282723,
+      "id": 2395427
+    },
+    "poster_path": "/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+    "backdrop_path": "/6YwkGolwdOMNpbTOmLjoehlVWs5.jpg",
+    "_id": "573a13dcf29313caabdb2759",
+    "relevance_score": 15
+  },
+  {
+    "plot": "Vishwanathan, a Kathak dance teacher in New York, is in a rather happy marriage with Nirupama who is a nuclear oncologist. She hires a detective to keep a watch on her husband, who ...",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime"
+    ],
+    "runtime": 148,
+    "title": "Vishwaroopam",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.8,
+      "votes": 33015,
+      "id": 2199711
+    },
+    "poster_path": "/6j0ie6qImOH0ndS7uaZb4879PwC.jpg",
+    "backdrop_path": "/6lqrB3D4EqLPPV9LSHPyFfMfEQW.jpg",
+    "_id": "573a13d8f29313caabda6b38",
+    "relevance_score": 11
+  },
+  {
+    "plot": "When the chaotically misfortunate Jenkins and the monotonously lucky Lou run into each other one morning, they find a thrilling and fulfilling change of pace as they hurtle down the hills of San Francisco in an ice cream cart.",
+    "genres": [
+      "Animation",
+      "Short",
+      "Adventure"
+    ],
+    "runtime": 4,
+    "title": "Jinxy Jenkins, Lucky Lou",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 67,
+      "id": 3637028
+    },
+    "poster_path": "/dwBaCdGIds4ESJmLzYczAZLdRmx.jpg",
+    "backdrop_path": "/hEeQsF3crgmJ3Xz3976IivJuUV2.jpg",
+    "_id": "573a13eff29313caabdd7a78",
+    "relevance_score": 11
+  },
+  {
+    "imdb": {
+      "rating": 7.4,
+      "votes": 13623,
+      "id": 2872750
+    },
+    "year": 2015,
+    "plot": "When Shaun decides to take the day off and have some fun, he gets a little more action than he bargained for. A mix up with the Farmer, a caravan and a very steep hill lead them all to the Big City and it's up to Shaun and the flock to return everyone safely to the green grass of home.",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "title": "Shaun the Sheep Movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTc1ODY5MTQ1Nl5BMl5BanBnXkFtZTgwMDM5ODI1NjE@._V1_SY1000_SX677_AL_.jpg",
+    "runtime": 85,
+    "poster_path": "/cAOyc1wykhkOJ5Vm0BdjsGrLbeD.jpg",
+    "backdrop_path": "/nWLaQghS2v9jKGXFsl6M5y1UG3U.jpg",
+    "_id": "573a13e3f29313caabdbfc11",
+    "relevance_score": 11
+  }
+]

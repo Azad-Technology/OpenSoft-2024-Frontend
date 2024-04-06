@@ -1,0 +1,46 @@
+{
+  "_id": "573a13e9f29313caabdcc662",
+  "plot": "The Great Alone is a feature length independent documentary film that tells the inspiring comeback story of Iditarod Champion Lance Mackey.",
+  "genres": [
+    "Documentary",
+    "Adventure",
+    "Drama"
+  ],
+  "runtime": 80,
+  "cast": [
+    "Dick Mackey",
+    "Lance Mackey"
+  ],
+  "num_mflix_comments": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BMTUxMzk0MjY4M15BMl5BanBnXkFtZTgwMjMyNjQxNDE@._V1_SY1000_SX677_AL_.jpg",
+  "title": "The Great Alone",
+  "fullplot": "The Great Alone is a feature length independent documentary film that tells the inspiring comeback story of Iditarod Champion Lance Mackey.",
+  "languages": [
+    "English"
+  ],
+  "released": "2015-04-25 00:00:00",
+  "directors": [
+    "Greg Kohs"
+  ],
+  "writers": [
+    "Greg Kohs"
+  ],
+  "awards": {
+    "wins": 0,
+    "nominations": 1,
+    "text": "1 nomination."
+  },
+  "lastupdated": "2015-06-03 01:25:33.513000000",
+  "year": 2015,
+  "imdb": {
+    "rating": 8.7,
+    "votes": 16,
+    "id": 3288930
+  },
+  "countries": [
+    "USA"
+  ],
+  "type": "movie",
+  "poster_path": "/5L4eccrkaB6N045qEWzA3moW7Bb.jpg",
+  "backdrop_path": "/yUPv97t5OgYsaZBe7znGfxD1Wz5.jpg"
+}

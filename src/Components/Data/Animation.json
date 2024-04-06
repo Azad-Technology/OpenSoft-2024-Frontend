@@ -1,0 +1,381 @@
+[
+  {
+    "imdb": {
+      "rating": 8.6,
+      "votes": 108087,
+      "id": 2096673
+    },
+    "year": 2015,
+    "plot": "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "title": "Inside Out",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-06-19 00:00:00",
+    "runtime": 94,
+    "poster_path": "/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
+    "backdrop_path": "/j29ekbcLpBvxnGk6LjdTc2EI5SA.jpg",
+    "_id": "573a13d6f29313caabda0bba",
+    "relevance_score": 23
+  },
+  {
+    "plot": "A little girl is taken on a mind-bending tour of her distant future.",
+    "genres": [
+      "Animation",
+      "Short",
+      "Comedy"
+    ],
+    "runtime": 17,
+    "title": "World of Tomorrow",
+    "released": "2015-03-31 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 626,
+      "id": 4171032
+    },
+    "poster_path": "/5s7DSOek7Bk2CvcG1zX01bJzJ0x.jpg",
+    "backdrop_path": "/oikjbzBjgvhH6wv3X060S9kqSTy.jpg",
+    "_id": "573a13f5f29313caabde398f",
+    "relevance_score": 20
+  },
+  {
+    "plot": "1892, Saint Petersburg. Sasha, a young Russian aristocrat, has always been fascinated by her grandfather's life as an adventurer. A renowned explorer, he designed a magnificent arctic ship,...",
+    "genres": [
+      "Animation"
+    ],
+    "title": "Long Way North",
+    "released": "2015-12-16 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8,
+      "votes": 15,
+      "id": 2262345
+    },
+    "poster_path": "/qzVUricGLnNIeW7NFQtSOQFUUrh.jpg",
+    "backdrop_path": "/5cJw0kJK6PxLLqsexTCbNL6B1R1.jpg",
+    "_id": "573a13d9f29313caabdaa555",
+    "relevance_score": 17
+  },
+  {
+    "plot": "1941. France asleep in the nineteenth century, governed by steam and Napoleon V, where scientists vanish mysteriously. Avril (Marion Cotillard), a teenage girl, goes in search of her missing scientist parents.",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "runtime": 90,
+    "poster": "https://m.media-amazon.com/images/M/MV5BZTg1ZWIxODItY2ZjMC00MzMzLTgwMDctNTlmY2YzNjM3NzhmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX677_AL_.jpg",
+    "title": "April and the Extraordinary World",
+    "released": "2015-11-04 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 43,
+      "id": 3422078
+    },
+    "poster_path": "/cenqAhHFJRGf08L8rgvHTlFrLuL.jpg",
+    "backdrop_path": "/bALW6bJuN1VW2xRsx49Hy7JIejG.jpg",
+    "_id": "573a13ebf29313caabdd0792",
+    "relevance_score": 16
+  },
+  {
+    "plot": "The all-powerful Monkey King once roamed freely between Heaven and Earth, but after angering the Gods, he was imprisoned within an ice cage deep within the mountains. 500 years later, ...",
+    "genres": [
+      "Animation"
+    ],
+    "runtime": 89,
+    "title": "Monkey King: Hero Is Back",
+    "released": "2015-07-10 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.8,
+      "votes": 699,
+      "id": 4644382
+    },
+    "poster_path": "/xHme10Y5jVdH8KeSGgStndjatF5.jpg",
+    "backdrop_path": "/xESy6kg2k4JsGzHU0ILkOL9qYec.jpg",
+    "_id": "573a13f9f29313caabdeb0d7",
+    "relevance_score": 15
+  },
+  {
+    "plot": "A dog named Winston loves eating, until his owner feeds him vegetables.",
+    "genres": [
+      "Animation",
+      "Short",
+      "Comedy"
+    ],
+    "runtime": 6,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDc3YTEzZDItNjE2Yy00Nzg2LTgxMDAtNWMxOTJiMWQxZmNiXkEyXkFqcGdeQXVyMjExNjgyMTc@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Feast",
+    "released": "2014-11-07 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 16544,
+      "id": 3689498
+    },
+    "poster_path": "/61RknsRLF5YT1gIgSCVv4qbTt8C.jpg",
+    "backdrop_path": "/5D0nzJd4AY9h6HQL8qcLPvno7zR.jpg",
+    "_id": "573a13eff29313caabdd8fc5",
+    "relevance_score": 13
+  },
+  {
+    "plot": "The film applies an unconventional narrative. It presents a subjective world through 47 scenes. The small events, interlaced by associations, express the irrational coherence of our ...",
+    "genres": [
+      "Animation",
+      "Short",
+      "Mystery"
+    ],
+    "runtime": 10,
+    "title": "Symphony No. 42",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA3OTIyMDg3MF5BMl5BanBnXkFtZTgwODQ5MDkzMzE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2014-07-31 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 386,
+      "id": 3203054
+    },
+    "poster_path": "/tkc0cgCPjORAvydsty3ouC6TDGW.jpg",
+    "backdrop_path": "/5XeU4SdmbVAfuTJI3VlDH44dsvj.jpg",
+    "_id": "573a13e8f29313caabdc9c88",
+    "relevance_score": 13
+  },
+  {
+    "imdb": {
+      "rating": 8.2,
+      "votes": 14885,
+      "id": 1865505
+    },
+    "year": 2014,
+    "plot": "Ben, a young Irish boy, and his little sister Saoirse, a girl who can turn into a seal, go on an adventure to free the faeries and save the spirit world.",
+    "genres": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "title": "Song of the Sea",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ2MDMwNjEwNV5BMl5BanBnXkFtZTgwOTkxMzI0MzE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2014-12-10 00:00:00",
+    "runtime": 93,
+    "poster_path": "/3DBX7QOEzWPNcDhqXInk6GBEvhK.jpg",
+    "backdrop_path": "/AaIRBsx4hpa2fVQzeCfFyOdzCEM.jpg",
+    "_id": "573a13d2f29313caabd93917",
+    "relevance_score": 12
+  },
+  {
+    "plot": "Two cosmonauts, two friends, try to do their best in their everyday training life to make their common dream a reality. But this story is not only about the dream.",
+    "genres": [
+      "Animation",
+      "Short",
+      "Drama"
+    ],
+    "runtime": 16,
+    "title": "We Can't Live Without Cosmos",
+    "released": "2015-04-25 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 41,
+      "id": 3965660
+    },
+    "poster_path": "/aCjwEDNxYyGnxI8mya7Nstw7bZM.jpg",
+    "backdrop_path": "/kxB99GhbjvFL5GLcz1zOPGGALHF.jpg",
+    "_id": "573a13f3f29313caabddfa50",
+    "relevance_score": 12
+  },
+  {
+    "plot": "When a legendary escape artist comes up for parole after 30 years behind bars, a chance for freedom must be weighed against his infamous past.",
+    "genres": [
+      "Documentary",
+      "Animation",
+      "Biography"
+    ],
+    "runtime": 92,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ1MTUyNzA1OV5BMl5BanBnXkFtZTgwMTYzNjk4NDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Life and Mind of Mark DeFriest",
+    "released": "2014-06-13 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 99,
+      "id": 2766004
+    },
+    "poster_path": "/pAdSmPEnMgUv8dIaN3qyDKlJFxL.jpg",
+    "_id": "573a13e1f29313caabdbd251",
+    "relevance_score": 11
+  },
+  {
+    "plot": "When the chaotically misfortunate Jenkins and the monotonously lucky Lou run into each other one morning, they find a thrilling and fulfilling change of pace as they hurtle down the hills of San Francisco in an ice cream cart.",
+    "genres": [
+      "Animation",
+      "Short",
+      "Adventure"
+    ],
+    "runtime": 4,
+    "title": "Jinxy Jenkins, Lucky Lou",
+    "released": "2014-03-01 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 67,
+      "id": 3637028
+    },
+    "poster_path": "/dwBaCdGIds4ESJmLzYczAZLdRmx.jpg",
+    "backdrop_path": "/hEeQsF3crgmJ3Xz3976IivJuUV2.jpg",
+    "_id": "573a13eff29313caabdd7a78",
+    "relevance_score": 11
+  },
+  {
+    "imdb": {
+      "rating": 7.4,
+      "votes": 13623,
+      "id": 2872750
+    },
+    "year": 2015,
+    "plot": "When Shaun decides to take the day off and have some fun, he gets a little more action than he bargained for. A mix up with the Farmer, a caravan and a very steep hill lead them all to the Big City and it's up to Shaun and the flock to return everyone safely to the green grass of home.",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "title": "Shaun the Sheep Movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTc1ODY5MTQ1Nl5BMl5BanBnXkFtZTgwMDM5ODI1NjE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-08-05 00:00:00",
+    "runtime": 85,
+    "poster_path": "/cAOyc1wykhkOJ5Vm0BdjsGrLbeD.jpg",
+    "backdrop_path": "/nWLaQghS2v9jKGXFsl6M5y1UG3U.jpg",
+    "_id": "573a13e3f29313caabdbfc11",
+    "relevance_score": 11
+  },
+  {
+    "plot": "Kyuta, a boy living in Shibuya, and Kumatetsu, a lonesome beast from Jutengai, an imaginary world. One day, Kyuta forays into the imaginary world and, as he's looking for his way back, ...",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "runtime": 119,
+    "title": "The Boy and the Beast",
+    "released": "2015-07-11 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.4,
+      "votes": 92,
+      "id": 4272866
+    },
+    "poster_path": "/kzKJxfIdZ70nsPfKyq7hlYlJwSx.jpg",
+    "backdrop_path": "/keSpEdNRKB1MW3zLcpz2AxPWVBJ.jpg",
+    "_id": "573a13f6f29313caabde50df",
+    "relevance_score": 11
+  },
+  {
+    "plot": "A chance encounter proves fateful for 2 robots mining on a desolate planet.",
+    "genres": [
+      "Animation",
+      "Short",
+      "Drama"
+    ],
+    "runtime": 9,
+    "title": "Wire Cutters",
+    "released": "2014-07-26 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 17,
+      "id": 3750826
+    },
+    "poster_path": "/hPh8ZRoXMtsHzW2X3dvR1J7jCzG.jpg",
+    "backdrop_path": "/K85xzQiHu6cU90pQLZe9KEBhf7.jpg",
+    "_id": "573a13f0f29313caabddabf6",
+    "relevance_score": 11
+  },
+  {
+    "plot": "In the form of an animated docu-drama, the biography of Adam Jacek Winker wonders through nearly half a century of history. A Polish refugee in Paris, Adam lived a boundless life, wanting ...",
+    "genres": [
+      "Animation",
+      "Drama"
+    ],
+    "title": "The Magic Mountain",
+    "released": "2015-10-16 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.3,
+      "votes": 14,
+      "id": 4688658
+    },
+    "poster_path": "/9vJi1xPMlC4qb41h08kvKZQXyFj.jpg",
+    "backdrop_path": "/5kyWT24LGX3YIsFCZ3msq05muom.jpg",
+    "_id": "573a13faf29313caabdebcea",
+    "relevance_score": 10
+  },
+  {
+    "plot": "The friendship of Rabbit and Deer is put to the test by Deer's new obsession to find the formula for the 3rd dimension...",
+    "genres": [
+      "Animation",
+      "Short",
+      "Adventure"
+    ],
+    "runtime": 17,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjM2Nzk2MTQwNV5BMl5BanBnXkFtZTgwMTE3Nzc1MjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Rabbit and Deer",
+    "released": "2014-03-29 00:00:00",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.7,
+      "votes": 837,
+      "id": 2664910
+    },
+    "poster_path": "/iA6kyvOlOsNq1BpQcxETVBu7KDQ.jpg",
+    "_id": "573a13e0f29313caabdbad3a",
+    "relevance_score": 10
+  },
+  {
+    "plot": "When Hiccup and Toothless discover an ice cave that is home to hundreds of new wild dragons and the mysterious Dragon Rider, the two friends find themselves at the center of a battle to protect the peace.",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "runtime": 102,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "How to Train Your Dragon 2",
+    "released": "2014-06-13 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 186385,
+      "id": 1646971
+    },
+    "poster_path": "/d13Uj86LdbDLrfDoHR5aDOFYyJC.jpg",
+    "backdrop_path": "/5MnP0h7RcUCeX7gpxMYoMScmfq7.jpg",
+    "_id": "573a13ccf29313caabd83281",
+    "relevance_score": 9
+  },
+  {
+    "imdb": {
+      "rating": 7.9,
+      "votes": 210576,
+      "id": 2245084
+    },
+    "year": 2014,
+    "plot": "The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "title": "Big Hero 6",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDliOTIzNmUtOTllOC00NDU3LWFiNjYtMGM0NDc1YTMxNjYxXkEyXkFqcGdeQXVyNTM3NzExMDQ@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2014-11-07 00:00:00",
+    "runtime": 102,
+    "poster_path": "/2mxS4wUimwlLmI1xp6QW6NSU361.jpg",
+    "backdrop_path": "/5tub2Kw6NboWFblA1CgDEwB59jP.jpg",
+    "_id": "573a13d9f29313caabda94f9",
+    "relevance_score": 9
+  }
+]

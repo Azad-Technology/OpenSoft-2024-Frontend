@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9699f",
+    "name": "Zaina Srivastava",
+    "email": "zaina305@example.com",
+    "movie_id": "573a13daf29313caabdad25f",
+    "text": "I was completely captivated by the performances. The cinematography was stunning. I felt like I was right there with the characters.",
+    "date": "2024-03-21 21:20:34"
+  },
+  {
+    "_id": "6606dc194185cb979cd989e6",
+    "name": "Diya Jani",
+    "email": "diya91@example.com",
+    "movie_id": "573a13daf29313caabdad25f",
+    "text": "The special effects were mind-blowing.",
+    "date": "2024-03-17 05:37:21"
+  },
+  {
+    "_id": "6606dc194185cb979cda53f4",
+    "name": "Divit Kurian",
+    "email": "divit234@example.com",
+    "movie_id": "573a13daf29313caabdad25f",
+    "text": "I was spellbound from beginning to end. The movie was an absolute delight to watch. I was completely captivated from start to finish.",
+    "date": "2024-03-08 14:43:19"
+  },
+  {
+    "_id": "6606dc194185cb979cd9b010",
+    "name": "Prerak Chahal",
+    "email": "prerak4@example.com",
+    "movie_id": "573a13daf29313caabdad25f",
+    "text": "The direction was masterful. I couldn't have asked for a better moviegoing experience.",
+    "date": "2024-03-04 08:41:19"
+  },
+  {
+    "_id": "6606dc194185cb979cda4dac",
+    "name": "Dharmajan Barman",
+    "email": "dharmajan5@example.com",
+    "movie_id": "573a13daf29313caabdad25f",
+    "text": "This movie exceeded all my expectations.",
+    "date": "2024-03-02 04:09:21"
+  },
+  {
+    "_id": "6606dc194185cb979cda2815",
+    "name": "Dummy",
+    "email": "123@example.com",
+    "movie_id": "573a13daf29313caabdad25f",
+    "text": "The movie was a true work of art. I couldn't tear my eyes away from the screen. The pacing was perfect.",
+    "date": "2024-02-29 03:07:03"
+  },
+  {
+    "_id": "6606dc194185cb979cd99b51",
+    "name": "Bhavin Sankar",
+    "email": "bhavin457@example.com",
+    "movie_id": "573a13daf29313caabdad25f",
+    "text": "I was blown away by the performances. The movie was pure joy.",
+    "date": "2024-02-28 17:35:09"
+  }
+]

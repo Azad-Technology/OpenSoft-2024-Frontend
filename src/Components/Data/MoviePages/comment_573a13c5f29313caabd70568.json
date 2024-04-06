@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cd93f63",
+    "name": "Vaibhav Dara",
+    "email": "vaibhav474@example.com",
+    "movie_id": "573a13c5f29313caabd70568",
+    "text": "The movie was a tour de force of storytelling. I was utterly captivated by the characters and the world they inhabited. I can't get the movie out of my head.",
+    "date": "2024-03-28 01:14:10"
+  },
+  {
+    "_id": "6606dc194185cb979cda0b63",
+    "name": "Sumer Chopra",
+    "email": "sumer390@example.com",
+    "movie_id": "573a13c5f29313caabd70568",
+    "text": "The movie was a true cinematic triumph.",
+    "date": "2024-03-23 14:43:28"
+  },
+  {
+    "_id": "6606dc194185cb979cd97ed4",
+    "name": "Dummy",
+    "email": "example@example.com",
+    "movie_id": "573a13c5f29313caabd70568",
+    "text": "This movie will stay with me for a long time. I highly recommend this movie to everyone.",
+    "date": "2024-03-15 03:31:10"
+  },
+  {
+    "_id": "6606dc194185cb979cd94afe",
+    "name": "queen",
+    "email": "queen@example.com",
+    "movie_id": "573a13c5f29313caabd70568",
+    "text": "I can't wait for the sequel.",
+    "date": "2024-03-14 20:21:13"
+  },
+  {
+    "_id": "6606dc194185cb979cd9db49",
+    "name": "Kimaya Bansal",
+    "email": "kimaya253@example.com",
+    "movie_id": "573a13c5f29313caabd70568",
+    "text": "The movie was an absolute masterpiece. I was left speechless by the sheer beauty of it all. I felt like I was right there with the characters.",
+    "date": "2024-03-11 14:54:44"
+  },
+  {
+    "_id": "6606dc194185cb979cda72e8",
+    "name": "Shanaya Gole",
+    "email": "shanaya395@example.com",
+    "movie_id": "573a13c5f29313caabd70568",
+    "text": "The movie was an absolute delight to watch.",
+    "date": "2024-03-05 17:36:00"
+  }
+]

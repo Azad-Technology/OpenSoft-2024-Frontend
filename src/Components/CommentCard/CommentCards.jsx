@@ -9,8 +9,8 @@ function CommentCards() {
 
   const getCommentsData = useCallback(async () => {
     try {
-      const response = await instance.get("/recent_comments?count=5");
-      setCommentsData(response.data);
+      const response = await import("./comments.json");
+      setCommentsData(response.default);
     } catch (error) {
       setIsError(true);
     }

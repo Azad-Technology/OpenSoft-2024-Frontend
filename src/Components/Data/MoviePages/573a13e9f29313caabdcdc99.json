@@ -1,0 +1,49 @@
+{
+  "_id": "573a13e9f29313caabdcdc99",
+  "plot": "Meeting the right person at the wrong time can be the best thing that ever happened to you.",
+  "genres": [
+    "Comedy",
+    "Drama",
+    "Romance"
+  ],
+  "runtime": 86,
+  "cast": [
+    "Paul Ashton",
+    "Ahmed Bharoocha",
+    "Gia Carides",
+    "Leonel Claude"
+  ],
+  "num_mflix_comments": 2,
+  "title": "This Isn't Funny",
+  "fullplot": "Meeting the right person at the wrong time can be the best thing that ever happened to you.",
+  "languages": [
+    "English"
+  ],
+  "released": "2015-12-01 00:00:00",
+  "directors": [
+    "Paul Ashton"
+  ],
+  "writers": [
+    "Paul Ashton",
+    "Paul Ashton",
+    "Katie Page",
+    "Katie Page"
+  ],
+  "awards": {
+    "wins": 0,
+    "nominations": 1,
+    "text": "1 nomination."
+  },
+  "lastupdated": "2015-08-13 00:25:08.677000000",
+  "year": 2015,
+  "imdb": {
+    "rating": 8.2,
+    "votes": 16,
+    "id": 3334212
+  },
+  "countries": [
+    "USA"
+  ],
+  "type": "movie",
+  "poster_path": "/kodEqRQtanUr4xuemS6GCg93yM8.jpg"
+}

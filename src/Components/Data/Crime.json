@@ -1,0 +1,386 @@
+[
+  {
+    "plot": "A movie shot in a single take about Victoria, a runaway party girl, who's asked by three friendly men to join them as they hit the town. Their wild night of partying turns into a bank robbery.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 140,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc5NzQzNjk2NF5BMl5BanBnXkFtZTgwODU0MjI5NjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Victoria",
+    "released": "2015-10-09 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 3031,
+      "id": 4226388
+    },
+    "poster_path": "/fEt9U7JQYO8j8VtCCuyDzznPM2x.jpg",
+    "backdrop_path": "/ltvsxWWWfvcxoUbKVL8Dhhlwnrx.jpg",
+    "_id": "573a13f6f29313caabde4709",
+    "relevance_score": 19
+  },
+  {
+    "plot": "INDIA's DAUGHTER is the story of the short life, and brutal gang rape and murder in Delhi in December 2012 of an exceptional and inspiring young woman. The rape of the 23 year old medical ...",
+    "genres": [
+      "Documentary",
+      "Crime",
+      "News"
+    ],
+    "runtime": 63,
+    "title": "India's Daughter",
+    "released": "2015-03-09 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 918,
+      "id": 4058426
+    },
+    "poster_path": "/io0mGfqG57FPRznLNjq9acZlbdD.jpg",
+    "backdrop_path": "/bDnIHVbhiUU6DTlLGaf9YYnLsHm.jpg",
+    "_id": "573a13f4f29313caabde1c25",
+    "relevance_score": 18
+  },
+  {
+    "plot": "Revolves around the struggle to keep a mysterious disappearance unsolved.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "runtime": 113,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjI4MTg2NDIyMV5BMl5BanBnXkFtZTgwMjUwODc0NDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Uncle John",
+    "released": "2015-03-16 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 8,
+      "votes": 64,
+      "id": 3219194
+    },
+    "poster_path": "/bwSk0mr86hDSb72arBbSooaN65h.jpg",
+    "backdrop_path": "/fBxFzgRR5WEc9V8ToqPxWhswyXR.jpg",
+    "_id": "573a13e8f29313caabdca5d0",
+    "relevance_score": 17
+  },
+  {
+    "plot": "An idealistic FBI agent is enlisted by an elected government task force to aid in the escalating war against drugs at the border area between the U.S. and Mexico.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 121,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA5NjM3NTk1M15BMl5BanBnXkFtZTgwMzg1MzU2NjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Sicario",
+    "released": "2015-10-02 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 1689,
+      "id": 3397884
+    },
+    "poster_path": "/lz8vNyXeidqqOdJW9ZjnDAMb5Vr.jpg",
+    "backdrop_path": "/4NdAMnBwSAaSsUjoXkcU5aW28RF.jpg",
+    "_id": "573a13eaf29313caabdcfa99",
+    "relevance_score": 16
+  },
+  {
+    "plot": "An aspiring director targets a ruthless gangster for making a violent gangster film. His discreet attempts to research the gangster fail miserably. Finally when he gets caught snooping, the tables are turned on him.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Musical"
+    ],
+    "runtime": 171,
+    "title": "Jigarthanda",
+    "released": "2014-08-01 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.5,
+      "votes": 3156,
+      "id": 3569782
+    },
+    "_id": "573a13eef29313caabdd5890",
+    "relevance_score": 15
+  },
+  {
+    "plot": "A young man returns to Kashmir after his father's disappearance to confront uncle - the man who had a role in his father's fate.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 160,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA1NTEwMDMxMF5BMl5BanBnXkFtZTgwODkzMzI0MjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Haider",
+    "released": "2014-10-02 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 31553,
+      "id": 3390572
+    },
+    "poster_path": "/lOCotkHPODWdsRDMoLbSdLdVT3L.jpg",
+    "backdrop_path": "/tiyqwRBKVyLgKwVNicKjKvjaLXf.jpg",
+    "_id": "573a13eaf29313caabdcf6cd",
+    "relevance_score": 14
+  },
+  {
+    "plot": "A derelict Landlord tries desperately to repay stolen cash to a dog-fighting sociopath who has his daughter abducted.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 91,
+    "title": "Cash Only",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.7,
+      "votes": 19,
+      "id": 2883448
+    },
+    "poster_path": "/yTck6GtitvERKNfalHmW65ZCFSg.jpg",
+    "backdrop_path": "/b9Pz2q4mikCXHABrc4wYdoi117d.jpg",
+    "_id": "573a13e3f29313caabdc00fc",
+    "relevance_score": 14
+  },
+  {
+    "plot": "Trapped standing on an armed landmine, an American tourist is forced to watch helplessly while his girlfriend is terrorized and brutally assaulted.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 110,
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDZhOGJiOTUtNjIxOS00MWZiLWFiZWUtMTYzZThmNGYwNmI0XkEyXkFqcGdeQXVyNTcwMzkyNDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Landmine Goes Click",
+    "released": "2015-11-20 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 289,
+      "id": 2186848
+    },
+    "poster_path": "/dRzCChRwhFXSjamEaj7wUWtTl7T.jpg",
+    "backdrop_path": "/pBNTlK05egmrIIs14rTBcImhibN.jpg",
+    "_id": "573a13d8f29313caabda5e45",
+    "relevance_score": 13
+  },
+  {
+    "plot": "Life changes for Malcolm, a geek who's surviving life in a tough neighborhood, after a chance invitation to an underground party leads him and his friends into a Los Angeles adventure.",
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 103,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA3MjYyNTk0Nl5BMl5BanBnXkFtZTgwODc1NzQ1NTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Dope",
+    "released": "2015-06-19 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 4883,
+      "id": 3850214
+    },
+    "poster_path": "/n6u00imN7AX2NiyWUc5kTgHXmEf.jpg",
+    "backdrop_path": "/4Yihb0wD1Jd2sQtNrKo9TOs8S3l.jpg",
+    "_id": "573a13f2f29313caabddd82b",
+    "relevance_score": 13
+  },
+  {
+    "plot": "Desperate measures are taken by a man who tries to save his family from the dark side of the law, after they commit an unexpected crime.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 160,
+    "title": "Drishyam",
+    "released": "2013-12-19 00:00:00",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.9,
+      "votes": 6485,
+      "id": 3417422
+    },
+    "_id": "573a13ebf29313caabdd0481",
+    "relevance_score": 12
+  },
+  {
+    "plot": "In rural Indiana, Noah and his impoverished family wrestle with the mysterious return of his now mute sister Lauren, who was kidnapped and held captive for over a decade.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 93,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTk4NzQ4OTYyMF5BMl5BanBnXkFtZTgwMjg3OTI3NzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Sand Castles",
+    "released": "2016-03-01 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 97,
+      "id": 2233170
+    },
+    "poster_path": "/pe2vpFDaFCpew23DFuTg7eOAVSk.jpg",
+    "backdrop_path": "/g5KHHtOd2jSFh7j64C7S05hrvCH.jpg",
+    "_id": "573a13d9f29313caabda885a",
+    "relevance_score": 12
+  },
+  {
+    "plot": "An aged, retired Sherlock Holmes looks back on his life, and grapples with an unsolved case involving a beautiful woman.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "runtime": 104,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTg5MjE0Njk0MF5BMl5BanBnXkFtZTgwNTgwMjQ4NTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Mr. Holmes",
+    "released": "2015-07-17 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.4,
+      "votes": 8033,
+      "id": 3168230
+    },
+    "poster_path": "/nNHkoefLcdtaHyG08G8aDn1yFMw.jpg",
+    "backdrop_path": "/dqRwVrZeRKzRQZI5keNilDpDklS.jpg",
+    "_id": "573a13e7f29313caabdc8bb0",
+    "relevance_score": 11
+  },
+  {
+    "plot": "There is a murder while at prayer. Selman Bulut, the imam of mosque, starts to investigate the murder and faces with people in the neighborhood.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 110,
+    "title": "Let's Sin",
+    "released": "2014-04-18 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 3587,
+      "id": 3646462
+    },
+    "poster_path": "/yRhWTB64HGn9vF07r8Z2rF4IzMJ.jpg",
+    "backdrop_path": "/yEKWIIOJn4tmaoV0TTxpV9dGjqb.jpg",
+    "_id": "573a13eff29313caabdd7dbc",
+    "relevance_score": 11
+  },
+  {
+    "plot": "The story of programming prodigy and information activist Aaron Swartz, who took his own life at the age of 26.",
+    "genres": [
+      "Documentary",
+      "Biography",
+      "Crime"
+    ],
+    "runtime": 105,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjgwOTgwNjQ5MV5BMl5BanBnXkFtZTgwMzk1NTQ2MTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "The Internet's Own Boy: The Story of Aaron Swartz",
+    "released": "2014-06-27 00:00:00",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 6630,
+      "id": 3268458
+    },
+    "poster_path": "/s8qznCAjPRcRwQkvGU6rRdF7mxb.jpg",
+    "backdrop_path": "/o85Xk5nCcx4NWlYKLm9ebrQaqMI.jpg",
+    "_id": "573a13e9f29313caabdcbd58",
+    "relevance_score": 11
+  },
+  {
+    "plot": "Vishwanathan, a Kathak dance teacher in New York, is in a rather happy marriage with Nirupama who is a nuclear oncologist. She hires a detective to keep a watch on her husband, who ...",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime"
+    ],
+    "runtime": 148,
+    "title": "Vishwaroopam",
+    "released": "2013-01-25 00:00:00",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.8,
+      "votes": 33015,
+      "id": 2199711
+    },
+    "poster_path": "/6j0ie6qImOH0ndS7uaZb4879PwC.jpg",
+    "backdrop_path": "/6lqrB3D4EqLPPV9LSHPyFfMfEQW.jpg",
+    "_id": "573a13d8f29313caabda6b38",
+    "relevance_score": 11
+  },
+  {
+    "plot": "The true story of the Puccio Clan. A family who kidnapped and killed people in the 80s.",
+    "genres": [
+      "Biography",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 108,
+    "title": "The Clan",
+    "released": "2015-08-13 00:00:00",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.4,
+      "votes": 448,
+      "id": 4411504
+    },
+    "poster_path": "/sWvIkdJCYiiDu7FUzRb0I4CiCIg.jpg",
+    "backdrop_path": "/7JWu7d3rejdIdY8XEtSfcr83nMA.jpg",
+    "_id": "573a13f7f29313caabde704b",
+    "relevance_score": 11
+  },
+  {
+    "imdb": {
+      "rating": 7.4,
+      "votes": 211346,
+      "id": 2820852
+    },
+    "year": 2015,
+    "plot": "Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "title": "Furious 7",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQxOTA2NDUzOV5BMl5BanBnXkFtZTgwNzY2MTMxMzE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-04-03 00:00:00",
+    "runtime": 137,
+    "poster_path": "/ktofZ9Htrjiy0P6LEowsDaxd3Ri.jpg",
+    "backdrop_path": "/cHkhb5A4gQRK6zs6Pv7zorHs8Nk.jpg",
+    "_id": "573a13e2f29313caabdbe8fe",
+    "relevance_score": 11
+  },
+  {
+    "imdb": {
+      "rating": 7.3,
+      "votes": 64198,
+      "id": 3079380
+    },
+    "year": 2015,
+    "plot": "A desk-bound CIA analyst volunteers to go undercover to infiltrate the world of a deadly arms dealer, and prevent diabolical global disaster.",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime"
+    ],
+    "title": "Spy",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjI5OTQ0MDQxM15BMl5BanBnXkFtZTgwMzcwNjMyNTE@._V1_SY1000_SX677_AL_.jpg",
+    "released": "2015-06-05 00:00:00",
+    "runtime": 120,
+    "poster_path": "/6On9Ed52fz8W1h9PzaDQ12ZfHdn.jpg",
+    "backdrop_path": "/a0jJMlI1Nw83EXaYmN0QHuccRXm.jpg",
+    "_id": "573a13e6f29313caabdc5f20",
+    "relevance_score": 10
+  }
+]

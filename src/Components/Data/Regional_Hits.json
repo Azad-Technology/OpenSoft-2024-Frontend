@@ -1,0 +1,351 @@
+[
+  {
+    "plot": "Three elite climbers struggle to find their way through obsession and loss as they attempt to climb Mount Meru, one of the most coveted prizes in the high stakes game of Himalayan big wall climbing.",
+    "genres": [
+      "Documentary",
+      "Action",
+      "Adventure"
+    ],
+    "runtime": 87,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ4MDM3NjY2Nl5BMl5BanBnXkFtZTgwNjkyNTIzNjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Meru",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 263,
+      "id": 2545428
+    },
+    "poster_path": "/oQsMMSTJnWneD9YwYbUbsJzbQ7f.jpg",
+    "backdrop_path": "/pjMm3ChyDqsfq2STH4MlMVjZmJz.jpg",
+    "_id": "573a13dff29313caabdb72de",
+    "relevance_score": 20
+  },
+  {
+    "plot": "Four lives intersect along the Ganges: a low caste boy hopelessly in love, a daughter ridden with guilt of a sexual encounter ending in a tragedy, a hapless father with fading morality, and...",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 109,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTU4NTE0NTMyNl5BMl5BanBnXkFtZTgwNjI5MDkxNjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Fly Away Solo",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 1273,
+      "id": 4635372
+    },
+    "poster_path": "/pDg9Em9YJtIdIzvjMklmFsTBB0s.jpg",
+    "backdrop_path": "/6vTv4OEy7Qq4FGeDpWxBsAXyTH.jpg",
+    "_id": "573a13f9f29313caabdeaf5f",
+    "relevance_score": 19
+  },
+  {
+    "plot": "Two slum kids want nothing more than a slice of pizza.",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 99,
+    "title": "Kaakkaa Muttai",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.8,
+      "votes": 839,
+      "id": 3973410
+    },
+    "poster_path": "/9WP1OhafzS1KM7GUhpwkOqBFcRJ.jpg",
+    "backdrop_path": "/8jScsevTSGlYNGGtqvg20YpS9yx.jpg",
+    "_id": "573a13f3f29313caabddfd13",
+    "relevance_score": 18
+  },
+  {
+    "plot": "INDIA's DAUGHTER is the story of the short life, and brutal gang rape and murder in Delhi in December 2012 of an exceptional and inspiring young woman. The rape of the 23 year old medical ...",
+    "genres": [
+      "Documentary",
+      "Crime",
+      "News"
+    ],
+    "runtime": 63,
+    "title": "India's Daughter",
+    "year": 2015,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 918,
+      "id": 4058426
+    },
+    "poster_path": "/io0mGfqG57FPRznLNjq9acZlbdD.jpg",
+    "backdrop_path": "/bDnIHVbhiUU6DTlLGaf9YYnLsHm.jpg",
+    "_id": "573a13f4f29313caabde1c25",
+    "relevance_score": 18
+  },
+  {
+    "plot": "An aspiring director targets a ruthless gangster for making a violent gangster film. His discreet attempts to research the gangster fail miserably. Finally when he gets caught snooping, the tables are turned on him.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Musical"
+    ],
+    "runtime": 171,
+    "title": "Jigarthanda",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.5,
+      "votes": 3156,
+      "id": 3569782
+    },
+    "_id": "573a13eef29313caabdd5890",
+    "relevance_score": 15
+  },
+  {
+    "plot": "A Delhi girl from a traditional family sets out on a solo honeymoon after her marriage gets cancelled.",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Drama"
+    ],
+    "runtime": 146,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWYyOWRlOWItZWM5MS00ZjJkLWI0MTUtYTE3NTI5MDAwYjgyXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Queen",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.5,
+      "votes": 32358,
+      "id": 3322420
+    },
+    "poster_path": "/vKLp0X2RQOuA31R3AdaYtDdKIPK.jpg",
+    "backdrop_path": "/hlxq2oXkKzAANTVsT34j8wOYZUz.jpg",
+    "_id": "573a13e9f29313caabdcd625",
+    "relevance_score": 15
+  },
+  {
+    "plot": "A young man returns to Kashmir after his father's disappearance to confront uncle - the man who had a role in his father's fate.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 160,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA1NTEwMDMxMF5BMl5BanBnXkFtZTgwODkzMzI0MjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Haider",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 31553,
+      "id": 3390572
+    },
+    "poster_path": "/lOCotkHPODWdsRDMoLbSdLdVT3L.jpg",
+    "backdrop_path": "/tiyqwRBKVyLgKwVNicKjKvjaLXf.jpg",
+    "_id": "573a13eaf29313caabdcf6cd",
+    "relevance_score": 14
+  },
+  {
+    "plot": "A stranger in the city asks questions no one has asked before. Known only by his initials, P.K.'s innocent questions and childlike curiosity will take him on a journey of love, laughter and letting-go.",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "runtime": 153,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTYzOTE2NjkxN15BMl5BanBnXkFtZTgwMDgzMTg0MzE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "PK",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 66083,
+      "id": 2338151
+    },
+    "poster_path": "/pzSN4XWmmU9uDeLu3aUw6OclGeD.jpg",
+    "backdrop_path": "/5zHwzmGjkB1TqClgUVfQyCqIUJu.jpg",
+    "_id": "573a13dbf29313caabdaed6d",
+    "relevance_score": 13
+  },
+  {
+    "plot": "Desperate measures are taken by a man who tries to save his family from the dark side of the law, after they commit an unexpected crime.",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime": 160,
+    "title": "Drishyam",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.9,
+      "votes": 6485,
+      "id": 3417422
+    },
+    "_id": "573a13ebf29313caabdd0481",
+    "relevance_score": 12
+  },
+  {
+    "plot": "On a journey to transform his suffering into light a man creates a remarkable children's community based on principles of love and compassion, but struggles with the unexpectedly dark ...",
+    "genres": [
+      "Documentary",
+      "Biography",
+      "Family"
+    ],
+    "runtime": 39,
+    "title": "Tashi and the Monk",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.2,
+      "votes": 49,
+      "id": 3583688
+    },
+    "poster_path": "/6LfUYYX5VJsapN9iETUpau1JdWb.jpg",
+    "_id": "573a13eef29313caabdd60de",
+    "relevance_score": 12
+  },
+  {
+    "plot": "Vishwanathan, a Kathak dance teacher in New York, is in a rather happy marriage with Nirupama who is a nuclear oncologist. She hires a detective to keep a watch on her husband, who ...",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime"
+    ],
+    "runtime": 148,
+    "title": "Vishwaroopam",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.8,
+      "votes": 33015,
+      "id": 2199711
+    },
+    "poster_path": "/6j0ie6qImOH0ndS7uaZb4879PwC.jpg",
+    "backdrop_path": "/6lqrB3D4EqLPPV9LSHPyFfMfEQW.jpg",
+    "_id": "573a13d8f29313caabda6b38",
+    "relevance_score": 11
+  },
+  {
+    "plot": "Dnyanesh and Mukta are siblings who with their mother and grandmother live in the pilgrim town of Pandharpur, Maharashtra. The title's eponymous 'Elizabeth' is a bicycle that is gifted to ...",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Family"
+    ],
+    "runtime": 90,
+    "title": "Elizabeth Ekadashi",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 176,
+      "id": 4203824
+    },
+    "poster_path": "/tNagKc6DAp63Yn6Nz1MnhsKC2WR.jpg",
+    "_id": "573a13f5f29313caabde4186",
+    "relevance_score": 11
+  },
+  {
+    "plot": "An 11-year-old moves to a small town because of his mother's job transfer.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTY1NTIwMTY2NV5BMl5BanBnXkFtZTgwNDU2MDY4MjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Killa",
+    "year": 2014,
+    "imdb": {
+      "rating": 8.1,
+      "votes": 328,
+      "id": 3341582
+    },
+    "poster_path": "/olxUM1gilLXKTi6bO7vQkVjYFqS.jpg",
+    "_id": "573a13e9f29313caabdce07b",
+    "relevance_score": 11
+  },
+  {
+    "plot": "Rainbow is an uplifting, enchanting, magical fable set in Rajasthan that reinforces the belief that life is beautiful. The story revolves around the wonderful relationship between a 10-year...",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 106,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNmVhMjA1ZTAtNWU4OC00Y2E5LTllNjctNzdjMmZkNzdhMjBmXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Dhanak",
+    "year": 2015,
+    "imdb": {
+      "rating": 7.2,
+      "votes": 26,
+      "id": 4088588
+    },
+    "poster_path": "/7mBn8XwMkx2HlNtIRhZE5SIfAwl.jpg",
+    "backdrop_path": "/8Q09GgC37ITXDPQkMRfxQ9q1euk.jpg",
+    "_id": "573a13f4f29313caabde260b",
+    "relevance_score": 9
+  },
+  {
+    "plot": "A sewerage worker's dead body is found inside a manhole in Mumbai. An ageing folk singer is tried in court on charges of abetment of suicide. He is accused of performing an inflammatory ...",
+    "genres": [
+      "Drama"
+    ],
+    "runtime": 116,
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTAyNjc4MjA2Ml5BMl5BanBnXkFtZTgwMzY3MzIwNjE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Court",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 681,
+      "id": 3717068
+    },
+    "poster_path": "/zYf9u5aaKcZ6FwZq2tAubvPH2PV.jpg",
+    "backdrop_path": "/lK9R56dfj182Uz4THzEZ5vrUEn.jpg",
+    "_id": "573a13f0f29313caabdd9c71",
+    "relevance_score": 9
+  },
+  {
+    "plot": "A man suffering from insomnia is tricked into buying a drug, Lucia, that makes his desires come true in his dreams, blurring the line between fantasy and reality.",
+    "genres": [
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "runtime": 135,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQyMDA5ODkzN15BMl5BanBnXkFtZTgwMjIzMDkyMDE@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Lucia",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.5,
+      "votes": 6699,
+      "id": 2358592
+    },
+    "poster_path": "/mFceUpxhRuMgnveNkPuV9IOrtOX.jpg",
+    "backdrop_path": "/bLgWv6cux1SUYB0HO676buFqRbE.jpg",
+    "_id": "573a13dbf29313caabdb009e",
+    "relevance_score": 8
+  },
+  {
+    "plot": "A botched kidnapping attempt leads to much confusion.",
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Thriller"
+    ],
+    "runtime": 135,
+    "title": "Soodhu Kavvum",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 2776,
+      "id": 2877108
+    },
+    "poster_path": "/ffT4GTkrXp93UAhSOyrItRBiJ65.jpg",
+    "backdrop_path": "/mCprpDjgemFqjKvfbxDJUfR9JWy.jpg",
+    "_id": "573a13e3f29313caabdbfde1",
+    "relevance_score": 7
+  },
+  {
+    "plot": "The truth behind the ascension of Milkha \"The Flying Sikh\" Singh who was scarred because of the India-Pakistan partition.",
+    "genres": [
+      "Biography",
+      "Drama",
+      "History"
+    ],
+    "runtime": 186,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTY1Nzg4MjcwN15BMl5BanBnXkFtZTcwOTc1NTk1OQ@@._V1_SY1000_SX677_AL_.jpg",
+    "title": "Bhaag Milkha Bhaag",
+    "year": 2013,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 32968,
+      "id": 2356180
+    },
+    "poster_path": "/bXywc0CEzS1fIshPWWi4V8A58U3.jpg",
+    "backdrop_path": "/eryhpwnyvEWnsDapQ9jwbam8itA.jpg",
+    "_id": "573a13dbf29313caabdafe25",
+    "relevance_score": 7
+  }
+]

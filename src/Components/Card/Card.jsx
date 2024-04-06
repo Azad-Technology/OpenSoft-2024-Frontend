@@ -12,7 +12,8 @@ import imdb from "../../assets/imdb-icon.svg";
 
 const Card = ({movies, val, length, onClose, setShowPopup3,setShowLikePopup}) => {
   const [{user, token}, dispatch] = useStateValue();
-
+  // console.log(movies);
+  
   if (onClose === undefined || onClose === null) {
     onClose = () => {};
   }
@@ -45,12 +46,12 @@ const Card = ({movies, val, length, onClose, setShowPopup3,setShowLikePopup}) =>
 
   const addFavouriteRequest = async e => {
     try {
-      const response = await instance.patch(`/add_favourite/${movies?._id}`, null, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      // const response = await instance.patch(`/add_favourite/${movies?._id}`, null, {
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      // });
       if (!like) {
         dispatch({type: "ADD_FAV", movie: movies});
       } else {

@@ -1,0 +1,53 @@
+{
+  "_id": "573a13daf29313caabdad25f",
+  "plot": "The life of the greatest karate master of a generation.",
+  "genres": [
+    "Documentary",
+    "Action",
+    "History"
+  ],
+  "runtime": 90,
+  "cast": [
+    "John G. Avildsen",
+    "Billy Blanks",
+    "Lauro Chartrand",
+    "Michael Chavez"
+  ],
+  "num_mflix_comments": 0,
+  "poster": "https://m.media-amazon.com/images/M/MV5BMTY3MjI0MjA1OF5BMl5BanBnXkFtZTgwMTI3Nzc2MjE@._V1_SY1000_SX677_AL_.jpg",
+  "title": "The Real Miyagi",
+  "fullplot": "The life of the greatest karate master of a generation.",
+  "languages": [
+    "English"
+  ],
+  "released": "2015-02-20 00:00:00",
+  "directors": [
+    "Kevin Derek"
+  ],
+  "writers": [
+    "Kevin Derek",
+    "Kevin Derek"
+  ],
+  "awards": {
+    "wins": 2,
+    "nominations": 0,
+    "text": "2 wins."
+  },
+  "lastupdated": "2015-08-22 00:43:31.983000000",
+  "year": 2015,
+  "imdb": {
+    "rating": 9.3,
+    "votes": 41,
+    "id": 2313306
+  },
+  "countries": [
+    "USA",
+    "Canada",
+    "Japan",
+    "Panama"
+  ],
+  "type": "movie",
+  "poster_path": "/pHjTftF3uXX941UBhuinhxfjocU.jpg",
+  "backdrop_path": "/oHoCeiS6lYhZ9bCf6vhQsBgUNSa.jpg",
+  "lastUpdated": "2015-07-06 19:58:30"
+}

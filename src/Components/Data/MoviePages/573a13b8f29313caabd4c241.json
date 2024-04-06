@@ -1,0 +1,41 @@
+{
+  "_id": "573a13b8f29313caabd4c241",
+  "plot": "Emmy Award winning, 11-episodes, 5-years in the making, the most expensive nature documentary series ever commissioned by the BBC, and the first to be filmed in high definition.",
+  "genres": [
+    "Documentary"
+  ],
+  "runtime": 60,
+  "cast": [
+    "David Attenborough",
+    "Sigourney Weaver"
+  ],
+  "poster": "https://m.media-amazon.com/images/M/MV5BNmZlYzIzMTItY2EzYS00YTEyLTg0ZjEtMDMzZjM3ODdhN2UzXkEyXkFqcGdeQXVyNjI0MDg2NzE@._V1_SY1000_SX677_AL_.jpg",
+  "title": "Planet Earth",
+  "fullplot": "Each 50 minute episode features a global overview of a different biome or habitat on Earth (Polar, Mountain, Cave, Desert, Plains, Fresh Water, Seas, Ocean, Forest), followed by a ten-minute featurette which takes a behind-the-scenes look at the challenges of filming the episode.",
+  "languages": [
+    "English"
+  ],
+  "released": "2007-03-25 00:00:00",
+  "rated": "TV-G",
+  "awards": {
+    "wins": 14,
+    "nominations": 14,
+    "text": "Won 4 Primetime Emmys. Another 10 wins & 14 nominations."
+  },
+  "lastupdated": "2015-09-15 05:36:43.637000000",
+  "year": 2006,
+  "imdb": {
+    "rating": 9.5,
+    "votes": 82896,
+    "id": 795176
+  },
+  "countries": [
+    "UK"
+  ],
+  "type": "series",
+  "num_mflix_comments": 0,
+  "poster_path": "/dCiVCPHOWhT1MEXWfe3vZPnTOB8.jpg",
+  "backdrop_path": "/5krduK75j61udNXJCxQChM9OE2h.jpg",
+  "dvd": "2006-01-01 00:00:00",
+  "lastUpdated": "2015-08-05 18:32:09"
+}

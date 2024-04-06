@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "66083f0c401f452f8fe51f2d",
+    "name": "Stuvan",
+    "email": "stuvan10@example.com",
+    "movie_id": "573a13f9f29313caabdeaf5f",
+    "text": "gud movie",
+    "date": "2024-03-30 16:34:20"
+  },
+  {
+    "_id": "66081afffe74bf934ed175ff",
+    "name": "Dummy",
+    "email": "abcdef@gh.com",
+    "movie_id": "573a13f9f29313caabdeaf5f",
+    "text": "Awesome movie",
+    "date": "2024-03-30 14:00:31"
+  },
+  {
+    "_id": "6606dc194185cb979cda65e1",
+    "name": "Ivana Cheema",
+    "email": "ivana371@example.com",
+    "movie_id": "573a13f9f29313caabdeaf5f",
+    "text": "The movie was an absolute delight from start to finish.",
+    "date": "2024-03-22 04:43:16"
+  },
+  {
+    "_id": "6606dc194185cb979cd94cd9",
+    "name": "Kabir Sankaran",
+    "email": "kabir164@example.com",
+    "movie_id": "573a13f9f29313caabdeaf5f",
+    "text": "The pacing was perfect. I felt like I was right there with the characters.",
+    "date": "2024-03-19 16:27:09"
+  },
+  {
+    "_id": "6606dc194185cb979cd9ecb1",
+    "name": "Aaryahi Kakar",
+    "email": "aaryahi378@example.com",
+    "movie_id": "573a13f9f29313caabdeaf5f",
+    "text": "The movie was an absolute pleasure to watch. The movie was a true cinematic experience.",
+    "date": "2024-03-13 13:12:43"
+  },
+  {
+    "_id": "6606dc194185cb979cd9db1e",
+    "name": "Tanya Sule",
+    "email": "tanya113@example.com",
+    "movie_id": "573a13f9f29313caabdeaf5f",
+    "text": "The story was so compelling. The movie was a true cinematic gem.",
+    "date": "2024-03-03 07:08:42"
+  },
+  {
+    "_id": "6606dc194185cb979cda0d7f",
+    "name": "Baiju De",
+    "email": "baiju279@example.com",
+    "movie_id": "573a13f9f29313caabdeaf5f",
+    "text": "I loved every second of it. I was blown away by how much I enjoyed it. I laughed, I cried, it was incredible.",
+    "date": "2024-02-28 00:01:09"
+  }
+]

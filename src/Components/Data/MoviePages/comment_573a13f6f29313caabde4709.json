@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "6606dc194185cb979cda79e9",
+    "name": "Ahana  Bhasin",
+    "email": "ahana421@example.com",
+    "movie_id": "573a13f6f29313caabde4709",
+    "text": "I loved every second of it. The movie was a revelation.",
+    "date": "2024-03-25 02:57:12"
+  },
+  {
+    "_id": "6606dc194185cb979cd9642e",
+    "name": "Dummy",
+    "email": "ab@hg.com",
+    "movie_id": "573a13f6f29313caabde4709",
+    "text": "I felt like I was right there with the characters. The movie was a true cinematic experience. I was left in awe of the sheer brilliance of it all.",
+    "date": "2024-03-15 00:17:59"
+  },
+  {
+    "_id": "6606dc194185cb979cd9f600",
+    "name": "Kaira Baral",
+    "email": "kaira453@example.com",
+    "movie_id": "573a13f6f29313caabde4709",
+    "text": "The movie was a true work of art. The movie was a true masterpiece of cinema.",
+    "date": "2024-03-03 00:55:16"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "6606dc194185cb979cd98693",
+    "name": "Amira Gupta",
+    "email": "amira268@example.com",
+    "movie_id": "573a13f0f29313caabdd9d6e",
+    "text": "I wish I could give it more than five stars. The dialogue was witty and clever.",
+    "date": "2024-03-09 01:18:35"
+  },
+  {
+    "_id": "6606dc194185cb979cd968b8",
+    "name": "Yasmin Shetty",
+    "email": "yasmin159@example.com",
+    "movie_id": "573a13f0f29313caabdd9d6e",
+    "text": "The special effects were out of this world.",
+    "date": "2024-03-06 19:21:12"
+  },
+  {
+    "_id": "6606dc194185cb979cd941cf",
+    "name": "Ishaan Kapur",
+    "email": "ishaan280@example.com",
+    "movie_id": "573a13f0f29313caabdd9d6e",
+    "text": "This movie was amazing! The pacing was perfect.",
+    "date": "2024-02-28 13:44:32"
+  }
+]

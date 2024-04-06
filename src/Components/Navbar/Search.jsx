@@ -30,8 +30,9 @@ export const Search = ({movies, searchBarRef,setShowSearchBar}) => {
   const getData = async () => {
     try {
       if (debouncedSearch.length) {
-        const response = await instance.get(`/autosearch/${debouncedSearch}`);
-        setAutoCompleteResult(response.data);
+        console.log(debouncedSearch);
+        const response = await import(`../Data/Autocomplete/${debouncedSearch}.json`);
+        setAutoCompleteResult(response.default);
       }
       else{
         setAutoCompleteResult([]);

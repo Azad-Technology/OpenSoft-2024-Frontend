@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cd968f5",
+    "name": "Divij Kara",
+    "email": "divij156@example.com",
+    "movie_id": "573a13dff29313caabdb72de",
+    "text": "I couldn't predict what was going to happen next. I was completely captivated from start to finish. An instant classic.",
+    "date": "2024-03-28 22:35:44"
+  },
+  {
+    "_id": "6606dc194185cb979cd9f5f0",
+    "name": "Ryan Badal",
+    "email": "ryan473@example.com",
+    "movie_id": "573a13dff29313caabdb72de",
+    "text": "This movie exceeded all my expectations.",
+    "date": "2024-03-28 09:44:53"
+  },
+  {
+    "_id": "6606dc194185cb979cda16b5",
+    "name": "Samaira Chad",
+    "email": "samaira459@example.com",
+    "movie_id": "573a13dff29313caabdb72de",
+    "text": "The movie was a shining example of what cinema can achieve. I was left speechless by the sheer beauty of it all.",
+    "date": "2024-03-27 21:07:57"
+  },
+  {
+    "_id": "6606dc194185cb979cd984f4",
+    "name": "Dummy",
+    "email": "dummy526@example.com",
+    "movie_id": "573a13dff29313caabdb72de",
+    "text": "This movie deserves all the awards.",
+    "date": "2024-03-22 16:18:51"
+  },
+  {
+    "_id": "6606dc194185cb979cd9ac98",
+    "name": "Seher Hayer",
+    "email": "seher417@example.com",
+    "movie_id": "573a13dff29313caabdb72de",
+    "text": "I couldn't tear my eyes away from the screen. I was completely enchanted by every moment of it.",
+    "date": "2024-03-07 13:33:40"
+  },
+  {
+    "_id": "6606dc194185cb979cd970af",
+    "name": "Dummy",
+    "email": "arghya@gmail.com",
+    "movie_id": "573a13dff29313caabdb72de",
+    "text": "The movie was an absolute masterpiece. I couldn't get enough of it.",
+    "date": "2024-03-03 04:47:00"
+  }
+]

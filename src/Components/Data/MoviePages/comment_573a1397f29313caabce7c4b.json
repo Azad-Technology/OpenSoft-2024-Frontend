@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6606dc194185cb979cd95a74",
+    "name": "Kavya Tiwari",
+    "email": "kavya198@example.com",
+    "movie_id": "573a1397f29313caabce7c4b",
+    "text": "I was completely blown away by the sheer talent on display. The soundtrack was hauntingly beautiful.",
+    "date": "2024-03-12 00:46:01"
+  },
+  {
+    "_id": "6606dc194185cb979cda4c35",
+    "name": "warror",
+    "email": "warriior@example.com",
+    "movie_id": "573a1397f29313caabce7c4b",
+    "text": "The movie was an absolute joy to watch. The movie was a true cinematic triumph. I couldn't take my eyes off the screen.",
+    "date": "2024-03-06 12:48:42"
+  }
+]

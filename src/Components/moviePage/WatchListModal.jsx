@@ -8,8 +8,7 @@ import Notification from "../Notification/notification.jsx";
 import { faL } from "@fortawesome/free-solid-svg-icons";
 
 
-const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
-  const [createwatchlist, setCreateWatchlist] = useState(false)
+const WatchListModal = ({onClose, movieID, setAddedToWatchlist, setCreatedWatchlist}) => {
   const [{token, user}, dispatch] = useStateValue();
   const [watchlistName, setWatchListName] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -36,11 +35,11 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
       setErrorMsg("Name should be less than 15 characters");
       return;
     }
-    if(user?.subtype === "Basic" && user.watchlist.length >= 1){
+    if(user?.subtype === "Basic" && user?.watchlist?.length >= 1){
       setErrorMsg("You can only have 1 watchlist with a free account");
       return;
     }
-    if(user?.subtype === "Silver" && user.watchlist.length >= 5){
+    if(user?.subtype === "Silver" && user?.watchlist?.length >= 5){
       setErrorMsg("You can only have 5 watchlists with a silver account");
       return;
     }
@@ -49,43 +48,19 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
       return;
     }
     setErrorMsg("");
-    try {
-      let config = {
-        method: "post",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const response = await instance.request(`/add_watchlist/${watchlistName}`, config);
-      let watchlistID = response.data.watchlist;
-      try {
-        let config2 = {
-          method: "patch",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        };
-        const response2 = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config2);
-        setCreateWatchlist(true)
-        setTimeout(()=>{
-          setCreateWatchlist(false)
-        },2500)
-      } catch (err) {
-        // console.log(err);
-      }
-      config.method = "get";
-      setWatchListName("");
-      try {
-        const res = await instance.request(`/watchlist/${watchlistID}`, config);
-        dispatch({
-          type: "CREATE_WATCHLIST",
-          watchlist: res.data,
-        });
-      } catch (err) {
-        // console.log(err);
-      }
-    } catch (err) {
-      // console.log(err);
+    try{
+      const response = await import(`../Data/MoviePages/${movieID}.json`);
+      dispatch({
+        type: "CREATE_WATCHLIST",
+        watchlistID: watchlistName,
+        movie: response.default,
+      });
+      setCreatedWatchlist(true);
+      setTimeout(()=>{
+        setCreatedWatchlist(false)
+      },2500);
+    } catch (err){
+      console.log(err);
     }
     onClose();
   };
@@ -104,13 +79,12 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
         ) {
           return;
         }
-        let config = {
-          method: "patch",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        };
-        const response = await instance.request(`/add_movie_to_watchlist/${watchlistID}/${movieID}`, config);
+        const response = await import(`../Data/MoviePages/${movieID}.json`);
+        dispatch({
+          type: "ADD_MOVIE_TO_WATCHLIST",
+          watchlistID: watchlistID,
+          movie: response.default,
+        });
         setAddedToWatchlist(true)
         setTimeout(()=>{
           setAddedToWatchlist(false)
@@ -163,7 +137,6 @@ const WatchListModal = ({onClose, movieID, setAddedToWatchlist}) => {
       {isPopup && <SuccessPopup message={message} />}
       <div className={styles.watchlist_modal}>
         <div className={styles.watchlist_modal_content}>      
-          <Notification message={`Created watchlist`} isVisible={createwatchlist}/>
         
           <div className={styles.watchlist_modal_heading}>Add to Watchlist</div>
 

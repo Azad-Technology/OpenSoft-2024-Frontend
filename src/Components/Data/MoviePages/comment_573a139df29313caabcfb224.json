@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9649f",
+    "name": "Ryan Badal",
+    "email": "ryan473@example.com",
+    "movie_id": "573a139df29313caabcfb224",
+    "text": "The movie was a triumph on every level. I was spellbound from beginning to end. I was left speechless by the sheer beauty of it all.",
+    "date": "2024-03-25 02:21:50"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d558",
+    "name": "Yakshit Wali",
+    "email": "yakshit20@example.com",
+    "movie_id": "573a139df29313caabcfb224",
+    "text": "I couldn't take my eyes off the screen. The movie was a tour de force of storytelling. The special effects were out of this world.",
+    "date": "2024-03-22 06:29:40"
+  },
+  {
+    "_id": "6606dc194185cb979cda3f7b",
+    "name": "Stuvan Varty",
+    "email": "stuvan151@example.com",
+    "movie_id": "573a139df29313caabcfb224",
+    "text": "The chemistry between the actors was palpable. The soundtrack was hauntingly beautiful.",
+    "date": "2024-03-15 13:26:16"
+  },
+  {
+    "_id": "6606dc194185cb979cd9ec4c",
+    "name": "Purab Atwal",
+    "email": "purab319@example.com",
+    "movie_id": "573a139df29313caabcfb224",
+    "text": "I left the theater with a renewed sense of hope.",
+    "date": "2024-03-09 16:13:29"
+  },
+  {
+    "_id": "6606dc194185cb979cd9dee0",
+    "name": "Zara Roy",
+    "email": "zara32@example.com",
+    "movie_id": "573a139df29313caabcfb224",
+    "text": "The movie was a true masterpiece of storytelling. I was utterly captivated by the characters and the world they inhabited.",
+    "date": "2024-03-07 10:44:19"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c5d5",
+    "name": "Aaina Kala",
+    "email": "aaina237@example.com",
+    "movie_id": "573a139df29313caabcfb224",
+    "text": "The humor was spot-on. I was utterly captivated by the characters and the world they inhabited. The movie was an unforgettable experience.",
+    "date": "2024-03-03 23:34:57"
+  },
+  {
+    "_id": "6606dc194185cb979cd94da3",
+    "name": "Reyansh Barad",
+    "email": "reyansh358@example.com",
+    "movie_id": "573a139df29313caabcfb224",
+    "text": "I was completely immersed in the world of the film. I was blown away by the attention to detail.",
+    "date": "2024-03-03 02:51:56"
+  }
+]

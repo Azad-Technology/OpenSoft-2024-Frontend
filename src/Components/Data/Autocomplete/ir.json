@@ -1,0 +1,78 @@
+[
+  {
+    "_id": "573a13e9f29313caabdccb91",
+    "title": "One Last Hug: Three Days at Grief Camp",
+    "languages": [
+      "English"
+    ],
+    "year": 2014,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 69,
+      "id": 3300942
+    },
+    "poster_path": "/5J8lNDSQONHT4wGVzaSdOCAqaJv.jpg",
+    "score": 5.165956974029541
+  },
+  {
+    "_id": "573a13cdf29313caabd83a57",
+    "title": "The House of Suh",
+    "languages": [
+      "English"
+    ],
+    "year": 2010,
+    "imdb": {
+      "rating": 7.3,
+      "votes": 78,
+      "id": 1653696
+    },
+    "poster_path": "/tBrpvq0zLSPYOIqfB1VI9iPAMJy.jpg",
+    "score": 5.165956974029541
+  },
+  {
+    "_id": "573a13b5f29313caabd44a24",
+    "title": "Viva Cuba",
+    "languages": [
+      "Spanish"
+    ],
+    "year": 2005,
+    "imdb": {
+      "rating": 7.1,
+      "votes": 787,
+      "id": 477916
+    },
+    "poster_path": "/4OX4xxeQkGRkueEBxws7Nz02vQr.jpg",
+    "score": 4.969666957855225
+  },
+  {
+    "_id": "573a139af29313caabcef63c",
+    "title": "Paul Bowles - Halbmond",
+    "languages": [
+      "Arabic",
+      "English"
+    ],
+    "year": 1995,
+    "imdb": {
+      "rating": 7,
+      "votes": 41,
+      "id": 114103
+    },
+    "poster_path": "/hau4kXVlRSciMO1b6fmciWDHBME.jpg",
+    "score": 5.065911293029785
+  },
+  {
+    "_id": "573a1392f29313caabcda781",
+    "title": "Curly Top",
+    "languages": [
+      "English"
+    ],
+    "year": 1935,
+    "imdb": {
+      "rating": 6.9,
+      "votes": 1074,
+      "id": 26252
+    },
+    "poster_path": "/86I2edVODRBQaUw2rZM2M9wvKuU.jpg",
+    "score": 4.947722434997559
+  }
+]

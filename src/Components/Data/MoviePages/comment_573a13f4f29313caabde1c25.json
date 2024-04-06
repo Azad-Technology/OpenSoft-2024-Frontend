@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "66081f847ed2e7fbeb01d1f7",
+    "name": "Dummy",
+    "email": "abcdef@gh.com",
+    "movie_id": "573a13f4f29313caabde1c25",
+    "text": "Hello",
+    "date": "2024-03-30 14:19:48"
+  },
+  {
+    "_id": "6606dc194185cb979cda4bec",
+    "name": "Amira Atwal",
+    "email": "amira162@example.com",
+    "movie_id": "573a13f4f29313caabde1c25",
+    "text": "I was completely enchanted by every moment of it. An instant classic. I can't get the movie out of my head.",
+    "date": "2024-03-24 21:23:28"
+  },
+  {
+    "_id": "6606dc194185cb979cd9dd33",
+    "name": "Mamooty Roy",
+    "email": "mamooty481@example.com",
+    "movie_id": "573a13f4f29313caabde1c25",
+    "text": "This movie exceeded all my expectations. The plot was so engaging, I was on the edge of my seat the whole time. The cinematography was breathtaking.",
+    "date": "2024-03-24 18:47:04"
+  },
+  {
+    "_id": "6606dc194185cb979cd9fb4c",
+    "name": "Krish Arya",
+    "email": "krish256@example.com",
+    "movie_id": "573a13f4f29313caabde1c25",
+    "text": "The movie was an absolute masterpiece of filmmaking.",
+    "date": "2024-03-16 16:34:43"
+  },
+  {
+    "_id": "6606dc194185cb979cd9bfa6",
+    "name": "Manjari Ramaswamy",
+    "email": "manjari413@example.com",
+    "movie_id": "573a13f4f29313caabde1c25",
+    "text": "I was moved to tears by the end. A true masterpiece of cinema.",
+    "date": "2024-03-16 16:28:00"
+  },
+  {
+    "_id": "6606dc194185cb979cda5d4f",
+    "name": "Riaan Tailor",
+    "email": "riaan439@example.com",
+    "movie_id": "573a13f4f29313caabde1c25",
+    "text": "The movie was an absolute masterpiece of filmmaking. I was on the edge of my seat the entire time. I was completely blown away by the sheer talent on display.",
+    "date": "2024-03-15 16:56:45"
+  },
+  {
+    "_id": "6606dc194185cb979cda6442",
+    "name": "Ehsaan Borra",
+    "email": "ehsaan206@example.com",
+    "movie_id": "573a13f4f29313caabde1c25",
+    "text": "The movie was a rollercoaster of emotions. I was left with chills down my spine.",
+    "date": "2024-03-10 17:59:21"
+  },
+  {
+    "_id": "6606dc194185cb979cda7ec3",
+    "name": "Misha Ganguly",
+    "email": "misha204@example.com",
+    "movie_id": "573a13f4f29313caabde1c25",
+    "text": "The movie was an absolute masterpiece of cinema. The movie was an absolute marvel of storytelling. The movie was an absolute pleasure to watch.",
+    "date": "2024-02-28 11:12:26"
+  }
+]

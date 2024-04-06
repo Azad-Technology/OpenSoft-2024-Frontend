@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9b911",
+    "name": "Amira Hans",
+    "email": "amira31@example.com",
+    "movie_id": "573a13d8f29313caabda6b38",
+    "text": "The movie was a revelation.",
+    "date": "2024-03-11 00:33:34"
+  },
+  {
+    "_id": "6606dc194185cb979cd986ca",
+    "name": "Shanaya Chahal",
+    "email": "shanaya263@example.com",
+    "movie_id": "573a13d8f29313caabda6b38",
+    "text": "I was left with a smile on my face. An instant classic.",
+    "date": "2024-03-09 11:24:34"
+  },
+  {
+    "_id": "6606dc194185cb979cd9f880",
+    "name": "Armaan Tripathi",
+    "email": "armaan225@example.com",
+    "movie_id": "573a13d8f29313caabda6b38",
+    "text": "I loved every minute of it.",
+    "date": "2024-03-07 00:57:56"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c1d5",
+    "name": "Ahana  Basak",
+    "email": "ahana86@example.com",
+    "movie_id": "573a13d8f29313caabda6b38",
+    "text": "The movie was a true cinematic gem. I couldn't stop thinking about it after it ended. I couldn't stop laughing throughout the entire film.",
+    "date": "2024-02-27 16:21:02"
+  }
+]

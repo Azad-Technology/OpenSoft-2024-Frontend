@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "6606dc194185cb979cda59ed",
+    "name": "Neelofar Manne",
+    "email": "neelofar155@example.com",
+    "movie_id": "573a13a7f29313caabd1a365",
+    "text": "The movie was a true cinematic experience.",
+    "date": "2024-03-22 06:46:33"
+  },
+  {
+    "_id": "6606dc194185cb979cd9deb3",
+    "name": "Rania Rajan",
+    "email": "rania239@example.com",
+    "movie_id": "573a13a7f29313caabd1a365",
+    "text": "The movie was a true cinematic experience. The movie was a revelation in storytelling. I was left in awe of the creativity and imagination on display.",
+    "date": "2024-03-21 16:37:29"
+  },
+  {
+    "_id": "6606dc194185cb979cd97560",
+    "name": "Divij Kara",
+    "email": "divij156@example.com",
+    "movie_id": "573a13a7f29313caabd1a365",
+    "text": "The special effects were mind-blowing.",
+    "date": "2024-03-15 00:07:55"
+  },
+  {
+    "_id": "6606dc194185cb979cd99af7",
+    "name": "Nehmat Sule",
+    "email": "nehmat47@example.com",
+    "movie_id": "573a13a7f29313caabd1a365",
+    "text": "The movie was a true joy to watch. Every scene was beautifully shot. The movie kept me guessing until the very end.",
+    "date": "2024-03-07 02:38:13"
+  },
+  {
+    "_id": "6606dc194185cb979cd95115",
+    "name": "Manjari Ramaswamy",
+    "email": "manjari413@example.com",
+    "movie_id": "573a13a7f29313caabd1a365",
+    "text": "I couldn't take my eyes off the screen. The movie was a true cinematic gem.",
+    "date": "2024-03-06 23:35:15"
+  }
+]

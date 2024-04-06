@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9d187",
+    "name": "kingmarvel",
+    "email": "kingmarvel@example.com",
+    "movie_id": "573a139af29313caabcf0eae",
+    "text": "I couldn't have asked for a better moviegoing experience. I was completely captivated from start to finish. I was completely immersed in the story.",
+    "date": "2024-03-27 09:10:51"
+  },
+  {
+    "_id": "6606dc194185cb979cda3f83",
+    "name": "Kiaan Choudhury",
+    "email": "kiaan184@example.com",
+    "movie_id": "573a139af29313caabcf0eae",
+    "text": "The attention to detail was incredible. I was laughing one minute and crying the next.",
+    "date": "2024-03-19 05:33:24"
+  }
+]

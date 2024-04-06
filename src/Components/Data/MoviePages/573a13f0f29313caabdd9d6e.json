@@ -1,0 +1,39 @@
+{
+  "_id": "573a13f0f29313caabdd9d6e",
+  "plot": "Two brothers find themselves lost in a mysterious land and try to find their way home.",
+  "genres": [
+    "Animation",
+    "Adventure",
+    "Comedy"
+  ],
+  "countries": [
+    "USA"
+  ],
+  "cast": [
+    "Elijah Wood",
+    "Collin Dean",
+    "Melanie Lynskey"
+  ],
+  "num_mflix_comments": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BYjQwZDhhNzctNTZjYy00NjYzLWE3ZjctNGQwZWY2Zjg5NTgwL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_SX677_AL_.jpg",
+  "title": "Over the Garden Wall",
+  "fullplot": "Two brothers find themselves lost in a mysterious land and try to find their way home.",
+  "languages": [
+    "English"
+  ],
+  "released": "2014-11-03 00:00:00",
+  "rated": "TV-PG",
+  "awards": {
+    "wins": 2,
+    "nominations": 7,
+    "text": "2 wins & 7 nominations."
+  },
+  "lastupdated": "2015-08-04 00:01:00.303000000",
+  "year": 2014,
+  "imdb": {
+    "rating": 9.2,
+    "votes": 4139,
+    "id": 3718778
+  },
+  "type": "series"
+}

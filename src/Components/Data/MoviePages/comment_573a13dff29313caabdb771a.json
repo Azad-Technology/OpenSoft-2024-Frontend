@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cda2f24",
+    "name": "Yakshit Basak",
+    "email": "yakshit381@example.com",
+    "movie_id": "573a13dff29313caabdb771a",
+    "text": "I couldn't wipe the grin off my face. The movie was an absolute delight from start to finish. I was blown away by how much I enjoyed it.",
+    "date": "2024-03-27 08:38:39"
+  },
+  {
+    "_id": "6606dc194185cb979cd9ed4b",
+    "name": "Zain Srinivasan",
+    "email": "zain67@example.com",
+    "movie_id": "573a13dff29313caabdb771a",
+    "text": "The movie left me feeling uplifted and inspired.",
+    "date": "2024-03-26 18:07:48"
+  },
+  {
+    "_id": "6606dc194185cb979cda4bd5",
+    "name": "Misha Kapur",
+    "email": "misha432@example.com",
+    "movie_id": "573a13dff29313caabdb771a",
+    "text": "I was left in awe of the sheer talent on display. The movie was a tour de force of storytelling.",
+    "date": "2024-03-24 00:41:56"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c6bd",
+    "name": "Seher Kapur",
+    "email": "seher74@example.com",
+    "movie_id": "573a13dff29313caabdb771a",
+    "text": "I was moved to tears by the end. It's rare to find a movie that's as visually stunning as it is emotionally resonant, but this one delivered on both fronts. I've already recommended it to all my friends.",
+    "date": "2024-03-22 20:26:18"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d049",
+    "name": "Nitya Ganguly",
+    "email": "nitya446@example.com",
+    "movie_id": "573a13dff29313caabdb771a",
+    "text": "The cinematography was stunning.",
+    "date": "2024-03-08 18:09:58"
+  },
+  {
+    "_id": "6606dc194185cb979cda53ab",
+    "name": "Amira Buch",
+    "email": "amira331@example.com",
+    "movie_id": "573a13dff29313caabdb771a",
+    "text": "I was left in awe of the creativity and imagination on display. I was completely captivated from start to finish.",
+    "date": "2024-02-29 06:55:25"
+  }
+]

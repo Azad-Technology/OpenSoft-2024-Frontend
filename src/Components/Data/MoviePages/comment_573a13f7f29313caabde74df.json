@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cda60c2",
+    "name": "Veer Kalla",
+    "email": "veer37@example.com",
+    "movie_id": "573a13f7f29313caabde74df",
+    "text": "The movie was an absolute pleasure to watch.",
+    "date": "2024-03-25 22:10:25"
+  },
+  {
+    "_id": "6606dc194185cb979cd9d973",
+    "name": "Something",
+    "email": "something@something.com",
+    "movie_id": "573a13f7f29313caabde74df",
+    "text": "I was completely immersed in the story.",
+    "date": "2024-03-21 01:27:59"
+  },
+  {
+    "_id": "6606dc194185cb979cd98771",
+    "name": "Amira Buch",
+    "email": "amira314@example.com",
+    "movie_id": "573a13f7f29313caabde74df",
+    "text": "The movie kept me guessing until the very end. The acting was top-notch, especially from the lead actor. The story was so gripping, I couldn't tear myself away.",
+    "date": "2024-03-18 05:39:41"
+  },
+  {
+    "_id": "6606dc194185cb979cd9eea7",
+    "name": "Gokul Batta",
+    "email": "gokul18@example.com",
+    "movie_id": "573a13f7f29313caabde74df",
+    "text": "The movie was a true joy to watch.",
+    "date": "2024-03-13 13:34:30"
+  },
+  {
+    "_id": "6606dc194185cb979cda1c83",
+    "name": "Kaira Banerjee",
+    "email": "kaira229@example.com",
+    "movie_id": "573a13f7f29313caabde74df",
+    "text": "The writing was sharp and witty. The ending was so satisfying.",
+    "date": "2024-03-10 18:11:19"
+  },
+  {
+    "_id": "6606dc194185cb979cd9b4e9",
+    "name": "Baiju Sahota",
+    "email": "baiju388@example.com",
+    "movie_id": "573a13f7f29313caabde74df",
+    "text": "The movie was an absolute delight from start to finish.",
+    "date": "2024-03-02 20:25:16"
+  }
+]

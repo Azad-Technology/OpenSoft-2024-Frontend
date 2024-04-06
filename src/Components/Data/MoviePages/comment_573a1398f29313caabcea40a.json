@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6606dc194185cb979cd94aeb",
+    "name": "Mahika Manda",
+    "email": "mahika92@example.com",
+    "movie_id": "573a1398f29313caabcea40a",
+    "text": "I left the theater with a renewed sense of hope. The movie was a triumph on every level. This movie exceeded all my expectations.",
+    "date": "2024-03-13 13:19:53"
+  },
+  {
+    "_id": "6606dc194185cb979cd9c215",
+    "name": "Dummy",
+    "email": "abcd@abd.com",
+    "movie_id": "573a1398f29313caabcea40a",
+    "text": "I was left in awe of the sheer brilliance of it all.",
+    "date": "2024-03-03 12:28:13"
+  }
+]

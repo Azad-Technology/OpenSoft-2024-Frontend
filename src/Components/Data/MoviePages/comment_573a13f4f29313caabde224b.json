@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "66083eb28cd63495f4768108",
+    "name": "Stuvan",
+    "email": "stuvan10@example.com",
+    "movie_id": "573a13f4f29313caabde224b",
+    "text": "good movie",
+    "date": "2024-03-30 16:32:50"
+  },
+  {
+    "_id": "6606dc194185cb979cda1826",
+    "name": "Arnav Ranganathan",
+    "email": "arnav227@example.com",
+    "movie_id": "573a13f4f29313caabde224b",
+    "text": "The special effects were mind-blowing. The movie was an absolute pleasure to watch. I was left speechless by the sheer beauty of it all.",
+    "date": "2024-03-04 08:41:36"
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "_id": "573a13c4f29313caabd6deca",
+    "title": "Iron Maiden: Flight 666",
+    "languages": [
+      "English"
+    ],
+    "year": 2009,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 4150,
+      "id": 1361558
+    },
+    "poster_path": "/lHTZEd8IWfBvVE3JSzoLMz4XcgJ.jpg",
+    "score": 45.33204650878906
+  },
+  {
+    "_id": "573a13c3f29313caabd69c74",
+    "title": "Iron Man 3",
+    "languages": [
+      "English"
+    ],
+    "year": 2013,
+    "imdb": {
+      "rating": 7.3,
+      "votes": 493617,
+      "id": 1300854
+    },
+    "poster_path": "/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
+    "score": 31.95273208618164
+  },
+  {
+    "_id": "573a13c1f29313caabd659d3",
+    "title": "Iron Man 2",
+    "languages": [
+      "English",
+      "French",
+      "Russian"
+    ],
+    "year": 2010,
+    "imdb": {
+      "rating": 7,
+      "votes": 460256,
+      "id": 1228705
+    },
+    "poster_path": "/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
+    "score": 31.95273208618164
+  },
+  {
+    "_id": "573a13f3f29313caabddecf8",
+    "title": "Iron Man and Captain America: Heroes United",
+    "languages": [
+      "English"
+    ],
+    "year": 2014,
+    "imdb": {
+      "rating": 5.6,
+      "votes": 712,
+      "id": 3911200
+    },
+    "poster_path": "/CX7eRlaxFXiW3UGQBdQUoSVZRi.jpg",
+    "score": 30.6812801361084
+  },
+  {
+    "_id": "573a13e0f29313caabdba876",
+    "title": "Iron Man: Rise of Technovore",
+    "year": 2013,
+    "imdb": {
+      "rating": 5.2,
+      "votes": 2666,
+      "id": 2654124
+    },
+    "poster_path": "/eHDez1uN5X2ZAq4niX7HvhyZIIO.jpg",
+    "score": 31.304101943969727
+  }
+]

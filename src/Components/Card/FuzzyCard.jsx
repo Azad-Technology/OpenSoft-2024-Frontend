@@ -45,12 +45,12 @@ const FuzzyCard = ({movies, val, length, onClose, basis,setShowLikePopup}) => {
 
   const addFavouriteRequest = async e => {
     try {
-      const response = await instance.patch(`/add_favourite/${movies?._id}`, null, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      // const response = await instance.patch(`/add_favourite/${movies?._id}`, null, {
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      // });
       if (!like) {
         dispatch({type: "ADD_FAV", movie: movies});
       } else {

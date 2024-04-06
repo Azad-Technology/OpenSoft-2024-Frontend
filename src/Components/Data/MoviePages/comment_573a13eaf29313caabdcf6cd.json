@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "6606dc194185cb979cda365b",
+    "name": "Aditya Narayan Sahoo ",
+    "email": "narayanadityadr42@gmail.com",
+    "movie_id": "573a13eaf29313caabdcf6cd",
+    "text": "I was completely blown away by the sheer talent on display.",
+    "date": "2024-03-28 10:47:05"
+  },
+  {
+    "_id": "6606dc194185cb979cd9829f",
+    "name": "Manjari Ramaswamy",
+    "email": "manjari413@example.com",
+    "movie_id": "573a13eaf29313caabdcf6cd",
+    "text": "I was on the edge of my seat the entire time. I've never seen anything quite like it before. The movie was a true work of art.",
+    "date": "2024-03-22 22:44:10"
+  },
+  {
+    "_id": "6606dc194185cb979cd96379",
+    "name": "Indranil Sangha",
+    "email": "indranil271@example.com",
+    "movie_id": "573a13eaf29313caabdcf6cd",
+    "text": "The story was so gripping, I couldn't tear myself away. The movie was an absolute masterpiece. I wish I could give it more than five stars.",
+    "date": "2024-03-09 15:52:58"
+  },
+  {
+    "_id": "6606dc194185cb979cd965e4",
+    "name": "Damini Das",
+    "email": "damini251@example.com",
+    "movie_id": "573a13eaf29313caabdcf6cd",
+    "text": "I felt like I was right there with the characters. I was completely enthralled by every moment of it. I couldn't have asked for a better moviegoing experience.",
+    "date": "2024-03-07 17:44:00"
+  }
+]

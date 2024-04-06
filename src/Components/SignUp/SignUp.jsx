@@ -38,36 +38,30 @@ function SignUp({setShowPopup}) {
           let username = "";
           if (name.length) username = name;
           else username = usernamegenerator();
-          try {
-            const response = await instance.post(
-              "/signup",
-              {
-                name: username,
-                email: email,
-                password: password,
-              },
-              {
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            );
-            dispatch({
-              type: "SET_TOKEN",
-              token: response.data.token,
-            });
-            setShowPopup(true);
-            setTimeout(() => {
-              setShowPopup(false);
-            }, 3000);
-            navigate('/');
-          } catch (error) {
-            setErrors(error.response.data.detail);
-            setShowPopup2(true);
-            setTimeout(() => {
-              setShowPopup2(false);
-            }, 3000);
-          }
+          dispatch({
+            type: "SET_TOKEN",
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYwNzI5MWNmNmZlM2VmMjI1MjllOTg1IiwiZXhwIjoxNzEyMzgyOTg1fQ.4C7q35w0P20M0s6YuDf1MEYej7FI-ezB8Ey7Hr1P4wE",
+            
+          });
+          dispatch({
+            type: "SET_USER",
+            user: {
+              name: username,
+              email: email,
+              role: "",
+              subtype: "Basic",
+              fav: [],
+              profilePic: "",
+              isGoogleAuth: false,
+            },
+          });
+          
+          setShowPopup(true);
+          setTimeout(() => {
+            setShowPopup(false);
+          }, 3000);
+          navigate('/');
+          
         } else setErrors("Password does not match");
       }
     }

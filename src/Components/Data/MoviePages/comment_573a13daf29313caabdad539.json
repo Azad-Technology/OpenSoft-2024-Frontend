@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "660837cc6715a8527af2abb7",
+    "name": "Ranchoddas Shamaldas Chanchad",
+    "email": "idiots@idiots.com",
+    "movie_id": "573a13daf29313caabdad539",
+    "text": "very good",
+    "date": "2024-03-30 16:03:24"
+  },
+  {
+    "_id": "66083597fe74bf934ed17606",
+    "name": "Stuvan",
+    "email": "stuvan10@example.com",
+    "movie_id": "573a13daf29313caabdad539",
+    "text": "good",
+    "date": "2024-03-30 15:53:59"
+  },
+  {
+    "_id": "6606dc194185cb979cd9b0b3",
+    "name": "Aayush Babu",
+    "email": "aayush115@example.com",
+    "movie_id": "573a13daf29313caabdad539",
+    "text": "I couldn't take my eyes off the screen. The soundtrack perfectly complemented the movie. I was completely enchanted by every moment of it.",
+    "date": "2024-03-29 02:27:55"
+  },
+  {
+    "_id": "6606dc194185cb979cda1879",
+    "name": "Miraan Bose",
+    "email": "miraan107@example.com",
+    "movie_id": "573a13daf29313caabdad539",
+    "text": "I've never seen anything quite like it before. I was completely enchanted by the story.",
+    "date": "2024-03-28 13:46:58"
+  },
+  {
+    "_id": "6606dc194185cb979cda28d6",
+    "name": "Anahita123",
+    "email": "string@gmail.com",
+    "movie_id": "573a13daf29313caabdad539",
+    "text": "The movie was an absolute delight from start to finish. I was on the edge of my seat the entire time.",
+    "date": "2024-03-21 01:33:37"
+  },
+  {
+    "_id": "6606dc194185cb979cd9e71c",
+    "name": "Misha Trivedi",
+    "email": "misha277@example.com",
+    "movie_id": "573a13daf29313caabdad539",
+    "text": "This movie exceeded all my expectations. It's rare to find a movie that's as visually stunning as it is emotionally resonant, but this one delivered on both fronts.",
+    "date": "2024-03-11 08:47:47"
+  },
+  {
+    "_id": "6606dc194185cb979cd96c7f",
+    "name": "Ryan Badal",
+    "email": "ryan473@example.com",
+    "movie_id": "573a13daf29313caabdad539",
+    "text": "The movie was an absolute delight from start to finish. I was completely absorbed by the characters and the story. I can't wait for the sequel.",
+    "date": "2024-03-08 23:15:04"
+  },
+  {
+    "_id": "6606dc194185cb979cd98494",
+    "name": "Shamik Kumer",
+    "email": "shamik302@example.com",
+    "movie_id": "573a13daf29313caabdad539",
+    "text": "The movie was a triumph of storytelling. The movie was an absolute marvel of storytelling. The performances were some of the best I've ever seen.",
+    "date": "2024-03-02 16:13:14"
+  }
+]

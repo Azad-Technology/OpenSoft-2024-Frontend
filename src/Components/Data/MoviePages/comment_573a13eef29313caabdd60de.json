@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "6606dc194185cb979cd94cdd",
+    "name": "Anvi Bhalla",
+    "email": "anvi311@example.com",
+    "movie_id": "573a13eef29313caabdd60de",
+    "text": "The movie was a true cinematic experience. I was completely immersed in the world of the film.",
+    "date": "2024-03-22 20:41:57"
+  },
+  {
+    "_id": "6606dc194185cb979cda6d42",
+    "name": "Hiran Biswas",
+    "email": "hiran82@example.com",
+    "movie_id": "573a13eef29313caabdd60de",
+    "text": "I couldn't get enough of it. I couldn't wipe the grin off my face. The movie was an absolute masterpiece of cinema.",
+    "date": "2024-03-21 20:49:32"
+  },
+  {
+    "_id": "6606dc194185cb979cd981f8",
+    "name": "Damini Chahal",
+    "email": "damini323@example.com",
+    "movie_id": "573a13eef29313caabdd60de",
+    "text": "The attention to detail was incredible. I was left in awe of the sheer brilliance of it all. The characters were so well-developed, I felt like I knew them personally.",
+    "date": "2024-03-21 15:55:23"
+  },
+  {
+    "_id": "6606dc194185cb979cd99f00",
+    "name": "Dummy",
+    "email": "dummy526@example.com",
+    "movie_id": "573a13eef29313caabdd60de",
+    "text": "I was left in awe of the sheer talent on display.",
+    "date": "2024-03-15 22:25:17"
+  },
+  {
+    "_id": "6606dc194185cb979cda7d77",
+    "name": "Hridaan Golla",
+    "email": "hridaan152@example.com",
+    "movie_id": "573a13eef29313caabdd60de",
+    "text": "I was smiling the whole way through.",
+    "date": "2024-03-13 03:09:30"
+  },
+  {
+    "_id": "6606dc194185cb979cd9fd82",
+    "name": "Anaya Bhat",
+    "email": "anaya126@example.com",
+    "movie_id": "573a13eef29313caabdd60de",
+    "text": "I was completely swept up in the world of the film. The movie was pure joy. I can't believe I waited so long to see this movie.",
+    "date": "2024-03-09 13:36:45"
+  },
+  {
+    "_id": "6606dc194185cb979cd9ff9d",
+    "name": "Uthkarsh Taneja",
+    "email": "uthkarsh124@example.com",
+    "movie_id": "573a13eef29313caabdd60de",
+    "text": "The movie was a revelation in storytelling. The story was so compelling.",
+    "date": "2024-02-27 20:29:57"
+  }
+]

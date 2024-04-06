@@ -1,0 +1,2808 @@
+[
+  {
+    "_id": "573a13adf29313caabd2bf71",
+    "plot": "After being held captive in an Afghan cave, an industrialist creates a unique weaponized suit of armor to fight evil.",
+    "runtime": 126,
+    "title": "Iron Man",
+    "year": 2008,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 615059,
+      "id": 371746
+    },
+    "poster_path": "/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+    "highlights": [
+      {
+        "score": 11.26834774017334,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 8.39247989654541,
+        "path": "directors",
+        "texts": [
+          {
+            "value": "Jon",
+            "type": "hit"
+          },
+          {
+            "value": " Favreau",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 1
+  },
+  {
+    "_id": "573a13f0f29313caabddb27c",
+    "plot": "He was a champion among champions. In middle age he defeated young and very strong athletes, and always was a gentleman. But arose up a power that overcome him - that was love.",
+    "runtime": 120,
+    "title": "Iron Ivan",
+    "year": 2014,
+    "imdb": {
+      "rating": 6.6,
+      "votes": 429,
+      "id": 3767246
+    },
+    "poster_path": "/4k6njNTptTihB10WRRkmoOUG5pc.jpg",
+    "highlights": [
+      {
+        "score": 8.966368675231934,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Ivan",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.5
+  },
+  {
+    "_id": "573a139af29313caabcf0eda",
+    "imdb": {
+      "rating": 6.4,
+      "votes": 114798,
+      "id": 120744
+    },
+    "year": 1998,
+    "plot": "The cruel King Louis XIV of France has a secret twin brother who he keeps imprisoned. Can the twin be substituted for the real king?",
+    "title": "The Man in the Iron Mask",
+    "runtime": 132,
+    "poster_path": "/zHE9yRURvA7DyhYtQxkGTfE1Ywi.jpg",
+    "highlights": [
+      {
+        "score": 5.102510929107666,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jeremy ",
+            "type": "text"
+          },
+          {
+            "value": "Irons",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 8.922224998474121,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "in",
+            "type": "hit"
+          },
+          {
+            "value": " the ",
+            "type": "text"
+          },
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Mask",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.3333333333333333
+  },
+  {
+    "_id": "573a13dcf29313caabdb293d",
+    "plot": "A bored Man in the Moon hitches a ride to Earth on the tails of a passing comet and starts to explore the fantastical creatures and sights of a new planet. But all is not well - the Moon ...",
+    "runtime": 95,
+    "title": "Moon Man",
+    "year": 2012,
+    "imdb": {
+      "rating": 6.2,
+      "votes": 213,
+      "id": 2397521
+    },
+    "poster_path": "/qpDtDdUO3rbzLwi4AMS8TkpQWaY.jpg",
+    "highlights": [
+      {
+        "score": 8.975024223327637,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Moon",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.25
+  },
+  {
+    "_id": "573a1397f29313caabce7dcf",
+    "plot": "A worker becomes a \"man of iron\" forged by experience, a son comes to terms with his father, a couple fall in love, a reporter searches for courage, and a nation undergoes historic change. ...",
+    "runtime": 153,
+    "title": "Man of Iron",
+    "year": 1981,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 1838,
+      "id": 82222
+    },
+    "poster_path": "/eHDez1uN5X2ZAq4niX7HvhyZIIO.jpg",
+    "highlights": [
+      {
+        "score": 11.189973831176758,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " of ",
+            "type": "text"
+          },
+          {
+            "value": "Iron",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.2
+  },
+  {
+    "_id": "573a13c1f29313caabd659d3",
+    "plot": "With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy.",
+    "runtime": 124,
+    "title": "Iron Man 2",
+    "year": 2010,
+    "imdb": {
+      "rating": 7,
+      "votes": 460256,
+      "id": 1228705
+    },
+    "poster_path": "/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
+    "highlights": [
+      {
+        "score": 10.295573234558105,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Don",
+            "type": "hit"
+          },
+          {
+            "value": " Cheadle",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 11.215922355651855,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " 2",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 8.39247989654541,
+        "path": "directors",
+        "texts": [
+          {
+            "value": "Jon",
+            "type": "hit"
+          },
+          {
+            "value": " Favreau",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.16666666666666666
+  },
+  {
+    "_id": "573a13c3f29313caabd69c74",
+    "plot": "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
+    "runtime": 130,
+    "title": "Iron Man 3",
+    "year": 2013,
+    "imdb": {
+      "rating": 7.3,
+      "votes": 493617,
+      "id": 1300854
+    },
+    "poster_path": "/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
+    "highlights": [
+      {
+        "score": 10.014352798461914,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Don",
+            "type": "hit"
+          },
+          {
+            "value": " Cheadle",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 11.215922355651855,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " 3",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.14285714285714285
+  },
+  {
+    "_id": "573a13ebf29313caabdcfef6",
+    "runtime": 128,
+    "title": "The Man from Oran",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.1,
+      "votes": 67,
+      "id": 3407316
+    },
+    "poster_path": null,
+    "plot": " ",
+    "highlights": [
+      {
+        "score": 4.926975250244141,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Amal",
+            "type": "hit"
+          },
+          {
+            "value": " Kateb",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 8.135997772216797,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "from",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Oran",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.125
+  },
+  {
+    "_id": "573a1399f29313caabcedfab",
+    "plot": "A martial artist/doctor steals from the corrupt authorities as a masked thief to give to the poor while another martial artist/doctor is forced to hunt him down. But a major threat unites them as a powerful and traitorous shaolin monk takes over the authorities.",
+    "runtime": 85,
+    "title": "Iron Monkey",
+    "year": 1993,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 12513,
+      "id": 108148
+    },
+    "poster_path": "/gLELnixQLunQOTm9PCpNRxrhU58.jpg",
+    "highlights": [
+      {
+        "score": 2.140130043029785,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Donnie ",
+            "type": "text"
+          },
+          {
+            "value": "Yen",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 2.500257730484009,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jean",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Wang",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 3.6705844402313232,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Sze-",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " Tsang",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.594986915588379,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " Monkey",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.1111111111111111
+  },
+  {
+    "_id": "573a13bbf29313caabd53752",
+    "plot": "When a cocky industrialist's efforts to raise an ancient Chinese temple leads him to be seriously wounded and captured by enemy forces, he must use his ideas for a revolutionary power armor in order to fight back as a superhero.",
+    "runtime": 83,
+    "title": "The Invincible Iron Man",
+    "year": 2007,
+    "imdb": {
+      "rating": 6,
+      "votes": 5336,
+      "id": 903135
+    },
+    "poster_path": "/eebNTSRa5Hh5skPKGdGJIJpo9Ls.jpg",
+    "highlights": [
+      {
+        "score": 5.142637252807617,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Marc",
+            "type": "hit"
+          },
+          {
+            "value": " Worden",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 10.891436576843262,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The Invincible ",
+            "type": "text"
+          },
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 4.7717976570129395,
+        "path": "directors",
+        "texts": [
+          {
+            "value": "Jay",
+            "type": "hit"
+          },
+          {
+            "value": " Oliva",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.1
+  },
+  {
+    "_id": "573a1392f29313caabcda473",
+    "plot": "In this blend of documentary and fictional narrative from pioneering filmmaker Robert Flaherty, the everyday trials of life on Ireland's unforgiving Aran Islands are captured with attention to naturalistic beauty and historical detail.",
+    "runtime": 76,
+    "title": "Man of Aran",
+    "year": 1934,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 1283,
+      "id": 25456
+    },
+    "poster_path": "/eho7XznZ3trCUGziNaPvKN70hbx.jpg",
+    "highlights": [
+      {
+        "score": 5.109396934509277,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Pat",
+            "type": "hit"
+          },
+          {
+            "value": " Mullin",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 8.949049949645996,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " of ",
+            "type": "text"
+          },
+          {
+            "value": "Aran",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.09090909090909091
+  },
+  {
+    "_id": "573a13c9f29313caabd79e77",
+    "plot": "A quiet pawnshop keeper with a violent past takes on a drug- and organ trafficking ring in hope of saving the child who is his only friend.",
+    "runtime": 119,
+    "title": "The Man from Nowhere",
+    "year": 2010,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 38093,
+      "id": 1527788
+    },
+    "poster_path": "/jpd8cu6bMs9AkCNHEJ8Wyfuy1v8.jpg",
+    "highlights": [
+      {
+        "score": 4.0010199546813965,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Bin",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Won",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 3.8923187255859375,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Sae",
+            "type": "hit"
+          },
+          {
+            "value": "-",
+            "type": "text"
+          },
+          {
+            "value": "ron",
+            "type": "hit"
+          },
+          {
+            "value": " Kim",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 3.5869462490081787,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Tae",
+            "type": "hit"
+          },
+          {
+            "value": "-",
+            "type": "text"
+          },
+          {
+            "value": "hoon",
+            "type": "hit"
+          },
+          {
+            "value": " Kim",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 3.5979373455047607,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Hee-",
+            "type": "text"
+          },
+          {
+            "value": "won",
+            "type": "hit"
+          },
+          {
+            "value": " Kim",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 9.5934476852417,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "from",
+            "type": "hit"
+          },
+          {
+            "value": " Nowhere",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.08333333333333333
+  },
+  {
+    "_id": "573a13d8f29313caabda8496",
+    "plot": "A New Jersey guy dedicated to his family, friends, and church, develops unrealistic expectations from watching porn and works to find happiness and intimacy with his potential true love.",
+    "runtime": 90,
+    "title": "Don Jon",
+    "year": 2013,
+    "imdb": {
+      "rating": 6.6,
+      "votes": 173516,
+      "id": 2229499
+    },
+    "poster_path": "/uh8bwvgGXeUKzdL4oSul9zxyTcd.jpg",
+    "highlights": [
+      {
+        "score": 6.6725263595581055,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Don",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Jon",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.07692307692307693
+  },
+  {
+    "_id": "573a1395f29313caabce23cb",
+    "plot": "A young man comes to the rescue of his girlfriend abducted by thieves and brought to Rio. An extravagant adventure ensues.",
+    "runtime": 112,
+    "title": "That Man from Rio",
+    "year": 1964,
+    "imdb": {
+      "rating": 7.2,
+      "votes": 2564,
+      "id": 58203
+    },
+    "poster_path": "/rYagiP1TfTpHITL5tXTFiqfsyQl.jpg",
+    "highlights": [
+      {
+        "score": 3.4324309825897217,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jean",
+            "type": "hit"
+          },
+          {
+            "value": "-Paul Belmondo",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 3.5338499546051025,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jean",
+            "type": "hit"
+          },
+          {
+            "value": " Servais",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 8.897049903869629,
+        "path": "title",
+        "texts": [
+          {
+            "value": "That ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "from",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Rio",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.07142857142857142
+  },
+  {
+    "_id": "573a1399f29313caabcec02a",
+    "plot": "Mark Salzman always was interested in Kung-Fu and the Chinese culture, claims to have seen every Kung-Fu movie. 1982, with a degree in Chinese literature, he visits a province university in...",
+    "runtime": 92,
+    "title": "Iron & Silk",
+    "year": 1990,
+    "imdb": {
+      "rating": 7,
+      "votes": 392,
+      "id": 99857
+    },
+    "poster_path": "/6Ujbtp0NklUoQ67s32HyW6R5540.jpg",
+    "highlights": [
+      {
+        "score": 3.3527042865753174,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jeanette Tsui ",
+            "type": "text"
+          },
+          {
+            "value": "Lin",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 3.5074448585510254,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Qingfu ",
+            "type": "text"
+          },
+          {
+            "value": "Pan",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 5.594986915588379,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " & Silk",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 4.196240425109863,
+        "path": "directors",
+        "texts": [
+          {
+            "value": "Shirley ",
+            "type": "text"
+          },
+          {
+            "value": "Sun",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.06666666666666667
+  },
+  {
+    "_id": "573a139df29313caabcf9fc1",
+    "plot": "Two young men fall for the woman staying upstairs when she practises J.S. Bach's \"Notebook for Anna Magdalena\".",
+    "runtime": 97,
+    "title": "Ngon na ma dak lin na",
+    "year": 1998,
+    "imdb": {
+      "rating": 6.7,
+      "votes": 322,
+      "id": 159251
+    },
+    "poster_path": null,
+    "highlights": [
+      {
+        "score": 6.115978717803955,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Ngon",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "na",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "ma",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "dak",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "lin",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "na",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 5.569295883178711,
+        "path": "directors",
+        "texts": [
+          {
+            "value": "Chung ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " Yee",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.0625
+  },
+  {
+    "_id": "573a13d5f29313caabd9d39c",
+    "plot": "Paul Schuberth's top 40 HR in a Berlin publishing house and thinks he's happy with his life as a single. By Lisa he is divorced, with Kathrin he has a loose affair ...",
+    "runtime": 108,
+    "title": "Mann tut was Mann kann",
+    "year": 2012,
+    "imdb": {
+      "rating": 6,
+      "votes": 928,
+      "id": 2036408
+    },
+    "poster_path": "/moSJJT2eXBaTK8JIJw53ACnje2r.jpg",
+    "highlights": [
+      {
+        "score": 4.916107177734375,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jan",
+            "type": "hit"
+          },
+          {
+            "value": " Josef Liefers",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 2.3476738929748535,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Mann",
+            "type": "hit"
+          },
+          {
+            "value": " tut ",
+            "type": "text"
+          },
+          {
+            "value": "was",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Mann",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "kann",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 4.16743278503418,
+        "path": "directors",
+        "texts": [
+          {
+            "value": "Marc",
+            "type": "hit"
+          },
+          {
+            "value": " Rothemund",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.058823529411764705
+  },
+  {
+    "_id": "573a13e0f29313caabdba876",
+    "plot": "Iron Man is framed by a technological terrorist and breaks out to clear his name.",
+    "runtime": 88,
+    "title": "Iron Man: Rise of Technovore",
+    "year": 2013,
+    "imdb": {
+      "rating": 5.2,
+      "votes": 2666,
+      "id": 2654124
+    },
+    "poster_path": "/eHDez1uN5X2ZAq4niX7HvhyZIIO.jpg",
+    "highlights": [
+      {
+        "score": 10.77354621887207,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": ": Rise of Technovore",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.05555555555555555
+  },
+  {
+    "_id": "573a13c4f29313caabd6deca",
+    "plot": "A chronological account of the heavy metal band Iron Maiden's 2008 world tour through India, Australia, Japan, USA, Canada, Mexico and South America in a jet piloted by the band's front man, Bruce Dickinson. Features interviews with the musicians, their road crew and fans.",
+    "runtime": 112,
+    "title": "Iron Maiden: Flight 666",
+    "year": 2009,
+    "imdb": {
+      "rating": 8.4,
+      "votes": 4150,
+      "id": 1361558
+    },
+    "poster_path": "/lHTZEd8IWfBvVE3JSzoLMz4XcgJ.jpg",
+    "highlights": [
+      {
+        "score": 6.591214179992676,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " Maiden",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.00485897064209,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Pat",
+            "type": "hit"
+          },
+          {
+            "value": " Cash",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.445718288421631,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " Maiden: Flight 666",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 4.522019386291504,
+        "path": "directors",
+        "texts": [
+          {
+            "value": "Sam",
+            "type": "hit"
+          },
+          {
+            "value": " Dunn",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.05263157894736842
+  },
+  {
+    "_id": "573a139af29313caabcf20ee",
+    "imdb": {
+      "rating": 7.4,
+      "votes": 96057,
+      "id": 125664
+    },
+    "year": 1999,
+    "plot": "The life and career of a legendary comedian, Andy Kaufman.",
+    "title": "Man on the Moon",
+    "runtime": 118,
+    "poster_path": "/msOZS07xRIFnapwp3fprGbKEAfT.jpg",
+    "highlights": [
+      {
+        "score": 7.495823860168457,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "on",
+            "type": "hit"
+          },
+          {
+            "value": " the ",
+            "type": "text"
+          },
+          {
+            "value": "Moon",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.05
+  },
+  {
+    "_id": "573a13ecf29313caabdd25b0",
+    "plot": "Tony is admitted to a rehabilitation center after a serious skiing accident. Dependent of medical staff and painkillers, she takes the time to remember the tumultuous love story she lived with Georgio.",
+    "runtime": 130,
+    "title": "Mon roi",
+    "year": 2015,
+    "imdb": {
+      "rating": 6.3,
+      "votes": 139,
+      "id": 3478962
+    },
+    "poster_path": "/cnt5NIuHze4x2cjYO76XyATgmM8.jpg",
+    "highlights": [
+      {
+        "score": 7.571823596954346,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Mon",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "roi",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.047619047619047616
+  },
+  {
+    "_id": "573a1398f29313caabce9ab7",
+    "plot": "An elderly lord abdicates to his three sons, and the two corrupt ones turn against him.",
+    "runtime": 162,
+    "title": "Ran",
+    "year": 1985,
+    "imdb": {
+      "rating": 8.3,
+      "votes": 70330,
+      "id": 89881
+    },
+    "poster_path": "/FepaiApo8Yr6pNIZIeYG5kW06J.jpg",
+    "highlights": [
+      {
+        "score": 4.542422294616699,
+        "path": "genres",
+        "texts": [
+          {
+            "value": "War",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 8.551945686340332,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Ran",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.045454545454545456
+  },
+  {
+    "_id": "573a1396f29313caabce41f9",
+    "plot": "A Papago Indian returns to his reservation after a prison term and searches for his brother's killer.",
+    "runtime": 74,
+    "title": "Run, Simon, Run",
+    "year": 1970,
+    "imdb": {
+      "rating": 6.6,
+      "votes": 136,
+      "id": 66317
+    },
+    "poster_path": "/1070aGEEO3YyesnoXxzwIW2icBo.jpg",
+    "highlights": [
+      {
+        "score": 4.926273345947266,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Royal ",
+            "type": "text"
+          },
+          {
+            "value": "Dano",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 6.109838485717773,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Run",
+            "type": "hit"
+          },
+          {
+            "value": ", ",
+            "type": "text"
+          },
+          {
+            "value": "Simon",
+            "type": "hit"
+          },
+          {
+            "value": ", ",
+            "type": "text"
+          },
+          {
+            "value": "Run",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.043478260869565216
+  },
+  {
+    "_id": "573a13f3f29313caabddecf8",
+    "plot": "Iron Man and Captain America battle to keep the Red Skull and his triggerman, Taskmaster, from unleashing an army of Hydra Brutes on the world.",
+    "title": "Iron Man and Captain America: Heroes United",
+    "year": 2014,
+    "imdb": {
+      "rating": 5.6,
+      "votes": 712,
+      "id": 3911200
+    },
+    "poster_path": "/CX7eRlaxFXiW3UGQBdQUoSVZRi.jpg",
+    "highlights": [
+      {
+        "score": 9.977197647094727,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "and",
+            "type": "hit"
+          },
+          {
+            "value": " Captain America: Heroes United",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.041666666666666664
+  },
+  {
+    "_id": "573a13b3f29313caabd3d903",
+    "plot": "There is only one thing Winky wants: a horse, a real horse to ride. But horses are expensive. Fortunately it is the season of Sinterklaas; Winky just asks Sinterklaas for a horse. Then everything will work out alright. Or will it?",
+    "runtime": 95,
+    "title": "Winky's Horse",
+    "year": 2005,
+    "imdb": {
+      "rating": 7.2,
+      "votes": 644,
+      "id": 447679
+    },
+    "poster_path": "/7IyD83Zu4EghaURBXjY8bEuLqev.jpg",
+    "highlights": [
+      {
+        "score": 2.10654878616333,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Ebbie ",
+            "type": "text"
+          },
+          {
+            "value": "Tam",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 6.9414381980896,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Aaron",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Wan",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 2.089482545852661,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Hanyi ",
+            "type": "text"
+          },
+          {
+            "value": "Han",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 2.052095413208008,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jan",
+            "type": "hit"
+          },
+          {
+            "value": " Decleir",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.04
+  },
+  {
+    "_id": "573a1398f29313caabceb17a",
+    "imdb": {
+      "rating": 8,
+      "votes": 359903,
+      "id": 95953
+    },
+    "year": 1988,
+    "plot": "Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie; they travel cross-country.",
+    "title": "Rain Man",
+    "runtime": 133,
+    "poster_path": "/iTNHwO896WKkaoPtpMMS74d8VNi.jpg",
+    "highlights": [
+      {
+        "score": 4.749394416809082,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Rain",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.038461538461538464
+  },
+  {
+    "_id": "573a13b5f29313caabd44e2b",
+    "imdb": {
+      "rating": 7.8,
+      "votes": 111807,
+      "id": 478970
+    },
+    "year": 2015,
+    "plot": "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.",
+    "title": "Ant-Man",
+    "runtime": 117,
+    "poster_path": "/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
+    "highlights": [
+      {
+        "score": 4.748116970062256,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Ant",
+            "type": "hit"
+          },
+          {
+            "value": "-",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.037037037037037035
+  },
+  {
+    "_id": "573a13bbf29313caabd53cf6",
+    "plot": "A re-imagining of L. Frank Baum's classic \"The Wizard of Oz\".",
+    "runtime": 270,
+    "title": "Tin Man",
+    "year": 2007,
+    "imdb": {
+      "rating": 7.2,
+      "votes": 11134,
+      "id": 910812
+    },
+    "poster_path": null,
+    "highlights": [
+      {
+        "score": 5.106255531311035,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Alan",
+            "type": "hit"
+          },
+          {
+            "value": " Cumming",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 4.748116970062256,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Tin",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.03571428571428571
+  },
+  {
+    "_id": "573a13f4f29313caabde1225",
+    "plot": "BAG MAN is the understated story of a 12 year old African American boy, who takes us on an introspective journey out of the city and into the remote countryside of upstate New York. With a ...",
+    "runtime": 15,
+    "title": "Bag Man",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.6,
+      "votes": 47,
+      "id": 4029524
+    },
+    "poster_path": "/iWVuYsgZYhtDVroaxu6zCF5FA63.jpg",
+    "highlights": [
+      {
+        "score": 4.748116970062256,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Bag",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.034482758620689655
+  },
+  {
+    "_id": "573a1397f29313caabce7369",
+    "plot": "In a self-destructing world, a vengeful Australian policeman sets out to stop a violent motorcycle gang.",
+    "runtime": 88,
+    "title": "Mad Max",
+    "year": 1979,
+    "imdb": {
+      "rating": 7,
+      "votes": 135753,
+      "id": 79501
+    },
+    "poster_path": "/5LrI4GiCSrChgkdskVZiwv643Kg.jpg",
+    "highlights": [
+      {
+        "score": 5.071942329406738,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Mel",
+            "type": "hit"
+          },
+          {
+            "value": " Gibson",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 3.3362631797790527,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Mad",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Max",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.03333333333333333
+  },
+  {
+    "_id": "573a13b9f29313caabd4e66e",
+    "plot": "A second-generation male maid fights to save the girl he loves and their historic hotel from the clutches of a hostile developer.",
+    "title": "Man Maid",
+    "year": 2008,
+    "imdb": {
+      "rating": 4.6,
+      "votes": 136,
+      "id": 822831
+    },
+    "poster_path": "/u5SPXzfpjkeDYxmjecaVacUTpf1.jpg",
+    "highlights": [
+      {
+        "score": 4.878921031951904,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jane",
+            "type": "hit"
+          },
+          {
+            "value": " Lynch",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 4.749394416809082,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Maid",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.03225806451612903
+  },
+  {
+    "_id": "573a13e4f29313caabdc165d",
+    "plot": "Algeria, 1954. Two very different men thrown together by a world in turmoil are forced to flee across the Atlas mountains. Daru, the reclusive teacher, has to escort Mohamed, a villager accused of murder.",
+    "runtime": 101,
+    "title": "Far from Men",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.3,
+      "votes": 1768,
+      "id": 2936180
+    },
+    "poster_path": "/wREvEplB0wUf9eGLVTWpCR4Dz8o.jpg",
+    "highlights": [
+      {
+        "score": 7.544862270355225,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Far",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "from",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Men",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.03125
+  },
+  {
+    "_id": "573a13daf29313caabdaba15",
+    "plot": "A mystery outside of San Francisco brings together small-town sheriff Paul Del Moral, Japanese author Aki Akahori, and a traveler from Reno who soon disappears, leaving behind his suitcase and a trail of questions.",
+    "runtime": 111,
+    "title": "Man from Reno",
+    "year": 2014,
+    "imdb": {
+      "rating": 7.1,
+      "votes": 340,
+      "id": 2287170
+    },
+    "poster_path": "/rGEpX7QKULl24gQLpVODWcPuW2.jpg",
+    "highlights": [
+      {
+        "score": 9.746268272399902,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "from",
+            "type": "hit"
+          },
+          {
+            "value": " Reno",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.030303030303030304
+  },
+  {
+    "_id": "573a13c1f29313caabd652bb",
+    "imdb": {
+      "rating": 8.1,
+      "votes": 140270,
+      "id": 1220719
+    },
+    "year": 2008,
+    "plot": "A semi-biographical account of Yip Man, the successful martial arts master who taught the Chinese martial art of Wing Chun to the world.",
+    "title": "Ip Man",
+    "runtime": 106,
+    "poster_path": "/A7vhdyGrpPMKXsuFBZzxmave94F.jpg",
+    "highlights": [
+      {
+        "score": 1.7983828783035278,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Donnie ",
+            "type": "text"
+          },
+          {
+            "value": "Yen",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 6.721175670623779,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Simon",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Yam",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 2.073593854904175,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Ka",
+            "type": "hit"
+          },
+          {
+            "value": " Tung ",
+            "type": "text"
+          },
+          {
+            "value": "Lam",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 1.7504767179489136,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Siu-Wong ",
+            "type": "text"
+          },
+          {
+            "value": "Fan",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 5.660744667053223,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Ip ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.029411764705882353
+  },
+  {
+    "_id": "573a13a6f29313caabd170b0",
+    "imdb": {
+      "rating": 6.4,
+      "votes": 2100,
+      "id": 282856
+    },
+    "year": 2001,
+    "plot": "Porn Star: The Legend of Ron Jeremy offers audiences a penetrating look inside the world of Ron Jeremy, America's most unlikely sex star and hero to millions. With nearly 25 years in the ...",
+    "title": "Porn Star: The Legend of Ron Jeremy",
+    "runtime": 77,
+    "poster_path": "/a5eOBUs5TtLraJpfJMMDehIwnDp.jpg",
+    "highlights": [
+      {
+        "score": 7.616629123687744,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Ron",
+            "type": "hit"
+          },
+          {
+            "value": " Jeremy",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 2.589479923248291,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Al",
+            "type": "hit"
+          },
+          {
+            "value": " Goldstein",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 2.6566057205200195,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Al",
+            "type": "hit"
+          },
+          {
+            "value": " Lewis",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 7.414356231689453,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Porn",
+            "type": "hit"
+          },
+          {
+            "value": " Star: The Legend of ",
+            "type": "text"
+          },
+          {
+            "value": "Ron",
+            "type": "hit"
+          },
+          {
+            "value": " Jeremy",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.02857142857142857
+  },
+  {
+    "_id": "573a1398f29313caabcea2e1",
+    "plot": "Tai-Pan is Chinese for \"supreme leader\". This is the man with real power to his hands. And such a Tai-Pan is Dirk Struan who is obsessed by his plan to make Hong Kong the \"jewel in the ...",
+    "runtime": 127,
+    "title": "Tai-Pan",
+    "year": 1986,
+    "imdb": {
+      "rating": 5.4,
+      "votes": 1226,
+      "id": 92042
+    },
+    "poster_path": "/inAgrq4xzZeMUb2OMViLTtwGRho.jpg",
+    "highlights": [
+      {
+        "score": 4.86920690536499,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Bryan ",
+            "type": "text"
+          },
+          {
+            "value": "Brown",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 4.916100025177002,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Joan",
+            "type": "hit"
+          },
+          {
+            "value": " Chen",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 3.3362631797790527,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Tai",
+            "type": "hit"
+          },
+          {
+            "value": "-",
+            "type": "text"
+          },
+          {
+            "value": "Pan",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.027777777777777776
+  },
+  {
+    "_id": "573a13b5f29313caabd44b35",
+    "plot": "After receiving an African fertility mask as a gift Ellen tells her husband William that she's been attacked by masked phantom called 'the Nightmare Man'. As Ellen's paranoia increases, ...",
+    "runtime": 89,
+    "title": "Nightmare Man",
+    "year": 2006,
+    "imdb": {
+      "rating": 4,
+      "votes": 1967,
+      "id": 478216
+    },
+    "poster_path": "/oRHFRKWF7Q2fqOp439iMyecfcCV.jpg",
+    "highlights": [
+      {
+        "score": 4.856263637542725,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Aaron",
+            "type": "hit"
+          },
+          {
+            "value": " Sherry",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.569295883178711,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Nightmare ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.02702702702702703
+  },
+  {
+    "_id": "573a13c2f29313caabd675e3",
+    "imdb": {
+      "rating": 5.4,
+      "votes": 51097,
+      "id": 1258972
+    },
+    "year": 2012,
+    "plot": "On the hunt for a fabled treasure of gold, a band of warriors, assassins, and a rogue British soldier descend upon a village in feudal China, where a humble blacksmith looks to defend himself and his fellow villagers.",
+    "title": "The Man with the Iron Fists",
+    "runtime": 95,
+    "poster_path": "/9dipO9811zpe3P7H26w9X1z1U2y.jpg",
+    "highlights": [
+      {
+        "score": 10.79683780670166,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " with the ",
+            "type": "text"
+          },
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " Fists",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.02631578947368421
+  },
+  {
+    "_id": "573a13a3f29313caabd0cccb",
+    "plot": "Three jailers, a wheelchaired man and a mentally handicapped girl climb a mountain in the alps along with their supervisors.",
+    "runtime": 102,
+    "title": "Gran Paradiso",
+    "year": 2000,
+    "imdb": {
+      "rating": 6.7,
+      "votes": 214,
+      "id": 239441
+    },
+    "poster_path": "/nXztinkbnYRprMCnNpUiOLXTwvb.jpg",
+    "highlights": [
+      {
+        "score": 3.590502977371216,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Ken",
+            "type": "hit"
+          },
+          {
+            "value": " Duken",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 3.387308359146118,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Max",
+            "type": "hit"
+          },
+          {
+            "value": " Herbrechter",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 8.353943824768066,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Gran",
+            "type": "hit"
+          },
+          {
+            "value": " Paradiso",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.02564102564102564
+  },
+  {
+    "_id": "573a1397f29313caabce6b8c",
+    "plot": "Don, a wanted criminal, dies in a police chase. DSP D'Silva is the only one who knows about his death, and to get hold of the gang he trains Don-lookalike Vijay. But Vijay faces danger from the police and from within the gang.",
+    "runtime": 166,
+    "title": "Don",
+    "year": 1978,
+    "imdb": {
+      "rating": 7.9,
+      "votes": 4665,
+      "id": 77451
+    },
+    "poster_path": "/jP0fjDDZaYGpuwD9as6tNn0ePPz.jpg",
+    "highlights": [
+      {
+        "score": 3.312992572784424,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Zeenat ",
+            "type": "text"
+          },
+          {
+            "value": "Aman",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 8.4942045211792,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Pran",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 8.551945686340332,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Don",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.025
+  },
+  {
+    "_id": "573a13b4f29313caabd3fd29",
+    "plot": "The social anxiety of a morbidly shy Ecuadorian dishwasher working in a Queens diner provides the psychological engine that powers this blend of drama and magical realism.",
+    "runtime": 85,
+    "title": "Choking Man",
+    "year": 2006,
+    "imdb": {
+      "rating": 6,
+      "votes": 455,
+      "id": 457302
+    },
+    "poster_path": "/4oIQ8hvyGeknbqDa9pC0xS4NayZ.jpg",
+    "highlights": [
+      {
+        "score": 3.536773204803467,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Eugenia ",
+            "type": "text"
+          },
+          {
+            "value": "Yuan",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 3.4717609882354736,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Mandy",
+            "type": "hit"
+          },
+          {
+            "value": " Patinkin",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.0930705070495605,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Aaron",
+            "type": "hit"
+          },
+          {
+            "value": " Paul",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.594986915588379,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Choking ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.024390243902439025
+  },
+  {
+    "_id": "573a13dff29313caabdb814d",
+    "imdb": {
+      "rating": 4.2,
+      "votes": 420,
+      "id": 2574666
+    },
+    "year": 2013,
+    "plot": "A sewage worker gets trapped inside a septic tank during a water contamination crisis and undergoes a hideous transformation.",
+    "title": "Septic Man",
+    "runtime": 83,
+    "poster_path": "/kFebdXFA7tuIM1DWrPlzuY5nLzJ.jpg",
+    "highlights": [
+      {
+        "score": 4.994140148162842,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jason David ",
+            "type": "text"
+          },
+          {
+            "value": "Brown",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 5.607961177825928,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Septic ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.023809523809523808
+  },
+  {
+    "_id": "573a13e1f29313caabdbbeeb",
+    "imdb": {
+      "rating": 6,
+      "votes": 10818,
+      "id": 2717860
+    },
+    "year": 2014,
+    "plot": "Two first-year students at Oxford University join the infamous Riot Club, where reputations can be made or destroyed over the course of a single evening.",
+    "title": "The Riot Club",
+    "runtime": 107,
+    "poster_path": "/8H0bfcxbxGGvZTqDjvXQ89lJxCo.jpg",
+    "highlights": [
+      {
+        "score": 9.924378395080566,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Max",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Irons",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 4.176971912384033,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The ",
+            "type": "text"
+          },
+          {
+            "value": "Riot",
+            "type": "hit"
+          },
+          {
+            "value": " Club",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.023255813953488372
+  },
+  {
+    "_id": "573a13d7f29313caabda2760",
+    "plot": "Shane Meadows documents the reunion of iconic British band, The Stone Roses.",
+    "runtime": 97,
+    "title": "The Stone Roses: Made of Stone",
+    "year": 2013,
+    "imdb": {
+      "rating": 7.2,
+      "votes": 1544,
+      "id": 2126403
+    },
+    "poster_path": "/g6RMrCPKwBJpPnqqzfKjGnVxzQM.jpg",
+    "highlights": [
+      {
+        "score": 7.220719337463379,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Ian",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Brown",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 3.4526171684265137,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Mani",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 4.022767066955566,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The Stone Roses: ",
+            "type": "text"
+          },
+          {
+            "value": "Made",
+            "type": "hit"
+          },
+          {
+            "value": " of Stone",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.022727272727272728
+  },
+  {
+    "_id": "573a13a2f29313caabd0b043",
+    "imdb": {
+      "rating": 5.4,
+      "votes": 492,
+      "id": 231956
+    },
+    "year": 2000,
+    "plot": "Apocalyptic comedy finds a socially-challenged grad school student as one of the last two men on Earth with a beautiful woman. However, the other remaining man is his superior in every ...",
+    "title": "The Last Man",
+    "runtime": 95,
+    "poster_path": "/bBrr6RwxmfjZyWTEe3AaguEKbMO.jpg",
+    "highlights": [
+      {
+        "score": 3.352464199066162,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Jeri ",
+            "type": "text"
+          },
+          {
+            "value": "Ryan",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 3.1310813426971436,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Dan",
+            "type": "hit"
+          },
+          {
+            "value": " Montgomery Jr.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.582098960876465,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The Last ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.022222222222222223
+  },
+  {
+    "_id": "573a1399f29313caabcec9d1",
+    "plot": "Rural Louisiana, summer of 1957, Elvis is King. At 14, Dani is coming of age. Her older sister is beautiful, smart, and off to Duke in the fall; her mom's pregnant with number four (Dad ...",
+    "runtime": 99,
+    "title": "The Man in the Moon",
+    "year": 1991,
+    "imdb": {
+      "rating": 7.5,
+      "votes": 11345,
+      "id": 102388
+    },
+    "poster_path": "/57r0TXlqV5GIn4h0Htgh81OZou9.jpg",
+    "highlights": [
+      {
+        "score": 5.050894737243652,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Sam",
+            "type": "hit"
+          },
+          {
+            "value": " Waterston",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 7.527359485626221,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "in",
+            "type": "hit"
+          },
+          {
+            "value": " the ",
+            "type": "text"
+          },
+          {
+            "value": "Moon",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.021739130434782608
+  },
+  {
+    "_id": "573a13d6f29313caabda0762",
+    "plot": "A prisoner receives the message that his old father needs help with tilling his field. In his unpromising situation the prisoner suddenly has the idea to use the guards to till his dad's land.",
+    "runtime": 6,
+    "title": "From Dad to Son",
+    "year": 2012,
+    "imdb": {
+      "rating": 6.9,
+      "votes": 19,
+      "id": 2093997
+    },
+    "poster_path": null,
+    "highlights": [
+      {
+        "score": 6.740893363952637,
+        "path": "title",
+        "texts": [
+          {
+            "value": "From",
+            "type": "hit"
+          },
+          {
+            "value": " ",
+            "type": "text"
+          },
+          {
+            "value": "Dad",
+            "type": "hit"
+          },
+          {
+            "value": " to ",
+            "type": "text"
+          },
+          {
+            "value": "Son",
+            "type": "hit"
+          }
+        ]
+      }
+    ],
+    "score": 0.02127659574468085
+  },
+  {
+    "_id": "573a13bdf29313caabd58e16",
+    "plot": "An elderly Margaret Thatcher talks to the imagined presence of her recently deceased husband as she struggles to come to terms with his death while scenes from her past life, from girlhood to British prime minister, intervene.",
+    "runtime": 100,
+    "title": "The Iron Lady",
+    "year": 2011,
+    "imdb": {
+      "rating": 6.4,
+      "votes": 74240,
+      "id": 1007029
+    },
+    "poster_path": "/fx7wpKXOht7WOkeOslvErbrf69Q.jpg",
+    "highlights": [
+      {
+        "score": 4.9642839431762695,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Susan ",
+            "type": "text"
+          },
+          {
+            "value": "Brown",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 4.840128421783447,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Alice ",
+            "type": "text"
+          },
+          {
+            "value": "da",
+            "type": "hit"
+          },
+          {
+            "value": " Cunha",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.569295883178711,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The ",
+            "type": "text"
+          },
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " Lady",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.020833333333333332
+  },
+  {
+    "_id": "573a13cdf29313caabd85d69",
+    "imdb": {
+      "rating": 6.4,
+      "votes": 74469,
+      "id": 1007029
+    },
+    "year": 2011,
+    "plot": "An elderly Margaret Thatcher talks to the imagined presence of her recently deceased husband as she struggles to come to terms with his death while scenes from her past life, from girlhood to British prime minister, intervene.",
+    "title": "The Iron Lady",
+    "runtime": 100,
+    "poster_path": "/fx7wpKXOht7WOkeOslvErbrf69Q.jpg",
+    "highlights": [
+      {
+        "score": 4.9642839431762695,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Susan ",
+            "type": "text"
+          },
+          {
+            "value": "Brown",
+            "type": "hit"
+          }
+        ]
+      },
+      {
+        "score": 4.840128421783447,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Alice ",
+            "type": "text"
+          },
+          {
+            "value": "da",
+            "type": "hit"
+          },
+          {
+            "value": " Cunha",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.569295883178711,
+        "path": "title",
+        "texts": [
+          {
+            "value": "The ",
+            "type": "text"
+          },
+          {
+            "value": "Iron",
+            "type": "hit"
+          },
+          {
+            "value": " Lady",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.02040816326530612
+  },
+  {
+    "_id": "573a139cf29313caabcf5e7a",
+    "plot": "Academy Award-winner Barbara Kopple directs this documentary portrait of Academy Award and Golden Globe-winner Woody Allen (Annie Hall, Blue Jasmine), seen traveling with friends and fellow...",
+    "runtime": 105,
+    "title": "Wild Man Blues",
+    "year": 1997,
+    "imdb": {
+      "rating": 7,
+      "votes": 1825,
+      "id": 141986
+    },
+    "poster_path": "/9CaJQIscbAiHOr7RMbdXA8UqL7Z.jpg",
+    "highlights": [
+      {
+        "score": 3.4552273750305176,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Soon",
+            "type": "hit"
+          },
+          {
+            "value": "-Yi Previn",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.032641887664795,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Dan",
+            "type": "hit"
+          },
+          {
+            "value": " Barrett",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 3.3768258094787598,
+        "path": "cast",
+        "texts": [
+          {
+            "value": "Simon",
+            "type": "hit"
+          },
+          {
+            "value": " Wettenhall",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "score": 5.556577205657959,
+        "path": "title",
+        "texts": [
+          {
+            "value": "Wild ",
+            "type": "text"
+          },
+          {
+            "value": "Man",
+            "type": "hit"
+          },
+          {
+            "value": " Blues",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "score": 0.02
+  }
+]

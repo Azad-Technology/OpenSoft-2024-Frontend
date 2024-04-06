@@ -1,0 +1,53 @@
+{
+  "_id": "573a13f6f29313caabde4709",
+  "plot": "A movie shot in a single take about Victoria, a runaway party girl, who's asked by three friendly men to join them as they hit the town. Their wild night of partying turns into a bank robbery.",
+  "genres": [
+    "Crime",
+    "Drama",
+    "Thriller"
+  ],
+  "runtime": 140,
+  "metacritic": 76,
+  "cast": [
+    "Laia Costa",
+    "Frederick Lau",
+    "Franz Rogowski",
+    "Burak Yigit"
+  ],
+  "num_mflix_comments": 0,
+  "poster": "https://m.media-amazon.com/images/M/MV5BMTc5NzQzNjk2NF5BMl5BanBnXkFtZTgwODU0MjI5NjE@._V1_SY1000_SX677_AL_.jpg",
+  "title": "Victoria",
+  "fullplot": "A movie shot in a single take about Victoria, a runaway party girl, who's asked by three friendly men to join them as they hit the town. Their wild night of partying turns into a bank robbery.",
+  "languages": [
+    "German",
+    "English",
+    "Spanish"
+  ],
+  "released": "2015-10-09 00:00:00",
+  "directors": [
+    "Sebastian Schipper"
+  ],
+  "writers": [
+    "Olivia Neergaard-Holm",
+    "Sebastian Schipper",
+    "Eike Frederik Schulz"
+  ],
+  "awards": {
+    "wins": 9,
+    "nominations": 4,
+    "text": "9 wins & 4 nominations."
+  },
+  "lastupdated": "2015-08-24 00:14:54.790000000",
+  "year": 2015,
+  "imdb": {
+    "rating": 8.2,
+    "votes": 3031,
+    "id": 4226388
+  },
+  "countries": [
+    "Germany"
+  ],
+  "type": "movie",
+  "poster_path": "/fEt9U7JQYO8j8VtCCuyDzznPM2x.jpg",
+  "backdrop_path": "/ltvsxWWWfvcxoUbKVL8Dhhlwnrx.jpg"
+}

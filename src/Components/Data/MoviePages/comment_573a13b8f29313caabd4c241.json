@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cda4083",
+    "name": "Dummy",
+    "email": "1234@example.com",
+    "movie_id": "573a13b8f29313caabd4c241",
+    "text": "I was blown away by how much I enjoyed it.",
+    "date": "2024-03-27 22:54:43"
+  },
+  {
+    "_id": "6606dc194185cb979cda1236",
+    "name": "Armaan Rajagopalan",
+    "email": "armaan326@example.com",
+    "movie_id": "573a13b8f29313caabd4c241",
+    "text": "10/10 would recommend. A true masterpiece of cinema. It's a movie I'll never forget.",
+    "date": "2024-03-21 18:48:47"
+  },
+  {
+    "_id": "6606dc194185cb979cd9e1c5",
+    "name": "Shamik Walla",
+    "email": "shamik370@example.com",
+    "movie_id": "573a13b8f29313caabd4c241",
+    "text": "I was utterly captivated by every moment of it.",
+    "date": "2024-03-18 15:58:04"
+  },
+  {
+    "_id": "6606dc194185cb979cda5a5d",
+    "name": "Kaira Baral",
+    "email": "kaira453@example.com",
+    "movie_id": "573a13b8f29313caabd4c241",
+    "text": "The pacing was perfect. I couldn't wipe the grin off my face. The direction was flawless.",
+    "date": "2024-03-07 13:44:46"
+  },
+  {
+    "_id": "6606dc194185cb979cd9858d",
+    "name": "Zoya Uppal",
+    "email": "zoya283@example.com",
+    "movie_id": "573a13b8f29313caabd4c241",
+    "text": "The movie was an unforgettable experience.",
+    "date": "2024-03-03 10:17:51"
+  },
+  {
+    "_id": "6606dc194185cb979cd9654f",
+    "name": "Ivana Borde",
+    "email": "ivana327@example.com",
+    "movie_id": "573a13b8f29313caabd4c241",
+    "text": "I was completely blown away by the sheer talent on display. The chemistry between the actors was palpable. The plot was so engaging, I was on the edge of my seat the whole time.",
+    "date": "2024-02-27 16:23:58"
+  }
+]

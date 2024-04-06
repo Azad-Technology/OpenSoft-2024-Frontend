@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "660805e2f6fe3ef22529e99c",
+    "name": "Soham Chakraborty",
+    "email": "soham@chakraborty.com",
+    "movie_id": "573a13cef29313caabd88223",
+    "text": "i like it",
+    "date": "2024-03-30 12:30:26"
+  },
+  {
+    "_id": "6606dc194185cb979cd963f7",
+    "name": "Alisha Sule",
+    "email": "alisha348@example.com",
+    "movie_id": "573a13cef29313caabd88223",
+    "text": "The movie was an absolute delight to watch. The acting was top-notch, especially from the lead actor. This movie was amazing!",
+    "date": "2024-03-28 07:40:24"
+  },
+  {
+    "_id": "6606dc194185cb979cda3ffb",
+    "name": "Myra Kota",
+    "email": "myra158@example.com",
+    "movie_id": "573a13cef29313caabd88223",
+    "text": "I left the theater with a renewed sense of hope.",
+    "date": "2024-03-25 04:29:23"
+  },
+  {
+    "_id": "6606dc194185cb979cd94169",
+    "name": "Zoya Chana",
+    "email": "zoya487@example.com",
+    "movie_id": "573a13cef29313caabd88223",
+    "text": "I was completely absorbed by every frame of it.",
+    "date": "2024-03-18 09:52:09"
+  },
+  {
+    "_id": "6606dc194185cb979cd9884c",
+    "name": "Kimaya Korpal",
+    "email": "kimaya75@example.com",
+    "movie_id": "573a13cef29313caabd88223",
+    "text": "I was completely immersed in the world of the film. I was moved to tears by the end. I can't get the movie out of my head.",
+    "date": "2024-03-17 16:07:39"
+  },
+  {
+    "_id": "6606dc194185cb979cda03a0",
+    "name": "Dummy",
+    "email": "dummy522@example.com",
+    "movie_id": "573a13cef29313caabd88223",
+    "text": "I was blown away by the performances. I was completely enchanted by every frame of it.",
+    "date": "2024-03-15 22:22:11"
+  },
+  {
+    "_id": "6606dc194185cb979cda017b",
+    "name": "Nishith Yogi",
+    "email": "nishith295@example.com",
+    "movie_id": "573a13cef29313caabd88223",
+    "text": "I was completely enchanted by every moment of it.",
+    "date": "2024-03-05 04:12:17"
+  }
+]

@@ -13,19 +13,11 @@ export const Watchlists = ({setShowLikePopup}) => {
   }
   const {id} = useParams();
   useEffect(() => {
-    try {
-      const getWatchlist = async () => {
-        const res = await instance.get("/watchlist/" + id, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setMovies(res.data);
-      };
-      getWatchlist();
-    } catch (error) {
-      // console.log(error);
-    }
+    user.watchlist?.map((watchlist) => {
+      if (watchlist?._id === id) {
+        setMovies(watchlist);
+      }
+    });
   }, []);
   return <>{movies ? <Watchlist setShowLikePopup={setShowLikePopup} movies={movies.movies} id={movies._id} name={movies.name} /> : <Loader />}</>;
 };

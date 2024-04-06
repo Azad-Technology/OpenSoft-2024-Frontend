@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9c71c",
+    "name": "Kartik Biswas",
+    "email": "kartik306@example.com",
+    "movie_id": "573a13c8f29313caabd780f8",
+    "text": "The writing was sharp and witty. The movie was a true work of art.",
+    "date": "2024-03-27 00:43:03"
+  },
+  {
+    "_id": "6606dc194185cb979cd9bc33",
+    "name": "Drishya Devan",
+    "email": "drishya230@example.com",
+    "movie_id": "573a13c8f29313caabd780f8",
+    "text": "The characters were so well-developed, I felt like I knew them personally. The movie was an absolute pleasure to watch.",
+    "date": "2024-03-25 13:22:30"
+  },
+  {
+    "_id": "6606dc194185cb979cda430c",
+    "name": "Ivan Krishnamurthy",
+    "email": "ivan361@example.com",
+    "movie_id": "573a13c8f29313caabd780f8",
+    "text": "I left the theater with a renewed sense of hope. I couldn't stop thinking about it after it ended.",
+    "date": "2024-03-24 13:33:58"
+  },
+  {
+    "_id": "6606dc194185cb979cd9b1ac",
+    "name": "Madhup Mani",
+    "email": "madhup338@example.com",
+    "movie_id": "573a13c8f29313caabd780f8",
+    "text": "Such a heartwarming story, it brought tears to my eyes. I can't get the movie out of my head.",
+    "date": "2024-03-17 00:48:24"
+  },
+  {
+    "_id": "6606dc194185cb979cda2a1a",
+    "name": "Dummy",
+    "email": "dummy526@example.com",
+    "movie_id": "573a13c8f29313caabd780f8",
+    "text": "It's a movie I'll be thinking about for a long time to come. I was left breathless by the sheer brilliance of it all.",
+    "date": "2024-03-14 14:51:23"
+  },
+  {
+    "_id": "6606dc194185cb979cda696a",
+    "name": "Armaan Rajagopalan",
+    "email": "armaan326@example.com",
+    "movie_id": "573a13c8f29313caabd780f8",
+    "text": "The characters were so well-developed, I felt like I knew them personally. I've never seen anything quite like it before.",
+    "date": "2024-03-12 13:49:55"
+  },
+  {
+    "_id": "6606dc194185cb979cda3cfb",
+    "name": "Dummy",
+    "email": "dummy527@example.com",
+    "movie_id": "573a13c8f29313caabd780f8",
+    "text": "I was left in awe of the sheer talent on display. The performances were some of the best I've ever seen.",
+    "date": "2024-03-08 19:46:41"
+  }
+]

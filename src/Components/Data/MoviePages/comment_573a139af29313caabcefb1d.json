@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6606dc194185cb979cd9c2b1",
+    "name": "Keya Swaminathan",
+    "email": "keya145@example.com",
+    "movie_id": "573a139af29313caabcefb1d",
+    "text": "I've never seen anything quite like it before. The movie was a shining example of what cinema can achieve. The movie was pure joy.",
+    "date": "2024-03-25 13:31:30"
+  },
+  {
+    "_id": "6606dc194185cb979cda188e",
+    "name": "Dummy",
+    "email": "abc@example.com",
+    "movie_id": "573a139af29313caabcefb1d",
+    "text": "The plot was so engaging, I was on the edge of my seat the whole time. The movie was a true delight from start to finish. The dialogue was witty and clever.",
+    "date": "2024-03-16 10:05:42"
+  },
+  {
+    "_id": "6606dc194185cb979cd94dc8",
+    "name": "Riya Shere",
+    "email": "riya340@example.com",
+    "movie_id": "573a139af29313caabcefb1d",
+    "text": "I was completely enthralled by every moment of it.",
+    "date": "2024-03-08 22:29:31"
+  },
+  {
+    "_id": "6606dc194185cb979cd952e6",
+    "name": "Navya Bhardwaj",
+    "email": "navya167@example.com",
+    "movie_id": "573a139af29313caabcefb1d",
+    "text": "I was completely enchanted by the story. Such a heartwarming story, it brought tears to my eyes. The writing was sharp and witty.",
+    "date": "2024-03-08 05:10:54"
+  },
+  {
+    "_id": "6606dc194185cb979cd9bda9",
+    "name": "Ela Dutta",
+    "email": "ela476@example.com",
+    "movie_id": "573a139af29313caabcefb1d",
+    "text": "10/10 would recommend. The movie was a true joy to watch.",
+    "date": "2024-03-05 03:53:06"
+  },
+  {
+    "_id": "6606dc194185cb979cda241e",
+    "name": "Indranil Sangha",
+    "email": "indranil271@example.com",
+    "movie_id": "573a139af29313caabcefb1d",
+    "text": "I was blown away by the performances. A must-see for any movie lover.",
+    "date": "2024-03-03 16:02:45"
+  }
+]
