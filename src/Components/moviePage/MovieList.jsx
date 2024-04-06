@@ -1,8 +1,8 @@
 const movies = [
   [
-    "/dune/dune_master_basic.m3u8",
-    "/dune/dune_master_silver.m3u8",
-    "/dune/dune_master.m3u8",
+    "/sonic/sonic_master_basic.m3u8",
+    "/sonic/sonic_master_silver.m3u8",
+    "/sonic/sonic_master.m3u8",
     "https://opensoft-video-gehvced7g6fbhrfc.z02.azurefd.net/testing/atlas.vtt"
   ],
   // [
