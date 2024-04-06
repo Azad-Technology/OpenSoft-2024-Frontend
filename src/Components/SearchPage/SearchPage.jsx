@@ -8,7 +8,6 @@ import FuzzyCard from "../Card/FuzzyCard.jsx";
 import  Card  from '../Card/Card.jsx';
 import GeneralSlider from "../HomeSliders/GeneralSlider.jsx";
 import MovieList from "../movieList/MovieList.jsx";
-import { saveJsonFile } from "../save.jsx";
 
 const SearchPage = ({setShowLikePopup}) => {
   const {searchTerm} = useParams();
@@ -31,7 +30,6 @@ const SearchPage = ({setShowLikePopup}) => {
       }
       else response = await import(`../Data/Fuzzy/None.json`);
       setFuzzy(response.default);
-      // saveJsonFile(response.data, `${searchTerm}.json`);
       setGenreSelections([]);
       setLanguageSelections([]);
       const response1=await axios.post("https://embed.popkorn.tech/nlp", {

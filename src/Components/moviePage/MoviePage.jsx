@@ -20,7 +20,6 @@ import GenreModal from "../GenreModal/GenreModal";
 import closeIcon from "../../assets/close-47.svg";
 import chooseMovie from "./MovieList.jsx";
 import Notification from "../Notification/notification.jsx";
-import { saveJsonFile } from "../save.jsx";
 
 function Modal({onClose, movie, token}) {
   const [{user}, dispatch] = useStateValue();
