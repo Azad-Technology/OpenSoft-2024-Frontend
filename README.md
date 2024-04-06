@@ -83,3 +83,29 @@ https://popkorn.tech
     * Create curated watchlists
     * Mark favourite movies and tv shows
 
+## Details of This Version
+
+* ```Log In Credentials```
+    * Basic User - email: basic@basic.com, password: Basic123#
+    * Silver User - email: silver@silver.com, password: Silver123#
+    * Gold User - email: gold@gold.com, password: Gold123#
+
+* ```Register``` works and can be used to create a new user.
+ 
+    **However, all changes associated with the user (including the 3 above) and the user itself (excluding the 3 above) will be deleted once you sign out.**
+
+* ```Home Page```
+All movies on the carousel, all visible cards (the first 9 in the slider) until the Top Series section, and the first card in each of the sections below have corresponding movie pages. The rest redirects to the movie page of Titanic.
+
+* ```Genre Modals```
+Have data for all genres until Fantasy, the rest just reuses data from the Action genre
+
+* ```Pricing```
+On clicking the button your plan immediately switches to the selected and the lemonsqueezy page opens up.
+
+* ```Autocomplete```
+Available for each letter of “iron man” from ‘i’ to ‘n’. Small letters only
+
+* ```Fuzzy```
+Available for “iron man” and “man builds suit in a cave”
+
